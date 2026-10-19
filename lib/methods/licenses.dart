@@ -26,22 +26,17 @@ Future<List<LicenseSimple>> licensesGetAllCommonlyUsed(ClientConfig config,
   return (await sdkRequest<List<LicenseSimple>>('GET', '/licenses',
           config: config,
           query: {
-            'featured': SdkQueryValue(SdkUtils.unwrapOptional(featured),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'featured': SdkQueryValue(SdkUtils.unwrapOptional(featured), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'licensesGetAllCommonlyUsed',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  LicenseSimple.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => LicenseSimple.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves information about a specific license. Use `license` to identify the license whose details you need, including its permissions, conditions, limitations, and license text.
 ///
@@ -53,15 +48,12 @@ Future<License> licensesGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'licensesGet',
-          fromJsonRaw: (value) =>
-              License.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => License.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// This method returns the contents of the repository's license file, if one is detected. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw contents of the license. - **`application/vnd.github.html+json`**: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
@@ -81,16 +73,12 @@ Future<LicenseContent> licensesGetForRepo(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/license',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'licensesGetForRepo',
-          fromJsonRaw: (value) =>
-              LicenseContent.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => LicenseContent.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

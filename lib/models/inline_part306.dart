@@ -8,627 +8,164 @@ part of 'inline.dart';
 class AgentAutomationsEditRepoAutomationRequestBodyTriggers {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval> interval;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened>
-      issueOpened;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled>
-      issueLabeled;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun>
-      workflowRun;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened>
-      pullRequestOpened;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize>
-      pullRequestSynchronize;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged>
-      pullRequestMerged;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment>
-      issueComment;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment>
-      pullRequestComment;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened>
-      discussionOpened;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated>
-      discussionUpdated;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment>
-      discussionComment;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned>
-      issueAssigned;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned>
-      pullRequestAssigned;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded>
-      subIssueAdded;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview>
-      pullRequestReadyForReview;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled>
-      pullRequestLabeled;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict>
-      pullRequestMergeConflict;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>
-      pullRequestReviewSubmitted;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested>
-      pullRequestReviewRequested;
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted>
-      automationCompleted;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval> interval;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened> issueOpened;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled> issueLabeled;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun> workflowRun;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened> pullRequestOpened;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize> pullRequestSynchronize;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged> pullRequestMerged;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment> issueComment;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment> pullRequestComment;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened> discussionOpened;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated> discussionUpdated;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment> discussionComment;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned> issueAssigned;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned> pullRequestAssigned;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded> subIssueAdded;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview> pullRequestReadyForReview;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled> pullRequestLabeled;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict> pullRequestMergeConflict;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested> pullRequestReviewRequested;
+  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted> automationCompleted;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggers(
-      {this.interval = const SdkOmitted(),
-      this.issueOpened = const SdkOmitted(),
-      this.issueLabeled = const SdkOmitted(),
-      this.workflowRun = const SdkOmitted(),
-      this.pullRequestOpened = const SdkOmitted(),
-      this.pullRequestSynchronize = const SdkOmitted(),
-      this.pullRequestMerged = const SdkOmitted(),
-      this.issueComment = const SdkOmitted(),
-      this.pullRequestComment = const SdkOmitted(),
-      this.discussionOpened = const SdkOmitted(),
-      this.discussionUpdated = const SdkOmitted(),
-      this.discussionComment = const SdkOmitted(),
-      this.issueAssigned = const SdkOmitted(),
-      this.pullRequestAssigned = const SdkOmitted(),
-      this.subIssueAdded = const SdkOmitted(),
-      this.pullRequestReadyForReview = const SdkOmitted(),
-      this.pullRequestLabeled = const SdkOmitted(),
-      this.pullRequestMergeConflict = const SdkOmitted(),
-      this.pullRequestReviewSubmitted = const SdkOmitted(),
-      this.pullRequestReviewRequested = const SdkOmitted(),
-      this.automationCompleted = const SdkOmitted()});
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggers({this.interval = const SdkOmitted(), this.issueOpened = const SdkOmitted(), this.issueLabeled = const SdkOmitted(), this.workflowRun = const SdkOmitted(), this.pullRequestOpened = const SdkOmitted(), this.pullRequestSynchronize = const SdkOmitted(), this.pullRequestMerged = const SdkOmitted(), this.issueComment = const SdkOmitted(), this.pullRequestComment = const SdkOmitted(), this.discussionOpened = const SdkOmitted(), this.discussionUpdated = const SdkOmitted(), this.discussionComment = const SdkOmitted(), this.issueAssigned = const SdkOmitted(), this.pullRequestAssigned = const SdkOmitted(), this.subIssueAdded = const SdkOmitted(), this.pullRequestReadyForReview = const SdkOmitted(), this.pullRequestLabeled = const SdkOmitted(), this.pullRequestMergeConflict = const SdkOmitted(), this.pullRequestReviewSubmitted = const SdkOmitted(), this.pullRequestReviewRequested = const SdkOmitted(), this.automationCompleted = const SdkOmitted()});
 
-  AgentAutomationsEditRepoAutomationRequestBodyTriggers Function(
-      {SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval>
-          interval,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened>
-          issueOpened,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled>
-          issueLabeled,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun>
-          workflowRun,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened>
-          pullRequestOpened,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize>
-          pullRequestSynchronize,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged>
-          pullRequestMerged,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment>
-          issueComment,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment>
-          pullRequestComment,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened>
-          discussionOpened,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated>
-          discussionUpdated,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment>
-          discussionComment,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned>
-          issueAssigned,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned>
-          pullRequestAssigned,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded>
-          subIssueAdded,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview>
-          pullRequestReadyForReview,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled>
-          pullRequestLabeled,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict>
-          pullRequestMergeConflict,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>
-          pullRequestReviewSubmitted,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested>
-          pullRequestReviewRequested,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted>
-          automationCompleted}) get copyWith => _copyWith;
+  AgentAutomationsEditRepoAutomationRequestBodyTriggers Function({SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval> interval, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened> issueOpened, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled> issueLabeled, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun> workflowRun, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened> pullRequestOpened, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize> pullRequestSynchronize, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged> pullRequestMerged, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment> issueComment, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment> pullRequestComment, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened> discussionOpened, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated> discussionUpdated, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment> discussionComment, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned> issueAssigned, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned> pullRequestAssigned, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded> subIssueAdded, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview> pullRequestReadyForReview, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled> pullRequestLabeled, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict> pullRequestMergeConflict, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested> pullRequestReviewRequested, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted> automationCompleted}) get copyWith => _copyWith;
 
-  AgentAutomationsEditRepoAutomationRequestBodyTriggers _copyWith(
-          {Object? interval = sdkOmittedValue,
-          Object? issueOpened = sdkOmittedValue,
-          Object? issueLabeled = sdkOmittedValue,
-          Object? workflowRun = sdkOmittedValue,
-          Object? pullRequestOpened = sdkOmittedValue,
-          Object? pullRequestSynchronize = sdkOmittedValue,
-          Object? pullRequestMerged = sdkOmittedValue,
-          Object? issueComment = sdkOmittedValue,
-          Object? pullRequestComment = sdkOmittedValue,
-          Object? discussionOpened = sdkOmittedValue,
-          Object? discussionUpdated = sdkOmittedValue,
-          Object? discussionComment = sdkOmittedValue,
-          Object? issueAssigned = sdkOmittedValue,
-          Object? pullRequestAssigned = sdkOmittedValue,
-          Object? subIssueAdded = sdkOmittedValue,
-          Object? pullRequestReadyForReview = sdkOmittedValue,
-          Object? pullRequestLabeled = sdkOmittedValue,
-          Object? pullRequestMergeConflict = sdkOmittedValue,
-          Object? pullRequestReviewSubmitted = sdkOmittedValue,
-          Object? pullRequestReviewRequested = sdkOmittedValue,
-          Object? automationCompleted = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggers(
-        interval: identical(interval, sdkOmittedValue)
-            ? this.interval
-            : interval as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval>,
-        issueOpened: identical(issueOpened, sdkOmittedValue)
-            ? this.issueOpened
-            : issueOpened as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened>,
-        issueLabeled: identical(issueLabeled, sdkOmittedValue)
-            ? this.issueLabeled
-            : issueLabeled as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled>,
-        workflowRun: identical(workflowRun, sdkOmittedValue)
-            ? this.workflowRun
-            : workflowRun as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun>,
-        pullRequestOpened: identical(pullRequestOpened, sdkOmittedValue)
-            ? this.pullRequestOpened
-            : pullRequestOpened as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened>,
-        pullRequestSynchronize: identical(
-                pullRequestSynchronize, sdkOmittedValue)
-            ? this.pullRequestSynchronize
-            : pullRequestSynchronize as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize>,
-        pullRequestMerged: identical(pullRequestMerged, sdkOmittedValue)
-            ? this.pullRequestMerged
-            : pullRequestMerged as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged>,
-        issueComment: identical(issueComment, sdkOmittedValue)
-            ? this.issueComment
-            : issueComment as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment>,
-        pullRequestComment: identical(pullRequestComment, sdkOmittedValue)
-            ? this.pullRequestComment
-            : pullRequestComment as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment>,
-        discussionOpened: identical(discussionOpened, sdkOmittedValue)
-            ? this.discussionOpened
-            : discussionOpened as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened>,
-        discussionUpdated: identical(discussionUpdated, sdkOmittedValue)
-            ? this.discussionUpdated
-            : discussionUpdated as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated>,
-        discussionComment: identical(discussionComment, sdkOmittedValue)
-            ? this.discussionComment
-            : discussionComment as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment>,
-        issueAssigned: identical(issueAssigned, sdkOmittedValue)
-            ? this.issueAssigned
-            : issueAssigned as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned>,
-        pullRequestAssigned: identical(pullRequestAssigned, sdkOmittedValue)
-            ? this.pullRequestAssigned
-            : pullRequestAssigned as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned>,
-        subIssueAdded: identical(subIssueAdded, sdkOmittedValue)
-            ? this.subIssueAdded
-            : subIssueAdded as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded>,
-        pullRequestReadyForReview: identical(
-                pullRequestReadyForReview, sdkOmittedValue)
-            ? this.pullRequestReadyForReview
-            : pullRequestReadyForReview as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview>,
-        pullRequestLabeled: identical(pullRequestLabeled, sdkOmittedValue)
-            ? this.pullRequestLabeled
-            : pullRequestLabeled as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled>,
-        pullRequestMergeConflict: identical(
-                pullRequestMergeConflict, sdkOmittedValue)
-            ? this.pullRequestMergeConflict
-            : pullRequestMergeConflict as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict>,
-        pullRequestReviewSubmitted: identical(
-                pullRequestReviewSubmitted, sdkOmittedValue)
-            ? this.pullRequestReviewSubmitted
-            : pullRequestReviewSubmitted as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>,
-        pullRequestReviewRequested: identical(
-                pullRequestReviewRequested, sdkOmittedValue)
-            ? this.pullRequestReviewRequested
-            : pullRequestReviewRequested as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested>,
-        automationCompleted: identical(automationCompleted, sdkOmittedValue)
-            ? this.automationCompleted
-            : automationCompleted as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted>,
-      );
+  AgentAutomationsEditRepoAutomationRequestBodyTriggers _copyWith({Object? interval = sdkOmittedValue, Object? issueOpened = sdkOmittedValue, Object? issueLabeled = sdkOmittedValue, Object? workflowRun = sdkOmittedValue, Object? pullRequestOpened = sdkOmittedValue, Object? pullRequestSynchronize = sdkOmittedValue, Object? pullRequestMerged = sdkOmittedValue, Object? issueComment = sdkOmittedValue, Object? pullRequestComment = sdkOmittedValue, Object? discussionOpened = sdkOmittedValue, Object? discussionUpdated = sdkOmittedValue, Object? discussionComment = sdkOmittedValue, Object? issueAssigned = sdkOmittedValue, Object? pullRequestAssigned = sdkOmittedValue, Object? subIssueAdded = sdkOmittedValue, Object? pullRequestReadyForReview = sdkOmittedValue, Object? pullRequestLabeled = sdkOmittedValue, Object? pullRequestMergeConflict = sdkOmittedValue, Object? pullRequestReviewSubmitted = sdkOmittedValue, Object? pullRequestReviewRequested = sdkOmittedValue, Object? automationCompleted = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationRequestBodyTriggers(
+    interval: identical(interval, sdkOmittedValue) ? this.interval : interval as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval>,
+    issueOpened: identical(issueOpened, sdkOmittedValue) ? this.issueOpened : issueOpened as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened>,
+    issueLabeled: identical(issueLabeled, sdkOmittedValue) ? this.issueLabeled : issueLabeled as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled>,
+    workflowRun: identical(workflowRun, sdkOmittedValue) ? this.workflowRun : workflowRun as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun>,
+    pullRequestOpened: identical(pullRequestOpened, sdkOmittedValue) ? this.pullRequestOpened : pullRequestOpened as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened>,
+    pullRequestSynchronize: identical(pullRequestSynchronize, sdkOmittedValue) ? this.pullRequestSynchronize : pullRequestSynchronize as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize>,
+    pullRequestMerged: identical(pullRequestMerged, sdkOmittedValue) ? this.pullRequestMerged : pullRequestMerged as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged>,
+    issueComment: identical(issueComment, sdkOmittedValue) ? this.issueComment : issueComment as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment>,
+    pullRequestComment: identical(pullRequestComment, sdkOmittedValue) ? this.pullRequestComment : pullRequestComment as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment>,
+    discussionOpened: identical(discussionOpened, sdkOmittedValue) ? this.discussionOpened : discussionOpened as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened>,
+    discussionUpdated: identical(discussionUpdated, sdkOmittedValue) ? this.discussionUpdated : discussionUpdated as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated>,
+    discussionComment: identical(discussionComment, sdkOmittedValue) ? this.discussionComment : discussionComment as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment>,
+    issueAssigned: identical(issueAssigned, sdkOmittedValue) ? this.issueAssigned : issueAssigned as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned>,
+    pullRequestAssigned: identical(pullRequestAssigned, sdkOmittedValue) ? this.pullRequestAssigned : pullRequestAssigned as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned>,
+    subIssueAdded: identical(subIssueAdded, sdkOmittedValue) ? this.subIssueAdded : subIssueAdded as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded>,
+    pullRequestReadyForReview: identical(pullRequestReadyForReview, sdkOmittedValue) ? this.pullRequestReadyForReview : pullRequestReadyForReview as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview>,
+    pullRequestLabeled: identical(pullRequestLabeled, sdkOmittedValue) ? this.pullRequestLabeled : pullRequestLabeled as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled>,
+    pullRequestMergeConflict: identical(pullRequestMergeConflict, sdkOmittedValue) ? this.pullRequestMergeConflict : pullRequestMergeConflict as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict>,
+    pullRequestReviewSubmitted: identical(pullRequestReviewSubmitted, sdkOmittedValue) ? this.pullRequestReviewSubmitted : pullRequestReviewSubmitted as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>,
+    pullRequestReviewRequested: identical(pullRequestReviewRequested, sdkOmittedValue) ? this.pullRequestReviewRequested : pullRequestReviewRequested as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested>,
+    automationCompleted: identical(automationCompleted, sdkOmittedValue) ? this.automationCompleted : automationCompleted as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted>,
+  );
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggers.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggers(
-        interval: json['interval'] != null
-            ? SdkPresent((json['interval'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval
-                    .fromJson(json['interval'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueOpened: json['issue_opened'] != null
-            ? SdkPresent((json['issue_opened'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened
-                    .fromJson(json['issue_opened'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueLabeled: json['issue_labeled'] != null
-            ? SdkPresent((json['issue_labeled'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled
-                    .fromJson(json['issue_labeled'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        workflowRun: json['workflow_run'] != null
-            ? SdkPresent((json['workflow_run'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun
-                    .fromJson(json['workflow_run'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestOpened: json['pull_request_opened'] != null
-            ? SdkPresent((json['pull_request_opened'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened
-                    .fromJson(
-                        json['pull_request_opened'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestSynchronize: json['pull_request_synchronize'] != null
-            ? SdkPresent((json['pull_request_synchronize'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize
-                    .fromJson(json['pull_request_synchronize']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestMerged: json['pull_request_merged'] != null
-            ? SdkPresent((json['pull_request_merged'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged
-                    .fromJson(
-                        json['pull_request_merged'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueComment: json['issue_comment'] != null
-            ? SdkPresent((json['issue_comment'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment
-                    .fromJson(json['issue_comment'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestComment: json['pull_request_comment'] != null
-            ? SdkPresent((json['pull_request_comment'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment
-                    .fromJson(
-                        json['pull_request_comment'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        discussionOpened: json['discussion_opened'] != null
-            ? SdkPresent((json['discussion_opened'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened
-                    .fromJson(json['discussion_opened'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        discussionUpdated: json['discussion_updated'] != null
-            ? SdkPresent((json['discussion_updated'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated
-                    .fromJson(
-                        json['discussion_updated'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        discussionComment: json['discussion_comment'] != null
-            ? SdkPresent((json['discussion_comment'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment
-                    .fromJson(
-                        json['discussion_comment'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueAssigned: json['issue_assigned'] != null
-            ? SdkPresent((json['issue_assigned'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned
-                    .fromJson(json['issue_assigned'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestAssigned: json['pull_request_assigned'] != null
-            ? SdkPresent((json['pull_request_assigned'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned
-                    .fromJson(
-                        json['pull_request_assigned'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        subIssueAdded: json['sub_issue_added'] != null
-            ? SdkPresent((json['sub_issue_added'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded
-                    .fromJson(json['sub_issue_added'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestReadyForReview: json['pull_request_ready_for_review'] != null
-            ? SdkPresent((json['pull_request_ready_for_review'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview
-                    .fromJson(json['pull_request_ready_for_review']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestLabeled: json['pull_request_labeled'] != null
-            ? SdkPresent((json['pull_request_labeled'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled
-                    .fromJson(
-                        json['pull_request_labeled'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestMergeConflict: json['pull_request_merge_conflict'] != null
-            ? SdkPresent((json['pull_request_merge_conflict'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict
-                    .fromJson(json['pull_request_merge_conflict']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestReviewSubmitted: json['pull_request_review_submitted'] !=
-                null
-            ? SdkPresent((json['pull_request_review_submitted'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted
-                    .fromJson(json['pull_request_review_submitted']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestReviewRequested: json['pull_request_review_requested'] !=
-                null
-            ? SdkPresent((json['pull_request_review_requested'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested
-                    .fromJson(json['pull_request_review_requested']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        automationCompleted: json['automation_completed'] != null
-            ? SdkPresent((json['automation_completed'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted
-                    .fromJson(
-                        json['automation_completed'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggers.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationRequestBodyTriggers(
+    interval: json['interval'] != null ? SdkPresent((json['interval'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval.fromJson(json['interval'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueOpened: json['issue_opened'] != null ? SdkPresent((json['issue_opened'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened.fromJson(json['issue_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueLabeled: json['issue_labeled'] != null ? SdkPresent((json['issue_labeled'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled.fromJson(json['issue_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    workflowRun: json['workflow_run'] != null ? SdkPresent((json['workflow_run'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestOpened: json['pull_request_opened'] != null ? SdkPresent((json['pull_request_opened'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened.fromJson(json['pull_request_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestSynchronize: json['pull_request_synchronize'] != null ? SdkPresent((json['pull_request_synchronize'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize.fromJson(json['pull_request_synchronize'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestMerged: json['pull_request_merged'] != null ? SdkPresent((json['pull_request_merged'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged.fromJson(json['pull_request_merged'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueComment: json['issue_comment'] != null ? SdkPresent((json['issue_comment'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment.fromJson(json['issue_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestComment: json['pull_request_comment'] != null ? SdkPresent((json['pull_request_comment'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment.fromJson(json['pull_request_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionOpened: json['discussion_opened'] != null ? SdkPresent((json['discussion_opened'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened.fromJson(json['discussion_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionUpdated: json['discussion_updated'] != null ? SdkPresent((json['discussion_updated'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated.fromJson(json['discussion_updated'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionComment: json['discussion_comment'] != null ? SdkPresent((json['discussion_comment'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment.fromJson(json['discussion_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueAssigned: json['issue_assigned'] != null ? SdkPresent((json['issue_assigned'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned.fromJson(json['issue_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestAssigned: json['pull_request_assigned'] != null ? SdkPresent((json['pull_request_assigned'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned.fromJson(json['pull_request_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    subIssueAdded: json['sub_issue_added'] != null ? SdkPresent((json['sub_issue_added'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded.fromJson(json['sub_issue_added'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReadyForReview: json['pull_request_ready_for_review'] != null ? SdkPresent((json['pull_request_ready_for_review'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview.fromJson(json['pull_request_ready_for_review'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestLabeled: json['pull_request_labeled'] != null ? SdkPresent((json['pull_request_labeled'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled.fromJson(json['pull_request_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestMergeConflict: json['pull_request_merge_conflict'] != null ? SdkPresent((json['pull_request_merge_conflict'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict.fromJson(json['pull_request_merge_conflict'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReviewSubmitted: json['pull_request_review_submitted'] != null ? SdkPresent((json['pull_request_review_submitted'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted.fromJson(json['pull_request_review_submitted'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReviewRequested: json['pull_request_review_requested'] != null ? SdkPresent((json['pull_request_review_requested'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested.fromJson(json['pull_request_review_requested'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    automationCompleted: json['automation_completed'] != null ? SdkPresent((json['automation_completed'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted.fromJson(json['automation_completed'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (interval) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval>(
-            value: final value
-          ) =>
-            {
-              'interval': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueOpened) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened>(
-            value: final value
-          ) =>
-            {
-              'issue_opened': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueLabeled) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled>(
-            value: final value
-          ) =>
-            {
-              'issue_labeled': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workflowRun) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun>(
-            value: final value
-          ) =>
-            {
-              'workflow_run': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestOpened) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened>(
-            value: final value
-          ) =>
-            {
-              'pull_request_opened': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestSynchronize) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize>(
-            value: final value
-          ) =>
-            {
-              'pull_request_synchronize': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestMerged) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged>(
-            value: final value
-          ) =>
-            {
-              'pull_request_merged': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueComment) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment>(
-            value: final value
-          ) =>
-            {
-              'issue_comment': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestComment) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment>(
-            value: final value
-          ) =>
-            {
-              'pull_request_comment': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (discussionOpened) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened>(
-            value: final value
-          ) =>
-            {
-              'discussion_opened': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (discussionUpdated) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated>(
-            value: final value
-          ) =>
-            {
-              'discussion_updated': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (discussionComment) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment>(
-            value: final value
-          ) =>
-            {
-              'discussion_comment': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueAssigned) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned>(
-            value: final value
-          ) =>
-            {
-              'issue_assigned': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestAssigned) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned>(
-            value: final value
-          ) =>
-            {
-              'pull_request_assigned': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subIssueAdded) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded>(
-            value: final value
-          ) =>
-            {
-              'sub_issue_added': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestReadyForReview) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview>(
-            value: final value
-          ) =>
-            {
-              'pull_request_ready_for_review': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestLabeled) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled>(
-            value: final value
-          ) =>
-            {
-              'pull_request_labeled': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestMergeConflict) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict>(
-            value: final value
-          ) =>
-            {
-              'pull_request_merge_conflict': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestReviewSubmitted) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>(
-            value: final value
-          ) =>
-            {
-              'pull_request_review_submitted': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestReviewRequested) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested>(
-            value: final value
-          ) =>
-            {
-              'pull_request_review_requested': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (automationCompleted) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted>(
-            value: final value
-          ) =>
-            {
-              'automation_completed': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (interval) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval>(value: final value) => {'interval': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueOpened) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened>(value: final value) => {'issue_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueLabeled) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled>(value: final value) => {'issue_labeled': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (workflowRun) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersWorkflowRun>(value: final value) => {'workflow_run': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestOpened) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpened>(value: final value) => {'pull_request_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestSynchronize) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronize>(value: final value) => {'pull_request_synchronize': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestMerged) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMerged>(value: final value) => {'pull_request_merged': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueComment) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueComment>(value: final value) => {'issue_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestComment) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestComment>(value: final value) => {'pull_request_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionOpened) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpened>(value: final value) => {'discussion_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionUpdated) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated>(value: final value) => {'discussion_updated': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionComment) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment>(value: final value) => {'discussion_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueAssigned) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned>(value: final value) => {'issue_assigned': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestAssigned) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned>(value: final value) => {'pull_request_assigned': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subIssueAdded) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded>(value: final value) => {'sub_issue_added': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReadyForReview) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview>(value: final value) => {'pull_request_ready_for_review': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestLabeled) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeled>(value: final value) => {'pull_request_labeled': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestMergeConflict) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflict>(value: final value) => {'pull_request_merge_conflict': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReviewSubmitted) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>(value: final value) => {'pull_request_review_submitted': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReviewRequested) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequested>(value: final value) => {'pull_request_review_requested': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (automationCompleted) {
+      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompleted>(value: final value) => {'automation_completed': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

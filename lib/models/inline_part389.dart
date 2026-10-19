@@ -7,595 +7,276 @@ part of 'inline.dart';
 class ReposUpdateBranchProtectionRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Require status checks to pass before merging. Set to `null` to disable.
-  final ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks?
-      requiredStatusChecks;
-
+  final ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks? requiredStatusChecks;
   /// Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
   final bool? enforceAdmins;
-
   /// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
-  final ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews?
-      requiredPullRequestReviews;
-
+  final ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews? requiredPullRequestReviews;
   /// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
   final ReposUpdateBranchProtectionRequestBodyRestrictions? restrictions;
-
   /// Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
   final SdkOptional<bool> requiredLinearHistory;
-
   /// Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
   final SdkOptional<bool?> allowForcePushes;
-
   /// Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
   final SdkOptional<bool> allowDeletions;
-
   /// If set to `true`, the `restrictions` branch protection settings which limits who can push will also block pushes which create new branches, unless the push is initiated by a user, team, or app which has the ability to push. Set to `true` to restrict new branch creation. Default: `false`.
   final SdkOptional<bool> blockCreations;
-
   /// Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to `false` to disable. Default: `false`.
   final SdkOptional<bool> requiredConversationResolution;
-
   /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
   final SdkOptional<bool> lockBranch;
-
   /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
   final SdkOptional<bool> allowForkSyncing;
 
-  const ReposUpdateBranchProtectionRequestBody(
-      {required this.requiredStatusChecks,
-      required this.enforceAdmins,
-      required this.requiredPullRequestReviews,
-      required this.restrictions,
-      this.requiredLinearHistory = const SdkOmitted(),
-      this.allowForcePushes = const SdkOmitted(),
-      this.allowDeletions = const SdkOmitted(),
-      this.blockCreations = const SdkOmitted(),
-      this.requiredConversationResolution = const SdkOmitted(),
-      this.lockBranch = const SdkOmitted(),
-      this.allowForkSyncing = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBody({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory = const SdkOmitted(), this.allowForcePushes = const SdkOmitted(), this.allowDeletions = const SdkOmitted(), this.blockCreations = const SdkOmitted(), this.requiredConversationResolution = const SdkOmitted(), this.lockBranch = const SdkOmitted(), this.allowForkSyncing = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBody Function(
-      {ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks?
-          requiredStatusChecks,
-      bool? enforceAdmins,
-      ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews?
-          requiredPullRequestReviews,
-      ReposUpdateBranchProtectionRequestBodyRestrictions? restrictions,
-      SdkOptional<bool> requiredLinearHistory,
-      SdkOptional<bool?> allowForcePushes,
-      SdkOptional<bool> allowDeletions,
-      SdkOptional<bool> blockCreations,
-      SdkOptional<bool> requiredConversationResolution,
-      SdkOptional<bool> lockBranch,
-      SdkOptional<bool> allowForkSyncing}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBody Function({ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks? requiredStatusChecks, bool? enforceAdmins, ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews? requiredPullRequestReviews, ReposUpdateBranchProtectionRequestBodyRestrictions? restrictions, SdkOptional<bool> requiredLinearHistory, SdkOptional<bool?> allowForcePushes, SdkOptional<bool> allowDeletions, SdkOptional<bool> blockCreations, SdkOptional<bool> requiredConversationResolution, SdkOptional<bool> lockBranch, SdkOptional<bool> allowForkSyncing}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBody _copyWith(
-          {Object? requiredStatusChecks = sdkOmittedValue,
-          Object? enforceAdmins = sdkOmittedValue,
-          Object? requiredPullRequestReviews = sdkOmittedValue,
-          Object? restrictions = sdkOmittedValue,
-          Object? requiredLinearHistory = sdkOmittedValue,
-          Object? allowForcePushes = sdkOmittedValue,
-          Object? allowDeletions = sdkOmittedValue,
-          Object? blockCreations = sdkOmittedValue,
-          Object? requiredConversationResolution = sdkOmittedValue,
-          Object? lockBranch = sdkOmittedValue,
-          Object? allowForkSyncing = sdkOmittedValue}) =>
-      ReposUpdateBranchProtectionRequestBody(
-        requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue)
-            ? this.requiredStatusChecks
-            : requiredStatusChecks
-                as ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks?,
-        enforceAdmins: identical(enforceAdmins, sdkOmittedValue)
-            ? this.enforceAdmins
-            : enforceAdmins as bool?,
-        requiredPullRequestReviews: identical(
-                requiredPullRequestReviews, sdkOmittedValue)
-            ? this.requiredPullRequestReviews
-            : requiredPullRequestReviews
-                as ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews?,
-        restrictions: identical(restrictions, sdkOmittedValue)
-            ? this.restrictions
-            : restrictions
-                as ReposUpdateBranchProtectionRequestBodyRestrictions?,
-        requiredLinearHistory: identical(requiredLinearHistory, sdkOmittedValue)
-            ? this.requiredLinearHistory
-            : requiredLinearHistory as SdkOptional<bool>,
-        allowForcePushes: identical(allowForcePushes, sdkOmittedValue)
-            ? this.allowForcePushes
-            : allowForcePushes as SdkOptional<bool?>,
-        allowDeletions: identical(allowDeletions, sdkOmittedValue)
-            ? this.allowDeletions
-            : allowDeletions as SdkOptional<bool>,
-        blockCreations: identical(blockCreations, sdkOmittedValue)
-            ? this.blockCreations
-            : blockCreations as SdkOptional<bool>,
-        requiredConversationResolution:
-            identical(requiredConversationResolution, sdkOmittedValue)
-                ? this.requiredConversationResolution
-                : requiredConversationResolution as SdkOptional<bool>,
-        lockBranch: identical(lockBranch, sdkOmittedValue)
-            ? this.lockBranch
-            : lockBranch as SdkOptional<bool>,
-        allowForkSyncing: identical(allowForkSyncing, sdkOmittedValue)
-            ? this.allowForkSyncing
-            : allowForkSyncing as SdkOptional<bool>,
-      );
+  ReposUpdateBranchProtectionRequestBody _copyWith({Object? requiredStatusChecks = sdkOmittedValue, Object? enforceAdmins = sdkOmittedValue, Object? requiredPullRequestReviews = sdkOmittedValue, Object? restrictions = sdkOmittedValue, Object? requiredLinearHistory = sdkOmittedValue, Object? allowForcePushes = sdkOmittedValue, Object? allowDeletions = sdkOmittedValue, Object? blockCreations = sdkOmittedValue, Object? requiredConversationResolution = sdkOmittedValue, Object? lockBranch = sdkOmittedValue, Object? allowForkSyncing = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBody(
+    requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue) ? this.requiredStatusChecks : requiredStatusChecks as ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks?,
+    enforceAdmins: identical(enforceAdmins, sdkOmittedValue) ? this.enforceAdmins : enforceAdmins as bool?,
+    requiredPullRequestReviews: identical(requiredPullRequestReviews, sdkOmittedValue) ? this.requiredPullRequestReviews : requiredPullRequestReviews as ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews?,
+    restrictions: identical(restrictions, sdkOmittedValue) ? this.restrictions : restrictions as ReposUpdateBranchProtectionRequestBodyRestrictions?,
+    requiredLinearHistory: identical(requiredLinearHistory, sdkOmittedValue) ? this.requiredLinearHistory : requiredLinearHistory as SdkOptional<bool>,
+    allowForcePushes: identical(allowForcePushes, sdkOmittedValue) ? this.allowForcePushes : allowForcePushes as SdkOptional<bool?>,
+    allowDeletions: identical(allowDeletions, sdkOmittedValue) ? this.allowDeletions : allowDeletions as SdkOptional<bool>,
+    blockCreations: identical(blockCreations, sdkOmittedValue) ? this.blockCreations : blockCreations as SdkOptional<bool>,
+    requiredConversationResolution: identical(requiredConversationResolution, sdkOmittedValue) ? this.requiredConversationResolution : requiredConversationResolution as SdkOptional<bool>,
+    lockBranch: identical(lockBranch, sdkOmittedValue) ? this.lockBranch : lockBranch as SdkOptional<bool>,
+    allowForkSyncing: identical(allowForkSyncing, sdkOmittedValue) ? this.allowForkSyncing : allowForkSyncing as SdkOptional<bool>,
+  );
 
-  factory ReposUpdateBranchProtectionRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateBranchProtectionRequestBody(
-        requiredStatusChecks: json.containsKey('required_status_checks')
-            ? json['required_status_checks'] != null
-                ? ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks
-                    .fromJson(
-                        json['required_status_checks'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'required_status_checks', 'Required property is missing'),
-        enforceAdmins: json.containsKey('enforce_admins')
-            ? json['enforce_admins'] as bool?
-            : throw ArgumentError.value(
-                null, 'enforce_admins', 'Required property is missing'),
-        requiredPullRequestReviews: json
-                .containsKey('required_pull_request_reviews')
-            ? json['required_pull_request_reviews'] != null
-                ? ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews
-                    .fromJson(json['required_pull_request_reviews']
-                        as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(null, 'required_pull_request_reviews',
-                'Required property is missing'),
-        restrictions: json.containsKey('restrictions')
-            ? json['restrictions'] != null
-                ? ReposUpdateBranchProtectionRequestBodyRestrictions.fromJson(
-                    json['restrictions'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'restrictions', 'Required property is missing'),
-        requiredLinearHistory: json['required_linear_history'] != null
-            ? SdkPresent((json['required_linear_history'] as bool?)!)
-            : const SdkOmitted(),
-        allowForcePushes: json.containsKey('allow_force_pushes')
-            ? SdkPresent(json['allow_force_pushes'] as bool?)
-            : const SdkOmitted(),
-        allowDeletions: json['allow_deletions'] != null
-            ? SdkPresent((json['allow_deletions'] as bool?)!)
-            : const SdkOmitted(),
-        blockCreations: json['block_creations'] != null
-            ? SdkPresent((json['block_creations'] as bool?)!)
-            : const SdkOmitted(),
-        requiredConversationResolution:
-            json['required_conversation_resolution'] != null
-                ? SdkPresent(
-                    (json['required_conversation_resolution'] as bool?)!)
-                : const SdkOmitted(),
-        lockBranch: json['lock_branch'] != null
-            ? SdkPresent((json['lock_branch'] as bool?)!)
-            : const SdkOmitted(),
-        allowForkSyncing: json['allow_fork_syncing'] != null
-            ? SdkPresent((json['allow_fork_syncing'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateBranchProtectionRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBody(
+    requiredStatusChecks: json.containsKey('required_status_checks') ? json['required_status_checks'] != null ? ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'required_status_checks', 'Required property is missing'),
+    enforceAdmins: json.containsKey('enforce_admins') ? json['enforce_admins'] as bool? : throw ArgumentError.value(null, 'enforce_admins', 'Required property is missing'),
+    requiredPullRequestReviews: json.containsKey('required_pull_request_reviews') ? json['required_pull_request_reviews'] != null ? ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'required_pull_request_reviews', 'Required property is missing'),
+    restrictions: json.containsKey('restrictions') ? json['restrictions'] != null ? ReposUpdateBranchProtectionRequestBodyRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'restrictions', 'Required property is missing'),
+    requiredLinearHistory: json['required_linear_history'] != null ? SdkPresent((json['required_linear_history'] as bool?)!) : const SdkOmitted(),
+    allowForcePushes: json.containsKey('allow_force_pushes') ? SdkPresent(json['allow_force_pushes'] as bool?) : const SdkOmitted(),
+    allowDeletions: json['allow_deletions'] != null ? SdkPresent((json['allow_deletions'] as bool?)!) : const SdkOmitted(),
+    blockCreations: json['block_creations'] != null ? SdkPresent((json['block_creations'] as bool?)!) : const SdkOmitted(),
+    requiredConversationResolution: json['required_conversation_resolution'] != null ? SdkPresent((json['required_conversation_resolution'] as bool?)!) : const SdkOmitted(),
+    lockBranch: json['lock_branch'] != null ? SdkPresent((json['lock_branch'] as bool?)!) : const SdkOmitted(),
+    allowForkSyncing: json['allow_fork_syncing'] != null ? SdkPresent((json['allow_fork_syncing'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'required_status_checks': requiredStatusChecks?.toJson(),
-        'enforce_admins': enforceAdmins,
-        'required_pull_request_reviews': requiredPullRequestReviews?.toJson(),
-        'restrictions': restrictions?.toJson(),
-        ...switch (requiredLinearHistory) {
-          SdkPresent<bool>(value: final value) => {
-              'required_linear_history': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowForcePushes) {
-          SdkPresent<bool?>(value: final value) => {
-              'allow_force_pushes': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowDeletions) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_deletions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blockCreations) {
-          SdkPresent<bool>(value: final value) => {
-              'block_creations': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredConversationResolution) {
-          SdkPresent<bool>(value: final value) => {
-              'required_conversation_resolution': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lockBranch) {
-          SdkPresent<bool>(value: final value) => {
-              'lock_branch': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowForkSyncing) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_fork_syncing': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'required_status_checks': requiredStatusChecks?.toJson(),
+    'enforce_admins': enforceAdmins,
+    'required_pull_request_reviews': requiredPullRequestReviews?.toJson(),
+    'restrictions': restrictions?.toJson(),
+    ...switch (requiredLinearHistory) {
+      SdkPresent<bool>(value: final value) => {'required_linear_history': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowForcePushes) {
+      SdkPresent<bool?>(value: final value) => {'allow_force_pushes': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowDeletions) {
+      SdkPresent<bool>(value: final value) => {'allow_deletions': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blockCreations) {
+      SdkPresent<bool>(value: final value) => {'block_creations': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredConversationResolution) {
+      SdkPresent<bool>(value: final value) => {'required_conversation_resolution': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lockBranch) {
+      SdkPresent<bool>(value: final value) => {'lock_branch': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowForkSyncing) {
+      SdkPresent<bool>(value: final value) => {'allow_fork_syncing': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
 class ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The list of user `login`s with dismissal access
   final SdkOptional<List<String>> users;
-
   /// The list of team `slug`s with dismissal access
   final SdkOptional<List<String>> teams;
-
   /// The list of app `slug`s with dismissal access
   final SdkOptional<List<String>> apps;
 
-  const ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions(
-      {this.users = const SdkOmitted(),
-      this.teams = const SdkOmitted(),
-      this.apps = const SdkOmitted()});
+  const ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions({this.users = const SdkOmitted(), this.teams = const SdkOmitted(), this.apps = const SdkOmitted()});
 
-  ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions Function(
-      {SdkOptional<List<String>> users,
-      SdkOptional<List<String>> teams,
-      SdkOptional<List<String>> apps}) get copyWith => _copyWith;
+  ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions Function({SdkOptional<List<String>> users, SdkOptional<List<String>> teams, SdkOptional<List<String>> apps}) get copyWith => _copyWith;
 
-  ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions
-      _copyWith(
-              {Object? users = sdkOmittedValue,
-              Object? teams = sdkOmittedValue,
-              Object? apps = sdkOmittedValue}) =>
-          ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions(
-            users: identical(users, sdkOmittedValue)
-                ? this.users
-                : users as SdkOptional<List<String>>,
-            teams: identical(teams, sdkOmittedValue)
-                ? this.teams
-                : teams as SdkOptional<List<String>>,
-            apps: identical(apps, sdkOmittedValue)
-                ? this.apps
-                : apps as SdkOptional<List<String>>,
-          );
+  ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions(
+    users: identical(users, sdkOmittedValue) ? this.users : users as SdkOptional<List<String>>,
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as SdkOptional<List<String>>,
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<String>>,
+  );
 
-  factory ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions(
-        users: json['users'] != null
-            ? SdkPresent(
-                ((json['users'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        teams: json['teams'] != null
-            ? SdkPresent(
-                ((json['teams'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        apps: json['apps'] != null
-            ? SdkPresent(
-                ((json['apps'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions.fromJson(Map<String, dynamic> json) => ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions(
+    users: json['users'] != null ? SdkPresent(((json['users'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teams: json['teams'] != null ? SdkPresent(((json['teams'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (users) {
-          SdkPresent<List<String>>(value: final value) => {
-              'users': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (teams) {
-          SdkPresent<List<String>>(value: final value) => {
-              'teams': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (apps) {
-          SdkPresent<List<String>>(value: final value) => {
-              'apps': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (users) {
+      SdkPresent<List<String>>(value: final value) => {'users': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (teams) {
+      SdkPresent<List<String>>(value: final value) => {'teams': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (apps) {
+      SdkPresent<List<String>>(value: final value) => {'apps': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Allow specific users, teams, or apps to bypass pull request requirements.
 class ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The list of user `login`s allowed to bypass pull request requirements.
   final SdkOptional<List<String>> users;
-
   /// The list of team `slug`s allowed to bypass pull request requirements.
   final SdkOptional<List<String>> teams;
-
   /// The list of app `slug`s allowed to bypass pull request requirements.
   final SdkOptional<List<String>> apps;
 
-  const ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances(
-      {this.users = const SdkOmitted(),
-      this.teams = const SdkOmitted(),
-      this.apps = const SdkOmitted()});
+  const ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances({this.users = const SdkOmitted(), this.teams = const SdkOmitted(), this.apps = const SdkOmitted()});
 
-  ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances Function(
-      {SdkOptional<List<String>> users,
-      SdkOptional<List<String>> teams,
-      SdkOptional<List<String>> apps}) get copyWith => _copyWith;
+  ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances Function({SdkOptional<List<String>> users, SdkOptional<List<String>> teams, SdkOptional<List<String>> apps}) get copyWith => _copyWith;
 
-  ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances
-      _copyWith(
-              {Object? users = sdkOmittedValue,
-              Object? teams = sdkOmittedValue,
-              Object? apps = sdkOmittedValue}) =>
-          ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances(
-            users: identical(users, sdkOmittedValue)
-                ? this.users
-                : users as SdkOptional<List<String>>,
-            teams: identical(teams, sdkOmittedValue)
-                ? this.teams
-                : teams as SdkOptional<List<String>>,
-            apps: identical(apps, sdkOmittedValue)
-                ? this.apps
-                : apps as SdkOptional<List<String>>,
-          );
+  ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances(
+    users: identical(users, sdkOmittedValue) ? this.users : users as SdkOptional<List<String>>,
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as SdkOptional<List<String>>,
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<String>>,
+  );
 
-  factory ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances(
-        users: json['users'] != null
-            ? SdkPresent(
-                ((json['users'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        teams: json['teams'] != null
-            ? SdkPresent(
-                ((json['teams'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        apps: json['apps'] != null
-            ? SdkPresent(
-                ((json['apps'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances.fromJson(Map<String, dynamic> json) => ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances(
+    users: json['users'] != null ? SdkPresent(((json['users'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teams: json['teams'] != null ? SdkPresent(((json['teams'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (users) {
-          SdkPresent<List<String>>(value: final value) => {
-              'users': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (teams) {
-          SdkPresent<List<String>>(value: final value) => {
-              'teams': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (apps) {
-          SdkPresent<List<String>>(value: final value) => {
-              'apps': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (users) {
+      SdkPresent<List<String>>(value: final value) => {'users': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (teams) {
+      SdkPresent<List<String>>(value: final value) => {'teams': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (apps) {
+      SdkPresent<List<String>>(value: final value) => {'apps': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdatePullRequestReviewProtectionRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
-  final SdkOptional<
-          ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions>
-      dismissalRestrictions;
-
+  final SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions> dismissalRestrictions;
   /// Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
   final SdkOptional<bool> dismissStaleReviews;
-
   /// Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) have reviewed.
   final SdkOptional<bool> requireCodeOwnerReviews;
-
   /// Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
   final SdkOptional<int> requiredApprovingReviewCount;
-
   /// Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`
   final SdkOptional<bool> requireLastPushApproval;
-
   /// Allow specific users, teams, or apps to bypass pull request requirements.
-  final SdkOptional<
-          ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances>
-      bypassPullRequestAllowances;
+  final SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances> bypassPullRequestAllowances;
 
-  const ReposUpdatePullRequestReviewProtectionRequestBody(
-      {this.dismissalRestrictions = const SdkOmitted(),
-      this.dismissStaleReviews = const SdkOmitted(),
-      this.requireCodeOwnerReviews = const SdkOmitted(),
-      this.requiredApprovingReviewCount = const SdkOmitted(),
-      this.requireLastPushApproval = const SdkOmitted(),
-      this.bypassPullRequestAllowances = const SdkOmitted()});
+  const ReposUpdatePullRequestReviewProtectionRequestBody({this.dismissalRestrictions = const SdkOmitted(), this.dismissStaleReviews = const SdkOmitted(), this.requireCodeOwnerReviews = const SdkOmitted(), this.requiredApprovingReviewCount = const SdkOmitted(), this.requireLastPushApproval = const SdkOmitted(), this.bypassPullRequestAllowances = const SdkOmitted()});
 
-  ReposUpdatePullRequestReviewProtectionRequestBody Function(
-      {SdkOptional<
-              ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions>
-          dismissalRestrictions,
-      SdkOptional<bool> dismissStaleReviews,
-      SdkOptional<bool> requireCodeOwnerReviews,
-      SdkOptional<int> requiredApprovingReviewCount,
-      SdkOptional<bool> requireLastPushApproval,
-      SdkOptional<
-              ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances>
-          bypassPullRequestAllowances}) get copyWith => _copyWith;
+  ReposUpdatePullRequestReviewProtectionRequestBody Function({SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions> dismissalRestrictions, SdkOptional<bool> dismissStaleReviews, SdkOptional<bool> requireCodeOwnerReviews, SdkOptional<int> requiredApprovingReviewCount, SdkOptional<bool> requireLastPushApproval, SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances> bypassPullRequestAllowances}) get copyWith => _copyWith;
 
-  ReposUpdatePullRequestReviewProtectionRequestBody _copyWith(
-          {Object? dismissalRestrictions = sdkOmittedValue,
-          Object? dismissStaleReviews = sdkOmittedValue,
-          Object? requireCodeOwnerReviews = sdkOmittedValue,
-          Object? requiredApprovingReviewCount = sdkOmittedValue,
-          Object? requireLastPushApproval = sdkOmittedValue,
-          Object? bypassPullRequestAllowances = sdkOmittedValue}) =>
-      ReposUpdatePullRequestReviewProtectionRequestBody(
-        dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue)
-            ? this.dismissalRestrictions
-            : dismissalRestrictions as SdkOptional<
-                ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions>,
-        dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue)
-            ? this.dismissStaleReviews
-            : dismissStaleReviews as SdkOptional<bool>,
-        requireCodeOwnerReviews:
-            identical(requireCodeOwnerReviews, sdkOmittedValue)
-                ? this.requireCodeOwnerReviews
-                : requireCodeOwnerReviews as SdkOptional<bool>,
-        requiredApprovingReviewCount:
-            identical(requiredApprovingReviewCount, sdkOmittedValue)
-                ? this.requiredApprovingReviewCount
-                : requiredApprovingReviewCount as SdkOptional<int>,
-        requireLastPushApproval:
-            identical(requireLastPushApproval, sdkOmittedValue)
-                ? this.requireLastPushApproval
-                : requireLastPushApproval as SdkOptional<bool>,
-        bypassPullRequestAllowances: identical(
-                bypassPullRequestAllowances, sdkOmittedValue)
-            ? this.bypassPullRequestAllowances
-            : bypassPullRequestAllowances as SdkOptional<
-                ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances>,
-      );
+  ReposUpdatePullRequestReviewProtectionRequestBody _copyWith({Object? dismissalRestrictions = sdkOmittedValue, Object? dismissStaleReviews = sdkOmittedValue, Object? requireCodeOwnerReviews = sdkOmittedValue, Object? requiredApprovingReviewCount = sdkOmittedValue, Object? requireLastPushApproval = sdkOmittedValue, Object? bypassPullRequestAllowances = sdkOmittedValue}) => ReposUpdatePullRequestReviewProtectionRequestBody(
+    dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue) ? this.dismissalRestrictions : dismissalRestrictions as SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions>,
+    dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue) ? this.dismissStaleReviews : dismissStaleReviews as SdkOptional<bool>,
+    requireCodeOwnerReviews: identical(requireCodeOwnerReviews, sdkOmittedValue) ? this.requireCodeOwnerReviews : requireCodeOwnerReviews as SdkOptional<bool>,
+    requiredApprovingReviewCount: identical(requiredApprovingReviewCount, sdkOmittedValue) ? this.requiredApprovingReviewCount : requiredApprovingReviewCount as SdkOptional<int>,
+    requireLastPushApproval: identical(requireLastPushApproval, sdkOmittedValue) ? this.requireLastPushApproval : requireLastPushApproval as SdkOptional<bool>,
+    bypassPullRequestAllowances: identical(bypassPullRequestAllowances, sdkOmittedValue) ? this.bypassPullRequestAllowances : bypassPullRequestAllowances as SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances>,
+  );
 
-  factory ReposUpdatePullRequestReviewProtectionRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdatePullRequestReviewProtectionRequestBody(
-        dismissalRestrictions: json['dismissal_restrictions'] != null
-            ? SdkPresent((json['dismissal_restrictions'] != null
-                ? ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions
-                    .fromJson(
-                        json['dismissal_restrictions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        dismissStaleReviews: json['dismiss_stale_reviews'] != null
-            ? SdkPresent((json['dismiss_stale_reviews'] as bool?)!)
-            : const SdkOmitted(),
-        requireCodeOwnerReviews: json['require_code_owner_reviews'] != null
-            ? SdkPresent((json['require_code_owner_reviews'] as bool?)!)
-            : const SdkOmitted(),
-        requiredApprovingReviewCount: json['required_approving_review_count'] !=
-                null
-            ? SdkPresent(
-                ((json['required_approving_review_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        requireLastPushApproval: json['require_last_push_approval'] != null
-            ? SdkPresent((json['require_last_push_approval'] as bool?)!)
-            : const SdkOmitted(),
-        bypassPullRequestAllowances: json['bypass_pull_request_allowances'] !=
-                null
-            ? SdkPresent((json['bypass_pull_request_allowances'] != null
-                ? ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances
-                    .fromJson(json['bypass_pull_request_allowances']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdatePullRequestReviewProtectionRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdatePullRequestReviewProtectionRequestBody(
+    dismissalRestrictions: json['dismissal_restrictions'] != null ? SdkPresent((json['dismissal_restrictions'] != null ? ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    dismissStaleReviews: json['dismiss_stale_reviews'] != null ? SdkPresent((json['dismiss_stale_reviews'] as bool?)!) : const SdkOmitted(),
+    requireCodeOwnerReviews: json['require_code_owner_reviews'] != null ? SdkPresent((json['require_code_owner_reviews'] as bool?)!) : const SdkOmitted(),
+    requiredApprovingReviewCount: json['required_approving_review_count'] != null ? SdkPresent(((json['required_approving_review_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    requireLastPushApproval: json['require_last_push_approval'] != null ? SdkPresent((json['require_last_push_approval'] as bool?)!) : const SdkOmitted(),
+    bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? SdkPresent((json['bypass_pull_request_allowances'] != null ? ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (dismissalRestrictions) {
-          SdkPresent<
-                ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions>(
-            value: final value
-          ) =>
-            {
-              'dismissal_restrictions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dismissStaleReviews) {
-          SdkPresent<bool>(value: final value) => {
-              'dismiss_stale_reviews': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireCodeOwnerReviews) {
-          SdkPresent<bool>(value: final value) => {
-              'require_code_owner_reviews': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredApprovingReviewCount) {
-          SdkPresent<int>(value: final value) => {
-              'required_approving_review_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireLastPushApproval) {
-          SdkPresent<bool>(value: final value) => {
-              'require_last_push_approval': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bypassPullRequestAllowances) {
-          SdkPresent<
-                ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances>(
-            value: final value
-          ) =>
-            {
-              'bypass_pull_request_allowances': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (dismissalRestrictions) {
+      SdkPresent<ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions>(value: final value) => {'dismissal_restrictions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dismissStaleReviews) {
+      SdkPresent<bool>(value: final value) => {'dismiss_stale_reviews': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requireCodeOwnerReviews) {
+      SdkPresent<bool>(value: final value) => {'require_code_owner_reviews': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredApprovingReviewCount) {
+      SdkPresent<int>(value: final value) => {'required_approving_review_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requireLastPushApproval) {
+      SdkPresent<bool>(value: final value) => {'require_last_push_approval': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bypassPullRequestAllowances) {
+      SdkPresent<ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances>(value: final value) => {'bypass_pull_request_allowances': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdateStatusCheckProtectionRequestBodyChecksItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the required check
   final String context;
-
   /// The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
   final SdkOptional<int> appId;
 
-  const ReposUpdateStatusCheckProtectionRequestBodyChecksItem(
-      {required this.context, this.appId = const SdkOmitted()});
+  const ReposUpdateStatusCheckProtectionRequestBodyChecksItem({required this.context, this.appId = const SdkOmitted()});
 
-  ReposUpdateStatusCheckProtectionRequestBodyChecksItem Function(
-      {String context, SdkOptional<int> appId}) get copyWith => _copyWith;
+  ReposUpdateStatusCheckProtectionRequestBodyChecksItem Function({String context, SdkOptional<int> appId}) get copyWith => _copyWith;
 
-  ReposUpdateStatusCheckProtectionRequestBodyChecksItem _copyWith(
-          {Object? context = sdkOmittedValue,
-          Object? appId = sdkOmittedValue}) =>
-      ReposUpdateStatusCheckProtectionRequestBodyChecksItem(
-        context: identical(context, sdkOmittedValue)
-            ? this.context
-            : context as String,
-        appId: identical(appId, sdkOmittedValue)
-            ? this.appId
-            : appId as SdkOptional<int>,
-      );
+  ReposUpdateStatusCheckProtectionRequestBodyChecksItem _copyWith({Object? context = sdkOmittedValue, Object? appId = sdkOmittedValue}) => ReposUpdateStatusCheckProtectionRequestBodyChecksItem(
+    context: identical(context, sdkOmittedValue) ? this.context : context as String,
+    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as SdkOptional<int>,
+  );
 
-  factory ReposUpdateStatusCheckProtectionRequestBodyChecksItem.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateStatusCheckProtectionRequestBodyChecksItem(
-        context: (json['context'] as String?)!,
-        appId: json['app_id'] != null
-            ? SdkPresent(((json['app_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateStatusCheckProtectionRequestBodyChecksItem.fromJson(Map<String, dynamic> json) => ReposUpdateStatusCheckProtectionRequestBodyChecksItem(
+    context: (json['context'] as String?)!,
+    appId: json['app_id'] != null ? SdkPresent(((json['app_id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'context': context,
-        ...switch (appId) {
-          SdkPresent<int>(value: final value) => {
-              'app_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'context': context,
+    ...switch (appId) {
+      SdkPresent<int>(value: final value) => {'app_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -8,119 +8,59 @@ part of 'dependency_graph.dart';
 class Dependency {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.
   final SdkOptional<String> packageUrl;
-
   /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
   final SdkOptional<Map<String, dynamic>> metadata;
-
   /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
   final SdkOptional<DependencyRelationship> relationship;
-
   /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
   final SdkOptional<DependencyScope> scope;
-
   /// Array of package-url (PURLs) of direct child dependencies.
   final SdkOptional<List<String>> dependencies;
 
-  const Dependency(
-      {this.packageUrl = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.relationship = const SdkOmitted(),
-      this.scope = const SdkOmitted(),
-      this.dependencies = const SdkOmitted()});
+  const Dependency({this.packageUrl = const SdkOmitted(), this.metadata = const SdkOmitted(), this.relationship = const SdkOmitted(), this.scope = const SdkOmitted(), this.dependencies = const SdkOmitted()});
 
-  Dependency Function(
-      {SdkOptional<String> packageUrl,
-      SdkOptional<Map<String, dynamic>> metadata,
-      SdkOptional<DependencyRelationship> relationship,
-      SdkOptional<DependencyScope> scope,
-      SdkOptional<List<String>> dependencies}) get copyWith => _copyWith;
+  Dependency Function({SdkOptional<String> packageUrl, SdkOptional<Map<String, dynamic>> metadata, SdkOptional<DependencyRelationship> relationship, SdkOptional<DependencyScope> scope, SdkOptional<List<String>> dependencies}) get copyWith => _copyWith;
 
-  Dependency _copyWith(
-          {Object? packageUrl = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? relationship = sdkOmittedValue,
-          Object? scope = sdkOmittedValue,
-          Object? dependencies = sdkOmittedValue}) =>
-      Dependency(
-        packageUrl: identical(packageUrl, sdkOmittedValue)
-            ? this.packageUrl
-            : packageUrl as SdkOptional<String>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Map<String, dynamic>>,
-        relationship: identical(relationship, sdkOmittedValue)
-            ? this.relationship
-            : relationship as SdkOptional<DependencyRelationship>,
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as SdkOptional<DependencyScope>,
-        dependencies: identical(dependencies, sdkOmittedValue)
-            ? this.dependencies
-            : dependencies as SdkOptional<List<String>>,
-      );
+  Dependency _copyWith({Object? packageUrl = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? relationship = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? dependencies = sdkOmittedValue}) => Dependency(
+    packageUrl: identical(packageUrl, sdkOmittedValue) ? this.packageUrl : packageUrl as SdkOptional<String>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, dynamic>>,
+    relationship: identical(relationship, sdkOmittedValue) ? this.relationship : relationship as SdkOptional<DependencyRelationship>,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<DependencyScope>,
+    dependencies: identical(dependencies, sdkOmittedValue) ? this.dependencies : dependencies as SdkOptional<List<String>>,
+  );
 
   factory Dependency.fromJson(Map<String, dynamic> json) => Dependency(
-        packageUrl: json['package_url'] != null
-            ? SdkPresent((json['package_url'] as String?)!)
-            : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] == null
-                ? null
-                : json['metadata'] as Map<String, dynamic>)!)
-            : const SdkOmitted(),
-        relationship: json['relationship'] != null
-            ? SdkPresent((json['relationship'] != null
-                ? DependencyRelationship.fromJson(
-                    json['relationship'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        scope: json['scope'] != null
-            ? SdkPresent((json['scope'] != null
-                ? DependencyScope.fromJson(json['scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependencies: json['dependencies'] != null
-            ? SdkPresent(((json['dependencies'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-      );
+    packageUrl: json['package_url'] != null ? SdkPresent((json['package_url'] as String?)!) : const SdkOmitted(),
+    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : json['metadata'] as Map<String, dynamic>)!) : const SdkOmitted(),
+    relationship: json['relationship'] != null ? SdkPresent((json['relationship'] != null ? DependencyRelationship.fromJson(json['relationship'] as String) : null)!) : const SdkOmitted(),
+    scope: json['scope'] != null ? SdkPresent((json['scope'] != null ? DependencyScope.fromJson(json['scope'] as String) : null)!) : const SdkOmitted(),
+    dependencies: json['dependencies'] != null ? SdkPresent(((json['dependencies'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (packageUrl) {
-          SdkPresent<String>(value: final value) => {
-              'package_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<Map<String, dynamic>>(value: final value) => {
-              'metadata': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (relationship) {
-          SdkPresent<DependencyRelationship>(value: final value) => {
-              'relationship': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (scope) {
-          SdkPresent<DependencyScope>(value: final value) => {
-              'scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependencies) {
-          SdkPresent<List<String>>(value: final value) => {
-              'dependencies': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (packageUrl) {
+      SdkPresent<String>(value: final value) => {'package_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<Map<String, dynamic>>(value: final value) => {'metadata': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (relationship) {
+      SdkPresent<DependencyRelationship>(value: final value) => {'relationship': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (scope) {
+      SdkPresent<DependencyScope>(value: final value) => {'scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dependencies) {
+      SdkPresent<List<String>>(value: final value) => {'dependencies': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class DependencyGraphDiffItemVulnerabilitiesItem {
@@ -131,53 +71,30 @@ class DependencyGraphDiffItemVulnerabilitiesItem {
   final String advisorySummary;
   final String advisoryUrl;
 
-  const DependencyGraphDiffItemVulnerabilitiesItem(
-      {required this.severity,
-      required this.advisoryGhsaId,
-      required this.advisorySummary,
-      required this.advisoryUrl});
+  const DependencyGraphDiffItemVulnerabilitiesItem({required this.severity, required this.advisoryGhsaId, required this.advisorySummary, required this.advisoryUrl});
 
-  DependencyGraphDiffItemVulnerabilitiesItem Function(
-      {String severity,
-      String advisoryGhsaId,
-      String advisorySummary,
-      String advisoryUrl}) get copyWith => _copyWith;
+  DependencyGraphDiffItemVulnerabilitiesItem Function({String severity, String advisoryGhsaId, String advisorySummary, String advisoryUrl}) get copyWith => _copyWith;
 
-  DependencyGraphDiffItemVulnerabilitiesItem _copyWith(
-          {Object? severity = sdkOmittedValue,
-          Object? advisoryGhsaId = sdkOmittedValue,
-          Object? advisorySummary = sdkOmittedValue,
-          Object? advisoryUrl = sdkOmittedValue}) =>
-      DependencyGraphDiffItemVulnerabilitiesItem(
-        severity: identical(severity, sdkOmittedValue)
-            ? this.severity
-            : severity as String,
-        advisoryGhsaId: identical(advisoryGhsaId, sdkOmittedValue)
-            ? this.advisoryGhsaId
-            : advisoryGhsaId as String,
-        advisorySummary: identical(advisorySummary, sdkOmittedValue)
-            ? this.advisorySummary
-            : advisorySummary as String,
-        advisoryUrl: identical(advisoryUrl, sdkOmittedValue)
-            ? this.advisoryUrl
-            : advisoryUrl as String,
-      );
+  DependencyGraphDiffItemVulnerabilitiesItem _copyWith({Object? severity = sdkOmittedValue, Object? advisoryGhsaId = sdkOmittedValue, Object? advisorySummary = sdkOmittedValue, Object? advisoryUrl = sdkOmittedValue}) => DependencyGraphDiffItemVulnerabilitiesItem(
+    severity: identical(severity, sdkOmittedValue) ? this.severity : severity as String,
+    advisoryGhsaId: identical(advisoryGhsaId, sdkOmittedValue) ? this.advisoryGhsaId : advisoryGhsaId as String,
+    advisorySummary: identical(advisorySummary, sdkOmittedValue) ? this.advisorySummary : advisorySummary as String,
+    advisoryUrl: identical(advisoryUrl, sdkOmittedValue) ? this.advisoryUrl : advisoryUrl as String,
+  );
 
-  factory DependencyGraphDiffItemVulnerabilitiesItem.fromJson(
-          Map<String, dynamic> json) =>
-      DependencyGraphDiffItemVulnerabilitiesItem(
-        severity: (json['severity'] as String?)!,
-        advisoryGhsaId: (json['advisory_ghsa_id'] as String?)!,
-        advisorySummary: (json['advisory_summary'] as String?)!,
-        advisoryUrl: (json['advisory_url'] as String?)!,
-      );
+  factory DependencyGraphDiffItemVulnerabilitiesItem.fromJson(Map<String, dynamic> json) => DependencyGraphDiffItemVulnerabilitiesItem(
+    severity: (json['severity'] as String?)!,
+    advisoryGhsaId: (json['advisory_ghsa_id'] as String?)!,
+    advisorySummary: (json['advisory_summary'] as String?)!,
+    advisoryUrl: (json['advisory_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'severity': severity,
-        'advisory_ghsa_id': advisoryGhsaId,
-        'advisory_summary': advisorySummary,
-        'advisory_url': advisoryUrl,
-      };
+    'severity': severity,
+    'advisory_ghsa_id': advisoryGhsaId,
+    'advisory_summary': advisorySummary,
+    'advisory_url': advisoryUrl,
+  };
 }
 
 class DependencyGraphDiffItem {
@@ -192,121 +109,51 @@ class DependencyGraphDiffItem {
   final String? license;
   final String? sourceRepositoryUrl;
   final List<DependencyGraphDiffItemVulnerabilitiesItem> vulnerabilities;
-
   /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
   final DependencyGraphDiffItemScope scope;
 
-  const DependencyGraphDiffItem(
-      {required this.changeType,
-      required this.manifest,
-      required this.ecosystem,
-      required this.name,
-      required this.version,
-      required this.packageUrl,
-      required this.license,
-      required this.sourceRepositoryUrl,
-      required this.vulnerabilities,
-      required this.scope});
+  const DependencyGraphDiffItem({required this.changeType, required this.manifest, required this.ecosystem, required this.name, required this.version, required this.packageUrl, required this.license, required this.sourceRepositoryUrl, required this.vulnerabilities, required this.scope});
 
-  DependencyGraphDiffItem Function(
-      {DependencyGraphDiffItemChangeType changeType,
-      String manifest,
-      String ecosystem,
-      String name,
-      String version,
-      String? packageUrl,
-      String? license,
-      String? sourceRepositoryUrl,
-      List<DependencyGraphDiffItemVulnerabilitiesItem> vulnerabilities,
-      DependencyGraphDiffItemScope scope}) get copyWith => _copyWith;
+  DependencyGraphDiffItem Function({DependencyGraphDiffItemChangeType changeType, String manifest, String ecosystem, String name, String version, String? packageUrl, String? license, String? sourceRepositoryUrl, List<DependencyGraphDiffItemVulnerabilitiesItem> vulnerabilities, DependencyGraphDiffItemScope scope}) get copyWith => _copyWith;
 
-  DependencyGraphDiffItem _copyWith(
-          {Object? changeType = sdkOmittedValue,
-          Object? manifest = sdkOmittedValue,
-          Object? ecosystem = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? packageUrl = sdkOmittedValue,
-          Object? license = sdkOmittedValue,
-          Object? sourceRepositoryUrl = sdkOmittedValue,
-          Object? vulnerabilities = sdkOmittedValue,
-          Object? scope = sdkOmittedValue}) =>
-      DependencyGraphDiffItem(
-        changeType: identical(changeType, sdkOmittedValue)
-            ? this.changeType
-            : changeType as DependencyGraphDiffItemChangeType,
-        manifest: identical(manifest, sdkOmittedValue)
-            ? this.manifest
-            : manifest as String,
-        ecosystem: identical(ecosystem, sdkOmittedValue)
-            ? this.ecosystem
-            : ecosystem as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as String,
-        packageUrl: identical(packageUrl, sdkOmittedValue)
-            ? this.packageUrl
-            : packageUrl as String?,
-        license: identical(license, sdkOmittedValue)
-            ? this.license
-            : license as String?,
-        sourceRepositoryUrl: identical(sourceRepositoryUrl, sdkOmittedValue)
-            ? this.sourceRepositoryUrl
-            : sourceRepositoryUrl as String?,
-        vulnerabilities: identical(vulnerabilities, sdkOmittedValue)
-            ? this.vulnerabilities
-            : vulnerabilities
-                as List<DependencyGraphDiffItemVulnerabilitiesItem>,
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as DependencyGraphDiffItemScope,
-      );
+  DependencyGraphDiffItem _copyWith({Object? changeType = sdkOmittedValue, Object? manifest = sdkOmittedValue, Object? ecosystem = sdkOmittedValue, Object? name = sdkOmittedValue, Object? version = sdkOmittedValue, Object? packageUrl = sdkOmittedValue, Object? license = sdkOmittedValue, Object? sourceRepositoryUrl = sdkOmittedValue, Object? vulnerabilities = sdkOmittedValue, Object? scope = sdkOmittedValue}) => DependencyGraphDiffItem(
+    changeType: identical(changeType, sdkOmittedValue) ? this.changeType : changeType as DependencyGraphDiffItemChangeType,
+    manifest: identical(manifest, sdkOmittedValue) ? this.manifest : manifest as String,
+    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    version: identical(version, sdkOmittedValue) ? this.version : version as String,
+    packageUrl: identical(packageUrl, sdkOmittedValue) ? this.packageUrl : packageUrl as String?,
+    license: identical(license, sdkOmittedValue) ? this.license : license as String?,
+    sourceRepositoryUrl: identical(sourceRepositoryUrl, sdkOmittedValue) ? this.sourceRepositoryUrl : sourceRepositoryUrl as String?,
+    vulnerabilities: identical(vulnerabilities, sdkOmittedValue) ? this.vulnerabilities : vulnerabilities as List<DependencyGraphDiffItemVulnerabilitiesItem>,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as DependencyGraphDiffItemScope,
+  );
 
-  factory DependencyGraphDiffItem.fromJson(Map<String, dynamic> json) =>
-      DependencyGraphDiffItem(
-        changeType: (json['change_type'] != null
-            ? DependencyGraphDiffItemChangeType.fromJson(
-                json['change_type'] as String)
-            : null)!,
-        manifest: (json['manifest'] as String?)!,
-        ecosystem: (json['ecosystem'] as String?)!,
-        name: (json['name'] as String?)!,
-        version: (json['version'] as String?)!,
-        packageUrl: json.containsKey('package_url')
-            ? json['package_url'] as String?
-            : throw ArgumentError.value(
-                null, 'package_url', 'Required property is missing'),
-        license: json.containsKey('license')
-            ? json['license'] as String?
-            : throw ArgumentError.value(
-                null, 'license', 'Required property is missing'),
-        sourceRepositoryUrl: json.containsKey('source_repository_url')
-            ? json['source_repository_url'] as String?
-            : throw ArgumentError.value(
-                null, 'source_repository_url', 'Required property is missing'),
-        vulnerabilities: ((json['vulnerabilities'] as List?)
-            ?.map((e) => DependencyGraphDiffItemVulnerabilitiesItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        scope: (json['scope'] != null
-            ? DependencyGraphDiffItemScope.fromJson(json['scope'] as String)
-            : null)!,
-      );
+  factory DependencyGraphDiffItem.fromJson(Map<String, dynamic> json) => DependencyGraphDiffItem(
+    changeType: (json['change_type'] != null ? DependencyGraphDiffItemChangeType.fromJson(json['change_type'] as String) : null)!,
+    manifest: (json['manifest'] as String?)!,
+    ecosystem: (json['ecosystem'] as String?)!,
+    name: (json['name'] as String?)!,
+    version: (json['version'] as String?)!,
+    packageUrl: json.containsKey('package_url') ? json['package_url'] as String? : throw ArgumentError.value(null, 'package_url', 'Required property is missing'),
+    license: json.containsKey('license') ? json['license'] as String? : throw ArgumentError.value(null, 'license', 'Required property is missing'),
+    sourceRepositoryUrl: json.containsKey('source_repository_url') ? json['source_repository_url'] as String? : throw ArgumentError.value(null, 'source_repository_url', 'Required property is missing'),
+    vulnerabilities: ((json['vulnerabilities'] as List?)?.map((e) => DependencyGraphDiffItemVulnerabilitiesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    scope: (json['scope'] != null ? DependencyGraphDiffItemScope.fromJson(json['scope'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'change_type': changeType.toJson(),
-        'manifest': manifest,
-        'ecosystem': ecosystem,
-        'name': name,
-        'version': version,
-        'package_url': packageUrl,
-        'license': license,
-        'source_repository_url': sourceRepositoryUrl,
-        'vulnerabilities':
-            vulnerabilities.map((item) => item.toJson()).toList(),
-        'scope': scope.toJson(),
-      };
+    'change_type': changeType.toJson(),
+    'manifest': manifest,
+    'ecosystem': ecosystem,
+    'name': name,
+    'version': version,
+    'package_url': packageUrl,
+    'license': license,
+    'source_repository_url': sourceRepositoryUrl,
+    'vulnerabilities': vulnerabilities.map((item) => item.toJson()).toList(),
+    'scope': scope.toJson(),
+  };
 }
 
 // DependencyGraphDiff = List<DependencyGraphDiffItem>
@@ -315,96 +162,61 @@ class DependencyGraphDiffItem {
 class DependencyGraphSpdxSbomSbomCreationInfo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The date and time the SPDX document was created.
   final String created;
-
   /// The tools that were used to generate the SPDX document.
   final List<String> creators;
 
-  const DependencyGraphSpdxSbomSbomCreationInfo(
-      {required this.created, required this.creators});
+  const DependencyGraphSpdxSbomSbomCreationInfo({required this.created, required this.creators});
 
-  DependencyGraphSpdxSbomSbomCreationInfo Function(
-      {String created, List<String> creators}) get copyWith => _copyWith;
+  DependencyGraphSpdxSbomSbomCreationInfo Function({String created, List<String> creators}) get copyWith => _copyWith;
 
-  DependencyGraphSpdxSbomSbomCreationInfo _copyWith(
-          {Object? created = sdkOmittedValue,
-          Object? creators = sdkOmittedValue}) =>
-      DependencyGraphSpdxSbomSbomCreationInfo(
-        created: identical(created, sdkOmittedValue)
-            ? this.created
-            : created as String,
-        creators: identical(creators, sdkOmittedValue)
-            ? this.creators
-            : creators as List<String>,
-      );
+  DependencyGraphSpdxSbomSbomCreationInfo _copyWith({Object? created = sdkOmittedValue, Object? creators = sdkOmittedValue}) => DependencyGraphSpdxSbomSbomCreationInfo(
+    created: identical(created, sdkOmittedValue) ? this.created : created as String,
+    creators: identical(creators, sdkOmittedValue) ? this.creators : creators as List<String>,
+  );
 
-  factory DependencyGraphSpdxSbomSbomCreationInfo.fromJson(
-          Map<String, dynamic> json) =>
-      DependencyGraphSpdxSbomSbomCreationInfo(
-        created: (json['created'] as String?)!,
-        creators:
-            ((json['creators'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory DependencyGraphSpdxSbomSbomCreationInfo.fromJson(Map<String, dynamic> json) => DependencyGraphSpdxSbomSbomCreationInfo(
+    created: (json['created'] as String?)!,
+    creators: ((json['creators'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'created': created,
-        'creators': creators,
-      };
+    'created': created,
+    'creators': creators,
+  };
 }
 
 /// Required object value serialized in the `externalRefs[]` wire field.
 class DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The category of reference to an external resource this reference refers to.
   final String referenceCategory;
-
   /// A locator for the particular external resource this reference refers to.
   final String referenceLocator;
-
   /// The category of reference to an external resource this reference refers to.
   final String referenceType;
 
-  const DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem(
-      {required this.referenceCategory,
-      required this.referenceLocator,
-      required this.referenceType});
+  const DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem({required this.referenceCategory, required this.referenceLocator, required this.referenceType});
 
-  DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem Function(
-      {String referenceCategory,
-      String referenceLocator,
-      String referenceType}) get copyWith => _copyWith;
+  DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem Function({String referenceCategory, String referenceLocator, String referenceType}) get copyWith => _copyWith;
 
-  DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem _copyWith(
-          {Object? referenceCategory = sdkOmittedValue,
-          Object? referenceLocator = sdkOmittedValue,
-          Object? referenceType = sdkOmittedValue}) =>
-      DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem(
-        referenceCategory: identical(referenceCategory, sdkOmittedValue)
-            ? this.referenceCategory
-            : referenceCategory as String,
-        referenceLocator: identical(referenceLocator, sdkOmittedValue)
-            ? this.referenceLocator
-            : referenceLocator as String,
-        referenceType: identical(referenceType, sdkOmittedValue)
-            ? this.referenceType
-            : referenceType as String,
-      );
+  DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem _copyWith({Object? referenceCategory = sdkOmittedValue, Object? referenceLocator = sdkOmittedValue, Object? referenceType = sdkOmittedValue}) => DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem(
+    referenceCategory: identical(referenceCategory, sdkOmittedValue) ? this.referenceCategory : referenceCategory as String,
+    referenceLocator: identical(referenceLocator, sdkOmittedValue) ? this.referenceLocator : referenceLocator as String,
+    referenceType: identical(referenceType, sdkOmittedValue) ? this.referenceType : referenceType as String,
+  );
 
-  factory DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem.fromJson(
-          Map<String, dynamic> json) =>
-      DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem(
-        referenceCategory: (json['referenceCategory'] as String?)!,
-        referenceLocator: (json['referenceLocator'] as String?)!,
-        referenceType: (json['referenceType'] as String?)!,
-      );
+  factory DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem.fromJson(Map<String, dynamic> json) => DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem(
+    referenceCategory: (json['referenceCategory'] as String?)!,
+    referenceLocator: (json['referenceLocator'] as String?)!,
+    referenceType: (json['referenceType'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'referenceCategory': referenceCategory,
-        'referenceLocator': referenceLocator,
-        'referenceType': referenceType,
-      };
+    'referenceCategory': referenceCategory,
+    'referenceLocator': referenceLocator,
+    'referenceType': referenceType,
+  };
 }

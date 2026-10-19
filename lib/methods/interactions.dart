@@ -22,33 +22,31 @@ Future<dynamic> interactionsGetRestrictionsForOrg(ClientConfig config,
       .data;
 }
 
+
 /// Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [limit] The type of GitHub user that can comment, open issues, or create
 ///   pull requests while the interaction limit is in effect.
 /// [expiry] The duration of the interaction restriction. Default: `one_day`.
-Future<InteractionLimitResponse> interactionsSetRestrictionsForOrg(
-    ClientConfig config,
-    {required String org,
-    required InteractionGroup limit,
-    SdkOptional<InteractionExpiry> expiry = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<InteractionLimitResponse>
+    interactionsSetRestrictionsForOrg(ClientConfig config,
+        {required String org,
+        required InteractionGroup limit,
+        SdkOptional<InteractionExpiry> expiry = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<InteractionLimitResponse>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/interaction-limits',
           config: config,
           body: {'limit': limit, 'expiry': SdkUtils.unwrapOptional(expiry)},
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsSetRestrictionsForOrg',
-          fromJsonRaw: (value) =>
-              InteractionLimitResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InteractionLimitResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes all interaction restrictions from public repositories in the given organization. You must be an organization owner to remove restrictions.
 ///
@@ -64,29 +62,23 @@ Future<void> interactionsRemoveRestrictionsForOrg(ClientConfig config,
       .data;
 }
 
+
 /// Gets the pull request creation cap configuration for an organization. The cap limits the total number of open pull requests a user can have across all public repositories in the organization at one time. Only users with admin access to the organization can view the cap configuration.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<InteractionsGetPullRequestCreationCapForOrgResponse>
-    interactionsGetPullRequestCreationCapForOrg(ClientConfig config,
-        {required String org, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<InteractionsGetPullRequestCreationCapForOrgResponse>(
-          'GET',
+Future<InteractionsGetPullRequestCreationCapForOrgResponse> interactionsGetPullRequestCreationCapForOrg(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<InteractionsGetPullRequestCreationCapForOrgResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/interaction-limits/pulls/creation-cap',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsGetPullRequestCreationCapForOrg',
-          fromJsonRaw: (value) =>
-              InteractionsGetPullRequestCreationCapForOrgResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InteractionsGetPullRequestCreationCapForOrgResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '405': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '405': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the pull request creation cap for an organization. The cap limits the total number of open pull requests a user can have across all public repositories in the organization at one time. Only users with admin access to the organization can configure the cap.
 ///
@@ -104,38 +96,25 @@ Future<InteractionsUpdatePullRequestCreationCapForOrgResponse>
         SdkOptional<bool> includeDrafts = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   if (maxOpenPullRequests is SdkPresent<int>) {
-    validateRange('max_open_pull_requests', maxOpenPullRequests.value,
-        min: 1, max: 1000);
+    validateRange('max_open_pull_requests', maxOpenPullRequests.value, min: 1, max: 1000);
   }
 
-  return (await sdkRequest<
-              InteractionsUpdatePullRequestCreationCapForOrgResponse>('PATCH',
+  return (await sdkRequest<InteractionsUpdatePullRequestCreationCapForOrgResponse>('PATCH',
           '/orgs/${Uri.encodeComponent(org.toString())}/interaction-limits/pulls/creation-cap',
           config: config,
           body: {
             'enabled': enabled,
-            'max_open_pull_requests':
-                SdkUtils.unwrapOptional(maxOpenPullRequests),
+            'max_open_pull_requests': SdkUtils.unwrapOptional(maxOpenPullRequests),
             'include_drafts': SdkUtils.unwrapOptional(includeDrafts)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsUpdatePullRequestCreationCapForOrg',
-          fromJsonRaw: (value) =>
-              InteractionsUpdatePullRequestCreationCapForOrgResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InteractionsUpdatePullRequestCreationCapForOrgResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '405': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '405': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Shows which type of GitHub user can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.
 ///
@@ -156,6 +135,7 @@ Future<dynamic> interactionsGetRestrictionsForRepo(ClientConfig config,
       .data;
 }
 
+
 /// Temporarily restricts interactions to a certain type of GitHub user within the given repository. You must have owner or admin access to set these restrictions. If an interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -164,24 +144,24 @@ Future<dynamic> interactionsGetRestrictionsForRepo(ClientConfig config,
 /// [limit] The type of GitHub user that can comment, open issues, or create
 ///   pull requests while the interaction limit is in effect.
 /// [expiry] The duration of the interaction restriction. Default: `one_day`.
-Future<InteractionLimitResponse> interactionsSetRestrictionsForRepo(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required InteractionGroup limit,
-    SdkOptional<InteractionExpiry> expiry = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<InteractionLimitResponse>
+    interactionsSetRestrictionsForRepo(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required InteractionGroup limit,
+        SdkOptional<InteractionExpiry> expiry = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<InteractionLimitResponse>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/interaction-limits',
           config: config,
           body: {'limit': limit, 'expiry': SdkUtils.unwrapOptional(expiry)},
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsSetRestrictionsForRepo',
-          fromJsonRaw: (value) =>
-              InteractionLimitResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InteractionLimitResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Removes all interaction restrictions from the given repository. You must have owner or admin access to remove restrictions. If the interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.
 ///
@@ -201,31 +181,28 @@ Future<void> interactionsRemoveRestrictionsForRepo(ClientConfig config,
       .data;
 }
 
+
 /// Lists the users that are on the pull request creation cap bypass list for a repository. Users on this list can create pull requests regardless of any configured pull request creation cap. Only users with maintainer permissions can view the bypass list.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<List<SimpleUser>> interactionsGetPullRequestBypassListForRepo(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    RequestOptions? requestOptions}) async {
+Future<List<SimpleUser>>
+    interactionsGetPullRequestBypassListForRepo(ClientConfig config,
+        {required String owner,
+        required String repo,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SimpleUser>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/interaction-limits/pulls/bypass-list',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsGetPullRequestBypassListForRepo',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Adds users to the pull request creation cap bypass list for a repository. Users on this list can create pull requests regardless of any configured pull request creation cap. Only users with maintainer permissions can modify the bypass list. You can add a maximum of 100 users per request. The bypass list can only hold a maximum of 100 users.
 ///
@@ -245,16 +222,10 @@ Future<void> interactionsSetPullRequestBypassListForRepo(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'interactionsSetPullRequestBypassListForRepo',
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes users from the pull request creation cap bypass list for a repository. Removed users will be subject to any configured pull request creation cap. Only users with maintainer permissions can modify the bypass list. You can remove a maximum of 100 users per request.
 ///
@@ -274,16 +245,10 @@ Future<void> interactionsRemovePullRequestBypassListForRepo(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'interactionsRemovePullRequestBypassListForRepo',
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the pull request creation cap configuration for a repository. The cap limits the number of open pull requests a user can have at one time. Only users with admin access to the repository can view the cap configuration.
 ///
@@ -295,23 +260,17 @@ Future<InteractionsGetPullRequestCreationCapForRepoResponse>
         {required String owner,
         required String repo,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<
-              InteractionsGetPullRequestCreationCapForRepoResponse>('GET',
+  return (await sdkRequest<InteractionsGetPullRequestCreationCapForRepoResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/interaction-limits/pulls/creation-cap',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsGetPullRequestCreationCapForRepo',
-          fromJsonRaw: (value) =>
-              InteractionsGetPullRequestCreationCapForRepoResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InteractionsGetPullRequestCreationCapForRepoResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '405': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '405': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the pull request creation cap for a repository. The cap limits the number of open pull requests a user can have at one time. Only users with admin access to the repository can configure the cap.
 ///
@@ -332,42 +291,28 @@ Future<InteractionsUpdatePullRequestCreationCapForRepoResponse>
         SdkOptional<bool> includeDrafts = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   if (maxOpenPullRequests is SdkPresent<int>) {
-    validateRange('max_open_pull_requests', maxOpenPullRequests.value,
-        min: 1, max: 1000);
+    validateRange('max_open_pull_requests', maxOpenPullRequests.value, min: 1, max: 1000);
   }
 
-  return (await sdkRequest<
-              InteractionsUpdatePullRequestCreationCapForRepoResponse>('PATCH',
+  return (await sdkRequest<InteractionsUpdatePullRequestCreationCapForRepoResponse>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/interaction-limits/pulls/creation-cap',
           config: config,
           body: {
             'enabled': enabled,
-            'max_open_pull_requests':
-                SdkUtils.unwrapOptional(maxOpenPullRequests),
+            'max_open_pull_requests': SdkUtils.unwrapOptional(maxOpenPullRequests),
             'include_drafts': SdkUtils.unwrapOptional(includeDrafts)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsUpdatePullRequestCreationCapForRepo',
-          fromJsonRaw: (value) =>
-              InteractionsUpdatePullRequestCreationCapForRepoResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InteractionsUpdatePullRequestCreationCapForRepoResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '405': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '405': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
+
 /// Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
-Future<dynamic> interactionsGetRestrictionsForAuthenticatedUser(
-    ClientConfig config,
+Future<dynamic> interactionsGetRestrictionsForAuthenticatedUser(ClientConfig config,
     {RequestOptions? requestOptions}) async {
   return (await sdkRequest<dynamic>('GET', '/user/interaction-limits',
           config: config,
@@ -377,6 +322,7 @@ Future<dynamic> interactionsGetRestrictionsForAuthenticatedUser(
           options: requestOptions))
       .data;
 }
+
 
 /// Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
 ///
@@ -394,19 +340,15 @@ Future<InteractionLimitResponse>
           body: {'limit': limit, 'expiry': SdkUtils.unwrapOptional(expiry)},
           decoder: SdkResponseDecoder.json,
           operationId: 'interactionsSetRestrictionsForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              InteractionLimitResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InteractionLimitResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
+
 /// Removes any interaction restrictions from your public repositories.
-Future<void> interactionsRemoveRestrictionsForAuthenticatedUser(
-    ClientConfig config,
+Future<void> interactionsRemoveRestrictionsForAuthenticatedUser(ClientConfig config,
     {RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE', '/user/interaction-limits',
           config: config,

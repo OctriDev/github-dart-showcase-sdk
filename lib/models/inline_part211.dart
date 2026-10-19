@@ -6,382 +6,285 @@ part of 'inline.dart';
 // Inline operation models (part 211)
 /// Required enumerated value serialized in the `status` wire field.
 final class WebhookWorkflowJobWaitingWorkflowJobStatus {
+
   final String value;
 
   const WebhookWorkflowJobWaitingWorkflowJobStatus._(this.value);
 
-  factory WebhookWorkflowJobWaitingWorkflowJobStatus.fromJson(String value) =>
-      WebhookWorkflowJobWaitingWorkflowJobStatus._(value);
+  factory WebhookWorkflowJobWaitingWorkflowJobStatus.fromJson(String value) => WebhookWorkflowJobWaitingWorkflowJobStatus._(value);
 
   static const queued = WebhookWorkflowJobWaitingWorkflowJobStatus._('queued');
-  static const inProgress =
-      WebhookWorkflowJobWaitingWorkflowJobStatus._('in_progress');
-  static const completed =
-      WebhookWorkflowJobWaitingWorkflowJobStatus._('completed');
-  static const waiting =
-      WebhookWorkflowJobWaitingWorkflowJobStatus._('waiting');
+  static const inProgress = WebhookWorkflowJobWaitingWorkflowJobStatus._('in_progress');
+  static const completed = WebhookWorkflowJobWaitingWorkflowJobStatus._('completed');
+  static const waiting = WebhookWorkflowJobWaitingWorkflowJobStatus._('waiting');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowJobWaitingWorkflowJobStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowJobWaitingWorkflowJobStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `conclusion` wire field.
 final class WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion {
+
   final String value;
 
   const WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._(this.value);
 
-  factory WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion.fromJson(
-          String value) =>
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._(value);
+  factory WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion.fromJson(String value) => WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._(value);
 
-  static const failure =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('failure');
-  static const skipped =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('skipped');
-  static const success =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('success');
-  static const cancelled =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('cancelled');
+  static const failure = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('failure');
+  static const skipped = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('skipped');
+  static const success = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('success');
+  static const cancelled = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('cancelled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus {
+
   final String value;
 
   const WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._(this.value);
 
-  factory WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus.fromJson(
-          String value) =>
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._(value);
+  factory WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus.fromJson(String value) => WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._(value);
 
-  static const completed =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('completed');
-  static const inProgress =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('in_progress');
-  static const queued =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('queued');
-  static const pending =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('pending');
-  static const waiting =
-      WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('waiting');
+  static const completed = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('completed');
+  static const inProgress = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('in_progress');
+  static const queued = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('queued');
+  static const pending = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('pending');
+  static const waiting = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('waiting');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookWorkflowRunCompletedAction {
+
   final String value;
 
   const WebhookWorkflowRunCompletedAction._(this.value);
 
-  factory WebhookWorkflowRunCompletedAction.fromJson(String value) =>
-      WebhookWorkflowRunCompletedAction._(value);
+  factory WebhookWorkflowRunCompletedAction.fromJson(String value) => WebhookWorkflowRunCompletedAction._(value);
 
   static const completed = WebhookWorkflowRunCompletedAction._('completed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunCompletedAction && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookWorkflowRunCompletedWorkflowRunActorType {
+
   final String value;
 
   const WebhookWorkflowRunCompletedWorkflowRunActorType._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunActorType.fromJson(
-          String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunActorType._(value);
+  factory WebhookWorkflowRunCompletedWorkflowRunActorType.fromJson(String value) => WebhookWorkflowRunCompletedWorkflowRunActorType._(value);
 
   static const bot = WebhookWorkflowRunCompletedWorkflowRunActorType._('Bot');
   static const user = WebhookWorkflowRunCompletedWorkflowRunActorType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunActorType._('Organization');
+  static const organization = WebhookWorkflowRunCompletedWorkflowRunActorType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunActorType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunCompletedWorkflowRunActorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `conclusion` wire field.
 final class WebhookWorkflowRunCompletedWorkflowRunConclusion {
+
   final String value;
 
   const WebhookWorkflowRunCompletedWorkflowRunConclusion._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunConclusion.fromJson(
-          String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._(value);
+  factory WebhookWorkflowRunCompletedWorkflowRunConclusion.fromJson(String value) => WebhookWorkflowRunCompletedWorkflowRunConclusion._(value);
 
-  static const actionRequired =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('action_required');
-  static const cancelled =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('cancelled');
-  static const failure =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('failure');
-  static const neutral =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('neutral');
-  static const skipped =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('skipped');
-  static const stale =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('stale');
-  static const success =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('success');
-  static const timedOut =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('timed_out');
-  static const startupFailure =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('startup_failure');
+  static const actionRequired = WebhookWorkflowRunCompletedWorkflowRunConclusion._('action_required');
+  static const cancelled = WebhookWorkflowRunCompletedWorkflowRunConclusion._('cancelled');
+  static const failure = WebhookWorkflowRunCompletedWorkflowRunConclusion._('failure');
+  static const neutral = WebhookWorkflowRunCompletedWorkflowRunConclusion._('neutral');
+  static const skipped = WebhookWorkflowRunCompletedWorkflowRunConclusion._('skipped');
+  static const stale = WebhookWorkflowRunCompletedWorkflowRunConclusion._('stale');
+  static const success = WebhookWorkflowRunCompletedWorkflowRunConclusion._('success');
+  static const timedOut = WebhookWorkflowRunCompletedWorkflowRunConclusion._('timed_out');
+  static const startupFailure = WebhookWorkflowRunCompletedWorkflowRunConclusion._('startup_failure');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunConclusion &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunCompletedWorkflowRunConclusion && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType {
+
   final String value;
 
-  const WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(
-      this.value);
+  const WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType.fromJson(
-          String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(value);
+  factory WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType.fromJson(String value) => WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(value);
 
-  static const bot =
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(
-          'Organization');
+  static const bot = WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._('Bot');
+  static const user = WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._('User');
+  static const organization = WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType {
+
   final String value;
 
   const WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType.fromJson(
-          String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._(value);
+  factory WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType.fromJson(String value) => WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._(value);
 
-  static const bot =
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._(
-          'Organization');
+  static const bot = WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._('Bot');
+  static const user = WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._('User');
+  static const organization = WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class WebhookWorkflowRunCompletedWorkflowRunStatus {
+
   final String value;
 
   const WebhookWorkflowRunCompletedWorkflowRunStatus._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunStatus.fromJson(String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunStatus._(value);
+  factory WebhookWorkflowRunCompletedWorkflowRunStatus.fromJson(String value) => WebhookWorkflowRunCompletedWorkflowRunStatus._(value);
 
-  static const requested =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('requested');
-  static const inProgress =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('in_progress');
-  static const completed =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('completed');
-  static const queued =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('queued');
-  static const pending =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('pending');
-  static const waiting =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('waiting');
+  static const requested = WebhookWorkflowRunCompletedWorkflowRunStatus._('requested');
+  static const inProgress = WebhookWorkflowRunCompletedWorkflowRunStatus._('in_progress');
+  static const completed = WebhookWorkflowRunCompletedWorkflowRunStatus._('completed');
+  static const queued = WebhookWorkflowRunCompletedWorkflowRunStatus._('queued');
+  static const pending = WebhookWorkflowRunCompletedWorkflowRunStatus._('pending');
+  static const waiting = WebhookWorkflowRunCompletedWorkflowRunStatus._('waiting');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunCompletedWorkflowRunStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType {
+
   final String value;
 
   const WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType.fromJson(
-          String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._(value);
+  factory WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType.fromJson(String value) => WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._(value);
 
-  static const bot =
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._('Bot');
-  static const user =
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._(
-          'Organization');
+  static const bot = WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._('Bot');
+  static const user = WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._('User');
+  static const organization = WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookWorkflowRunInProgressAction {
+
   final String value;
 
   const WebhookWorkflowRunInProgressAction._(this.value);
 
-  factory WebhookWorkflowRunInProgressAction.fromJson(String value) =>
-      WebhookWorkflowRunInProgressAction._(value);
+  factory WebhookWorkflowRunInProgressAction.fromJson(String value) => WebhookWorkflowRunInProgressAction._(value);
 
   static const inProgress = WebhookWorkflowRunInProgressAction._('in_progress');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunInProgressAction && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookWorkflowRunInProgressWorkflowRunActorType {
+
   final String value;
 
   const WebhookWorkflowRunInProgressWorkflowRunActorType._(this.value);
 
-  factory WebhookWorkflowRunInProgressWorkflowRunActorType.fromJson(
-          String value) =>
-      WebhookWorkflowRunInProgressWorkflowRunActorType._(value);
+  factory WebhookWorkflowRunInProgressWorkflowRunActorType.fromJson(String value) => WebhookWorkflowRunInProgressWorkflowRunActorType._(value);
 
   static const bot = WebhookWorkflowRunInProgressWorkflowRunActorType._('Bot');
-  static const user =
-      WebhookWorkflowRunInProgressWorkflowRunActorType._('User');
-  static const organization =
-      WebhookWorkflowRunInProgressWorkflowRunActorType._('Organization');
+  static const user = WebhookWorkflowRunInProgressWorkflowRunActorType._('User');
+  static const organization = WebhookWorkflowRunInProgressWorkflowRunActorType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressWorkflowRunActorType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookWorkflowRunInProgressWorkflowRunActorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

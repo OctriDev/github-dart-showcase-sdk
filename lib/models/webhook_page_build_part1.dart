@@ -8,31 +8,22 @@ part of 'webhook_page_build.dart';
 class WebhookPageBuildBuildError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String? message;
 
   const WebhookPageBuildBuildError({required this.message});
 
-  WebhookPageBuildBuildError Function({String? message}) get copyWith =>
-      _copyWith;
+  WebhookPageBuildBuildError Function({String? message}) get copyWith => _copyWith;
 
-  WebhookPageBuildBuildError _copyWith({Object? message = sdkOmittedValue}) =>
-      WebhookPageBuildBuildError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String?,
-      );
+  WebhookPageBuildBuildError _copyWith({Object? message = sdkOmittedValue}) => WebhookPageBuildBuildError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String?,
+  );
 
-  factory WebhookPageBuildBuildError.fromJson(Map<String, dynamic> json) =>
-      WebhookPageBuildBuildError(
-        message: json.containsKey('message')
-            ? json['message'] as String?
-            : throw ArgumentError.value(
-                null, 'message', 'Required property is missing'),
-      );
+  factory WebhookPageBuildBuildError.fromJson(Map<String, dynamic> json) => WebhookPageBuildBuildError(
+    message: json.containsKey('message') ? json['message'] as String? : throw ArgumentError.value(null, 'message', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-      };
+    'message': message,
+  };
 }

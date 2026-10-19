@@ -10,17 +10,14 @@ enum RepositoryRuleMaxFileSizeType {
 
   static RepositoryRuleMaxFileSizeType fromJson(String value) {
     switch (value) {
-      case 'max_file_size':
-        return RepositoryRuleMaxFileSizeType.maxFileSize;
-      default:
-        throw ArgumentError('Unknown RepositoryRuleMaxFileSizeType: $value');
+      case 'max_file_size': return RepositoryRuleMaxFileSizeType.maxFileSize;
+      default: throw ArgumentError('Unknown RepositoryRuleMaxFileSizeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleMaxFileSizeType.maxFileSize:
-        return 'max_file_size';
+      case RepositoryRuleMaxFileSizeType.maxFileSize: return 'max_file_size';
     }
   }
 
@@ -30,61 +27,47 @@ enum RepositoryRuleMaxFileSizeType {
 
 /// When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
 final class RepositoryRuleMergeQueueParametersGroupingStrategy {
+
   final String value;
 
   const RepositoryRuleMergeQueueParametersGroupingStrategy._(this.value);
 
-  factory RepositoryRuleMergeQueueParametersGroupingStrategy.fromJson(
-          String value) =>
-      RepositoryRuleMergeQueueParametersGroupingStrategy._(value);
+  factory RepositoryRuleMergeQueueParametersGroupingStrategy.fromJson(String value) => RepositoryRuleMergeQueueParametersGroupingStrategy._(value);
 
-  static const allgreen =
-      RepositoryRuleMergeQueueParametersGroupingStrategy._('ALLGREEN');
-  static const headgreen =
-      RepositoryRuleMergeQueueParametersGroupingStrategy._('HEADGREEN');
+  static const allgreen = RepositoryRuleMergeQueueParametersGroupingStrategy._('ALLGREEN');
+  static const headgreen = RepositoryRuleMergeQueueParametersGroupingStrategy._('HEADGREEN');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleMergeQueueParametersGroupingStrategy &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleMergeQueueParametersGroupingStrategy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Method to use when merging changes from queued pull requests.
 final class RepositoryRuleMergeQueueParametersMergeMethod {
+
   final String value;
 
   const RepositoryRuleMergeQueueParametersMergeMethod._(this.value);
 
-  factory RepositoryRuleMergeQueueParametersMergeMethod.fromJson(
-          String value) =>
-      RepositoryRuleMergeQueueParametersMergeMethod._(value);
+  factory RepositoryRuleMergeQueueParametersMergeMethod.fromJson(String value) => RepositoryRuleMergeQueueParametersMergeMethod._(value);
 
   static const merge = RepositoryRuleMergeQueueParametersMergeMethod._('MERGE');
-  static const squash =
-      RepositoryRuleMergeQueueParametersMergeMethod._('SQUASH');
-  static const rebase =
-      RepositoryRuleMergeQueueParametersMergeMethod._('REBASE');
+  static const squash = RepositoryRuleMergeQueueParametersMergeMethod._('SQUASH');
+  static const rebase = RepositoryRuleMergeQueueParametersMergeMethod._('REBASE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleMergeQueueParametersMergeMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleMergeQueueParametersMergeMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -93,17 +76,14 @@ enum RepositoryRuleMergeQueueType {
 
   static RepositoryRuleMergeQueueType fromJson(String value) {
     switch (value) {
-      case 'merge_queue':
-        return RepositoryRuleMergeQueueType.mergeQueue;
-      default:
-        throw ArgumentError('Unknown RepositoryRuleMergeQueueType: $value');
+      case 'merge_queue': return RepositoryRuleMergeQueueType.mergeQueue;
+      default: throw ArgumentError('Unknown RepositoryRuleMergeQueueType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleMergeQueueType.mergeQueue:
-        return 'merge_queue';
+      case RepositoryRuleMergeQueueType.mergeQueue: return 'merge_queue';
     }
   }
 
@@ -117,17 +97,14 @@ enum RepositoryRuleNonFastForwardType {
 
   static RepositoryRuleNonFastForwardType fromJson(String value) {
     switch (value) {
-      case 'non_fast_forward':
-        return RepositoryRuleNonFastForwardType.nonFastForward;
-      default:
-        throw ArgumentError('Unknown RepositoryRuleNonFastForwardType: $value');
+      case 'non_fast_forward': return RepositoryRuleNonFastForwardType.nonFastForward;
+      default: throw ArgumentError('Unknown RepositoryRuleNonFastForwardType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleNonFastForwardType.nonFastForward:
-        return 'non_fast_forward';
+      case RepositoryRuleNonFastForwardType.nonFastForward: return 'non_fast_forward';
     }
   }
 
@@ -137,190 +114,141 @@ enum RepositoryRuleNonFastForwardType {
 
 /// The type of the actor
 final class RepositoryRuleParamsActorType {
+
   final String value;
 
   const RepositoryRuleParamsActorType._(this.value);
 
-  factory RepositoryRuleParamsActorType.fromJson(String value) =>
-      RepositoryRuleParamsActorType._(value);
+  factory RepositoryRuleParamsActorType.fromJson(String value) => RepositoryRuleParamsActorType._(value);
 
   static const user = RepositoryRuleParamsActorType._('User');
   static const team = RepositoryRuleParamsActorType._('Team');
-  static const integrationinstallation =
-      RepositoryRuleParamsActorType._('IntegrationInstallation');
-  static const repositoryrole =
-      RepositoryRuleParamsActorType._('RepositoryRole');
+  static const integrationinstallation = RepositoryRuleParamsActorType._('IntegrationInstallation');
+  static const repositoryrole = RepositoryRuleParamsActorType._('RepositoryRole');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleParamsActorType && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsActorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
 final class RepositoryRuleParamsCodeScanningToolAlertsThreshold {
+
   final String value;
 
   const RepositoryRuleParamsCodeScanningToolAlertsThreshold._(this.value);
 
-  factory RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(
-          String value) =>
-      RepositoryRuleParamsCodeScanningToolAlertsThreshold._(value);
+  factory RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(String value) => RepositoryRuleParamsCodeScanningToolAlertsThreshold._(value);
 
-  static const none =
-      RepositoryRuleParamsCodeScanningToolAlertsThreshold._('none');
-  static const errors =
-      RepositoryRuleParamsCodeScanningToolAlertsThreshold._('errors');
-  static const errorsAndWarnings =
-      RepositoryRuleParamsCodeScanningToolAlertsThreshold._(
-          'errors_and_warnings');
-  static const all =
-      RepositoryRuleParamsCodeScanningToolAlertsThreshold._('all');
+  static const none = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('none');
+  static const errors = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('errors');
+  static const errorsAndWarnings = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('errors_and_warnings');
+  static const all = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('all');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleParamsCodeScanningToolAlertsThreshold &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsCodeScanningToolAlertsThreshold && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
 final class RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold {
+
   final String value;
 
-  const RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(
-      this.value);
+  const RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(this.value);
 
-  factory RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.fromJson(
-          String value) =>
-      RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(value);
+  factory RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.fromJson(String value) => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(value);
 
-  static const none =
-      RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('none');
-  static const critical =
-      RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('critical');
-  static const highOrHigher =
-      RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(
-          'high_or_higher');
-  static const mediumOrHigher =
-      RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(
-          'medium_or_higher');
-  static const all =
-      RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('all');
+  static const none = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('none');
+  static const critical = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('critical');
+  static const highOrHigher = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('high_or_higher');
+  static const mediumOrHigher = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('medium_or_higher');
+  static const all = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('all');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The level of authentication required before a pull request can be merged.
 final class RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel {
+
   final String value;
 
-  const RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(
-      this.value);
+  const RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(this.value);
 
-  factory RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel.fromJson(
-          String value) =>
-      RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(value);
+  factory RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel.fromJson(String value) => RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(value);
 
-  static const reauth =
-      RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(
-          'reauth');
-  static const mfa =
-      RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._('mfa');
+  static const reauth = RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._('reauth');
+  static const mfa = RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._('mfa');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of the reviewer
 final class RepositoryRuleParamsReviewerType {
+
   final String value;
 
   const RepositoryRuleParamsReviewerType._(this.value);
 
-  factory RepositoryRuleParamsReviewerType.fromJson(String value) =>
-      RepositoryRuleParamsReviewerType._(value);
+  factory RepositoryRuleParamsReviewerType.fromJson(String value) => RepositoryRuleParamsReviewerType._(value);
 
   static const team = RepositoryRuleParamsReviewerType._('Team');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleParamsReviewerType && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsReviewerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `allowed_merge_methods[]` wire field.
 final class RepositoryRulePullRequestParametersAllowedMergeMethodsItem {
+
   final String value;
 
-  const RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(
-      this.value);
+  const RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(this.value);
 
-  factory RepositoryRulePullRequestParametersAllowedMergeMethodsItem.fromJson(
-          String value) =>
-      RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(value);
+  factory RepositoryRulePullRequestParametersAllowedMergeMethodsItem.fromJson(String value) => RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(value);
 
-  static const merge =
-      RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('merge');
-  static const squash =
-      RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('squash');
-  static const rebase =
-      RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('rebase');
+  static const merge = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('merge');
+  static const squash = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('squash');
+  static const rebase = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('rebase');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRulePullRequestParametersAllowedMergeMethodsItem &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRulePullRequestParametersAllowedMergeMethodsItem && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -329,17 +257,14 @@ enum RepositoryRulePullRequestType {
 
   static RepositoryRulePullRequestType fromJson(String value) {
     switch (value) {
-      case 'pull_request':
-        return RepositoryRulePullRequestType.pullRequest;
-      default:
-        throw ArgumentError('Unknown RepositoryRulePullRequestType: $value');
+      case 'pull_request': return RepositoryRulePullRequestType.pullRequest;
+      default: throw ArgumentError('Unknown RepositoryRulePullRequestType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRulePullRequestType.pullRequest:
-        return 'pull_request';
+      case RepositoryRulePullRequestType.pullRequest: return 'pull_request';
     }
   }
 
@@ -353,18 +278,14 @@ enum RepositoryRuleRequiredDeploymentsType {
 
   static RepositoryRuleRequiredDeploymentsType fromJson(String value) {
     switch (value) {
-      case 'required_deployments':
-        return RepositoryRuleRequiredDeploymentsType.requiredDeployments;
-      default:
-        throw ArgumentError(
-            'Unknown RepositoryRuleRequiredDeploymentsType: $value');
+      case 'required_deployments': return RepositoryRuleRequiredDeploymentsType.requiredDeployments;
+      default: throw ArgumentError('Unknown RepositoryRuleRequiredDeploymentsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleRequiredDeploymentsType.requiredDeployments:
-        return 'required_deployments';
+      case RepositoryRuleRequiredDeploymentsType.requiredDeployments: return 'required_deployments';
     }
   }
 

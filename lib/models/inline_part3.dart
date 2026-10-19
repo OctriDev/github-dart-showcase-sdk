@@ -5,12 +5,12 @@ part of 'inline.dart';
 
 // Inline operation models (part 3)
 final class SchemaSchemab67a25cf {
+
   final String value;
 
   const SchemaSchemab67a25cf._(this.value);
 
-  factory SchemaSchemab67a25cf.fromJson(String value) =>
-      SchemaSchemab67a25cf._(value);
+  factory SchemaSchemab67a25cf.fromJson(String value) => SchemaSchemab67a25cf._(value);
 
   static const queued = SchemaSchemab67a25cf._('queued');
   static const inProgress = SchemaSchemab67a25cf._('in_progress');
@@ -18,24 +18,21 @@ final class SchemaSchemab67a25cf {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemab67a25cf && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemab67a25cf && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema7df6f108 {
+
   final String value;
 
   const SchemaSchema7df6f108._(this.value);
 
-  factory SchemaSchema7df6f108.fromJson(String value) =>
-      SchemaSchema7df6f108._(value);
+  factory SchemaSchema7df6f108.fromJson(String value) => SchemaSchema7df6f108._(value);
 
   static const all = SchemaSchema7df6f108._('all');
   static const enterprise = SchemaSchema7df6f108._('enterprise');
@@ -43,24 +40,21 @@ final class SchemaSchema7df6f108 {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema7df6f108 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema7df6f108 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema1d870026 {
+
   final String value;
 
   const SchemaSchema1d870026._(this.value);
 
-  factory SchemaSchema1d870026.fromJson(String value) =>
-      SchemaSchema1d870026._(value);
+  factory SchemaSchema1d870026.fromJson(String value) => SchemaSchema1d870026._(value);
 
   static const hour = SchemaSchema1d870026._('hour');
   static const day = SchemaSchema1d870026._('day');
@@ -69,48 +63,42 @@ final class SchemaSchema1d870026 {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema1d870026 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema1d870026 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchemae81e966c {
+
   final String value;
 
   const SchemaSchemae81e966c._(this.value);
 
-  factory SchemaSchemae81e966c.fromJson(String value) =>
-      SchemaSchemae81e966c._(value);
+  factory SchemaSchemae81e966c.fromJson(String value) => SchemaSchemae81e966c._(value);
 
   static const success = SchemaSchemae81e966c._('success');
   static const failure = SchemaSchemae81e966c._('failure');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemae81e966c && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemae81e966c && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema9f04b9bc {
+
   final String value;
 
   const SchemaSchema9f04b9bc._(this.value);
 
-  factory SchemaSchema9f04b9bc.fromJson(String value) =>
-      SchemaSchema9f04b9bc._(value);
+  factory SchemaSchema9f04b9bc.fromJson(String value) => SchemaSchema9f04b9bc._(value);
 
   static const completed = SchemaSchema9f04b9bc._('completed');
   static const actionRequired = SchemaSchema9f04b9bc._('action_required');
@@ -129,59 +117,45 @@ final class SchemaSchema9f04b9bc {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema9f04b9bc && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema9f04b9bc && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The policy that controls when fork PR workflows require approval from a maintainer.
 final class ActionsForkPrContributorApprovalApprovalPolicy {
+
   final String value;
 
   const ActionsForkPrContributorApprovalApprovalPolicy._(this.value);
 
-  factory ActionsForkPrContributorApprovalApprovalPolicy.fromJson(
-          String value) =>
-      ActionsForkPrContributorApprovalApprovalPolicy._(value);
+  factory ActionsForkPrContributorApprovalApprovalPolicy.fromJson(String value) => ActionsForkPrContributorApprovalApprovalPolicy._(value);
 
-  static const firstTimeContributorsNewToGithub =
-      ActionsForkPrContributorApprovalApprovalPolicy._(
-          'first_time_contributors_new_to_github');
-  static const firstTimeContributors =
-      ActionsForkPrContributorApprovalApprovalPolicy._(
-          'first_time_contributors');
-  static const allExternalContributors =
-      ActionsForkPrContributorApprovalApprovalPolicy._(
-          'all_external_contributors');
+  static const firstTimeContributorsNewToGithub = ActionsForkPrContributorApprovalApprovalPolicy._('first_time_contributors_new_to_github');
+  static const firstTimeContributors = ActionsForkPrContributorApprovalApprovalPolicy._('first_time_contributors');
+  static const allExternalContributors = ActionsForkPrContributorApprovalApprovalPolicy._('all_external_contributors');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsForkPrContributorApprovalApprovalPolicy &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ActionsForkPrContributorApprovalApprovalPolicy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The status of the runner.
 final class ActionsHostedRunnerStatus {
+
   final String value;
 
   const ActionsHostedRunnerStatus._(this.value);
 
-  factory ActionsHostedRunnerStatus.fromJson(String value) =>
-      ActionsHostedRunnerStatus._(value);
+  factory ActionsHostedRunnerStatus.fromJson(String value) => ActionsHostedRunnerStatus._(value);
 
   static const ready = ActionsHostedRunnerStatus._('Ready');
   static const provisioning = ActionsHostedRunnerStatus._('Provisioning');
@@ -191,25 +165,22 @@ final class ActionsHostedRunnerStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsHostedRunnerStatus && other.value == value;
+  @override bool operator ==(Object other) => other is ActionsHostedRunnerStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The image provider.
 final class ActionsHostedRunnerCuratedImageSource {
+
   final String value;
 
   const ActionsHostedRunnerCuratedImageSource._(this.value);
 
-  factory ActionsHostedRunnerCuratedImageSource.fromJson(String value) =>
-      ActionsHostedRunnerCuratedImageSource._(value);
+  factory ActionsHostedRunnerCuratedImageSource.fromJson(String value) => ActionsHostedRunnerCuratedImageSource._(value);
 
   static const github = ActionsHostedRunnerCuratedImageSource._('github');
   static const partner = ActionsHostedRunnerCuratedImageSource._('partner');
@@ -217,25 +188,22 @@ final class ActionsHostedRunnerCuratedImageSource {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsHostedRunnerCuratedImageSource && other.value == value;
+  @override bool operator ==(Object other) => other is ActionsHostedRunnerCuratedImageSource && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of the source of the policy
 final class ActionsPolicySourceType {
+
   final String value;
 
   const ActionsPolicySourceType._(this.value);
 
-  factory ActionsPolicySourceType.fromJson(String value) =>
-      ActionsPolicySourceType._(value);
+  factory ActionsPolicySourceType.fromJson(String value) => ActionsPolicySourceType._(value);
 
   static const repository = ActionsPolicySourceType._('Repository');
   static const organization = ActionsPolicySourceType._('Organization');
@@ -243,69 +211,59 @@ final class ActionsPolicySourceType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsPolicySourceType && other.value == value;
+  @override bool operator ==(Object other) => other is ActionsPolicySourceType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The target of the policy
 final class ActionsPolicyTarget {
+
   final String value;
 
   const ActionsPolicyTarget._(this.value);
 
-  factory ActionsPolicyTarget.fromJson(String value) =>
-      ActionsPolicyTarget._(value);
+  factory ActionsPolicyTarget.fromJson(String value) => ActionsPolicyTarget._(value);
 
   static const actions = ActionsPolicyTarget._('actions');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsPolicyTarget && other.value == value;
+  @override bool operator ==(Object other) => other is ActionsPolicyTarget && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of the actor
 final class ActionsRuleParamsActorType {
+
   final String value;
 
   const ActionsRuleParamsActorType._(this.value);
 
-  factory ActionsRuleParamsActorType.fromJson(String value) =>
-      ActionsRuleParamsActorType._(value);
+  factory ActionsRuleParamsActorType.fromJson(String value) => ActionsRuleParamsActorType._(value);
 
   static const user = ActionsRuleParamsActorType._('User');
   static const bot = ActionsRuleParamsActorType._('Bot');
   static const team = ActionsRuleParamsActorType._('Team');
   static const businessteam = ActionsRuleParamsActorType._('BusinessTeam');
   static const enterpriseteam = ActionsRuleParamsActorType._('EnterpriseTeam');
-  static const integrationinstallation =
-      ActionsRuleParamsActorType._('IntegrationInstallation');
+  static const integrationinstallation = ActionsRuleParamsActorType._('IntegrationInstallation');
   static const app = ActionsRuleParamsActorType._('App');
   static const repositoryrole = ActionsRuleParamsActorType._('RepositoryRole');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsRuleParamsActorType && other.value == value;
+  @override bool operator ==(Object other) => other is ActionsRuleParamsActorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

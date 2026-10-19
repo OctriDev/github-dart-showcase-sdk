@@ -8,302 +8,165 @@ part of 'code_scanning_code_scanning_variant.dart';
 class CodeScanningVariantAnalysisRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A unique identifier of the repository.
   final int id;
-
   /// The name of the repository.
   final String name;
-
   /// The full, globally unique, name of the repository.
   final String fullName;
-
   /// Whether the repository is private.
   final bool private;
-
   /// Required `integer` value serialized in the `stargazers_count` wire field.
   final int stargazersCount;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String? updatedAt;
 
-  const CodeScanningVariantAnalysisRepository(
-      {required this.id,
-      required this.name,
-      required this.fullName,
-      required this.private,
-      required this.stargazersCount,
-      required this.updatedAt});
+  const CodeScanningVariantAnalysisRepository({required this.id, required this.name, required this.fullName, required this.private, required this.stargazersCount, required this.updatedAt});
 
-  CodeScanningVariantAnalysisRepository Function(
-      {int id,
-      String name,
-      String fullName,
-      bool private,
-      int stargazersCount,
-      String? updatedAt}) get copyWith => _copyWith;
+  CodeScanningVariantAnalysisRepository Function({int id, String name, String fullName, bool private, int stargazersCount, String? updatedAt}) get copyWith => _copyWith;
 
-  CodeScanningVariantAnalysisRepository _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? fullName = sdkOmittedValue,
-          Object? private = sdkOmittedValue,
-          Object? stargazersCount = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      CodeScanningVariantAnalysisRepository(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        fullName: identical(fullName, sdkOmittedValue)
-            ? this.fullName
-            : fullName as String,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as bool,
-        stargazersCount: identical(stargazersCount, sdkOmittedValue)
-            ? this.stargazersCount
-            : stargazersCount as int,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
-      );
+  CodeScanningVariantAnalysisRepository _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? fullName = sdkOmittedValue, Object? private = sdkOmittedValue, Object? stargazersCount = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => CodeScanningVariantAnalysisRepository(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as String,
+    private: identical(private, sdkOmittedValue) ? this.private : private as bool,
+    stargazersCount: identical(stargazersCount, sdkOmittedValue) ? this.stargazersCount : stargazersCount as int,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String?,
+  );
 
-  factory CodeScanningVariantAnalysisRepository.fromJson(
-          Map<String, dynamic> json) =>
-      CodeScanningVariantAnalysisRepository(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        fullName: (json['full_name'] as String?)!,
-        private: (json['private'] as bool?)!,
-        stargazersCount: ((json['stargazers_count'] as num?)?.toInt())!,
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
-      );
+  factory CodeScanningVariantAnalysisRepository.fromJson(Map<String, dynamic> json) => CodeScanningVariantAnalysisRepository(
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    fullName: (json['full_name'] as String?)!,
+    private: (json['private'] as bool?)!,
+    stargazersCount: ((json['stargazers_count'] as num?)?.toInt())!,
+    updatedAt: json.containsKey('updated_at') ? json['updated_at'] as String? : throw ArgumentError.value(null, 'updated_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'full_name': fullName,
-        'private': private,
-        'stargazers_count': stargazersCount,
-        'updated_at': updatedAt,
-      };
+    'id': id,
+    'name': name,
+    'full_name': fullName,
+    'private': private,
+    'stargazers_count': stargazersCount,
+    'updated_at': updatedAt,
+  };
 }
 
 /// Typed representation of the `CodeScanningVariantAnalysisRepoTask` API schema.
 class CodeScanningVariantAnalysisRepoTask {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A GitHub repository.
   final SimpleRepository repository;
-
   /// The new status of the CodeQL variant analysis repository task.
   final CodeScanningVariantAnalysisStatus analysisStatus;
-
   /// The size of the artifact. This is only available for successful analyses.
   final SdkOptional<int> artifactSizeInBytes;
-
   /// The number of results in the case of a successful analysis. This is only available for successful analyses.
   final SdkOptional<int> resultCount;
-
   /// The reason of the failure of this repo task. This is only available if the repository task has failed.
   final SdkOptional<String> failureMessage;
-
   /// The SHA of the commit the CodeQL database was built against. This is only available for successful analyses.
   final SdkOptional<String> databaseCommitSha;
-
   /// The source location prefix to use. This is only available for successful analyses.
   final SdkOptional<String> sourceLocationPrefix;
-
   /// The URL of the artifact. This is only available for successful analyses.
   final SdkOptional<String> artifactUrl;
 
-  const CodeScanningVariantAnalysisRepoTask(
-      {required this.repository,
-      required this.analysisStatus,
-      this.artifactSizeInBytes = const SdkOmitted(),
-      this.resultCount = const SdkOmitted(),
-      this.failureMessage = const SdkOmitted(),
-      this.databaseCommitSha = const SdkOmitted(),
-      this.sourceLocationPrefix = const SdkOmitted(),
-      this.artifactUrl = const SdkOmitted()});
+  const CodeScanningVariantAnalysisRepoTask({required this.repository, required this.analysisStatus, this.artifactSizeInBytes = const SdkOmitted(), this.resultCount = const SdkOmitted(), this.failureMessage = const SdkOmitted(), this.databaseCommitSha = const SdkOmitted(), this.sourceLocationPrefix = const SdkOmitted(), this.artifactUrl = const SdkOmitted()});
 
-  CodeScanningVariantAnalysisRepoTask Function(
-      {SimpleRepository repository,
-      CodeScanningVariantAnalysisStatus analysisStatus,
-      SdkOptional<int> artifactSizeInBytes,
-      SdkOptional<int> resultCount,
-      SdkOptional<String> failureMessage,
-      SdkOptional<String> databaseCommitSha,
-      SdkOptional<String> sourceLocationPrefix,
-      SdkOptional<String> artifactUrl}) get copyWith => _copyWith;
+  CodeScanningVariantAnalysisRepoTask Function({SimpleRepository repository, CodeScanningVariantAnalysisStatus analysisStatus, SdkOptional<int> artifactSizeInBytes, SdkOptional<int> resultCount, SdkOptional<String> failureMessage, SdkOptional<String> databaseCommitSha, SdkOptional<String> sourceLocationPrefix, SdkOptional<String> artifactUrl}) get copyWith => _copyWith;
 
-  CodeScanningVariantAnalysisRepoTask _copyWith(
-          {Object? repository = sdkOmittedValue,
-          Object? analysisStatus = sdkOmittedValue,
-          Object? artifactSizeInBytes = sdkOmittedValue,
-          Object? resultCount = sdkOmittedValue,
-          Object? failureMessage = sdkOmittedValue,
-          Object? databaseCommitSha = sdkOmittedValue,
-          Object? sourceLocationPrefix = sdkOmittedValue,
-          Object? artifactUrl = sdkOmittedValue}) =>
-      CodeScanningVariantAnalysisRepoTask(
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SimpleRepository,
-        analysisStatus: identical(analysisStatus, sdkOmittedValue)
-            ? this.analysisStatus
-            : analysisStatus as CodeScanningVariantAnalysisStatus,
-        artifactSizeInBytes: identical(artifactSizeInBytes, sdkOmittedValue)
-            ? this.artifactSizeInBytes
-            : artifactSizeInBytes as SdkOptional<int>,
-        resultCount: identical(resultCount, sdkOmittedValue)
-            ? this.resultCount
-            : resultCount as SdkOptional<int>,
-        failureMessage: identical(failureMessage, sdkOmittedValue)
-            ? this.failureMessage
-            : failureMessage as SdkOptional<String>,
-        databaseCommitSha: identical(databaseCommitSha, sdkOmittedValue)
-            ? this.databaseCommitSha
-            : databaseCommitSha as SdkOptional<String>,
-        sourceLocationPrefix: identical(sourceLocationPrefix, sdkOmittedValue)
-            ? this.sourceLocationPrefix
-            : sourceLocationPrefix as SdkOptional<String>,
-        artifactUrl: identical(artifactUrl, sdkOmittedValue)
-            ? this.artifactUrl
-            : artifactUrl as SdkOptional<String>,
-      );
+  CodeScanningVariantAnalysisRepoTask _copyWith({Object? repository = sdkOmittedValue, Object? analysisStatus = sdkOmittedValue, Object? artifactSizeInBytes = sdkOmittedValue, Object? resultCount = sdkOmittedValue, Object? failureMessage = sdkOmittedValue, Object? databaseCommitSha = sdkOmittedValue, Object? sourceLocationPrefix = sdkOmittedValue, Object? artifactUrl = sdkOmittedValue}) => CodeScanningVariantAnalysisRepoTask(
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SimpleRepository,
+    analysisStatus: identical(analysisStatus, sdkOmittedValue) ? this.analysisStatus : analysisStatus as CodeScanningVariantAnalysisStatus,
+    artifactSizeInBytes: identical(artifactSizeInBytes, sdkOmittedValue) ? this.artifactSizeInBytes : artifactSizeInBytes as SdkOptional<int>,
+    resultCount: identical(resultCount, sdkOmittedValue) ? this.resultCount : resultCount as SdkOptional<int>,
+    failureMessage: identical(failureMessage, sdkOmittedValue) ? this.failureMessage : failureMessage as SdkOptional<String>,
+    databaseCommitSha: identical(databaseCommitSha, sdkOmittedValue) ? this.databaseCommitSha : databaseCommitSha as SdkOptional<String>,
+    sourceLocationPrefix: identical(sourceLocationPrefix, sdkOmittedValue) ? this.sourceLocationPrefix : sourceLocationPrefix as SdkOptional<String>,
+    artifactUrl: identical(artifactUrl, sdkOmittedValue) ? this.artifactUrl : artifactUrl as SdkOptional<String>,
+  );
 
-  factory CodeScanningVariantAnalysisRepoTask.fromJson(
-          Map<String, dynamic> json) =>
-      CodeScanningVariantAnalysisRepoTask(
-        repository: (json['repository'] != null
-            ? SimpleRepository.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        analysisStatus: (json['analysis_status'] != null
-            ? CodeScanningVariantAnalysisStatus.fromJson(
-                json['analysis_status'] as String)
-            : null)!,
-        artifactSizeInBytes: json['artifact_size_in_bytes'] != null
-            ? SdkPresent(((json['artifact_size_in_bytes'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        resultCount: json['result_count'] != null
-            ? SdkPresent(((json['result_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        failureMessage: json['failure_message'] != null
-            ? SdkPresent((json['failure_message'] as String?)!)
-            : const SdkOmitted(),
-        databaseCommitSha: json['database_commit_sha'] != null
-            ? SdkPresent((json['database_commit_sha'] as String?)!)
-            : const SdkOmitted(),
-        sourceLocationPrefix: json['source_location_prefix'] != null
-            ? SdkPresent((json['source_location_prefix'] as String?)!)
-            : const SdkOmitted(),
-        artifactUrl: json['artifact_url'] != null
-            ? SdkPresent((json['artifact_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory CodeScanningVariantAnalysisRepoTask.fromJson(Map<String, dynamic> json) => CodeScanningVariantAnalysisRepoTask(
+    repository: (json['repository'] != null ? SimpleRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    analysisStatus: (json['analysis_status'] != null ? CodeScanningVariantAnalysisStatus.fromJson(json['analysis_status'] as String) : null)!,
+    artifactSizeInBytes: json['artifact_size_in_bytes'] != null ? SdkPresent(((json['artifact_size_in_bytes'] as num?)?.toInt())!) : const SdkOmitted(),
+    resultCount: json['result_count'] != null ? SdkPresent(((json['result_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    failureMessage: json['failure_message'] != null ? SdkPresent((json['failure_message'] as String?)!) : const SdkOmitted(),
+    databaseCommitSha: json['database_commit_sha'] != null ? SdkPresent((json['database_commit_sha'] as String?)!) : const SdkOmitted(),
+    sourceLocationPrefix: json['source_location_prefix'] != null ? SdkPresent((json['source_location_prefix'] as String?)!) : const SdkOmitted(),
+    artifactUrl: json['artifact_url'] != null ? SdkPresent((json['artifact_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'repository': repository.toJson(),
-        'analysis_status': analysisStatus.toJson(),
-        ...switch (artifactSizeInBytes) {
-          SdkPresent<int>(value: final value) => {
-              'artifact_size_in_bytes': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (resultCount) {
-          SdkPresent<int>(value: final value) => {
-              'result_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (failureMessage) {
-          SdkPresent<String>(value: final value) => {
-              'failure_message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (databaseCommitSha) {
-          SdkPresent<String>(value: final value) => {
-              'database_commit_sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sourceLocationPrefix) {
-          SdkPresent<String>(value: final value) => {
-              'source_location_prefix': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (artifactUrl) {
-          SdkPresent<String>(value: final value) => {
-              'artifact_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'repository': repository.toJson(),
+    'analysis_status': analysisStatus.toJson(),
+    ...switch (artifactSizeInBytes) {
+      SdkPresent<int>(value: final value) => {'artifact_size_in_bytes': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (resultCount) {
+      SdkPresent<int>(value: final value) => {'result_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (failureMessage) {
+      SdkPresent<String>(value: final value) => {'failure_message': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (databaseCommitSha) {
+      SdkPresent<String>(value: final value) => {'database_commit_sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sourceLocationPrefix) {
+      SdkPresent<String>(value: final value) => {'source_location_prefix': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (artifactUrl) {
+      SdkPresent<String>(value: final value) => {'artifact_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `CodeScanningVariantAnalysisSkippedRepoGroup` API schema.
 class CodeScanningVariantAnalysisSkippedRepoGroup {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The total number of repositories that were skipped for this reason.
   final int repositoryCount;
-
   /// A list of repositories that were skipped. This list may not include all repositories that were skipped. This is only available when the repository was found and the user has access to it.
   final List<CodeScanningVariantAnalysisRepository> repositories;
 
-  const CodeScanningVariantAnalysisSkippedRepoGroup(
-      {required this.repositoryCount, required this.repositories});
+  const CodeScanningVariantAnalysisSkippedRepoGroup({required this.repositoryCount, required this.repositories});
 
-  CodeScanningVariantAnalysisSkippedRepoGroup Function(
-          {int repositoryCount,
-          List<CodeScanningVariantAnalysisRepository> repositories})
-      get copyWith => _copyWith;
+  CodeScanningVariantAnalysisSkippedRepoGroup Function({int repositoryCount, List<CodeScanningVariantAnalysisRepository> repositories}) get copyWith => _copyWith;
 
-  CodeScanningVariantAnalysisSkippedRepoGroup _copyWith(
-          {Object? repositoryCount = sdkOmittedValue,
-          Object? repositories = sdkOmittedValue}) =>
-      CodeScanningVariantAnalysisSkippedRepoGroup(
-        repositoryCount: identical(repositoryCount, sdkOmittedValue)
-            ? this.repositoryCount
-            : repositoryCount as int,
-        repositories: identical(repositories, sdkOmittedValue)
-            ? this.repositories
-            : repositories as List<CodeScanningVariantAnalysisRepository>,
-      );
+  CodeScanningVariantAnalysisSkippedRepoGroup _copyWith({Object? repositoryCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => CodeScanningVariantAnalysisSkippedRepoGroup(
+    repositoryCount: identical(repositoryCount, sdkOmittedValue) ? this.repositoryCount : repositoryCount as int,
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<CodeScanningVariantAnalysisRepository>,
+  );
 
-  factory CodeScanningVariantAnalysisSkippedRepoGroup.fromJson(
-          Map<String, dynamic> json) =>
-      CodeScanningVariantAnalysisSkippedRepoGroup(
-        repositoryCount: ((json['repository_count'] as num?)?.toInt())!,
-        repositories: ((json['repositories'] as List?)
-            ?.map((e) => CodeScanningVariantAnalysisRepository.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory CodeScanningVariantAnalysisSkippedRepoGroup.fromJson(Map<String, dynamic> json) => CodeScanningVariantAnalysisSkippedRepoGroup(
+    repositoryCount: ((json['repository_count'] as num?)?.toInt())!,
+    repositories: ((json['repositories'] as List?)?.map((e) => CodeScanningVariantAnalysisRepository.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'repository_count': repositoryCount,
-        'repositories': repositories.map((item) => item.toJson()).toList(),
-      };
+    'repository_count': repositoryCount,
+    'repositories': repositories.map((item) => item.toJson()).toList(),
+  };
 }
 
 /// The new status of the CodeQL variant analysis repository task.
 final class CodeScanningVariantAnalysisStatus {
+
   final String value;
 
   const CodeScanningVariantAnalysisStatus._(this.value);
 
-  factory CodeScanningVariantAnalysisStatus.fromJson(String value) =>
-      CodeScanningVariantAnalysisStatus._(value);
+  factory CodeScanningVariantAnalysisStatus.fromJson(String value) => CodeScanningVariantAnalysisStatus._(value);
 
   static const pending = CodeScanningVariantAnalysisStatus._('pending');
   static const inProgress = CodeScanningVariantAnalysisStatus._('in_progress');
@@ -314,13 +177,10 @@ final class CodeScanningVariantAnalysisStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningVariantAnalysisStatus && other.value == value;
+  @override bool operator ==(Object other) => other is CodeScanningVariantAnalysisStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

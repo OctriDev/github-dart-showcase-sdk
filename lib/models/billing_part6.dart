@@ -8,174 +8,86 @@ part of 'billing.dart';
 class Budget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier for the budget
   final String id;
-
   /// The type of pricing for the budget
   final BudgetBudgetTypeVariant0 budgetType;
-
   /// The budget amount limit in whole dollars. For license-based products, this represents the number of licenses.
   final int budgetAmount;
-
   /// The type of limit enforcement for the budget
   final bool preventFurtherUsage;
-
   /// The scope of the budget
   final BudgetBudgetScope budgetScope;
-
   /// The name of the entity for the budget (enterprise does not require a name).
   final SdkOptional<String> budgetEntityName;
-
   /// The user login when the budget is scoped to a single user (`user` scope).
   final SdkOptional<String> user;
-
   /// The amount consumed for a user-scoped budget, or for a multi-user budget when filtering by user.
   final SdkOptional<double> consumedAmount;
-
   /// A single product or sku to apply the budget to.
   final String budgetProductSku;
-
   /// Required object value serialized in the `budget_alerting` wire field.
   final BudgetBudgetAlerting budgetAlerting;
-
   /// The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted. If not provided, the budget will not expire. Only supported for budgets with `budget_scope` of `user`
   final SdkOptional<String> expiresAt;
 
-  const Budget(
-      {required this.id,
-      required this.budgetType,
-      required this.budgetAmount,
-      required this.preventFurtherUsage,
-      required this.budgetScope,
-      this.budgetEntityName = const SdkOmitted(),
-      this.user = const SdkOmitted(),
-      this.consumedAmount = const SdkOmitted(),
-      required this.budgetProductSku,
-      required this.budgetAlerting,
-      this.expiresAt = const SdkOmitted()});
+  const Budget({required this.id, required this.budgetType, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetScope, this.budgetEntityName = const SdkOmitted(), this.user = const SdkOmitted(), this.consumedAmount = const SdkOmitted(), required this.budgetProductSku, required this.budgetAlerting, this.expiresAt = const SdkOmitted()});
 
-  Budget Function(
-      {String id,
-      BudgetBudgetTypeVariant0 budgetType,
-      int budgetAmount,
-      bool preventFurtherUsage,
-      BudgetBudgetScope budgetScope,
-      SdkOptional<String> budgetEntityName,
-      SdkOptional<String> user,
-      SdkOptional<double> consumedAmount,
-      String budgetProductSku,
-      BudgetBudgetAlerting budgetAlerting,
-      SdkOptional<String> expiresAt}) get copyWith => _copyWith;
+  Budget Function({String id, BudgetBudgetTypeVariant0 budgetType, int budgetAmount, bool preventFurtherUsage, BudgetBudgetScope budgetScope, SdkOptional<String> budgetEntityName, SdkOptional<String> user, SdkOptional<double> consumedAmount, String budgetProductSku, BudgetBudgetAlerting budgetAlerting, SdkOptional<String> expiresAt}) get copyWith => _copyWith;
 
-  Budget _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? budgetType = sdkOmittedValue,
-          Object? budgetAmount = sdkOmittedValue,
-          Object? preventFurtherUsage = sdkOmittedValue,
-          Object? budgetScope = sdkOmittedValue,
-          Object? budgetEntityName = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? consumedAmount = sdkOmittedValue,
-          Object? budgetProductSku = sdkOmittedValue,
-          Object? budgetAlerting = sdkOmittedValue,
-          Object? expiresAt = sdkOmittedValue}) =>
-      Budget(
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        budgetType: identical(budgetType, sdkOmittedValue)
-            ? this.budgetType
-            : budgetType as BudgetBudgetTypeVariant0,
-        budgetAmount: identical(budgetAmount, sdkOmittedValue)
-            ? this.budgetAmount
-            : budgetAmount as int,
-        preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue)
-            ? this.preventFurtherUsage
-            : preventFurtherUsage as bool,
-        budgetScope: identical(budgetScope, sdkOmittedValue)
-            ? this.budgetScope
-            : budgetScope as BudgetBudgetScope,
-        budgetEntityName: identical(budgetEntityName, sdkOmittedValue)
-            ? this.budgetEntityName
-            : budgetEntityName as SdkOptional<String>,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as SdkOptional<String>,
-        consumedAmount: identical(consumedAmount, sdkOmittedValue)
-            ? this.consumedAmount
-            : consumedAmount as SdkOptional<double>,
-        budgetProductSku: identical(budgetProductSku, sdkOmittedValue)
-            ? this.budgetProductSku
-            : budgetProductSku as String,
-        budgetAlerting: identical(budgetAlerting, sdkOmittedValue)
-            ? this.budgetAlerting
-            : budgetAlerting as BudgetBudgetAlerting,
-        expiresAt: identical(expiresAt, sdkOmittedValue)
-            ? this.expiresAt
-            : expiresAt as SdkOptional<String>,
-      );
+  Budget _copyWith({Object? id = sdkOmittedValue, Object? budgetType = sdkOmittedValue, Object? budgetAmount = sdkOmittedValue, Object? preventFurtherUsage = sdkOmittedValue, Object? budgetScope = sdkOmittedValue, Object? budgetEntityName = sdkOmittedValue, Object? user = sdkOmittedValue, Object? consumedAmount = sdkOmittedValue, Object? budgetProductSku = sdkOmittedValue, Object? budgetAlerting = sdkOmittedValue, Object? expiresAt = sdkOmittedValue}) => Budget(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    budgetType: identical(budgetType, sdkOmittedValue) ? this.budgetType : budgetType as BudgetBudgetTypeVariant0,
+    budgetAmount: identical(budgetAmount, sdkOmittedValue) ? this.budgetAmount : budgetAmount as int,
+    preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue) ? this.preventFurtherUsage : preventFurtherUsage as bool,
+    budgetScope: identical(budgetScope, sdkOmittedValue) ? this.budgetScope : budgetScope as BudgetBudgetScope,
+    budgetEntityName: identical(budgetEntityName, sdkOmittedValue) ? this.budgetEntityName : budgetEntityName as SdkOptional<String>,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<String>,
+    consumedAmount: identical(consumedAmount, sdkOmittedValue) ? this.consumedAmount : consumedAmount as SdkOptional<double>,
+    budgetProductSku: identical(budgetProductSku, sdkOmittedValue) ? this.budgetProductSku : budgetProductSku as String,
+    budgetAlerting: identical(budgetAlerting, sdkOmittedValue) ? this.budgetAlerting : budgetAlerting as BudgetBudgetAlerting,
+    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<String>,
+  );
 
   factory Budget.fromJson(Map<String, dynamic> json) => Budget(
-        id: (json['id'] as String?)!,
-        budgetType: (json['budget_type'] != null
-            ? BudgetBudgetTypeVariant0.fromJson(json['budget_type'] as String)
-            : null)!,
-        budgetAmount: ((json['budget_amount'] as num?)?.toInt())!,
-        preventFurtherUsage: (json['prevent_further_usage'] as bool?)!,
-        budgetScope: (json['budget_scope'] != null
-            ? BudgetBudgetScope.fromJson(json['budget_scope'] as String)
-            : null)!,
-        budgetEntityName: json['budget_entity_name'] != null
-            ? SdkPresent((json['budget_entity_name'] as String?)!)
-            : const SdkOmitted(),
-        user: json['user'] != null
-            ? SdkPresent((json['user'] as String?)!)
-            : const SdkOmitted(),
-        consumedAmount: json['consumed_amount'] != null
-            ? SdkPresent(((json['consumed_amount'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-        budgetProductSku: (json['budget_product_sku'] as String?)!,
-        budgetAlerting: (json['budget_alerting'] != null
-            ? BudgetBudgetAlerting.fromJson(
-                json['budget_alerting'] as Map<String, dynamic>)
-            : null)!,
-        expiresAt: json['expires_at'] != null
-            ? SdkPresent((json['expires_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+    id: (json['id'] as String?)!,
+    budgetType: (json['budget_type'] != null ? BudgetBudgetTypeVariant0.fromJson(json['budget_type'] as String) : null)!,
+    budgetAmount: ((json['budget_amount'] as num?)?.toInt())!,
+    preventFurtherUsage: (json['prevent_further_usage'] as bool?)!,
+    budgetScope: (json['budget_scope'] != null ? BudgetBudgetScope.fromJson(json['budget_scope'] as String) : null)!,
+    budgetEntityName: json['budget_entity_name'] != null ? SdkPresent((json['budget_entity_name'] as String?)!) : const SdkOmitted(),
+    user: json['user'] != null ? SdkPresent((json['user'] as String?)!) : const SdkOmitted(),
+    consumedAmount: json['consumed_amount'] != null ? SdkPresent(((json['consumed_amount'] as num?)?.toDouble())!) : const SdkOmitted(),
+    budgetProductSku: (json['budget_product_sku'] as String?)!,
+    budgetAlerting: (json['budget_alerting'] != null ? BudgetBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null)!,
+    expiresAt: json['expires_at'] != null ? SdkPresent((json['expires_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'budget_type': budgetType.toJson(),
-        'budget_amount': budgetAmount,
-        'prevent_further_usage': preventFurtherUsage,
-        'budget_scope': budgetScope.toJson(),
-        ...switch (budgetEntityName) {
-          SdkPresent<String>(value: final value) => {
-              'budget_entity_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (user) {
-          SdkPresent<String>(value: final value) => {
-              'user': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (consumedAmount) {
-          SdkPresent<double>(value: final value) => {
-              'consumed_amount': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'budget_product_sku': budgetProductSku,
-        'budget_alerting': budgetAlerting.toJson(),
-        ...switch (expiresAt) {
-          SdkPresent<String>(value: final value) => {
-              'expires_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'budget_type': budgetType.toJson(),
+    'budget_amount': budgetAmount,
+    'prevent_further_usage': preventFurtherUsage,
+    'budget_scope': budgetScope.toJson(),
+    ...switch (budgetEntityName) {
+      SdkPresent<String>(value: final value) => {'budget_entity_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (user) {
+      SdkPresent<String>(value: final value) => {'user': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (consumedAmount) {
+      SdkPresent<double>(value: final value) => {'consumed_amount': value,},
+      _ => const <String, dynamic>{},
+    },
+    'budget_product_sku': budgetProductSku,
+    'budget_alerting': budgetAlerting.toJson(),
+    ...switch (expiresAt) {
+      SdkPresent<String>(value: final value) => {'expires_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class CreateBudgetBudgetBudgetType {
@@ -183,343 +95,186 @@ sealed class CreateBudgetBudgetBudgetType {
   static const String constructionSurface = 'named';
   const CreateBudgetBudgetBudgetType();
   factory CreateBudgetBudgetBudgetType.fromJson(Object? json) {
-    try {
-      return CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant0(
-          CreateBudgetBudgetBudgetTypeVariant0.fromJson(json as String));
-    } catch (_) {}
-    try {
-      return CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant1(
-          CreateBudgetBudgetBudgetTypeVariant1.fromJson(json as String));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for CreateBudgetBudgetBudgetType");
+    try { return CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant0(CreateBudgetBudgetBudgetTypeVariant0.fromJson(json as String)); } catch (_) {}
+    try { return CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant1(CreateBudgetBudgetBudgetTypeVariant1.fromJson(json as String)); } catch (_) {}
+    throw FormatException("No variant matched for CreateBudgetBudgetBudgetType");
   }
   Object? toJson();
 }
 
-final class CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant0
-    extends CreateBudgetBudgetBudgetType {
+final class CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant0 extends CreateBudgetBudgetBudgetType {
   final CreateBudgetBudgetBudgetTypeVariant0 value;
-  const CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant1
-    extends CreateBudgetBudgetBudgetType {
+final class CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant1 extends CreateBudgetBudgetBudgetType {
   final CreateBudgetBudgetBudgetTypeVariant1 value;
-  const CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const CreateBudgetBudgetBudgetTypeCreateBudgetBudgetBudgetTypeVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Optional object value serialized in the `budget_alerting` wire field.
 class CreateBudgetBudgetBudgetAlerting {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether alerts are enabled for this budget. Rejected for user-scope as alerting is always disabled for them.
   final SdkOptional<bool> willAlert;
-
   /// Array of user login names who will receive alerts. Rejected for user-scope as alerting is always disabled for them.
   final SdkOptional<List<String>> alertRecipients;
 
-  const CreateBudgetBudgetBudgetAlerting(
-      {this.willAlert = const SdkOmitted(),
-      this.alertRecipients = const SdkOmitted()});
+  const CreateBudgetBudgetBudgetAlerting({this.willAlert = const SdkOmitted(), this.alertRecipients = const SdkOmitted()});
 
-  CreateBudgetBudgetBudgetAlerting Function(
-      {SdkOptional<bool> willAlert,
-      SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
+  CreateBudgetBudgetBudgetAlerting Function({SdkOptional<bool> willAlert, SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
 
-  CreateBudgetBudgetBudgetAlerting _copyWith(
-          {Object? willAlert = sdkOmittedValue,
-          Object? alertRecipients = sdkOmittedValue}) =>
-      CreateBudgetBudgetBudgetAlerting(
-        willAlert: identical(willAlert, sdkOmittedValue)
-            ? this.willAlert
-            : willAlert as SdkOptional<bool>,
-        alertRecipients: identical(alertRecipients, sdkOmittedValue)
-            ? this.alertRecipients
-            : alertRecipients as SdkOptional<List<String>>,
-      );
+  CreateBudgetBudgetBudgetAlerting _copyWith({Object? willAlert = sdkOmittedValue, Object? alertRecipients = sdkOmittedValue}) => CreateBudgetBudgetBudgetAlerting(
+    willAlert: identical(willAlert, sdkOmittedValue) ? this.willAlert : willAlert as SdkOptional<bool>,
+    alertRecipients: identical(alertRecipients, sdkOmittedValue) ? this.alertRecipients : alertRecipients as SdkOptional<List<String>>,
+  );
 
-  factory CreateBudgetBudgetBudgetAlerting.fromJson(
-          Map<String, dynamic> json) =>
-      CreateBudgetBudgetBudgetAlerting(
-        willAlert: json['will_alert'] != null
-            ? SdkPresent((json['will_alert'] as bool?)!)
-            : const SdkOmitted(),
-        alertRecipients: json['alert_recipients'] != null
-            ? SdkPresent(((json['alert_recipients'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory CreateBudgetBudgetBudgetAlerting.fromJson(Map<String, dynamic> json) => CreateBudgetBudgetBudgetAlerting(
+    willAlert: json['will_alert'] != null ? SdkPresent((json['will_alert'] as bool?)!) : const SdkOmitted(),
+    alertRecipients: json['alert_recipients'] != null ? SdkPresent(((json['alert_recipients'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (willAlert) {
-          SdkPresent<bool>(value: final value) => {
-              'will_alert': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (alertRecipients) {
-          SdkPresent<List<String>>(value: final value) => {
-              'alert_recipients': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (willAlert) {
+      SdkPresent<bool>(value: final value) => {'will_alert': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (alertRecipients) {
+      SdkPresent<List<String>>(value: final value) => {'alert_recipients': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `budget` wire field.
 class CreateBudgetBudget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// ID of the budget.
   final SdkOptional<String> id;
-
   /// The type of scope for the budget
   final SdkOptional<CreateBudgetBudgetBudgetScope> budgetScope;
-
   /// The name of the entity to apply the budget to
   final SdkOptional<String> budgetEntityName;
-
   /// The budget amount in whole dollars. For license-based products, this represents the number of licenses.
   final SdkOptional<int> budgetAmount;
-
   /// Whether to prevent additional spending once the budget is exceeded
   final SdkOptional<bool> preventFurtherUsage;
-
   /// A single product or sku to apply the budget to.
   final SdkOptional<String> budgetProductSku;
-
   /// The type of pricing for the budget
   final SdkOptional<CreateBudgetBudgetBudgetTypeVariant0> budgetType;
-
   /// Optional object value serialized in the `budget_alerting` wire field.
   final SdkOptional<CreateBudgetBudgetBudgetAlerting> budgetAlerting;
-
   /// The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted. If not provided, the budget will not expire. Only supported for budgets with `budget_scope` of `user`
   final SdkOptional<String> expiresAt;
 
-  const CreateBudgetBudget(
-      {this.id = const SdkOmitted(),
-      this.budgetScope = const SdkOmitted(),
-      this.budgetEntityName = const SdkOmitted(),
-      this.budgetAmount = const SdkOmitted(),
-      this.preventFurtherUsage = const SdkOmitted(),
-      this.budgetProductSku = const SdkOmitted(),
-      this.budgetType = const SdkOmitted(),
-      this.budgetAlerting = const SdkOmitted(),
-      this.expiresAt = const SdkOmitted()});
+  const CreateBudgetBudget({this.id = const SdkOmitted(), this.budgetScope = const SdkOmitted(), this.budgetEntityName = const SdkOmitted(), this.budgetAmount = const SdkOmitted(), this.preventFurtherUsage = const SdkOmitted(), this.budgetProductSku = const SdkOmitted(), this.budgetType = const SdkOmitted(), this.budgetAlerting = const SdkOmitted(), this.expiresAt = const SdkOmitted()});
 
-  CreateBudgetBudget Function(
-      {SdkOptional<String> id,
-      SdkOptional<CreateBudgetBudgetBudgetScope> budgetScope,
-      SdkOptional<String> budgetEntityName,
-      SdkOptional<int> budgetAmount,
-      SdkOptional<bool> preventFurtherUsage,
-      SdkOptional<String> budgetProductSku,
-      SdkOptional<CreateBudgetBudgetBudgetTypeVariant0> budgetType,
-      SdkOptional<CreateBudgetBudgetBudgetAlerting> budgetAlerting,
-      SdkOptional<String> expiresAt}) get copyWith => _copyWith;
+  CreateBudgetBudget Function({SdkOptional<String> id, SdkOptional<CreateBudgetBudgetBudgetScope> budgetScope, SdkOptional<String> budgetEntityName, SdkOptional<int> budgetAmount, SdkOptional<bool> preventFurtherUsage, SdkOptional<String> budgetProductSku, SdkOptional<CreateBudgetBudgetBudgetTypeVariant0> budgetType, SdkOptional<CreateBudgetBudgetBudgetAlerting> budgetAlerting, SdkOptional<String> expiresAt}) get copyWith => _copyWith;
 
-  CreateBudgetBudget _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? budgetScope = sdkOmittedValue,
-          Object? budgetEntityName = sdkOmittedValue,
-          Object? budgetAmount = sdkOmittedValue,
-          Object? preventFurtherUsage = sdkOmittedValue,
-          Object? budgetProductSku = sdkOmittedValue,
-          Object? budgetType = sdkOmittedValue,
-          Object? budgetAlerting = sdkOmittedValue,
-          Object? expiresAt = sdkOmittedValue}) =>
-      CreateBudgetBudget(
-        id: identical(id, sdkOmittedValue)
-            ? this.id
-            : id as SdkOptional<String>,
-        budgetScope: identical(budgetScope, sdkOmittedValue)
-            ? this.budgetScope
-            : budgetScope as SdkOptional<CreateBudgetBudgetBudgetScope>,
-        budgetEntityName: identical(budgetEntityName, sdkOmittedValue)
-            ? this.budgetEntityName
-            : budgetEntityName as SdkOptional<String>,
-        budgetAmount: identical(budgetAmount, sdkOmittedValue)
-            ? this.budgetAmount
-            : budgetAmount as SdkOptional<int>,
-        preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue)
-            ? this.preventFurtherUsage
-            : preventFurtherUsage as SdkOptional<bool>,
-        budgetProductSku: identical(budgetProductSku, sdkOmittedValue)
-            ? this.budgetProductSku
-            : budgetProductSku as SdkOptional<String>,
-        budgetType: identical(budgetType, sdkOmittedValue)
-            ? this.budgetType
-            : budgetType as SdkOptional<CreateBudgetBudgetBudgetTypeVariant0>,
-        budgetAlerting: identical(budgetAlerting, sdkOmittedValue)
-            ? this.budgetAlerting
-            : budgetAlerting as SdkOptional<CreateBudgetBudgetBudgetAlerting>,
-        expiresAt: identical(expiresAt, sdkOmittedValue)
-            ? this.expiresAt
-            : expiresAt as SdkOptional<String>,
-      );
+  CreateBudgetBudget _copyWith({Object? id = sdkOmittedValue, Object? budgetScope = sdkOmittedValue, Object? budgetEntityName = sdkOmittedValue, Object? budgetAmount = sdkOmittedValue, Object? preventFurtherUsage = sdkOmittedValue, Object? budgetProductSku = sdkOmittedValue, Object? budgetType = sdkOmittedValue, Object? budgetAlerting = sdkOmittedValue, Object? expiresAt = sdkOmittedValue}) => CreateBudgetBudget(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
+    budgetScope: identical(budgetScope, sdkOmittedValue) ? this.budgetScope : budgetScope as SdkOptional<CreateBudgetBudgetBudgetScope>,
+    budgetEntityName: identical(budgetEntityName, sdkOmittedValue) ? this.budgetEntityName : budgetEntityName as SdkOptional<String>,
+    budgetAmount: identical(budgetAmount, sdkOmittedValue) ? this.budgetAmount : budgetAmount as SdkOptional<int>,
+    preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue) ? this.preventFurtherUsage : preventFurtherUsage as SdkOptional<bool>,
+    budgetProductSku: identical(budgetProductSku, sdkOmittedValue) ? this.budgetProductSku : budgetProductSku as SdkOptional<String>,
+    budgetType: identical(budgetType, sdkOmittedValue) ? this.budgetType : budgetType as SdkOptional<CreateBudgetBudgetBudgetTypeVariant0>,
+    budgetAlerting: identical(budgetAlerting, sdkOmittedValue) ? this.budgetAlerting : budgetAlerting as SdkOptional<CreateBudgetBudgetBudgetAlerting>,
+    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<String>,
+  );
 
-  factory CreateBudgetBudget.fromJson(Map<String, dynamic> json) =>
-      CreateBudgetBudget(
-        id: json['id'] != null
-            ? SdkPresent((json['id'] as String?)!)
-            : const SdkOmitted(),
-        budgetScope: json['budget_scope'] != null
-            ? SdkPresent((json['budget_scope'] != null
-                ? CreateBudgetBudgetBudgetScope.fromJson(
-                    json['budget_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        budgetEntityName: json['budget_entity_name'] != null
-            ? SdkPresent((json['budget_entity_name'] as String?)!)
-            : const SdkOmitted(),
-        budgetAmount: json['budget_amount'] != null
-            ? SdkPresent(((json['budget_amount'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        preventFurtherUsage: json['prevent_further_usage'] != null
-            ? SdkPresent((json['prevent_further_usage'] as bool?)!)
-            : const SdkOmitted(),
-        budgetProductSku: json['budget_product_sku'] != null
-            ? SdkPresent((json['budget_product_sku'] as String?)!)
-            : const SdkOmitted(),
-        budgetType: json['budget_type'] != null
-            ? SdkPresent((json['budget_type'] != null
-                ? CreateBudgetBudgetBudgetTypeVariant0.fromJson(
-                    json['budget_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        budgetAlerting: json['budget_alerting'] != null
-            ? SdkPresent((json['budget_alerting'] != null
-                ? CreateBudgetBudgetBudgetAlerting.fromJson(
-                    json['budget_alerting'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        expiresAt: json['expires_at'] != null
-            ? SdkPresent((json['expires_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory CreateBudgetBudget.fromJson(Map<String, dynamic> json) => CreateBudgetBudget(
+    id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
+    budgetScope: json['budget_scope'] != null ? SdkPresent((json['budget_scope'] != null ? CreateBudgetBudgetBudgetScope.fromJson(json['budget_scope'] as String) : null)!) : const SdkOmitted(),
+    budgetEntityName: json['budget_entity_name'] != null ? SdkPresent((json['budget_entity_name'] as String?)!) : const SdkOmitted(),
+    budgetAmount: json['budget_amount'] != null ? SdkPresent(((json['budget_amount'] as num?)?.toInt())!) : const SdkOmitted(),
+    preventFurtherUsage: json['prevent_further_usage'] != null ? SdkPresent((json['prevent_further_usage'] as bool?)!) : const SdkOmitted(),
+    budgetProductSku: json['budget_product_sku'] != null ? SdkPresent((json['budget_product_sku'] as String?)!) : const SdkOmitted(),
+    budgetType: json['budget_type'] != null ? SdkPresent((json['budget_type'] != null ? CreateBudgetBudgetBudgetTypeVariant0.fromJson(json['budget_type'] as String) : null)!) : const SdkOmitted(),
+    budgetAlerting: json['budget_alerting'] != null ? SdkPresent((json['budget_alerting'] != null ? CreateBudgetBudgetBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    expiresAt: json['expires_at'] != null ? SdkPresent((json['expires_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<String>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budgetScope) {
-          SdkPresent<CreateBudgetBudgetBudgetScope>(value: final value) => {
-              'budget_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budgetEntityName) {
-          SdkPresent<String>(value: final value) => {
-              'budget_entity_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budgetAmount) {
-          SdkPresent<int>(value: final value) => {
-              'budget_amount': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (preventFurtherUsage) {
-          SdkPresent<bool>(value: final value) => {
-              'prevent_further_usage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budgetProductSku) {
-          SdkPresent<String>(value: final value) => {
-              'budget_product_sku': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budgetType) {
-          SdkPresent<CreateBudgetBudgetBudgetTypeVariant0>(
-            value: final value
-          ) =>
-            {
-              'budget_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (budgetAlerting) {
-          SdkPresent<CreateBudgetBudgetBudgetAlerting>(value: final value) => {
-              'budget_alerting': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (expiresAt) {
-          SdkPresent<String>(value: final value) => {
-              'expires_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<String>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budgetScope) {
+      SdkPresent<CreateBudgetBudgetBudgetScope>(value: final value) => {'budget_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budgetEntityName) {
+      SdkPresent<String>(value: final value) => {'budget_entity_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budgetAmount) {
+      SdkPresent<int>(value: final value) => {'budget_amount': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (preventFurtherUsage) {
+      SdkPresent<bool>(value: final value) => {'prevent_further_usage': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budgetProductSku) {
+      SdkPresent<String>(value: final value) => {'budget_product_sku': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budgetType) {
+      SdkPresent<CreateBudgetBudgetBudgetTypeVariant0>(value: final value) => {'budget_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (budgetAlerting) {
+      SdkPresent<CreateBudgetBudgetBudgetAlerting>(value: final value) => {'budget_alerting': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (expiresAt) {
+      SdkPresent<String>(value: final value) => {'expires_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `CreateBudget` API schema.
 class CreateBudget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A message indicating the result of the create operation
   final String message;
-
   /// Required object value serialized in the `budget` wire field.
   final CreateBudgetBudget budget;
 
   const CreateBudget({required this.message, required this.budget});
 
-  CreateBudget Function({String message, CreateBudgetBudget budget})
-      get copyWith => _copyWith;
+  CreateBudget Function({String message, CreateBudgetBudget budget}) get copyWith => _copyWith;
 
-  CreateBudget _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? budget = sdkOmittedValue}) =>
-      CreateBudget(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        budget: identical(budget, sdkOmittedValue)
-            ? this.budget
-            : budget as CreateBudgetBudget,
-      );
+  CreateBudget _copyWith({Object? message = sdkOmittedValue, Object? budget = sdkOmittedValue}) => CreateBudget(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    budget: identical(budget, sdkOmittedValue) ? this.budget : budget as CreateBudgetBudget,
+  );
 
   factory CreateBudget.fromJson(Map<String, dynamic> json) => CreateBudget(
-        message: (json['message'] as String?)!,
-        budget: (json['budget'] != null
-            ? CreateBudgetBudget.fromJson(
-                json['budget'] as Map<String, dynamic>)
-            : null)!,
-      );
+    message: (json['message'] as String?)!,
+    budget: (json['budget'] != null ? CreateBudgetBudget.fromJson(json['budget'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'budget': budget.toJson(),
-      };
+    'message': message,
+    'budget': budget.toJson(),
+  };
 }
 
 /// Typed representation of the `DeleteBudget` API schema.
 class DeleteBudget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A message indicating the result of the deletion operation
   final String message;
-
   /// The ID of the deleted budget
   final String id;
 
@@ -527,22 +282,18 @@ class DeleteBudget {
 
   DeleteBudget Function({String message, String id}) get copyWith => _copyWith;
 
-  DeleteBudget _copyWith(
-          {Object? message = sdkOmittedValue, Object? id = sdkOmittedValue}) =>
-      DeleteBudget(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-      );
+  DeleteBudget _copyWith({Object? message = sdkOmittedValue, Object? id = sdkOmittedValue}) => DeleteBudget(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+  );
 
   factory DeleteBudget.fromJson(Map<String, dynamic> json) => DeleteBudget(
-        message: (json['message'] as String?)!,
-        id: (json['id'] as String?)!,
-      );
+    message: (json['message'] as String?)!,
+    id: (json['id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'id': id,
-      };
+    'message': message,
+    'id': id,
+  };
 }

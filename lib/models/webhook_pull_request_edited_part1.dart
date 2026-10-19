@@ -8,418 +8,239 @@ part of 'webhook_pull_request_edited.dart';
 class WebhookPullRequestEditedChangesBaseRef {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `from` wire field.
   final String from;
 
   const WebhookPullRequestEditedChangesBaseRef({required this.from});
 
-  WebhookPullRequestEditedChangesBaseRef Function({String from}) get copyWith =>
-      _copyWith;
+  WebhookPullRequestEditedChangesBaseRef Function({String from}) get copyWith => _copyWith;
 
-  WebhookPullRequestEditedChangesBaseRef _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookPullRequestEditedChangesBaseRef(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookPullRequestEditedChangesBaseRef _copyWith({Object? from = sdkOmittedValue}) => WebhookPullRequestEditedChangesBaseRef(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookPullRequestEditedChangesBaseRef.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEditedChangesBaseRef(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookPullRequestEditedChangesBaseRef.fromJson(Map<String, dynamic> json) => WebhookPullRequestEditedChangesBaseRef(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Required object value serialized in the `sha` wire field.
 class WebhookPullRequestEditedChangesBaseSha {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `from` wire field.
   final String from;
 
   const WebhookPullRequestEditedChangesBaseSha({required this.from});
 
-  WebhookPullRequestEditedChangesBaseSha Function({String from}) get copyWith =>
-      _copyWith;
+  WebhookPullRequestEditedChangesBaseSha Function({String from}) get copyWith => _copyWith;
 
-  WebhookPullRequestEditedChangesBaseSha _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookPullRequestEditedChangesBaseSha(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookPullRequestEditedChangesBaseSha _copyWith({Object? from = sdkOmittedValue}) => WebhookPullRequestEditedChangesBaseSha(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookPullRequestEditedChangesBaseSha.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEditedChangesBaseSha(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookPullRequestEditedChangesBaseSha.fromJson(Map<String, dynamic> json) => WebhookPullRequestEditedChangesBaseSha(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Optional object value serialized in the `base` wire field.
 class WebhookPullRequestEditedChangesBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `ref` wire field.
   final WebhookPullRequestEditedChangesBaseRef ref;
-
   /// Required object value serialized in the `sha` wire field.
   final WebhookPullRequestEditedChangesBaseSha sha;
 
-  const WebhookPullRequestEditedChangesBase(
-      {required this.ref, required this.sha});
+  const WebhookPullRequestEditedChangesBase({required this.ref, required this.sha});
 
-  WebhookPullRequestEditedChangesBase Function(
-      {WebhookPullRequestEditedChangesBaseRef ref,
-      WebhookPullRequestEditedChangesBaseSha sha}) get copyWith => _copyWith;
+  WebhookPullRequestEditedChangesBase Function({WebhookPullRequestEditedChangesBaseRef ref, WebhookPullRequestEditedChangesBaseSha sha}) get copyWith => _copyWith;
 
-  WebhookPullRequestEditedChangesBase _copyWith(
-          {Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
-      WebhookPullRequestEditedChangesBase(
-        ref: identical(ref, sdkOmittedValue)
-            ? this.ref
-            : ref as WebhookPullRequestEditedChangesBaseRef,
-        sha: identical(sha, sdkOmittedValue)
-            ? this.sha
-            : sha as WebhookPullRequestEditedChangesBaseSha,
-      );
+  WebhookPullRequestEditedChangesBase _copyWith({Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookPullRequestEditedChangesBase(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as WebhookPullRequestEditedChangesBaseRef,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as WebhookPullRequestEditedChangesBaseSha,
+  );
 
-  factory WebhookPullRequestEditedChangesBase.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEditedChangesBase(
-        ref: (json['ref'] != null
-            ? WebhookPullRequestEditedChangesBaseRef.fromJson(
-                json['ref'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] != null
-            ? WebhookPullRequestEditedChangesBaseSha.fromJson(
-                json['sha'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookPullRequestEditedChangesBase.fromJson(Map<String, dynamic> json) => WebhookPullRequestEditedChangesBase(
+    ref: (json['ref'] != null ? WebhookPullRequestEditedChangesBaseRef.fromJson(json['ref'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] != null ? WebhookPullRequestEditedChangesBaseSha.fromJson(json['sha'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref.toJson(),
-        'sha': sha.toJson(),
-      };
+    'ref': ref.toJson(),
+    'sha': sha.toJson(),
+  };
 }
 
 /// Optional object value serialized in the `body` wire field.
 class WebhookPullRequestEditedChangesBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The previous version of the body if the action was `edited`.
   final String from;
 
   const WebhookPullRequestEditedChangesBody({required this.from});
 
-  WebhookPullRequestEditedChangesBody Function({String from}) get copyWith =>
-      _copyWith;
+  WebhookPullRequestEditedChangesBody Function({String from}) get copyWith => _copyWith;
 
-  WebhookPullRequestEditedChangesBody _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookPullRequestEditedChangesBody(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookPullRequestEditedChangesBody _copyWith({Object? from = sdkOmittedValue}) => WebhookPullRequestEditedChangesBody(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookPullRequestEditedChangesBody.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEditedChangesBody(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookPullRequestEditedChangesBody.fromJson(Map<String, dynamic> json) => WebhookPullRequestEditedChangesBody(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Optional object value serialized in the `title` wire field.
 class WebhookPullRequestEditedChangesTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The previous version of the title if the action was `edited`.
   final String from;
 
   const WebhookPullRequestEditedChangesTitle({required this.from});
 
-  WebhookPullRequestEditedChangesTitle Function({String from}) get copyWith =>
-      _copyWith;
+  WebhookPullRequestEditedChangesTitle Function({String from}) get copyWith => _copyWith;
 
-  WebhookPullRequestEditedChangesTitle _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookPullRequestEditedChangesTitle(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookPullRequestEditedChangesTitle _copyWith({Object? from = sdkOmittedValue}) => WebhookPullRequestEditedChangesTitle(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookPullRequestEditedChangesTitle.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEditedChangesTitle(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookPullRequestEditedChangesTitle.fromJson(Map<String, dynamic> json) => WebhookPullRequestEditedChangesTitle(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// The changes to the comment if the action was `edited`.
 class WebhookPullRequestEditedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `base` wire field.
   final SdkOptional<WebhookPullRequestEditedChangesBase> base_;
-
   /// Optional object value serialized in the `body` wire field.
   final SdkOptional<WebhookPullRequestEditedChangesBody> body;
-
   /// Optional object value serialized in the `title` wire field.
   final SdkOptional<WebhookPullRequestEditedChangesTitle> title;
 
-  const WebhookPullRequestEditedChanges(
-      {this.base_ = const SdkOmitted(),
-      this.body = const SdkOmitted(),
-      this.title = const SdkOmitted()});
+  const WebhookPullRequestEditedChanges({this.base_ = const SdkOmitted(), this.body = const SdkOmitted(), this.title = const SdkOmitted()});
 
-  WebhookPullRequestEditedChanges Function(
-          {SdkOptional<WebhookPullRequestEditedChangesBase> base_,
-          SdkOptional<WebhookPullRequestEditedChangesBody> body,
-          SdkOptional<WebhookPullRequestEditedChangesTitle> title})
-      get copyWith => _copyWith;
+  WebhookPullRequestEditedChanges Function({SdkOptional<WebhookPullRequestEditedChangesBase> base_, SdkOptional<WebhookPullRequestEditedChangesBody> body, SdkOptional<WebhookPullRequestEditedChangesTitle> title}) get copyWith => _copyWith;
 
-  WebhookPullRequestEditedChanges _copyWith(
-          {Object? base_ = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? title = sdkOmittedValue}) =>
-      WebhookPullRequestEditedChanges(
-        base_: identical(base_, sdkOmittedValue)
-            ? this.base_
-            : base_ as SdkOptional<WebhookPullRequestEditedChangesBase>,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<WebhookPullRequestEditedChangesBody>,
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<WebhookPullRequestEditedChangesTitle>,
-      );
+  WebhookPullRequestEditedChanges _copyWith({Object? base_ = sdkOmittedValue, Object? body = sdkOmittedValue, Object? title = sdkOmittedValue}) => WebhookPullRequestEditedChanges(
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as SdkOptional<WebhookPullRequestEditedChangesBase>,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<WebhookPullRequestEditedChangesBody>,
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<WebhookPullRequestEditedChangesTitle>,
+  );
 
-  factory WebhookPullRequestEditedChanges.fromJson(Map<String, dynamic> json) =>
-      WebhookPullRequestEditedChanges(
-        base_: json['base'] != null
-            ? SdkPresent((json['base'] != null
-                ? WebhookPullRequestEditedChangesBase.fromJson(
-                    json['base'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        body: json['body'] != null
-            ? SdkPresent((json['body'] != null
-                ? WebhookPullRequestEditedChangesBody.fromJson(
-                    json['body'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        title: json['title'] != null
-            ? SdkPresent((json['title'] != null
-                ? WebhookPullRequestEditedChangesTitle.fromJson(
-                    json['title'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookPullRequestEditedChanges.fromJson(Map<String, dynamic> json) => WebhookPullRequestEditedChanges(
+    base_: json['base'] != null ? SdkPresent((json['base'] != null ? WebhookPullRequestEditedChangesBase.fromJson(json['base'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    body: json['body'] != null ? SdkPresent((json['body'] != null ? WebhookPullRequestEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    title: json['title'] != null ? SdkPresent((json['title'] != null ? WebhookPullRequestEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (base_) {
-          SdkPresent<WebhookPullRequestEditedChangesBase>(value: final value) =>
-            {
-              'base': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (body) {
-          SdkPresent<WebhookPullRequestEditedChangesBody>(value: final value) =>
-            {
-              'body': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (title) {
-          SdkPresent<WebhookPullRequestEditedChangesTitle>(
-            value: final value
-          ) =>
-            {
-              'title': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (base_) {
+      SdkPresent<WebhookPullRequestEditedChangesBase>(value: final value) => {'base': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (body) {
+      SdkPresent<WebhookPullRequestEditedChangesBody>(value: final value) => {'body': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (title) {
+      SdkPresent<WebhookPullRequestEditedChangesTitle>(value: final value) => {'title': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `WebhookPullRequestEdited` API schema.
 class WebhookPullRequestEdited {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookPullRequestEditedAction action;
-
   /// The changes to the comment if the action was `edited`.
   final WebhookPullRequestEditedChanges changes;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// The pull request number.
   final int number;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// Required API value serialized in the `pull_request` wire field.
   final PullRequestWebhook pullRequest;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookPullRequestEdited(
-      {required this.action,
-      required this.changes,
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      required this.number,
-      this.organization = const SdkOmitted(),
-      required this.pullRequest,
-      required this.repository,
-      required this.sender});
+  const WebhookPullRequestEdited({required this.action, required this.changes, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), required this.number, this.organization = const SdkOmitted(), required this.pullRequest, required this.repository, required this.sender});
 
-  WebhookPullRequestEdited Function(
-      {WebhookPullRequestEditedAction action,
-      WebhookPullRequestEditedChanges changes,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      int number,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      PullRequestWebhook pullRequest,
-      RepositoryWebhooks repository,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookPullRequestEdited Function({WebhookPullRequestEditedAction action, WebhookPullRequestEditedChanges changes, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, int number, SdkOptional<OrganizationSimpleWebhooks> organization, PullRequestWebhook pullRequest, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookPullRequestEdited _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? changes = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookPullRequestEdited(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookPullRequestEditedAction,
-        changes: identical(changes, sdkOmittedValue)
-            ? this.changes
-            : changes as WebhookPullRequestEditedChanges,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as PullRequestWebhook,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookPullRequestEdited _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? number = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookPullRequestEdited(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookPullRequestEditedAction,
+    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as WebhookPullRequestEditedChanges,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as PullRequestWebhook,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookPullRequestEdited.fromJson(Map<String, dynamic> json) =>
-      WebhookPullRequestEdited(
-        action: (json['action'] != null
-            ? WebhookPullRequestEditedAction.fromJson(json['action'] as String)
-            : null)!,
-        changes: (json['changes'] != null
-            ? WebhookPullRequestEditedChanges.fromJson(
-                json['changes'] as Map<String, dynamic>)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        number: ((json['number'] as num?)?.toInt())!,
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequest: (json['pull_request'] != null
-            ? PullRequestWebhook.fromJson(
-                json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookPullRequestEdited.fromJson(Map<String, dynamic> json) => WebhookPullRequestEdited(
+    action: (json['action'] != null ? WebhookPullRequestEditedAction.fromJson(json['action'] as String) : null)!,
+    changes: (json['changes'] != null ? WebhookPullRequestEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    number: ((json['number'] as num?)?.toInt())!,
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequest: (json['pull_request'] != null ? PullRequestWebhook.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        'changes': changes.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'number': number,
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'pull_request': pullRequest.toJson(),
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    'changes': changes.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'number': number,
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'pull_request': pullRequest.toJson(),
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+  };
 }

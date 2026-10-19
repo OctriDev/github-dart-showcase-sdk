@@ -8,63 +8,46 @@ part of 'webhook_project_card_moved.dart';
 class WebhookProjectCardMovedChangesColumnId {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `from` wire field.
   final int from;
 
   const WebhookProjectCardMovedChangesColumnId({required this.from});
 
-  WebhookProjectCardMovedChangesColumnId Function({int from}) get copyWith =>
-      _copyWith;
+  WebhookProjectCardMovedChangesColumnId Function({int from}) get copyWith => _copyWith;
 
-  WebhookProjectCardMovedChangesColumnId _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookProjectCardMovedChangesColumnId(
-        from: identical(from, sdkOmittedValue) ? this.from : from as int,
-      );
+  WebhookProjectCardMovedChangesColumnId _copyWith({Object? from = sdkOmittedValue}) => WebhookProjectCardMovedChangesColumnId(
+    from: identical(from, sdkOmittedValue) ? this.from : from as int,
+  );
 
-  factory WebhookProjectCardMovedChangesColumnId.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectCardMovedChangesColumnId(
-        from: ((json['from'] as num?)?.toInt())!,
-      );
+  factory WebhookProjectCardMovedChangesColumnId.fromJson(Map<String, dynamic> json) => WebhookProjectCardMovedChangesColumnId(
+    from: ((json['from'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Optional object value serialized in the `changes` wire field.
 class WebhookProjectCardMovedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `column_id` wire field.
   final WebhookProjectCardMovedChangesColumnId columnId;
 
   const WebhookProjectCardMovedChanges({required this.columnId});
 
-  WebhookProjectCardMovedChanges Function(
-          {WebhookProjectCardMovedChangesColumnId columnId})
-      get copyWith => _copyWith;
+  WebhookProjectCardMovedChanges Function({WebhookProjectCardMovedChangesColumnId columnId}) get copyWith => _copyWith;
 
-  WebhookProjectCardMovedChanges _copyWith(
-          {Object? columnId = sdkOmittedValue}) =>
-      WebhookProjectCardMovedChanges(
-        columnId: identical(columnId, sdkOmittedValue)
-            ? this.columnId
-            : columnId as WebhookProjectCardMovedChangesColumnId,
-      );
+  WebhookProjectCardMovedChanges _copyWith({Object? columnId = sdkOmittedValue}) => WebhookProjectCardMovedChanges(
+    columnId: identical(columnId, sdkOmittedValue) ? this.columnId : columnId as WebhookProjectCardMovedChangesColumnId,
+  );
 
-  factory WebhookProjectCardMovedChanges.fromJson(Map<String, dynamic> json) =>
-      WebhookProjectCardMovedChanges(
-        columnId: (json['column_id'] != null
-            ? WebhookProjectCardMovedChangesColumnId.fromJson(
-                json['column_id'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookProjectCardMovedChanges.fromJson(Map<String, dynamic> json) => WebhookProjectCardMovedChanges(
+    columnId: (json['column_id'] != null ? WebhookProjectCardMovedChangesColumnId.fromJson(json['column_id'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'column_id': columnId.toJson(),
-      };
+    'column_id': columnId.toJson(),
+  };
 }

@@ -8,443 +8,236 @@ part of 'projects.dart';
 class ProjectsV2FieldConfiguration {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The day of the week when the iteration starts.
   final SdkOptional<int> startDay;
-
   /// The duration of the iteration in days.
   final SdkOptional<int> duration;
-
   /// Optional array value serialized in the `iterations` wire field.
   final SdkOptional<List<ProjectsV2IterationSettings>> iterations;
 
-  const ProjectsV2FieldConfiguration(
-      {this.startDay = const SdkOmitted(),
-      this.duration = const SdkOmitted(),
-      this.iterations = const SdkOmitted()});
+  const ProjectsV2FieldConfiguration({this.startDay = const SdkOmitted(), this.duration = const SdkOmitted(), this.iterations = const SdkOmitted()});
 
-  ProjectsV2FieldConfiguration Function(
-          {SdkOptional<int> startDay,
-          SdkOptional<int> duration,
-          SdkOptional<List<ProjectsV2IterationSettings>> iterations})
-      get copyWith => _copyWith;
+  ProjectsV2FieldConfiguration Function({SdkOptional<int> startDay, SdkOptional<int> duration, SdkOptional<List<ProjectsV2IterationSettings>> iterations}) get copyWith => _copyWith;
 
-  ProjectsV2FieldConfiguration _copyWith(
-          {Object? startDay = sdkOmittedValue,
-          Object? duration = sdkOmittedValue,
-          Object? iterations = sdkOmittedValue}) =>
-      ProjectsV2FieldConfiguration(
-        startDay: identical(startDay, sdkOmittedValue)
-            ? this.startDay
-            : startDay as SdkOptional<int>,
-        duration: identical(duration, sdkOmittedValue)
-            ? this.duration
-            : duration as SdkOptional<int>,
-        iterations: identical(iterations, sdkOmittedValue)
-            ? this.iterations
-            : iterations as SdkOptional<List<ProjectsV2IterationSettings>>,
-      );
+  ProjectsV2FieldConfiguration _copyWith({Object? startDay = sdkOmittedValue, Object? duration = sdkOmittedValue, Object? iterations = sdkOmittedValue}) => ProjectsV2FieldConfiguration(
+    startDay: identical(startDay, sdkOmittedValue) ? this.startDay : startDay as SdkOptional<int>,
+    duration: identical(duration, sdkOmittedValue) ? this.duration : duration as SdkOptional<int>,
+    iterations: identical(iterations, sdkOmittedValue) ? this.iterations : iterations as SdkOptional<List<ProjectsV2IterationSettings>>,
+  );
 
-  factory ProjectsV2FieldConfiguration.fromJson(Map<String, dynamic> json) =>
-      ProjectsV2FieldConfiguration(
-        startDay: json['start_day'] != null
-            ? SdkPresent(((json['start_day'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        duration: json['duration'] != null
-            ? SdkPresent(((json['duration'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        iterations: json['iterations'] != null
-            ? SdkPresent(((json['iterations'] as List?)
-                ?.map((e) => ProjectsV2IterationSettings.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ProjectsV2FieldConfiguration.fromJson(Map<String, dynamic> json) => ProjectsV2FieldConfiguration(
+    startDay: json['start_day'] != null ? SdkPresent(((json['start_day'] as num?)?.toInt())!) : const SdkOmitted(),
+    duration: json['duration'] != null ? SdkPresent(((json['duration'] as num?)?.toInt())!) : const SdkOmitted(),
+    iterations: json['iterations'] != null ? SdkPresent(((json['iterations'] as List?)?.map((e) => ProjectsV2IterationSettings.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (startDay) {
-          SdkPresent<int>(value: final value) => {
-              'start_day': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (duration) {
-          SdkPresent<int>(value: final value) => {
-              'duration': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (iterations) {
-          SdkPresent<List<ProjectsV2IterationSettings>>(value: final value) => {
-              'iterations': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (startDay) {
+      SdkPresent<int>(value: final value) => {'start_day': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (duration) {
+      SdkPresent<int>(value: final value) => {'duration': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (iterations) {
+      SdkPresent<List<ProjectsV2IterationSettings>>(value: final value) => {'iterations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A field inside a projects v2 project
 class ProjectsV2Field {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the field.
   final int id;
-
   /// The ID of the issue field.
   final SdkOptional<int> issueFieldId;
-
   /// The node ID of the field.
   final SdkOptional<String> nodeId;
-
   /// The API URL of the project that contains the field.
   final String projectUrl;
-
   /// The name of the field.
   final String name;
-
   /// The field's data type.
   final ProjectsV2FieldDataType dataType;
-
   /// The options available for single select fields.
   final SdkOptional<List<ProjectsV2SingleSelectOptions>> options;
-
   /// Configuration for iteration fields.
   final SdkOptional<ProjectsV2FieldConfiguration> configuration;
-
   /// The time when the field was created.
   final String createdAt;
-
   /// The time when the field was last updated.
   final String updatedAt;
 
-  const ProjectsV2Field(
-      {required this.id,
-      this.issueFieldId = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      required this.projectUrl,
-      required this.name,
-      required this.dataType,
-      this.options = const SdkOmitted(),
-      this.configuration = const SdkOmitted(),
-      required this.createdAt,
-      required this.updatedAt});
+  const ProjectsV2Field({required this.id, this.issueFieldId = const SdkOmitted(), this.nodeId = const SdkOmitted(), required this.projectUrl, required this.name, required this.dataType, this.options = const SdkOmitted(), this.configuration = const SdkOmitted(), required this.createdAt, required this.updatedAt});
 
-  ProjectsV2Field Function(
-      {int id,
-      SdkOptional<int> issueFieldId,
-      SdkOptional<String> nodeId,
-      String projectUrl,
-      String name,
-      ProjectsV2FieldDataType dataType,
-      SdkOptional<List<ProjectsV2SingleSelectOptions>> options,
-      SdkOptional<ProjectsV2FieldConfiguration> configuration,
-      String createdAt,
-      String updatedAt}) get copyWith => _copyWith;
+  ProjectsV2Field Function({int id, SdkOptional<int> issueFieldId, SdkOptional<String> nodeId, String projectUrl, String name, ProjectsV2FieldDataType dataType, SdkOptional<List<ProjectsV2SingleSelectOptions>> options, SdkOptional<ProjectsV2FieldConfiguration> configuration, String createdAt, String updatedAt}) get copyWith => _copyWith;
 
-  ProjectsV2Field _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? issueFieldId = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? projectUrl = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? dataType = sdkOmittedValue,
-          Object? options = sdkOmittedValue,
-          Object? configuration = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      ProjectsV2Field(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        issueFieldId: identical(issueFieldId, sdkOmittedValue)
-            ? this.issueFieldId
-            : issueFieldId as SdkOptional<int>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        projectUrl: identical(projectUrl, sdkOmittedValue)
-            ? this.projectUrl
-            : projectUrl as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        dataType: identical(dataType, sdkOmittedValue)
-            ? this.dataType
-            : dataType as ProjectsV2FieldDataType,
-        options: identical(options, sdkOmittedValue)
-            ? this.options
-            : options as SdkOptional<List<ProjectsV2SingleSelectOptions>>,
-        configuration: identical(configuration, sdkOmittedValue)
-            ? this.configuration
-            : configuration as SdkOptional<ProjectsV2FieldConfiguration>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  ProjectsV2Field _copyWith({Object? id = sdkOmittedValue, Object? issueFieldId = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? dataType = sdkOmittedValue, Object? options = sdkOmittedValue, Object? configuration = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => ProjectsV2Field(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    issueFieldId: identical(issueFieldId, sdkOmittedValue) ? this.issueFieldId : issueFieldId as SdkOptional<int>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    dataType: identical(dataType, sdkOmittedValue) ? this.dataType : dataType as ProjectsV2FieldDataType,
+    options: identical(options, sdkOmittedValue) ? this.options : options as SdkOptional<List<ProjectsV2SingleSelectOptions>>,
+    configuration: identical(configuration, sdkOmittedValue) ? this.configuration : configuration as SdkOptional<ProjectsV2FieldConfiguration>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
-  factory ProjectsV2Field.fromJson(Map<String, dynamic> json) =>
-      ProjectsV2Field(
-        id: ((json['id'] as num?)?.toInt())!,
-        issueFieldId: json['issue_field_id'] != null
-            ? SdkPresent(((json['issue_field_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        projectUrl: (json['project_url'] as String?)!,
-        name: (json['name'] as String?)!,
-        dataType: (json['data_type'] != null
-            ? ProjectsV2FieldDataType.fromJson(json['data_type'] as String)
-            : null)!,
-        options: json['options'] != null
-            ? SdkPresent(((json['options'] as List?)
-                ?.map((e) => ProjectsV2SingleSelectOptions.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        configuration: json['configuration'] != null
-            ? SdkPresent((json['configuration'] != null
-                ? ProjectsV2FieldConfiguration.fromJson(
-                    json['configuration'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+  factory ProjectsV2Field.fromJson(Map<String, dynamic> json) => ProjectsV2Field(
+    id: ((json['id'] as num?)?.toInt())!,
+    issueFieldId: json['issue_field_id'] != null ? SdkPresent(((json['issue_field_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    projectUrl: (json['project_url'] as String?)!,
+    name: (json['name'] as String?)!,
+    dataType: (json['data_type'] != null ? ProjectsV2FieldDataType.fromJson(json['data_type'] as String) : null)!,
+    options: json['options'] != null ? SdkPresent(((json['options'] as List?)?.map((e) => ProjectsV2SingleSelectOptions.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    configuration: json['configuration'] != null ? SdkPresent((json['configuration'] != null ? ProjectsV2FieldConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (issueFieldId) {
-          SdkPresent<int>(value: final value) => {
-              'issue_field_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'project_url': projectUrl,
-        'name': name,
-        'data_type': dataType.toJson(),
-        ...switch (options) {
-          SdkPresent<List<ProjectsV2SingleSelectOptions>>(value: final value) =>
-            {
-              'options': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (configuration) {
-          SdkPresent<ProjectsV2FieldConfiguration>(value: final value) => {
-              'configuration': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-      };
+    'id': id,
+    ...switch (issueFieldId) {
+      SdkPresent<int>(value: final value) => {'issue_field_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    'project_url': projectUrl,
+    'name': name,
+    'data_type': dataType.toJson(),
+    ...switch (options) {
+      SdkPresent<List<ProjectsV2SingleSelectOptions>>(value: final value) => {'options': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (configuration) {
+      SdkPresent<ProjectsV2FieldConfiguration>(value: final value) => {'configuration': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+  };
 }
 
 /// Required object value serialized in the `iterations[]` wire field.
 class ProjectsV2FieldIterationConfigurationIterationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The title of the iteration.
   final String title;
-
   /// The start date of the iteration.
   final String startDate;
-
   /// The duration of the iteration in days.
   final int duration;
 
-  const ProjectsV2FieldIterationConfigurationIterationsItem(
-      {required this.title, required this.startDate, required this.duration});
+  const ProjectsV2FieldIterationConfigurationIterationsItem({required this.title, required this.startDate, required this.duration});
 
-  ProjectsV2FieldIterationConfigurationIterationsItem Function(
-      {String title, String startDate, int duration}) get copyWith => _copyWith;
+  ProjectsV2FieldIterationConfigurationIterationsItem Function({String title, String startDate, int duration}) get copyWith => _copyWith;
 
-  ProjectsV2FieldIterationConfigurationIterationsItem _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? startDate = sdkOmittedValue,
-          Object? duration = sdkOmittedValue}) =>
-      ProjectsV2FieldIterationConfigurationIterationsItem(
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        startDate: identical(startDate, sdkOmittedValue)
-            ? this.startDate
-            : startDate as String,
-        duration: identical(duration, sdkOmittedValue)
-            ? this.duration
-            : duration as int,
-      );
+  ProjectsV2FieldIterationConfigurationIterationsItem _copyWith({Object? title = sdkOmittedValue, Object? startDate = sdkOmittedValue, Object? duration = sdkOmittedValue}) => ProjectsV2FieldIterationConfigurationIterationsItem(
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    startDate: identical(startDate, sdkOmittedValue) ? this.startDate : startDate as String,
+    duration: identical(duration, sdkOmittedValue) ? this.duration : duration as int,
+  );
 
-  factory ProjectsV2FieldIterationConfigurationIterationsItem.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsV2FieldIterationConfigurationIterationsItem(
-        title: (json['title'] as String?)!,
-        startDate: (json['start_date'] as String?)!,
-        duration: ((json['duration'] as num?)?.toInt())!,
-      );
+  factory ProjectsV2FieldIterationConfigurationIterationsItem.fromJson(Map<String, dynamic> json) => ProjectsV2FieldIterationConfigurationIterationsItem(
+    title: (json['title'] as String?)!,
+    startDate: (json['start_date'] as String?)!,
+    duration: ((json['duration'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        'start_date': startDate,
-        'duration': duration,
-      };
+    'title': title,
+    'start_date': startDate,
+    'duration': duration,
+  };
 }
 
 /// The configuration for iteration fields.
 class ProjectsV2FieldIterationConfiguration {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The start date of the first iteration.
   final String startDate;
-
   /// The default duration for iterations in days. Individual iterations can override this value.
   final int duration;
-
   /// Zero or more iterations for the field.
-  final SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>>
-      iterations;
+  final SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>> iterations;
 
-  const ProjectsV2FieldIterationConfiguration(
-      {required this.startDate,
-      required this.duration,
-      this.iterations = const SdkOmitted()});
+  const ProjectsV2FieldIterationConfiguration({required this.startDate, required this.duration, this.iterations = const SdkOmitted()});
 
-  ProjectsV2FieldIterationConfiguration Function(
-      {String startDate,
-      int duration,
-      SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>>
-          iterations}) get copyWith => _copyWith;
+  ProjectsV2FieldIterationConfiguration Function({String startDate, int duration, SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>> iterations}) get copyWith => _copyWith;
 
-  ProjectsV2FieldIterationConfiguration _copyWith(
-          {Object? startDate = sdkOmittedValue,
-          Object? duration = sdkOmittedValue,
-          Object? iterations = sdkOmittedValue}) =>
-      ProjectsV2FieldIterationConfiguration(
-        startDate: identical(startDate, sdkOmittedValue)
-            ? this.startDate
-            : startDate as String,
-        duration: identical(duration, sdkOmittedValue)
-            ? this.duration
-            : duration as int,
-        iterations: identical(iterations, sdkOmittedValue)
-            ? this.iterations
-            : iterations as SdkOptional<
-                List<ProjectsV2FieldIterationConfigurationIterationsItem>>,
-      );
+  ProjectsV2FieldIterationConfiguration _copyWith({Object? startDate = sdkOmittedValue, Object? duration = sdkOmittedValue, Object? iterations = sdkOmittedValue}) => ProjectsV2FieldIterationConfiguration(
+    startDate: identical(startDate, sdkOmittedValue) ? this.startDate : startDate as String,
+    duration: identical(duration, sdkOmittedValue) ? this.duration : duration as int,
+    iterations: identical(iterations, sdkOmittedValue) ? this.iterations : iterations as SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>>,
+  );
 
-  factory ProjectsV2FieldIterationConfiguration.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsV2FieldIterationConfiguration(
-        startDate: (json['start_date'] as String?)!,
-        duration: ((json['duration'] as num?)?.toInt())!,
-        iterations: json['iterations'] != null
-            ? SdkPresent(((json['iterations'] as List?)
-                ?.map((e) => ProjectsV2FieldIterationConfigurationIterationsItem
-                    .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ProjectsV2FieldIterationConfiguration.fromJson(Map<String, dynamic> json) => ProjectsV2FieldIterationConfiguration(
+    startDate: (json['start_date'] as String?)!,
+    duration: ((json['duration'] as num?)?.toInt())!,
+    iterations: json['iterations'] != null ? SdkPresent(((json['iterations'] as List?)?.map((e) => ProjectsV2FieldIterationConfigurationIterationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'start_date': startDate,
-        'duration': duration,
-        ...switch (iterations) {
-          SdkPresent<List<ProjectsV2FieldIterationConfigurationIterationsItem>>(
-            value: final value
-          ) =>
-            {
-              'iterations': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'start_date': startDate,
+    'duration': duration,
+    ...switch (iterations) {
+      SdkPresent<List<ProjectsV2FieldIterationConfigurationIterationsItem>>(value: final value) => {'iterations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `ProjectsV2FieldSingleSelectOption` API schema.
 class ProjectsV2FieldSingleSelectOption {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The display name of the option.
   final SdkOptional<String> name;
-
   /// The color associated with the option.
   final SdkOptional<ProjectsV2FieldSingleSelectOptionColor> color;
-
   /// The description of the option.
   final SdkOptional<String> description;
 
-  const ProjectsV2FieldSingleSelectOption(
-      {this.name = const SdkOmitted(),
-      this.color = const SdkOmitted(),
-      this.description = const SdkOmitted()});
+  const ProjectsV2FieldSingleSelectOption({this.name = const SdkOmitted(), this.color = const SdkOmitted(), this.description = const SdkOmitted()});
 
-  ProjectsV2FieldSingleSelectOption Function(
-      {SdkOptional<String> name,
-      SdkOptional<ProjectsV2FieldSingleSelectOptionColor> color,
-      SdkOptional<String> description}) get copyWith => _copyWith;
+  ProjectsV2FieldSingleSelectOption Function({SdkOptional<String> name, SdkOptional<ProjectsV2FieldSingleSelectOptionColor> color, SdkOptional<String> description}) get copyWith => _copyWith;
 
-  ProjectsV2FieldSingleSelectOption _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? color = sdkOmittedValue,
-          Object? description = sdkOmittedValue}) =>
-      ProjectsV2FieldSingleSelectOption(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<ProjectsV2FieldSingleSelectOptionColor>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-      );
+  ProjectsV2FieldSingleSelectOption _copyWith({Object? name = sdkOmittedValue, Object? color = sdkOmittedValue, Object? description = sdkOmittedValue}) => ProjectsV2FieldSingleSelectOption(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<ProjectsV2FieldSingleSelectOptionColor>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+  );
 
-  factory ProjectsV2FieldSingleSelectOption.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsV2FieldSingleSelectOption(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        color: json['color'] != null
-            ? SdkPresent((json['color'] != null
-                ? ProjectsV2FieldSingleSelectOptionColor.fromJson(
-                    json['color'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ProjectsV2FieldSingleSelectOption.fromJson(Map<String, dynamic> json) => ProjectsV2FieldSingleSelectOption(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    color: json['color'] != null ? SdkPresent((json['color'] != null ? ProjectsV2FieldSingleSelectOptionColor.fromJson(json['color'] as String) : null)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (color) {
-          SdkPresent<ProjectsV2FieldSingleSelectOptionColor>(
-            value: final value
-          ) =>
-            {
-              'color': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (color) {
+      SdkPresent<ProjectsV2FieldSingleSelectOptionColor>(value: final value) => {'color': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

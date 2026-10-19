@@ -8,365 +8,175 @@ part of 'secret_scanning.dart';
 class SecretScanningScan {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The type of scan
   final SdkOptional<String> type_;
-
   /// The state of the scan. Either "completed", "running", "pending", "failed", or "unknown". "failed": this scan type has hit its retry limit and has been marked permanently failed. This usually resolves on its own at the next scheduled scan attempt. If "failed" persists, contact Support. "unknown": the scan is in an unrecognized or currently unhandled state.
   final SdkOptional<String> status;
-
   /// The time that the scan was completed. Empty if the scan is running
   final SdkOptional<String?> completedAt;
-
   /// The time that the scan was started. Empty if the scan is pending
   final SdkOptional<String?> startedAt;
 
-  const SecretScanningScan(
-      {this.type_ = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      this.completedAt = const SdkOmitted(),
-      this.startedAt = const SdkOmitted()});
+  const SecretScanningScan({this.type_ = const SdkOmitted(), this.status = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.startedAt = const SdkOmitted()});
 
-  SecretScanningScan Function(
-      {SdkOptional<String> type_,
-      SdkOptional<String> status,
-      SdkOptional<String?> completedAt,
-      SdkOptional<String?> startedAt}) get copyWith => _copyWith;
+  SecretScanningScan Function({SdkOptional<String> type_, SdkOptional<String> status, SdkOptional<String?> completedAt, SdkOptional<String?> startedAt}) get copyWith => _copyWith;
 
-  SecretScanningScan _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? completedAt = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue}) =>
-      SecretScanningScan(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<String>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<String>,
-        completedAt: identical(completedAt, sdkOmittedValue)
-            ? this.completedAt
-            : completedAt as SdkOptional<String?>,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as SdkOptional<String?>,
-      );
+  SecretScanningScan _copyWith({Object? type_ = sdkOmittedValue, Object? status = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? startedAt = sdkOmittedValue}) => SecretScanningScan(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String?>,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String?>,
+  );
 
-  factory SecretScanningScan.fromJson(Map<String, dynamic> json) =>
-      SecretScanningScan(
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-        completedAt: json.containsKey('completed_at')
-            ? SdkPresent(json['completed_at'] as String?)
-            : const SdkOmitted(),
-        startedAt: json.containsKey('started_at')
-            ? SdkPresent(json['started_at'] as String?)
-            : const SdkOmitted(),
-      );
+  factory SecretScanningScan.fromJson(Map<String, dynamic> json) => SecretScanningScan(
+    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+    completedAt: json.containsKey('completed_at') ? SdkPresent(json['completed_at'] as String?) : const SdkOmitted(),
+    startedAt: json.containsKey('started_at') ? SdkPresent(json['started_at'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (completedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'completed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'started_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (type_) {
+      SdkPresent<String>(value: final value) => {'type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (completedAt) {
+      SdkPresent<String?>(value: final value) => {'completed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startedAt) {
+      SdkPresent<String?>(value: final value) => {'started_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `custom_pattern_backfill_scans[]` wire field.
 class SecretScanningScanHistoryCustomPatternBackfillScansItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The type of scan
   final SdkOptional<String> type_;
-
   /// The state of the scan. Either "completed", "running", "pending", "failed", or "unknown". "failed": this scan type has hit its retry limit and has been marked permanently failed. This usually resolves on its own at the next scheduled scan attempt. If "failed" persists, contact Support. "unknown": the scan is in an unrecognized or currently unhandled state.
   final SdkOptional<String> status;
-
   /// The time that the scan was completed. Empty if the scan is running
   final SdkOptional<String?> completedAt;
-
   /// The time that the scan was started. Empty if the scan is pending
   final SdkOptional<String?> startedAt;
-
   /// Name of the custom pattern for custom pattern scans
   final SdkOptional<String> patternName;
-
   /// Level at which the custom pattern is defined, one of "repository", "organization", or "enterprise"
   final SdkOptional<String> patternScope;
 
-  const SecretScanningScanHistoryCustomPatternBackfillScansItem(
-      {this.type_ = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      this.completedAt = const SdkOmitted(),
-      this.startedAt = const SdkOmitted(),
-      this.patternName = const SdkOmitted(),
-      this.patternScope = const SdkOmitted()});
+  const SecretScanningScanHistoryCustomPatternBackfillScansItem({this.type_ = const SdkOmitted(), this.status = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.startedAt = const SdkOmitted(), this.patternName = const SdkOmitted(), this.patternScope = const SdkOmitted()});
 
-  SecretScanningScanHistoryCustomPatternBackfillScansItem Function(
-      {SdkOptional<String> type_,
-      SdkOptional<String> status,
-      SdkOptional<String?> completedAt,
-      SdkOptional<String?> startedAt,
-      SdkOptional<String> patternName,
-      SdkOptional<String> patternScope}) get copyWith => _copyWith;
+  SecretScanningScanHistoryCustomPatternBackfillScansItem Function({SdkOptional<String> type_, SdkOptional<String> status, SdkOptional<String?> completedAt, SdkOptional<String?> startedAt, SdkOptional<String> patternName, SdkOptional<String> patternScope}) get copyWith => _copyWith;
 
-  SecretScanningScanHistoryCustomPatternBackfillScansItem _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? completedAt = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue,
-          Object? patternName = sdkOmittedValue,
-          Object? patternScope = sdkOmittedValue}) =>
-      SecretScanningScanHistoryCustomPatternBackfillScansItem(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<String>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<String>,
-        completedAt: identical(completedAt, sdkOmittedValue)
-            ? this.completedAt
-            : completedAt as SdkOptional<String?>,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as SdkOptional<String?>,
-        patternName: identical(patternName, sdkOmittedValue)
-            ? this.patternName
-            : patternName as SdkOptional<String>,
-        patternScope: identical(patternScope, sdkOmittedValue)
-            ? this.patternScope
-            : patternScope as SdkOptional<String>,
-      );
+  SecretScanningScanHistoryCustomPatternBackfillScansItem _copyWith({Object? type_ = sdkOmittedValue, Object? status = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? startedAt = sdkOmittedValue, Object? patternName = sdkOmittedValue, Object? patternScope = sdkOmittedValue}) => SecretScanningScanHistoryCustomPatternBackfillScansItem(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String?>,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String?>,
+    patternName: identical(patternName, sdkOmittedValue) ? this.patternName : patternName as SdkOptional<String>,
+    patternScope: identical(patternScope, sdkOmittedValue) ? this.patternScope : patternScope as SdkOptional<String>,
+  );
 
-  factory SecretScanningScanHistoryCustomPatternBackfillScansItem.fromJson(
-          Map<String, dynamic> json) =>
-      SecretScanningScanHistoryCustomPatternBackfillScansItem(
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-        completedAt: json.containsKey('completed_at')
-            ? SdkPresent(json['completed_at'] as String?)
-            : const SdkOmitted(),
-        startedAt: json.containsKey('started_at')
-            ? SdkPresent(json['started_at'] as String?)
-            : const SdkOmitted(),
-        patternName: json['pattern_name'] != null
-            ? SdkPresent((json['pattern_name'] as String?)!)
-            : const SdkOmitted(),
-        patternScope: json['pattern_scope'] != null
-            ? SdkPresent((json['pattern_scope'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory SecretScanningScanHistoryCustomPatternBackfillScansItem.fromJson(Map<String, dynamic> json) => SecretScanningScanHistoryCustomPatternBackfillScansItem(
+    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+    completedAt: json.containsKey('completed_at') ? SdkPresent(json['completed_at'] as String?) : const SdkOmitted(),
+    startedAt: json.containsKey('started_at') ? SdkPresent(json['started_at'] as String?) : const SdkOmitted(),
+    patternName: json['pattern_name'] != null ? SdkPresent((json['pattern_name'] as String?)!) : const SdkOmitted(),
+    patternScope: json['pattern_scope'] != null ? SdkPresent((json['pattern_scope'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (completedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'completed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'started_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (patternName) {
-          SdkPresent<String>(value: final value) => {
-              'pattern_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (patternScope) {
-          SdkPresent<String>(value: final value) => {
-              'pattern_scope': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (type_) {
+      SdkPresent<String>(value: final value) => {'type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (completedAt) {
+      SdkPresent<String?>(value: final value) => {'completed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startedAt) {
+      SdkPresent<String?>(value: final value) => {'started_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (patternName) {
+      SdkPresent<String>(value: final value) => {'pattern_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (patternScope) {
+      SdkPresent<String>(value: final value) => {'pattern_scope': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `SecretScanningScanHistory` API schema.
 class SecretScanningScanHistory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `incremental_scans` wire field.
   final SdkOptional<List<SecretScanningScan>> incrementalScans;
-
   /// Optional array value serialized in the `pattern_update_scans` wire field.
   final SdkOptional<List<SecretScanningScan>> patternUpdateScans;
-
   /// Optional array value serialized in the `backfill_scans` wire field.
   final SdkOptional<List<SecretScanningScan>> backfillScans;
-
   /// Optional array value serialized in the `custom_pattern_backfill_scans` wire field.
-  final SdkOptional<
-          List<SecretScanningScanHistoryCustomPatternBackfillScansItem>>
-      customPatternBackfillScans;
-
+  final SdkOptional<List<SecretScanningScanHistoryCustomPatternBackfillScansItem>> customPatternBackfillScans;
   /// Optional array value serialized in the `generic_secrets_backfill_scans` wire field.
   final SdkOptional<List<SecretScanningScan>> genericSecretsBackfillScans;
 
-  const SecretScanningScanHistory(
-      {this.incrementalScans = const SdkOmitted(),
-      this.patternUpdateScans = const SdkOmitted(),
-      this.backfillScans = const SdkOmitted(),
-      this.customPatternBackfillScans = const SdkOmitted(),
-      this.genericSecretsBackfillScans = const SdkOmitted()});
+  const SecretScanningScanHistory({this.incrementalScans = const SdkOmitted(), this.patternUpdateScans = const SdkOmitted(), this.backfillScans = const SdkOmitted(), this.customPatternBackfillScans = const SdkOmitted(), this.genericSecretsBackfillScans = const SdkOmitted()});
 
-  SecretScanningScanHistory Function(
-      {SdkOptional<List<SecretScanningScan>> incrementalScans,
-      SdkOptional<List<SecretScanningScan>> patternUpdateScans,
-      SdkOptional<List<SecretScanningScan>> backfillScans,
-      SdkOptional<List<SecretScanningScanHistoryCustomPatternBackfillScansItem>>
-          customPatternBackfillScans,
-      SdkOptional<List<SecretScanningScan>>
-          genericSecretsBackfillScans}) get copyWith => _copyWith;
+  SecretScanningScanHistory Function({SdkOptional<List<SecretScanningScan>> incrementalScans, SdkOptional<List<SecretScanningScan>> patternUpdateScans, SdkOptional<List<SecretScanningScan>> backfillScans, SdkOptional<List<SecretScanningScanHistoryCustomPatternBackfillScansItem>> customPatternBackfillScans, SdkOptional<List<SecretScanningScan>> genericSecretsBackfillScans}) get copyWith => _copyWith;
 
-  SecretScanningScanHistory _copyWith(
-          {Object? incrementalScans = sdkOmittedValue,
-          Object? patternUpdateScans = sdkOmittedValue,
-          Object? backfillScans = sdkOmittedValue,
-          Object? customPatternBackfillScans = sdkOmittedValue,
-          Object? genericSecretsBackfillScans = sdkOmittedValue}) =>
-      SecretScanningScanHistory(
-        incrementalScans: identical(incrementalScans, sdkOmittedValue)
-            ? this.incrementalScans
-            : incrementalScans as SdkOptional<List<SecretScanningScan>>,
-        patternUpdateScans: identical(patternUpdateScans, sdkOmittedValue)
-            ? this.patternUpdateScans
-            : patternUpdateScans as SdkOptional<List<SecretScanningScan>>,
-        backfillScans: identical(backfillScans, sdkOmittedValue)
-            ? this.backfillScans
-            : backfillScans as SdkOptional<List<SecretScanningScan>>,
-        customPatternBackfillScans: identical(
-                customPatternBackfillScans, sdkOmittedValue)
-            ? this.customPatternBackfillScans
-            : customPatternBackfillScans as SdkOptional<
-                List<SecretScanningScanHistoryCustomPatternBackfillScansItem>>,
-        genericSecretsBackfillScans:
-            identical(genericSecretsBackfillScans, sdkOmittedValue)
-                ? this.genericSecretsBackfillScans
-                : genericSecretsBackfillScans
-                    as SdkOptional<List<SecretScanningScan>>,
-      );
+  SecretScanningScanHistory _copyWith({Object? incrementalScans = sdkOmittedValue, Object? patternUpdateScans = sdkOmittedValue, Object? backfillScans = sdkOmittedValue, Object? customPatternBackfillScans = sdkOmittedValue, Object? genericSecretsBackfillScans = sdkOmittedValue}) => SecretScanningScanHistory(
+    incrementalScans: identical(incrementalScans, sdkOmittedValue) ? this.incrementalScans : incrementalScans as SdkOptional<List<SecretScanningScan>>,
+    patternUpdateScans: identical(patternUpdateScans, sdkOmittedValue) ? this.patternUpdateScans : patternUpdateScans as SdkOptional<List<SecretScanningScan>>,
+    backfillScans: identical(backfillScans, sdkOmittedValue) ? this.backfillScans : backfillScans as SdkOptional<List<SecretScanningScan>>,
+    customPatternBackfillScans: identical(customPatternBackfillScans, sdkOmittedValue) ? this.customPatternBackfillScans : customPatternBackfillScans as SdkOptional<List<SecretScanningScanHistoryCustomPatternBackfillScansItem>>,
+    genericSecretsBackfillScans: identical(genericSecretsBackfillScans, sdkOmittedValue) ? this.genericSecretsBackfillScans : genericSecretsBackfillScans as SdkOptional<List<SecretScanningScan>>,
+  );
 
-  factory SecretScanningScanHistory.fromJson(Map<String, dynamic> json) =>
-      SecretScanningScanHistory(
-        incrementalScans: json['incremental_scans'] != null
-            ? SdkPresent(((json['incremental_scans'] as List?)
-                ?.map((e) =>
-                    SecretScanningScan.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        patternUpdateScans: json['pattern_update_scans'] != null
-            ? SdkPresent(((json['pattern_update_scans'] as List?)
-                ?.map((e) =>
-                    SecretScanningScan.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        backfillScans: json['backfill_scans'] != null
-            ? SdkPresent(((json['backfill_scans'] as List?)
-                ?.map((e) =>
-                    SecretScanningScan.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        customPatternBackfillScans:
-            json['custom_pattern_backfill_scans'] != null
-                ? SdkPresent(((json['custom_pattern_backfill_scans'] as List?)
-                    ?.map((e) =>
-                        SecretScanningScanHistoryCustomPatternBackfillScansItem
-                            .fromJson(e as Map<String, dynamic>))
-                    .toList())!)
-                : const SdkOmitted(),
-        genericSecretsBackfillScans:
-            json['generic_secrets_backfill_scans'] != null
-                ? SdkPresent(((json['generic_secrets_backfill_scans'] as List?)
-                    ?.map((e) =>
-                        SecretScanningScan.fromJson(e as Map<String, dynamic>))
-                    .toList())!)
-                : const SdkOmitted(),
-      );
+  factory SecretScanningScanHistory.fromJson(Map<String, dynamic> json) => SecretScanningScanHistory(
+    incrementalScans: json['incremental_scans'] != null ? SdkPresent(((json['incremental_scans'] as List?)?.map((e) => SecretScanningScan.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    patternUpdateScans: json['pattern_update_scans'] != null ? SdkPresent(((json['pattern_update_scans'] as List?)?.map((e) => SecretScanningScan.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    backfillScans: json['backfill_scans'] != null ? SdkPresent(((json['backfill_scans'] as List?)?.map((e) => SecretScanningScan.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    customPatternBackfillScans: json['custom_pattern_backfill_scans'] != null ? SdkPresent(((json['custom_pattern_backfill_scans'] as List?)?.map((e) => SecretScanningScanHistoryCustomPatternBackfillScansItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    genericSecretsBackfillScans: json['generic_secrets_backfill_scans'] != null ? SdkPresent(((json['generic_secrets_backfill_scans'] as List?)?.map((e) => SecretScanningScan.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (incrementalScans) {
-          SdkPresent<List<SecretScanningScan>>(value: final value) => {
-              'incremental_scans': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (patternUpdateScans) {
-          SdkPresent<List<SecretScanningScan>>(value: final value) => {
-              'pattern_update_scans':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (backfillScans) {
-          SdkPresent<List<SecretScanningScan>>(value: final value) => {
-              'backfill_scans': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (customPatternBackfillScans) {
-          SdkPresent<
-                List<SecretScanningScanHistoryCustomPatternBackfillScansItem>>(
-            value: final value
-          ) =>
-            {
-              'custom_pattern_backfill_scans':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (genericSecretsBackfillScans) {
-          SdkPresent<List<SecretScanningScan>>(value: final value) => {
-              'generic_secrets_backfill_scans':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (incrementalScans) {
+      SdkPresent<List<SecretScanningScan>>(value: final value) => {'incremental_scans': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (patternUpdateScans) {
+      SdkPresent<List<SecretScanningScan>>(value: final value) => {'pattern_update_scans': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (backfillScans) {
+      SdkPresent<List<SecretScanningScan>>(value: final value) => {'backfill_scans': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (customPatternBackfillScans) {
+      SdkPresent<List<SecretScanningScanHistoryCustomPatternBackfillScansItem>>(value: final value) => {'custom_pattern_backfill_scans': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (genericSecretsBackfillScans) {
+      SdkPresent<List<SecretScanningScan>>(value: final value) => {'generic_secrets_backfill_scans': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

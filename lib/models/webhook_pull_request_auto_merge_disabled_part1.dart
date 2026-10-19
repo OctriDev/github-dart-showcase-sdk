@@ -8,390 +8,249 @@ part of 'webhook_pull_request_auto_merge_disabled.dart';
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksComments {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksComments(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksComments({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksComments Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksComments Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksComments _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksComments(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksComments(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksComments.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksComments(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksComments.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksComments(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `commits` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `html` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `issue` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `review_comment` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `review_comments` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `self` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `statuses` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses(
-      {required this.href});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses({required this.href});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `comments` wire field.
   final WebhookPullRequestAutoMergeDisabledPullRequestLinksComments comments;
-
   /// Required object value serialized in the `commits` wire field.
   final WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits commits;
-
   /// Required object value serialized in the `html` wire field.
   final WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml html;
-
   /// Required object value serialized in the `issue` wire field.
   final WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue issue;
-
   /// Required object value serialized in the `review_comment` wire field.
-  final WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment
-      reviewComment;
-
+  final WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment reviewComment;
   /// Required object value serialized in the `review_comments` wire field.
-  final WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments
-      reviewComments;
-
+  final WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments reviewComments;
   /// Required object value serialized in the `self` wire field.
   final WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf self;
-
   /// Required object value serialized in the `statuses` wire field.
   final WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses statuses;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestLinks(
-      {required this.comments,
-      required this.commits,
-      required this.html,
-      required this.issue,
-      required this.reviewComment,
-      required this.reviewComments,
-      required this.self,
-      required this.statuses});
+  const WebhookPullRequestAutoMergeDisabledPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinks Function(
-          {WebhookPullRequestAutoMergeDisabledPullRequestLinksComments comments,
-          WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits commits,
-          WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml html,
-          WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue issue,
-          WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment
-              reviewComment,
-          WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments
-              reviewComments,
-          WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf self,
-          WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses statuses})
-      get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestLinks Function({WebhookPullRequestAutoMergeDisabledPullRequestLinksComments comments, WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits commits, WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml html, WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue issue, WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment reviewComment, WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments reviewComments, WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf self, WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses statuses}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestLinks _copyWith(
-          {Object? comments = sdkOmittedValue,
-          Object? commits = sdkOmittedValue,
-          Object? html = sdkOmittedValue,
-          Object? issue = sdkOmittedValue,
-          Object? reviewComment = sdkOmittedValue,
-          Object? reviewComments = sdkOmittedValue,
-          Object? self = sdkOmittedValue,
-          Object? statuses = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinks(
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments
-                as WebhookPullRequestAutoMergeDisabledPullRequestLinksComments,
-        commits: identical(commits, sdkOmittedValue)
-            ? this.commits
-            : commits
-                as WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits,
-        html: identical(html, sdkOmittedValue)
-            ? this.html
-            : html as WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml,
-        issue: identical(issue, sdkOmittedValue)
-            ? this.issue
-            : issue as WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue,
-        reviewComment: identical(reviewComment, sdkOmittedValue)
-            ? this.reviewComment
-            : reviewComment
-                as WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment,
-        reviewComments: identical(reviewComments, sdkOmittedValue)
-            ? this.reviewComments
-            : reviewComments
-                as WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments,
-        self: identical(self, sdkOmittedValue)
-            ? this.self
-            : self as WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf,
-        statuses: identical(statuses, sdkOmittedValue)
-            ? this.statuses
-            : statuses
-                as WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses,
-      );
+  WebhookPullRequestAutoMergeDisabledPullRequestLinks _copyWith({Object? comments = sdkOmittedValue, Object? commits = sdkOmittedValue, Object? html = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? reviewComment = sdkOmittedValue, Object? reviewComments = sdkOmittedValue, Object? self = sdkOmittedValue, Object? statuses = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestLinks(
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as WebhookPullRequestAutoMergeDisabledPullRequestLinksComments,
+    commits: identical(commits, sdkOmittedValue) ? this.commits : commits as WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits,
+    html: identical(html, sdkOmittedValue) ? this.html : html as WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml,
+    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue,
+    reviewComment: identical(reviewComment, sdkOmittedValue) ? this.reviewComment : reviewComment as WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment,
+    reviewComments: identical(reviewComments, sdkOmittedValue) ? this.reviewComments : reviewComments as WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments,
+    self: identical(self, sdkOmittedValue) ? this.self : self as WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf,
+    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses,
+  );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestLinks.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestLinks(
-        comments: (json['comments'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksComments
-                .fromJson(json['comments'] as Map<String, dynamic>)
-            : null)!,
-        commits: (json['commits'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits
-                .fromJson(json['commits'] as Map<String, dynamic>)
-            : null)!,
-        html: (json['html'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml.fromJson(
-                json['html'] as Map<String, dynamic>)
-            : null)!,
-        issue: (json['issue'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue.fromJson(
-                json['issue'] as Map<String, dynamic>)
-            : null)!,
-        reviewComment: (json['review_comment'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment
-                .fromJson(json['review_comment'] as Map<String, dynamic>)
-            : null)!,
-        reviewComments: (json['review_comments'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments
-                .fromJson(json['review_comments'] as Map<String, dynamic>)
-            : null)!,
-        self: (json['self'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf.fromJson(
-                json['self'] as Map<String, dynamic>)
-            : null)!,
-        statuses: (json['statuses'] != null
-            ? WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses
-                .fromJson(json['statuses'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestLinks.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestLinks(
+    comments: (json['comments'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>) : null)!,
+    commits: (json['commits'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>) : null)!,
+    html: (json['html'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
+    issue: (json['issue'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
+    reviewComment: (json['review_comment'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComment.fromJson(json['review_comment'] as Map<String, dynamic>) : null)!,
+    reviewComments: (json['review_comments'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>) : null)!,
+    self: (json['self'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!,
+    statuses: (json['statuses'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'comments': comments.toJson(),
-        'commits': commits.toJson(),
-        'html': html.toJson(),
-        'issue': issue.toJson(),
-        'review_comment': reviewComment.toJson(),
-        'review_comments': reviewComments.toJson(),
-        'self': self.toJson(),
-        'statuses': statuses.toJson(),
-      };
+    'comments': comments.toJson(),
+    'commits': commits.toJson(),
+    'html': html.toJson(),
+    'issue': issue.toJson(),
+    'review_comment': reviewComment.toJson(),
+    'review_comments': reviewComments.toJson(),
+    'self': self.toJson(),
+    'statuses': statuses.toJson(),
+  };
 }

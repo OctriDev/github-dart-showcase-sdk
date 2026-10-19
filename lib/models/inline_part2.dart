@@ -5,12 +5,12 @@ part of 'inline.dart';
 
 // Inline operation models (part 2)
 final class SchemaSchemaf67de18d {
+
   final String value;
 
   const SchemaSchemaf67de18d._(this.value);
 
-  factory SchemaSchemaf67de18d.fromJson(String value) =>
-      SchemaSchemaf67de18d._(value);
+  factory SchemaSchemaf67de18d.fromJson(String value) => SchemaSchemaf67de18d._(value);
 
   static const public = SchemaSchemaf67de18d._('public');
   static const private = SchemaSchemaf67de18d._('private');
@@ -18,71 +18,62 @@ final class SchemaSchemaf67de18d {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemaf67de18d && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemaf67de18d && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchemad984713f {
+
   final String value;
 
   const SchemaSchemad984713f._(this.value);
 
-  factory SchemaSchemad984713f.fromJson(String value) =>
-      SchemaSchemad984713f._(value);
+  factory SchemaSchemad984713f.fromJson(String value) => SchemaSchemad984713f._(value);
 
   static const day = SchemaSchemad984713f._('day');
   static const week = SchemaSchemad984713f._('week');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemad984713f && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemad984713f && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema1220214b {
+
   final String value;
 
   const SchemaSchema1220214b._(this.value);
 
-  factory SchemaSchema1220214b.fromJson(String value) =>
-      SchemaSchema1220214b._(value);
+  factory SchemaSchema1220214b.fromJson(String value) => SchemaSchema1220214b._(value);
 
   static const createdAt = SchemaSchema1220214b._('created_at');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema1220214b && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema1220214b && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema11fb9123 {
+
   final String value;
 
   const SchemaSchema11fb9123._(this.value);
 
-  factory SchemaSchema11fb9123.fromJson(String value) =>
-      SchemaSchema11fb9123._(value);
+  factory SchemaSchema11fb9123.fromJson(String value) => SchemaSchema11fb9123._(value);
 
   static const pass = SchemaSchema11fb9123._('pass');
   static const fail = SchemaSchema11fb9123._('fail');
@@ -91,120 +82,105 @@ final class SchemaSchema11fb9123 {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema11fb9123 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema11fb9123 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchemadfca6a72 {
+
   final String value;
 
   const SchemaSchemadfca6a72._(this.value);
 
-  factory SchemaSchemadfca6a72.fromJson(String value) =>
-      SchemaSchemadfca6a72._(value);
+  factory SchemaSchemadfca6a72.fromJson(String value) => SchemaSchemadfca6a72._(value);
 
   static const semantic = SchemaSchemadfca6a72._('semantic');
   static const hybrid = SchemaSchemadfca6a72._('hybrid');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemadfca6a72 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemadfca6a72 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchemad4e3ed8d {
+
   final String value;
 
   const SchemaSchemad4e3ed8d._(this.value);
 
-  factory SchemaSchemad4e3ed8d.fromJson(String value) =>
-      SchemaSchemad4e3ed8d._(value);
+  factory SchemaSchemad4e3ed8d.fromJson(String value) => SchemaSchemad4e3ed8d._(value);
 
   static const created = SchemaSchemad4e3ed8d._('created');
   static const updated = SchemaSchemad4e3ed8d._('updated');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemad4e3ed8d && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemad4e3ed8d && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema0374f8f2 {
+
   final String value;
 
   const SchemaSchema0374f8f2._(this.value);
 
-  factory SchemaSchema0374f8f2.fromJson(String value) =>
-      SchemaSchema0374f8f2._(value);
+  factory SchemaSchema0374f8f2.fromJson(String value) => SchemaSchema0374f8f2._(value);
 
   static const open = SchemaSchema0374f8f2._('open');
   static const resolved = SchemaSchema0374f8f2._('resolved');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema0374f8f2 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema0374f8f2 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchemad6199d03 {
+
   final String value;
 
   const SchemaSchemad6199d03._(this.value);
 
-  factory SchemaSchemad6199d03.fromJson(String value) =>
-      SchemaSchemad6199d03._(value);
+  factory SchemaSchemad6199d03.fromJson(String value) => SchemaSchemad6199d03._(value);
 
   static const enabled = SchemaSchemad6199d03._('enabled');
   static const disabled = SchemaSchemad6199d03._('disabled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemad6199d03 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemad6199d03 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema6c93bb3e {
+
   final String value;
 
   const SchemaSchema6c93bb3e._(this.value);
 
-  factory SchemaSchema6c93bb3e.fromJson(String value) =>
-      SchemaSchema6c93bb3e._(value);
+  factory SchemaSchema6c93bb3e.fromJson(String value) => SchemaSchema6c93bb3e._(value);
 
   static const created = SchemaSchema6c93bb3e._('created');
   static const updated = SchemaSchema6c93bb3e._('updated');
@@ -212,117 +188,99 @@ final class SchemaSchema6c93bb3e {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema6c93bb3e && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema6c93bb3e && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchemac908804b {
+
   final String value;
 
   const SchemaSchemac908804b._(this.value);
 
-  factory SchemaSchemac908804b.fromJson(String value) =>
-      SchemaSchemac908804b._(value);
+  factory SchemaSchemac908804b.fromJson(String value) => SchemaSchemac908804b._(value);
 
   static const published = SchemaSchemac908804b._('published');
   static const unpublished = SchemaSchemac908804b._('unpublished');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemac908804b && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemac908804b && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchemae123ddd7 {
+
   final String value;
 
   const SchemaSchemae123ddd7._(this.value);
 
-  factory SchemaSchemae123ddd7.fromJson(String value) =>
-      SchemaSchemae123ddd7._(value);
+  factory SchemaSchemae123ddd7.fromJson(String value) => SchemaSchemae123ddd7._(value);
 
   static const dependencyGraph = SchemaSchemae123ddd7._('dependency_graph');
   static const dependabotAlerts = SchemaSchemae123ddd7._('dependabot_alerts');
-  static const dependabotSecurityUpdates =
-      SchemaSchemae123ddd7._('dependabot_security_updates');
+  static const dependabotSecurityUpdates = SchemaSchemae123ddd7._('dependabot_security_updates');
   static const advancedSecurity = SchemaSchemae123ddd7._('advanced_security');
-  static const codeScanningDefaultSetup =
-      SchemaSchemae123ddd7._('code_scanning_default_setup');
+  static const codeScanningDefaultSetup = SchemaSchemae123ddd7._('code_scanning_default_setup');
   static const secretScanning = SchemaSchemae123ddd7._('secret_scanning');
-  static const secretScanningPushProtection =
-      SchemaSchemae123ddd7._('secret_scanning_push_protection');
+  static const secretScanningPushProtection = SchemaSchemae123ddd7._('secret_scanning_push_protection');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchemae123ddd7 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchemae123ddd7 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema2e5fa964 {
+
   final String value;
 
   const SchemaSchema2e5fa964._(this.value);
 
-  factory SchemaSchema2e5fa964.fromJson(String value) =>
-      SchemaSchema2e5fa964._(value);
+  factory SchemaSchema2e5fa964.fromJson(String value) => SchemaSchema2e5fa964._(value);
 
   static const created = SchemaSchema2e5fa964._('created');
   static const updated = SchemaSchema2e5fa964._('updated');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema2e5fa964 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema2e5fa964 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SchemaSchema00c9f324 {
+
   final String value;
 
   const SchemaSchema00c9f324._(this.value);
 
-  factory SchemaSchema00c9f324.fromJson(String value) =>
-      SchemaSchema00c9f324._(value);
+  factory SchemaSchema00c9f324.fromJson(String value) => SchemaSchema00c9f324._(value);
 
   static const created = SchemaSchema00c9f324._('created');
   static const updated = SchemaSchema00c9f324._('updated');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SchemaSchema00c9f324 && other.value == value;
+  @override bool operator ==(Object other) => other is SchemaSchema00c9f324 && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

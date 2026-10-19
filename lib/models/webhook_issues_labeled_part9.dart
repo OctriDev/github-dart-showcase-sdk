@@ -8,122 +8,62 @@ part of 'webhook_issues_labeled.dart';
 class WebhookIssuesLabeledIssueLabelsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// 6-character hex code, without the leading #, identifying the color
   final String color;
-
   /// Required `boolean` value serialized in the `default` wire field.
   final bool default_;
-
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
-
   /// Timestamp indicating when the label was archived, or `null` if it has not been archived.
   final String? archivedAt;
-
   /// The user who archived the label, or `null` if it has not been archived.
   final SimpleUser? archivedBy;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// The name of the label.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// URL for the label
   final String url;
 
-  const WebhookIssuesLabeledIssueLabelsItem(
-      {required this.color,
-      required this.default_,
-      required this.description,
-      required this.archivedAt,
-      required this.archivedBy,
-      required this.id,
-      required this.name,
-      required this.nodeId,
-      required this.url});
+  const WebhookIssuesLabeledIssueLabelsItem({required this.color, required this.default_, required this.description, required this.archivedAt, required this.archivedBy, required this.id, required this.name, required this.nodeId, required this.url});
 
-  WebhookIssuesLabeledIssueLabelsItem Function(
-      {String color,
-      bool default_,
-      String? description,
-      String? archivedAt,
-      SimpleUser? archivedBy,
-      int id,
-      String name,
-      String nodeId,
-      String url}) get copyWith => _copyWith;
+  WebhookIssuesLabeledIssueLabelsItem Function({String color, bool default_, String? description, String? archivedAt, SimpleUser? archivedBy, int id, String name, String nodeId, String url}) get copyWith => _copyWith;
 
-  WebhookIssuesLabeledIssueLabelsItem _copyWith(
-          {Object? color = sdkOmittedValue,
-          Object? default_ = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue,
-          Object? archivedBy = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookIssuesLabeledIssueLabelsItem(
-        color: identical(color, sdkOmittedValue) ? this.color : color as String,
-        default_: identical(default_, sdkOmittedValue)
-            ? this.default_
-            : default_ as bool,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as String?,
-        archivedBy: identical(archivedBy, sdkOmittedValue)
-            ? this.archivedBy
-            : archivedBy as SimpleUser?,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookIssuesLabeledIssueLabelsItem _copyWith({Object? color = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? archivedBy = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookIssuesLabeledIssueLabelsItem(
+    color: identical(color, sdkOmittedValue) ? this.color : color as String,
+    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as bool,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
+    archivedBy: identical(archivedBy, sdkOmittedValue) ? this.archivedBy : archivedBy as SimpleUser?,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookIssuesLabeledIssueLabelsItem.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssuesLabeledIssueLabelsItem(
-        color: (json['color'] as String?)!,
-        default_: (json['default'] as bool?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        archivedAt: json.containsKey('archived_at')
-            ? json['archived_at'] as String?
-            : throw ArgumentError.value(
-                null, 'archived_at', 'Required property is missing'),
-        archivedBy: json.containsKey('archived_by')
-            ? json['archived_by'] != null
-                ? SimpleUser.fromJson(
-                    json['archived_by'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'archived_by', 'Required property is missing'),
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookIssuesLabeledIssueLabelsItem.fromJson(Map<String, dynamic> json) => WebhookIssuesLabeledIssueLabelsItem(
+    color: (json['color'] as String?)!,
+    default_: (json['default'] as bool?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
+    archivedBy: json.containsKey('archived_by') ? json['archived_by'] != null ? SimpleUser.fromJson(json['archived_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'archived_by', 'Required property is missing'),
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'color': color,
-        'default': default_,
-        'description': description,
-        'archived_at': archivedAt,
-        'archived_by': archivedBy?.toJson(),
-        'id': id,
-        'name': name,
-        'node_id': nodeId,
-        'url': url,
-      };
+    'color': color,
+    'default': default_,
+    'description': description,
+    'archived_at': archivedAt,
+    'archived_by': archivedBy?.toJson(),
+    'id': id,
+    'name': name,
+    'node_id': nodeId,
+    'url': url,
+  };
 }

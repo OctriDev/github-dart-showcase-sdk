@@ -7,473 +7,250 @@ part of 'inline.dart';
 class TeamsAddOrUpdateMembershipForUserLegacyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The role that this user should have in the team.
-  final SdkOptional<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole>
-      role;
+  final SdkOptional<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole> role;
 
-  const TeamsAddOrUpdateMembershipForUserLegacyRequestBody(
-      {this.role = const SdkOmitted()});
+  const TeamsAddOrUpdateMembershipForUserLegacyRequestBody({this.role = const SdkOmitted()});
 
-  TeamsAddOrUpdateMembershipForUserLegacyRequestBody Function(
-      {SdkOptional<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole>
-          role}) get copyWith => _copyWith;
+  TeamsAddOrUpdateMembershipForUserLegacyRequestBody Function({SdkOptional<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole> role}) get copyWith => _copyWith;
 
-  TeamsAddOrUpdateMembershipForUserLegacyRequestBody _copyWith(
-          {Object? role = sdkOmittedValue}) =>
-      TeamsAddOrUpdateMembershipForUserLegacyRequestBody(
-        role: identical(role, sdkOmittedValue)
-            ? this.role
-            : role as SdkOptional<
-                TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole>,
-      );
+  TeamsAddOrUpdateMembershipForUserLegacyRequestBody _copyWith({Object? role = sdkOmittedValue}) => TeamsAddOrUpdateMembershipForUserLegacyRequestBody(
+    role: identical(role, sdkOmittedValue) ? this.role : role as SdkOptional<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole>,
+  );
 
-  factory TeamsAddOrUpdateMembershipForUserLegacyRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      TeamsAddOrUpdateMembershipForUserLegacyRequestBody(
-        role: json['role'] != null
-            ? SdkPresent((json['role'] != null
-                ? TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole
-                    .fromJson(json['role'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory TeamsAddOrUpdateMembershipForUserLegacyRequestBody.fromJson(Map<String, dynamic> json) => TeamsAddOrUpdateMembershipForUserLegacyRequestBody(
+    role: json['role'] != null ? SdkPresent((json['role'] != null ? TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole.fromJson(json['role'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (role) {
-          SdkPresent<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole>(
-            value: final value
-          ) =>
-            {
-              'role': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (role) {
+      SdkPresent<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole>(value: final value) => {'role': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class TeamsAddOrUpdateRepoPermissionsLegacyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
-  final SdkOptional<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission>
-      permission;
+  final SdkOptional<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission> permission;
 
-  const TeamsAddOrUpdateRepoPermissionsLegacyRequestBody(
-      {this.permission = const SdkOmitted()});
+  const TeamsAddOrUpdateRepoPermissionsLegacyRequestBody({this.permission = const SdkOmitted()});
 
-  TeamsAddOrUpdateRepoPermissionsLegacyRequestBody Function(
-      {SdkOptional<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission>
-          permission}) get copyWith => _copyWith;
+  TeamsAddOrUpdateRepoPermissionsLegacyRequestBody Function({SdkOptional<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission> permission}) get copyWith => _copyWith;
 
-  TeamsAddOrUpdateRepoPermissionsLegacyRequestBody _copyWith(
-          {Object? permission = sdkOmittedValue}) =>
-      TeamsAddOrUpdateRepoPermissionsLegacyRequestBody(
-        permission: identical(permission, sdkOmittedValue)
-            ? this.permission
-            : permission as SdkOptional<
-                TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission>,
-      );
+  TeamsAddOrUpdateRepoPermissionsLegacyRequestBody _copyWith({Object? permission = sdkOmittedValue}) => TeamsAddOrUpdateRepoPermissionsLegacyRequestBody(
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission>,
+  );
 
-  factory TeamsAddOrUpdateRepoPermissionsLegacyRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      TeamsAddOrUpdateRepoPermissionsLegacyRequestBody(
-        permission: json['permission'] != null
-            ? SdkPresent((json['permission'] != null
-                ? TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission
-                    .fromJson(json['permission'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory TeamsAddOrUpdateRepoPermissionsLegacyRequestBody.fromJson(Map<String, dynamic> json) => TeamsAddOrUpdateRepoPermissionsLegacyRequestBody(
+    permission: json['permission'] != null ? SdkPresent((json['permission'] != null ? TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission.fromJson(json['permission'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (permission) {
-          SdkPresent<
-                TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission>(
-            value: final value
-          ) =>
-            {
-              'permission': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (permission) {
+      SdkPresent<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission>(value: final value) => {'permission': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ChecksCreateRequestBodyOutputAnnotationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The path of the file to add an annotation to. For example, `assets/css/main.css`.
   final String path;
-
   /// The start line of the annotation. Line numbers start at 1.
   final int startLine;
-
   /// The end line of the annotation.
   final int endLine;
-
   /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
   final SdkOptional<int> startColumn;
-
   /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
   final SdkOptional<int> endColumn;
-
   /// The level of the annotation.
-  final ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel
-      annotationLevel;
-
+  final ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel annotationLevel;
   /// A short description of the feedback for these lines of code. The maximum size is 64 KB.
   final String message;
-
   /// The title that represents the annotation. The maximum size is 255 characters.
   final SdkOptional<String> title;
-
   /// Details about this annotation. The maximum size is 64 KB.
   final SdkOptional<String> rawDetails;
 
-  const ChecksCreateRequestBodyOutputAnnotationsItem(
-      {required this.path,
-      required this.startLine,
-      required this.endLine,
-      this.startColumn = const SdkOmitted(),
-      this.endColumn = const SdkOmitted(),
-      required this.annotationLevel,
-      required this.message,
-      this.title = const SdkOmitted(),
-      this.rawDetails = const SdkOmitted()});
+  const ChecksCreateRequestBodyOutputAnnotationsItem({required this.path, required this.startLine, required this.endLine, this.startColumn = const SdkOmitted(), this.endColumn = const SdkOmitted(), required this.annotationLevel, required this.message, this.title = const SdkOmitted(), this.rawDetails = const SdkOmitted()});
 
-  ChecksCreateRequestBodyOutputAnnotationsItem Function(
-      {String path,
-      int startLine,
-      int endLine,
-      SdkOptional<int> startColumn,
-      SdkOptional<int> endColumn,
-      ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel
-          annotationLevel,
-      String message,
-      SdkOptional<String> title,
-      SdkOptional<String> rawDetails}) get copyWith => _copyWith;
+  ChecksCreateRequestBodyOutputAnnotationsItem Function({String path, int startLine, int endLine, SdkOptional<int> startColumn, SdkOptional<int> endColumn, ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel annotationLevel, String message, SdkOptional<String> title, SdkOptional<String> rawDetails}) get copyWith => _copyWith;
 
-  ChecksCreateRequestBodyOutputAnnotationsItem _copyWith(
-          {Object? path = sdkOmittedValue,
-          Object? startLine = sdkOmittedValue,
-          Object? endLine = sdkOmittedValue,
-          Object? startColumn = sdkOmittedValue,
-          Object? endColumn = sdkOmittedValue,
-          Object? annotationLevel = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? rawDetails = sdkOmittedValue}) =>
-      ChecksCreateRequestBodyOutputAnnotationsItem(
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        startLine: identical(startLine, sdkOmittedValue)
-            ? this.startLine
-            : startLine as int,
-        endLine:
-            identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
-        startColumn: identical(startColumn, sdkOmittedValue)
-            ? this.startColumn
-            : startColumn as SdkOptional<int>,
-        endColumn: identical(endColumn, sdkOmittedValue)
-            ? this.endColumn
-            : endColumn as SdkOptional<int>,
-        annotationLevel: identical(annotationLevel, sdkOmittedValue)
-            ? this.annotationLevel
-            : annotationLevel
-                as ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String>,
-        rawDetails: identical(rawDetails, sdkOmittedValue)
-            ? this.rawDetails
-            : rawDetails as SdkOptional<String>,
-      );
+  ChecksCreateRequestBodyOutputAnnotationsItem _copyWith({Object? path = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? endLine = sdkOmittedValue, Object? startColumn = sdkOmittedValue, Object? endColumn = sdkOmittedValue, Object? annotationLevel = sdkOmittedValue, Object? message = sdkOmittedValue, Object? title = sdkOmittedValue, Object? rawDetails = sdkOmittedValue}) => ChecksCreateRequestBodyOutputAnnotationsItem(
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as int,
+    endLine: identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
+    startColumn: identical(startColumn, sdkOmittedValue) ? this.startColumn : startColumn as SdkOptional<int>,
+    endColumn: identical(endColumn, sdkOmittedValue) ? this.endColumn : endColumn as SdkOptional<int>,
+    annotationLevel: identical(annotationLevel, sdkOmittedValue) ? this.annotationLevel : annotationLevel as ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    rawDetails: identical(rawDetails, sdkOmittedValue) ? this.rawDetails : rawDetails as SdkOptional<String>,
+  );
 
-  factory ChecksCreateRequestBodyOutputAnnotationsItem.fromJson(
-          Map<String, dynamic> json) =>
-      ChecksCreateRequestBodyOutputAnnotationsItem(
-        path: (json['path'] as String?)!,
-        startLine: ((json['start_line'] as num?)?.toInt())!,
-        endLine: ((json['end_line'] as num?)?.toInt())!,
-        startColumn: json['start_column'] != null
-            ? SdkPresent(((json['start_column'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        endColumn: json['end_column'] != null
-            ? SdkPresent(((json['end_column'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        annotationLevel: (json['annotation_level'] != null
-            ? ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel
-                .fromJson(json['annotation_level'] as String)
-            : null)!,
-        message: (json['message'] as String?)!,
-        title: json['title'] != null
-            ? SdkPresent((json['title'] as String?)!)
-            : const SdkOmitted(),
-        rawDetails: json['raw_details'] != null
-            ? SdkPresent((json['raw_details'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ChecksCreateRequestBodyOutputAnnotationsItem.fromJson(Map<String, dynamic> json) => ChecksCreateRequestBodyOutputAnnotationsItem(
+    path: (json['path'] as String?)!,
+    startLine: ((json['start_line'] as num?)?.toInt())!,
+    endLine: ((json['end_line'] as num?)?.toInt())!,
+    startColumn: json['start_column'] != null ? SdkPresent(((json['start_column'] as num?)?.toInt())!) : const SdkOmitted(),
+    endColumn: json['end_column'] != null ? SdkPresent(((json['end_column'] as num?)?.toInt())!) : const SdkOmitted(),
+    annotationLevel: (json['annotation_level'] != null ? ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel.fromJson(json['annotation_level'] as String) : null)!,
+    message: (json['message'] as String?)!,
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    rawDetails: json['raw_details'] != null ? SdkPresent((json['raw_details'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'path': path,
-        'start_line': startLine,
-        'end_line': endLine,
-        ...switch (startColumn) {
-          SdkPresent<int>(value: final value) => {
-              'start_column': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (endColumn) {
-          SdkPresent<int>(value: final value) => {
-              'end_column': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'annotation_level': annotationLevel.toJson(),
-        'message': message,
-        ...switch (title) {
-          SdkPresent<String>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rawDetails) {
-          SdkPresent<String>(value: final value) => {
-              'raw_details': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'path': path,
+    'start_line': startLine,
+    'end_line': endLine,
+    ...switch (startColumn) {
+      SdkPresent<int>(value: final value) => {'start_column': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endColumn) {
+      SdkPresent<int>(value: final value) => {'end_column': value,},
+      _ => const <String, dynamic>{},
+    },
+    'annotation_level': annotationLevel.toJson(),
+    'message': message,
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rawDetails) {
+      SdkPresent<String>(value: final value) => {'raw_details': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ChecksCreateRequestBodyOutputImagesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The alternative text for the image.
   final String alt;
-
   /// The full URL of the image.
   final String imageUrl;
-
   /// A short image description.
   final SdkOptional<String> caption;
 
-  const ChecksCreateRequestBodyOutputImagesItem(
-      {required this.alt,
-      required this.imageUrl,
-      this.caption = const SdkOmitted()});
+  const ChecksCreateRequestBodyOutputImagesItem({required this.alt, required this.imageUrl, this.caption = const SdkOmitted()});
 
-  ChecksCreateRequestBodyOutputImagesItem Function(
-      {String alt,
-      String imageUrl,
-      SdkOptional<String> caption}) get copyWith => _copyWith;
+  ChecksCreateRequestBodyOutputImagesItem Function({String alt, String imageUrl, SdkOptional<String> caption}) get copyWith => _copyWith;
 
-  ChecksCreateRequestBodyOutputImagesItem _copyWith(
-          {Object? alt = sdkOmittedValue,
-          Object? imageUrl = sdkOmittedValue,
-          Object? caption = sdkOmittedValue}) =>
-      ChecksCreateRequestBodyOutputImagesItem(
-        alt: identical(alt, sdkOmittedValue) ? this.alt : alt as String,
-        imageUrl: identical(imageUrl, sdkOmittedValue)
-            ? this.imageUrl
-            : imageUrl as String,
-        caption: identical(caption, sdkOmittedValue)
-            ? this.caption
-            : caption as SdkOptional<String>,
-      );
+  ChecksCreateRequestBodyOutputImagesItem _copyWith({Object? alt = sdkOmittedValue, Object? imageUrl = sdkOmittedValue, Object? caption = sdkOmittedValue}) => ChecksCreateRequestBodyOutputImagesItem(
+    alt: identical(alt, sdkOmittedValue) ? this.alt : alt as String,
+    imageUrl: identical(imageUrl, sdkOmittedValue) ? this.imageUrl : imageUrl as String,
+    caption: identical(caption, sdkOmittedValue) ? this.caption : caption as SdkOptional<String>,
+  );
 
-  factory ChecksCreateRequestBodyOutputImagesItem.fromJson(
-          Map<String, dynamic> json) =>
-      ChecksCreateRequestBodyOutputImagesItem(
-        alt: (json['alt'] as String?)!,
-        imageUrl: (json['image_url'] as String?)!,
-        caption: json['caption'] != null
-            ? SdkPresent((json['caption'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ChecksCreateRequestBodyOutputImagesItem.fromJson(Map<String, dynamic> json) => ChecksCreateRequestBodyOutputImagesItem(
+    alt: (json['alt'] as String?)!,
+    imageUrl: (json['image_url'] as String?)!,
+    caption: json['caption'] != null ? SdkPresent((json['caption'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'alt': alt,
-        'image_url': imageUrl,
-        ...switch (caption) {
-          SdkPresent<String>(value: final value) => {
-              'caption': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'alt': alt,
+    'image_url': imageUrl,
+    ...switch (caption) {
+      SdkPresent<String>(value: final value) => {'caption': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
 class ChecksCreateRequestBodyOutput {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The title of the check run.
   final String title;
-
   /// The summary of the check run. This parameter supports Markdown. **Maximum length**: 65535 characters.
   final String summary;
-
   /// The details of the check run. This parameter supports Markdown. **Maximum length**: 65535 characters.
   final SdkOptional<String> text;
-
   /// Adds information from your analysis to specific lines of code. Annotations are visible on GitHub in the **Checks** and **Files changed** tab of the pull request. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/checks/runs#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. GitHub Actions are limited to 10 warning annotations and 10 error annotations per step. For details about how you can view annotations on GitHub, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)".
-  final SdkOptional<List<ChecksCreateRequestBodyOutputAnnotationsItem>>
-      annotations;
-
+  final SdkOptional<List<ChecksCreateRequestBodyOutputAnnotationsItem>> annotations;
   /// Adds images to the output displayed in the GitHub pull request UI.
   final SdkOptional<List<ChecksCreateRequestBodyOutputImagesItem>> images;
 
-  const ChecksCreateRequestBodyOutput(
-      {required this.title,
-      required this.summary,
-      this.text = const SdkOmitted(),
-      this.annotations = const SdkOmitted(),
-      this.images = const SdkOmitted()});
+  const ChecksCreateRequestBodyOutput({required this.title, required this.summary, this.text = const SdkOmitted(), this.annotations = const SdkOmitted(), this.images = const SdkOmitted()});
 
-  ChecksCreateRequestBodyOutput Function(
-          {String title,
-          String summary,
-          SdkOptional<String> text,
-          SdkOptional<List<ChecksCreateRequestBodyOutputAnnotationsItem>>
-              annotations,
-          SdkOptional<List<ChecksCreateRequestBodyOutputImagesItem>> images})
-      get copyWith => _copyWith;
+  ChecksCreateRequestBodyOutput Function({String title, String summary, SdkOptional<String> text, SdkOptional<List<ChecksCreateRequestBodyOutputAnnotationsItem>> annotations, SdkOptional<List<ChecksCreateRequestBodyOutputImagesItem>> images}) get copyWith => _copyWith;
 
-  ChecksCreateRequestBodyOutput _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? summary = sdkOmittedValue,
-          Object? text = sdkOmittedValue,
-          Object? annotations = sdkOmittedValue,
-          Object? images = sdkOmittedValue}) =>
-      ChecksCreateRequestBodyOutput(
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        summary: identical(summary, sdkOmittedValue)
-            ? this.summary
-            : summary as String,
-        text: identical(text, sdkOmittedValue)
-            ? this.text
-            : text as SdkOptional<String>,
-        annotations: identical(annotations, sdkOmittedValue)
-            ? this.annotations
-            : annotations as SdkOptional<
-                List<ChecksCreateRequestBodyOutputAnnotationsItem>>,
-        images: identical(images, sdkOmittedValue)
-            ? this.images
-            : images
-                as SdkOptional<List<ChecksCreateRequestBodyOutputImagesItem>>,
-      );
+  ChecksCreateRequestBodyOutput _copyWith({Object? title = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? text = sdkOmittedValue, Object? annotations = sdkOmittedValue, Object? images = sdkOmittedValue}) => ChecksCreateRequestBodyOutput(
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String,
+    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
+    annotations: identical(annotations, sdkOmittedValue) ? this.annotations : annotations as SdkOptional<List<ChecksCreateRequestBodyOutputAnnotationsItem>>,
+    images: identical(images, sdkOmittedValue) ? this.images : images as SdkOptional<List<ChecksCreateRequestBodyOutputImagesItem>>,
+  );
 
-  factory ChecksCreateRequestBodyOutput.fromJson(Map<String, dynamic> json) =>
-      ChecksCreateRequestBodyOutput(
-        title: (json['title'] as String?)!,
-        summary: (json['summary'] as String?)!,
-        text: json['text'] != null
-            ? SdkPresent((json['text'] as String?)!)
-            : const SdkOmitted(),
-        annotations: json['annotations'] != null
-            ? SdkPresent(((json['annotations'] as List?)
-                ?.map((e) =>
-                    ChecksCreateRequestBodyOutputAnnotationsItem.fromJson(
-                        e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        images: json['images'] != null
-            ? SdkPresent(((json['images'] as List?)
-                ?.map((e) => ChecksCreateRequestBodyOutputImagesItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ChecksCreateRequestBodyOutput.fromJson(Map<String, dynamic> json) => ChecksCreateRequestBodyOutput(
+    title: (json['title'] as String?)!,
+    summary: (json['summary'] as String?)!,
+    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
+    annotations: json['annotations'] != null ? SdkPresent(((json['annotations'] as List?)?.map((e) => ChecksCreateRequestBodyOutputAnnotationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    images: json['images'] != null ? SdkPresent(((json['images'] as List?)?.map((e) => ChecksCreateRequestBodyOutputImagesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        'summary': summary,
-        ...switch (text) {
-          SdkPresent<String>(value: final value) => {
-              'text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (annotations) {
-          SdkPresent<List<ChecksCreateRequestBodyOutputAnnotationsItem>>(
-            value: final value
-          ) =>
-            {
-              'annotations': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (images) {
-          SdkPresent<List<ChecksCreateRequestBodyOutputImagesItem>>(
-            value: final value
-          ) =>
-            {
-              'images': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'title': title,
+    'summary': summary,
+    ...switch (text) {
+      SdkPresent<String>(value: final value) => {'text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (annotations) {
+      SdkPresent<List<ChecksCreateRequestBodyOutputAnnotationsItem>>(value: final value) => {'annotations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (images) {
+      SdkPresent<List<ChecksCreateRequestBodyOutputImagesItem>>(value: final value) => {'images': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ChecksCreateRequestBodyActionsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The text to be displayed on a button in the web UI. The maximum size is 20 characters.
   final String label;
-
   /// A short explanation of what this action would do. The maximum size is 40 characters.
   final String description;
-
   /// A reference for the action on the integrator's system. The maximum size is 20 characters.
   final String identifier;
 
-  const ChecksCreateRequestBodyActionsItem(
-      {required this.label,
-      required this.description,
-      required this.identifier});
+  const ChecksCreateRequestBodyActionsItem({required this.label, required this.description, required this.identifier});
 
-  ChecksCreateRequestBodyActionsItem Function(
-      {String label,
-      String description,
-      String identifier}) get copyWith => _copyWith;
+  ChecksCreateRequestBodyActionsItem Function({String label, String description, String identifier}) get copyWith => _copyWith;
 
-  ChecksCreateRequestBodyActionsItem _copyWith(
-          {Object? label = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? identifier = sdkOmittedValue}) =>
-      ChecksCreateRequestBodyActionsItem(
-        label: identical(label, sdkOmittedValue) ? this.label : label as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        identifier: identical(identifier, sdkOmittedValue)
-            ? this.identifier
-            : identifier as String,
-      );
+  ChecksCreateRequestBodyActionsItem _copyWith({Object? label = sdkOmittedValue, Object? description = sdkOmittedValue, Object? identifier = sdkOmittedValue}) => ChecksCreateRequestBodyActionsItem(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    identifier: identical(identifier, sdkOmittedValue) ? this.identifier : identifier as String,
+  );
 
-  factory ChecksCreateRequestBodyActionsItem.fromJson(
-          Map<String, dynamic> json) =>
-      ChecksCreateRequestBodyActionsItem(
-        label: (json['label'] as String?)!,
-        description: (json['description'] as String?)!,
-        identifier: (json['identifier'] as String?)!,
-      );
+  factory ChecksCreateRequestBodyActionsItem.fromJson(Map<String, dynamic> json) => ChecksCreateRequestBodyActionsItem(
+    label: (json['label'] as String?)!,
+    description: (json['description'] as String?)!,
+    identifier: (json['identifier'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'description': description,
-        'identifier': identifier,
-      };
+    'label': label,
+    'description': description,
+    'identifier': identifier,
+  };
 }
 
 class ChecksCreateRequestBodyVariant0 {
@@ -482,34 +259,22 @@ class ChecksCreateRequestBodyVariant0 {
   final ChecksCreateRequestBodyVariant0Status status;
   final Map<String, dynamic> additionalProperties;
 
-  const ChecksCreateRequestBodyVariant0(
-      {required this.status,
-      this.additionalProperties = const <String, dynamic>{}});
+  const ChecksCreateRequestBodyVariant0({required this.status, this.additionalProperties = const <String, dynamic>{}});
 
-  ChecksCreateRequestBodyVariant0 Function(
-      {ChecksCreateRequestBodyVariant0Status status}) get copyWith => _copyWith;
+  ChecksCreateRequestBodyVariant0 Function({ChecksCreateRequestBodyVariant0Status status}) get copyWith => _copyWith;
 
-  ChecksCreateRequestBodyVariant0 _copyWith(
-          {Object? status = sdkOmittedValue}) =>
-      ChecksCreateRequestBodyVariant0(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as ChecksCreateRequestBodyVariant0Status,
-        additionalProperties: additionalProperties,
-      );
+  ChecksCreateRequestBodyVariant0 _copyWith({Object? status = sdkOmittedValue}) => ChecksCreateRequestBodyVariant0(
+    status: identical(status, sdkOmittedValue) ? this.status : status as ChecksCreateRequestBodyVariant0Status,
+    additionalProperties: additionalProperties,
+  );
 
-  factory ChecksCreateRequestBodyVariant0.fromJson(Map<String, dynamic> json) =>
-      ChecksCreateRequestBodyVariant0(
-        status: (json['status'] != null
-            ? ChecksCreateRequestBodyVariant0Status.fromJson(
-                json['status'] as String)
-            : null)!,
-        additionalProperties: Map.of(json)
-          ..removeWhere((key, _) => const <String>{'status'}.contains(key)),
-      );
+  factory ChecksCreateRequestBodyVariant0.fromJson(Map<String, dynamic> json) => ChecksCreateRequestBodyVariant0(
+    status: (json['status'] != null ? ChecksCreateRequestBodyVariant0Status.fromJson(json['status'] as String) : null)!,
+    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'status'}.contains(key)),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...additionalProperties,
-        'status': status.toJson(),
-      };
+    ...additionalProperties,
+    'status': status.toJson(),
+  };
 }

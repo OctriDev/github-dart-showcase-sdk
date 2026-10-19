@@ -5,93 +5,68 @@ part of 'inline.dart';
 
 // Inline operation models (part 264)
 final class ReactionsListForPullRequestReviewCommentContent {
+
   final String value;
 
   const ReactionsListForPullRequestReviewCommentContent._(this.value);
 
-  factory ReactionsListForPullRequestReviewCommentContent.fromJson(
-          String value) =>
-      ReactionsListForPullRequestReviewCommentContent._(value);
+  factory ReactionsListForPullRequestReviewCommentContent.fromJson(String value) => ReactionsListForPullRequestReviewCommentContent._(value);
 
   static const plus1 = ReactionsListForPullRequestReviewCommentContent._('+1');
   static const minus1 = ReactionsListForPullRequestReviewCommentContent._('-1');
-  static const laugh =
-      ReactionsListForPullRequestReviewCommentContent._('laugh');
-  static const confused =
-      ReactionsListForPullRequestReviewCommentContent._('confused');
-  static const heart =
-      ReactionsListForPullRequestReviewCommentContent._('heart');
-  static const hooray =
-      ReactionsListForPullRequestReviewCommentContent._('hooray');
-  static const rocket =
-      ReactionsListForPullRequestReviewCommentContent._('rocket');
+  static const laugh = ReactionsListForPullRequestReviewCommentContent._('laugh');
+  static const confused = ReactionsListForPullRequestReviewCommentContent._('confused');
+  static const heart = ReactionsListForPullRequestReviewCommentContent._('heart');
+  static const hooray = ReactionsListForPullRequestReviewCommentContent._('hooray');
+  static const rocket = ReactionsListForPullRequestReviewCommentContent._('rocket');
   static const eyes = ReactionsListForPullRequestReviewCommentContent._('eyes');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReactionsListForPullRequestReviewCommentContent &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsListForPullRequestReviewCommentContent && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
 final class ReactionsCreateForPullRequestReviewCommentRequestBodyContent {
+
   final String value;
 
-  const ReactionsCreateForPullRequestReviewCommentRequestBodyContent._(
-      this.value);
+  const ReactionsCreateForPullRequestReviewCommentRequestBodyContent._(this.value);
 
-  factory ReactionsCreateForPullRequestReviewCommentRequestBodyContent.fromJson(
-          String value) =>
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._(value);
+  factory ReactionsCreateForPullRequestReviewCommentRequestBodyContent.fromJson(String value) => ReactionsCreateForPullRequestReviewCommentRequestBodyContent._(value);
 
-  static const plus1 =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('+1');
-  static const minus1 =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('-1');
-  static const laugh =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('laugh');
-  static const confused =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._(
-          'confused');
-  static const heart =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('heart');
-  static const hooray =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('hooray');
-  static const rocket =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('rocket');
-  static const eyes =
-      ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('eyes');
+  static const plus1 = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('+1');
+  static const minus1 = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('-1');
+  static const laugh = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('laugh');
+  static const confused = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('confused');
+  static const heart = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('heart');
+  static const hooray = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('hooray');
+  static const rocket = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('rocket');
+  static const eyes = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('eyes');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReactionsCreateForPullRequestReviewCommentRequestBodyContent &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsCreateForPullRequestReviewCommentRequestBodyContent && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
 final class ReposCreateReleaseRequestBodyMakeLatest {
+
   final String value;
 
   const ReposCreateReleaseRequestBodyMakeLatest._(this.value);
 
-  factory ReposCreateReleaseRequestBodyMakeLatest.fromJson(String value) =>
-      ReposCreateReleaseRequestBodyMakeLatest._(value);
+  factory ReposCreateReleaseRequestBodyMakeLatest.fromJson(String value) => ReposCreateReleaseRequestBodyMakeLatest._(value);
 
   static const true_ = ReposCreateReleaseRequestBodyMakeLatest._('true');
   static const false_ = ReposCreateReleaseRequestBodyMakeLatest._('false');
@@ -99,25 +74,22 @@ final class ReposCreateReleaseRequestBodyMakeLatest {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposCreateReleaseRequestBodyMakeLatest && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateReleaseRequestBodyMakeLatest && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
 final class ReposUpdateReleaseRequestBodyMakeLatest {
+
   final String value;
 
   const ReposUpdateReleaseRequestBodyMakeLatest._(this.value);
 
-  factory ReposUpdateReleaseRequestBodyMakeLatest.fromJson(String value) =>
-      ReposUpdateReleaseRequestBodyMakeLatest._(value);
+  factory ReposUpdateReleaseRequestBodyMakeLatest.fromJson(String value) => ReposUpdateReleaseRequestBodyMakeLatest._(value);
 
   static const true_ = ReposUpdateReleaseRequestBodyMakeLatest._('true');
   static const false_ = ReposUpdateReleaseRequestBodyMakeLatest._('false');
@@ -125,24 +97,21 @@ final class ReposUpdateReleaseRequestBodyMakeLatest {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposUpdateReleaseRequestBodyMakeLatest && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateReleaseRequestBodyMakeLatest && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class ReactionsListForReleaseContent {
+
   final String value;
 
   const ReactionsListForReleaseContent._(this.value);
 
-  factory ReactionsListForReleaseContent.fromJson(String value) =>
-      ReactionsListForReleaseContent._(value);
+  factory ReactionsListForReleaseContent.fromJson(String value) => ReactionsListForReleaseContent._(value);
 
   static const plus1 = ReactionsListForReleaseContent._('+1');
   static const laugh = ReactionsListForReleaseContent._('laugh');
@@ -153,25 +122,22 @@ final class ReactionsListForReleaseContent {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReactionsListForReleaseContent && other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsListForReleaseContent && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release.
 final class ReactionsCreateForReleaseRequestBodyContent {
+
   final String value;
 
   const ReactionsCreateForReleaseRequestBodyContent._(this.value);
 
-  factory ReactionsCreateForReleaseRequestBodyContent.fromJson(String value) =>
-      ReactionsCreateForReleaseRequestBodyContent._(value);
+  factory ReactionsCreateForReleaseRequestBodyContent.fromJson(String value) => ReactionsCreateForReleaseRequestBodyContent._(value);
 
   static const plus1 = ReactionsCreateForReleaseRequestBodyContent._('+1');
   static const laugh = ReactionsCreateForReleaseRequestBodyContent._('laugh');
@@ -182,26 +148,22 @@ final class ReactionsCreateForReleaseRequestBodyContent {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReactionsCreateForReleaseRequestBodyContent &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsCreateForReleaseRequestBodyContent && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The target of the ruleset
 final class ReposCreateRepoRulesetRequestBodyTarget {
+
   final String value;
 
   const ReposCreateRepoRulesetRequestBodyTarget._(this.value);
 
-  factory ReposCreateRepoRulesetRequestBodyTarget.fromJson(String value) =>
-      ReposCreateRepoRulesetRequestBodyTarget._(value);
+  factory ReposCreateRepoRulesetRequestBodyTarget.fromJson(String value) => ReposCreateRepoRulesetRequestBodyTarget._(value);
 
   static const branch = ReposCreateRepoRulesetRequestBodyTarget._('branch');
   static const tag = ReposCreateRepoRulesetRequestBodyTarget._('tag');
@@ -209,25 +171,22 @@ final class ReposCreateRepoRulesetRequestBodyTarget {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposCreateRepoRulesetRequestBodyTarget && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateRepoRulesetRequestBodyTarget && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The target of the ruleset
 final class ReposUpdateRepoRulesetRequestBodyTarget {
+
   final String value;
 
   const ReposUpdateRepoRulesetRequestBodyTarget._(this.value);
 
-  factory ReposUpdateRepoRulesetRequestBodyTarget.fromJson(String value) =>
-      ReposUpdateRepoRulesetRequestBodyTarget._(value);
+  factory ReposUpdateRepoRulesetRequestBodyTarget.fromJson(String value) => ReposUpdateRepoRulesetRequestBodyTarget._(value);
 
   static const branch = ReposUpdateRepoRulesetRequestBodyTarget._('branch');
   static const tag = ReposUpdateRepoRulesetRequestBodyTarget._('tag');
@@ -235,137 +194,99 @@ final class ReposUpdateRepoRulesetRequestBodyTarget {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposUpdateRepoRulesetRequestBodyTarget && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRepoRulesetRequestBodyTarget && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Sets the validity of the secret scanning alert. Can be `active`, `inactive`, or `null` to clear the override.
 final class SecretScanningUpdateAlertRequestBodyValidity {
+
   final String value;
 
   const SecretScanningUpdateAlertRequestBodyValidity._(this.value);
 
-  factory SecretScanningUpdateAlertRequestBodyValidity.fromJson(String value) =>
-      SecretScanningUpdateAlertRequestBodyValidity._(value);
+  factory SecretScanningUpdateAlertRequestBodyValidity.fromJson(String value) => SecretScanningUpdateAlertRequestBodyValidity._(value);
 
-  static const active =
-      SecretScanningUpdateAlertRequestBodyValidity._('active');
-  static const inactive =
-      SecretScanningUpdateAlertRequestBodyValidity._('inactive');
+  static const active = SecretScanningUpdateAlertRequestBodyValidity._('active');
+  static const inactive = SecretScanningUpdateAlertRequestBodyValidity._('inactive');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SecretScanningUpdateAlertRequestBodyValidity &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningUpdateAlertRequestBodyValidity && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// What to do with alerts associated with the deleted patterns. `delete_alerts` permanently removes the alerts. `resolve_alerts` resolves the alerts as "pattern deleted". Defaults to `delete_alerts` when not specified.
 final class SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction {
+
   final String value;
 
-  const SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(
-      this.value);
+  const SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(this.value);
 
-  factory SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction.fromJson(
-          String value) =>
-      SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(
-          value);
+  factory SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction.fromJson(String value) => SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(value);
 
-  static const deleteAlerts =
-      SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(
-          'delete_alerts');
-  static const resolveAlerts =
-      SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(
-          'resolve_alerts');
+  static const deleteAlerts = SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._('delete_alerts');
+  static const resolveAlerts = SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._('resolve_alerts');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SecurityAdvisoriesListRepositoryAdvisoriesSort {
+
   final String value;
 
   const SecurityAdvisoriesListRepositoryAdvisoriesSort._(this.value);
 
-  factory SecurityAdvisoriesListRepositoryAdvisoriesSort.fromJson(
-          String value) =>
-      SecurityAdvisoriesListRepositoryAdvisoriesSort._(value);
+  factory SecurityAdvisoriesListRepositoryAdvisoriesSort.fromJson(String value) => SecurityAdvisoriesListRepositoryAdvisoriesSort._(value);
 
-  static const created =
-      SecurityAdvisoriesListRepositoryAdvisoriesSort._('created');
-  static const updated =
-      SecurityAdvisoriesListRepositoryAdvisoriesSort._('updated');
-  static const published =
-      SecurityAdvisoriesListRepositoryAdvisoriesSort._('published');
+  static const created = SecurityAdvisoriesListRepositoryAdvisoriesSort._('created');
+  static const updated = SecurityAdvisoriesListRepositoryAdvisoriesSort._('updated');
+  static const published = SecurityAdvisoriesListRepositoryAdvisoriesSort._('published');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SecurityAdvisoriesListRepositoryAdvisoriesSort &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListRepositoryAdvisoriesSort && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SecurityAdvisoriesListRepositoryAdvisoriesState {
+
   final String value;
 
   const SecurityAdvisoriesListRepositoryAdvisoriesState._(this.value);
 
-  factory SecurityAdvisoriesListRepositoryAdvisoriesState.fromJson(
-          String value) =>
-      SecurityAdvisoriesListRepositoryAdvisoriesState._(value);
+  factory SecurityAdvisoriesListRepositoryAdvisoriesState.fromJson(String value) => SecurityAdvisoriesListRepositoryAdvisoriesState._(value);
 
-  static const triage =
-      SecurityAdvisoriesListRepositoryAdvisoriesState._('triage');
-  static const draft =
-      SecurityAdvisoriesListRepositoryAdvisoriesState._('draft');
-  static const published =
-      SecurityAdvisoriesListRepositoryAdvisoriesState._('published');
-  static const closed =
-      SecurityAdvisoriesListRepositoryAdvisoriesState._('closed');
+  static const triage = SecurityAdvisoriesListRepositoryAdvisoriesState._('triage');
+  static const draft = SecurityAdvisoriesListRepositoryAdvisoriesState._('draft');
+  static const published = SecurityAdvisoriesListRepositoryAdvisoriesState._('published');
+  static const closed = SecurityAdvisoriesListRepositoryAdvisoriesState._('closed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SecurityAdvisoriesListRepositoryAdvisoriesState &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListRepositoryAdvisoriesState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

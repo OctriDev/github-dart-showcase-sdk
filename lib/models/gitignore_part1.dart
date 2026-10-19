@@ -8,34 +8,27 @@ part of 'gitignore.dart';
 class GitignoreTemplate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `source` wire field.
   final String source;
 
   const GitignoreTemplate({required this.name, required this.source});
 
-  GitignoreTemplate Function({String name, String source}) get copyWith =>
-      _copyWith;
+  GitignoreTemplate Function({String name, String source}) get copyWith => _copyWith;
 
-  GitignoreTemplate _copyWith(
-          {Object? name = sdkOmittedValue, Object? source = sdkOmittedValue}) =>
-      GitignoreTemplate(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        source:
-            identical(source, sdkOmittedValue) ? this.source : source as String,
-      );
+  GitignoreTemplate _copyWith({Object? name = sdkOmittedValue, Object? source = sdkOmittedValue}) => GitignoreTemplate(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    source: identical(source, sdkOmittedValue) ? this.source : source as String,
+  );
 
-  factory GitignoreTemplate.fromJson(Map<String, dynamic> json) =>
-      GitignoreTemplate(
-        name: (json['name'] as String?)!,
-        source: (json['source'] as String?)!,
-      );
+  factory GitignoreTemplate.fromJson(Map<String, dynamic> json) => GitignoreTemplate(
+    name: (json['name'] as String?)!,
+    source: (json['source'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'source': source,
-      };
+    'name': name,
+    'source': source,
+  };
 }

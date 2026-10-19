@@ -6,403 +6,277 @@ part of 'inline.dart';
 // Inline operation models (part 155)
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewEditedPullRequestBaseUserType {
+
   final String value;
 
   const WebhookPullRequestReviewEditedPullRequestBaseUserType._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestBaseUserType.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestBaseUserType._(value);
+  factory WebhookPullRequestReviewEditedPullRequestBaseUserType.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestBaseUserType._(value);
 
-  static const bot =
-      WebhookPullRequestReviewEditedPullRequestBaseUserType._('Bot');
-  static const user =
-      WebhookPullRequestReviewEditedPullRequestBaseUserType._('User');
-  static const organization =
-      WebhookPullRequestReviewEditedPullRequestBaseUserType._('Organization');
+  static const bot = WebhookPullRequestReviewEditedPullRequestBaseUserType._('Bot');
+  static const user = WebhookPullRequestReviewEditedPullRequestBaseUserType._('User');
+  static const organization = WebhookPullRequestReviewEditedPullRequestBaseUserType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestBaseUserType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestBaseUserType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType {
+
   final String value;
 
-  const WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._(
-      this.value);
+  const WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._(value);
+  factory WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._(value);
 
-  static const bot =
-      WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._('Bot');
-  static const user =
-      WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._('User');
-  static const organization =
-      WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._(
-          'Organization');
+  static const bot = WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._('Bot');
+  static const user = WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._('User');
+  static const organization = WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestHeadRepoOwnerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `visibility` wire field.
 final class WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility {
+
   final String value;
 
-  const WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._(
-      this.value);
+  const WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._(value);
+  factory WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._(value);
 
-  static const public =
-      WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._('public');
-  static const private =
-      WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._('private');
-  static const internal =
-      WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._('internal');
+  static const public = WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._('public');
+  static const private = WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._('private');
+  static const internal = WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility._('internal');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestHeadRepoVisibility && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewEditedPullRequestHeadUserType {
+
   final String value;
 
   const WebhookPullRequestReviewEditedPullRequestHeadUserType._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestHeadUserType.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestHeadUserType._(value);
+  factory WebhookPullRequestReviewEditedPullRequestHeadUserType.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestHeadUserType._(value);
 
-  static const bot =
-      WebhookPullRequestReviewEditedPullRequestHeadUserType._('Bot');
-  static const user =
-      WebhookPullRequestReviewEditedPullRequestHeadUserType._('User');
-  static const organization =
-      WebhookPullRequestReviewEditedPullRequestHeadUserType._('Organization');
+  static const bot = WebhookPullRequestReviewEditedPullRequestHeadUserType._('Bot');
+  static const user = WebhookPullRequestReviewEditedPullRequestHeadUserType._('User');
+  static const organization = WebhookPullRequestReviewEditedPullRequestHeadUserType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestHeadUserType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestHeadUserType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType {
+
   final String value;
 
-  const WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._(
-      this.value);
+  const WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._(value);
+  factory WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._(value);
 
-  static const bot =
-      WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._('Bot');
-  static const user =
-      WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._('User');
-  static const organization =
-      WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._(
-          'Organization');
-  static const mannequin =
-      WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._(
-          'Mannequin');
+  static const bot = WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._('Bot');
+  static const user = WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._('User');
+  static const organization = WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._('Organization');
+  static const mannequin = WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType._('Mannequin');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestMilestoneCreatorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The state of the milestone.
 final class WebhookPullRequestReviewEditedPullRequestMilestoneState {
+
   final String value;
 
   const WebhookPullRequestReviewEditedPullRequestMilestoneState._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestMilestoneState.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestMilestoneState._(value);
+  factory WebhookPullRequestReviewEditedPullRequestMilestoneState.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestMilestoneState._(value);
 
-  static const open =
-      WebhookPullRequestReviewEditedPullRequestMilestoneState._('open');
-  static const closed =
-      WebhookPullRequestReviewEditedPullRequestMilestoneState._('closed');
+  static const open = WebhookPullRequestReviewEditedPullRequestMilestoneState._('open');
+  static const closed = WebhookPullRequestReviewEditedPullRequestMilestoneState._('closed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestMilestoneState &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestMilestoneState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `privacy` wire field.
 final class WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy {
+
   final String value;
 
-  const WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy._(
-      this.value);
+  const WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy
-          ._(value);
+  factory WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy._(value);
 
-  static const open =
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy
-          ._('open');
-  static const closed =
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy
-          ._('closed');
-  static const secret =
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy
-          ._('secret');
+  static const open = WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy._('open');
+  static const closed = WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy._('closed');
+  static const secret = WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy._('secret');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemParentPrivacy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `privacy` wire field.
 final class WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy {
+
   final String value;
 
-  const WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._(
-      this.value);
+  const WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._(
-          value);
+  factory WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._(value);
 
-  static const open =
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._(
-          'open');
-  static const closed =
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._(
-          'closed');
-  static const secret =
-      WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._(
-          'secret');
+  static const open = WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._('open');
+  static const closed = WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._('closed');
+  static const secret = WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy._('secret');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestRequestedTeamsItemPrivacy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `state` wire field.
 final class WebhookPullRequestReviewEditedPullRequestState {
+
   final String value;
 
   const WebhookPullRequestReviewEditedPullRequestState._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestState.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestState._(value);
+  factory WebhookPullRequestReviewEditedPullRequestState.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestState._(value);
 
   static const open = WebhookPullRequestReviewEditedPullRequestState._('open');
-  static const closed =
-      WebhookPullRequestReviewEditedPullRequestState._('closed');
+  static const closed = WebhookPullRequestReviewEditedPullRequestState._('closed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestState &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewEditedPullRequestUserType {
+
   final String value;
 
   const WebhookPullRequestReviewEditedPullRequestUserType._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestUserType.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestUserType._(value);
+  factory WebhookPullRequestReviewEditedPullRequestUserType.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestUserType._(value);
 
   static const bot = WebhookPullRequestReviewEditedPullRequestUserType._('Bot');
-  static const user =
-      WebhookPullRequestReviewEditedPullRequestUserType._('User');
-  static const organization =
-      WebhookPullRequestReviewEditedPullRequestUserType._('Organization');
-  static const mannequin =
-      WebhookPullRequestReviewEditedPullRequestUserType._('Mannequin');
+  static const user = WebhookPullRequestReviewEditedPullRequestUserType._('User');
+  static const organization = WebhookPullRequestReviewEditedPullRequestUserType._('Organization');
+  static const mannequin = WebhookPullRequestReviewEditedPullRequestUserType._('Mannequin');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookPullRequestReviewEditedPullRequestUserType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestUserType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type {
+
   final String value;
 
-  const WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type._(
-      this.value);
+  const WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type
-          ._(value);
+  factory WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type._(value);
 
-  static const bot =
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type
-          ._('Bot');
-  static const user =
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type
-          ._('User');
-  static const organization =
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type
-          ._('Organization');
-  static const mannequin =
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type
-          ._('Mannequin');
+  static const bot = WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type._('Bot');
+  static const user = WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type._('User');
+  static const organization = WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type._('Organization');
+  static const mannequin = WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type._('Mannequin');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant0Type && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `privacy` wire field.
 final class WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy {
+
   final String value;
 
-  const WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy._(
-      this.value);
+  const WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy._(this.value);
 
-  factory WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(
-          String value) =>
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy
-          ._(value);
+  factory WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(String value) => WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy._(value);
 
-  static const open =
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy
-          ._('open');
-  static const closed =
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy
-          ._('closed');
-  static const secret =
-      WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy
-          ._('secret');
+  static const open = WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy._('open');
+  static const closed = WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy._('closed');
+  static const secret = WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy._('secret');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestReviewEditedPullRequestRequestedReviewersItemVariant1ParentPrivacy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

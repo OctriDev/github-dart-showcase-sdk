@@ -8,7 +8,6 @@ part of 'orgs.dart';
 class ExternalProperty {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the external property
   final String propertyName;
 
@@ -16,438 +15,237 @@ class ExternalProperty {
 
   ExternalProperty Function({String propertyName}) get copyWith => _copyWith;
 
-  ExternalProperty _copyWith({Object? propertyName = sdkOmittedValue}) =>
-      ExternalProperty(
-        propertyName: identical(propertyName, sdkOmittedValue)
-            ? this.propertyName
-            : propertyName as String,
-      );
+  ExternalProperty _copyWith({Object? propertyName = sdkOmittedValue}) => ExternalProperty(
+    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
+  );
 
-  factory ExternalProperty.fromJson(Map<String, dynamic> json) =>
-      ExternalProperty(
-        propertyName: (json['property_name'] as String?)!,
-      );
+  factory ExternalProperty.fromJson(Map<String, dynamic> json) => ExternalProperty(
+    propertyName: (json['property_name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'property_name': propertyName,
-      };
+    'property_name': propertyName,
+  };
 }
 
 /// Check immutable releases settings for an organization.
 class ImmutableReleasesOrganizationSettings {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The policy that controls how immutable releases are enforced in the organization.
-  final ImmutableReleasesOrganizationSettingsEnforcedRepositories
-      enforcedRepositories;
-
+  final ImmutableReleasesOrganizationSettingsEnforcedRepositories enforcedRepositories;
   /// The API URL to use to get or set the selected repositories for immutable releases enforcement, when `enforced_repositories` is set to `selected`.
   final SdkOptional<String> selectedRepositoriesUrl;
 
-  const ImmutableReleasesOrganizationSettings(
-      {required this.enforcedRepositories,
-      this.selectedRepositoriesUrl = const SdkOmitted()});
+  const ImmutableReleasesOrganizationSettings({required this.enforcedRepositories, this.selectedRepositoriesUrl = const SdkOmitted()});
 
-  ImmutableReleasesOrganizationSettings Function(
-      {ImmutableReleasesOrganizationSettingsEnforcedRepositories
-          enforcedRepositories,
-      SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
+  ImmutableReleasesOrganizationSettings Function({ImmutableReleasesOrganizationSettingsEnforcedRepositories enforcedRepositories, SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
 
-  ImmutableReleasesOrganizationSettings _copyWith(
-          {Object? enforcedRepositories = sdkOmittedValue,
-          Object? selectedRepositoriesUrl = sdkOmittedValue}) =>
-      ImmutableReleasesOrganizationSettings(
-        enforcedRepositories: identical(enforcedRepositories, sdkOmittedValue)
-            ? this.enforcedRepositories
-            : enforcedRepositories
-                as ImmutableReleasesOrganizationSettingsEnforcedRepositories,
-        selectedRepositoriesUrl:
-            identical(selectedRepositoriesUrl, sdkOmittedValue)
-                ? this.selectedRepositoriesUrl
-                : selectedRepositoriesUrl as SdkOptional<String>,
-      );
+  ImmutableReleasesOrganizationSettings _copyWith({Object? enforcedRepositories = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue}) => ImmutableReleasesOrganizationSettings(
+    enforcedRepositories: identical(enforcedRepositories, sdkOmittedValue) ? this.enforcedRepositories : enforcedRepositories as ImmutableReleasesOrganizationSettingsEnforcedRepositories,
+    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as SdkOptional<String>,
+  );
 
-  factory ImmutableReleasesOrganizationSettings.fromJson(
-          Map<String, dynamic> json) =>
-      ImmutableReleasesOrganizationSettings(
-        enforcedRepositories: (json['enforced_repositories'] != null
-            ? ImmutableReleasesOrganizationSettingsEnforcedRepositories
-                .fromJson(json['enforced_repositories'] as String)
-            : null)!,
-        selectedRepositoriesUrl: json['selected_repositories_url'] != null
-            ? SdkPresent((json['selected_repositories_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ImmutableReleasesOrganizationSettings.fromJson(Map<String, dynamic> json) => ImmutableReleasesOrganizationSettings(
+    enforcedRepositories: (json['enforced_repositories'] != null ? ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(json['enforced_repositories'] as String) : null)!,
+    selectedRepositoriesUrl: json['selected_repositories_url'] != null ? SdkPresent((json['selected_repositories_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'enforced_repositories': enforcedRepositories.toJson(),
-        ...switch (selectedRepositoriesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'selected_repositories_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'enforced_repositories': enforcedRepositories.toJson(),
+    ...switch (selectedRepositoriesUrl) {
+      SdkPresent<String>(value: final value) => {'selected_repositories_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `options[]` wire field.
 class IssueFieldOptionsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the option.
   final int id;
-
   /// The name of the option.
   final String name;
-
   /// The description of the option.
   final SdkOptional<String?> description;
-
   /// The color of the option.
   final SdkOptional<IssueFieldOptionsItemColor?> color;
-
   /// The priority of the option for ordering.
   final SdkOptional<int?> priority;
-
   /// The time the option was created.
   final SdkOptional<String> createdAt;
-
   /// The time the option was last updated.
   final SdkOptional<String> updatedAt;
 
-  const IssueFieldOptionsItem(
-      {required this.id,
-      required this.name,
-      this.description = const SdkOmitted(),
-      this.color = const SdkOmitted(),
-      this.priority = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted()});
+  const IssueFieldOptionsItem({required this.id, required this.name, this.description = const SdkOmitted(), this.color = const SdkOmitted(), this.priority = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted()});
 
-  IssueFieldOptionsItem Function(
-      {int id,
-      String name,
-      SdkOptional<String?> description,
-      SdkOptional<IssueFieldOptionsItemColor?> color,
-      SdkOptional<int?> priority,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> updatedAt}) get copyWith => _copyWith;
+  IssueFieldOptionsItem Function({int id, String name, SdkOptional<String?> description, SdkOptional<IssueFieldOptionsItemColor?> color, SdkOptional<int?> priority, SdkOptional<String> createdAt, SdkOptional<String> updatedAt}) get copyWith => _copyWith;
 
-  IssueFieldOptionsItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? color = sdkOmittedValue,
-          Object? priority = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      IssueFieldOptionsItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<IssueFieldOptionsItemColor?>,
-        priority: identical(priority, sdkOmittedValue)
-            ? this.priority
-            : priority as SdkOptional<int?>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-      );
+  IssueFieldOptionsItem _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue, Object? priority = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => IssueFieldOptionsItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<IssueFieldOptionsItemColor?>,
+    priority: identical(priority, sdkOmittedValue) ? this.priority : priority as SdkOptional<int?>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+  );
 
-  factory IssueFieldOptionsItem.fromJson(Map<String, dynamic> json) =>
-      IssueFieldOptionsItem(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        color: json.containsKey('color')
-            ? SdkPresent(json['color'] != null
-                ? IssueFieldOptionsItemColor.fromJson(json['color'] as String)
-                : null)
-            : const SdkOmitted(),
-        priority: json.containsKey('priority')
-            ? SdkPresent((json['priority'] as num?)?.toInt())
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory IssueFieldOptionsItem.fromJson(Map<String, dynamic> json) => IssueFieldOptionsItem(
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    color: json.containsKey('color') ? SdkPresent(json['color'] != null ? IssueFieldOptionsItemColor.fromJson(json['color'] as String) : null) : const SdkOmitted(),
+    priority: json.containsKey('priority') ? SdkPresent((json['priority'] as num?)?.toInt()) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (color) {
-          SdkPresent<IssueFieldOptionsItemColor?>(value: final value) => {
-              'color': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (priority) {
-          SdkPresent<int?>(value: final value) => {
-              'priority': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (color) {
+      SdkPresent<IssueFieldOptionsItemColor?>(value: final value) => {'color': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (priority) {
+      SdkPresent<int?>(value: final value) => {'priority': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A custom attribute defined at the organization level for attaching structured data to issues.
 class IssueField {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the issue field.
   final int id;
-
   /// The node identifier of the issue field.
   final String nodeId;
-
   /// The name of the issue field.
   final String name;
-
   /// The description of the issue field.
   final SdkOptional<String?> description;
-
   /// The data type of the issue field.
   final IssueFieldDataType dataType;
-
   /// The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues).
   final SdkOptional<IssueFieldVisibility> visibility;
-
   /// Available options for single select and multi select fields.
   final SdkOptional<List<IssueFieldOptionsItem>?> options;
-
   /// The time the issue field was created.
   final SdkOptional<String> createdAt;
-
   /// The time the issue field was last updated.
   final SdkOptional<String> updatedAt;
 
-  const IssueField(
-      {required this.id,
-      required this.nodeId,
-      required this.name,
-      this.description = const SdkOmitted(),
-      required this.dataType,
-      this.visibility = const SdkOmitted(),
-      this.options = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted()});
+  const IssueField({required this.id, required this.nodeId, required this.name, this.description = const SdkOmitted(), required this.dataType, this.visibility = const SdkOmitted(), this.options = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted()});
 
-  IssueField Function(
-      {int id,
-      String nodeId,
-      String name,
-      SdkOptional<String?> description,
-      IssueFieldDataType dataType,
-      SdkOptional<IssueFieldVisibility> visibility,
-      SdkOptional<List<IssueFieldOptionsItem>?> options,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> updatedAt}) get copyWith => _copyWith;
+  IssueField Function({int id, String nodeId, String name, SdkOptional<String?> description, IssueFieldDataType dataType, SdkOptional<IssueFieldVisibility> visibility, SdkOptional<List<IssueFieldOptionsItem>?> options, SdkOptional<String> createdAt, SdkOptional<String> updatedAt}) get copyWith => _copyWith;
 
-  IssueField _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? dataType = sdkOmittedValue,
-          Object? visibility = sdkOmittedValue,
-          Object? options = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      IssueField(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        dataType: identical(dataType, sdkOmittedValue)
-            ? this.dataType
-            : dataType as IssueFieldDataType,
-        visibility: identical(visibility, sdkOmittedValue)
-            ? this.visibility
-            : visibility as SdkOptional<IssueFieldVisibility>,
-        options: identical(options, sdkOmittedValue)
-            ? this.options
-            : options as SdkOptional<List<IssueFieldOptionsItem>?>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-      );
+  IssueField _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dataType = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? options = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => IssueField(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    dataType: identical(dataType, sdkOmittedValue) ? this.dataType : dataType as IssueFieldDataType,
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<IssueFieldVisibility>,
+    options: identical(options, sdkOmittedValue) ? this.options : options as SdkOptional<List<IssueFieldOptionsItem>?>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+  );
 
   factory IssueField.fromJson(Map<String, dynamic> json) => IssueField(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        name: (json['name'] as String?)!,
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        dataType: (json['data_type'] != null
-            ? IssueFieldDataType.fromJson(json['data_type'] as String)
-            : null)!,
-        visibility: json['visibility'] != null
-            ? SdkPresent((json['visibility'] != null
-                ? IssueFieldVisibility.fromJson(json['visibility'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        options: json.containsKey('options')
-            ? SdkPresent((json['options'] as List?)
-                ?.map((e) =>
-                    IssueFieldOptionsItem.fromJson(e as Map<String, dynamic>))
-                .toList())
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    name: (json['name'] as String?)!,
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    dataType: (json['data_type'] != null ? IssueFieldDataType.fromJson(json['data_type'] as String) : null)!,
+    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? IssueFieldVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
+    options: json.containsKey('options') ? SdkPresent((json['options'] as List?)?.map((e) => IssueFieldOptionsItem.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'name': name,
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'data_type': dataType.toJson(),
-        ...switch (visibility) {
-          SdkPresent<IssueFieldVisibility>(value: final value) => {
-              'visibility': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (options) {
-          SdkPresent<List<IssueFieldOptionsItem>?>(value: final value) => {
-              'options': value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'node_id': nodeId,
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    'data_type': dataType.toJson(),
+    ...switch (visibility) {
+      SdkPresent<IssueFieldVisibility>(value: final value) => {'visibility': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (options) {
+      SdkPresent<List<IssueFieldOptionsItem>?>(value: final value) => {'options': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `options[]` wire field.
 class OrganizationCreateIssueFieldOptionsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Name of the option.
   final String name;
-
   /// Description of the option.
   final SdkOptional<String?> description;
-
   /// Color for the option.
   final OrganizationCreateIssueFieldOptionsItemColor color;
-
   /// Priority of the option for ordering.
   final int priority;
 
-  const OrganizationCreateIssueFieldOptionsItem(
-      {required this.name,
-      this.description = const SdkOmitted(),
-      required this.color,
-      required this.priority});
+  const OrganizationCreateIssueFieldOptionsItem({required this.name, this.description = const SdkOmitted(), required this.color, required this.priority});
 
-  OrganizationCreateIssueFieldOptionsItem Function(
-      {String name,
-      SdkOptional<String?> description,
-      OrganizationCreateIssueFieldOptionsItemColor color,
-      int priority}) get copyWith => _copyWith;
+  OrganizationCreateIssueFieldOptionsItem Function({String name, SdkOptional<String?> description, OrganizationCreateIssueFieldOptionsItemColor color, int priority}) get copyWith => _copyWith;
 
-  OrganizationCreateIssueFieldOptionsItem _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? color = sdkOmittedValue,
-          Object? priority = sdkOmittedValue}) =>
-      OrganizationCreateIssueFieldOptionsItem(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as OrganizationCreateIssueFieldOptionsItemColor,
-        priority: identical(priority, sdkOmittedValue)
-            ? this.priority
-            : priority as int,
-      );
+  OrganizationCreateIssueFieldOptionsItem _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue, Object? priority = sdkOmittedValue}) => OrganizationCreateIssueFieldOptionsItem(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    color: identical(color, sdkOmittedValue) ? this.color : color as OrganizationCreateIssueFieldOptionsItemColor,
+    priority: identical(priority, sdkOmittedValue) ? this.priority : priority as int,
+  );
 
-  factory OrganizationCreateIssueFieldOptionsItem.fromJson(
-          Map<String, dynamic> json) =>
-      OrganizationCreateIssueFieldOptionsItem(
-        name: (json['name'] as String?)!,
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        color: (json['color'] != null
-            ? OrganizationCreateIssueFieldOptionsItemColor.fromJson(
-                json['color'] as String)
-            : null)!,
-        priority: ((json['priority'] as num?)?.toInt())!,
-      );
+  factory OrganizationCreateIssueFieldOptionsItem.fromJson(Map<String, dynamic> json) => OrganizationCreateIssueFieldOptionsItem(
+    name: (json['name'] as String?)!,
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    color: (json['color'] != null ? OrganizationCreateIssueFieldOptionsItemColor.fromJson(json['color'] as String) : null)!,
+    priority: ((json['priority'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'color': color.toJson(),
-        'priority': priority,
-      };
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    'color': color.toJson(),
+    'priority': priority,
+  };
 }

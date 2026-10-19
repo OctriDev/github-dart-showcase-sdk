@@ -8,163 +8,82 @@ part of 'webhooks_project.dart';
 class WebhooksProject {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Body of the project
   final String? body;
-
   /// Required `uri`-formatted value serialized in the `columns_url` wire field.
   final String columnsUrl;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required object value serialized in the `creator` wire field.
   final WebhooksProjectCreator? creator;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Name of the project
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
-
   /// Required `uri`-formatted value serialized in the `owner_url` wire field.
   final String ownerUrl;
-
   /// State of the project; either 'open' or 'closed'
   final WebhooksProjectState state;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhooksProject(
-      {required this.body,
-      required this.columnsUrl,
-      required this.createdAt,
-      required this.creator,
-      required this.htmlUrl,
-      required this.id,
-      required this.name,
-      required this.nodeId,
-      required this.number,
-      required this.ownerUrl,
-      required this.state,
-      required this.updatedAt,
-      required this.url});
+  const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url});
 
-  WebhooksProject Function(
-      {String? body,
-      String columnsUrl,
-      String createdAt,
-      WebhooksProjectCreator? creator,
-      String htmlUrl,
-      int id,
-      String name,
-      String nodeId,
-      int number,
-      String ownerUrl,
-      WebhooksProjectState state,
-      String updatedAt,
-      String url}) get copyWith => _copyWith;
+  WebhooksProject Function({String? body, String columnsUrl, String createdAt, WebhooksProjectCreator? creator, String htmlUrl, int id, String name, String nodeId, int number, String ownerUrl, WebhooksProjectState state, String updatedAt, String url}) get copyWith => _copyWith;
 
-  WebhooksProject _copyWith(
-          {Object? body = sdkOmittedValue,
-          Object? columnsUrl = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? ownerUrl = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhooksProject(
-        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-        columnsUrl: identical(columnsUrl, sdkOmittedValue)
-            ? this.columnsUrl
-            : columnsUrl as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as WebhooksProjectCreator?,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        ownerUrl: identical(ownerUrl, sdkOmittedValue)
-            ? this.ownerUrl
-            : ownerUrl as String,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as WebhooksProjectState,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhooksProject _copyWith({Object? body = sdkOmittedValue, Object? columnsUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? number = sdkOmittedValue, Object? ownerUrl = sdkOmittedValue, Object? state = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhooksProject(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+    columnsUrl: identical(columnsUrl, sdkOmittedValue) ? this.columnsUrl : columnsUrl as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as WebhooksProjectCreator?,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    ownerUrl: identical(ownerUrl, sdkOmittedValue) ? this.ownerUrl : ownerUrl as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as WebhooksProjectState,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhooksProject.fromJson(Map<String, dynamic> json) =>
-      WebhooksProject(
-        body: json.containsKey('body')
-            ? json['body'] as String?
-            : throw ArgumentError.value(
-                null, 'body', 'Required property is missing'),
-        columnsUrl: (json['columns_url'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        creator: json.containsKey('creator')
-            ? json['creator'] != null
-                ? WebhooksProjectCreator.fromJson(
-                    json['creator'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'creator', 'Required property is missing'),
-        htmlUrl: (json['html_url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        ownerUrl: (json['owner_url'] as String?)!,
-        state: (json['state'] != null
-            ? WebhooksProjectState.fromJson(json['state'] as String)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhooksProject.fromJson(Map<String, dynamic> json) => WebhooksProject(
+    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
+    columnsUrl: (json['columns_url'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    creator: json.containsKey('creator') ? json['creator'] != null ? WebhooksProjectCreator.fromJson(json['creator'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'creator', 'Required property is missing'),
+    htmlUrl: (json['html_url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    number: ((json['number'] as num?)?.toInt())!,
+    ownerUrl: (json['owner_url'] as String?)!,
+    state: (json['state'] != null ? WebhooksProjectState.fromJson(json['state'] as String) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'body': body,
-        'columns_url': columnsUrl,
-        'created_at': createdAt,
-        'creator': creator?.toJson(),
-        'html_url': htmlUrl,
-        'id': id,
-        'name': name,
-        'node_id': nodeId,
-        'number': number,
-        'owner_url': ownerUrl,
-        'state': state.toJson(),
-        'updated_at': updatedAt,
-        'url': url,
-      };
+    'body': body,
+    'columns_url': columnsUrl,
+    'created_at': createdAt,
+    'creator': creator?.toJson(),
+    'html_url': htmlUrl,
+    'id': id,
+    'name': name,
+    'node_id': nodeId,
+    'number': number,
+    'owner_url': ownerUrl,
+    'state': state.toJson(),
+    'updated_at': updatedAt,
+    'url': url,
+  };
 }

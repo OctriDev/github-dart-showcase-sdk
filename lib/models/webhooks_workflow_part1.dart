@@ -8,228 +8,126 @@ part of 'webhooks_workflow.dart';
 class WebhooksWorkflow {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `badge_url` wire field.
   final String badgeUrl;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `path` wire field.
   final String path;
-
   /// Required `string` value serialized in the `state` wire field.
   final String state;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhooksWorkflow(
-      {required this.badgeUrl,
-      required this.createdAt,
-      required this.htmlUrl,
-      required this.id,
-      required this.name,
-      required this.nodeId,
-      required this.path,
-      required this.state,
-      required this.updatedAt,
-      required this.url});
+  const WebhooksWorkflow({required this.badgeUrl, required this.createdAt, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.state, required this.updatedAt, required this.url});
 
-  WebhooksWorkflow Function(
-      {String badgeUrl,
-      String createdAt,
-      String htmlUrl,
-      int id,
-      String name,
-      String nodeId,
-      String path,
-      String state,
-      String updatedAt,
-      String url}) get copyWith => _copyWith;
+  WebhooksWorkflow Function({String badgeUrl, String createdAt, String htmlUrl, int id, String name, String nodeId, String path, String state, String updatedAt, String url}) get copyWith => _copyWith;
 
-  WebhooksWorkflow _copyWith(
-          {Object? badgeUrl = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhooksWorkflow(
-        badgeUrl: identical(badgeUrl, sdkOmittedValue)
-            ? this.badgeUrl
-            : badgeUrl as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        state: identical(state, sdkOmittedValue) ? this.state : state as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhooksWorkflow _copyWith({Object? badgeUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? path = sdkOmittedValue, Object? state = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhooksWorkflow(
+    badgeUrl: identical(badgeUrl, sdkOmittedValue) ? this.badgeUrl : badgeUrl as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) =>
-      WebhooksWorkflow(
-        badgeUrl: (json['badge_url'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        path: (json['path'] as String?)!,
-        state: (json['state'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) => WebhooksWorkflow(
+    badgeUrl: (json['badge_url'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    path: (json['path'] as String?)!,
+    state: (json['state'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'badge_url': badgeUrl,
-        'created_at': createdAt,
-        'html_url': htmlUrl,
-        'id': id,
-        'name': name,
-        'node_id': nodeId,
-        'path': path,
-        'state': state,
-        'updated_at': updatedAt,
-        'url': url,
-      };
+    'badge_url': badgeUrl,
+    'created_at': createdAt,
+    'html_url': htmlUrl,
+    'id': id,
+    'name': name,
+    'node_id': nodeId,
+    'path': path,
+    'state': state,
+    'updated_at': updatedAt,
+    'url': url,
+  };
 }
 
 /// Typed representation of the `WebhooksWorkflowJobRun` API schema.
 class WebhooksWorkflowJobRun {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required API value serialized in the `conclusion` wire field.
   final dynamic conclusion;
-
   /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `string` value serialized in the `environment` wire field.
   final String environment;
-
   /// Required `string` value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required API value serialized in the `name` wire field.
   final dynamic name;
-
   /// Required `string` value serialized in the `status` wire field.
   final String status;
-
   /// Required `string` value serialized in the `updated_at` wire field.
   final String updatedAt;
 
-  const WebhooksWorkflowJobRun(
-      {required this.conclusion,
-      required this.createdAt,
-      required this.environment,
-      required this.htmlUrl,
-      required this.id,
-      required this.name,
-      required this.status,
-      required this.updatedAt});
+  const WebhooksWorkflowJobRun({required this.conclusion, required this.createdAt, required this.environment, required this.htmlUrl, required this.id, required this.name, required this.status, required this.updatedAt});
 
-  WebhooksWorkflowJobRun Function(
-      {dynamic conclusion,
-      String createdAt,
-      String environment,
-      String htmlUrl,
-      int id,
-      dynamic name,
-      String status,
-      String updatedAt}) get copyWith => _copyWith;
+  WebhooksWorkflowJobRun Function({dynamic conclusion, String createdAt, String environment, String htmlUrl, int id, dynamic name, String status, String updatedAt}) get copyWith => _copyWith;
 
-  WebhooksWorkflowJobRun _copyWith(
-          {Object? conclusion = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? environment = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      WebhooksWorkflowJobRun(
-        conclusion: identical(conclusion, sdkOmittedValue)
-            ? this.conclusion
-            : conclusion as dynamic,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        environment: identical(environment, sdkOmittedValue)
-            ? this.environment
-            : environment as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as dynamic,
-        status:
-            identical(status, sdkOmittedValue) ? this.status : status as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  WebhooksWorkflowJobRun _copyWith({Object? conclusion = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? status = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => WebhooksWorkflowJobRun(
+    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as dynamic,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as dynamic,
+    status: identical(status, sdkOmittedValue) ? this.status : status as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
-  factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) =>
-      WebhooksWorkflowJobRun(
-        conclusion: json.containsKey('conclusion')
-            ? json['conclusion']
-            : throw ArgumentError.value(
-                null, 'conclusion', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        environment: (json['environment'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        name: json.containsKey('name')
-            ? json['name']
-            : throw ArgumentError.value(
-                null, 'name', 'Required property is missing'),
-        status: (json['status'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+  factory WebhooksWorkflowJobRun.fromJson(Map<String, dynamic> json) => WebhooksWorkflowJobRun(
+    conclusion: json.containsKey('conclusion') ? json['conclusion'] : throw ArgumentError.value(null, 'conclusion', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    environment: (json['environment'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    name: json.containsKey('name') ? json['name'] : throw ArgumentError.value(null, 'name', 'Required property is missing'),
+    status: (json['status'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'conclusion': conclusion,
-        'created_at': createdAt,
-        'environment': environment,
-        'html_url': htmlUrl,
-        'id': id,
-        'name': name,
-        'status': status,
-        'updated_at': updatedAt,
-      };
+    'conclusion': conclusion,
+    'created_at': createdAt,
+    'environment': environment,
+    'html_url': htmlUrl,
+    'id': id,
+    'name': name,
+    'status': status,
+    'updated_at': updatedAt,
+  };
 }

@@ -8,543 +8,266 @@ part of 'repos_rule.dart';
 class RuleSuiteRuleEvaluationsItemRuleSource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The type of rule source.
   final SdkOptional<String> type_;
-
   /// The ID of the rule source.
   final SdkOptional<int?> id;
-
   /// The name of the rule source.
   final SdkOptional<String?> name;
 
-  const RuleSuiteRuleEvaluationsItemRuleSource(
-      {this.type_ = const SdkOmitted(),
-      this.id = const SdkOmitted(),
-      this.name = const SdkOmitted()});
+  const RuleSuiteRuleEvaluationsItemRuleSource({this.type_ = const SdkOmitted(), this.id = const SdkOmitted(), this.name = const SdkOmitted()});
 
-  RuleSuiteRuleEvaluationsItemRuleSource Function(
-      {SdkOptional<String> type_,
-      SdkOptional<int?> id,
-      SdkOptional<String?> name}) get copyWith => _copyWith;
+  RuleSuiteRuleEvaluationsItemRuleSource Function({SdkOptional<String> type_, SdkOptional<int?> id, SdkOptional<String?> name}) get copyWith => _copyWith;
 
-  RuleSuiteRuleEvaluationsItemRuleSource _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      RuleSuiteRuleEvaluationsItemRuleSource(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<String>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int?>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String?>,
-      );
+  RuleSuiteRuleEvaluationsItemRuleSource _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue}) => RuleSuiteRuleEvaluationsItemRuleSource(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int?>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
+  );
 
-  factory RuleSuiteRuleEvaluationsItemRuleSource.fromJson(
-          Map<String, dynamic> json) =>
-      RuleSuiteRuleEvaluationsItemRuleSource(
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-        id: json.containsKey('id')
-            ? SdkPresent((json['id'] as num?)?.toInt())
-            : const SdkOmitted(),
-        name: json.containsKey('name')
-            ? SdkPresent(json['name'] as String?)
-            : const SdkOmitted(),
-      );
+  factory RuleSuiteRuleEvaluationsItemRuleSource.fromJson(Map<String, dynamic> json) => RuleSuiteRuleEvaluationsItemRuleSource(
+    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
+    id: json.containsKey('id') ? SdkPresent((json['id'] as num?)?.toInt()) : const SdkOmitted(),
+    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (id) {
-          SdkPresent<int?>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String?>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (type_) {
+      SdkPresent<String>(value: final value) => {'type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (id) {
+      SdkPresent<int?>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String?>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `rule_evaluations[]` wire field.
 class RuleSuiteRuleEvaluationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `rule_source` wire field.
   final SdkOptional<RuleSuiteRuleEvaluationsItemRuleSource> ruleSource;
-
   /// The enforcement level of this rule source.
   final SdkOptional<RuleSuiteRuleEvaluationsItemEnforcement> enforcement;
-
   /// The result of the evaluation of the individual rule.
   final SdkOptional<RuleSuiteRuleEvaluationsItemResult> result;
-
   /// The type of rule.
   final SdkOptional<String> ruleType;
-
   /// Additional metadata about the rule evaluation.
   final SdkOptional<RuleSuiteRuleEvaluationsItemMetadata?> metadata;
-
   /// The detailed failure message for the rule. Null if the rule passed.
   final SdkOptional<String?> details;
 
-  const RuleSuiteRuleEvaluationsItem(
-      {this.ruleSource = const SdkOmitted(),
-      this.enforcement = const SdkOmitted(),
-      this.result = const SdkOmitted(),
-      this.ruleType = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.details = const SdkOmitted()});
+  const RuleSuiteRuleEvaluationsItem({this.ruleSource = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.result = const SdkOmitted(), this.ruleType = const SdkOmitted(), this.metadata = const SdkOmitted(), this.details = const SdkOmitted()});
 
-  RuleSuiteRuleEvaluationsItem Function(
-      {SdkOptional<RuleSuiteRuleEvaluationsItemRuleSource> ruleSource,
-      SdkOptional<RuleSuiteRuleEvaluationsItemEnforcement> enforcement,
-      SdkOptional<RuleSuiteRuleEvaluationsItemResult> result,
-      SdkOptional<String> ruleType,
-      SdkOptional<RuleSuiteRuleEvaluationsItemMetadata?> metadata,
-      SdkOptional<String?> details}) get copyWith => _copyWith;
+  RuleSuiteRuleEvaluationsItem Function({SdkOptional<RuleSuiteRuleEvaluationsItemRuleSource> ruleSource, SdkOptional<RuleSuiteRuleEvaluationsItemEnforcement> enforcement, SdkOptional<RuleSuiteRuleEvaluationsItemResult> result, SdkOptional<String> ruleType, SdkOptional<RuleSuiteRuleEvaluationsItemMetadata?> metadata, SdkOptional<String?> details}) get copyWith => _copyWith;
 
-  RuleSuiteRuleEvaluationsItem _copyWith(
-          {Object? ruleSource = sdkOmittedValue,
-          Object? enforcement = sdkOmittedValue,
-          Object? result = sdkOmittedValue,
-          Object? ruleType = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? details = sdkOmittedValue}) =>
-      RuleSuiteRuleEvaluationsItem(
-        ruleSource: identical(ruleSource, sdkOmittedValue)
-            ? this.ruleSource
-            : ruleSource as SdkOptional<RuleSuiteRuleEvaluationsItemRuleSource>,
-        enforcement: identical(enforcement, sdkOmittedValue)
-            ? this.enforcement
-            : enforcement
-                as SdkOptional<RuleSuiteRuleEvaluationsItemEnforcement>,
-        result: identical(result, sdkOmittedValue)
-            ? this.result
-            : result as SdkOptional<RuleSuiteRuleEvaluationsItemResult>,
-        ruleType: identical(ruleType, sdkOmittedValue)
-            ? this.ruleType
-            : ruleType as SdkOptional<String>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<RuleSuiteRuleEvaluationsItemMetadata?>,
-        details: identical(details, sdkOmittedValue)
-            ? this.details
-            : details as SdkOptional<String?>,
-      );
+  RuleSuiteRuleEvaluationsItem _copyWith({Object? ruleSource = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? result = sdkOmittedValue, Object? ruleType = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? details = sdkOmittedValue}) => RuleSuiteRuleEvaluationsItem(
+    ruleSource: identical(ruleSource, sdkOmittedValue) ? this.ruleSource : ruleSource as SdkOptional<RuleSuiteRuleEvaluationsItemRuleSource>,
+    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RuleSuiteRuleEvaluationsItemEnforcement>,
+    result: identical(result, sdkOmittedValue) ? this.result : result as SdkOptional<RuleSuiteRuleEvaluationsItemResult>,
+    ruleType: identical(ruleType, sdkOmittedValue) ? this.ruleType : ruleType as SdkOptional<String>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<RuleSuiteRuleEvaluationsItemMetadata?>,
+    details: identical(details, sdkOmittedValue) ? this.details : details as SdkOptional<String?>,
+  );
 
-  factory RuleSuiteRuleEvaluationsItem.fromJson(Map<String, dynamic> json) =>
-      RuleSuiteRuleEvaluationsItem(
-        ruleSource: json['rule_source'] != null
-            ? SdkPresent((json['rule_source'] != null
-                ? RuleSuiteRuleEvaluationsItemRuleSource.fromJson(
-                    json['rule_source'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        enforcement: json['enforcement'] != null
-            ? SdkPresent((json['enforcement'] != null
-                ? RuleSuiteRuleEvaluationsItemEnforcement.fromJson(
-                    json['enforcement'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        result: json['result'] != null
-            ? SdkPresent((json['result'] != null
-                ? RuleSuiteRuleEvaluationsItemResult.fromJson(
-                    json['result'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        ruleType: json['rule_type'] != null
-            ? SdkPresent((json['rule_type'] as String?)!)
-            : const SdkOmitted(),
-        metadata: json.containsKey('metadata')
-            ? SdkPresent(json['metadata'] != null
-                ? RuleSuiteRuleEvaluationsItemMetadata.fromJson(
-                    json['metadata'])
-                : null)
-            : const SdkOmitted(),
-        details: json.containsKey('details')
-            ? SdkPresent(json['details'] as String?)
-            : const SdkOmitted(),
-      );
+  factory RuleSuiteRuleEvaluationsItem.fromJson(Map<String, dynamic> json) => RuleSuiteRuleEvaluationsItem(
+    ruleSource: json['rule_source'] != null ? SdkPresent((json['rule_source'] != null ? RuleSuiteRuleEvaluationsItemRuleSource.fromJson(json['rule_source'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RuleSuiteRuleEvaluationsItemEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
+    result: json['result'] != null ? SdkPresent((json['result'] != null ? RuleSuiteRuleEvaluationsItemResult.fromJson(json['result'] as String) : null)!) : const SdkOmitted(),
+    ruleType: json['rule_type'] != null ? SdkPresent((json['rule_type'] as String?)!) : const SdkOmitted(),
+    metadata: json.containsKey('metadata') ? SdkPresent(json['metadata'] != null ? RuleSuiteRuleEvaluationsItemMetadata.fromJson(json['metadata']) : null) : const SdkOmitted(),
+    details: json.containsKey('details') ? SdkPresent(json['details'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (ruleSource) {
-          SdkPresent<RuleSuiteRuleEvaluationsItemRuleSource>(
-            value: final value
-          ) =>
-            {
-              'rule_source': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enforcement) {
-          SdkPresent<RuleSuiteRuleEvaluationsItemEnforcement>(
-            value: final value
-          ) =>
-            {
-              'enforcement': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (result) {
-          SdkPresent<RuleSuiteRuleEvaluationsItemResult>(value: final value) =>
-            {
-              'result': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ruleType) {
-          SdkPresent<String>(value: final value) => {
-              'rule_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<RuleSuiteRuleEvaluationsItemMetadata?>(
-            value: final value
-          ) =>
-            {
-              'metadata': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (details) {
-          SdkPresent<String?>(value: final value) => {
-              'details': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (ruleSource) {
+      SdkPresent<RuleSuiteRuleEvaluationsItemRuleSource>(value: final value) => {'rule_source': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enforcement) {
+      SdkPresent<RuleSuiteRuleEvaluationsItemEnforcement>(value: final value) => {'enforcement': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (result) {
+      SdkPresent<RuleSuiteRuleEvaluationsItemResult>(value: final value) => {'result': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ruleType) {
+      SdkPresent<String>(value: final value) => {'rule_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<RuleSuiteRuleEvaluationsItemMetadata?>(value: final value) => {'metadata': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (details) {
+      SdkPresent<String?>(value: final value) => {'details': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Response
 class RuleSuite {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the rule insight.
   final SdkOptional<int> id;
-
   /// The number that identifies the user.
   final SdkOptional<int?> actorId;
-
   /// The handle for the GitHub user account.
   final SdkOptional<String?> actorName;
-
   /// The previous commit SHA of the ref.
   final SdkOptional<String> beforeSha;
-
   /// The new commit SHA of the ref.
   final SdkOptional<String> afterSha;
-
   /// The ref name that the evaluation ran on.
   final SdkOptional<String> ref;
-
   /// The ID of the repository associated with the rule evaluation.
   final SdkOptional<int> repositoryId;
-
   /// The name of the repository without the `.git` extension.
   final SdkOptional<String> repositoryName;
-
   /// Optional `date-time`-formatted value serialized in the `pushed_at` wire field.
   final SdkOptional<String> pushedAt;
-
   /// The result of the rule evaluations for rules with the `active` enforcement status.
   final SdkOptional<RuleSuiteResult> result;
-
   /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
   final SdkOptional<RuleSuiteEvaluationResult?> evaluationResult;
-
   /// Details on the evaluated rules.
   final SdkOptional<List<RuleSuiteRuleEvaluationsItem>> ruleEvaluations;
 
-  const RuleSuite(
-      {this.id = const SdkOmitted(),
-      this.actorId = const SdkOmitted(),
-      this.actorName = const SdkOmitted(),
-      this.beforeSha = const SdkOmitted(),
-      this.afterSha = const SdkOmitted(),
-      this.ref = const SdkOmitted(),
-      this.repositoryId = const SdkOmitted(),
-      this.repositoryName = const SdkOmitted(),
-      this.pushedAt = const SdkOmitted(),
-      this.result = const SdkOmitted(),
-      this.evaluationResult = const SdkOmitted(),
-      this.ruleEvaluations = const SdkOmitted()});
+  const RuleSuite({this.id = const SdkOmitted(), this.actorId = const SdkOmitted(), this.actorName = const SdkOmitted(), this.beforeSha = const SdkOmitted(), this.afterSha = const SdkOmitted(), this.ref = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.repositoryName = const SdkOmitted(), this.pushedAt = const SdkOmitted(), this.result = const SdkOmitted(), this.evaluationResult = const SdkOmitted(), this.ruleEvaluations = const SdkOmitted()});
 
-  RuleSuite Function(
-          {SdkOptional<int> id,
-          SdkOptional<int?> actorId,
-          SdkOptional<String?> actorName,
-          SdkOptional<String> beforeSha,
-          SdkOptional<String> afterSha,
-          SdkOptional<String> ref,
-          SdkOptional<int> repositoryId,
-          SdkOptional<String> repositoryName,
-          SdkOptional<String> pushedAt,
-          SdkOptional<RuleSuiteResult> result,
-          SdkOptional<RuleSuiteEvaluationResult?> evaluationResult,
-          SdkOptional<List<RuleSuiteRuleEvaluationsItem>> ruleEvaluations})
-      get copyWith => _copyWith;
+  RuleSuite Function({SdkOptional<int> id, SdkOptional<int?> actorId, SdkOptional<String?> actorName, SdkOptional<String> beforeSha, SdkOptional<String> afterSha, SdkOptional<String> ref, SdkOptional<int> repositoryId, SdkOptional<String> repositoryName, SdkOptional<String> pushedAt, SdkOptional<RuleSuiteResult> result, SdkOptional<RuleSuiteEvaluationResult?> evaluationResult, SdkOptional<List<RuleSuiteRuleEvaluationsItem>> ruleEvaluations}) get copyWith => _copyWith;
 
-  RuleSuite _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? actorId = sdkOmittedValue,
-          Object? actorName = sdkOmittedValue,
-          Object? beforeSha = sdkOmittedValue,
-          Object? afterSha = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repositoryId = sdkOmittedValue,
-          Object? repositoryName = sdkOmittedValue,
-          Object? pushedAt = sdkOmittedValue,
-          Object? result = sdkOmittedValue,
-          Object? evaluationResult = sdkOmittedValue,
-          Object? ruleEvaluations = sdkOmittedValue}) =>
-      RuleSuite(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        actorId: identical(actorId, sdkOmittedValue)
-            ? this.actorId
-            : actorId as SdkOptional<int?>,
-        actorName: identical(actorName, sdkOmittedValue)
-            ? this.actorName
-            : actorName as SdkOptional<String?>,
-        beforeSha: identical(beforeSha, sdkOmittedValue)
-            ? this.beforeSha
-            : beforeSha as SdkOptional<String>,
-        afterSha: identical(afterSha, sdkOmittedValue)
-            ? this.afterSha
-            : afterSha as SdkOptional<String>,
-        ref: identical(ref, sdkOmittedValue)
-            ? this.ref
-            : ref as SdkOptional<String>,
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as SdkOptional<int>,
-        repositoryName: identical(repositoryName, sdkOmittedValue)
-            ? this.repositoryName
-            : repositoryName as SdkOptional<String>,
-        pushedAt: identical(pushedAt, sdkOmittedValue)
-            ? this.pushedAt
-            : pushedAt as SdkOptional<String>,
-        result: identical(result, sdkOmittedValue)
-            ? this.result
-            : result as SdkOptional<RuleSuiteResult>,
-        evaluationResult: identical(evaluationResult, sdkOmittedValue)
-            ? this.evaluationResult
-            : evaluationResult as SdkOptional<RuleSuiteEvaluationResult?>,
-        ruleEvaluations: identical(ruleEvaluations, sdkOmittedValue)
-            ? this.ruleEvaluations
-            : ruleEvaluations
-                as SdkOptional<List<RuleSuiteRuleEvaluationsItem>>,
-      );
+  RuleSuite _copyWith({Object? id = sdkOmittedValue, Object? actorId = sdkOmittedValue, Object? actorName = sdkOmittedValue, Object? beforeSha = sdkOmittedValue, Object? afterSha = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? repositoryName = sdkOmittedValue, Object? pushedAt = sdkOmittedValue, Object? result = sdkOmittedValue, Object? evaluationResult = sdkOmittedValue, Object? ruleEvaluations = sdkOmittedValue}) => RuleSuite(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    actorId: identical(actorId, sdkOmittedValue) ? this.actorId : actorId as SdkOptional<int?>,
+    actorName: identical(actorName, sdkOmittedValue) ? this.actorName : actorName as SdkOptional<String?>,
+    beforeSha: identical(beforeSha, sdkOmittedValue) ? this.beforeSha : beforeSha as SdkOptional<String>,
+    afterSha: identical(afterSha, sdkOmittedValue) ? this.afterSha : afterSha as SdkOptional<String>,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
+    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as SdkOptional<String>,
+    pushedAt: identical(pushedAt, sdkOmittedValue) ? this.pushedAt : pushedAt as SdkOptional<String>,
+    result: identical(result, sdkOmittedValue) ? this.result : result as SdkOptional<RuleSuiteResult>,
+    evaluationResult: identical(evaluationResult, sdkOmittedValue) ? this.evaluationResult : evaluationResult as SdkOptional<RuleSuiteEvaluationResult?>,
+    ruleEvaluations: identical(ruleEvaluations, sdkOmittedValue) ? this.ruleEvaluations : ruleEvaluations as SdkOptional<List<RuleSuiteRuleEvaluationsItem>>,
+  );
 
   factory RuleSuite.fromJson(Map<String, dynamic> json) => RuleSuite(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        actorId: json.containsKey('actor_id')
-            ? SdkPresent((json['actor_id'] as num?)?.toInt())
-            : const SdkOmitted(),
-        actorName: json.containsKey('actor_name')
-            ? SdkPresent(json['actor_name'] as String?)
-            : const SdkOmitted(),
-        beforeSha: json['before_sha'] != null
-            ? SdkPresent((json['before_sha'] as String?)!)
-            : const SdkOmitted(),
-        afterSha: json['after_sha'] != null
-            ? SdkPresent((json['after_sha'] as String?)!)
-            : const SdkOmitted(),
-        ref: json['ref'] != null
-            ? SdkPresent((json['ref'] as String?)!)
-            : const SdkOmitted(),
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        repositoryName: json['repository_name'] != null
-            ? SdkPresent((json['repository_name'] as String?)!)
-            : const SdkOmitted(),
-        pushedAt: json['pushed_at'] != null
-            ? SdkPresent((json['pushed_at'] as String?)!)
-            : const SdkOmitted(),
-        result: json['result'] != null
-            ? SdkPresent((json['result'] != null
-                ? RuleSuiteResult.fromJson(json['result'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        evaluationResult: json.containsKey('evaluation_result')
-            ? SdkPresent(json['evaluation_result'] != null
-                ? RuleSuiteEvaluationResult.fromJson(
-                    json['evaluation_result'] as String)
-                : null)
-            : const SdkOmitted(),
-        ruleEvaluations: json['rule_evaluations'] != null
-            ? SdkPresent(((json['rule_evaluations'] as List?)
-                ?.map((e) => RuleSuiteRuleEvaluationsItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    actorId: json.containsKey('actor_id') ? SdkPresent((json['actor_id'] as num?)?.toInt()) : const SdkOmitted(),
+    actorName: json.containsKey('actor_name') ? SdkPresent(json['actor_name'] as String?) : const SdkOmitted(),
+    beforeSha: json['before_sha'] != null ? SdkPresent((json['before_sha'] as String?)!) : const SdkOmitted(),
+    afterSha: json['after_sha'] != null ? SdkPresent((json['after_sha'] as String?)!) : const SdkOmitted(),
+    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
+    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    repositoryName: json['repository_name'] != null ? SdkPresent((json['repository_name'] as String?)!) : const SdkOmitted(),
+    pushedAt: json['pushed_at'] != null ? SdkPresent((json['pushed_at'] as String?)!) : const SdkOmitted(),
+    result: json['result'] != null ? SdkPresent((json['result'] != null ? RuleSuiteResult.fromJson(json['result'] as String) : null)!) : const SdkOmitted(),
+    evaluationResult: json.containsKey('evaluation_result') ? SdkPresent(json['evaluation_result'] != null ? RuleSuiteEvaluationResult.fromJson(json['evaluation_result'] as String) : null) : const SdkOmitted(),
+    ruleEvaluations: json['rule_evaluations'] != null ? SdkPresent(((json['rule_evaluations'] as List?)?.map((e) => RuleSuiteRuleEvaluationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (actorId) {
-          SdkPresent<int?>(value: final value) => {
-              'actor_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (actorName) {
-          SdkPresent<String?>(value: final value) => {
-              'actor_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (beforeSha) {
-          SdkPresent<String>(value: final value) => {
-              'before_sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (afterSha) {
-          SdkPresent<String>(value: final value) => {
-              'after_sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ref) {
-          SdkPresent<String>(value: final value) => {
-              'ref': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryName) {
-          SdkPresent<String>(value: final value) => {
-              'repository_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pushedAt) {
-          SdkPresent<String>(value: final value) => {
-              'pushed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (result) {
-          SdkPresent<RuleSuiteResult>(value: final value) => {
-              'result': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (evaluationResult) {
-          SdkPresent<RuleSuiteEvaluationResult?>(value: final value) => {
-              'evaluation_result': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ruleEvaluations) {
-          SdkPresent<List<RuleSuiteRuleEvaluationsItem>>(value: final value) =>
-            {
-              'rule_evaluations': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (actorId) {
+      SdkPresent<int?>(value: final value) => {'actor_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (actorName) {
+      SdkPresent<String?>(value: final value) => {'actor_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (beforeSha) {
+      SdkPresent<String>(value: final value) => {'before_sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (afterSha) {
+      SdkPresent<String>(value: final value) => {'after_sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ref) {
+      SdkPresent<String>(value: final value) => {'ref': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryId) {
+      SdkPresent<int>(value: final value) => {'repository_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryName) {
+      SdkPresent<String>(value: final value) => {'repository_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pushedAt) {
+      SdkPresent<String>(value: final value) => {'pushed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (result) {
+      SdkPresent<RuleSuiteResult>(value: final value) => {'result': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (evaluationResult) {
+      SdkPresent<RuleSuiteEvaluationResult?>(value: final value) => {'evaluation_result': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ruleEvaluations) {
+      SdkPresent<List<RuleSuiteRuleEvaluationsItem>>(value: final value) => {'rule_evaluations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The user who created the pull request.
 class RuleSuitePullRequestPullRequestUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the user.
   final SdkOptional<int> id;
-
   /// The handle for the GitHub user account.
   final SdkOptional<String> login;
-
   /// The type of the user.
   final SdkOptional<String> type_;
 
-  const RuleSuitePullRequestPullRequestUser(
-      {this.id = const SdkOmitted(),
-      this.login = const SdkOmitted(),
-      this.type_ = const SdkOmitted()});
+  const RuleSuitePullRequestPullRequestUser({this.id = const SdkOmitted(), this.login = const SdkOmitted(), this.type_ = const SdkOmitted()});
 
-  RuleSuitePullRequestPullRequestUser Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> login,
-      SdkOptional<String> type_}) get copyWith => _copyWith;
+  RuleSuitePullRequestPullRequestUser Function({SdkOptional<int> id, SdkOptional<String> login, SdkOptional<String> type_}) get copyWith => _copyWith;
 
-  RuleSuitePullRequestPullRequestUser _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? login = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      RuleSuitePullRequestPullRequestUser(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        login: identical(login, sdkOmittedValue)
-            ? this.login
-            : login as SdkOptional<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<String>,
-      );
+  RuleSuitePullRequestPullRequestUser _copyWith({Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RuleSuitePullRequestPullRequestUser(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
+  );
 
-  factory RuleSuitePullRequestPullRequestUser.fromJson(
-          Map<String, dynamic> json) =>
-      RuleSuitePullRequestPullRequestUser(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        login: json['login'] != null
-            ? SdkPresent((json['login'] as String?)!)
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory RuleSuitePullRequestPullRequestUser.fromJson(Map<String, dynamic> json) => RuleSuitePullRequestPullRequestUser(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
+    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (login) {
-          SdkPresent<String>(value: final value) => {
-              'login': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (login) {
+      SdkPresent<String>(value: final value) => {'login': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (type_) {
+      SdkPresent<String>(value: final value) => {'type': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

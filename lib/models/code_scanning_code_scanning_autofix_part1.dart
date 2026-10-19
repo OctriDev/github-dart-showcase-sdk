@@ -8,172 +8,104 @@ part of 'code_scanning_code_scanning_autofix.dart';
 class CodeScanningAutofix {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The status of an autofix.
   final CodeScanningAutofixStatus status;
-
   /// The description of an autofix.
   final String? description;
-
   /// The start time of an autofix in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String startedAt;
 
-  const CodeScanningAutofix(
-      {required this.status,
-      required this.description,
-      required this.startedAt});
+  const CodeScanningAutofix({required this.status, required this.description, required this.startedAt});
 
-  CodeScanningAutofix Function(
-      {CodeScanningAutofixStatus status,
-      String? description,
-      String startedAt}) get copyWith => _copyWith;
+  CodeScanningAutofix Function({CodeScanningAutofixStatus status, String? description, String startedAt}) get copyWith => _copyWith;
 
-  CodeScanningAutofix _copyWith(
-          {Object? status = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue}) =>
-      CodeScanningAutofix(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as CodeScanningAutofixStatus,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as String,
-      );
+  CodeScanningAutofix _copyWith({Object? status = sdkOmittedValue, Object? description = sdkOmittedValue, Object? startedAt = sdkOmittedValue}) => CodeScanningAutofix(
+    status: identical(status, sdkOmittedValue) ? this.status : status as CodeScanningAutofixStatus,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as String,
+  );
 
-  factory CodeScanningAutofix.fromJson(Map<String, dynamic> json) =>
-      CodeScanningAutofix(
-        status: (json['status'] != null
-            ? CodeScanningAutofixStatus.fromJson(json['status'] as String)
-            : null)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        startedAt: (json['started_at'] as String?)!,
-      );
+  factory CodeScanningAutofix.fromJson(Map<String, dynamic> json) => CodeScanningAutofix(
+    status: (json['status'] != null ? CodeScanningAutofixStatus.fromJson(json['status'] as String) : null)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    startedAt: (json['started_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'status': status.toJson(),
-        'description': description,
-        'started_at': startedAt,
-      };
+    'status': status.toJson(),
+    'description': description,
+    'started_at': startedAt,
+  };
 }
 
 /// Commit an autofix for a code scanning alert
 class CodeScanningAutofixCommits {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The Git reference of target branch for the commit. Branch needs to already exist. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
   final SdkOptional<String> targetRef;
-
   /// Commit message to be used.
   final SdkOptional<String> message;
 
-  const CodeScanningAutofixCommits(
-      {this.targetRef = const SdkOmitted(), this.message = const SdkOmitted()});
+  const CodeScanningAutofixCommits({this.targetRef = const SdkOmitted(), this.message = const SdkOmitted()});
 
-  CodeScanningAutofixCommits Function(
-      {SdkOptional<String> targetRef,
-      SdkOptional<String> message}) get copyWith => _copyWith;
+  CodeScanningAutofixCommits Function({SdkOptional<String> targetRef, SdkOptional<String> message}) get copyWith => _copyWith;
 
-  CodeScanningAutofixCommits _copyWith(
-          {Object? targetRef = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      CodeScanningAutofixCommits(
-        targetRef: identical(targetRef, sdkOmittedValue)
-            ? this.targetRef
-            : targetRef as SdkOptional<String>,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-      );
+  CodeScanningAutofixCommits _copyWith({Object? targetRef = sdkOmittedValue, Object? message = sdkOmittedValue}) => CodeScanningAutofixCommits(
+    targetRef: identical(targetRef, sdkOmittedValue) ? this.targetRef : targetRef as SdkOptional<String>,
+    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
+  );
 
-  factory CodeScanningAutofixCommits.fromJson(Map<String, dynamic> json) =>
-      CodeScanningAutofixCommits(
-        targetRef: json['target_ref'] != null
-            ? SdkPresent((json['target_ref'] as String?)!)
-            : const SdkOmitted(),
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory CodeScanningAutofixCommits.fromJson(Map<String, dynamic> json) => CodeScanningAutofixCommits(
+    targetRef: json['target_ref'] != null ? SdkPresent((json['target_ref'] as String?)!) : const SdkOmitted(),
+    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (targetRef) {
-          SdkPresent<String>(value: final value) => {
-              'target_ref': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (targetRef) {
+      SdkPresent<String>(value: final value) => {'target_ref': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (message) {
+      SdkPresent<String>(value: final value) => {'message': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `CodeScanningAutofixCommitsResponse` API schema.
 class CodeScanningAutofixCommitsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The Git reference of target branch for the commit. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
   final SdkOptional<String> targetRef;
-
   /// SHA of commit with autofix.
   final SdkOptional<String> sha;
 
-  const CodeScanningAutofixCommitsResponse(
-      {this.targetRef = const SdkOmitted(), this.sha = const SdkOmitted()});
+  const CodeScanningAutofixCommitsResponse({this.targetRef = const SdkOmitted(), this.sha = const SdkOmitted()});
 
-  CodeScanningAutofixCommitsResponse Function(
-      {SdkOptional<String> targetRef,
-      SdkOptional<String> sha}) get copyWith => _copyWith;
+  CodeScanningAutofixCommitsResponse Function({SdkOptional<String> targetRef, SdkOptional<String> sha}) get copyWith => _copyWith;
 
-  CodeScanningAutofixCommitsResponse _copyWith(
-          {Object? targetRef = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      CodeScanningAutofixCommitsResponse(
-        targetRef: identical(targetRef, sdkOmittedValue)
-            ? this.targetRef
-            : targetRef as SdkOptional<String>,
-        sha: identical(sha, sdkOmittedValue)
-            ? this.sha
-            : sha as SdkOptional<String>,
-      );
+  CodeScanningAutofixCommitsResponse _copyWith({Object? targetRef = sdkOmittedValue, Object? sha = sdkOmittedValue}) => CodeScanningAutofixCommitsResponse(
+    targetRef: identical(targetRef, sdkOmittedValue) ? this.targetRef : targetRef as SdkOptional<String>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
+  );
 
-  factory CodeScanningAutofixCommitsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodeScanningAutofixCommitsResponse(
-        targetRef: json['target_ref'] != null
-            ? SdkPresent((json['target_ref'] as String?)!)
-            : const SdkOmitted(),
-        sha: json['sha'] != null
-            ? SdkPresent((json['sha'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory CodeScanningAutofixCommitsResponse.fromJson(Map<String, dynamic> json) => CodeScanningAutofixCommitsResponse(
+    targetRef: json['target_ref'] != null ? SdkPresent((json['target_ref'] as String?)!) : const SdkOmitted(),
+    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (targetRef) {
-          SdkPresent<String>(value: final value) => {
-              'target_ref': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sha) {
-          SdkPresent<String>(value: final value) => {
-              'sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (targetRef) {
+      SdkPresent<String>(value: final value) => {'target_ref': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sha) {
+      SdkPresent<String>(value: final value) => {'sha': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 // CodeScanningAutofixDescription = String
@@ -182,12 +114,12 @@ class CodeScanningAutofixCommitsResponse {
 
 /// The status of an autofix.
 final class CodeScanningAutofixStatus {
+
   final String value;
 
   const CodeScanningAutofixStatus._(this.value);
 
-  factory CodeScanningAutofixStatus.fromJson(String value) =>
-      CodeScanningAutofixStatus._(value);
+  factory CodeScanningAutofixStatus.fromJson(String value) => CodeScanningAutofixStatus._(value);
 
   static const pending = CodeScanningAutofixStatus._('pending');
   static const error = CodeScanningAutofixStatus._('error');
@@ -196,13 +128,10 @@ final class CodeScanningAutofixStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningAutofixStatus && other.value == value;
+  @override bool operator ==(Object other) => other is CodeScanningAutofixStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

@@ -8,7 +8,6 @@ part of 'actions_actions_artifact.dart';
 class ActionsArtifactAndLogRetention {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The number of days to retain checks, workflow runs, commit statuses, artifacts, and logs
   final int days;
 
@@ -16,57 +15,44 @@ class ActionsArtifactAndLogRetention {
 
   ActionsArtifactAndLogRetention Function({int days}) get copyWith => _copyWith;
 
-  ActionsArtifactAndLogRetention _copyWith({Object? days = sdkOmittedValue}) =>
-      ActionsArtifactAndLogRetention(
-        days: identical(days, sdkOmittedValue) ? this.days : days as int,
-      );
+  ActionsArtifactAndLogRetention _copyWith({Object? days = sdkOmittedValue}) => ActionsArtifactAndLogRetention(
+    days: identical(days, sdkOmittedValue) ? this.days : days as int,
+  );
 
-  factory ActionsArtifactAndLogRetention.fromJson(Map<String, dynamic> json) =>
-      ActionsArtifactAndLogRetention(
-        days: ((json['days'] as num?)?.toInt())!,
-      );
+  factory ActionsArtifactAndLogRetention.fromJson(Map<String, dynamic> json) => ActionsArtifactAndLogRetention(
+    days: ((json['days'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'days': days,
-      };
+    'days': days,
+  };
 }
 
 /// Typed representation of the `ActionsArtifactAndLogRetentionResponse` API schema.
 class ActionsArtifactAndLogRetentionResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The number of days checks, workflow runs, commit statuses, artifacts, and logs are retained
   final int days;
-
   /// The maximum number of days that can be configured
   final int maximumAllowedDays;
 
-  const ActionsArtifactAndLogRetentionResponse(
-      {required this.days, required this.maximumAllowedDays});
+  const ActionsArtifactAndLogRetentionResponse({required this.days, required this.maximumAllowedDays});
 
-  ActionsArtifactAndLogRetentionResponse Function(
-      {int days, int maximumAllowedDays}) get copyWith => _copyWith;
+  ActionsArtifactAndLogRetentionResponse Function({int days, int maximumAllowedDays}) get copyWith => _copyWith;
 
-  ActionsArtifactAndLogRetentionResponse _copyWith(
-          {Object? days = sdkOmittedValue,
-          Object? maximumAllowedDays = sdkOmittedValue}) =>
-      ActionsArtifactAndLogRetentionResponse(
-        days: identical(days, sdkOmittedValue) ? this.days : days as int,
-        maximumAllowedDays: identical(maximumAllowedDays, sdkOmittedValue)
-            ? this.maximumAllowedDays
-            : maximumAllowedDays as int,
-      );
+  ActionsArtifactAndLogRetentionResponse _copyWith({Object? days = sdkOmittedValue, Object? maximumAllowedDays = sdkOmittedValue}) => ActionsArtifactAndLogRetentionResponse(
+    days: identical(days, sdkOmittedValue) ? this.days : days as int,
+    maximumAllowedDays: identical(maximumAllowedDays, sdkOmittedValue) ? this.maximumAllowedDays : maximumAllowedDays as int,
+  );
 
-  factory ActionsArtifactAndLogRetentionResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsArtifactAndLogRetentionResponse(
-        days: ((json['days'] as num?)?.toInt())!,
-        maximumAllowedDays: ((json['maximum_allowed_days'] as num?)?.toInt())!,
-      );
+  factory ActionsArtifactAndLogRetentionResponse.fromJson(Map<String, dynamic> json) => ActionsArtifactAndLogRetentionResponse(
+    days: ((json['days'] as num?)?.toInt())!,
+    maximumAllowedDays: ((json['maximum_allowed_days'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'days': days,
-        'maximum_allowed_days': maximumAllowedDays,
-      };
+    'days': days,
+    'maximum_allowed_days': maximumAllowedDays,
+  };
 }

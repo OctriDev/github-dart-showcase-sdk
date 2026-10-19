@@ -8,330 +8,184 @@ part of 'webhook_label_edited.dart';
 class WebhookLabelEditedChangesColor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The previous version of the color if the action was `edited`.
   final String from;
 
   const WebhookLabelEditedChangesColor({required this.from});
 
-  WebhookLabelEditedChangesColor Function({String from}) get copyWith =>
-      _copyWith;
+  WebhookLabelEditedChangesColor Function({String from}) get copyWith => _copyWith;
 
-  WebhookLabelEditedChangesColor _copyWith({Object? from = sdkOmittedValue}) =>
-      WebhookLabelEditedChangesColor(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookLabelEditedChangesColor _copyWith({Object? from = sdkOmittedValue}) => WebhookLabelEditedChangesColor(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookLabelEditedChangesColor.fromJson(Map<String, dynamic> json) =>
-      WebhookLabelEditedChangesColor(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookLabelEditedChangesColor.fromJson(Map<String, dynamic> json) => WebhookLabelEditedChangesColor(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Optional object value serialized in the `description` wire field.
 class WebhookLabelEditedChangesDescription {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The previous version of the description if the action was `edited`.
   final String from;
 
   const WebhookLabelEditedChangesDescription({required this.from});
 
-  WebhookLabelEditedChangesDescription Function({String from}) get copyWith =>
-      _copyWith;
+  WebhookLabelEditedChangesDescription Function({String from}) get copyWith => _copyWith;
 
-  WebhookLabelEditedChangesDescription _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookLabelEditedChangesDescription(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookLabelEditedChangesDescription _copyWith({Object? from = sdkOmittedValue}) => WebhookLabelEditedChangesDescription(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookLabelEditedChangesDescription.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookLabelEditedChangesDescription(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookLabelEditedChangesDescription.fromJson(Map<String, dynamic> json) => WebhookLabelEditedChangesDescription(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Optional object value serialized in the `name` wire field.
 class WebhookLabelEditedChangesName {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The previous version of the name if the action was `edited`.
   final String from;
 
   const WebhookLabelEditedChangesName({required this.from});
 
-  WebhookLabelEditedChangesName Function({String from}) get copyWith =>
-      _copyWith;
+  WebhookLabelEditedChangesName Function({String from}) get copyWith => _copyWith;
 
-  WebhookLabelEditedChangesName _copyWith({Object? from = sdkOmittedValue}) =>
-      WebhookLabelEditedChangesName(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookLabelEditedChangesName _copyWith({Object? from = sdkOmittedValue}) => WebhookLabelEditedChangesName(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookLabelEditedChangesName.fromJson(Map<String, dynamic> json) =>
-      WebhookLabelEditedChangesName(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookLabelEditedChangesName.fromJson(Map<String, dynamic> json) => WebhookLabelEditedChangesName(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// The changes to the label if the action was `edited`.
 class WebhookLabelEditedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `color` wire field.
   final SdkOptional<WebhookLabelEditedChangesColor> color;
-
   /// Optional object value serialized in the `description` wire field.
   final SdkOptional<WebhookLabelEditedChangesDescription> description;
-
   /// Optional object value serialized in the `name` wire field.
   final SdkOptional<WebhookLabelEditedChangesName> name;
 
-  const WebhookLabelEditedChanges(
-      {this.color = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.name = const SdkOmitted()});
+  const WebhookLabelEditedChanges({this.color = const SdkOmitted(), this.description = const SdkOmitted(), this.name = const SdkOmitted()});
 
-  WebhookLabelEditedChanges Function(
-          {SdkOptional<WebhookLabelEditedChangesColor> color,
-          SdkOptional<WebhookLabelEditedChangesDescription> description,
-          SdkOptional<WebhookLabelEditedChangesName> name})
-      get copyWith => _copyWith;
+  WebhookLabelEditedChanges Function({SdkOptional<WebhookLabelEditedChangesColor> color, SdkOptional<WebhookLabelEditedChangesDescription> description, SdkOptional<WebhookLabelEditedChangesName> name}) get copyWith => _copyWith;
 
-  WebhookLabelEditedChanges _copyWith(
-          {Object? color = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      WebhookLabelEditedChanges(
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<WebhookLabelEditedChangesColor>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<WebhookLabelEditedChangesDescription>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<WebhookLabelEditedChangesName>,
-      );
+  WebhookLabelEditedChanges _copyWith({Object? color = sdkOmittedValue, Object? description = sdkOmittedValue, Object? name = sdkOmittedValue}) => WebhookLabelEditedChanges(
+    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<WebhookLabelEditedChangesColor>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<WebhookLabelEditedChangesDescription>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<WebhookLabelEditedChangesName>,
+  );
 
-  factory WebhookLabelEditedChanges.fromJson(Map<String, dynamic> json) =>
-      WebhookLabelEditedChanges(
-        color: json['color'] != null
-            ? SdkPresent((json['color'] != null
-                ? WebhookLabelEditedChangesColor.fromJson(
-                    json['color'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] != null
-                ? WebhookLabelEditedChangesDescription.fromJson(
-                    json['description'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] != null
-                ? WebhookLabelEditedChangesName.fromJson(
-                    json['name'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookLabelEditedChanges.fromJson(Map<String, dynamic> json) => WebhookLabelEditedChanges(
+    color: json['color'] != null ? SdkPresent((json['color'] != null ? WebhookLabelEditedChangesColor.fromJson(json['color'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] != null ? WebhookLabelEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] != null ? WebhookLabelEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (color) {
-          SdkPresent<WebhookLabelEditedChangesColor>(value: final value) => {
-              'color': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<WebhookLabelEditedChangesDescription>(
-            value: final value
-          ) =>
-            {
-              'description': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<WebhookLabelEditedChangesName>(value: final value) => {
-              'name': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (color) {
+      SdkPresent<WebhookLabelEditedChangesColor>(value: final value) => {'color': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<WebhookLabelEditedChangesDescription>(value: final value) => {'description': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<WebhookLabelEditedChangesName>(value: final value) => {'name': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `WebhookLabelEdited` API schema.
 class WebhookLabelEdited {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookLabelEditedAction action;
-
   /// The changes to the label if the action was `edited`.
   final SdkOptional<WebhookLabelEditedChanges> changes;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// Required object value serialized in the `label` wire field.
   final WebhooksLabel label;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookLabelEdited(
-      {required this.action,
-      this.changes = const SdkOmitted(),
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      required this.label,
-      this.organization = const SdkOmitted(),
-      required this.repository,
-      required this.sender});
+  const WebhookLabelEdited({required this.action, this.changes = const SdkOmitted(), this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), required this.label, this.organization = const SdkOmitted(), required this.repository, required this.sender});
 
-  WebhookLabelEdited Function(
-      {WebhookLabelEditedAction action,
-      SdkOptional<WebhookLabelEditedChanges> changes,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      WebhooksLabel label,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      RepositoryWebhooks repository,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookLabelEdited Function({WebhookLabelEditedAction action, SdkOptional<WebhookLabelEditedChanges> changes, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, WebhooksLabel label, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookLabelEdited _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? changes = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? label = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookLabelEdited(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookLabelEditedAction,
-        changes: identical(changes, sdkOmittedValue)
-            ? this.changes
-            : changes as SdkOptional<WebhookLabelEditedChanges>,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        label: identical(label, sdkOmittedValue)
-            ? this.label
-            : label as WebhooksLabel,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookLabelEdited _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? label = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookLabelEdited(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookLabelEditedAction,
+    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as SdkOptional<WebhookLabelEditedChanges>,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    label: identical(label, sdkOmittedValue) ? this.label : label as WebhooksLabel,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) =>
-      WebhookLabelEdited(
-        action: (json['action'] != null
-            ? WebhookLabelEditedAction.fromJson(json['action'] as String)
-            : null)!,
-        changes: json['changes'] != null
-            ? SdkPresent((json['changes'] != null
-                ? WebhookLabelEditedChanges.fromJson(
-                    json['changes'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        label: (json['label'] != null
-            ? WebhooksLabel.fromJson(json['label'] as Map<String, dynamic>)
-            : null)!,
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) => WebhookLabelEdited(
+    action: (json['action'] != null ? WebhookLabelEditedAction.fromJson(json['action'] as String) : null)!,
+    changes: json['changes'] != null ? SdkPresent((json['changes'] != null ? WebhookLabelEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    label: (json['label'] != null ? WebhooksLabel.fromJson(json['label'] as Map<String, dynamic>) : null)!,
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (changes) {
-          SdkPresent<WebhookLabelEditedChanges>(value: final value) => {
-              'changes': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'label': label.toJson(),
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    ...switch (changes) {
+      SdkPresent<WebhookLabelEditedChanges>(value: final value) => {'changes': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'label': label.toJson(),
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+  };
 }

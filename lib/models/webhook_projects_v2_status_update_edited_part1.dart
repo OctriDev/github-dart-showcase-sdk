@@ -8,487 +8,244 @@ part of 'webhook_projects_v2_status_update_edited.dart';
 class WebhookProjectsV2StatusUpdateEditedChangesBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `from` wire field.
   final SdkOptional<String?> from;
-
   /// Optional `string` value serialized in the `to` wire field.
   final SdkOptional<String?> to;
 
-  const WebhookProjectsV2StatusUpdateEditedChangesBody(
-      {this.from = const SdkOmitted(), this.to = const SdkOmitted()});
+  const WebhookProjectsV2StatusUpdateEditedChangesBody({this.from = const SdkOmitted(), this.to = const SdkOmitted()});
 
-  WebhookProjectsV2StatusUpdateEditedChangesBody Function(
-      {SdkOptional<String?> from,
-      SdkOptional<String?> to}) get copyWith => _copyWith;
+  WebhookProjectsV2StatusUpdateEditedChangesBody Function({SdkOptional<String?> from, SdkOptional<String?> to}) get copyWith => _copyWith;
 
-  WebhookProjectsV2StatusUpdateEditedChangesBody _copyWith(
-          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
-      WebhookProjectsV2StatusUpdateEditedChangesBody(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as SdkOptional<String?>,
-        to: identical(to, sdkOmittedValue)
-            ? this.to
-            : to as SdkOptional<String?>,
-      );
+  WebhookProjectsV2StatusUpdateEditedChangesBody _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => WebhookProjectsV2StatusUpdateEditedChangesBody(
+    from: identical(from, sdkOmittedValue) ? this.from : from as SdkOptional<String?>,
+    to: identical(to, sdkOmittedValue) ? this.to : to as SdkOptional<String?>,
+  );
 
-  factory WebhookProjectsV2StatusUpdateEditedChangesBody.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2StatusUpdateEditedChangesBody(
-        from: json.containsKey('from')
-            ? SdkPresent(json['from'] as String?)
-            : const SdkOmitted(),
-        to: json.containsKey('to')
-            ? SdkPresent(json['to'] as String?)
-            : const SdkOmitted(),
-      );
+  factory WebhookProjectsV2StatusUpdateEditedChangesBody.fromJson(Map<String, dynamic> json) => WebhookProjectsV2StatusUpdateEditedChangesBody(
+    from: json.containsKey('from') ? SdkPresent(json['from'] as String?) : const SdkOmitted(),
+    to: json.containsKey('to') ? SdkPresent(json['to'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (from) {
-          SdkPresent<String?>(value: final value) => {
-              'from': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (to) {
-          SdkPresent<String?>(value: final value) => {
-              'to': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (from) {
+      SdkPresent<String?>(value: final value) => {'from': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (to) {
+      SdkPresent<String?>(value: final value) => {'to': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `status` wire field.
 class WebhookProjectsV2StatusUpdateEditedChangesStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional enumerated value serialized in the `from` wire field.
   final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusFrom?> from;
-
   /// Optional enumerated value serialized in the `to` wire field.
   final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusTo?> to;
 
-  const WebhookProjectsV2StatusUpdateEditedChangesStatus(
-      {this.from = const SdkOmitted(), this.to = const SdkOmitted()});
+  const WebhookProjectsV2StatusUpdateEditedChangesStatus({this.from = const SdkOmitted(), this.to = const SdkOmitted()});
 
-  WebhookProjectsV2StatusUpdateEditedChangesStatus Function(
-      {SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusFrom?> from,
-      SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusTo?>
-          to}) get copyWith => _copyWith;
+  WebhookProjectsV2StatusUpdateEditedChangesStatus Function({SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusFrom?> from, SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusTo?> to}) get copyWith => _copyWith;
 
-  WebhookProjectsV2StatusUpdateEditedChangesStatus _copyWith(
-          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
-      WebhookProjectsV2StatusUpdateEditedChangesStatus(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as SdkOptional<
-                WebhookProjectsV2StatusUpdateEditedChangesStatusFrom?>,
-        to: identical(to, sdkOmittedValue)
-            ? this.to
-            : to as SdkOptional<
-                WebhookProjectsV2StatusUpdateEditedChangesStatusTo?>,
-      );
+  WebhookProjectsV2StatusUpdateEditedChangesStatus _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => WebhookProjectsV2StatusUpdateEditedChangesStatus(
+    from: identical(from, sdkOmittedValue) ? this.from : from as SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusFrom?>,
+    to: identical(to, sdkOmittedValue) ? this.to : to as SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatusTo?>,
+  );
 
-  factory WebhookProjectsV2StatusUpdateEditedChangesStatus.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2StatusUpdateEditedChangesStatus(
-        from: json.containsKey('from')
-            ? SdkPresent(json['from'] != null
-                ? WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.fromJson(
-                    json['from'] as String)
-                : null)
-            : const SdkOmitted(),
-        to: json.containsKey('to')
-            ? SdkPresent(json['to'] != null
-                ? WebhookProjectsV2StatusUpdateEditedChangesStatusTo.fromJson(
-                    json['to'] as String)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory WebhookProjectsV2StatusUpdateEditedChangesStatus.fromJson(Map<String, dynamic> json) => WebhookProjectsV2StatusUpdateEditedChangesStatus(
+    from: json.containsKey('from') ? SdkPresent(json['from'] != null ? WebhookProjectsV2StatusUpdateEditedChangesStatusFrom.fromJson(json['from'] as String) : null) : const SdkOmitted(),
+    to: json.containsKey('to') ? SdkPresent(json['to'] != null ? WebhookProjectsV2StatusUpdateEditedChangesStatusTo.fromJson(json['to'] as String) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (from) {
-          SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStatusFrom?>(
-            value: final value
-          ) =>
-            {
-              'from': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (to) {
-          SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStatusTo?>(
-            value: final value
-          ) =>
-            {
-              'to': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (from) {
+      SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStatusFrom?>(value: final value) => {'from': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (to) {
+      SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStatusTo?>(value: final value) => {'to': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `start_date` wire field.
 class WebhookProjectsV2StatusUpdateEditedChangesStartDate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `date`-formatted value serialized in the `from` wire field.
   final SdkOptional<String?> from;
-
   /// Optional `date`-formatted value serialized in the `to` wire field.
   final SdkOptional<String?> to;
 
-  const WebhookProjectsV2StatusUpdateEditedChangesStartDate(
-      {this.from = const SdkOmitted(), this.to = const SdkOmitted()});
+  const WebhookProjectsV2StatusUpdateEditedChangesStartDate({this.from = const SdkOmitted(), this.to = const SdkOmitted()});
 
-  WebhookProjectsV2StatusUpdateEditedChangesStartDate Function(
-      {SdkOptional<String?> from,
-      SdkOptional<String?> to}) get copyWith => _copyWith;
+  WebhookProjectsV2StatusUpdateEditedChangesStartDate Function({SdkOptional<String?> from, SdkOptional<String?> to}) get copyWith => _copyWith;
 
-  WebhookProjectsV2StatusUpdateEditedChangesStartDate _copyWith(
-          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
-      WebhookProjectsV2StatusUpdateEditedChangesStartDate(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as SdkOptional<String?>,
-        to: identical(to, sdkOmittedValue)
-            ? this.to
-            : to as SdkOptional<String?>,
-      );
+  WebhookProjectsV2StatusUpdateEditedChangesStartDate _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => WebhookProjectsV2StatusUpdateEditedChangesStartDate(
+    from: identical(from, sdkOmittedValue) ? this.from : from as SdkOptional<String?>,
+    to: identical(to, sdkOmittedValue) ? this.to : to as SdkOptional<String?>,
+  );
 
-  factory WebhookProjectsV2StatusUpdateEditedChangesStartDate.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2StatusUpdateEditedChangesStartDate(
-        from: json.containsKey('from')
-            ? SdkPresent(json['from'] as String?)
-            : const SdkOmitted(),
-        to: json.containsKey('to')
-            ? SdkPresent(json['to'] as String?)
-            : const SdkOmitted(),
-      );
+  factory WebhookProjectsV2StatusUpdateEditedChangesStartDate.fromJson(Map<String, dynamic> json) => WebhookProjectsV2StatusUpdateEditedChangesStartDate(
+    from: json.containsKey('from') ? SdkPresent(json['from'] as String?) : const SdkOmitted(),
+    to: json.containsKey('to') ? SdkPresent(json['to'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (from) {
-          SdkPresent<String?>(value: final value) => {
-              'from': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (to) {
-          SdkPresent<String?>(value: final value) => {
-              'to': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (from) {
+      SdkPresent<String?>(value: final value) => {'from': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (to) {
+      SdkPresent<String?>(value: final value) => {'to': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `target_date` wire field.
 class WebhookProjectsV2StatusUpdateEditedChangesTargetDate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `date`-formatted value serialized in the `from` wire field.
   final SdkOptional<String?> from;
-
   /// Optional `date`-formatted value serialized in the `to` wire field.
   final SdkOptional<String?> to;
 
-  const WebhookProjectsV2StatusUpdateEditedChangesTargetDate(
-      {this.from = const SdkOmitted(), this.to = const SdkOmitted()});
+  const WebhookProjectsV2StatusUpdateEditedChangesTargetDate({this.from = const SdkOmitted(), this.to = const SdkOmitted()});
 
-  WebhookProjectsV2StatusUpdateEditedChangesTargetDate Function(
-      {SdkOptional<String?> from,
-      SdkOptional<String?> to}) get copyWith => _copyWith;
+  WebhookProjectsV2StatusUpdateEditedChangesTargetDate Function({SdkOptional<String?> from, SdkOptional<String?> to}) get copyWith => _copyWith;
 
-  WebhookProjectsV2StatusUpdateEditedChangesTargetDate _copyWith(
-          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
-      WebhookProjectsV2StatusUpdateEditedChangesTargetDate(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as SdkOptional<String?>,
-        to: identical(to, sdkOmittedValue)
-            ? this.to
-            : to as SdkOptional<String?>,
-      );
+  WebhookProjectsV2StatusUpdateEditedChangesTargetDate _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => WebhookProjectsV2StatusUpdateEditedChangesTargetDate(
+    from: identical(from, sdkOmittedValue) ? this.from : from as SdkOptional<String?>,
+    to: identical(to, sdkOmittedValue) ? this.to : to as SdkOptional<String?>,
+  );
 
-  factory WebhookProjectsV2StatusUpdateEditedChangesTargetDate.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2StatusUpdateEditedChangesTargetDate(
-        from: json.containsKey('from')
-            ? SdkPresent(json['from'] as String?)
-            : const SdkOmitted(),
-        to: json.containsKey('to')
-            ? SdkPresent(json['to'] as String?)
-            : const SdkOmitted(),
-      );
+  factory WebhookProjectsV2StatusUpdateEditedChangesTargetDate.fromJson(Map<String, dynamic> json) => WebhookProjectsV2StatusUpdateEditedChangesTargetDate(
+    from: json.containsKey('from') ? SdkPresent(json['from'] as String?) : const SdkOmitted(),
+    to: json.containsKey('to') ? SdkPresent(json['to'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (from) {
-          SdkPresent<String?>(value: final value) => {
-              'from': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (to) {
-          SdkPresent<String?>(value: final value) => {
-              'to': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (from) {
+      SdkPresent<String?>(value: final value) => {'from': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (to) {
+      SdkPresent<String?>(value: final value) => {'to': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `changes` wire field.
 class WebhookProjectsV2StatusUpdateEditedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `body` wire field.
   final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesBody> body;
-
   /// Optional object value serialized in the `status` wire field.
   final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatus> status;
-
   /// Optional object value serialized in the `start_date` wire field.
-  final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStartDate>
-      startDate;
-
+  final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStartDate> startDate;
   /// Optional object value serialized in the `target_date` wire field.
-  final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesTargetDate>
-      targetDate;
+  final SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesTargetDate> targetDate;
 
-  const WebhookProjectsV2StatusUpdateEditedChanges(
-      {this.body = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      this.startDate = const SdkOmitted(),
-      this.targetDate = const SdkOmitted()});
+  const WebhookProjectsV2StatusUpdateEditedChanges({this.body = const SdkOmitted(), this.status = const SdkOmitted(), this.startDate = const SdkOmitted(), this.targetDate = const SdkOmitted()});
 
-  WebhookProjectsV2StatusUpdateEditedChanges Function(
-      {SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesBody> body,
-      SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatus> status,
-      SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStartDate>
-          startDate,
-      SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesTargetDate>
-          targetDate}) get copyWith => _copyWith;
+  WebhookProjectsV2StatusUpdateEditedChanges Function({SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesBody> body, SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatus> status, SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStartDate> startDate, SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesTargetDate> targetDate}) get copyWith => _copyWith;
 
-  WebhookProjectsV2StatusUpdateEditedChanges _copyWith(
-          {Object? body = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? startDate = sdkOmittedValue,
-          Object? targetDate = sdkOmittedValue}) =>
-      WebhookProjectsV2StatusUpdateEditedChanges(
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body
-                as SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesBody>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<
-                WebhookProjectsV2StatusUpdateEditedChangesStatus>,
-        startDate: identical(startDate, sdkOmittedValue)
-            ? this.startDate
-            : startDate as SdkOptional<
-                WebhookProjectsV2StatusUpdateEditedChangesStartDate>,
-        targetDate: identical(targetDate, sdkOmittedValue)
-            ? this.targetDate
-            : targetDate as SdkOptional<
-                WebhookProjectsV2StatusUpdateEditedChangesTargetDate>,
-      );
+  WebhookProjectsV2StatusUpdateEditedChanges _copyWith({Object? body = sdkOmittedValue, Object? status = sdkOmittedValue, Object? startDate = sdkOmittedValue, Object? targetDate = sdkOmittedValue}) => WebhookProjectsV2StatusUpdateEditedChanges(
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesBody>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStatus>,
+    startDate: identical(startDate, sdkOmittedValue) ? this.startDate : startDate as SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesStartDate>,
+    targetDate: identical(targetDate, sdkOmittedValue) ? this.targetDate : targetDate as SdkOptional<WebhookProjectsV2StatusUpdateEditedChangesTargetDate>,
+  );
 
-  factory WebhookProjectsV2StatusUpdateEditedChanges.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2StatusUpdateEditedChanges(
-        body: json['body'] != null
-            ? SdkPresent((json['body'] != null
-                ? WebhookProjectsV2StatusUpdateEditedChangesBody.fromJson(
-                    json['body'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] != null
-                ? WebhookProjectsV2StatusUpdateEditedChangesStatus.fromJson(
-                    json['status'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        startDate: json['start_date'] != null
-            ? SdkPresent((json['start_date'] != null
-                ? WebhookProjectsV2StatusUpdateEditedChangesStartDate.fromJson(
-                    json['start_date'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        targetDate: json['target_date'] != null
-            ? SdkPresent((json['target_date'] != null
-                ? WebhookProjectsV2StatusUpdateEditedChangesTargetDate.fromJson(
-                    json['target_date'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookProjectsV2StatusUpdateEditedChanges.fromJson(Map<String, dynamic> json) => WebhookProjectsV2StatusUpdateEditedChanges(
+    body: json['body'] != null ? SdkPresent((json['body'] != null ? WebhookProjectsV2StatusUpdateEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] != null ? WebhookProjectsV2StatusUpdateEditedChangesStatus.fromJson(json['status'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    startDate: json['start_date'] != null ? SdkPresent((json['start_date'] != null ? WebhookProjectsV2StatusUpdateEditedChangesStartDate.fromJson(json['start_date'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    targetDate: json['target_date'] != null ? SdkPresent((json['target_date'] != null ? WebhookProjectsV2StatusUpdateEditedChangesTargetDate.fromJson(json['target_date'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (body) {
-          SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesBody>(
-            value: final value
-          ) =>
-            {
-              'body': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStatus>(
-            value: final value
-          ) =>
-            {
-              'status': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startDate) {
-          SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStartDate>(
-            value: final value
-          ) =>
-            {
-              'start_date': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (targetDate) {
-          SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesTargetDate>(
-            value: final value
-          ) =>
-            {
-              'target_date': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (body) {
+      SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesBody>(value: final value) => {'body': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStatus>(value: final value) => {'status': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startDate) {
+      SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesStartDate>(value: final value) => {'start_date': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (targetDate) {
+      SdkPresent<WebhookProjectsV2StatusUpdateEditedChangesTargetDate>(value: final value) => {'target_date': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `WebhookProjectsV2StatusUpdateEdited` API schema.
 class WebhookProjectsV2StatusUpdateEdited {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookProjectsV2StatusUpdateEditedAction action;
-
   /// Optional object value serialized in the `changes` wire field.
   final SdkOptional<WebhookProjectsV2StatusUpdateEditedChanges> changes;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final OrganizationSimpleWebhooks organization;
-
   /// An status update belonging to a project
   final ProjectsV2StatusUpdate projectsV2StatusUpdate;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookProjectsV2StatusUpdateEdited(
-      {required this.action,
-      this.changes = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      required this.organization,
-      required this.projectsV2StatusUpdate,
-      required this.sender});
+  const WebhookProjectsV2StatusUpdateEdited({required this.action, this.changes = const SdkOmitted(), this.installation = const SdkOmitted(), required this.organization, required this.projectsV2StatusUpdate, required this.sender});
 
-  WebhookProjectsV2StatusUpdateEdited Function(
-      {WebhookProjectsV2StatusUpdateEditedAction action,
-      SdkOptional<WebhookProjectsV2StatusUpdateEditedChanges> changes,
-      SdkOptional<SimpleInstallation> installation,
-      OrganizationSimpleWebhooks organization,
-      ProjectsV2StatusUpdate projectsV2StatusUpdate,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookProjectsV2StatusUpdateEdited Function({WebhookProjectsV2StatusUpdateEditedAction action, SdkOptional<WebhookProjectsV2StatusUpdateEditedChanges> changes, SdkOptional<SimpleInstallation> installation, OrganizationSimpleWebhooks organization, ProjectsV2StatusUpdate projectsV2StatusUpdate, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookProjectsV2StatusUpdateEdited _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? changes = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? projectsV2StatusUpdate = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookProjectsV2StatusUpdateEdited(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookProjectsV2StatusUpdateEditedAction,
-        changes: identical(changes, sdkOmittedValue)
-            ? this.changes
-            : changes
-                as SdkOptional<WebhookProjectsV2StatusUpdateEditedChanges>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as OrganizationSimpleWebhooks,
-        projectsV2StatusUpdate:
-            identical(projectsV2StatusUpdate, sdkOmittedValue)
-                ? this.projectsV2StatusUpdate
-                : projectsV2StatusUpdate as ProjectsV2StatusUpdate,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookProjectsV2StatusUpdateEdited _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? projectsV2StatusUpdate = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookProjectsV2StatusUpdateEdited(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookProjectsV2StatusUpdateEditedAction,
+    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as SdkOptional<WebhookProjectsV2StatusUpdateEditedChanges>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as OrganizationSimpleWebhooks,
+    projectsV2StatusUpdate: identical(projectsV2StatusUpdate, sdkOmittedValue) ? this.projectsV2StatusUpdate : projectsV2StatusUpdate as ProjectsV2StatusUpdate,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookProjectsV2StatusUpdateEdited.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2StatusUpdateEdited(
-        action: (json['action'] != null
-            ? WebhookProjectsV2StatusUpdateEditedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        changes: json['changes'] != null
-            ? SdkPresent((json['changes'] != null
-                ? WebhookProjectsV2StatusUpdateEditedChanges.fromJson(
-                    json['changes'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: (json['organization'] != null
-            ? OrganizationSimpleWebhooks.fromJson(
-                json['organization'] as Map<String, dynamic>)
-            : null)!,
-        projectsV2StatusUpdate: (json['projects_v2_status_update'] != null
-            ? ProjectsV2StatusUpdate.fromJson(
-                json['projects_v2_status_update'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookProjectsV2StatusUpdateEdited.fromJson(Map<String, dynamic> json) => WebhookProjectsV2StatusUpdateEdited(
+    action: (json['action'] != null ? WebhookProjectsV2StatusUpdateEditedAction.fromJson(json['action'] as String) : null)!,
+    changes: json['changes'] != null ? SdkPresent((json['changes'] != null ? WebhookProjectsV2StatusUpdateEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: (json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!,
+    projectsV2StatusUpdate: (json['projects_v2_status_update'] != null ? ProjectsV2StatusUpdate.fromJson(json['projects_v2_status_update'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (changes) {
-          SdkPresent<WebhookProjectsV2StatusUpdateEditedChanges>(
-            value: final value
-          ) =>
-            {
-              'changes': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'organization': organization.toJson(),
-        'projects_v2_status_update': projectsV2StatusUpdate.toJson(),
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    ...switch (changes) {
+      SdkPresent<WebhookProjectsV2StatusUpdateEditedChanges>(value: final value) => {'changes': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'organization': organization.toJson(),
+    'projects_v2_status_update': projectsV2StatusUpdate.toJson(),
+    'sender': sender.toJson(),
+  };
 }

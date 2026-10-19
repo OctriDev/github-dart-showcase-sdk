@@ -8,227 +8,106 @@ part of 'webhook_pull_request_review_thread_unresolved.dart';
 class WebhookPullRequestReviewThreadUnresolvedThread {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `comments` wire field.
-  final List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem>
-      comments;
-
+  final List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem> comments;
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
 
-  const WebhookPullRequestReviewThreadUnresolvedThread(
-      {required this.comments, required this.nodeId});
+  const WebhookPullRequestReviewThreadUnresolvedThread({required this.comments, required this.nodeId});
 
-  WebhookPullRequestReviewThreadUnresolvedThread Function(
-      {List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem>
-          comments,
-      String nodeId}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolvedThread Function({List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem> comments, String nodeId}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolvedThread _copyWith(
-          {Object? comments = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue}) =>
-      WebhookPullRequestReviewThreadUnresolvedThread(
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments as List<
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem>,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-      );
+  WebhookPullRequestReviewThreadUnresolvedThread _copyWith({Object? comments = sdkOmittedValue, Object? nodeId = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolvedThread(
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as List<WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+  );
 
-  factory WebhookPullRequestReviewThreadUnresolvedThread.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewThreadUnresolvedThread(
-        comments: ((json['comments'] as List?)
-            ?.map((e) =>
-                WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem
-                    .fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        nodeId: (json['node_id'] as String?)!,
-      );
+  factory WebhookPullRequestReviewThreadUnresolvedThread.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolvedThread(
+    comments: ((json['comments'] as List?)?.map((e) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    nodeId: (json['node_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'comments': comments.map((item) => item.toJson()).toList(),
-        'node_id': nodeId,
-      };
+    'comments': comments.map((item) => item.toJson()).toList(),
+    'node_id': nodeId,
+  };
 }
 
 /// Typed representation of the `WebhookPullRequestReviewThreadUnresolved` API schema.
 class WebhookPullRequestReviewThreadUnresolved {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookPullRequestReviewThreadUnresolvedAction action;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// Required object value serialized in the `pull_request` wire field.
   final WebhookPullRequestReviewThreadUnresolvedPullRequest pullRequest;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> sender;
-
   /// Required object value serialized in the `thread` wire field.
   final WebhookPullRequestReviewThreadUnresolvedThread thread;
-
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String?> updatedAt;
 
-  const WebhookPullRequestReviewThreadUnresolved(
-      {required this.action,
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      this.organization = const SdkOmitted(),
-      required this.pullRequest,
-      required this.repository,
-      this.sender = const SdkOmitted(),
-      required this.thread,
-      this.updatedAt = const SdkOmitted()});
+  const WebhookPullRequestReviewThreadUnresolved({required this.action, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.pullRequest, required this.repository, this.sender = const SdkOmitted(), required this.thread, this.updatedAt = const SdkOmitted()});
 
-  WebhookPullRequestReviewThreadUnresolved Function(
-      {WebhookPullRequestReviewThreadUnresolvedAction action,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      WebhookPullRequestReviewThreadUnresolvedPullRequest pullRequest,
-      RepositoryWebhooks repository,
-      SdkOptional<SimpleUser> sender,
-      WebhookPullRequestReviewThreadUnresolvedThread thread,
-      SdkOptional<String?> updatedAt}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolved Function({WebhookPullRequestReviewThreadUnresolvedAction action, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, WebhookPullRequestReviewThreadUnresolvedPullRequest pullRequest, RepositoryWebhooks repository, SdkOptional<SimpleUser> sender, WebhookPullRequestReviewThreadUnresolvedThread thread, SdkOptional<String?> updatedAt}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolved _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue,
-          Object? thread = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      WebhookPullRequestReviewThreadUnresolved(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookPullRequestReviewThreadUnresolvedAction,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest
-                as WebhookPullRequestReviewThreadUnresolvedPullRequest,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SdkOptional<SimpleUser>,
-        thread: identical(thread, sdkOmittedValue)
-            ? this.thread
-            : thread as WebhookPullRequestReviewThreadUnresolvedThread,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String?>,
-      );
+  WebhookPullRequestReviewThreadUnresolved _copyWith({Object? action = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue, Object? thread = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolved(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookPullRequestReviewThreadUnresolvedAction,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as WebhookPullRequestReviewThreadUnresolvedPullRequest,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SdkOptional<SimpleUser>,
+    thread: identical(thread, sdkOmittedValue) ? this.thread : thread as WebhookPullRequestReviewThreadUnresolvedThread,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String?>,
+  );
 
-  factory WebhookPullRequestReviewThreadUnresolved.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewThreadUnresolved(
-        action: (json['action'] != null
-            ? WebhookPullRequestReviewThreadUnresolvedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequest: (json['pull_request'] != null
-            ? WebhookPullRequestReviewThreadUnresolvedPullRequest.fromJson(
-                json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: json['sender'] != null
-            ? SdkPresent((json['sender'] != null
-                ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        thread: (json['thread'] != null
-            ? WebhookPullRequestReviewThreadUnresolvedThread.fromJson(
-                json['thread'] as Map<String, dynamic>)
-            : null)!,
-        updatedAt: json.containsKey('updated_at')
-            ? SdkPresent(json['updated_at'] as String?)
-            : const SdkOmitted(),
-      );
+  factory WebhookPullRequestReviewThreadUnresolved.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolved(
+    action: (json['action'] != null ? WebhookPullRequestReviewThreadUnresolvedAction.fromJson(json['action'] as String) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequest: (json['pull_request'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: json['sender'] != null ? SdkPresent((json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    thread: (json['thread'] != null ? WebhookPullRequestReviewThreadUnresolvedThread.fromJson(json['thread'] as Map<String, dynamic>) : null)!,
+    updatedAt: json.containsKey('updated_at') ? SdkPresent(json['updated_at'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'pull_request': pullRequest.toJson(),
-        'repository': repository.toJson(),
-        ...switch (sender) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'sender': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'thread': thread.toJson(),
-        ...switch (updatedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'action': action.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'pull_request': pullRequest.toJson(),
+    'repository': repository.toJson(),
+    ...switch (sender) {
+      SdkPresent<SimpleUser>(value: final value) => {'sender': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'thread': thread.toJson(),
+    ...switch (updatedAt) {
+      SdkPresent<String?>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

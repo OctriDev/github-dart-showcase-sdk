@@ -10,38 +10,24 @@ class AgentsListRepoOrganizationVariablesResponse {
   final int totalCount;
   final List<ActionsVariable> variables;
 
-  const AgentsListRepoOrganizationVariablesResponse(
-      {required this.totalCount, required this.variables});
+  const AgentsListRepoOrganizationVariablesResponse({required this.totalCount, required this.variables});
 
-  AgentsListRepoOrganizationVariablesResponse Function(
-      {int totalCount,
-      List<ActionsVariable> variables}) get copyWith => _copyWith;
+  AgentsListRepoOrganizationVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
 
-  AgentsListRepoOrganizationVariablesResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? variables = sdkOmittedValue}) =>
-      AgentsListRepoOrganizationVariablesResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        variables: identical(variables, sdkOmittedValue)
-            ? this.variables
-            : variables as List<ActionsVariable>,
-      );
+  AgentsListRepoOrganizationVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => AgentsListRepoOrganizationVariablesResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
+  );
 
-  factory AgentsListRepoOrganizationVariablesResponse.fromJson(
-          Map<String, dynamic> json) =>
-      AgentsListRepoOrganizationVariablesResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        variables: ((json['variables'] as List?)
-            ?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory AgentsListRepoOrganizationVariablesResponse.fromJson(Map<String, dynamic> json) => AgentsListRepoOrganizationVariablesResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'variables': variables.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'variables': variables.map((item) => item.toJson()).toList(),
+  };
 }
 
 class AgentsListRepoSecretsResponse {
@@ -50,75 +36,52 @@ class AgentsListRepoSecretsResponse {
   final int totalCount;
   final List<ActionsSecret> secrets;
 
-  const AgentsListRepoSecretsResponse(
-      {required this.totalCount, required this.secrets});
+  const AgentsListRepoSecretsResponse({required this.totalCount, required this.secrets});
 
-  AgentsListRepoSecretsResponse Function(
-      {int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
+  AgentsListRepoSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
 
-  AgentsListRepoSecretsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? secrets = sdkOmittedValue}) =>
-      AgentsListRepoSecretsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        secrets: identical(secrets, sdkOmittedValue)
-            ? this.secrets
-            : secrets as List<ActionsSecret>,
-      );
+  AgentsListRepoSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => AgentsListRepoSecretsResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
+  );
 
-  factory AgentsListRepoSecretsResponse.fromJson(Map<String, dynamic> json) =>
-      AgentsListRepoSecretsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        secrets: ((json['secrets'] as List?)
-            ?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory AgentsListRepoSecretsResponse.fromJson(Map<String, dynamic> json) => AgentsListRepoSecretsResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'secrets': secrets.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'secrets': secrets.map((item) => item.toJson()).toList(),
+  };
 }
 
 class AgentsCreateOrUpdateRepoSecretRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/agents/secrets#get-a-repository-public-key) endpoint.
   final String encryptedValue;
-
   /// ID of the key you used to encrypt the secret.
   final String keyId;
 
-  const AgentsCreateOrUpdateRepoSecretRequestBody(
-      {required this.encryptedValue, required this.keyId});
+  const AgentsCreateOrUpdateRepoSecretRequestBody({required this.encryptedValue, required this.keyId});
 
-  AgentsCreateOrUpdateRepoSecretRequestBody Function(
-      {String encryptedValue, String keyId}) get copyWith => _copyWith;
+  AgentsCreateOrUpdateRepoSecretRequestBody Function({String encryptedValue, String keyId}) get copyWith => _copyWith;
 
-  AgentsCreateOrUpdateRepoSecretRequestBody _copyWith(
-          {Object? encryptedValue = sdkOmittedValue,
-          Object? keyId = sdkOmittedValue}) =>
-      AgentsCreateOrUpdateRepoSecretRequestBody(
-        encryptedValue: identical(encryptedValue, sdkOmittedValue)
-            ? this.encryptedValue
-            : encryptedValue as String,
-        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-      );
+  AgentsCreateOrUpdateRepoSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue}) => AgentsCreateOrUpdateRepoSecretRequestBody(
+    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as String,
+    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+  );
 
-  factory AgentsCreateOrUpdateRepoSecretRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      AgentsCreateOrUpdateRepoSecretRequestBody(
-        encryptedValue: (json['encrypted_value'] as String?)!,
-        keyId: (json['key_id'] as String?)!,
-      );
+  factory AgentsCreateOrUpdateRepoSecretRequestBody.fromJson(Map<String, dynamic> json) => AgentsCreateOrUpdateRepoSecretRequestBody(
+    encryptedValue: (json['encrypted_value'] as String?)!,
+    keyId: (json['key_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'encrypted_value': encryptedValue,
-        'key_id': keyId,
-      };
+    'encrypted_value': encryptedValue,
+    'key_id': keyId,
+  };
 }
 
 class AgentsListRepoVariablesResponse {
@@ -127,330 +90,185 @@ class AgentsListRepoVariablesResponse {
   final int totalCount;
   final List<ActionsVariable> variables;
 
-  const AgentsListRepoVariablesResponse(
-      {required this.totalCount, required this.variables});
+  const AgentsListRepoVariablesResponse({required this.totalCount, required this.variables});
 
-  AgentsListRepoVariablesResponse Function(
-      {int totalCount,
-      List<ActionsVariable> variables}) get copyWith => _copyWith;
+  AgentsListRepoVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
 
-  AgentsListRepoVariablesResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? variables = sdkOmittedValue}) =>
-      AgentsListRepoVariablesResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        variables: identical(variables, sdkOmittedValue)
-            ? this.variables
-            : variables as List<ActionsVariable>,
-      );
+  AgentsListRepoVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => AgentsListRepoVariablesResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
+  );
 
-  factory AgentsListRepoVariablesResponse.fromJson(Map<String, dynamic> json) =>
-      AgentsListRepoVariablesResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        variables: ((json['variables'] as List?)
-            ?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory AgentsListRepoVariablesResponse.fromJson(Map<String, dynamic> json) => AgentsListRepoVariablesResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'variables': variables.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'variables': variables.map((item) => item.toJson()).toList(),
+  };
 }
 
 class AgentsCreateRepoVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the variable.
   final String name;
-
   /// The value of the variable.
   final String value;
 
-  const AgentsCreateRepoVariableRequestBody(
-      {required this.name, required this.value});
+  const AgentsCreateRepoVariableRequestBody({required this.name, required this.value});
 
-  AgentsCreateRepoVariableRequestBody Function({String name, String value})
-      get copyWith => _copyWith;
+  AgentsCreateRepoVariableRequestBody Function({String name, String value}) get copyWith => _copyWith;
 
-  AgentsCreateRepoVariableRequestBody _copyWith(
-          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      AgentsCreateRepoVariableRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        value: identical(value, sdkOmittedValue) ? this.value : value as String,
-      );
+  AgentsCreateRepoVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => AgentsCreateRepoVariableRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    value: identical(value, sdkOmittedValue) ? this.value : value as String,
+  );
 
-  factory AgentsCreateRepoVariableRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      AgentsCreateRepoVariableRequestBody(
-        name: (json['name'] as String?)!,
-        value: (json['value'] as String?)!,
-      );
+  factory AgentsCreateRepoVariableRequestBody.fromJson(Map<String, dynamic> json) => AgentsCreateRepoVariableRequestBody(
+    name: (json['name'] as String?)!,
+    value: (json['value'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'value': value,
-      };
+    'name': name,
+    'value': value,
+  };
 }
 
 class AgentsUpdateRepoVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the variable.
   final SdkOptional<String> name;
-
   /// The value of the variable.
   final SdkOptional<String> value;
 
-  const AgentsUpdateRepoVariableRequestBody(
-      {this.name = const SdkOmitted(), this.value = const SdkOmitted()});
+  const AgentsUpdateRepoVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  AgentsUpdateRepoVariableRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> value}) get copyWith => _copyWith;
+  AgentsUpdateRepoVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value}) get copyWith => _copyWith;
 
-  AgentsUpdateRepoVariableRequestBody _copyWith(
-          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      AgentsUpdateRepoVariableRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        value: identical(value, sdkOmittedValue)
-            ? this.value
-            : value as SdkOptional<String>,
-      );
+  AgentsUpdateRepoVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => AgentsUpdateRepoVariableRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
+  );
 
-  factory AgentsUpdateRepoVariableRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      AgentsUpdateRepoVariableRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        value: json['value'] != null
-            ? SdkPresent((json['value'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory AgentsUpdateRepoVariableRequestBody.fromJson(Map<String, dynamic> json) => AgentsUpdateRepoVariableRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (value) {
-          SdkPresent<String>(value: final value) => {
-              'value': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (value) {
+      SdkPresent<String>(value: final value) => {'value': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The repository id
   final int repositoryId;
-
   /// The alert numbers
   final List<int> alertNumbers;
 
-  const CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
-      {required this.repositoryId, required this.alertNumbers});
+  const CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem({required this.repositoryId, required this.alertNumbers});
 
-  CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem Function(
-      {int repositoryId, List<int> alertNumbers}) get copyWith => _copyWith;
+  CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem Function({int repositoryId, List<int> alertNumbers}) get copyWith => _copyWith;
 
-  CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem _copyWith(
-          {Object? repositoryId = sdkOmittedValue,
-          Object? alertNumbers = sdkOmittedValue}) =>
-      CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as int,
-        alertNumbers: identical(alertNumbers, sdkOmittedValue)
-            ? this.alertNumbers
-            : alertNumbers as List<int>,
-      );
+  CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem _copyWith({Object? repositoryId = sdkOmittedValue, Object? alertNumbers = sdkOmittedValue}) => CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as int,
+    alertNumbers: identical(alertNumbers, sdkOmittedValue) ? this.alertNumbers : alertNumbers as List<int>,
+  );
 
-  factory CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem.fromJson(
-          Map<String, dynamic> json) =>
-      CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
-        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
-        alertNumbers: ((json['alert_numbers'] as List?)
-            ?.map((e) => (e as num).toInt())
-            .toList())!,
-      );
+  factory CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem.fromJson(Map<String, dynamic> json) => CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
+    repositoryId: ((json['repository_id'] as num?)?.toInt())!,
+    alertNumbers: ((json['alert_numbers'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'repository_id': repositoryId,
-        'alert_numbers': alertNumbers,
-      };
+    'repository_id': repositoryId,
+    'alert_numbers': alertNumbers,
+  };
 }
 
 class CampaignsCreateCampaignRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the campaign
   final String name;
-
   /// A description for the campaign
   final String description;
-
   /// The logins of the users to set as the campaign managers. At this time, only a single manager can be supplied.
   final SdkOptional<List<String>> managers;
-
   /// The slugs of the teams to set as the campaign managers.
   final SdkOptional<List<String>> teamManagers;
-
   /// The end date and time of the campaign. The date must be in the future.
   final String endsAt;
-
   /// The contact link of the campaign. Must be a URI.
   final SdkOptional<String?> contactLink;
-
   /// The code scanning alerts to include in this campaign
-  final SdkOptional<
-          List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>
-      codeScanningAlerts;
-
+  final SdkOptional<List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?> codeScanningAlerts;
   /// If true, will automatically generate issues for the campaign. The default is false.
   final SdkOptional<bool> generateIssues;
 
-  const CampaignsCreateCampaignRequestBody(
-      {required this.name,
-      required this.description,
-      this.managers = const SdkOmitted(),
-      this.teamManagers = const SdkOmitted(),
-      required this.endsAt,
-      this.contactLink = const SdkOmitted(),
-      this.codeScanningAlerts = const SdkOmitted(),
-      this.generateIssues = const SdkOmitted()});
+  const CampaignsCreateCampaignRequestBody({required this.name, required this.description, this.managers = const SdkOmitted(), this.teamManagers = const SdkOmitted(), required this.endsAt, this.contactLink = const SdkOmitted(), this.codeScanningAlerts = const SdkOmitted(), this.generateIssues = const SdkOmitted()});
 
-  CampaignsCreateCampaignRequestBody Function(
-      {String name,
-      String description,
-      SdkOptional<List<String>> managers,
-      SdkOptional<List<String>> teamManagers,
-      String endsAt,
-      SdkOptional<String?> contactLink,
-      SdkOptional<
-              List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>
-          codeScanningAlerts,
-      SdkOptional<bool> generateIssues}) get copyWith => _copyWith;
+  CampaignsCreateCampaignRequestBody Function({String name, String description, SdkOptional<List<String>> managers, SdkOptional<List<String>> teamManagers, String endsAt, SdkOptional<String?> contactLink, SdkOptional<List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?> codeScanningAlerts, SdkOptional<bool> generateIssues}) get copyWith => _copyWith;
 
-  CampaignsCreateCampaignRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? managers = sdkOmittedValue,
-          Object? teamManagers = sdkOmittedValue,
-          Object? endsAt = sdkOmittedValue,
-          Object? contactLink = sdkOmittedValue,
-          Object? codeScanningAlerts = sdkOmittedValue,
-          Object? generateIssues = sdkOmittedValue}) =>
-      CampaignsCreateCampaignRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        managers: identical(managers, sdkOmittedValue)
-            ? this.managers
-            : managers as SdkOptional<List<String>>,
-        teamManagers: identical(teamManagers, sdkOmittedValue)
-            ? this.teamManagers
-            : teamManagers as SdkOptional<List<String>>,
-        endsAt:
-            identical(endsAt, sdkOmittedValue) ? this.endsAt : endsAt as String,
-        contactLink: identical(contactLink, sdkOmittedValue)
-            ? this.contactLink
-            : contactLink as SdkOptional<String?>,
-        codeScanningAlerts: identical(codeScanningAlerts, sdkOmittedValue)
-            ? this.codeScanningAlerts
-            : codeScanningAlerts as SdkOptional<
-                List<
-                    CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>,
-        generateIssues: identical(generateIssues, sdkOmittedValue)
-            ? this.generateIssues
-            : generateIssues as SdkOptional<bool>,
-      );
+  CampaignsCreateCampaignRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? managers = sdkOmittedValue, Object? teamManagers = sdkOmittedValue, Object? endsAt = sdkOmittedValue, Object? contactLink = sdkOmittedValue, Object? codeScanningAlerts = sdkOmittedValue, Object? generateIssues = sdkOmittedValue}) => CampaignsCreateCampaignRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    managers: identical(managers, sdkOmittedValue) ? this.managers : managers as SdkOptional<List<String>>,
+    teamManagers: identical(teamManagers, sdkOmittedValue) ? this.teamManagers : teamManagers as SdkOptional<List<String>>,
+    endsAt: identical(endsAt, sdkOmittedValue) ? this.endsAt : endsAt as String,
+    contactLink: identical(contactLink, sdkOmittedValue) ? this.contactLink : contactLink as SdkOptional<String?>,
+    codeScanningAlerts: identical(codeScanningAlerts, sdkOmittedValue) ? this.codeScanningAlerts : codeScanningAlerts as SdkOptional<List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>,
+    generateIssues: identical(generateIssues, sdkOmittedValue) ? this.generateIssues : generateIssues as SdkOptional<bool>,
+  );
 
-  factory CampaignsCreateCampaignRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CampaignsCreateCampaignRequestBody(
-        name: (json['name'] as String?)!,
-        description: (json['description'] as String?)!,
-        managers: json['managers'] != null
-            ? SdkPresent(((json['managers'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        teamManagers: json['team_managers'] != null
-            ? SdkPresent(((json['team_managers'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        endsAt: (json['ends_at'] as String?)!,
-        contactLink: json.containsKey('contact_link')
-            ? SdkPresent(json['contact_link'] as String?)
-            : const SdkOmitted(),
-        codeScanningAlerts: json.containsKey('code_scanning_alerts')
-            ? SdkPresent((json['code_scanning_alerts'] as List?)
-                ?.map((e) =>
-                    CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())
-            : const SdkOmitted(),
-        generateIssues: json['generate_issues'] != null
-            ? SdkPresent((json['generate_issues'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory CampaignsCreateCampaignRequestBody.fromJson(Map<String, dynamic> json) => CampaignsCreateCampaignRequestBody(
+    name: (json['name'] as String?)!,
+    description: (json['description'] as String?)!,
+    managers: json['managers'] != null ? SdkPresent(((json['managers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teamManagers: json['team_managers'] != null ? SdkPresent(((json['team_managers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    endsAt: (json['ends_at'] as String?)!,
+    contactLink: json.containsKey('contact_link') ? SdkPresent(json['contact_link'] as String?) : const SdkOmitted(),
+    codeScanningAlerts: json.containsKey('code_scanning_alerts') ? SdkPresent((json['code_scanning_alerts'] as List?)?.map((e) => CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
+    generateIssues: json['generate_issues'] != null ? SdkPresent((json['generate_issues'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'description': description,
-        ...switch (managers) {
-          SdkPresent<List<String>>(value: final value) => {
-              'managers': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (teamManagers) {
-          SdkPresent<List<String>>(value: final value) => {
-              'team_managers': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'ends_at': endsAt,
-        ...switch (contactLink) {
-          SdkPresent<String?>(value: final value) => {
-              'contact_link': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningAlerts) {
-          SdkPresent<
-                List<
-                    CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>(
-            value: final value
-          ) =>
-            {
-              'code_scanning_alerts':
-                  value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (generateIssues) {
-          SdkPresent<bool>(value: final value) => {
-              'generate_issues': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    'description': description,
+    ...switch (managers) {
+      SdkPresent<List<String>>(value: final value) => {'managers': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (teamManagers) {
+      SdkPresent<List<String>>(value: final value) => {'team_managers': value,},
+      _ => const <String, dynamic>{},
+    },
+    'ends_at': endsAt,
+    ...switch (contactLink) {
+      SdkPresent<String?>(value: final value) => {'contact_link': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeScanningAlerts) {
+      SdkPresent<List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>(value: final value) => {'code_scanning_alerts': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (generateIssues) {
+      SdkPresent<bool>(value: final value) => {'generate_issues': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

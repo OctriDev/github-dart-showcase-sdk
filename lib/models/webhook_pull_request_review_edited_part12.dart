@@ -8,121 +8,72 @@ part of 'webhook_pull_request_review_edited.dart';
 class WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
-
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
-
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
-
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
-
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
 
-  const WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions(
-      {required this.admin,
-      this.maintain = const SdkOmitted(),
-      required this.pull,
-      required this.push,
-      this.triage = const SdkOmitted()});
+  const WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions({required this.admin, this.maintain = const SdkOmitted(), required this.pull, required this.push, this.triage = const SdkOmitted()});
 
-  WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions Function(
-      {bool admin,
-      SdkOptional<bool> maintain,
-      bool pull,
-      bool push,
-      SdkOptional<bool> triage}) get copyWith => _copyWith;
+  WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions Function({bool admin, SdkOptional<bool> maintain, bool pull, bool push, SdkOptional<bool> triage}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions _copyWith(
-          {Object? admin = sdkOmittedValue,
-          Object? maintain = sdkOmittedValue,
-          Object? pull = sdkOmittedValue,
-          Object? push = sdkOmittedValue,
-          Object? triage = sdkOmittedValue}) =>
-      WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions(
-        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-        maintain: identical(maintain, sdkOmittedValue)
-            ? this.maintain
-            : maintain as SdkOptional<bool>,
-        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-        triage: identical(triage, sdkOmittedValue)
-            ? this.triage
-            : triage as SdkOptional<bool>,
-      );
+  WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions _copyWith({Object? admin = sdkOmittedValue, Object? maintain = sdkOmittedValue, Object? pull = sdkOmittedValue, Object? push = sdkOmittedValue, Object? triage = sdkOmittedValue}) => WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions(
+    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
+    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
+  );
 
-  factory WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions(
-        admin: (json['admin'] as bool?)!,
-        maintain: json['maintain'] != null
-            ? SdkPresent((json['maintain'] as bool?)!)
-            : const SdkOmitted(),
-        pull: (json['pull'] as bool?)!,
-        push: (json['push'] as bool?)!,
-        triage: json['triage'] != null
-            ? SdkPresent((json['triage'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewEditedPullRequestHeadRepoPermissions(
+    admin: (json['admin'] as bool?)!,
+    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
+    pull: (json['pull'] as bool?)!,
+    push: (json['push'] as bool?)!,
+    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'admin': admin,
-        ...switch (maintain) {
-          SdkPresent<bool>(value: final value) => {
-              'maintain': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'pull': pull,
-        'push': push,
-        ...switch (triage) {
-          SdkPresent<bool>(value: final value) => {
-              'triage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'admin': admin,
+    ...switch (maintain) {
+      SdkPresent<bool>(value: final value) => {'maintain': value,},
+      _ => const <String, dynamic>{},
+    },
+    'pull': pull,
+    'push': push,
+    ...switch (triage) {
+      SdkPresent<bool>(value: final value) => {'triage': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt();
-  factory WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString(
-          json);
-    }
-    if (json is num) {
-      return WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt(
-          json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt");
+  factory WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt.fromJson(Object? json) {
+    if (json is String) { return WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString(json); }
+    if (json is num) { return WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt(json.toInt()); }
+    throw FormatException("No variant matched for WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt
-    extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
   final int value;
-  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt(this.value);
+  @override Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString
-    extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
   final String value;
-  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString(this.value);
+  @override Object? toJson() => value;
 }

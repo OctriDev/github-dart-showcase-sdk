@@ -29,18 +29,12 @@ Future<ShortBlob> gitCreateBlob(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gitCreateBlob',
-          fromJsonRaw: (value) =>
-              ShortBlob.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ShortBlob.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a Git blob from a repository using its file SHA. The JSON response encodes `content` as Base64; request `application/vnd.github.raw+json` for raw blob data instead. Blobs can be up to 100 megabytes.
 ///
@@ -61,15 +55,10 @@ Future<Blob> gitGetBlob(ClientConfig config,
           operationId: 'gitGetBlob',
           fromJsonRaw: (value) => Blob.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a new Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects). **Signature verification object** The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object: | Name | Type | Description | | ---- | ---- | ----------- | | `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. | | `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in the table below. | | `signature` | `string` | The signature that was extracted from the commit. | | `payload` | `string` | The value that was signed. | | `verified_at` | `string` | The date the signature was verified by GitHub. | These are the possible values for `reason` in the `verification` object: | Value | Description | | ----- | ----------- | | `expired_key` | The key that made the signature is expired. | | `not_signing_key` | The "signing" flag is not among the usage flags in the GPG key that made the signature. | | `gpgverify_error` | There was an error communicating with the signature verification service. | | `gpgverify_unavailable` | The signature verification service is currently unavailable. | | `unsigned` | The object does not include a signature. | | `unknown_signature_type` | A non-PGP signature was found in the commit. | | `no_user` | No user was associated with the `committer` email address in the commit. | | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. | | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. | | `unknown_key` | The key that made the signature has not been registered with any user's account. | | `malformed_signature` | There was an error parsing the signature. | | `invalid` | The…
 ///
@@ -105,8 +94,7 @@ Future<GitCommit> gitCreateCommit(ClientConfig config,
     required String tree,
     SdkOptional<List<String>> parents = const SdkOmitted(),
     SdkOptional<GitCreateCommitRequestBodyAuthor> author = const SdkOmitted(),
-    SdkOptional<GitCreateCommitRequestBodyCommitter> committer =
-        const SdkOmitted(),
+    SdkOptional<GitCreateCommitRequestBodyCommitter> committer = const SdkOmitted(),
     SdkOptional<String> signature = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<GitCommit>('POST',
@@ -122,19 +110,12 @@ Future<GitCommit> gitCreateCommit(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gitCreateCommit',
-          fromJsonRaw: (value) =>
-              GitCommit.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitCommit.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects). To get the contents of a commit, see "Get a commit." **Signature verification object** The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object: | Name | Type | Description | | ---- | ---- | ----------- | | `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. | | `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in the table below. | | `signature` | `string` | The signature that was extracted from the commit. | | `payload` | `string` | The value that was signed. | | `verified_at` | `string` | The date the signature was verified by GitHub. | These are the possible values for `reason` in the `verification` object: | Value | Description | | ----- | ----------- | | `expired_key` | The key that made the signature is expired. | | `not_signing_key` | The "signing" flag is not among the usage flags in the GPG key that made the signature. | | `gpgverify_error` | There was an error communicating with the signature verification service. | | `gpgverify_unavailable` | The signature verification service is currently unavailable. | | `unsigned` | The object does not include a signature. | | `unknown_signature_type` | A non-PGP signature was found in the commit. | | `no_user` | No user was associated with the `committer` email address in the commit. | | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. | | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. | | `unknown_key` | The key that made the signature has not been registered with any user's account. | | `malformed_signature` | There was an…
 ///
@@ -152,15 +133,12 @@ Future<GitCommit> gitGetCommit(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gitGetCommit',
-          fromJsonRaw: (value) =>
-              GitCommit.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitCommit.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns an array of references from your Git database that match the supplied name. The `:ref` in the URL must be formatted as `heads/&lt;branch name&gt;` for branches and `tags/&lt;tag name&gt;` for tags. If the `:ref` doesn't exist in the repository, but existing refs start with `:ref`, they will be returned as an array. When you use this endpoint without providing a `:ref`, it will return an array of all the references from your Git database, including notes and stashes if they exist on the server. Anything in the namespace is returned, not just `heads` and `tags`. &gt; [!NOTE] &gt; You need to explicitly [request a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)". If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
 ///
@@ -182,11 +160,10 @@ Future<List<GitRef>> gitListMatchingRefs(ClientConfig config,
           operationId: 'gitListMatchingRefs',
           fromJsonRaw: (value) => (value as List).map((item) => GitRef.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/&lt;branch name&gt;` for branches and `tags/&lt;tag name&gt;` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned. &gt; [!NOTE] &gt; You need to explicitly [request a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)".
 ///
@@ -206,15 +183,12 @@ Future<GitRef> gitGetRef(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gitGetRef',
-          fromJsonRaw: (value) =>
-              GitRef.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitRef.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a reference for your repository. You are unable to create new references for empty repositories, even if the commit SHA-1 hash used exists. Empty repositories are repositories without branches.
 ///
@@ -237,17 +211,12 @@ Future<GitRef> gitCreateRef(ClientConfig config,
           body: {'ref': ref, 'sha': sha},
           decoder: SdkResponseDecoder.json,
           operationId: 'gitCreateRef',
-          fromJsonRaw: (value) =>
-              GitRef.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitRef.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the provided reference to point to a new SHA. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
 ///
@@ -274,17 +243,12 @@ Future<GitRef> gitUpdateRef(ClientConfig config,
           body: {'sha': sha, 'force': SdkUtils.unwrapOptional(force)},
           decoder: SdkResponseDecoder.json,
           operationId: 'gitUpdateRef',
-          fromJsonRaw: (value) =>
-              GitRef.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitRef.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a Git reference from a repository. Use `owner` and `repo` to identify the repository and `ref` to select the reference to remove. The default branch cannot be deleted.
 ///
@@ -307,11 +271,10 @@ Future<void> gitDeleteRef(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'gitDeleteRef',
           options: requestOptions,
-          errors: {
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then [create](https://docs.github.com/rest/git/refs#create-a-reference) the `refs/tags/[tag]` reference. If you want to create a lightweight tag, you only have to [create](https://docs.github.com/rest/git/refs#create-a-reference) the tag reference - this call would be unnecessary. **Signature verification object** The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object: | Name | Type | Description | | ---- | ---- | ----------- | | `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. | | `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in table below. | | `signature` | `string` | The signature that was extracted from the commit. | | `payload` | `string` | The value that was signed. | | `verified_at` | `string` | The date the signature was verified by GitHub. | These are the possible values for `reason` in the `verification` object: | Value | Description | | ----- | ----------- | | `expired_key` | The key that made the signature is expired. | | `not_signing_key` | The "signing" flag is not among the usage flags in the GPG key that made the signature. | | `gpgverify_error` | There was an error communicating with the signature verification service. | | `gpgverify_unavailable` | The signature verification service is currently unavailable. | | `unsigned` | The object does not include a signature. | | `unknown_signature_type` | A non-PGP signature was found in the commit. | | `no_user` | No user was associated with the `committer` email address in the commit. | | `unverified_email` | The `committer` email address in the commit was associated with a user, but the…
 ///
@@ -345,17 +308,12 @@ Future<GitTag> gitCreateTag(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gitCreateTag',
-          fromJsonRaw: (value) =>
-              GitTag.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitTag.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves metadata for a Git tag in a repository, including its target object and signature-verification result. Use `tag_sha` to identify the tag and inspect `verification.reason` to understand why GitHub considers its signature verified or unverified.
 ///
@@ -374,15 +332,12 @@ Future<GitTag> gitGetTag(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gitGetTag',
-          fromJsonRaw: (value) =>
-              GitTag.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitTag.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// The tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure. If you use this endpoint to add, delete, or modify the file contents in a tree, you will need to commit the tree and then update a branch to point to the commit. For more information see "[Create a commit](https://docs.github.com/rest/git/commits#create-a-commit)" and "[Update a reference](https://docs.github.com/rest/git/refs#update-a-reference)." Returns an error if you try to delete a file that does not exist.
 ///
@@ -415,21 +370,12 @@ Future<GitTree> gitCreateTree(ClientConfig config,
           body: {'tree': tree, 'base_tree': SdkUtils.unwrapOptional(baseTree)},
           decoder: SdkResponseDecoder.json,
           operationId: 'gitCreateTree',
-          fromJsonRaw: (value) =>
-              GitTree.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitTree.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns a single tree using the SHA1 value or ref name for that tree. If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time. &gt; [!NOTE] &gt; The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
 ///
@@ -452,21 +398,12 @@ Future<GitTree> gitGetTree(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/git/trees/${Uri.encodeComponent(treeSha.toString())}',
           config: config,
           query: {
-            'recursive': SdkQueryValue(SdkUtils.unwrapOptional(recursive),
-                style: 'form', explode: true)
+            'recursive': SdkQueryValue(SdkUtils.unwrapOptional(recursive), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gitGetTree',
-          fromJsonRaw: (value) =>
-              GitTree.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitTree.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

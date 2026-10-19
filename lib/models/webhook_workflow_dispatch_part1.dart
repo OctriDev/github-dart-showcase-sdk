@@ -8,146 +8,66 @@ part of 'webhook_workflow_dispatch.dart';
 class WebhookWorkflowDispatch {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// Required object value serialized in the `inputs` wire field.
   final Map<String, Object?>? inputs;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
-
   /// Required `string` value serialized in the `workflow` wire field.
   final String workflow;
 
-  const WebhookWorkflowDispatch(
-      {this.enterprise = const SdkOmitted(),
-      required this.inputs,
-      this.installation = const SdkOmitted(),
-      this.organization = const SdkOmitted(),
-      required this.ref,
-      required this.repository,
-      required this.sender,
-      required this.workflow});
+  const WebhookWorkflowDispatch({this.enterprise = const SdkOmitted(), required this.inputs, this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.ref, required this.repository, required this.sender, required this.workflow});
 
-  WebhookWorkflowDispatch Function(
-      {SdkOptional<EnterpriseWebhooks> enterprise,
-      Map<String, Object?>? inputs,
-      SdkOptional<SimpleInstallation> installation,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      String ref,
-      RepositoryWebhooks repository,
-      SimpleUser sender,
-      String workflow}) get copyWith => _copyWith;
+  WebhookWorkflowDispatch Function({SdkOptional<EnterpriseWebhooks> enterprise, Map<String, Object?>? inputs, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, String ref, RepositoryWebhooks repository, SimpleUser sender, String workflow}) get copyWith => _copyWith;
 
-  WebhookWorkflowDispatch _copyWith(
-          {Object? enterprise = sdkOmittedValue,
-          Object? inputs = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue,
-          Object? workflow = sdkOmittedValue}) =>
-      WebhookWorkflowDispatch(
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        inputs: identical(inputs, sdkOmittedValue)
-            ? this.inputs
-            : inputs as Map<String, Object?>?,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-        workflow: identical(workflow, sdkOmittedValue)
-            ? this.workflow
-            : workflow as String,
-      );
+  WebhookWorkflowDispatch _copyWith({Object? enterprise = sdkOmittedValue, Object? inputs = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue, Object? workflow = sdkOmittedValue}) => WebhookWorkflowDispatch(
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    inputs: identical(inputs, sdkOmittedValue) ? this.inputs : inputs as Map<String, Object?>?,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+    workflow: identical(workflow, sdkOmittedValue) ? this.workflow : workflow as String,
+  );
 
-  factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) =>
-      WebhookWorkflowDispatch(
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        inputs: json.containsKey('inputs')
-            ? json['inputs'] == null
-                ? null
-                : Map<String, dynamic>.from(json['inputs'] as Map)
-                    .map((key, value) => MapEntry(key, value))
-            : throw ArgumentError.value(
-                null, 'inputs', 'Required property is missing'),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        ref: (json['ref'] as String?)!,
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-        workflow: (json['workflow'] as String?)!,
-      );
+  factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) => WebhookWorkflowDispatch(
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    inputs: json.containsKey('inputs') ? json['inputs'] == null ? null : Map<String, dynamic>.from(json['inputs'] as Map).map((key, value) => MapEntry(key, value)) : throw ArgumentError.value(null, 'inputs', 'Required property is missing'),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    ref: (json['ref'] as String?)!,
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+    workflow: (json['workflow'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'inputs': inputs,
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'ref': ref,
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-        'workflow': workflow,
-      };
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'inputs': inputs,
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'ref': ref,
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+    'workflow': workflow,
+  };
 }

@@ -12,11 +12,11 @@ Future<List<String>> gitignoreGetAllTemplates(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gitignoreGetAllTemplates',
-          fromJsonRaw: (value) =>
-              (value as List).map((item) => item as String).toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item as String).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves the content of a gitignore template by name. The `application/vnd.github.raw+json` media type returns the raw `.gitignore` contents; the response object includes the template name and source.
 ///
@@ -28,8 +28,7 @@ Future<GitignoreTemplate> gitignoreGetTemplate(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gitignoreGetTemplate',
-          fromJsonRaw: (value) =>
-              GitignoreTemplate.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GitignoreTemplate.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

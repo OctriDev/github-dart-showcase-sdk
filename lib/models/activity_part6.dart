@@ -9,161 +9,39 @@ sealed class EventPayload {
   static const String constructionSurface = 'named';
   const EventPayload();
   factory EventPayload.fromJson(Object? json) {
-    if (json is Map) {
-      return EventPayloadMap(Map<String, dynamic>.from(json));
-    }
+    if (json is Map) { return EventPayloadMap(Map<String, dynamic>.from(json)); }
     if (json is Map<String, dynamic>) {
-      try {
-        final value = CreateEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadCreateEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = DeleteEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadDeleteEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = DiscussionEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadDiscussionEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = IssuesEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadIssuesEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = IssueCommentEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadIssueCommentEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ForkEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadForkEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = GollumEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadGollumEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = MemberEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadMemberEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = PushEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadPushEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = PullRequestEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadPullRequestEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = PullRequestReviewCommentEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadPullRequestReviewCommentEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = PullRequestReviewEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadPullRequestReviewEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = CommitCommentEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadCommitCommentEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ReleaseEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadReleaseEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = WatchEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return EventPayloadWatchEvent(value);
-        }
-      } catch (_) {}
+      try { final value = CreateEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadCreateEvent(value); } } catch (_) {}
+      try { final value = DeleteEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadDeleteEvent(value); } } catch (_) {}
+      try { final value = DiscussionEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadDiscussionEvent(value); } } catch (_) {}
+      try { final value = IssuesEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadIssuesEvent(value); } } catch (_) {}
+      try { final value = IssueCommentEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadIssueCommentEvent(value); } } catch (_) {}
+      try { final value = ForkEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadForkEvent(value); } } catch (_) {}
+      try { final value = GollumEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadGollumEvent(value); } } catch (_) {}
+      try { final value = MemberEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadMemberEvent(value); } } catch (_) {}
+      try { final value = PushEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadPushEvent(value); } } catch (_) {}
+      try { final value = PullRequestEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadPullRequestEvent(value); } } catch (_) {}
+      try { final value = PullRequestReviewCommentEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadPullRequestReviewCommentEvent(value); } } catch (_) {}
+      try { final value = PullRequestReviewEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadPullRequestReviewEvent(value); } } catch (_) {}
+      try { final value = CommitCommentEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadCommitCommentEvent(value); } } catch (_) {}
+      try { final value = ReleaseEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadReleaseEvent(value); } } catch (_) {}
+      try { final value = WatchEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EventPayloadWatchEvent(value); } } catch (_) {}
     }
-    try {
-      return EventPayloadCreateEvent(
-          CreateEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadDeleteEvent(
-          DeleteEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadDiscussionEvent(
-          DiscussionEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadIssuesEvent(
-          IssuesEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadIssueCommentEvent(
-          IssueCommentEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadForkEvent(
-          ForkEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadGollumEvent(
-          GollumEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadMemberEvent(
-          MemberEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadPushEvent(
-          PushEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadPullRequestEvent(
-          PullRequestEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadPullRequestReviewCommentEvent(
-          PullRequestReviewCommentEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadPullRequestReviewEvent(
-          PullRequestReviewEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadCommitCommentEvent(
-          CommitCommentEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadReleaseEvent(
-          ReleaseEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return EventPayloadWatchEvent(
-          WatchEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
+    try { return EventPayloadCreateEvent(CreateEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadDeleteEvent(DeleteEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadDiscussionEvent(DiscussionEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadIssuesEvent(IssuesEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadIssueCommentEvent(IssueCommentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadForkEvent(ForkEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadGollumEvent(GollumEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadMemberEvent(MemberEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadPushEvent(PushEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadPullRequestEvent(PullRequestEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadPullRequestReviewCommentEvent(PullRequestReviewCommentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadPullRequestReviewEvent(PullRequestReviewEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadCommitCommentEvent(CommitCommentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadReleaseEvent(ReleaseEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EventPayloadWatchEvent(WatchEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for EventPayload");
   }
   Object? toJson();
@@ -172,330 +50,188 @@ sealed class EventPayload {
 final class EventPayloadCreateEvent extends EventPayload {
   final CreateEvent value;
   const EventPayloadCreateEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadDeleteEvent extends EventPayload {
   final DeleteEvent value;
   const EventPayloadDeleteEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadDiscussionEvent extends EventPayload {
   final DiscussionEvent value;
   const EventPayloadDiscussionEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadIssuesEvent extends EventPayload {
   final IssuesEvent value;
   const EventPayloadIssuesEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadIssueCommentEvent extends EventPayload {
   final IssueCommentEvent value;
   const EventPayloadIssueCommentEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadForkEvent extends EventPayload {
   final ForkEvent value;
   const EventPayloadForkEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadGollumEvent extends EventPayload {
   final GollumEvent value;
   const EventPayloadGollumEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadMemberEvent extends EventPayload {
   final MemberEvent value;
   const EventPayloadMemberEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadMap extends EventPayload {
   final Map<String, dynamic> value;
   const EventPayloadMap(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 final class EventPayloadPushEvent extends EventPayload {
   final PushEvent value;
   const EventPayloadPushEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadPullRequestEvent extends EventPayload {
   final PullRequestEvent value;
   const EventPayloadPullRequestEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadPullRequestReviewCommentEvent extends EventPayload {
   final PullRequestReviewCommentEvent value;
   const EventPayloadPullRequestReviewCommentEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadPullRequestReviewEvent extends EventPayload {
   final PullRequestReviewEvent value;
   const EventPayloadPullRequestReviewEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadCommitCommentEvent extends EventPayload {
   final CommitCommentEvent value;
   const EventPayloadCommitCommentEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadReleaseEvent extends EventPayload {
   final ReleaseEvent value;
   const EventPayloadReleaseEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class EventPayloadWatchEvent extends EventPayload {
   final WatchEvent value;
   const EventPayloadWatchEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// Required object value serialized in the `_links` wire field.
 class FeedLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Hypermedia Link with Type
   final LinkWithType timeline;
-
   /// Hypermedia Link with Type
   final LinkWithType user;
-
   /// Hypermedia Link with Type
   final SdkOptional<LinkWithType> securityAdvisories;
-
   /// Hypermedia Link with Type
   final SdkOptional<LinkWithType> currentUser;
-
   /// Hypermedia Link with Type
   final SdkOptional<LinkWithType> currentUserPublic;
-
   /// Hypermedia Link with Type
   final SdkOptional<LinkWithType> currentUserActor;
-
   /// Hypermedia Link with Type
   final SdkOptional<LinkWithType> currentUserOrganization;
-
   /// Optional array value serialized in the `current_user_organizations` wire field.
   final SdkOptional<List<LinkWithType>> currentUserOrganizations;
-
   /// Hypermedia Link with Type
   final SdkOptional<LinkWithType> repositoryDiscussions;
-
   /// Hypermedia Link with Type
   final SdkOptional<LinkWithType> repositoryDiscussionsCategory;
 
-  const FeedLinks(
-      {required this.timeline,
-      required this.user,
-      this.securityAdvisories = const SdkOmitted(),
-      this.currentUser = const SdkOmitted(),
-      this.currentUserPublic = const SdkOmitted(),
-      this.currentUserActor = const SdkOmitted(),
-      this.currentUserOrganization = const SdkOmitted(),
-      this.currentUserOrganizations = const SdkOmitted(),
-      this.repositoryDiscussions = const SdkOmitted(),
-      this.repositoryDiscussionsCategory = const SdkOmitted()});
+  const FeedLinks({required this.timeline, required this.user, this.securityAdvisories = const SdkOmitted(), this.currentUser = const SdkOmitted(), this.currentUserPublic = const SdkOmitted(), this.currentUserActor = const SdkOmitted(), this.currentUserOrganization = const SdkOmitted(), this.currentUserOrganizations = const SdkOmitted(), this.repositoryDiscussions = const SdkOmitted(), this.repositoryDiscussionsCategory = const SdkOmitted()});
 
-  FeedLinks Function(
-          {LinkWithType timeline,
-          LinkWithType user,
-          SdkOptional<LinkWithType> securityAdvisories,
-          SdkOptional<LinkWithType> currentUser,
-          SdkOptional<LinkWithType> currentUserPublic,
-          SdkOptional<LinkWithType> currentUserActor,
-          SdkOptional<LinkWithType> currentUserOrganization,
-          SdkOptional<List<LinkWithType>> currentUserOrganizations,
-          SdkOptional<LinkWithType> repositoryDiscussions,
-          SdkOptional<LinkWithType> repositoryDiscussionsCategory})
-      get copyWith => _copyWith;
+  FeedLinks Function({LinkWithType timeline, LinkWithType user, SdkOptional<LinkWithType> securityAdvisories, SdkOptional<LinkWithType> currentUser, SdkOptional<LinkWithType> currentUserPublic, SdkOptional<LinkWithType> currentUserActor, SdkOptional<LinkWithType> currentUserOrganization, SdkOptional<List<LinkWithType>> currentUserOrganizations, SdkOptional<LinkWithType> repositoryDiscussions, SdkOptional<LinkWithType> repositoryDiscussionsCategory}) get copyWith => _copyWith;
 
-  FeedLinks _copyWith(
-          {Object? timeline = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? securityAdvisories = sdkOmittedValue,
-          Object? currentUser = sdkOmittedValue,
-          Object? currentUserPublic = sdkOmittedValue,
-          Object? currentUserActor = sdkOmittedValue,
-          Object? currentUserOrganization = sdkOmittedValue,
-          Object? currentUserOrganizations = sdkOmittedValue,
-          Object? repositoryDiscussions = sdkOmittedValue,
-          Object? repositoryDiscussionsCategory = sdkOmittedValue}) =>
-      FeedLinks(
-        timeline: identical(timeline, sdkOmittedValue)
-            ? this.timeline
-            : timeline as LinkWithType,
-        user:
-            identical(user, sdkOmittedValue) ? this.user : user as LinkWithType,
-        securityAdvisories: identical(securityAdvisories, sdkOmittedValue)
-            ? this.securityAdvisories
-            : securityAdvisories as SdkOptional<LinkWithType>,
-        currentUser: identical(currentUser, sdkOmittedValue)
-            ? this.currentUser
-            : currentUser as SdkOptional<LinkWithType>,
-        currentUserPublic: identical(currentUserPublic, sdkOmittedValue)
-            ? this.currentUserPublic
-            : currentUserPublic as SdkOptional<LinkWithType>,
-        currentUserActor: identical(currentUserActor, sdkOmittedValue)
-            ? this.currentUserActor
-            : currentUserActor as SdkOptional<LinkWithType>,
-        currentUserOrganization:
-            identical(currentUserOrganization, sdkOmittedValue)
-                ? this.currentUserOrganization
-                : currentUserOrganization as SdkOptional<LinkWithType>,
-        currentUserOrganizations:
-            identical(currentUserOrganizations, sdkOmittedValue)
-                ? this.currentUserOrganizations
-                : currentUserOrganizations as SdkOptional<List<LinkWithType>>,
-        repositoryDiscussions: identical(repositoryDiscussions, sdkOmittedValue)
-            ? this.repositoryDiscussions
-            : repositoryDiscussions as SdkOptional<LinkWithType>,
-        repositoryDiscussionsCategory:
-            identical(repositoryDiscussionsCategory, sdkOmittedValue)
-                ? this.repositoryDiscussionsCategory
-                : repositoryDiscussionsCategory as SdkOptional<LinkWithType>,
-      );
+  FeedLinks _copyWith({Object? timeline = sdkOmittedValue, Object? user = sdkOmittedValue, Object? securityAdvisories = sdkOmittedValue, Object? currentUser = sdkOmittedValue, Object? currentUserPublic = sdkOmittedValue, Object? currentUserActor = sdkOmittedValue, Object? currentUserOrganization = sdkOmittedValue, Object? currentUserOrganizations = sdkOmittedValue, Object? repositoryDiscussions = sdkOmittedValue, Object? repositoryDiscussionsCategory = sdkOmittedValue}) => FeedLinks(
+    timeline: identical(timeline, sdkOmittedValue) ? this.timeline : timeline as LinkWithType,
+    user: identical(user, sdkOmittedValue) ? this.user : user as LinkWithType,
+    securityAdvisories: identical(securityAdvisories, sdkOmittedValue) ? this.securityAdvisories : securityAdvisories as SdkOptional<LinkWithType>,
+    currentUser: identical(currentUser, sdkOmittedValue) ? this.currentUser : currentUser as SdkOptional<LinkWithType>,
+    currentUserPublic: identical(currentUserPublic, sdkOmittedValue) ? this.currentUserPublic : currentUserPublic as SdkOptional<LinkWithType>,
+    currentUserActor: identical(currentUserActor, sdkOmittedValue) ? this.currentUserActor : currentUserActor as SdkOptional<LinkWithType>,
+    currentUserOrganization: identical(currentUserOrganization, sdkOmittedValue) ? this.currentUserOrganization : currentUserOrganization as SdkOptional<LinkWithType>,
+    currentUserOrganizations: identical(currentUserOrganizations, sdkOmittedValue) ? this.currentUserOrganizations : currentUserOrganizations as SdkOptional<List<LinkWithType>>,
+    repositoryDiscussions: identical(repositoryDiscussions, sdkOmittedValue) ? this.repositoryDiscussions : repositoryDiscussions as SdkOptional<LinkWithType>,
+    repositoryDiscussionsCategory: identical(repositoryDiscussionsCategory, sdkOmittedValue) ? this.repositoryDiscussionsCategory : repositoryDiscussionsCategory as SdkOptional<LinkWithType>,
+  );
 
   factory FeedLinks.fromJson(Map<String, dynamic> json) => FeedLinks(
-        timeline: (json['timeline'] != null
-            ? LinkWithType.fromJson(json['timeline'] as Map<String, dynamic>)
-            : null)!,
-        user: (json['user'] != null
-            ? LinkWithType.fromJson(json['user'] as Map<String, dynamic>)
-            : null)!,
-        securityAdvisories: json['security_advisories'] != null
-            ? SdkPresent((json['security_advisories'] != null
-                ? LinkWithType.fromJson(
-                    json['security_advisories'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        currentUser: json['current_user'] != null
-            ? SdkPresent((json['current_user'] != null
-                ? LinkWithType.fromJson(
-                    json['current_user'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        currentUserPublic: json['current_user_public'] != null
-            ? SdkPresent((json['current_user_public'] != null
-                ? LinkWithType.fromJson(
-                    json['current_user_public'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        currentUserActor: json['current_user_actor'] != null
-            ? SdkPresent((json['current_user_actor'] != null
-                ? LinkWithType.fromJson(
-                    json['current_user_actor'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        currentUserOrganization: json['current_user_organization'] != null
-            ? SdkPresent((json['current_user_organization'] != null
-                ? LinkWithType.fromJson(
-                    json['current_user_organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        currentUserOrganizations: json['current_user_organizations'] != null
-            ? SdkPresent(((json['current_user_organizations'] as List?)
-                ?.map((e) => LinkWithType.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        repositoryDiscussions: json['repository_discussions'] != null
-            ? SdkPresent((json['repository_discussions'] != null
-                ? LinkWithType.fromJson(
-                    json['repository_discussions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repositoryDiscussionsCategory:
-            json['repository_discussions_category'] != null
-                ? SdkPresent((json['repository_discussions_category'] != null
-                    ? LinkWithType.fromJson(
-                        json['repository_discussions_category']
-                            as Map<String, dynamic>)
-                    : null)!)
-                : const SdkOmitted(),
-      );
+    timeline: (json['timeline'] != null ? LinkWithType.fromJson(json['timeline'] as Map<String, dynamic>) : null)!,
+    user: (json['user'] != null ? LinkWithType.fromJson(json['user'] as Map<String, dynamic>) : null)!,
+    securityAdvisories: json['security_advisories'] != null ? SdkPresent((json['security_advisories'] != null ? LinkWithType.fromJson(json['security_advisories'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    currentUser: json['current_user'] != null ? SdkPresent((json['current_user'] != null ? LinkWithType.fromJson(json['current_user'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    currentUserPublic: json['current_user_public'] != null ? SdkPresent((json['current_user_public'] != null ? LinkWithType.fromJson(json['current_user_public'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    currentUserActor: json['current_user_actor'] != null ? SdkPresent((json['current_user_actor'] != null ? LinkWithType.fromJson(json['current_user_actor'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    currentUserOrganization: json['current_user_organization'] != null ? SdkPresent((json['current_user_organization'] != null ? LinkWithType.fromJson(json['current_user_organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    currentUserOrganizations: json['current_user_organizations'] != null ? SdkPresent(((json['current_user_organizations'] as List?)?.map((e) => LinkWithType.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    repositoryDiscussions: json['repository_discussions'] != null ? SdkPresent((json['repository_discussions'] != null ? LinkWithType.fromJson(json['repository_discussions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repositoryDiscussionsCategory: json['repository_discussions_category'] != null ? SdkPresent((json['repository_discussions_category'] != null ? LinkWithType.fromJson(json['repository_discussions_category'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'timeline': timeline.toJson(),
-        'user': user.toJson(),
-        ...switch (securityAdvisories) {
-          SdkPresent<LinkWithType>(value: final value) => {
-              'security_advisories': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (currentUser) {
-          SdkPresent<LinkWithType>(value: final value) => {
-              'current_user': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (currentUserPublic) {
-          SdkPresent<LinkWithType>(value: final value) => {
-              'current_user_public': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (currentUserActor) {
-          SdkPresent<LinkWithType>(value: final value) => {
-              'current_user_actor': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (currentUserOrganization) {
-          SdkPresent<LinkWithType>(value: final value) => {
-              'current_user_organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (currentUserOrganizations) {
-          SdkPresent<List<LinkWithType>>(value: final value) => {
-              'current_user_organizations':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryDiscussions) {
-          SdkPresent<LinkWithType>(value: final value) => {
-              'repository_discussions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryDiscussionsCategory) {
-          SdkPresent<LinkWithType>(value: final value) => {
-              'repository_discussions_category': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'timeline': timeline.toJson(),
+    'user': user.toJson(),
+    ...switch (securityAdvisories) {
+      SdkPresent<LinkWithType>(value: final value) => {'security_advisories': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (currentUser) {
+      SdkPresent<LinkWithType>(value: final value) => {'current_user': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (currentUserPublic) {
+      SdkPresent<LinkWithType>(value: final value) => {'current_user_public': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (currentUserActor) {
+      SdkPresent<LinkWithType>(value: final value) => {'current_user_actor': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (currentUserOrganization) {
+      SdkPresent<LinkWithType>(value: final value) => {'current_user_organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (currentUserOrganizations) {
+      SdkPresent<List<LinkWithType>>(value: final value) => {'current_user_organizations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryDiscussions) {
+      SdkPresent<LinkWithType>(value: final value) => {'repository_discussions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryDiscussionsCategory) {
+      SdkPresent<LinkWithType>(value: final value) => {'repository_discussions_category': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

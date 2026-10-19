@@ -8,463 +8,225 @@ part of 'inline.dart';
 class ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Require branches to be up to date before merging.
   final bool strict;
-
   /// **Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
   final List<String> contexts;
-
   /// The list of status checks to require in order to merge into this branch.
-  final SdkOptional<
-          List<
-              ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>
-      checks;
+  final SdkOptional<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>> checks;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
-      {required this.strict,
-      required this.contexts,
-      this.checks = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks({required this.strict, required this.contexts, this.checks = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks Function(
-      {bool strict,
-      List<String> contexts,
-      SdkOptional<
-              List<
-                  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>
-          checks}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks Function({bool strict, List<String> contexts, SdkOptional<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>> checks}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks _copyWith(
-          {Object? strict = sdkOmittedValue,
-          Object? contexts = sdkOmittedValue,
-          Object? checks = sdkOmittedValue}) =>
-      ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
-        strict:
-            identical(strict, sdkOmittedValue) ? this.strict : strict as bool,
-        contexts: identical(contexts, sdkOmittedValue)
-            ? this.contexts
-            : contexts as List<String>,
-        checks: identical(checks, sdkOmittedValue)
-            ? this.checks
-            : checks as SdkOptional<
-                List<
-                    ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>,
-      );
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks _copyWith({Object? strict = sdkOmittedValue, Object? contexts = sdkOmittedValue, Object? checks = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
+    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as bool,
+    contexts: identical(contexts, sdkOmittedValue) ? this.contexts : contexts as List<String>,
+    checks: identical(checks, sdkOmittedValue) ? this.checks : checks as SdkOptional<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>,
+  );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
-        strict: (json['strict'] as bool?)!,
-        contexts:
-            ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
-        checks: json['checks'] != null
-            ? SdkPresent(((json['checks'] as List?)
-                ?.map((e) =>
-                    ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
+    strict: (json['strict'] as bool?)!,
+    contexts: ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
+    checks: json['checks'] != null ? SdkPresent(((json['checks'] as List?)?.map((e) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'strict': strict,
-        'contexts': contexts,
-        ...switch (checks) {
-          SdkPresent<
-                List<
-                    ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>(
-            value: final value
-          ) =>
-            {
-              'checks': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'strict': strict,
+    'contexts': contexts,
+    ...switch (checks) {
+      SdkPresent<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>(value: final value) => {'checks': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
 class ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The list of user `login`s with dismissal access
   final SdkOptional<List<String>> users;
-
   /// The list of team `slug`s with dismissal access
   final SdkOptional<List<String>> teams;
-
   /// The list of app `slug`s with dismissal access
   final SdkOptional<List<String>> apps;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
-      {this.users = const SdkOmitted(),
-      this.teams = const SdkOmitted(),
-      this.apps = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions({this.users = const SdkOmitted(), this.teams = const SdkOmitted(), this.apps = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions Function(
-      {SdkOptional<List<String>> users,
-      SdkOptional<List<String>> teams,
-      SdkOptional<List<String>> apps}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions Function({SdkOptional<List<String>> users, SdkOptional<List<String>> teams, SdkOptional<List<String>> apps}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions
-      _copyWith(
-              {Object? users = sdkOmittedValue,
-              Object? teams = sdkOmittedValue,
-              Object? apps = sdkOmittedValue}) =>
-          ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
-            users: identical(users, sdkOmittedValue)
-                ? this.users
-                : users as SdkOptional<List<String>>,
-            teams: identical(teams, sdkOmittedValue)
-                ? this.teams
-                : teams as SdkOptional<List<String>>,
-            apps: identical(apps, sdkOmittedValue)
-                ? this.apps
-                : apps as SdkOptional<List<String>>,
-          );
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
+    users: identical(users, sdkOmittedValue) ? this.users : users as SdkOptional<List<String>>,
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as SdkOptional<List<String>>,
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<String>>,
+  );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
-        users: json['users'] != null
-            ? SdkPresent(
-                ((json['users'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        teams: json['teams'] != null
-            ? SdkPresent(
-                ((json['teams'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        apps: json['apps'] != null
-            ? SdkPresent(
-                ((json['apps'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
+    users: json['users'] != null ? SdkPresent(((json['users'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teams: json['teams'] != null ? SdkPresent(((json['teams'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (users) {
-          SdkPresent<List<String>>(value: final value) => {
-              'users': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (teams) {
-          SdkPresent<List<String>>(value: final value) => {
-              'teams': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (apps) {
-          SdkPresent<List<String>>(value: final value) => {
-              'apps': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (users) {
+      SdkPresent<List<String>>(value: final value) => {'users': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (teams) {
+      SdkPresent<List<String>>(value: final value) => {'teams': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (apps) {
+      SdkPresent<List<String>>(value: final value) => {'apps': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Allow specific users, teams, or apps to bypass pull request requirements.
 class ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The list of user `login`s allowed to bypass pull request requirements.
   final SdkOptional<List<String>> users;
-
   /// The list of team `slug`s allowed to bypass pull request requirements.
   final SdkOptional<List<String>> teams;
-
   /// The list of app `slug`s allowed to bypass pull request requirements.
   final SdkOptional<List<String>> apps;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances(
-      {this.users = const SdkOmitted(),
-      this.teams = const SdkOmitted(),
-      this.apps = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances({this.users = const SdkOmitted(), this.teams = const SdkOmitted(), this.apps = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances Function(
-      {SdkOptional<List<String>> users,
-      SdkOptional<List<String>> teams,
-      SdkOptional<List<String>> apps}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances Function({SdkOptional<List<String>> users, SdkOptional<List<String>> teams, SdkOptional<List<String>> apps}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances
-      _copyWith(
-              {Object? users = sdkOmittedValue,
-              Object? teams = sdkOmittedValue,
-              Object? apps = sdkOmittedValue}) =>
-          ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances(
-            users: identical(users, sdkOmittedValue)
-                ? this.users
-                : users as SdkOptional<List<String>>,
-            teams: identical(teams, sdkOmittedValue)
-                ? this.teams
-                : teams as SdkOptional<List<String>>,
-            apps: identical(apps, sdkOmittedValue)
-                ? this.apps
-                : apps as SdkOptional<List<String>>,
-          );
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances(
+    users: identical(users, sdkOmittedValue) ? this.users : users as SdkOptional<List<String>>,
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as SdkOptional<List<String>>,
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<String>>,
+  );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances(
-        users: json['users'] != null
-            ? SdkPresent(
-                ((json['users'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        teams: json['teams'] != null
-            ? SdkPresent(
-                ((json['teams'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        apps: json['apps'] != null
-            ? SdkPresent(
-                ((json['apps'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances(
+    users: json['users'] != null ? SdkPresent(((json['users'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teams: json['teams'] != null ? SdkPresent(((json['teams'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (users) {
-          SdkPresent<List<String>>(value: final value) => {
-              'users': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (teams) {
-          SdkPresent<List<String>>(value: final value) => {
-              'teams': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (apps) {
-          SdkPresent<List<String>>(value: final value) => {
-              'apps': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (users) {
+      SdkPresent<List<String>>(value: final value) => {'users': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (teams) {
+      SdkPresent<List<String>>(value: final value) => {'teams': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (apps) {
+      SdkPresent<List<String>>(value: final value) => {'apps': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
 class ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
-  final SdkOptional<
-          ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions>
-      dismissalRestrictions;
-
+  final SdkOptional<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions> dismissalRestrictions;
   /// Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
   final SdkOptional<bool> dismissStaleReviews;
-
   /// Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) review them.
   final SdkOptional<bool> requireCodeOwnerReviews;
-
   /// Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
   final SdkOptional<int> requiredApprovingReviewCount;
-
   /// Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`.
   final SdkOptional<bool> requireLastPushApproval;
-
   /// Allow specific users, teams, or apps to bypass pull request requirements.
-  final SdkOptional<
-          ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances>
-      bypassPullRequestAllowances;
+  final SdkOptional<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances> bypassPullRequestAllowances;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews(
-      {this.dismissalRestrictions = const SdkOmitted(),
-      this.dismissStaleReviews = const SdkOmitted(),
-      this.requireCodeOwnerReviews = const SdkOmitted(),
-      this.requiredApprovingReviewCount = const SdkOmitted(),
-      this.requireLastPushApproval = const SdkOmitted(),
-      this.bypassPullRequestAllowances = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews({this.dismissalRestrictions = const SdkOmitted(), this.dismissStaleReviews = const SdkOmitted(), this.requireCodeOwnerReviews = const SdkOmitted(), this.requiredApprovingReviewCount = const SdkOmitted(), this.requireLastPushApproval = const SdkOmitted(), this.bypassPullRequestAllowances = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews Function(
-      {SdkOptional<
-              ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions>
-          dismissalRestrictions,
-      SdkOptional<bool> dismissStaleReviews,
-      SdkOptional<bool> requireCodeOwnerReviews,
-      SdkOptional<int> requiredApprovingReviewCount,
-      SdkOptional<bool> requireLastPushApproval,
-      SdkOptional<
-              ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances>
-          bypassPullRequestAllowances}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews Function({SdkOptional<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions> dismissalRestrictions, SdkOptional<bool> dismissStaleReviews, SdkOptional<bool> requireCodeOwnerReviews, SdkOptional<int> requiredApprovingReviewCount, SdkOptional<bool> requireLastPushApproval, SdkOptional<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances> bypassPullRequestAllowances}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews _copyWith(
-          {Object? dismissalRestrictions = sdkOmittedValue,
-          Object? dismissStaleReviews = sdkOmittedValue,
-          Object? requireCodeOwnerReviews = sdkOmittedValue,
-          Object? requiredApprovingReviewCount = sdkOmittedValue,
-          Object? requireLastPushApproval = sdkOmittedValue,
-          Object? bypassPullRequestAllowances = sdkOmittedValue}) =>
-      ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews(
-        dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue)
-            ? this.dismissalRestrictions
-            : dismissalRestrictions as SdkOptional<
-                ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions>,
-        dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue)
-            ? this.dismissStaleReviews
-            : dismissStaleReviews as SdkOptional<bool>,
-        requireCodeOwnerReviews:
-            identical(requireCodeOwnerReviews, sdkOmittedValue)
-                ? this.requireCodeOwnerReviews
-                : requireCodeOwnerReviews as SdkOptional<bool>,
-        requiredApprovingReviewCount:
-            identical(requiredApprovingReviewCount, sdkOmittedValue)
-                ? this.requiredApprovingReviewCount
-                : requiredApprovingReviewCount as SdkOptional<int>,
-        requireLastPushApproval:
-            identical(requireLastPushApproval, sdkOmittedValue)
-                ? this.requireLastPushApproval
-                : requireLastPushApproval as SdkOptional<bool>,
-        bypassPullRequestAllowances: identical(
-                bypassPullRequestAllowances, sdkOmittedValue)
-            ? this.bypassPullRequestAllowances
-            : bypassPullRequestAllowances as SdkOptional<
-                ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances>,
-      );
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews _copyWith({Object? dismissalRestrictions = sdkOmittedValue, Object? dismissStaleReviews = sdkOmittedValue, Object? requireCodeOwnerReviews = sdkOmittedValue, Object? requiredApprovingReviewCount = sdkOmittedValue, Object? requireLastPushApproval = sdkOmittedValue, Object? bypassPullRequestAllowances = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews(
+    dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue) ? this.dismissalRestrictions : dismissalRestrictions as SdkOptional<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions>,
+    dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue) ? this.dismissStaleReviews : dismissStaleReviews as SdkOptional<bool>,
+    requireCodeOwnerReviews: identical(requireCodeOwnerReviews, sdkOmittedValue) ? this.requireCodeOwnerReviews : requireCodeOwnerReviews as SdkOptional<bool>,
+    requiredApprovingReviewCount: identical(requiredApprovingReviewCount, sdkOmittedValue) ? this.requiredApprovingReviewCount : requiredApprovingReviewCount as SdkOptional<int>,
+    requireLastPushApproval: identical(requireLastPushApproval, sdkOmittedValue) ? this.requireLastPushApproval : requireLastPushApproval as SdkOptional<bool>,
+    bypassPullRequestAllowances: identical(bypassPullRequestAllowances, sdkOmittedValue) ? this.bypassPullRequestAllowances : bypassPullRequestAllowances as SdkOptional<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances>,
+  );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews(
-        dismissalRestrictions: json['dismissal_restrictions'] != null
-            ? SdkPresent((json['dismissal_restrictions'] != null
-                ? ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions
-                    .fromJson(
-                        json['dismissal_restrictions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        dismissStaleReviews: json['dismiss_stale_reviews'] != null
-            ? SdkPresent((json['dismiss_stale_reviews'] as bool?)!)
-            : const SdkOmitted(),
-        requireCodeOwnerReviews: json['require_code_owner_reviews'] != null
-            ? SdkPresent((json['require_code_owner_reviews'] as bool?)!)
-            : const SdkOmitted(),
-        requiredApprovingReviewCount: json['required_approving_review_count'] !=
-                null
-            ? SdkPresent(
-                ((json['required_approving_review_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        requireLastPushApproval: json['require_last_push_approval'] != null
-            ? SdkPresent((json['require_last_push_approval'] as bool?)!)
-            : const SdkOmitted(),
-        bypassPullRequestAllowances: json['bypass_pull_request_allowances'] !=
-                null
-            ? SdkPresent((json['bypass_pull_request_allowances'] != null
-                ? ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances
-                    .fromJson(json['bypass_pull_request_allowances']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews(
+    dismissalRestrictions: json['dismissal_restrictions'] != null ? SdkPresent((json['dismissal_restrictions'] != null ? ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    dismissStaleReviews: json['dismiss_stale_reviews'] != null ? SdkPresent((json['dismiss_stale_reviews'] as bool?)!) : const SdkOmitted(),
+    requireCodeOwnerReviews: json['require_code_owner_reviews'] != null ? SdkPresent((json['require_code_owner_reviews'] as bool?)!) : const SdkOmitted(),
+    requiredApprovingReviewCount: json['required_approving_review_count'] != null ? SdkPresent(((json['required_approving_review_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    requireLastPushApproval: json['require_last_push_approval'] != null ? SdkPresent((json['require_last_push_approval'] as bool?)!) : const SdkOmitted(),
+    bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? SdkPresent((json['bypass_pull_request_allowances'] != null ? ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (dismissalRestrictions) {
-          SdkPresent<
-                ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions>(
-            value: final value
-          ) =>
-            {
-              'dismissal_restrictions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dismissStaleReviews) {
-          SdkPresent<bool>(value: final value) => {
-              'dismiss_stale_reviews': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireCodeOwnerReviews) {
-          SdkPresent<bool>(value: final value) => {
-              'require_code_owner_reviews': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredApprovingReviewCount) {
-          SdkPresent<int>(value: final value) => {
-              'required_approving_review_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireLastPushApproval) {
-          SdkPresent<bool>(value: final value) => {
-              'require_last_push_approval': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bypassPullRequestAllowances) {
-          SdkPresent<
-                ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances>(
-            value: final value
-          ) =>
-            {
-              'bypass_pull_request_allowances': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (dismissalRestrictions) {
+      SdkPresent<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions>(value: final value) => {'dismissal_restrictions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dismissStaleReviews) {
+      SdkPresent<bool>(value: final value) => {'dismiss_stale_reviews': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requireCodeOwnerReviews) {
+      SdkPresent<bool>(value: final value) => {'require_code_owner_reviews': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredApprovingReviewCount) {
+      SdkPresent<int>(value: final value) => {'required_approving_review_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requireLastPushApproval) {
+      SdkPresent<bool>(value: final value) => {'require_last_push_approval': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bypassPullRequestAllowances) {
+      SdkPresent<ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsBypassPullRequestAllowances>(value: final value) => {'bypass_pull_request_allowances': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
 class ReposUpdateBranchProtectionRequestBodyRestrictions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The list of user `login`s with push access
   final List<String> users;
-
   /// The list of team `slug`s with push access
   final List<String> teams;
-
   /// The list of app `slug`s with push access
   final SdkOptional<List<String>> apps;
 
-  const ReposUpdateBranchProtectionRequestBodyRestrictions(
-      {required this.users,
-      required this.teams,
-      this.apps = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRestrictions({required this.users, required this.teams, this.apps = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRestrictions Function(
-      {List<String> users,
-      List<String> teams,
-      SdkOptional<List<String>> apps}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRestrictions Function({List<String> users, List<String> teams, SdkOptional<List<String>> apps}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRestrictions _copyWith(
-          {Object? users = sdkOmittedValue,
-          Object? teams = sdkOmittedValue,
-          Object? apps = sdkOmittedValue}) =>
-      ReposUpdateBranchProtectionRequestBodyRestrictions(
-        users: identical(users, sdkOmittedValue)
-            ? this.users
-            : users as List<String>,
-        teams: identical(teams, sdkOmittedValue)
-            ? this.teams
-            : teams as List<String>,
-        apps: identical(apps, sdkOmittedValue)
-            ? this.apps
-            : apps as SdkOptional<List<String>>,
-      );
+  ReposUpdateBranchProtectionRequestBodyRestrictions _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRestrictions(
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<String>,
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<String>>,
+  );
 
-  factory ReposUpdateBranchProtectionRequestBodyRestrictions.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateBranchProtectionRequestBodyRestrictions(
-        users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
-        teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
-        apps: json['apps'] != null
-            ? SdkPresent(
-                ((json['apps'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateBranchProtectionRequestBodyRestrictions.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRestrictions(
+    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
+    teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
+    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'users': users,
-        'teams': teams,
-        ...switch (apps) {
-          SdkPresent<List<String>>(value: final value) => {
-              'apps': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'users': users,
+    'teams': teams,
+    ...switch (apps) {
+      SdkPresent<List<String>>(value: final value) => {'apps': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

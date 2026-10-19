@@ -8,156 +8,80 @@ part of 'shared.dart';
 class DiffEntry {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `sha` wire field.
   final String? sha;
-
   /// Required `string` value serialized in the `filename` wire field.
   final String filename;
-
   /// Required enumerated value serialized in the `status` wire field.
   final DiffEntryStatus status;
-
   /// Required `integer` value serialized in the `additions` wire field.
   final int additions;
-
   /// Required `integer` value serialized in the `deletions` wire field.
   final int deletions;
-
   /// Required `integer` value serialized in the `changes` wire field.
   final int changes;
-
   /// Required `uri`-formatted value serialized in the `blob_url` wire field.
   final String blobUrl;
-
   /// Required `uri`-formatted value serialized in the `raw_url` wire field.
   final String rawUrl;
-
   /// Required `uri`-formatted value serialized in the `contents_url` wire field.
   final String contentsUrl;
-
   /// Optional `string` value serialized in the `patch` wire field.
   final SdkOptional<String> patch;
-
   /// Optional `string` value serialized in the `previous_filename` wire field.
   final SdkOptional<String> previousFilename;
 
-  const DiffEntry(
-      {required this.sha,
-      required this.filename,
-      required this.status,
-      required this.additions,
-      required this.deletions,
-      required this.changes,
-      required this.blobUrl,
-      required this.rawUrl,
-      required this.contentsUrl,
-      this.patch = const SdkOmitted(),
-      this.previousFilename = const SdkOmitted()});
+  const DiffEntry({required this.sha, required this.filename, required this.status, required this.additions, required this.deletions, required this.changes, required this.blobUrl, required this.rawUrl, required this.contentsUrl, this.patch = const SdkOmitted(), this.previousFilename = const SdkOmitted()});
 
-  DiffEntry Function(
-      {String? sha,
-      String filename,
-      DiffEntryStatus status,
-      int additions,
-      int deletions,
-      int changes,
-      String blobUrl,
-      String rawUrl,
-      String contentsUrl,
-      SdkOptional<String> patch,
-      SdkOptional<String> previousFilename}) get copyWith => _copyWith;
+  DiffEntry Function({String? sha, String filename, DiffEntryStatus status, int additions, int deletions, int changes, String blobUrl, String rawUrl, String contentsUrl, SdkOptional<String> patch, SdkOptional<String> previousFilename}) get copyWith => _copyWith;
 
-  DiffEntry _copyWith(
-          {Object? sha = sdkOmittedValue,
-          Object? filename = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? additions = sdkOmittedValue,
-          Object? deletions = sdkOmittedValue,
-          Object? changes = sdkOmittedValue,
-          Object? blobUrl = sdkOmittedValue,
-          Object? rawUrl = sdkOmittedValue,
-          Object? contentsUrl = sdkOmittedValue,
-          Object? patch = sdkOmittedValue,
-          Object? previousFilename = sdkOmittedValue}) =>
-      DiffEntry(
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String?,
-        filename: identical(filename, sdkOmittedValue)
-            ? this.filename
-            : filename as String,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as DiffEntryStatus,
-        additions: identical(additions, sdkOmittedValue)
-            ? this.additions
-            : additions as int,
-        deletions: identical(deletions, sdkOmittedValue)
-            ? this.deletions
-            : deletions as int,
-        changes:
-            identical(changes, sdkOmittedValue) ? this.changes : changes as int,
-        blobUrl: identical(blobUrl, sdkOmittedValue)
-            ? this.blobUrl
-            : blobUrl as String,
-        rawUrl:
-            identical(rawUrl, sdkOmittedValue) ? this.rawUrl : rawUrl as String,
-        contentsUrl: identical(contentsUrl, sdkOmittedValue)
-            ? this.contentsUrl
-            : contentsUrl as String,
-        patch: identical(patch, sdkOmittedValue)
-            ? this.patch
-            : patch as SdkOptional<String>,
-        previousFilename: identical(previousFilename, sdkOmittedValue)
-            ? this.previousFilename
-            : previousFilename as SdkOptional<String>,
-      );
+  DiffEntry _copyWith({Object? sha = sdkOmittedValue, Object? filename = sdkOmittedValue, Object? status = sdkOmittedValue, Object? additions = sdkOmittedValue, Object? deletions = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? blobUrl = sdkOmittedValue, Object? rawUrl = sdkOmittedValue, Object? contentsUrl = sdkOmittedValue, Object? patch = sdkOmittedValue, Object? previousFilename = sdkOmittedValue}) => DiffEntry(
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String?,
+    filename: identical(filename, sdkOmittedValue) ? this.filename : filename as String,
+    status: identical(status, sdkOmittedValue) ? this.status : status as DiffEntryStatus,
+    additions: identical(additions, sdkOmittedValue) ? this.additions : additions as int,
+    deletions: identical(deletions, sdkOmittedValue) ? this.deletions : deletions as int,
+    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as int,
+    blobUrl: identical(blobUrl, sdkOmittedValue) ? this.blobUrl : blobUrl as String,
+    rawUrl: identical(rawUrl, sdkOmittedValue) ? this.rawUrl : rawUrl as String,
+    contentsUrl: identical(contentsUrl, sdkOmittedValue) ? this.contentsUrl : contentsUrl as String,
+    patch: identical(patch, sdkOmittedValue) ? this.patch : patch as SdkOptional<String>,
+    previousFilename: identical(previousFilename, sdkOmittedValue) ? this.previousFilename : previousFilename as SdkOptional<String>,
+  );
 
   factory DiffEntry.fromJson(Map<String, dynamic> json) => DiffEntry(
-        sha: json.containsKey('sha')
-            ? json['sha'] as String?
-            : throw ArgumentError.value(
-                null, 'sha', 'Required property is missing'),
-        filename: (json['filename'] as String?)!,
-        status: (json['status'] != null
-            ? DiffEntryStatus.fromJson(json['status'] as String)
-            : null)!,
-        additions: ((json['additions'] as num?)?.toInt())!,
-        deletions: ((json['deletions'] as num?)?.toInt())!,
-        changes: ((json['changes'] as num?)?.toInt())!,
-        blobUrl: (json['blob_url'] as String?)!,
-        rawUrl: (json['raw_url'] as String?)!,
-        contentsUrl: (json['contents_url'] as String?)!,
-        patch: json['patch'] != null
-            ? SdkPresent((json['patch'] as String?)!)
-            : const SdkOmitted(),
-        previousFilename: json['previous_filename'] != null
-            ? SdkPresent((json['previous_filename'] as String?)!)
-            : const SdkOmitted(),
-      );
+    sha: json.containsKey('sha') ? json['sha'] as String? : throw ArgumentError.value(null, 'sha', 'Required property is missing'),
+    filename: (json['filename'] as String?)!,
+    status: (json['status'] != null ? DiffEntryStatus.fromJson(json['status'] as String) : null)!,
+    additions: ((json['additions'] as num?)?.toInt())!,
+    deletions: ((json['deletions'] as num?)?.toInt())!,
+    changes: ((json['changes'] as num?)?.toInt())!,
+    blobUrl: (json['blob_url'] as String?)!,
+    rawUrl: (json['raw_url'] as String?)!,
+    contentsUrl: (json['contents_url'] as String?)!,
+    patch: json['patch'] != null ? SdkPresent((json['patch'] as String?)!) : const SdkOmitted(),
+    previousFilename: json['previous_filename'] != null ? SdkPresent((json['previous_filename'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'sha': sha,
-        'filename': filename,
-        'status': status.toJson(),
-        'additions': additions,
-        'deletions': deletions,
-        'changes': changes,
-        'blob_url': blobUrl,
-        'raw_url': rawUrl,
-        'contents_url': contentsUrl,
-        ...switch (patch) {
-          SdkPresent<String>(value: final value) => {
-              'patch': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousFilename) {
-          SdkPresent<String>(value: final value) => {
-              'previous_filename': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'sha': sha,
+    'filename': filename,
+    'status': status.toJson(),
+    'additions': additions,
+    'deletions': deletions,
+    'changes': changes,
+    'blob_url': blobUrl,
+    'raw_url': rawUrl,
+    'contents_url': contentsUrl,
+    ...switch (patch) {
+      SdkPresent<String>(value: final value) => {'patch': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousFilename) {
+      SdkPresent<String>(value: final value) => {'previous_filename': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// An object without any properties.
@@ -167,234 +91,134 @@ class EmptyObject {
 
   const EmptyObject();
 
-  factory EmptyObject.fromJson(Map<String, dynamic> json) => EmptyObject();
+  factory EmptyObject.fromJson(Map<String, dynamic> json) => EmptyObject(
+  );
 
-  Map<String, dynamic> toJson() => {};
+  Map<String, dynamic> toJson() => {
+  };
 }
 
 /// An enterprise on GitHub.
 class Enterprise {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A short description of the enterprise.
   final SdkOptional<String?> description;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// The enterprise's website URL.
   final SdkOptional<String?> websiteUrl;
-
   /// Unique identifier of the enterprise
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// The name of the enterprise.
   final String name;
-
   /// The slug url identifier for the enterprise.
   final String slug;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String? createdAt;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String? updatedAt;
-
   /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
   final String avatarUrl;
 
-  const Enterprise(
-      {this.description = const SdkOmitted(),
-      required this.htmlUrl,
-      this.websiteUrl = const SdkOmitted(),
-      required this.id,
-      required this.nodeId,
-      required this.name,
-      required this.slug,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.avatarUrl});
+  const Enterprise({this.description = const SdkOmitted(), required this.htmlUrl, this.websiteUrl = const SdkOmitted(), required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl});
 
-  Enterprise Function(
-      {SdkOptional<String?> description,
-      String htmlUrl,
-      SdkOptional<String?> websiteUrl,
-      int id,
-      String nodeId,
-      String name,
-      String slug,
-      String? createdAt,
-      String? updatedAt,
-      String avatarUrl}) get copyWith => _copyWith;
+  Enterprise Function({SdkOptional<String?> description, String htmlUrl, SdkOptional<String?> websiteUrl, int id, String nodeId, String name, String slug, String? createdAt, String? updatedAt, String avatarUrl}) get copyWith => _copyWith;
 
-  Enterprise _copyWith(
-          {Object? description = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? websiteUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? slug = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? avatarUrl = sdkOmittedValue}) =>
-      Enterprise(
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        websiteUrl: identical(websiteUrl, sdkOmittedValue)
-            ? this.websiteUrl
-            : websiteUrl as SdkOptional<String?>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String?,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
-        avatarUrl: identical(avatarUrl, sdkOmittedValue)
-            ? this.avatarUrl
-            : avatarUrl as String,
-      );
+  Enterprise _copyWith({Object? description = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? websiteUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue}) => Enterprise(
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    websiteUrl: identical(websiteUrl, sdkOmittedValue) ? this.websiteUrl : websiteUrl as SdkOptional<String?>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String?,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String?,
+    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
+  );
 
   factory Enterprise.fromJson(Map<String, dynamic> json) => Enterprise(
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        htmlUrl: (json['html_url'] as String?)!,
-        websiteUrl: json.containsKey('website_url')
-            ? SdkPresent(json['website_url'] as String?)
-            : const SdkOmitted(),
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        name: (json['name'] as String?)!,
-        slug: (json['slug'] as String?)!,
-        createdAt: json.containsKey('created_at')
-            ? json['created_at'] as String?
-            : throw ArgumentError.value(
-                null, 'created_at', 'Required property is missing'),
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
-        avatarUrl: (json['avatar_url'] as String?)!,
-      );
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    htmlUrl: (json['html_url'] as String?)!,
+    websiteUrl: json.containsKey('website_url') ? SdkPresent(json['website_url'] as String?) : const SdkOmitted(),
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    name: (json['name'] as String?)!,
+    slug: (json['slug'] as String?)!,
+    createdAt: json.containsKey('created_at') ? json['created_at'] as String? : throw ArgumentError.value(null, 'created_at', 'Required property is missing'),
+    updatedAt: json.containsKey('updated_at') ? json['updated_at'] as String? : throw ArgumentError.value(null, 'updated_at', 'Required property is missing'),
+    avatarUrl: (json['avatar_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'html_url': htmlUrl,
-        ...switch (websiteUrl) {
-          SdkPresent<String?>(value: final value) => {
-              'website_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'id': id,
-        'node_id': nodeId,
-        'name': name,
-        'slug': slug,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'avatar_url': avatarUrl,
-      };
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    'html_url': htmlUrl,
+    ...switch (websiteUrl) {
+      SdkPresent<String?>(value: final value) => {'website_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'id': id,
+    'node_id': nodeId,
+    'name': name,
+    'slug': slug,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'avatar_url': avatarUrl,
+  };
 }
 
 /// Optional object value serialized in the `permissions` wire field.
 class FullRepositoryPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
-
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
-
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
-
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
-
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
 
-  const FullRepositoryPermissions(
-      {required this.admin,
-      this.maintain = const SdkOmitted(),
-      required this.push,
-      this.triage = const SdkOmitted(),
-      required this.pull});
+  const FullRepositoryPermissions({required this.admin, this.maintain = const SdkOmitted(), required this.push, this.triage = const SdkOmitted(), required this.pull});
 
-  FullRepositoryPermissions Function(
-      {bool admin,
-      SdkOptional<bool> maintain,
-      bool push,
-      SdkOptional<bool> triage,
-      bool pull}) get copyWith => _copyWith;
+  FullRepositoryPermissions Function({bool admin, SdkOptional<bool> maintain, bool push, SdkOptional<bool> triage, bool pull}) get copyWith => _copyWith;
 
-  FullRepositoryPermissions _copyWith(
-          {Object? admin = sdkOmittedValue,
-          Object? maintain = sdkOmittedValue,
-          Object? push = sdkOmittedValue,
-          Object? triage = sdkOmittedValue,
-          Object? pull = sdkOmittedValue}) =>
-      FullRepositoryPermissions(
-        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-        maintain: identical(maintain, sdkOmittedValue)
-            ? this.maintain
-            : maintain as SdkOptional<bool>,
-        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-        triage: identical(triage, sdkOmittedValue)
-            ? this.triage
-            : triage as SdkOptional<bool>,
-        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-      );
+  FullRepositoryPermissions _copyWith({Object? admin = sdkOmittedValue, Object? maintain = sdkOmittedValue, Object? push = sdkOmittedValue, Object? triage = sdkOmittedValue, Object? pull = sdkOmittedValue}) => FullRepositoryPermissions(
+    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
+    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
+    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+  );
 
-  factory FullRepositoryPermissions.fromJson(Map<String, dynamic> json) =>
-      FullRepositoryPermissions(
-        admin: (json['admin'] as bool?)!,
-        maintain: json['maintain'] != null
-            ? SdkPresent((json['maintain'] as bool?)!)
-            : const SdkOmitted(),
-        push: (json['push'] as bool?)!,
-        triage: json['triage'] != null
-            ? SdkPresent((json['triage'] as bool?)!)
-            : const SdkOmitted(),
-        pull: (json['pull'] as bool?)!,
-      );
+  factory FullRepositoryPermissions.fromJson(Map<String, dynamic> json) => FullRepositoryPermissions(
+    admin: (json['admin'] as bool?)!,
+    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
+    push: (json['push'] as bool?)!,
+    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
+    pull: (json['pull'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'admin': admin,
-        ...switch (maintain) {
-          SdkPresent<bool>(value: final value) => {
-              'maintain': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'push': push,
-        ...switch (triage) {
-          SdkPresent<bool>(value: final value) => {
-              'triage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'pull': pull,
-      };
+    'admin': admin,
+    ...switch (maintain) {
+      SdkPresent<bool>(value: final value) => {'maintain': value,},
+      _ => const <String, dynamic>{},
+    },
+    'push': push,
+    ...switch (triage) {
+      SdkPresent<bool>(value: final value) => {'triage': value,},
+      _ => const <String, dynamic>{},
+    },
+    'pull': pull,
+  };
 }

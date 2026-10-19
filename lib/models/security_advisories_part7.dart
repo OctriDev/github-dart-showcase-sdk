@@ -8,80 +8,37 @@ part of 'security_advisories.dart';
 class Vulnerability {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the package affected by the vulnerability.
   final VulnerabilityPackage? package;
-
   /// The range of the package versions affected by the vulnerability.
   final String? vulnerableVersionRange;
-
   /// The package version that resolves the vulnerability.
   final String? firstPatchedVersion;
-
   /// The functions in the package that are affected by the vulnerability.
   final List<String>? vulnerableFunctions;
 
-  const Vulnerability(
-      {required this.package,
-      required this.vulnerableVersionRange,
-      required this.firstPatchedVersion,
-      required this.vulnerableFunctions});
+  const Vulnerability({required this.package, required this.vulnerableVersionRange, required this.firstPatchedVersion, required this.vulnerableFunctions});
 
-  Vulnerability Function(
-      {VulnerabilityPackage? package,
-      String? vulnerableVersionRange,
-      String? firstPatchedVersion,
-      List<String>? vulnerableFunctions}) get copyWith => _copyWith;
+  Vulnerability Function({VulnerabilityPackage? package, String? vulnerableVersionRange, String? firstPatchedVersion, List<String>? vulnerableFunctions}) get copyWith => _copyWith;
 
-  Vulnerability _copyWith(
-          {Object? package = sdkOmittedValue,
-          Object? vulnerableVersionRange = sdkOmittedValue,
-          Object? firstPatchedVersion = sdkOmittedValue,
-          Object? vulnerableFunctions = sdkOmittedValue}) =>
-      Vulnerability(
-        package: identical(package, sdkOmittedValue)
-            ? this.package
-            : package as VulnerabilityPackage?,
-        vulnerableVersionRange:
-            identical(vulnerableVersionRange, sdkOmittedValue)
-                ? this.vulnerableVersionRange
-                : vulnerableVersionRange as String?,
-        firstPatchedVersion: identical(firstPatchedVersion, sdkOmittedValue)
-            ? this.firstPatchedVersion
-            : firstPatchedVersion as String?,
-        vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue)
-            ? this.vulnerableFunctions
-            : vulnerableFunctions as List<String>?,
-      );
+  Vulnerability _copyWith({Object? package = sdkOmittedValue, Object? vulnerableVersionRange = sdkOmittedValue, Object? firstPatchedVersion = sdkOmittedValue, Object? vulnerableFunctions = sdkOmittedValue}) => Vulnerability(
+    package: identical(package, sdkOmittedValue) ? this.package : package as VulnerabilityPackage?,
+    vulnerableVersionRange: identical(vulnerableVersionRange, sdkOmittedValue) ? this.vulnerableVersionRange : vulnerableVersionRange as String?,
+    firstPatchedVersion: identical(firstPatchedVersion, sdkOmittedValue) ? this.firstPatchedVersion : firstPatchedVersion as String?,
+    vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue) ? this.vulnerableFunctions : vulnerableFunctions as List<String>?,
+  );
 
   factory Vulnerability.fromJson(Map<String, dynamic> json) => Vulnerability(
-        package: json.containsKey('package')
-            ? json['package'] != null
-                ? VulnerabilityPackage.fromJson(
-                    json['package'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'package', 'Required property is missing'),
-        vulnerableVersionRange: json.containsKey('vulnerable_version_range')
-            ? json['vulnerable_version_range'] as String?
-            : throw ArgumentError.value(null, 'vulnerable_version_range',
-                'Required property is missing'),
-        firstPatchedVersion: json.containsKey('first_patched_version')
-            ? json['first_patched_version'] as String?
-            : throw ArgumentError.value(
-                null, 'first_patched_version', 'Required property is missing'),
-        vulnerableFunctions: json.containsKey('vulnerable_functions')
-            ? (json['vulnerable_functions'] as List?)
-                ?.map((e) => e as String)
-                .toList()
-            : throw ArgumentError.value(
-                null, 'vulnerable_functions', 'Required property is missing'),
-      );
+    package: json.containsKey('package') ? json['package'] != null ? VulnerabilityPackage.fromJson(json['package'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'package', 'Required property is missing'),
+    vulnerableVersionRange: json.containsKey('vulnerable_version_range') ? json['vulnerable_version_range'] as String? : throw ArgumentError.value(null, 'vulnerable_version_range', 'Required property is missing'),
+    firstPatchedVersion: json.containsKey('first_patched_version') ? json['first_patched_version'] as String? : throw ArgumentError.value(null, 'first_patched_version', 'Required property is missing'),
+    vulnerableFunctions: json.containsKey('vulnerable_functions') ? (json['vulnerable_functions'] as List?)?.map((e) => e as String).toList() : throw ArgumentError.value(null, 'vulnerable_functions', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'package': package?.toJson(),
-        'vulnerable_version_range': vulnerableVersionRange,
-        'first_patched_version': firstPatchedVersion,
-        'vulnerable_functions': vulnerableFunctions,
-      };
+    'package': package?.toJson(),
+    'vulnerable_version_range': vulnerableVersionRange,
+    'first_patched_version': firstPatchedVersion,
+    'vulnerable_functions': vulnerableFunctions,
+  };
 }

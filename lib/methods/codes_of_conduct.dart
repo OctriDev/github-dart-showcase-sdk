@@ -8,20 +8,17 @@ import '../types.dart';
 /// Lists all codes of conduct available on GitHub. Use the response's `key`, `name`, and URL fields to identify a code and retrieve its details.
 ///
 /// Returns array of all GitHub's codes of conduct.
-Future<List<CodeOfConduct>> codesOfConductGetAllCodesOfConduct(
-    ClientConfig config,
+Future<List<CodeOfConduct>> codesOfConductGetAllCodesOfConduct(ClientConfig config,
     {RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeOfConduct>>('GET', '/codes_of_conduct',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codesOfConductGetAllCodesOfConduct',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CodeOfConduct.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CodeOfConduct.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves information about a specific code of conduct. Supply the code's `key` to select the code whose details you need.
 ///
@@ -33,11 +30,8 @@ Future<CodeOfConduct> codesOfConductGetConductCode(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codesOfConductGetConductCode',
-          fromJsonRaw: (value) =>
-              CodeOfConduct.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeOfConduct.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

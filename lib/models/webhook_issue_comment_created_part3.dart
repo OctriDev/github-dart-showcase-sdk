@@ -8,206 +8,93 @@ part of 'webhook_issue_comment_created.dart';
 class WebhookIssueCommentCreatedComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// How the author is associated with the repository.
   final WebhookIssueCommentCreatedCommentAuthorAssociation authorAssociation;
-
   /// Contents of the issue comment
   final String body;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Unique identifier of the issue comment
   final int id;
-
   /// Required `uri`-formatted value serialized in the `issue_url` wire field.
   final String issueUrl;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final NullableIntegration? performedViaGithubApp;
-
   /// Required object value serialized in the `reactions` wire field.
   final WebhookIssueCommentCreatedCommentReactions reactions;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// URL for the issue comment
   final String url;
-
   /// Context around who pinned an issue comment and when it was pinned.
   final SdkOptional<NullablePinnedIssueComment?> pin;
-
   /// Details about why an issue comment was minimized.
   final SdkOptional<NullableIssueCommentMinimized?> minimized;
-
   /// Required object value serialized in the `user` wire field.
   final WebhookIssueCommentCreatedCommentUser? user;
 
-  const WebhookIssueCommentCreatedComment(
-      {required this.authorAssociation,
-      required this.body,
-      required this.createdAt,
-      required this.htmlUrl,
-      required this.id,
-      required this.issueUrl,
-      required this.nodeId,
-      required this.performedViaGithubApp,
-      required this.reactions,
-      required this.updatedAt,
-      required this.url,
-      this.pin = const SdkOmitted(),
-      this.minimized = const SdkOmitted(),
-      required this.user});
+  const WebhookIssueCommentCreatedComment({required this.authorAssociation, required this.body, required this.createdAt, required this.htmlUrl, required this.id, required this.issueUrl, required this.nodeId, required this.performedViaGithubApp, required this.reactions, required this.updatedAt, required this.url, this.pin = const SdkOmitted(), this.minimized = const SdkOmitted(), required this.user});
 
-  WebhookIssueCommentCreatedComment Function(
-      {WebhookIssueCommentCreatedCommentAuthorAssociation authorAssociation,
-      String body,
-      String createdAt,
-      String htmlUrl,
-      int id,
-      String issueUrl,
-      String nodeId,
-      NullableIntegration? performedViaGithubApp,
-      WebhookIssueCommentCreatedCommentReactions reactions,
-      String updatedAt,
-      String url,
-      SdkOptional<NullablePinnedIssueComment?> pin,
-      SdkOptional<NullableIssueCommentMinimized?> minimized,
-      WebhookIssueCommentCreatedCommentUser? user}) get copyWith => _copyWith;
+  WebhookIssueCommentCreatedComment Function({WebhookIssueCommentCreatedCommentAuthorAssociation authorAssociation, String body, String createdAt, String htmlUrl, int id, String issueUrl, String nodeId, NullableIntegration? performedViaGithubApp, WebhookIssueCommentCreatedCommentReactions reactions, String updatedAt, String url, SdkOptional<NullablePinnedIssueComment?> pin, SdkOptional<NullableIssueCommentMinimized?> minimized, WebhookIssueCommentCreatedCommentUser? user}) get copyWith => _copyWith;
 
-  WebhookIssueCommentCreatedComment _copyWith(
-          {Object? authorAssociation = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? issueUrl = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? performedViaGithubApp = sdkOmittedValue,
-          Object? reactions = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? pin = sdkOmittedValue,
-          Object? minimized = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhookIssueCommentCreatedComment(
-        authorAssociation: identical(authorAssociation, sdkOmittedValue)
-            ? this.authorAssociation
-            : authorAssociation
-                as WebhookIssueCommentCreatedCommentAuthorAssociation,
-        body: identical(body, sdkOmittedValue) ? this.body : body as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        issueUrl: identical(issueUrl, sdkOmittedValue)
-            ? this.issueUrl
-            : issueUrl as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
-            ? this.performedViaGithubApp
-            : performedViaGithubApp as NullableIntegration?,
-        reactions: identical(reactions, sdkOmittedValue)
-            ? this.reactions
-            : reactions as WebhookIssueCommentCreatedCommentReactions,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        pin: identical(pin, sdkOmittedValue)
-            ? this.pin
-            : pin as SdkOptional<NullablePinnedIssueComment?>,
-        minimized: identical(minimized, sdkOmittedValue)
-            ? this.minimized
-            : minimized as SdkOptional<NullableIssueCommentMinimized?>,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as WebhookIssueCommentCreatedCommentUser?,
-      );
+  WebhookIssueCommentCreatedComment _copyWith({Object? authorAssociation = sdkOmittedValue, Object? body = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? issueUrl = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? pin = sdkOmittedValue, Object? minimized = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookIssueCommentCreatedComment(
+    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as WebhookIssueCommentCreatedCommentAuthorAssociation,
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    issueUrl: identical(issueUrl, sdkOmittedValue) ? this.issueUrl : issueUrl as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as NullableIntegration?,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as WebhookIssueCommentCreatedCommentReactions,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    pin: identical(pin, sdkOmittedValue) ? this.pin : pin as SdkOptional<NullablePinnedIssueComment?>,
+    minimized: identical(minimized, sdkOmittedValue) ? this.minimized : minimized as SdkOptional<NullableIssueCommentMinimized?>,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookIssueCommentCreatedCommentUser?,
+  );
 
-  factory WebhookIssueCommentCreatedComment.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssueCommentCreatedComment(
-        authorAssociation: (json['author_association'] != null
-            ? WebhookIssueCommentCreatedCommentAuthorAssociation.fromJson(
-                json['author_association'] as String)
-            : null)!,
-        body: (json['body'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        issueUrl: (json['issue_url'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        performedViaGithubApp: json.containsKey('performed_via_github_app')
-            ? json['performed_via_github_app'] != null
-                ? NullableIntegration.fromJson(
-                    json['performed_via_github_app'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(null, 'performed_via_github_app',
-                'Required property is missing'),
-        reactions: (json['reactions'] != null
-            ? WebhookIssueCommentCreatedCommentReactions.fromJson(
-                json['reactions'] as Map<String, dynamic>)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        url: (json['url'] as String?)!,
-        pin: json.containsKey('pin')
-            ? SdkPresent(json['pin'] != null
-                ? NullablePinnedIssueComment.fromJson(
-                    json['pin'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        minimized: json.containsKey('minimized')
-            ? SdkPresent(json['minimized'] != null
-                ? NullableIssueCommentMinimized.fromJson(
-                    json['minimized'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhookIssueCommentCreatedCommentUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory WebhookIssueCommentCreatedComment.fromJson(Map<String, dynamic> json) => WebhookIssueCommentCreatedComment(
+    authorAssociation: (json['author_association'] != null ? WebhookIssueCommentCreatedCommentAuthorAssociation.fromJson(json['author_association'] as String) : null)!,
+    body: (json['body'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    issueUrl: (json['issue_url'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    performedViaGithubApp: json.containsKey('performed_via_github_app') ? json['performed_via_github_app'] != null ? NullableIntegration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'performed_via_github_app', 'Required property is missing'),
+    reactions: (json['reactions'] != null ? WebhookIssueCommentCreatedCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    url: (json['url'] as String?)!,
+    pin: json.containsKey('pin') ? SdkPresent(json['pin'] != null ? NullablePinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    minimized: json.containsKey('minimized') ? SdkPresent(json['minimized'] != null ? NullableIssueCommentMinimized.fromJson(json['minimized'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    user: json.containsKey('user') ? json['user'] != null ? WebhookIssueCommentCreatedCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'author_association': authorAssociation.toJson(),
-        'body': body,
-        'created_at': createdAt,
-        'html_url': htmlUrl,
-        'id': id,
-        'issue_url': issueUrl,
-        'node_id': nodeId,
-        'performed_via_github_app': performedViaGithubApp?.toJson(),
-        'reactions': reactions.toJson(),
-        'updated_at': updatedAt,
-        'url': url,
-        ...switch (pin) {
-          SdkPresent<NullablePinnedIssueComment?>(value: final value) => {
-              'pin': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (minimized) {
-          SdkPresent<NullableIssueCommentMinimized?>(value: final value) => {
-              'minimized': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'user': user?.toJson(),
-      };
+    'author_association': authorAssociation.toJson(),
+    'body': body,
+    'created_at': createdAt,
+    'html_url': htmlUrl,
+    'id': id,
+    'issue_url': issueUrl,
+    'node_id': nodeId,
+    'performed_via_github_app': performedViaGithubApp?.toJson(),
+    'reactions': reactions.toJson(),
+    'updated_at': updatedAt,
+    'url': url,
+    ...switch (pin) {
+      SdkPresent<NullablePinnedIssueComment?>(value: final value) => {'pin': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (minimized) {
+      SdkPresent<NullableIssueCommentMinimized?>(value: final value) => {'minimized': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'user': user?.toJson(),
+  };
 }

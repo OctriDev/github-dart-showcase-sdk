@@ -37,38 +37,21 @@ Future<BillingAiCreditUsageReportOrg>
           '/organizations/${Uri.encodeComponent(org.toString())}/settings/billing/ai_credit/usage',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true),
-            'user': SdkQueryValue(SdkUtils.unwrapOptional(user),
-                style: 'form', explode: true),
-            'model': SdkQueryValue(SdkUtils.unwrapOptional(model),
-                style: 'form', explode: true),
-            'product': SdkQueryValue(SdkUtils.unwrapOptional(product),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true),
+            'user': SdkQueryValue(SdkUtils.unwrapOptional(user), style: 'form', explode: true),
+            'model': SdkQueryValue(SdkUtils.unwrapOptional(model), style: 'form', explode: true),
+            'product': SdkQueryValue(SdkUtils.unwrapOptional(product), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingAiCreditUsageReportOrg',
-          fromJsonRaw: (value) => BillingAiCreditUsageReportOrg.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingAiCreditUsageReportOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets all budgets for an organization. The authenticated user must be an organization admin or billing manager. Each page returns up to 100 budgets.
 ///
@@ -92,29 +75,19 @@ Future<GetAllBudgets> billingGetAllBudgetsOrg(ClientConfig config,
           '/organizations/${Uri.encodeComponent(org.toString())}/settings/billing/budgets',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope),
-                style: 'form', explode: true),
-            'user': SdkQueryValue(SdkUtils.unwrapOptional(user),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope), style: 'form', explode: true),
+            'user': SdkQueryValue(SdkUtils.unwrapOptional(user), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetAllBudgetsOrg',
-          fromJsonRaw: (value) =>
-              GetAllBudgets.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GetAllBudgets.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a budget for an organization. Use `budget_scope`, `budget_amount`, and `budget_product_sku` to define what the budget covers; `user` is required when the scope is `user`, and `expires_at` is supported only for user-scoped budgets. The authenticated user must be an organization admin or billing manager.
 ///
@@ -151,10 +124,8 @@ Future<CreateBudget> billingCreateOrganizationBudget(ClientConfig config,
     {required String org,
     SdkOptional<int> budgetAmount = const SdkOmitted(),
     SdkOptional<bool> preventFurtherUsage = const SdkOmitted(),
-    SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting>
-        budgetAlerting = const SdkOmitted(),
-    SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetScope>
-        budgetScope = const SdkOmitted(),
+    SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting> budgetAlerting = const SdkOmitted(),
+    SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetScope> budgetScope = const SdkOmitted(),
     SdkOptional<String> budgetEntityName = const SdkOmitted(),
     SdkOptional<String> budgetType = const SdkOmitted(),
     SdkOptional<String> budgetProductSku = const SdkOmitted(),
@@ -170,8 +141,7 @@ Future<CreateBudget> billingCreateOrganizationBudget(ClientConfig config,
           config: config,
           body: {
             'budget_amount': SdkUtils.unwrapOptional(budgetAmount),
-            'prevent_further_usage':
-                SdkUtils.unwrapOptional(preventFurtherUsage),
+            'prevent_further_usage': SdkUtils.unwrapOptional(preventFurtherUsage),
             'budget_alerting': SdkUtils.unwrapOptional(budgetAlerting),
             'budget_scope': SdkUtils.unwrapOptional(budgetScope),
             'budget_entity_name': SdkUtils.unwrapOptional(budgetEntityName),
@@ -182,24 +152,12 @@ Future<CreateBudget> billingCreateOrganizationBudget(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingCreateOrganizationBudget',
-          fromJsonRaw: (value) =>
-              CreateBudget.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CreateBudget.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
 ///
@@ -214,19 +172,12 @@ Future<GetBudget> billingGetBudgetOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetBudgetOrg',
-          fromJsonRaw: (value) =>
-              GetBudget.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GetBudget.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates an existing budget for an organization. Supply the budget fields you want to change; expiration updates are supported only for existing user-scoped budgets, and setting `expires_at` to `0` removes the expiration date. The authenticated user must be an organization admin or billing manager.
 ///
@@ -248,8 +199,7 @@ Future<UpdateBudget> billingUpdateBudgetOrg(ClientConfig config,
     required String budgetId,
     SdkOptional<int> budgetAmount = const SdkOmitted(),
     SdkOptional<bool> preventFurtherUsage = const SdkOmitted(),
-    SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting>
-        budgetAlerting = const SdkOmitted(),
+    SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting> budgetAlerting = const SdkOmitted(),
     SdkOptional<dynamic> expiresAt = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<UpdateBudget>('PATCH',
@@ -257,31 +207,18 @@ Future<UpdateBudget> billingUpdateBudgetOrg(ClientConfig config,
           config: config,
           body: {
             'budget_amount': SdkUtils.unwrapOptional(budgetAmount),
-            'prevent_further_usage':
-                SdkUtils.unwrapOptional(preventFurtherUsage),
+            'prevent_further_usage': SdkUtils.unwrapOptional(preventFurtherUsage),
             'budget_alerting': SdkUtils.unwrapOptional(budgetAlerting),
             'expires_at': SdkUtils.unwrapOptional(expiresAt)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingUpdateBudgetOrg',
-          fromJsonRaw: (value) =>
-              UpdateBudget.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => UpdateBudget.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
 ///
@@ -296,19 +233,12 @@ Future<DeleteBudget> billingDeleteBudgetOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'billingDeleteBudgetOrg',
-          fromJsonRaw: (value) =>
-              DeleteBudget.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeleteBudget.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a report of premium request usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account. **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
@@ -340,38 +270,21 @@ Future<BillingPremiumRequestUsageReportOrg>
           '/organizations/${Uri.encodeComponent(org.toString())}/settings/billing/premium_request/usage',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true),
-            'user': SdkQueryValue(SdkUtils.unwrapOptional(user),
-                style: 'form', explode: true),
-            'model': SdkQueryValue(SdkUtils.unwrapOptional(model),
-                style: 'form', explode: true),
-            'product': SdkQueryValue(SdkUtils.unwrapOptional(product),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true),
+            'user': SdkQueryValue(SdkUtils.unwrapOptional(user), style: 'form', explode: true),
+            'model': SdkQueryValue(SdkUtils.unwrapOptional(model), style: 'form', explode: true),
+            'product': SdkQueryValue(SdkUtils.unwrapOptional(product), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingPremiumRequestUsageReportOrg',
-          fromJsonRaw: (value) => BillingPremiumRequestUsageReportOrg.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingPremiumRequestUsageReportOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a report of the total usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account. **Note:** This endpoint is only available to organizations with access to the enhanced billing platform. For more information, see "[About the enhanced billing platform](https://docs.github.com/billing/using-the-new-billing-platform)."
 ///
@@ -385,41 +298,29 @@ Future<BillingPremiumRequestUsageReportOrg>
 /// [day] If specified, only return results for a single day. The value of `day`
 ///   is an integer between `1` and `31`. If no `year` or `month` is specified,
 ///   the default `year` and `month` are used.
-Future<BillingUsageReport> billingGetGithubBillingUsageReportOrg(
-    ClientConfig config,
-    {required String org,
-    SdkOptional<int> year = const SdkOmitted(),
-    SdkOptional<int> month = const SdkOmitted(),
-    SdkOptional<int> day = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BillingUsageReport>
+    billingGetGithubBillingUsageReportOrg(ClientConfig config,
+        {required String org,
+        SdkOptional<int> year = const SdkOmitted(),
+        SdkOptional<int> month = const SdkOmitted(),
+        SdkOptional<int> day = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BillingUsageReport>('GET',
           '/organizations/${Uri.encodeComponent(org.toString())}/settings/billing/usage',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingUsageReportOrg',
-          fromJsonRaw: (value) =>
-              BillingUsageReport.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingUsageReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Gets a summary report of usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account. **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
@@ -452,36 +353,21 @@ Future<BillingUsageSummaryReportOrg>
           '/organizations/${Uri.encodeComponent(org.toString())}/settings/billing/usage/summary',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true),
-            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository),
-                style: 'form', explode: true),
-            'product': SdkQueryValue(SdkUtils.unwrapOptional(product),
-                style: 'form', explode: true),
-            'sku': SdkQueryValue(SdkUtils.unwrapOptional(sku),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true),
+            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository), style: 'form', explode: true),
+            'product': SdkQueryValue(SdkUtils.unwrapOptional(product), style: 'form', explode: true),
+            'sku': SdkQueryValue(SdkUtils.unwrapOptional(sku), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingUsageSummaryReportOrg',
-          fromJsonRaw: (value) => BillingUsageSummaryReportOrg.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingUsageSummaryReportOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a report of AI credit usage for a user. **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
@@ -511,36 +397,20 @@ Future<BillingAiCreditUsageReportUser>
           '/users/${Uri.encodeComponent(username.toString())}/settings/billing/ai_credit/usage',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true),
-            'model': SdkQueryValue(SdkUtils.unwrapOptional(model),
-                style: 'form', explode: true),
-            'product': SdkQueryValue(SdkUtils.unwrapOptional(product),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true),
+            'model': SdkQueryValue(SdkUtils.unwrapOptional(model), style: 'form', explode: true),
+            'product': SdkQueryValue(SdkUtils.unwrapOptional(product), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingAiCreditUsageReportUser',
-          fromJsonRaw: (value) => BillingAiCreditUsageReportUser.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingAiCreditUsageReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a report of premium request usage for a user. **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
@@ -570,36 +440,20 @@ Future<BillingPremiumRequestUsageReportUser>
           '/users/${Uri.encodeComponent(username.toString())}/settings/billing/premium_request/usage',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true),
-            'model': SdkQueryValue(SdkUtils.unwrapOptional(model),
-                style: 'form', explode: true),
-            'product': SdkQueryValue(SdkUtils.unwrapOptional(product),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true),
+            'model': SdkQueryValue(SdkUtils.unwrapOptional(model), style: 'form', explode: true),
+            'product': SdkQueryValue(SdkUtils.unwrapOptional(product), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingPremiumRequestUsageReportUser',
-          fromJsonRaw: (value) => BillingPremiumRequestUsageReportUser.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingPremiumRequestUsageReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a report of the total usage for a user. **Note:** This endpoint is only available to users with access to the enhanced billing platform.
 ///
@@ -613,41 +467,29 @@ Future<BillingPremiumRequestUsageReportUser>
 /// [day] If specified, only return results for a single day. The value of `day`
 ///   is an integer between `1` and `31`. If no `year` or `month` is specified,
 ///   the default `year` and `month` are used.
-Future<BillingUsageReportUser> billingGetGithubBillingUsageReportUser(
-    ClientConfig config,
-    {required String username,
-    SdkOptional<int> year = const SdkOmitted(),
-    SdkOptional<int> month = const SdkOmitted(),
-    SdkOptional<int> day = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<BillingUsageReportUser>
+    billingGetGithubBillingUsageReportUser(ClientConfig config,
+        {required String username,
+        SdkOptional<int> year = const SdkOmitted(),
+        SdkOptional<int> month = const SdkOmitted(),
+        SdkOptional<int> day = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<BillingUsageReportUser>('GET',
           '/users/${Uri.encodeComponent(username.toString())}/settings/billing/usage',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingUsageReportUser',
-          fromJsonRaw: (value) =>
-              BillingUsageReportUser.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingUsageReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Gets a summary report of usage for a user. **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
@@ -680,35 +522,17 @@ Future<BillingUsageSummaryReportUser>
           '/users/${Uri.encodeComponent(username.toString())}/settings/billing/usage/summary',
           config: config,
           query: {
-            'year': SdkQueryValue(SdkUtils.unwrapOptional(year),
-                style: 'form', explode: true),
-            'month': SdkQueryValue(SdkUtils.unwrapOptional(month),
-                style: 'form', explode: true),
-            'day': SdkQueryValue(SdkUtils.unwrapOptional(day),
-                style: 'form', explode: true),
-            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository),
-                style: 'form', explode: true),
-            'product': SdkQueryValue(SdkUtils.unwrapOptional(product),
-                style: 'form', explode: true),
-            'sku': SdkQueryValue(SdkUtils.unwrapOptional(sku),
-                style: 'form', explode: true)
+            'year': SdkQueryValue(SdkUtils.unwrapOptional(year), style: 'form', explode: true),
+            'month': SdkQueryValue(SdkUtils.unwrapOptional(month), style: 'form', explode: true),
+            'day': SdkQueryValue(SdkUtils.unwrapOptional(day), style: 'form', explode: true),
+            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository), style: 'form', explode: true),
+            'product': SdkQueryValue(SdkUtils.unwrapOptional(product), style: 'form', explode: true),
+            'sku': SdkQueryValue(SdkUtils.unwrapOptional(sku), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'billingGetGithubBillingUsageSummaryReportUser',
-          fromJsonRaw: (value) => BillingUsageSummaryReportUser.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BillingUsageSummaryReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

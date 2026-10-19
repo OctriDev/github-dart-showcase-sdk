@@ -8,283 +8,144 @@ part of 'webhook_repository_transferred.dart';
 class WebhookRepositoryTransferredChangesOwnerFrom {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `organization` wire field.
-  final SdkOptional<WebhookRepositoryTransferredChangesOwnerFromOrganization>
-      organization;
-
+  final SdkOptional<WebhookRepositoryTransferredChangesOwnerFromOrganization> organization;
   /// Optional object value serialized in the `user` wire field.
   final SdkOptional<WebhookRepositoryTransferredChangesOwnerFromUser?> user;
 
-  const WebhookRepositoryTransferredChangesOwnerFrom(
-      {this.organization = const SdkOmitted(), this.user = const SdkOmitted()});
+  const WebhookRepositoryTransferredChangesOwnerFrom({this.organization = const SdkOmitted(), this.user = const SdkOmitted()});
 
-  WebhookRepositoryTransferredChangesOwnerFrom Function(
-          {SdkOptional<WebhookRepositoryTransferredChangesOwnerFromOrganization>
-              organization,
-          SdkOptional<WebhookRepositoryTransferredChangesOwnerFromUser?> user})
-      get copyWith => _copyWith;
+  WebhookRepositoryTransferredChangesOwnerFrom Function({SdkOptional<WebhookRepositoryTransferredChangesOwnerFromOrganization> organization, SdkOptional<WebhookRepositoryTransferredChangesOwnerFromUser?> user}) get copyWith => _copyWith;
 
-  WebhookRepositoryTransferredChangesOwnerFrom _copyWith(
-          {Object? organization = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhookRepositoryTransferredChangesOwnerFrom(
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<
-                WebhookRepositoryTransferredChangesOwnerFromOrganization>,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as SdkOptional<
-                WebhookRepositoryTransferredChangesOwnerFromUser?>,
-      );
+  WebhookRepositoryTransferredChangesOwnerFrom _copyWith({Object? organization = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookRepositoryTransferredChangesOwnerFrom(
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<WebhookRepositoryTransferredChangesOwnerFromOrganization>,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<WebhookRepositoryTransferredChangesOwnerFromUser?>,
+  );
 
-  factory WebhookRepositoryTransferredChangesOwnerFrom.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookRepositoryTransferredChangesOwnerFrom(
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? WebhookRepositoryTransferredChangesOwnerFromOrganization
-                    .fromJson(json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        user: json.containsKey('user')
-            ? SdkPresent(json['user'] != null
-                ? WebhookRepositoryTransferredChangesOwnerFromUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory WebhookRepositoryTransferredChangesOwnerFrom.fromJson(Map<String, dynamic> json) => WebhookRepositoryTransferredChangesOwnerFrom(
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    user: json.containsKey('user') ? SdkPresent(json['user'] != null ? WebhookRepositoryTransferredChangesOwnerFromUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (organization) {
-          SdkPresent<WebhookRepositoryTransferredChangesOwnerFromOrganization>(
-            value: final value
-          ) =>
-            {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (user) {
-          SdkPresent<WebhookRepositoryTransferredChangesOwnerFromUser?>(
-            value: final value
-          ) =>
-            {
-              'user': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (organization) {
+      SdkPresent<WebhookRepositoryTransferredChangesOwnerFromOrganization>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (user) {
+      SdkPresent<WebhookRepositoryTransferredChangesOwnerFromUser?>(value: final value) => {'user': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `owner` wire field.
 class WebhookRepositoryTransferredChangesOwner {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `from` wire field.
   final WebhookRepositoryTransferredChangesOwnerFrom from;
 
   const WebhookRepositoryTransferredChangesOwner({required this.from});
 
-  WebhookRepositoryTransferredChangesOwner Function(
-          {WebhookRepositoryTransferredChangesOwnerFrom from})
-      get copyWith => _copyWith;
+  WebhookRepositoryTransferredChangesOwner Function({WebhookRepositoryTransferredChangesOwnerFrom from}) get copyWith => _copyWith;
 
-  WebhookRepositoryTransferredChangesOwner _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookRepositoryTransferredChangesOwner(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as WebhookRepositoryTransferredChangesOwnerFrom,
-      );
+  WebhookRepositoryTransferredChangesOwner _copyWith({Object? from = sdkOmittedValue}) => WebhookRepositoryTransferredChangesOwner(
+    from: identical(from, sdkOmittedValue) ? this.from : from as WebhookRepositoryTransferredChangesOwnerFrom,
+  );
 
-  factory WebhookRepositoryTransferredChangesOwner.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookRepositoryTransferredChangesOwner(
-        from: (json['from'] != null
-            ? WebhookRepositoryTransferredChangesOwnerFrom.fromJson(
-                json['from'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookRepositoryTransferredChangesOwner.fromJson(Map<String, dynamic> json) => WebhookRepositoryTransferredChangesOwner(
+    from: (json['from'] != null ? WebhookRepositoryTransferredChangesOwnerFrom.fromJson(json['from'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from.toJson(),
-      };
+    'from': from.toJson(),
+  };
 }
 
 /// Required object value serialized in the `changes` wire field.
 class WebhookRepositoryTransferredChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `owner` wire field.
   final WebhookRepositoryTransferredChangesOwner owner;
 
   const WebhookRepositoryTransferredChanges({required this.owner});
 
-  WebhookRepositoryTransferredChanges Function(
-          {WebhookRepositoryTransferredChangesOwner owner})
-      get copyWith => _copyWith;
+  WebhookRepositoryTransferredChanges Function({WebhookRepositoryTransferredChangesOwner owner}) get copyWith => _copyWith;
 
-  WebhookRepositoryTransferredChanges _copyWith(
-          {Object? owner = sdkOmittedValue}) =>
-      WebhookRepositoryTransferredChanges(
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as WebhookRepositoryTransferredChangesOwner,
-      );
+  WebhookRepositoryTransferredChanges _copyWith({Object? owner = sdkOmittedValue}) => WebhookRepositoryTransferredChanges(
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as WebhookRepositoryTransferredChangesOwner,
+  );
 
-  factory WebhookRepositoryTransferredChanges.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookRepositoryTransferredChanges(
-        owner: (json['owner'] != null
-            ? WebhookRepositoryTransferredChangesOwner.fromJson(
-                json['owner'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookRepositoryTransferredChanges.fromJson(Map<String, dynamic> json) => WebhookRepositoryTransferredChanges(
+    owner: (json['owner'] != null ? WebhookRepositoryTransferredChangesOwner.fromJson(json['owner'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'owner': owner.toJson(),
-      };
+    'owner': owner.toJson(),
+  };
 }
 
 /// Typed representation of the `WebhookRepositoryTransferred` API schema.
 class WebhookRepositoryTransferred {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookRepositoryTransferredAction action;
-
   /// Required object value serialized in the `changes` wire field.
   final WebhookRepositoryTransferredChanges changes;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookRepositoryTransferred(
-      {required this.action,
-      required this.changes,
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      this.organization = const SdkOmitted(),
-      required this.repository,
-      required this.sender});
+  const WebhookRepositoryTransferred({required this.action, required this.changes, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.repository, required this.sender});
 
-  WebhookRepositoryTransferred Function(
-      {WebhookRepositoryTransferredAction action,
-      WebhookRepositoryTransferredChanges changes,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      RepositoryWebhooks repository,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookRepositoryTransferred Function({WebhookRepositoryTransferredAction action, WebhookRepositoryTransferredChanges changes, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookRepositoryTransferred _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? changes = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookRepositoryTransferred(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookRepositoryTransferredAction,
-        changes: identical(changes, sdkOmittedValue)
-            ? this.changes
-            : changes as WebhookRepositoryTransferredChanges,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookRepositoryTransferred _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookRepositoryTransferred(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookRepositoryTransferredAction,
+    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as WebhookRepositoryTransferredChanges,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookRepositoryTransferred.fromJson(Map<String, dynamic> json) =>
-      WebhookRepositoryTransferred(
-        action: (json['action'] != null
-            ? WebhookRepositoryTransferredAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        changes: (json['changes'] != null
-            ? WebhookRepositoryTransferredChanges.fromJson(
-                json['changes'] as Map<String, dynamic>)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookRepositoryTransferred.fromJson(Map<String, dynamic> json) => WebhookRepositoryTransferred(
+    action: (json['action'] != null ? WebhookRepositoryTransferredAction.fromJson(json['action'] as String) : null)!,
+    changes: (json['changes'] != null ? WebhookRepositoryTransferredChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        'changes': changes.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    'changes': changes.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+  };
 }
