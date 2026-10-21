@@ -11,9 +11,7 @@ class EmptyObject {
 
   const EmptyObject();
 
-  factory EmptyObject.fromJson(Map<String, dynamic> json) => EmptyObject(
-  );
+  factory EmptyObject.fromJson(Map<String, dynamic> json) => EmptyObject();
 
-  Map<String, dynamic> toJson() => {
-  };
+  Map<String, dynamic> toJson() => {};
 }

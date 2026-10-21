@@ -8,161 +8,434 @@ part of 'shared_security.dart';
 class SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the team or role selected as a bypass reviewer
   final int reviewerId;
+
   /// The type of the bypass reviewer
-  final SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType;
+  final SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+      reviewerType;
+
   /// The bypass mode for the reviewer
-  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode> mode;
+  final SdkOptional<
+          SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>
+      mode;
 
-  const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem({required this.reviewerId, required this.reviewerType, this.mode = const SdkOmitted()});
+  const SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
+      {required this.reviewerId,
+      required this.reviewerType,
+      this.mode = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem Function({int reviewerId, SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType, SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode> mode}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem Function(
+      {int reviewerId,
+      SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+          reviewerType,
+      SdkOptional<
+              SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>
+          mode}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem _copyWith({Object? reviewerId = sdkOmittedValue, Object? reviewerType = sdkOmittedValue, Object? mode = sdkOmittedValue}) => SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
-    reviewerId: identical(reviewerId, sdkOmittedValue) ? this.reviewerId : reviewerId as int,
-    reviewerType: identical(reviewerType, sdkOmittedValue) ? this.reviewerType : reviewerType as SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
-    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>,
-  );
+  SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem
+      _copyWith(
+              {Object? reviewerId = sdkOmittedValue,
+              Object? reviewerType = sdkOmittedValue,
+              Object? mode = sdkOmittedValue}) =>
+          SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
+            reviewerId: identical(reviewerId, sdkOmittedValue)
+                ? this.reviewerId
+                : reviewerId as int,
+            reviewerType: identical(reviewerType, sdkOmittedValue)
+                ? this.reviewerType
+                : reviewerType
+                    as SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
+            mode: identical(mode, sdkOmittedValue)
+                ? this.mode
+                : mode as SdkOptional<
+                    SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>,
+          );
 
-  factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
-    reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
-    reviewerType: (json['reviewer_type'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(json['reviewer_type'] as String) : null)!,
-    mode: json['mode'] != null ? SdkPresent((json['mode'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(json['mode'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
+        reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
+        reviewerType: (json['reviewer_type'] != null
+            ? SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+                .fromJson(json['reviewer_type'] as String)
+            : null)!,
+        mode: json['mode'] != null
+            ? SdkPresent((json['mode'] != null
+                ? SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode
+                    .fromJson(json['mode'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'reviewer_id': reviewerId,
-    'reviewer_type': reviewerType.toJson(),
-    ...switch (mode) {
-      SdkPresent<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>(value: final value) => {'mode': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'reviewer_id': reviewerId,
+        'reviewer_type': reviewerType.toJson(),
+        ...switch (mode) {
+          SdkPresent<
+                SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>(
+            value: final value
+          ) =>
+            {
+              'mode': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `secret_scanning_delegated_bypass_options` wire field.
 class SecurityAndAnalysisSecretScanningDelegatedBypassOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The bypass reviewers for secret scanning delegated bypass
-  final SdkOptional<List<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>> reviewers;
+  final SdkOptional<
+          List<
+              SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>
+      reviewers;
 
-  const SecurityAndAnalysisSecretScanningDelegatedBypassOptions({this.reviewers = const SdkOmitted()});
+  const SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+      {this.reviewers = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanningDelegatedBypassOptions Function({SdkOptional<List<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>> reviewers}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanningDelegatedBypassOptions Function(
+      {SdkOptional<
+              List<
+                  SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>
+          reviewers}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanningDelegatedBypassOptions _copyWith({Object? reviewers = sdkOmittedValue}) => SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
-    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>,
-  );
+  SecurityAndAnalysisSecretScanningDelegatedBypassOptions _copyWith(
+          {Object? reviewers = sdkOmittedValue}) =>
+      SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+        reviewers: identical(reviewers, sdkOmittedValue)
+            ? this.reviewers
+            : reviewers as SdkOptional<
+                List<
+                    SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>,
+      );
 
-  factory SecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
-    reviewers: json['reviewers'] != null ? SdkPresent(((json['reviewers'] as List?)?.map((e) => SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+        reviewers: json['reviewers'] != null
+            ? SdkPresent(((json['reviewers'] as List?)
+                ?.map((e) =>
+                    SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (reviewers) {
-      SdkPresent<List<SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>(value: final value) => {'reviewers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reviewers) {
+          SdkPresent<
+                List<
+                    SecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>(
+            value: final value
+          ) =>
+            {
+              'reviewers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `SecurityAndAnalysis` API schema.
 class SecurityAndAnalysis {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Enable or disable GitHub Advanced Security for the repository. For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
   final SdkOptional<SecurityAndAnalysisAdvancedSecurity> advancedSecurity;
+
   /// Optional object value serialized in the `code_security` wire field.
   final SdkOptional<SecurityAndAnalysisCodeSecurity> codeSecurity;
+
   /// Enable or disable Dependabot security updates for the repository.
-  final SdkOptional<SecurityAndAnalysisDependabotSecurityUpdates> dependabotSecurityUpdates;
+  final SdkOptional<SecurityAndAnalysisDependabotSecurityUpdates>
+      dependabotSecurityUpdates;
+
   /// Optional object value serialized in the `secret_scanning` wire field.
   final SdkOptional<SecurityAndAnalysisSecretScanning> secretScanning;
+
   /// Optional object value serialized in the `secret_scanning_push_protection` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningPushProtection> secretScanningPushProtection;
+  final SdkOptional<SecurityAndAnalysisSecretScanningPushProtection>
+      secretScanningPushProtection;
+
   /// Optional object value serialized in the `secret_scanning_non_provider_patterns` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatterns> secretScanningNonProviderPatterns;
+  final SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatterns>
+      secretScanningNonProviderPatterns;
+
   /// Optional object value serialized in the `secret_scanning_ai_detection` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningAiDetection> secretScanningAiDetection;
+  final SdkOptional<SecurityAndAnalysisSecretScanningAiDetection>
+      secretScanningAiDetection;
+
   /// Optional object value serialized in the `secret_scanning_delegated_alert_dismissal` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal;
+  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissal>
+      secretScanningDelegatedAlertDismissal;
+
   /// Optional object value serialized in the `secret_scanning_delegated_bypass` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypass> secretScanningDelegatedBypass;
+  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypass>
+      secretScanningDelegatedBypass;
+
   /// Optional object value serialized in the `secret_scanning_delegated_bypass_options` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions;
+  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptions>
+      secretScanningDelegatedBypassOptions;
 
-  const SecurityAndAnalysis({this.advancedSecurity = const SdkOmitted(), this.codeSecurity = const SdkOmitted(), this.dependabotSecurityUpdates = const SdkOmitted(), this.secretScanning = const SdkOmitted(), this.secretScanningPushProtection = const SdkOmitted(), this.secretScanningNonProviderPatterns = const SdkOmitted(), this.secretScanningAiDetection = const SdkOmitted(), this.secretScanningDelegatedAlertDismissal = const SdkOmitted(), this.secretScanningDelegatedBypass = const SdkOmitted(), this.secretScanningDelegatedBypassOptions = const SdkOmitted()});
+  const SecurityAndAnalysis(
+      {this.advancedSecurity = const SdkOmitted(),
+      this.codeSecurity = const SdkOmitted(),
+      this.dependabotSecurityUpdates = const SdkOmitted(),
+      this.secretScanning = const SdkOmitted(),
+      this.secretScanningPushProtection = const SdkOmitted(),
+      this.secretScanningNonProviderPatterns = const SdkOmitted(),
+      this.secretScanningAiDetection = const SdkOmitted(),
+      this.secretScanningDelegatedAlertDismissal = const SdkOmitted(),
+      this.secretScanningDelegatedBypass = const SdkOmitted(),
+      this.secretScanningDelegatedBypassOptions = const SdkOmitted()});
 
-  SecurityAndAnalysis Function({SdkOptional<SecurityAndAnalysisAdvancedSecurity> advancedSecurity, SdkOptional<SecurityAndAnalysisCodeSecurity> codeSecurity, SdkOptional<SecurityAndAnalysisDependabotSecurityUpdates> dependabotSecurityUpdates, SdkOptional<SecurityAndAnalysisSecretScanning> secretScanning, SdkOptional<SecurityAndAnalysisSecretScanningPushProtection> secretScanningPushProtection, SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatterns> secretScanningNonProviderPatterns, SdkOptional<SecurityAndAnalysisSecretScanningAiDetection> secretScanningAiDetection, SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal, SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypass> secretScanningDelegatedBypass, SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions}) get copyWith => _copyWith;
+  SecurityAndAnalysis Function(
+      {SdkOptional<SecurityAndAnalysisAdvancedSecurity> advancedSecurity,
+      SdkOptional<SecurityAndAnalysisCodeSecurity> codeSecurity,
+      SdkOptional<SecurityAndAnalysisDependabotSecurityUpdates>
+          dependabotSecurityUpdates,
+      SdkOptional<SecurityAndAnalysisSecretScanning> secretScanning,
+      SdkOptional<SecurityAndAnalysisSecretScanningPushProtection>
+          secretScanningPushProtection,
+      SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatterns>
+          secretScanningNonProviderPatterns,
+      SdkOptional<SecurityAndAnalysisSecretScanningAiDetection>
+          secretScanningAiDetection,
+      SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissal>
+          secretScanningDelegatedAlertDismissal,
+      SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypass>
+          secretScanningDelegatedBypass,
+      SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptions>
+          secretScanningDelegatedBypassOptions}) get copyWith => _copyWith;
 
-  SecurityAndAnalysis _copyWith({Object? advancedSecurity = sdkOmittedValue, Object? codeSecurity = sdkOmittedValue, Object? dependabotSecurityUpdates = sdkOmittedValue, Object? secretScanning = sdkOmittedValue, Object? secretScanningPushProtection = sdkOmittedValue, Object? secretScanningNonProviderPatterns = sdkOmittedValue, Object? secretScanningAiDetection = sdkOmittedValue, Object? secretScanningDelegatedAlertDismissal = sdkOmittedValue, Object? secretScanningDelegatedBypass = sdkOmittedValue, Object? secretScanningDelegatedBypassOptions = sdkOmittedValue}) => SecurityAndAnalysis(
-    advancedSecurity: identical(advancedSecurity, sdkOmittedValue) ? this.advancedSecurity : advancedSecurity as SdkOptional<SecurityAndAnalysisAdvancedSecurity>,
-    codeSecurity: identical(codeSecurity, sdkOmittedValue) ? this.codeSecurity : codeSecurity as SdkOptional<SecurityAndAnalysisCodeSecurity>,
-    dependabotSecurityUpdates: identical(dependabotSecurityUpdates, sdkOmittedValue) ? this.dependabotSecurityUpdates : dependabotSecurityUpdates as SdkOptional<SecurityAndAnalysisDependabotSecurityUpdates>,
-    secretScanning: identical(secretScanning, sdkOmittedValue) ? this.secretScanning : secretScanning as SdkOptional<SecurityAndAnalysisSecretScanning>,
-    secretScanningPushProtection: identical(secretScanningPushProtection, sdkOmittedValue) ? this.secretScanningPushProtection : secretScanningPushProtection as SdkOptional<SecurityAndAnalysisSecretScanningPushProtection>,
-    secretScanningNonProviderPatterns: identical(secretScanningNonProviderPatterns, sdkOmittedValue) ? this.secretScanningNonProviderPatterns : secretScanningNonProviderPatterns as SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatterns>,
-    secretScanningAiDetection: identical(secretScanningAiDetection, sdkOmittedValue) ? this.secretScanningAiDetection : secretScanningAiDetection as SdkOptional<SecurityAndAnalysisSecretScanningAiDetection>,
-    secretScanningDelegatedAlertDismissal: identical(secretScanningDelegatedAlertDismissal, sdkOmittedValue) ? this.secretScanningDelegatedAlertDismissal : secretScanningDelegatedAlertDismissal as SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissal>,
-    secretScanningDelegatedBypass: identical(secretScanningDelegatedBypass, sdkOmittedValue) ? this.secretScanningDelegatedBypass : secretScanningDelegatedBypass as SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypass>,
-    secretScanningDelegatedBypassOptions: identical(secretScanningDelegatedBypassOptions, sdkOmittedValue) ? this.secretScanningDelegatedBypassOptions : secretScanningDelegatedBypassOptions as SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassOptions>,
-  );
+  SecurityAndAnalysis _copyWith(
+          {Object? advancedSecurity = sdkOmittedValue,
+          Object? codeSecurity = sdkOmittedValue,
+          Object? dependabotSecurityUpdates = sdkOmittedValue,
+          Object? secretScanning = sdkOmittedValue,
+          Object? secretScanningPushProtection = sdkOmittedValue,
+          Object? secretScanningNonProviderPatterns = sdkOmittedValue,
+          Object? secretScanningAiDetection = sdkOmittedValue,
+          Object? secretScanningDelegatedAlertDismissal = sdkOmittedValue,
+          Object? secretScanningDelegatedBypass = sdkOmittedValue,
+          Object? secretScanningDelegatedBypassOptions = sdkOmittedValue}) =>
+      SecurityAndAnalysis(
+        advancedSecurity: identical(advancedSecurity, sdkOmittedValue)
+            ? this.advancedSecurity
+            : advancedSecurity
+                as SdkOptional<SecurityAndAnalysisAdvancedSecurity>,
+        codeSecurity: identical(codeSecurity, sdkOmittedValue)
+            ? this.codeSecurity
+            : codeSecurity as SdkOptional<SecurityAndAnalysisCodeSecurity>,
+        dependabotSecurityUpdates: identical(
+                dependabotSecurityUpdates, sdkOmittedValue)
+            ? this.dependabotSecurityUpdates
+            : dependabotSecurityUpdates
+                as SdkOptional<SecurityAndAnalysisDependabotSecurityUpdates>,
+        secretScanning: identical(secretScanning, sdkOmittedValue)
+            ? this.secretScanning
+            : secretScanning as SdkOptional<SecurityAndAnalysisSecretScanning>,
+        secretScanningPushProtection: identical(
+                secretScanningPushProtection, sdkOmittedValue)
+            ? this.secretScanningPushProtection
+            : secretScanningPushProtection
+                as SdkOptional<SecurityAndAnalysisSecretScanningPushProtection>,
+        secretScanningNonProviderPatterns:
+            identical(secretScanningNonProviderPatterns, sdkOmittedValue)
+                ? this.secretScanningNonProviderPatterns
+                : secretScanningNonProviderPatterns as SdkOptional<
+                    SecurityAndAnalysisSecretScanningNonProviderPatterns>,
+        secretScanningAiDetection: identical(
+                secretScanningAiDetection, sdkOmittedValue)
+            ? this.secretScanningAiDetection
+            : secretScanningAiDetection
+                as SdkOptional<SecurityAndAnalysisSecretScanningAiDetection>,
+        secretScanningDelegatedAlertDismissal:
+            identical(secretScanningDelegatedAlertDismissal, sdkOmittedValue)
+                ? this.secretScanningDelegatedAlertDismissal
+                : secretScanningDelegatedAlertDismissal as SdkOptional<
+                    SecurityAndAnalysisSecretScanningDelegatedAlertDismissal>,
+        secretScanningDelegatedBypass:
+            identical(secretScanningDelegatedBypass, sdkOmittedValue)
+                ? this.secretScanningDelegatedBypass
+                : secretScanningDelegatedBypass as SdkOptional<
+                    SecurityAndAnalysisSecretScanningDelegatedBypass>,
+        secretScanningDelegatedBypassOptions:
+            identical(secretScanningDelegatedBypassOptions, sdkOmittedValue)
+                ? this.secretScanningDelegatedBypassOptions
+                : secretScanningDelegatedBypassOptions as SdkOptional<
+                    SecurityAndAnalysisSecretScanningDelegatedBypassOptions>,
+      );
 
-  factory SecurityAndAnalysis.fromJson(Map<String, dynamic> json) => SecurityAndAnalysis(
-    advancedSecurity: json['advanced_security'] != null ? SdkPresent((json['advanced_security'] != null ? SecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    codeSecurity: json['code_security'] != null ? SdkPresent((json['code_security'] != null ? SecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    dependabotSecurityUpdates: json['dependabot_security_updates'] != null ? SdkPresent((json['dependabot_security_updates'] != null ? SecurityAndAnalysisDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    secretScanning: json['secret_scanning'] != null ? SdkPresent((json['secret_scanning'] != null ? SecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? SdkPresent((json['secret_scanning_push_protection'] != null ? SecurityAndAnalysisSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? SdkPresent((json['secret_scanning_non_provider_patterns'] != null ? SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    secretScanningAiDetection: json['secret_scanning_ai_detection'] != null ? SdkPresent((json['secret_scanning_ai_detection'] != null ? SecurityAndAnalysisSecretScanningAiDetection.fromJson(json['secret_scanning_ai_detection'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? SdkPresent((json['secret_scanning_delegated_alert_dismissal'] != null ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? SdkPresent((json['secret_scanning_delegated_bypass'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? SdkPresent((json['secret_scanning_delegated_bypass_options'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysis.fromJson(Map<String, dynamic> json) =>
+      SecurityAndAnalysis(
+        advancedSecurity: json['advanced_security'] != null
+            ? SdkPresent((json['advanced_security'] != null
+                ? SecurityAndAnalysisAdvancedSecurity.fromJson(
+                    json['advanced_security'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        codeSecurity: json['code_security'] != null
+            ? SdkPresent((json['code_security'] != null
+                ? SecurityAndAnalysisCodeSecurity.fromJson(
+                    json['code_security'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        dependabotSecurityUpdates: json['dependabot_security_updates'] != null
+            ? SdkPresent((json['dependabot_security_updates'] != null
+                ? SecurityAndAnalysisDependabotSecurityUpdates.fromJson(
+                    json['dependabot_security_updates'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        secretScanning: json['secret_scanning'] != null
+            ? SdkPresent((json['secret_scanning'] != null
+                ? SecurityAndAnalysisSecretScanning.fromJson(
+                    json['secret_scanning'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        secretScanningPushProtection:
+            json['secret_scanning_push_protection'] != null
+                ? SdkPresent((json['secret_scanning_push_protection'] != null
+                    ? SecurityAndAnalysisSecretScanningPushProtection.fromJson(
+                        json['secret_scanning_push_protection']
+                            as Map<String, dynamic>)
+                    : null)!)
+                : const SdkOmitted(),
+        secretScanningNonProviderPatterns: json[
+                    'secret_scanning_non_provider_patterns'] !=
+                null
+            ? SdkPresent((json['secret_scanning_non_provider_patterns'] != null
+                ? SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(
+                    json['secret_scanning_non_provider_patterns']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        secretScanningAiDetection: json['secret_scanning_ai_detection'] != null
+            ? SdkPresent((json['secret_scanning_ai_detection'] != null
+                ? SecurityAndAnalysisSecretScanningAiDetection.fromJson(
+                    json['secret_scanning_ai_detection']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        secretScanningDelegatedAlertDismissal: json[
+                    'secret_scanning_delegated_alert_dismissal'] !=
+                null
+            ? SdkPresent((json['secret_scanning_delegated_alert_dismissal'] !=
+                    null
+                ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissal
+                    .fromJson(json['secret_scanning_delegated_alert_dismissal']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        secretScanningDelegatedBypass:
+            json['secret_scanning_delegated_bypass'] != null
+                ? SdkPresent((json['secret_scanning_delegated_bypass'] != null
+                    ? SecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(
+                        json['secret_scanning_delegated_bypass']
+                            as Map<String, dynamic>)
+                    : null)!)
+                : const SdkOmitted(),
+        secretScanningDelegatedBypassOptions: json[
+                    'secret_scanning_delegated_bypass_options'] !=
+                null
+            ? SdkPresent((json['secret_scanning_delegated_bypass_options'] !=
+                    null
+                ? SecurityAndAnalysisSecretScanningDelegatedBypassOptions
+                    .fromJson(json['secret_scanning_delegated_bypass_options']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (advancedSecurity) {
-      SdkPresent<SecurityAndAnalysisAdvancedSecurity>(value: final value) => {'advanced_security': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (codeSecurity) {
-      SdkPresent<SecurityAndAnalysisCodeSecurity>(value: final value) => {'code_security': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dependabotSecurityUpdates) {
-      SdkPresent<SecurityAndAnalysisDependabotSecurityUpdates>(value: final value) => {'dependabot_security_updates': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanning) {
-      SdkPresent<SecurityAndAnalysisSecretScanning>(value: final value) => {'secret_scanning': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningPushProtection) {
-      SdkPresent<SecurityAndAnalysisSecretScanningPushProtection>(value: final value) => {'secret_scanning_push_protection': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningNonProviderPatterns) {
-      SdkPresent<SecurityAndAnalysisSecretScanningNonProviderPatterns>(value: final value) => {'secret_scanning_non_provider_patterns': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningAiDetection) {
-      SdkPresent<SecurityAndAnalysisSecretScanningAiDetection>(value: final value) => {'secret_scanning_ai_detection': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningDelegatedAlertDismissal) {
-      SdkPresent<SecurityAndAnalysisSecretScanningDelegatedAlertDismissal>(value: final value) => {'secret_scanning_delegated_alert_dismissal': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningDelegatedBypass) {
-      SdkPresent<SecurityAndAnalysisSecretScanningDelegatedBypass>(value: final value) => {'secret_scanning_delegated_bypass': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningDelegatedBypassOptions) {
-      SdkPresent<SecurityAndAnalysisSecretScanningDelegatedBypassOptions>(value: final value) => {'secret_scanning_delegated_bypass_options': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (advancedSecurity) {
+          SdkPresent<SecurityAndAnalysisAdvancedSecurity>(value: final value) =>
+            {
+              'advanced_security': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (codeSecurity) {
+          SdkPresent<SecurityAndAnalysisCodeSecurity>(value: final value) => {
+              'code_security': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dependabotSecurityUpdates) {
+          SdkPresent<SecurityAndAnalysisDependabotSecurityUpdates>(
+            value: final value
+          ) =>
+            {
+              'dependabot_security_updates': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanning) {
+          SdkPresent<SecurityAndAnalysisSecretScanning>(value: final value) => {
+              'secret_scanning': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningPushProtection) {
+          SdkPresent<SecurityAndAnalysisSecretScanningPushProtection>(
+            value: final value
+          ) =>
+            {
+              'secret_scanning_push_protection': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningNonProviderPatterns) {
+          SdkPresent<SecurityAndAnalysisSecretScanningNonProviderPatterns>(
+            value: final value
+          ) =>
+            {
+              'secret_scanning_non_provider_patterns': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningAiDetection) {
+          SdkPresent<SecurityAndAnalysisSecretScanningAiDetection>(
+            value: final value
+          ) =>
+            {
+              'secret_scanning_ai_detection': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningDelegatedAlertDismissal) {
+          SdkPresent<SecurityAndAnalysisSecretScanningDelegatedAlertDismissal>(
+            value: final value
+          ) =>
+            {
+              'secret_scanning_delegated_alert_dismissal': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningDelegatedBypass) {
+          SdkPresent<SecurityAndAnalysisSecretScanningDelegatedBypass>(
+            value: final value
+          ) =>
+            {
+              'secret_scanning_delegated_bypass': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningDelegatedBypassOptions) {
+          SdkPresent<SecurityAndAnalysisSecretScanningDelegatedBypassOptions>(
+            value: final value
+          ) =>
+            {
+              'secret_scanning_delegated_bypass_options': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

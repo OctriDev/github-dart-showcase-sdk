@@ -6,286 +6,445 @@ part of 'inline.dart';
 // Inline operation models (part 143)
 /// How the author is associated with the repository.
 final class WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(this.value);
+  const WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.fromJson(String value) => WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(value);
+  factory WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(value);
 
-  static const collaborator = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('MANNEQUIN');
-  static const member = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('MEMBER');
-  static const none = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('NONE');
-  static const owner = WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('OWNER');
+  static const collaborator =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(
+          'COLLABORATOR');
+  static const contributor =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(
+          'CONTRIBUTOR');
+  static const firstTimer =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(
+          'FIRST_TIMER');
+  static const firstTimeContributor =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(
+          'FIRST_TIME_CONTRIBUTOR');
+  static const mannequin =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(
+          'MANNEQUIN');
+  static const member =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._(
+          'MEMBER');
+  static const none =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('NONE');
+  static const owner =
+      WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation._('OWNER');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The side of the first line of the range for a multi-line comment.
 final class WebhookPullRequestReviewCommentCreatedCommentSide {
-
   final String value;
 
   const WebhookPullRequestReviewCommentCreatedCommentSide._(this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedCommentSide.fromJson(String value) => WebhookPullRequestReviewCommentCreatedCommentSide._(value);
+  factory WebhookPullRequestReviewCommentCreatedCommentSide.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedCommentSide._(value);
 
-  static const left = WebhookPullRequestReviewCommentCreatedCommentSide._('LEFT');
-  static const right = WebhookPullRequestReviewCommentCreatedCommentSide._('RIGHT');
+  static const left =
+      WebhookPullRequestReviewCommentCreatedCommentSide._('LEFT');
+  static const right =
+      WebhookPullRequestReviewCommentCreatedCommentSide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedCommentSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestReviewCommentCreatedCommentSide &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The side of the first line of the range for a multi-line comment.
 final class WebhookPullRequestReviewCommentCreatedCommentStartSide {
-
   final String value;
 
   const WebhookPullRequestReviewCommentCreatedCommentStartSide._(this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedCommentStartSide.fromJson(String value) => WebhookPullRequestReviewCommentCreatedCommentStartSide._(value);
+  factory WebhookPullRequestReviewCommentCreatedCommentStartSide.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedCommentStartSide._(value);
 
-  static const left = WebhookPullRequestReviewCommentCreatedCommentStartSide._('LEFT');
-  static const right = WebhookPullRequestReviewCommentCreatedCommentStartSide._('RIGHT');
+  static const left =
+      WebhookPullRequestReviewCommentCreatedCommentStartSide._('LEFT');
+  static const right =
+      WebhookPullRequestReviewCommentCreatedCommentStartSide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedCommentStartSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestReviewCommentCreatedCommentStartSide &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level at which the comment is targeted, can be a diff line or a file.
 final class WebhookPullRequestReviewCommentCreatedCommentSubjectType {
-
   final String value;
 
   const WebhookPullRequestReviewCommentCreatedCommentSubjectType._(this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedCommentSubjectType.fromJson(String value) => WebhookPullRequestReviewCommentCreatedCommentSubjectType._(value);
+  factory WebhookPullRequestReviewCommentCreatedCommentSubjectType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedCommentSubjectType._(value);
 
-  static const line = WebhookPullRequestReviewCommentCreatedCommentSubjectType._('line');
-  static const file = WebhookPullRequestReviewCommentCreatedCommentSubjectType._('file');
+  static const line =
+      WebhookPullRequestReviewCommentCreatedCommentSubjectType._('line');
+  static const file =
+      WebhookPullRequestReviewCommentCreatedCommentSubjectType._('file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedCommentSubjectType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestReviewCommentCreatedCommentSubjectType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewCommentCreatedCommentUserType {
-
   final String value;
 
   const WebhookPullRequestReviewCommentCreatedCommentUserType._(this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedCommentUserType.fromJson(String value) => WebhookPullRequestReviewCommentCreatedCommentUserType._(value);
+  factory WebhookPullRequestReviewCommentCreatedCommentUserType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedCommentUserType._(value);
 
-  static const bot = WebhookPullRequestReviewCommentCreatedCommentUserType._('Bot');
-  static const user = WebhookPullRequestReviewCommentCreatedCommentUserType._('User');
-  static const organization = WebhookPullRequestReviewCommentCreatedCommentUserType._('Organization');
+  static const bot =
+      WebhookPullRequestReviewCommentCreatedCommentUserType._('Bot');
+  static const user =
+      WebhookPullRequestReviewCommentCreatedCommentUserType._('User');
+  static const organization =
+      WebhookPullRequestReviewCommentCreatedCommentUserType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedCommentUserType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestReviewCommentCreatedCommentUserType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `active_lock_reason` wire field.
 final class WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason.fromJson(String value) => WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(
+          value);
 
-  static const resolved = WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._('resolved');
-  static const offTopic = WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._('off-topic');
-  static const tooHeated = WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._('too heated');
-  static const spam = WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._('spam');
+  static const resolved =
+      WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(
+          'resolved');
+  static const offTopic =
+      WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(
+          'off-topic');
+  static const tooHeated =
+      WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(
+          'too heated');
+  static const spam =
+      WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(
+          'spam');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.fromJson(String value) => WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._(value);
 
-  static const bot = WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._('Bot');
-  static const user = WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._('User');
-  static const organization = WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._('Organization');
-  static const mannequin = WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._('Mannequin');
+  static const bot =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._('Bot');
+  static const user =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._('User');
+  static const organization =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._(
+          'Organization');
+  static const mannequin =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType._(
+          'Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType.fromJson(String value) => WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(
+          value);
 
-  static const bot = WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._('Bot');
-  static const user = WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._('User');
-  static const organization = WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._('Organization');
-  static const mannequin = WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._('Mannequin');
+  static const bot =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(
+          'Bot');
+  static const user =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(
+          'User');
+  static const organization =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(
+          'Organization');
+  static const mannequin =
+      WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType._(
+          'Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestAssigneesItemType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// How the author is associated with the repository.
 final class WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJson(String value) => WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          value);
 
-  static const collaborator = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('MANNEQUIN');
-  static const member = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('MEMBER');
-  static const none = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('NONE');
-  static const owner = WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._('OWNER');
+  static const collaborator =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'COLLABORATOR');
+  static const contributor =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'CONTRIBUTOR');
+  static const firstTimer =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'FIRST_TIMER');
+  static const firstTimeContributor =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'FIRST_TIME_CONTRIBUTOR');
+  static const mannequin =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'MANNEQUIN');
+  static const member =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'MEMBER');
+  static const none =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'NONE');
+  static const owner =
+      WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(
+          'OWNER');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType.fromJson(String value) => WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._(
+          value);
 
-  static const bot = WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._('Bot');
-  static const user = WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._('User');
-  static const organization = WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._('Organization');
+  static const bot =
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._(
+          'Bot');
+  static const user =
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._(
+          'User');
+  static const organization =
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType._(
+          'Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeEnabledByType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The merge method to use.
 final class WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod.fromJson(String value) => WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._(
+          value);
 
-  static const merge = WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._('merge');
-  static const squash = WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._('squash');
-  static const rebase = WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._('rebase');
+  static const merge =
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._(
+          'merge');
+  static const squash =
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._(
+          'squash');
+  static const rebase =
+      WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod._(
+          'rebase');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestAutoMergeMergeMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage {
-
   final String value;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage._(
+      this.value);
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage.fromJson(String value) => WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage
+          ._(value);
 
-  static const prBody = WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage._('PR_BODY');
-  static const prTitle = WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage._('PR_TITLE');
-  static const blank = WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage._('BLANK');
+  static const prBody =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage
+          ._('PR_BODY');
+  static const prTitle =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage
+          ._('PR_TITLE');
+  static const blank =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage
+          ._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

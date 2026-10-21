@@ -8,340 +8,767 @@ part of 'teams.dart';
 class TeamOrganization {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `repos_url` wire field.
   final String reposUrl;
+
   /// Required `uri`-formatted value serialized in the `events_url` wire field.
   final String eventsUrl;
+
   /// Required `string` value serialized in the `hooks_url` wire field.
   final String hooksUrl;
+
   /// Required `string` value serialized in the `issues_url` wire field.
   final String issuesUrl;
+
   /// Required `string` value serialized in the `members_url` wire field.
   final String membersUrl;
+
   /// Required `string` value serialized in the `public_members_url` wire field.
   final String publicMembersUrl;
+
   /// Required `string` value serialized in the `avatar_url` wire field.
   final String avatarUrl;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `company` wire field.
   final SdkOptional<String?> company;
+
   /// Optional `uri`-formatted value serialized in the `blog` wire field.
   final SdkOptional<String?> blog;
+
   /// Optional `string` value serialized in the `location` wire field.
   final SdkOptional<String?> location;
+
   /// Optional `email`-formatted value serialized in the `email` wire field.
   final SdkOptional<String?> email;
+
   /// Optional `string` value serialized in the `twitter_username` wire field.
   final SdkOptional<String?> twitterUsername;
+
   /// Optional `boolean` value serialized in the `is_verified` wire field.
   final SdkOptional<bool> isVerified;
+
   /// Required `boolean` value serialized in the `has_organization_projects` wire field.
   final bool hasOrganizationProjects;
+
   /// Required `boolean` value serialized in the `has_repository_projects` wire field.
   final bool hasRepositoryProjects;
+
   /// Required `integer` value serialized in the `public_repos` wire field.
   final int publicRepos;
+
   /// Required `integer` value serialized in the `public_gists` wire field.
   final int publicGists;
+
   /// Required `integer` value serialized in the `followers` wire field.
   final int followers;
+
   /// Required `integer` value serialized in the `following` wire field.
   final int following;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Optional `integer` value serialized in the `total_private_repos` wire field.
   final SdkOptional<int> totalPrivateRepos;
+
   /// Optional `integer` value serialized in the `owned_private_repos` wire field.
   final SdkOptional<int> ownedPrivateRepos;
+
   /// Optional `integer` value serialized in the `private_gists` wire field.
   final SdkOptional<int?> privateGists;
+
   /// Optional `integer` value serialized in the `disk_usage` wire field.
   final SdkOptional<int?> diskUsage;
+
   /// Optional `integer` value serialized in the `collaborators` wire field.
   final SdkOptional<int?> collaborators;
+
   /// Optional `email`-formatted value serialized in the `billing_email` wire field.
   final SdkOptional<String?> billingEmail;
+
   /// Optional object value serialized in the `plan` wire field.
   final SdkOptional<TeamOrganizationPlan> plan;
+
   /// Optional `string` value serialized in the `default_repository_permission` wire field.
   final SdkOptional<String?> defaultRepositoryPermission;
+
   /// Optional `boolean` value serialized in the `members_can_create_repositories` wire field.
   final SdkOptional<bool?> membersCanCreateRepositories;
+
   /// Optional `boolean` value serialized in the `two_factor_requirement_enabled` wire field.
   final SdkOptional<bool?> twoFactorRequirementEnabled;
+
   /// Optional `string` value serialized in the `members_allowed_repository_creation_type` wire field.
   final SdkOptional<String> membersAllowedRepositoryCreationType;
+
   /// Optional `boolean` value serialized in the `members_can_create_public_repositories` wire field.
   final SdkOptional<bool> membersCanCreatePublicRepositories;
+
   /// Optional `boolean` value serialized in the `members_can_create_private_repositories` wire field.
   final SdkOptional<bool> membersCanCreatePrivateRepositories;
+
   /// Optional `boolean` value serialized in the `members_can_create_internal_repositories` wire field.
   final SdkOptional<bool> membersCanCreateInternalRepositories;
+
   /// Optional `boolean` value serialized in the `members_can_create_pages` wire field.
   final SdkOptional<bool> membersCanCreatePages;
+
   /// Optional `boolean` value serialized in the `members_can_create_public_pages` wire field.
   final SdkOptional<bool> membersCanCreatePublicPages;
+
   /// Optional `boolean` value serialized in the `members_can_create_private_pages` wire field.
   final SdkOptional<bool> membersCanCreatePrivatePages;
+
   /// Optional `boolean` value serialized in the `members_can_fork_private_repositories` wire field.
   final SdkOptional<bool?> membersCanForkPrivateRepositories;
+
   /// Optional `boolean` value serialized in the `web_commit_signoff_required` wire field.
   final SdkOptional<bool> webCommitSignoffRequired;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `date-time`-formatted value serialized in the `archived_at` wire field.
   final String? archivedAt;
 
-  const TeamOrganization({required this.login, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, this.name = const SdkOmitted(), this.company = const SdkOmitted(), this.blog = const SdkOmitted(), this.location = const SdkOmitted(), this.email = const SdkOmitted(), this.twitterUsername = const SdkOmitted(), this.isVerified = const SdkOmitted(), required this.hasOrganizationProjects, required this.hasRepositoryProjects, required this.publicRepos, required this.publicGists, required this.followers, required this.following, required this.htmlUrl, required this.createdAt, required this.type_, this.totalPrivateRepos = const SdkOmitted(), this.ownedPrivateRepos = const SdkOmitted(), this.privateGists = const SdkOmitted(), this.diskUsage = const SdkOmitted(), this.collaborators = const SdkOmitted(), this.billingEmail = const SdkOmitted(), this.plan = const SdkOmitted(), this.defaultRepositoryPermission = const SdkOmitted(), this.membersCanCreateRepositories = const SdkOmitted(), this.twoFactorRequirementEnabled = const SdkOmitted(), this.membersAllowedRepositoryCreationType = const SdkOmitted(), this.membersCanCreatePublicRepositories = const SdkOmitted(), this.membersCanCreatePrivateRepositories = const SdkOmitted(), this.membersCanCreateInternalRepositories = const SdkOmitted(), this.membersCanCreatePages = const SdkOmitted(), this.membersCanCreatePublicPages = const SdkOmitted(), this.membersCanCreatePrivatePages = const SdkOmitted(), this.membersCanForkPrivateRepositories = const SdkOmitted(), this.webCommitSignoffRequired = const SdkOmitted(), required this.updatedAt, required this.archivedAt});
+  const TeamOrganization(
+      {required this.login,
+      required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.reposUrl,
+      required this.eventsUrl,
+      required this.hooksUrl,
+      required this.issuesUrl,
+      required this.membersUrl,
+      required this.publicMembersUrl,
+      required this.avatarUrl,
+      required this.description,
+      this.name = const SdkOmitted(),
+      this.company = const SdkOmitted(),
+      this.blog = const SdkOmitted(),
+      this.location = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.twitterUsername = const SdkOmitted(),
+      this.isVerified = const SdkOmitted(),
+      required this.hasOrganizationProjects,
+      required this.hasRepositoryProjects,
+      required this.publicRepos,
+      required this.publicGists,
+      required this.followers,
+      required this.following,
+      required this.htmlUrl,
+      required this.createdAt,
+      required this.type_,
+      this.totalPrivateRepos = const SdkOmitted(),
+      this.ownedPrivateRepos = const SdkOmitted(),
+      this.privateGists = const SdkOmitted(),
+      this.diskUsage = const SdkOmitted(),
+      this.collaborators = const SdkOmitted(),
+      this.billingEmail = const SdkOmitted(),
+      this.plan = const SdkOmitted(),
+      this.defaultRepositoryPermission = const SdkOmitted(),
+      this.membersCanCreateRepositories = const SdkOmitted(),
+      this.twoFactorRequirementEnabled = const SdkOmitted(),
+      this.membersAllowedRepositoryCreationType = const SdkOmitted(),
+      this.membersCanCreatePublicRepositories = const SdkOmitted(),
+      this.membersCanCreatePrivateRepositories = const SdkOmitted(),
+      this.membersCanCreateInternalRepositories = const SdkOmitted(),
+      this.membersCanCreatePages = const SdkOmitted(),
+      this.membersCanCreatePublicPages = const SdkOmitted(),
+      this.membersCanCreatePrivatePages = const SdkOmitted(),
+      this.membersCanForkPrivateRepositories = const SdkOmitted(),
+      this.webCommitSignoffRequired = const SdkOmitted(),
+      required this.updatedAt,
+      required this.archivedAt});
 
-  TeamOrganization Function({String login, int id, String nodeId, String url, String reposUrl, String eventsUrl, String hooksUrl, String issuesUrl, String membersUrl, String publicMembersUrl, String avatarUrl, String? description, SdkOptional<String> name, SdkOptional<String?> company, SdkOptional<String?> blog, SdkOptional<String?> location, SdkOptional<String?> email, SdkOptional<String?> twitterUsername, SdkOptional<bool> isVerified, bool hasOrganizationProjects, bool hasRepositoryProjects, int publicRepos, int publicGists, int followers, int following, String htmlUrl, String createdAt, String type_, SdkOptional<int> totalPrivateRepos, SdkOptional<int> ownedPrivateRepos, SdkOptional<int?> privateGists, SdkOptional<int?> diskUsage, SdkOptional<int?> collaborators, SdkOptional<String?> billingEmail, SdkOptional<TeamOrganizationPlan> plan, SdkOptional<String?> defaultRepositoryPermission, SdkOptional<bool?> membersCanCreateRepositories, SdkOptional<bool?> twoFactorRequirementEnabled, SdkOptional<String> membersAllowedRepositoryCreationType, SdkOptional<bool> membersCanCreatePublicRepositories, SdkOptional<bool> membersCanCreatePrivateRepositories, SdkOptional<bool> membersCanCreateInternalRepositories, SdkOptional<bool> membersCanCreatePages, SdkOptional<bool> membersCanCreatePublicPages, SdkOptional<bool> membersCanCreatePrivatePages, SdkOptional<bool?> membersCanForkPrivateRepositories, SdkOptional<bool> webCommitSignoffRequired, String updatedAt, String? archivedAt}) get copyWith => _copyWith;
+  TeamOrganization Function(
+      {String login,
+      int id,
+      String nodeId,
+      String url,
+      String reposUrl,
+      String eventsUrl,
+      String hooksUrl,
+      String issuesUrl,
+      String membersUrl,
+      String publicMembersUrl,
+      String avatarUrl,
+      String? description,
+      SdkOptional<String> name,
+      SdkOptional<String?> company,
+      SdkOptional<String?> blog,
+      SdkOptional<String?> location,
+      SdkOptional<String?> email,
+      SdkOptional<String?> twitterUsername,
+      SdkOptional<bool> isVerified,
+      bool hasOrganizationProjects,
+      bool hasRepositoryProjects,
+      int publicRepos,
+      int publicGists,
+      int followers,
+      int following,
+      String htmlUrl,
+      String createdAt,
+      String type_,
+      SdkOptional<int> totalPrivateRepos,
+      SdkOptional<int> ownedPrivateRepos,
+      SdkOptional<int?> privateGists,
+      SdkOptional<int?> diskUsage,
+      SdkOptional<int?> collaborators,
+      SdkOptional<String?> billingEmail,
+      SdkOptional<TeamOrganizationPlan> plan,
+      SdkOptional<String?> defaultRepositoryPermission,
+      SdkOptional<bool?> membersCanCreateRepositories,
+      SdkOptional<bool?> twoFactorRequirementEnabled,
+      SdkOptional<String> membersAllowedRepositoryCreationType,
+      SdkOptional<bool> membersCanCreatePublicRepositories,
+      SdkOptional<bool> membersCanCreatePrivateRepositories,
+      SdkOptional<bool> membersCanCreateInternalRepositories,
+      SdkOptional<bool> membersCanCreatePages,
+      SdkOptional<bool> membersCanCreatePublicPages,
+      SdkOptional<bool> membersCanCreatePrivatePages,
+      SdkOptional<bool?> membersCanForkPrivateRepositories,
+      SdkOptional<bool> webCommitSignoffRequired,
+      String updatedAt,
+      String? archivedAt}) get copyWith => _copyWith;
 
-  TeamOrganization _copyWith({Object? login = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? hooksUrl = sdkOmittedValue, Object? issuesUrl = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? publicMembersUrl = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? description = sdkOmittedValue, Object? name = sdkOmittedValue, Object? company = sdkOmittedValue, Object? blog = sdkOmittedValue, Object? location = sdkOmittedValue, Object? email = sdkOmittedValue, Object? twitterUsername = sdkOmittedValue, Object? isVerified = sdkOmittedValue, Object? hasOrganizationProjects = sdkOmittedValue, Object? hasRepositoryProjects = sdkOmittedValue, Object? publicRepos = sdkOmittedValue, Object? publicGists = sdkOmittedValue, Object? followers = sdkOmittedValue, Object? following = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? totalPrivateRepos = sdkOmittedValue, Object? ownedPrivateRepos = sdkOmittedValue, Object? privateGists = sdkOmittedValue, Object? diskUsage = sdkOmittedValue, Object? collaborators = sdkOmittedValue, Object? billingEmail = sdkOmittedValue, Object? plan = sdkOmittedValue, Object? defaultRepositoryPermission = sdkOmittedValue, Object? membersCanCreateRepositories = sdkOmittedValue, Object? twoFactorRequirementEnabled = sdkOmittedValue, Object? membersAllowedRepositoryCreationType = sdkOmittedValue, Object? membersCanCreatePublicRepositories = sdkOmittedValue, Object? membersCanCreatePrivateRepositories = sdkOmittedValue, Object? membersCanCreateInternalRepositories = sdkOmittedValue, Object? membersCanCreatePages = sdkOmittedValue, Object? membersCanCreatePublicPages = sdkOmittedValue, Object? membersCanCreatePrivatePages = sdkOmittedValue, Object? membersCanForkPrivateRepositories = sdkOmittedValue, Object? webCommitSignoffRequired = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue}) => TeamOrganization(
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as String,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
-    hooksUrl: identical(hooksUrl, sdkOmittedValue) ? this.hooksUrl : hooksUrl as String,
-    issuesUrl: identical(issuesUrl, sdkOmittedValue) ? this.issuesUrl : issuesUrl as String,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    publicMembersUrl: identical(publicMembersUrl, sdkOmittedValue) ? this.publicMembersUrl : publicMembersUrl as String,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    company: identical(company, sdkOmittedValue) ? this.company : company as SdkOptional<String?>,
-    blog: identical(blog, sdkOmittedValue) ? this.blog : blog as SdkOptional<String?>,
-    location: identical(location, sdkOmittedValue) ? this.location : location as SdkOptional<String?>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    twitterUsername: identical(twitterUsername, sdkOmittedValue) ? this.twitterUsername : twitterUsername as SdkOptional<String?>,
-    isVerified: identical(isVerified, sdkOmittedValue) ? this.isVerified : isVerified as SdkOptional<bool>,
-    hasOrganizationProjects: identical(hasOrganizationProjects, sdkOmittedValue) ? this.hasOrganizationProjects : hasOrganizationProjects as bool,
-    hasRepositoryProjects: identical(hasRepositoryProjects, sdkOmittedValue) ? this.hasRepositoryProjects : hasRepositoryProjects as bool,
-    publicRepos: identical(publicRepos, sdkOmittedValue) ? this.publicRepos : publicRepos as int,
-    publicGists: identical(publicGists, sdkOmittedValue) ? this.publicGists : publicGists as int,
-    followers: identical(followers, sdkOmittedValue) ? this.followers : followers as int,
-    following: identical(following, sdkOmittedValue) ? this.following : following as int,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    totalPrivateRepos: identical(totalPrivateRepos, sdkOmittedValue) ? this.totalPrivateRepos : totalPrivateRepos as SdkOptional<int>,
-    ownedPrivateRepos: identical(ownedPrivateRepos, sdkOmittedValue) ? this.ownedPrivateRepos : ownedPrivateRepos as SdkOptional<int>,
-    privateGists: identical(privateGists, sdkOmittedValue) ? this.privateGists : privateGists as SdkOptional<int?>,
-    diskUsage: identical(diskUsage, sdkOmittedValue) ? this.diskUsage : diskUsage as SdkOptional<int?>,
-    collaborators: identical(collaborators, sdkOmittedValue) ? this.collaborators : collaborators as SdkOptional<int?>,
-    billingEmail: identical(billingEmail, sdkOmittedValue) ? this.billingEmail : billingEmail as SdkOptional<String?>,
-    plan: identical(plan, sdkOmittedValue) ? this.plan : plan as SdkOptional<TeamOrganizationPlan>,
-    defaultRepositoryPermission: identical(defaultRepositoryPermission, sdkOmittedValue) ? this.defaultRepositoryPermission : defaultRepositoryPermission as SdkOptional<String?>,
-    membersCanCreateRepositories: identical(membersCanCreateRepositories, sdkOmittedValue) ? this.membersCanCreateRepositories : membersCanCreateRepositories as SdkOptional<bool?>,
-    twoFactorRequirementEnabled: identical(twoFactorRequirementEnabled, sdkOmittedValue) ? this.twoFactorRequirementEnabled : twoFactorRequirementEnabled as SdkOptional<bool?>,
-    membersAllowedRepositoryCreationType: identical(membersAllowedRepositoryCreationType, sdkOmittedValue) ? this.membersAllowedRepositoryCreationType : membersAllowedRepositoryCreationType as SdkOptional<String>,
-    membersCanCreatePublicRepositories: identical(membersCanCreatePublicRepositories, sdkOmittedValue) ? this.membersCanCreatePublicRepositories : membersCanCreatePublicRepositories as SdkOptional<bool>,
-    membersCanCreatePrivateRepositories: identical(membersCanCreatePrivateRepositories, sdkOmittedValue) ? this.membersCanCreatePrivateRepositories : membersCanCreatePrivateRepositories as SdkOptional<bool>,
-    membersCanCreateInternalRepositories: identical(membersCanCreateInternalRepositories, sdkOmittedValue) ? this.membersCanCreateInternalRepositories : membersCanCreateInternalRepositories as SdkOptional<bool>,
-    membersCanCreatePages: identical(membersCanCreatePages, sdkOmittedValue) ? this.membersCanCreatePages : membersCanCreatePages as SdkOptional<bool>,
-    membersCanCreatePublicPages: identical(membersCanCreatePublicPages, sdkOmittedValue) ? this.membersCanCreatePublicPages : membersCanCreatePublicPages as SdkOptional<bool>,
-    membersCanCreatePrivatePages: identical(membersCanCreatePrivatePages, sdkOmittedValue) ? this.membersCanCreatePrivatePages : membersCanCreatePrivatePages as SdkOptional<bool>,
-    membersCanForkPrivateRepositories: identical(membersCanForkPrivateRepositories, sdkOmittedValue) ? this.membersCanForkPrivateRepositories : membersCanForkPrivateRepositories as SdkOptional<bool?>,
-    webCommitSignoffRequired: identical(webCommitSignoffRequired, sdkOmittedValue) ? this.webCommitSignoffRequired : webCommitSignoffRequired as SdkOptional<bool>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-  );
+  TeamOrganization _copyWith(
+          {Object? login = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? hooksUrl = sdkOmittedValue,
+          Object? issuesUrl = sdkOmittedValue,
+          Object? membersUrl = sdkOmittedValue,
+          Object? publicMembersUrl = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? company = sdkOmittedValue,
+          Object? blog = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? twitterUsername = sdkOmittedValue,
+          Object? isVerified = sdkOmittedValue,
+          Object? hasOrganizationProjects = sdkOmittedValue,
+          Object? hasRepositoryProjects = sdkOmittedValue,
+          Object? publicRepos = sdkOmittedValue,
+          Object? publicGists = sdkOmittedValue,
+          Object? followers = sdkOmittedValue,
+          Object? following = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? totalPrivateRepos = sdkOmittedValue,
+          Object? ownedPrivateRepos = sdkOmittedValue,
+          Object? privateGists = sdkOmittedValue,
+          Object? diskUsage = sdkOmittedValue,
+          Object? collaborators = sdkOmittedValue,
+          Object? billingEmail = sdkOmittedValue,
+          Object? plan = sdkOmittedValue,
+          Object? defaultRepositoryPermission = sdkOmittedValue,
+          Object? membersCanCreateRepositories = sdkOmittedValue,
+          Object? twoFactorRequirementEnabled = sdkOmittedValue,
+          Object? membersAllowedRepositoryCreationType = sdkOmittedValue,
+          Object? membersCanCreatePublicRepositories = sdkOmittedValue,
+          Object? membersCanCreatePrivateRepositories = sdkOmittedValue,
+          Object? membersCanCreateInternalRepositories = sdkOmittedValue,
+          Object? membersCanCreatePages = sdkOmittedValue,
+          Object? membersCanCreatePublicPages = sdkOmittedValue,
+          Object? membersCanCreatePrivatePages = sdkOmittedValue,
+          Object? membersCanForkPrivateRepositories = sdkOmittedValue,
+          Object? webCommitSignoffRequired = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue}) =>
+      TeamOrganization(
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as String,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as String,
+        hooksUrl: identical(hooksUrl, sdkOmittedValue)
+            ? this.hooksUrl
+            : hooksUrl as String,
+        issuesUrl: identical(issuesUrl, sdkOmittedValue)
+            ? this.issuesUrl
+            : issuesUrl as String,
+        membersUrl: identical(membersUrl, sdkOmittedValue)
+            ? this.membersUrl
+            : membersUrl as String,
+        publicMembersUrl: identical(publicMembersUrl, sdkOmittedValue)
+            ? this.publicMembersUrl
+            : publicMembersUrl as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        company: identical(company, sdkOmittedValue)
+            ? this.company
+            : company as SdkOptional<String?>,
+        blog: identical(blog, sdkOmittedValue)
+            ? this.blog
+            : blog as SdkOptional<String?>,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<String?>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        twitterUsername: identical(twitterUsername, sdkOmittedValue)
+            ? this.twitterUsername
+            : twitterUsername as SdkOptional<String?>,
+        isVerified: identical(isVerified, sdkOmittedValue)
+            ? this.isVerified
+            : isVerified as SdkOptional<bool>,
+        hasOrganizationProjects:
+            identical(hasOrganizationProjects, sdkOmittedValue)
+                ? this.hasOrganizationProjects
+                : hasOrganizationProjects as bool,
+        hasRepositoryProjects: identical(hasRepositoryProjects, sdkOmittedValue)
+            ? this.hasRepositoryProjects
+            : hasRepositoryProjects as bool,
+        publicRepos: identical(publicRepos, sdkOmittedValue)
+            ? this.publicRepos
+            : publicRepos as int,
+        publicGists: identical(publicGists, sdkOmittedValue)
+            ? this.publicGists
+            : publicGists as int,
+        followers: identical(followers, sdkOmittedValue)
+            ? this.followers
+            : followers as int,
+        following: identical(following, sdkOmittedValue)
+            ? this.following
+            : following as int,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        totalPrivateRepos: identical(totalPrivateRepos, sdkOmittedValue)
+            ? this.totalPrivateRepos
+            : totalPrivateRepos as SdkOptional<int>,
+        ownedPrivateRepos: identical(ownedPrivateRepos, sdkOmittedValue)
+            ? this.ownedPrivateRepos
+            : ownedPrivateRepos as SdkOptional<int>,
+        privateGists: identical(privateGists, sdkOmittedValue)
+            ? this.privateGists
+            : privateGists as SdkOptional<int?>,
+        diskUsage: identical(diskUsage, sdkOmittedValue)
+            ? this.diskUsage
+            : diskUsage as SdkOptional<int?>,
+        collaborators: identical(collaborators, sdkOmittedValue)
+            ? this.collaborators
+            : collaborators as SdkOptional<int?>,
+        billingEmail: identical(billingEmail, sdkOmittedValue)
+            ? this.billingEmail
+            : billingEmail as SdkOptional<String?>,
+        plan: identical(plan, sdkOmittedValue)
+            ? this.plan
+            : plan as SdkOptional<TeamOrganizationPlan>,
+        defaultRepositoryPermission:
+            identical(defaultRepositoryPermission, sdkOmittedValue)
+                ? this.defaultRepositoryPermission
+                : defaultRepositoryPermission as SdkOptional<String?>,
+        membersCanCreateRepositories:
+            identical(membersCanCreateRepositories, sdkOmittedValue)
+                ? this.membersCanCreateRepositories
+                : membersCanCreateRepositories as SdkOptional<bool?>,
+        twoFactorRequirementEnabled:
+            identical(twoFactorRequirementEnabled, sdkOmittedValue)
+                ? this.twoFactorRequirementEnabled
+                : twoFactorRequirementEnabled as SdkOptional<bool?>,
+        membersAllowedRepositoryCreationType:
+            identical(membersAllowedRepositoryCreationType, sdkOmittedValue)
+                ? this.membersAllowedRepositoryCreationType
+                : membersAllowedRepositoryCreationType as SdkOptional<String>,
+        membersCanCreatePublicRepositories:
+            identical(membersCanCreatePublicRepositories, sdkOmittedValue)
+                ? this.membersCanCreatePublicRepositories
+                : membersCanCreatePublicRepositories as SdkOptional<bool>,
+        membersCanCreatePrivateRepositories:
+            identical(membersCanCreatePrivateRepositories, sdkOmittedValue)
+                ? this.membersCanCreatePrivateRepositories
+                : membersCanCreatePrivateRepositories as SdkOptional<bool>,
+        membersCanCreateInternalRepositories:
+            identical(membersCanCreateInternalRepositories, sdkOmittedValue)
+                ? this.membersCanCreateInternalRepositories
+                : membersCanCreateInternalRepositories as SdkOptional<bool>,
+        membersCanCreatePages: identical(membersCanCreatePages, sdkOmittedValue)
+            ? this.membersCanCreatePages
+            : membersCanCreatePages as SdkOptional<bool>,
+        membersCanCreatePublicPages:
+            identical(membersCanCreatePublicPages, sdkOmittedValue)
+                ? this.membersCanCreatePublicPages
+                : membersCanCreatePublicPages as SdkOptional<bool>,
+        membersCanCreatePrivatePages:
+            identical(membersCanCreatePrivatePages, sdkOmittedValue)
+                ? this.membersCanCreatePrivatePages
+                : membersCanCreatePrivatePages as SdkOptional<bool>,
+        membersCanForkPrivateRepositories:
+            identical(membersCanForkPrivateRepositories, sdkOmittedValue)
+                ? this.membersCanForkPrivateRepositories
+                : membersCanForkPrivateRepositories as SdkOptional<bool?>,
+        webCommitSignoffRequired:
+            identical(webCommitSignoffRequired, sdkOmittedValue)
+                ? this.webCommitSignoffRequired
+                : webCommitSignoffRequired as SdkOptional<bool>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+      );
 
-  factory TeamOrganization.fromJson(Map<String, dynamic> json) => TeamOrganization(
-    login: (json['login'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    reposUrl: (json['repos_url'] as String?)!,
-    eventsUrl: (json['events_url'] as String?)!,
-    hooksUrl: (json['hooks_url'] as String?)!,
-    issuesUrl: (json['issues_url'] as String?)!,
-    membersUrl: (json['members_url'] as String?)!,
-    publicMembersUrl: (json['public_members_url'] as String?)!,
-    avatarUrl: (json['avatar_url'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    company: json.containsKey('company') ? SdkPresent(json['company'] as String?) : const SdkOmitted(),
-    blog: json.containsKey('blog') ? SdkPresent(json['blog'] as String?) : const SdkOmitted(),
-    location: json.containsKey('location') ? SdkPresent(json['location'] as String?) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    twitterUsername: json.containsKey('twitter_username') ? SdkPresent(json['twitter_username'] as String?) : const SdkOmitted(),
-    isVerified: json['is_verified'] != null ? SdkPresent((json['is_verified'] as bool?)!) : const SdkOmitted(),
-    hasOrganizationProjects: (json['has_organization_projects'] as bool?)!,
-    hasRepositoryProjects: (json['has_repository_projects'] as bool?)!,
-    publicRepos: ((json['public_repos'] as num?)?.toInt())!,
-    publicGists: ((json['public_gists'] as num?)?.toInt())!,
-    followers: ((json['followers'] as num?)?.toInt())!,
-    following: ((json['following'] as num?)?.toInt())!,
-    htmlUrl: (json['html_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    type_: (json['type'] as String?)!,
-    totalPrivateRepos: json['total_private_repos'] != null ? SdkPresent(((json['total_private_repos'] as num?)?.toInt())!) : const SdkOmitted(),
-    ownedPrivateRepos: json['owned_private_repos'] != null ? SdkPresent(((json['owned_private_repos'] as num?)?.toInt())!) : const SdkOmitted(),
-    privateGists: json.containsKey('private_gists') ? SdkPresent((json['private_gists'] as num?)?.toInt()) : const SdkOmitted(),
-    diskUsage: json.containsKey('disk_usage') ? SdkPresent((json['disk_usage'] as num?)?.toInt()) : const SdkOmitted(),
-    collaborators: json.containsKey('collaborators') ? SdkPresent((json['collaborators'] as num?)?.toInt()) : const SdkOmitted(),
-    billingEmail: json.containsKey('billing_email') ? SdkPresent(json['billing_email'] as String?) : const SdkOmitted(),
-    plan: json['plan'] != null ? SdkPresent((json['plan'] != null ? TeamOrganizationPlan.fromJson(json['plan'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    defaultRepositoryPermission: json.containsKey('default_repository_permission') ? SdkPresent(json['default_repository_permission'] as String?) : const SdkOmitted(),
-    membersCanCreateRepositories: json.containsKey('members_can_create_repositories') ? SdkPresent(json['members_can_create_repositories'] as bool?) : const SdkOmitted(),
-    twoFactorRequirementEnabled: json.containsKey('two_factor_requirement_enabled') ? SdkPresent(json['two_factor_requirement_enabled'] as bool?) : const SdkOmitted(),
-    membersAllowedRepositoryCreationType: json['members_allowed_repository_creation_type'] != null ? SdkPresent((json['members_allowed_repository_creation_type'] as String?)!) : const SdkOmitted(),
-    membersCanCreatePublicRepositories: json['members_can_create_public_repositories'] != null ? SdkPresent((json['members_can_create_public_repositories'] as bool?)!) : const SdkOmitted(),
-    membersCanCreatePrivateRepositories: json['members_can_create_private_repositories'] != null ? SdkPresent((json['members_can_create_private_repositories'] as bool?)!) : const SdkOmitted(),
-    membersCanCreateInternalRepositories: json['members_can_create_internal_repositories'] != null ? SdkPresent((json['members_can_create_internal_repositories'] as bool?)!) : const SdkOmitted(),
-    membersCanCreatePages: json['members_can_create_pages'] != null ? SdkPresent((json['members_can_create_pages'] as bool?)!) : const SdkOmitted(),
-    membersCanCreatePublicPages: json['members_can_create_public_pages'] != null ? SdkPresent((json['members_can_create_public_pages'] as bool?)!) : const SdkOmitted(),
-    membersCanCreatePrivatePages: json['members_can_create_private_pages'] != null ? SdkPresent((json['members_can_create_private_pages'] as bool?)!) : const SdkOmitted(),
-    membersCanForkPrivateRepositories: json.containsKey('members_can_fork_private_repositories') ? SdkPresent(json['members_can_fork_private_repositories'] as bool?) : const SdkOmitted(),
-    webCommitSignoffRequired: json['web_commit_signoff_required'] != null ? SdkPresent((json['web_commit_signoff_required'] as bool?)!) : const SdkOmitted(),
-    updatedAt: (json['updated_at'] as String?)!,
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-  );
+  factory TeamOrganization.fromJson(Map<String, dynamic> json) =>
+      TeamOrganization(
+        login: (json['login'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        reposUrl: (json['repos_url'] as String?)!,
+        eventsUrl: (json['events_url'] as String?)!,
+        hooksUrl: (json['hooks_url'] as String?)!,
+        issuesUrl: (json['issues_url'] as String?)!,
+        membersUrl: (json['members_url'] as String?)!,
+        publicMembersUrl: (json['public_members_url'] as String?)!,
+        avatarUrl: (json['avatar_url'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        company: json.containsKey('company')
+            ? SdkPresent(json['company'] as String?)
+            : const SdkOmitted(),
+        blog: json.containsKey('blog')
+            ? SdkPresent(json['blog'] as String?)
+            : const SdkOmitted(),
+        location: json.containsKey('location')
+            ? SdkPresent(json['location'] as String?)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        twitterUsername: json.containsKey('twitter_username')
+            ? SdkPresent(json['twitter_username'] as String?)
+            : const SdkOmitted(),
+        isVerified: json['is_verified'] != null
+            ? SdkPresent((json['is_verified'] as bool?)!)
+            : const SdkOmitted(),
+        hasOrganizationProjects: (json['has_organization_projects'] as bool?)!,
+        hasRepositoryProjects: (json['has_repository_projects'] as bool?)!,
+        publicRepos: ((json['public_repos'] as num?)?.toInt())!,
+        publicGists: ((json['public_gists'] as num?)?.toInt())!,
+        followers: ((json['followers'] as num?)?.toInt())!,
+        following: ((json['following'] as num?)?.toInt())!,
+        htmlUrl: (json['html_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        type_: (json['type'] as String?)!,
+        totalPrivateRepos: json['total_private_repos'] != null
+            ? SdkPresent(((json['total_private_repos'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        ownedPrivateRepos: json['owned_private_repos'] != null
+            ? SdkPresent(((json['owned_private_repos'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        privateGists: json.containsKey('private_gists')
+            ? SdkPresent((json['private_gists'] as num?)?.toInt())
+            : const SdkOmitted(),
+        diskUsage: json.containsKey('disk_usage')
+            ? SdkPresent((json['disk_usage'] as num?)?.toInt())
+            : const SdkOmitted(),
+        collaborators: json.containsKey('collaborators')
+            ? SdkPresent((json['collaborators'] as num?)?.toInt())
+            : const SdkOmitted(),
+        billingEmail: json.containsKey('billing_email')
+            ? SdkPresent(json['billing_email'] as String?)
+            : const SdkOmitted(),
+        plan: json['plan'] != null
+            ? SdkPresent((json['plan'] != null
+                ? TeamOrganizationPlan.fromJson(
+                    json['plan'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        defaultRepositoryPermission:
+            json.containsKey('default_repository_permission')
+                ? SdkPresent(json['default_repository_permission'] as String?)
+                : const SdkOmitted(),
+        membersCanCreateRepositories:
+            json.containsKey('members_can_create_repositories')
+                ? SdkPresent(json['members_can_create_repositories'] as bool?)
+                : const SdkOmitted(),
+        twoFactorRequirementEnabled:
+            json.containsKey('two_factor_requirement_enabled')
+                ? SdkPresent(json['two_factor_requirement_enabled'] as bool?)
+                : const SdkOmitted(),
+        membersAllowedRepositoryCreationType:
+            json['members_allowed_repository_creation_type'] != null
+                ? SdkPresent((json['members_allowed_repository_creation_type']
+                    as String?)!)
+                : const SdkOmitted(),
+        membersCanCreatePublicRepositories:
+            json['members_can_create_public_repositories'] != null
+                ? SdkPresent(
+                    (json['members_can_create_public_repositories'] as bool?)!)
+                : const SdkOmitted(),
+        membersCanCreatePrivateRepositories:
+            json['members_can_create_private_repositories'] != null
+                ? SdkPresent(
+                    (json['members_can_create_private_repositories'] as bool?)!)
+                : const SdkOmitted(),
+        membersCanCreateInternalRepositories:
+            json['members_can_create_internal_repositories'] != null
+                ? SdkPresent((json['members_can_create_internal_repositories']
+                    as bool?)!)
+                : const SdkOmitted(),
+        membersCanCreatePages: json['members_can_create_pages'] != null
+            ? SdkPresent((json['members_can_create_pages'] as bool?)!)
+            : const SdkOmitted(),
+        membersCanCreatePublicPages: json['members_can_create_public_pages'] !=
+                null
+            ? SdkPresent((json['members_can_create_public_pages'] as bool?)!)
+            : const SdkOmitted(),
+        membersCanCreatePrivatePages:
+            json['members_can_create_private_pages'] != null
+                ? SdkPresent(
+                    (json['members_can_create_private_pages'] as bool?)!)
+                : const SdkOmitted(),
+        membersCanForkPrivateRepositories: json
+                .containsKey('members_can_fork_private_repositories')
+            ? SdkPresent(json['members_can_fork_private_repositories'] as bool?)
+            : const SdkOmitted(),
+        webCommitSignoffRequired: json['web_commit_signoff_required'] != null
+            ? SdkPresent((json['web_commit_signoff_required'] as bool?)!)
+            : const SdkOmitted(),
+        updatedAt: (json['updated_at'] as String?)!,
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'login': login,
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'repos_url': reposUrl,
-    'events_url': eventsUrl,
-    'hooks_url': hooksUrl,
-    'issues_url': issuesUrl,
-    'members_url': membersUrl,
-    'public_members_url': publicMembersUrl,
-    'avatar_url': avatarUrl,
-    'description': description,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (company) {
-      SdkPresent<String?>(value: final value) => {'company': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (blog) {
-      SdkPresent<String?>(value: final value) => {'blog': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (location) {
-      SdkPresent<String?>(value: final value) => {'location': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (twitterUsername) {
-      SdkPresent<String?>(value: final value) => {'twitter_username': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (isVerified) {
-      SdkPresent<bool>(value: final value) => {'is_verified': value,},
-      _ => const <String, dynamic>{},
-    },
-    'has_organization_projects': hasOrganizationProjects,
-    'has_repository_projects': hasRepositoryProjects,
-    'public_repos': publicRepos,
-    'public_gists': publicGists,
-    'followers': followers,
-    'following': following,
-    'html_url': htmlUrl,
-    'created_at': createdAt,
-    'type': type_,
-    ...switch (totalPrivateRepos) {
-      SdkPresent<int>(value: final value) => {'total_private_repos': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ownedPrivateRepos) {
-      SdkPresent<int>(value: final value) => {'owned_private_repos': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (privateGists) {
-      SdkPresent<int?>(value: final value) => {'private_gists': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (diskUsage) {
-      SdkPresent<int?>(value: final value) => {'disk_usage': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (collaborators) {
-      SdkPresent<int?>(value: final value) => {'collaborators': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (billingEmail) {
-      SdkPresent<String?>(value: final value) => {'billing_email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (plan) {
-      SdkPresent<TeamOrganizationPlan>(value: final value) => {'plan': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (defaultRepositoryPermission) {
-      SdkPresent<String?>(value: final value) => {'default_repository_permission': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanCreateRepositories) {
-      SdkPresent<bool?>(value: final value) => {'members_can_create_repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (twoFactorRequirementEnabled) {
-      SdkPresent<bool?>(value: final value) => {'two_factor_requirement_enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersAllowedRepositoryCreationType) {
-      SdkPresent<String>(value: final value) => {'members_allowed_repository_creation_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanCreatePublicRepositories) {
-      SdkPresent<bool>(value: final value) => {'members_can_create_public_repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanCreatePrivateRepositories) {
-      SdkPresent<bool>(value: final value) => {'members_can_create_private_repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanCreateInternalRepositories) {
-      SdkPresent<bool>(value: final value) => {'members_can_create_internal_repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanCreatePages) {
-      SdkPresent<bool>(value: final value) => {'members_can_create_pages': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanCreatePublicPages) {
-      SdkPresent<bool>(value: final value) => {'members_can_create_public_pages': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanCreatePrivatePages) {
-      SdkPresent<bool>(value: final value) => {'members_can_create_private_pages': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (membersCanForkPrivateRepositories) {
-      SdkPresent<bool?>(value: final value) => {'members_can_fork_private_repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (webCommitSignoffRequired) {
-      SdkPresent<bool>(value: final value) => {'web_commit_signoff_required': value,},
-      _ => const <String, dynamic>{},
-    },
-    'updated_at': updatedAt,
-    'archived_at': archivedAt,
-  };
+        'login': login,
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'repos_url': reposUrl,
+        'events_url': eventsUrl,
+        'hooks_url': hooksUrl,
+        'issues_url': issuesUrl,
+        'members_url': membersUrl,
+        'public_members_url': publicMembersUrl,
+        'avatar_url': avatarUrl,
+        'description': description,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (company) {
+          SdkPresent<String?>(value: final value) => {
+              'company': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (blog) {
+          SdkPresent<String?>(value: final value) => {
+              'blog': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (location) {
+          SdkPresent<String?>(value: final value) => {
+              'location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (twitterUsername) {
+          SdkPresent<String?>(value: final value) => {
+              'twitter_username': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (isVerified) {
+          SdkPresent<bool>(value: final value) => {
+              'is_verified': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'has_organization_projects': hasOrganizationProjects,
+        'has_repository_projects': hasRepositoryProjects,
+        'public_repos': publicRepos,
+        'public_gists': publicGists,
+        'followers': followers,
+        'following': following,
+        'html_url': htmlUrl,
+        'created_at': createdAt,
+        'type': type_,
+        ...switch (totalPrivateRepos) {
+          SdkPresent<int>(value: final value) => {
+              'total_private_repos': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ownedPrivateRepos) {
+          SdkPresent<int>(value: final value) => {
+              'owned_private_repos': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (privateGists) {
+          SdkPresent<int?>(value: final value) => {
+              'private_gists': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (diskUsage) {
+          SdkPresent<int?>(value: final value) => {
+              'disk_usage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (collaborators) {
+          SdkPresent<int?>(value: final value) => {
+              'collaborators': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (billingEmail) {
+          SdkPresent<String?>(value: final value) => {
+              'billing_email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (plan) {
+          SdkPresent<TeamOrganizationPlan>(value: final value) => {
+              'plan': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (defaultRepositoryPermission) {
+          SdkPresent<String?>(value: final value) => {
+              'default_repository_permission': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreateRepositories) {
+          SdkPresent<bool?>(value: final value) => {
+              'members_can_create_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (twoFactorRequirementEnabled) {
+          SdkPresent<bool?>(value: final value) => {
+              'two_factor_requirement_enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersAllowedRepositoryCreationType) {
+          SdkPresent<String>(value: final value) => {
+              'members_allowed_repository_creation_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePublicRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_public_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePrivateRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_private_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreateInternalRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_internal_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePages) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_pages': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePublicPages) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_public_pages': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePrivatePages) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_private_pages': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanForkPrivateRepositories) {
+          SdkPresent<bool?>(value: final value) => {
+              'members_can_fork_private_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (webCommitSignoffRequired) {
+          SdkPresent<bool>(value: final value) => {
+              'web_commit_signoff_required': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'updated_at': updatedAt,
+        'archived_at': archivedAt,
+      };
 }

@@ -8,129 +8,204 @@ part of 'pulls.dart';
 class PullRequestMergeAsyncResultDetailsVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `uuid` wire field.
   final String uuid;
+
   /// Required enumerated value serialized in the `merge_method` wire field.
   final PullRequestMergeAsyncResultDetailsVariant0MergeMethod mergeMethod;
+
   /// Required enumerated value serialized in the `merge_action` wire field.
   final PullRequestMergeAsyncResultDetailsVariant0MergeAction mergeAction;
+
   /// SHA that the pull request head must match for the enqueued merge to proceed.
   final String expectedHeadSha;
+
   /// Whether the asynchronous merge request will attempt to bypass repository rules that the authenticated actor is permitted to bypass.
   final SdkOptional<bool> bypassRules;
 
-  const PullRequestMergeAsyncResultDetailsVariant0({required this.message, required this.uuid, required this.mergeMethod, required this.mergeAction, required this.expectedHeadSha, this.bypassRules = const SdkOmitted()});
+  const PullRequestMergeAsyncResultDetailsVariant0(
+      {required this.message,
+      required this.uuid,
+      required this.mergeMethod,
+      required this.mergeAction,
+      required this.expectedHeadSha,
+      this.bypassRules = const SdkOmitted()});
 
-  PullRequestMergeAsyncResultDetailsVariant0 Function({String message, String uuid, PullRequestMergeAsyncResultDetailsVariant0MergeMethod mergeMethod, PullRequestMergeAsyncResultDetailsVariant0MergeAction mergeAction, String expectedHeadSha, SdkOptional<bool> bypassRules}) get copyWith => _copyWith;
+  PullRequestMergeAsyncResultDetailsVariant0 Function(
+      {String message,
+      String uuid,
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod mergeMethod,
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction mergeAction,
+      String expectedHeadSha,
+      SdkOptional<bool> bypassRules}) get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResultDetailsVariant0 _copyWith({Object? message = sdkOmittedValue, Object? uuid = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue, Object? mergeAction = sdkOmittedValue, Object? expectedHeadSha = sdkOmittedValue, Object? bypassRules = sdkOmittedValue}) => PullRequestMergeAsyncResultDetailsVariant0(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    uuid: identical(uuid, sdkOmittedValue) ? this.uuid : uuid as String,
-    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as PullRequestMergeAsyncResultDetailsVariant0MergeMethod,
-    mergeAction: identical(mergeAction, sdkOmittedValue) ? this.mergeAction : mergeAction as PullRequestMergeAsyncResultDetailsVariant0MergeAction,
-    expectedHeadSha: identical(expectedHeadSha, sdkOmittedValue) ? this.expectedHeadSha : expectedHeadSha as String,
-    bypassRules: identical(bypassRules, sdkOmittedValue) ? this.bypassRules : bypassRules as SdkOptional<bool>,
-  );
+  PullRequestMergeAsyncResultDetailsVariant0 _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? uuid = sdkOmittedValue,
+          Object? mergeMethod = sdkOmittedValue,
+          Object? mergeAction = sdkOmittedValue,
+          Object? expectedHeadSha = sdkOmittedValue,
+          Object? bypassRules = sdkOmittedValue}) =>
+      PullRequestMergeAsyncResultDetailsVariant0(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        uuid: identical(uuid, sdkOmittedValue) ? this.uuid : uuid as String,
+        mergeMethod: identical(mergeMethod, sdkOmittedValue)
+            ? this.mergeMethod
+            : mergeMethod
+                as PullRequestMergeAsyncResultDetailsVariant0MergeMethod,
+        mergeAction: identical(mergeAction, sdkOmittedValue)
+            ? this.mergeAction
+            : mergeAction
+                as PullRequestMergeAsyncResultDetailsVariant0MergeAction,
+        expectedHeadSha: identical(expectedHeadSha, sdkOmittedValue)
+            ? this.expectedHeadSha
+            : expectedHeadSha as String,
+        bypassRules: identical(bypassRules, sdkOmittedValue)
+            ? this.bypassRules
+            : bypassRules as SdkOptional<bool>,
+      );
 
-  factory PullRequestMergeAsyncResultDetailsVariant0.fromJson(Map<String, dynamic> json) => PullRequestMergeAsyncResultDetailsVariant0(
-    message: (json['message'] as String?)!,
-    uuid: (json['uuid'] as String?)!,
-    mergeMethod: (json['merge_method'] != null ? PullRequestMergeAsyncResultDetailsVariant0MergeMethod.fromJson(json['merge_method'] as String) : null)!,
-    mergeAction: (json['merge_action'] != null ? PullRequestMergeAsyncResultDetailsVariant0MergeAction.fromJson(json['merge_action'] as String) : null)!,
-    expectedHeadSha: (json['expected_head_sha'] as String?)!,
-    bypassRules: json['bypass_rules'] != null ? SdkPresent((json['bypass_rules'] as bool?)!) : const SdkOmitted(),
-  );
+  factory PullRequestMergeAsyncResultDetailsVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestMergeAsyncResultDetailsVariant0(
+        message: (json['message'] as String?)!,
+        uuid: (json['uuid'] as String?)!,
+        mergeMethod: (json['merge_method'] != null
+            ? PullRequestMergeAsyncResultDetailsVariant0MergeMethod.fromJson(
+                json['merge_method'] as String)
+            : null)!,
+        mergeAction: (json['merge_action'] != null
+            ? PullRequestMergeAsyncResultDetailsVariant0MergeAction.fromJson(
+                json['merge_action'] as String)
+            : null)!,
+        expectedHeadSha: (json['expected_head_sha'] as String?)!,
+        bypassRules: json['bypass_rules'] != null
+            ? SdkPresent((json['bypass_rules'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'uuid': uuid,
-    'merge_method': mergeMethod.toJson(),
-    'merge_action': mergeAction.toJson(),
-    'expected_head_sha': expectedHeadSha,
-    ...switch (bypassRules) {
-      SdkPresent<bool>(value: final value) => {'bypass_rules': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'message': message,
+        'uuid': uuid,
+        'merge_method': mergeMethod.toJson(),
+        'merge_action': mergeAction.toJson(),
+        'expected_head_sha': expectedHeadSha,
+        ...switch (bypassRules) {
+          SdkPresent<bool>(value: final value) => {
+              'bypass_rules': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// When the pull request is in a merge queue
 class PullRequestMergeAsyncResultDetailsVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
 
   const PullRequestMergeAsyncResultDetailsVariant1({required this.message});
 
-  PullRequestMergeAsyncResultDetailsVariant1 Function({String message}) get copyWith => _copyWith;
+  PullRequestMergeAsyncResultDetailsVariant1 Function({String message})
+      get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResultDetailsVariant1 _copyWith({Object? message = sdkOmittedValue}) => PullRequestMergeAsyncResultDetailsVariant1(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  PullRequestMergeAsyncResultDetailsVariant1 _copyWith(
+          {Object? message = sdkOmittedValue}) =>
+      PullRequestMergeAsyncResultDetailsVariant1(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory PullRequestMergeAsyncResultDetailsVariant1.fromJson(Map<String, dynamic> json) => PullRequestMergeAsyncResultDetailsVariant1(
-    message: (json['message'] as String?)!,
-  );
+  factory PullRequestMergeAsyncResultDetailsVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestMergeAsyncResultDetailsVariant1(
+        message: (json['message'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-  };
+        'message': message,
+      };
 }
 
 /// When the asynchronous merge request failed
 class PullRequestMergeAsyncResultDetailsVariant2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
 
   const PullRequestMergeAsyncResultDetailsVariant2({required this.message});
 
-  PullRequestMergeAsyncResultDetailsVariant2 Function({String message}) get copyWith => _copyWith;
+  PullRequestMergeAsyncResultDetailsVariant2 Function({String message})
+      get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResultDetailsVariant2 _copyWith({Object? message = sdkOmittedValue}) => PullRequestMergeAsyncResultDetailsVariant2(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-  );
+  PullRequestMergeAsyncResultDetailsVariant2 _copyWith(
+          {Object? message = sdkOmittedValue}) =>
+      PullRequestMergeAsyncResultDetailsVariant2(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+      );
 
-  factory PullRequestMergeAsyncResultDetailsVariant2.fromJson(Map<String, dynamic> json) => PullRequestMergeAsyncResultDetailsVariant2(
-    message: (json['message'] as String?)!,
-  );
+  factory PullRequestMergeAsyncResultDetailsVariant2.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestMergeAsyncResultDetailsVariant2(
+        message: (json['message'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-  };
+        'message': message,
+      };
 }
 
 /// When the pull request has been merged
 class PullRequestMergeAsyncResultDetailsVariant3 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const PullRequestMergeAsyncResultDetailsVariant3({required this.message, required this.sha});
+  const PullRequestMergeAsyncResultDetailsVariant3(
+      {required this.message, required this.sha});
 
-  PullRequestMergeAsyncResultDetailsVariant3 Function({String message, String sha}) get copyWith => _copyWith;
+  PullRequestMergeAsyncResultDetailsVariant3 Function(
+      {String message, String sha}) get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResultDetailsVariant3 _copyWith({Object? message = sdkOmittedValue, Object? sha = sdkOmittedValue}) => PullRequestMergeAsyncResultDetailsVariant3(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  PullRequestMergeAsyncResultDetailsVariant3 _copyWith(
+          {Object? message = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      PullRequestMergeAsyncResultDetailsVariant3(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory PullRequestMergeAsyncResultDetailsVariant3.fromJson(Map<String, dynamic> json) => PullRequestMergeAsyncResultDetailsVariant3(
-    message: (json['message'] as String?)!,
-    sha: (json['sha'] as String?)!,
-  );
+  factory PullRequestMergeAsyncResultDetailsVariant3.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestMergeAsyncResultDetailsVariant3(
+        message: (json['message'] as String?)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'sha': sha,
-  };
+        'message': message,
+        'sha': sha,
+      };
 }
 
 sealed class PullRequestMergeAsyncResultDetails {
@@ -139,40 +214,93 @@ sealed class PullRequestMergeAsyncResultDetails {
   const PullRequestMergeAsyncResultDetails();
   factory PullRequestMergeAsyncResultDetails.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = PullRequestMergeAsyncResultDetailsVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(value); } } catch (_) {}
-      try { final value = PullRequestMergeAsyncResultDetailsVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(value); } } catch (_) {}
-      try { final value = PullRequestMergeAsyncResultDetailsVariant2.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(value); } } catch (_) {}
-      try { final value = PullRequestMergeAsyncResultDetailsVariant3.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(value); } } catch (_) {}
+      try {
+        final value = PullRequestMergeAsyncResultDetailsVariant0.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestMergeAsyncResultDetailsVariant1.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestMergeAsyncResultDetailsVariant2.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestMergeAsyncResultDetailsVariant3.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(PullRequestMergeAsyncResultDetailsVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(PullRequestMergeAsyncResultDetailsVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(PullRequestMergeAsyncResultDetailsVariant2.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(PullRequestMergeAsyncResultDetailsVariant3.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for PullRequestMergeAsyncResultDetails");
+    try {
+      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(
+          PullRequestMergeAsyncResultDetailsVariant0.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(
+          PullRequestMergeAsyncResultDetailsVariant1.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(
+          PullRequestMergeAsyncResultDetailsVariant2.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(
+          PullRequestMergeAsyncResultDetailsVariant3.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for PullRequestMergeAsyncResultDetails");
   }
   Object? toJson();
 }
 
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0 extends PullRequestMergeAsyncResultDetails {
+final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0
+    extends PullRequestMergeAsyncResultDetails {
   final PullRequestMergeAsyncResultDetailsVariant0 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1 extends PullRequestMergeAsyncResultDetails {
+final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1
+    extends PullRequestMergeAsyncResultDetails {
   final PullRequestMergeAsyncResultDetailsVariant1 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2 extends PullRequestMergeAsyncResultDetails {
+final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2
+    extends PullRequestMergeAsyncResultDetails {
   final PullRequestMergeAsyncResultDetailsVariant2 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(this.value);
-  @override Object? toJson() => value.toJson();
+  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3 extends PullRequestMergeAsyncResultDetails {
+final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3
+    extends PullRequestMergeAsyncResultDetails {
   final PullRequestMergeAsyncResultDetailsVariant3 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(this.value);
-  @override Object? toJson() => value.toJson();
+  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

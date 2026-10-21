@@ -8,105 +8,195 @@ part of 'webhook_pull_request_auto_merge_disabled.dart';
 class WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Commit message for the merge commit.
   final String? commitMessage;
+
   /// Title for the merge commit message.
   final String? commitTitle;
+
   /// Required object value serialized in the `enabled_by` wire field.
-  final WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy? enabledBy;
+  final WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy?
+      enabledBy;
+
   /// The merge method to use.
-  final WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod mergeMethod;
+  final WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod
+      mergeMethod;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod});
+  const WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge(
+      {required this.commitMessage,
+      required this.commitTitle,
+      required this.enabledBy,
+      required this.mergeMethod});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge Function({String? commitMessage, String? commitTitle, WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy? enabledBy, WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod mergeMethod}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge Function(
+      {String? commitMessage,
+      String? commitTitle,
+      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy?
+          enabledBy,
+      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod
+          mergeMethod}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge _copyWith({Object? commitMessage = sdkOmittedValue, Object? commitTitle = sdkOmittedValue, Object? enabledBy = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge(
-    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as String?,
-    commitTitle: identical(commitTitle, sdkOmittedValue) ? this.commitTitle : commitTitle as String?,
-    enabledBy: identical(enabledBy, sdkOmittedValue) ? this.enabledBy : enabledBy as WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy?,
-    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod,
-  );
+  WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge _copyWith(
+          {Object? commitMessage = sdkOmittedValue,
+          Object? commitTitle = sdkOmittedValue,
+          Object? enabledBy = sdkOmittedValue,
+          Object? mergeMethod = sdkOmittedValue}) =>
+      WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge(
+        commitMessage: identical(commitMessage, sdkOmittedValue)
+            ? this.commitMessage
+            : commitMessage as String?,
+        commitTitle: identical(commitTitle, sdkOmittedValue)
+            ? this.commitTitle
+            : commitTitle as String?,
+        enabledBy: identical(enabledBy, sdkOmittedValue)
+            ? this.enabledBy
+            : enabledBy
+                as WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy?,
+        mergeMethod: identical(mergeMethod, sdkOmittedValue)
+            ? this.mergeMethod
+            : mergeMethod
+                as WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod,
+      );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge(
-    commitMessage: json.containsKey('commit_message') ? json['commit_message'] as String? : throw ArgumentError.value(null, 'commit_message', 'Required property is missing'),
-    commitTitle: json.containsKey('commit_title') ? json['commit_title'] as String? : throw ArgumentError.value(null, 'commit_title', 'Required property is missing'),
-    enabledBy: json.containsKey('enabled_by') ? json['enabled_by'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy.fromJson(json['enabled_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'enabled_by', 'Required property is missing'),
-    mergeMethod: (json['merge_method'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod.fromJson(json['merge_method'] as String) : null)!,
-  );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestAutoMergeDisabledPullRequestAutoMerge(
+        commitMessage: json.containsKey('commit_message')
+            ? json['commit_message'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_message', 'Required property is missing'),
+        commitTitle: json.containsKey('commit_title')
+            ? json['commit_title'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_title', 'Required property is missing'),
+        enabledBy: json.containsKey('enabled_by')
+            ? json['enabled_by'] != null
+                ? WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledBy
+                    .fromJson(json['enabled_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'enabled_by', 'Required property is missing'),
+        mergeMethod: (json['merge_method'] != null
+            ? WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod
+                .fromJson(json['merge_method'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'commit_message': commitMessage,
-    'commit_title': commitTitle,
-    'enabled_by': enabledBy?.toJson(),
-    'merge_method': mergeMethod.toJson(),
-  };
+        'commit_message': commitMessage,
+        'commit_title': commitTitle,
+        'enabled_by': enabledBy?.toJson(),
+        'merge_method': mergeMethod.toJson(),
+      };
 }
 
 sealed class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt();
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt.fromJson(Object? json) {
-    if (json is String) { return WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtString(json); }
-    if (json is num) { return WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt");
+  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtString(
+          json);
+    }
+    if (json is num) {
+      return WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtInt extends WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtInt
+    extends WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt {
   final int value;
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtString extends WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtString
+    extends WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAt {
   final String value;
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoCreatedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
 /// Required object value serialized in the `license` wire field.
 class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `key` wire field.
   final String key;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
+  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense(
+      {required this.key,
+      required this.name,
+      required this.nodeId,
+      required this.spdxId,
+      required this.url});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense Function(
+      {String key,
+      String name,
+      String nodeId,
+      String spdxId,
+      String? url}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-  );
+  WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense _copyWith(
+          {Object? key = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? spdxId = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense(
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        spdxId:
+            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+      );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense(
-    key: (json['key'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    spdxId: (json['spdx_id'] as String?)!,
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-  );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoLicense(
+        key: (json['key'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        spdxId: (json['spdx_id'] as String?)!,
+        url: json.containsKey('url')
+            ? json['url'] as String?
+            : throw ArgumentError.value(
+                null, 'url', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'name': name,
-    'node_id': nodeId,
-    'spdx_id': spdxId,
-    'url': url,
-  };
+        'key': key,
+        'name': name,
+        'node_id': nodeId,
+        'spdx_id': spdxId,
+        'url': url,
+      };
 }

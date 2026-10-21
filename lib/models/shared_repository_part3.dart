@@ -6,12 +6,12 @@ part of 'shared_repository.dart';
 // shared_repository domain models (part 3)
 /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 final class RepositoryRuleEnforcement {
-
   final String value;
 
   const RepositoryRuleEnforcement._(this.value);
 
-  factory RepositoryRuleEnforcement.fromJson(String value) => RepositoryRuleEnforcement._(value);
+  factory RepositoryRuleEnforcement.fromJson(String value) =>
+      RepositoryRuleEnforcement._(value);
 
   static const disabled = RepositoryRuleEnforcement._('disabled');
   static const active = RepositoryRuleEnforcement._('active');
@@ -19,259 +19,457 @@ final class RepositoryRuleEnforcement {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleEnforcement && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleEnforcement && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required object value serialized in the `repository_id` wire field.
 class RepositoryRulesetConditionsRepositoryIdTargetRepositoryId {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The repository IDs that the ruleset applies to. One of these IDs must match for the condition to pass.
   final SdkOptional<List<int>> repositoryIds;
 
-  const RepositoryRulesetConditionsRepositoryIdTargetRepositoryId({this.repositoryIds = const SdkOmitted()});
+  const RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
+      {this.repositoryIds = const SdkOmitted()});
 
-  RepositoryRulesetConditionsRepositoryIdTargetRepositoryId Function({SdkOptional<List<int>> repositoryIds}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryIdTargetRepositoryId Function(
+      {SdkOptional<List<int>> repositoryIds}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryIdTargetRepositoryId _copyWith({Object? repositoryIds = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
-    repositoryIds: identical(repositoryIds, sdkOmittedValue) ? this.repositoryIds : repositoryIds as SdkOptional<List<int>>,
-  );
+  RepositoryRulesetConditionsRepositoryIdTargetRepositoryId _copyWith(
+          {Object? repositoryIds = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
+        repositoryIds: identical(repositoryIds, sdkOmittedValue)
+            ? this.repositoryIds
+            : repositoryIds as SdkOptional<List<int>>,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryIdTargetRepositoryId.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
-    repositoryIds: json['repository_ids'] != null ? SdkPresent(((json['repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditionsRepositoryIdTargetRepositoryId.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
+        repositoryIds: json['repository_ids'] != null
+            ? SdkPresent(((json['repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (repositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'repository_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (repositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'repository_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Parameters for a repository ID condition
 class RepositoryRulesetConditionsRepositoryIdTarget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `repository_id` wire field.
   final RepositoryRulesetConditionsRepositoryIdTargetRepositoryId repositoryId;
 
-  const RepositoryRulesetConditionsRepositoryIdTarget({required this.repositoryId});
+  const RepositoryRulesetConditionsRepositoryIdTarget(
+      {required this.repositoryId});
 
-  RepositoryRulesetConditionsRepositoryIdTarget Function({RepositoryRulesetConditionsRepositoryIdTargetRepositoryId repositoryId}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryIdTarget Function(
+      {RepositoryRulesetConditionsRepositoryIdTargetRepositoryId
+          repositoryId}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryIdTarget _copyWith({Object? repositoryId = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryIdTarget(
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as RepositoryRulesetConditionsRepositoryIdTargetRepositoryId,
-  );
+  RepositoryRulesetConditionsRepositoryIdTarget _copyWith(
+          {Object? repositoryId = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryIdTarget(
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId
+                as RepositoryRulesetConditionsRepositoryIdTargetRepositoryId,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryIdTarget.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryIdTarget(
-    repositoryId: (json['repository_id'] != null ? RepositoryRulesetConditionsRepositoryIdTargetRepositoryId.fromJson(json['repository_id'] as Map<String, dynamic>) : null)!,
-  );
+  factory RepositoryRulesetConditionsRepositoryIdTarget.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryIdTarget(
+        repositoryId: (json['repository_id'] != null
+            ? RepositoryRulesetConditionsRepositoryIdTargetRepositoryId
+                .fromJson(json['repository_id'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'repository_id': repositoryId.toJson(),
-  };
+        'repository_id': repositoryId.toJson(),
+      };
 }
 
 /// Required object value serialized in the `repository_name` wire field.
 class RepositoryRulesetConditionsRepositoryNameTargetRepositoryName {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Array of repository names or patterns to include. One of these patterns must match for the condition to pass. Also accepts `~ALL` to include all repositories.
   final SdkOptional<List<String>> include;
+
   /// Array of repository names or patterns to exclude. The condition will not pass if any of these patterns match.
   final SdkOptional<List<String>> exclude;
+
   /// Whether renaming of target repositories is prevented.
   final SdkOptional<bool> protected;
 
-  const RepositoryRulesetConditionsRepositoryNameTargetRepositoryName({this.include = const SdkOmitted(), this.exclude = const SdkOmitted(), this.protected = const SdkOmitted()});
+  const RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
+      {this.include = const SdkOmitted(),
+      this.exclude = const SdkOmitted(),
+      this.protected = const SdkOmitted()});
 
-  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName Function({SdkOptional<List<String>> include, SdkOptional<List<String>> exclude, SdkOptional<bool> protected}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName Function(
+      {SdkOptional<List<String>> include,
+      SdkOptional<List<String>> exclude,
+      SdkOptional<bool> protected}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName _copyWith({Object? include = sdkOmittedValue, Object? exclude = sdkOmittedValue, Object? protected = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
-    include: identical(include, sdkOmittedValue) ? this.include : include as SdkOptional<List<String>>,
-    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<String>>,
-    protected: identical(protected, sdkOmittedValue) ? this.protected : protected as SdkOptional<bool>,
-  );
+  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName _copyWith(
+          {Object? include = sdkOmittedValue,
+          Object? exclude = sdkOmittedValue,
+          Object? protected = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
+        include: identical(include, sdkOmittedValue)
+            ? this.include
+            : include as SdkOptional<List<String>>,
+        exclude: identical(exclude, sdkOmittedValue)
+            ? this.exclude
+            : exclude as SdkOptional<List<String>>,
+        protected: identical(protected, sdkOmittedValue)
+            ? this.protected
+            : protected as SdkOptional<bool>,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
-    include: json['include'] != null ? SdkPresent(((json['include'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    protected: json['protected'] != null ? SdkPresent((json['protected'] as bool?)!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
+        include: json['include'] != null
+            ? SdkPresent(
+                ((json['include'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        exclude: json['exclude'] != null
+            ? SdkPresent(
+                ((json['exclude'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        protected: json['protected'] != null
+            ? SdkPresent((json['protected'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (include) {
-      SdkPresent<List<String>>(value: final value) => {'include': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (exclude) {
-      SdkPresent<List<String>>(value: final value) => {'exclude': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (protected) {
-      SdkPresent<bool>(value: final value) => {'protected': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (include) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (exclude) {
+          SdkPresent<List<String>>(value: final value) => {
+              'exclude': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (protected) {
+          SdkPresent<bool>(value: final value) => {
+              'protected': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Parameters for a repository name condition
 class RepositoryRulesetConditionsRepositoryNameTarget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `repository_name` wire field.
-  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName;
+  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
+      repositoryName;
 
-  const RepositoryRulesetConditionsRepositoryNameTarget({required this.repositoryName});
+  const RepositoryRulesetConditionsRepositoryNameTarget(
+      {required this.repositoryName});
 
-  RepositoryRulesetConditionsRepositoryNameTarget Function({RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryNameTarget Function(
+      {RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
+          repositoryName}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryNameTarget _copyWith({Object? repositoryName = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryNameTarget(
-    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
-  );
+  RepositoryRulesetConditionsRepositoryNameTarget _copyWith(
+          {Object? repositoryName = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryNameTarget(
+        repositoryName: identical(repositoryName, sdkOmittedValue)
+            ? this.repositoryName
+            : repositoryName
+                as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryNameTarget.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryNameTarget(
-    repositoryName: (json['repository_name'] != null ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(json['repository_name'] as Map<String, dynamic>) : null)!,
-  );
+  factory RepositoryRulesetConditionsRepositoryNameTarget.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryNameTarget(
+        repositoryName: (json['repository_name'] != null
+            ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
+                .fromJson(json['repository_name'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'repository_name': repositoryName.toJson(),
-  };
+        'repository_name': repositoryName.toJson(),
+      };
 }
 
 /// Parameters for a targeting a repository property
 class RepositoryRulesetConditionsRepositoryPropertySpec {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the repository property to target
   final String name;
+
   /// The values to match for the repository property
   final List<String> propertyValues;
+
   /// The source of the repository property. Defaults to 'custom' if not specified.
-  final SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource> source;
+  final SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource>
+      source;
 
-  const RepositoryRulesetConditionsRepositoryPropertySpec({required this.name, required this.propertyValues, this.source = const SdkOmitted()});
+  const RepositoryRulesetConditionsRepositoryPropertySpec(
+      {required this.name,
+      required this.propertyValues,
+      this.source = const SdkOmitted()});
 
-  RepositoryRulesetConditionsRepositoryPropertySpec Function({String name, List<String> propertyValues, SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource> source}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryPropertySpec Function(
+      {String name,
+      List<String> propertyValues,
+      SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource>
+          source}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryPropertySpec _copyWith({Object? name = sdkOmittedValue, Object? propertyValues = sdkOmittedValue, Object? source = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryPropertySpec(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    propertyValues: identical(propertyValues, sdkOmittedValue) ? this.propertyValues : propertyValues as List<String>,
-    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource>,
-  );
+  RepositoryRulesetConditionsRepositoryPropertySpec _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? propertyValues = sdkOmittedValue,
+          Object? source = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryPropertySpec(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        propertyValues: identical(propertyValues, sdkOmittedValue)
+            ? this.propertyValues
+            : propertyValues as List<String>,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as SdkOptional<
+                RepositoryRulesetConditionsRepositoryPropertySpecSource>,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryPropertySpec(
-    name: (json['name'] as String?)!,
-    propertyValues: ((json['property_values'] as List?)?.map((e) => e as String).toList())!,
-    source: json['source'] != null ? SdkPresent((json['source'] != null ? RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(json['source'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryPropertySpec(
+        name: (json['name'] as String?)!,
+        propertyValues: ((json['property_values'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        source: json['source'] != null
+            ? SdkPresent((json['source'] != null
+                ? RepositoryRulesetConditionsRepositoryPropertySpecSource
+                    .fromJson(json['source'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'property_values': propertyValues,
-    ...switch (source) {
-      SdkPresent<RepositoryRulesetConditionsRepositoryPropertySpecSource>(value: final value) => {'source': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'property_values': propertyValues,
+        ...switch (source) {
+          SdkPresent<RepositoryRulesetConditionsRepositoryPropertySpecSource>(
+            value: final value
+          ) =>
+            {
+              'source': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `repository_property` wire field.
 class RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The repository properties and values to include. All of these properties must match for the condition to pass.
-  final SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>> include;
+  final SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>>
+      include;
+
   /// The repository properties and values to exclude. The condition will not pass if any of these properties match.
-  final SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>> exclude;
+  final SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>>
+      exclude;
 
-  const RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty({this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
+  const RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
+      {this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
 
-  RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty Function({SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>> include, SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>> exclude}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty Function(
+      {SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>>
+          include,
+      SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>>
+          exclude}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty _copyWith({Object? include = sdkOmittedValue, Object? exclude = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
-    include: identical(include, sdkOmittedValue) ? this.include : include as SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>>,
-    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<RepositoryRulesetConditionsRepositoryPropertySpec>>,
-  );
+  RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
+      _copyWith(
+              {Object? include = sdkOmittedValue,
+              Object? exclude = sdkOmittedValue}) =>
+          RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
+            include: identical(include, sdkOmittedValue)
+                ? this.include
+                : include as SdkOptional<
+                    List<RepositoryRulesetConditionsRepositoryPropertySpec>>,
+            exclude: identical(exclude, sdkOmittedValue)
+                ? this.exclude
+                : exclude as SdkOptional<
+                    List<RepositoryRulesetConditionsRepositoryPropertySpec>>,
+          );
 
-  factory RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
-    include: json['include'] != null ? SdkPresent(((json['include'] as List?)?.map((e) => RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
+        include: json['include'] != null
+            ? SdkPresent(((json['include'] as List?)
+                ?.map((e) =>
+                    RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        exclude: json['exclude'] != null
+            ? SdkPresent(((json['exclude'] as List?)
+                ?.map((e) =>
+                    RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (include) {
-      SdkPresent<List<RepositoryRulesetConditionsRepositoryPropertySpec>>(value: final value) => {'include': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (exclude) {
-      SdkPresent<List<RepositoryRulesetConditionsRepositoryPropertySpec>>(value: final value) => {'exclude': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (include) {
+          SdkPresent<List<RepositoryRulesetConditionsRepositoryPropertySpec>>(
+            value: final value
+          ) =>
+            {
+              'include': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (exclude) {
+          SdkPresent<List<RepositoryRulesetConditionsRepositoryPropertySpec>>(
+            value: final value
+          ) =>
+            {
+              'exclude': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Parameters for a repository property condition
 class RepositoryRulesetConditionsRepositoryPropertyTarget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `repository_property` wire field.
-  final RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty repositoryProperty;
+  final RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
+      repositoryProperty;
 
-  const RepositoryRulesetConditionsRepositoryPropertyTarget({required this.repositoryProperty});
+  const RepositoryRulesetConditionsRepositoryPropertyTarget(
+      {required this.repositoryProperty});
 
-  RepositoryRulesetConditionsRepositoryPropertyTarget Function({RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty repositoryProperty}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryPropertyTarget Function(
+      {RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
+          repositoryProperty}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryPropertyTarget _copyWith({Object? repositoryProperty = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryPropertyTarget(
-    repositoryProperty: identical(repositoryProperty, sdkOmittedValue) ? this.repositoryProperty : repositoryProperty as RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty,
-  );
+  RepositoryRulesetConditionsRepositoryPropertyTarget _copyWith(
+          {Object? repositoryProperty = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryPropertyTarget(
+        repositoryProperty: identical(repositoryProperty, sdkOmittedValue)
+            ? this.repositoryProperty
+            : repositoryProperty
+                as RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryPropertyTarget.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryPropertyTarget(
-    repositoryProperty: (json['repository_property'] != null ? RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty.fromJson(json['repository_property'] as Map<String, dynamic>) : null)!,
-  );
+  factory RepositoryRulesetConditionsRepositoryPropertyTarget.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryPropertyTarget(
+        repositoryProperty: (json['repository_property'] != null
+            ? RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
+                .fromJson(json['repository_property'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'repository_property': repositoryProperty.toJson(),
-  };
+        'repository_property': repositoryProperty.toJson(),
+      };
 }
 
 /// Required object value serialized in the `bypass_placeholders[]` wire field.
 class RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the push protection bypass placeholder. This value is returned on any push protected routes.
   final SdkOptional<String> placeholderId;
+
   /// Optional `string` value serialized in the `token_type` wire field.
   final SdkOptional<String> tokenType;
 
-  const RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem({this.placeholderId = const SdkOmitted(), this.tokenType = const SdkOmitted()});
+  const RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem(
+      {this.placeholderId = const SdkOmitted(),
+      this.tokenType = const SdkOmitted()});
 
-  RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem Function({SdkOptional<String> placeholderId, SdkOptional<String> tokenType}) get copyWith => _copyWith;
+  RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem Function(
+      {SdkOptional<String> placeholderId,
+      SdkOptional<String> tokenType}) get copyWith => _copyWith;
 
-  RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem _copyWith({Object? placeholderId = sdkOmittedValue, Object? tokenType = sdkOmittedValue}) => RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem(
-    placeholderId: identical(placeholderId, sdkOmittedValue) ? this.placeholderId : placeholderId as SdkOptional<String>,
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
-  );
+  RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem
+      _copyWith(
+              {Object? placeholderId = sdkOmittedValue,
+              Object? tokenType = sdkOmittedValue}) =>
+          RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem(
+            placeholderId: identical(placeholderId, sdkOmittedValue)
+                ? this.placeholderId
+                : placeholderId as SdkOptional<String>,
+            tokenType: identical(tokenType, sdkOmittedValue)
+                ? this.tokenType
+                : tokenType as SdkOptional<String>,
+          );
 
-  factory RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem.fromJson(Map<String, dynamic> json) => RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem(
-    placeholderId: json['placeholder_id'] != null ? SdkPresent((json['placeholder_id'] as String?)!) : const SdkOmitted(),
-    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholdersItem(
+        placeholderId: json['placeholder_id'] != null
+            ? SdkPresent((json['placeholder_id'] as String?)!)
+            : const SdkOmitted(),
+        tokenType: json['token_type'] != null
+            ? SdkPresent((json['token_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (placeholderId) {
-      SdkPresent<String>(value: final value) => {'placeholder_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tokenType) {
-      SdkPresent<String>(value: final value) => {'token_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (placeholderId) {
+          SdkPresent<String>(value: final value) => {
+              'placeholder_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tokenType) {
+          SdkPresent<String>(value: final value) => {
+              'token_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

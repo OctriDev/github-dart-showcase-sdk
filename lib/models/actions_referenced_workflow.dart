@@ -8,35 +8,53 @@ part of 'actions.dart';
 class ReferencedWorkflow {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Optional `string` value serialized in the `ref` wire field.
   final SdkOptional<String> ref;
 
-  const ReferencedWorkflow({required this.path, required this.sha, this.ref = const SdkOmitted()});
+  const ReferencedWorkflow(
+      {required this.path, required this.sha, this.ref = const SdkOmitted()});
 
-  ReferencedWorkflow Function({String path, String sha, SdkOptional<String> ref}) get copyWith => _copyWith;
+  ReferencedWorkflow Function(
+      {String path,
+      String sha,
+      SdkOptional<String> ref}) get copyWith => _copyWith;
 
-  ReferencedWorkflow _copyWith({Object? path = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? ref = sdkOmittedValue}) => ReferencedWorkflow(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-  );
+  ReferencedWorkflow _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? ref = sdkOmittedValue}) =>
+      ReferencedWorkflow(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+      );
 
-  factory ReferencedWorkflow.fromJson(Map<String, dynamic> json) => ReferencedWorkflow(
-    path: (json['path'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-  );
+  factory ReferencedWorkflow.fromJson(Map<String, dynamic> json) =>
+      ReferencedWorkflow(
+        path: (json['path'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    'sha': sha,
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'path': path,
+        'sha': sha,
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

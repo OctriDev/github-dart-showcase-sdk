@@ -8,35 +8,61 @@ part of 'webhooks.dart';
 class WebhooksReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `reviewer` wire field.
   final SdkOptional<WebhooksReviewersItemReviewer?> reviewer;
+
   /// Optional enumerated value serialized in the `type` wire field.
   final SdkOptional<WebhooksReviewersItemType> type_;
 
-  const WebhooksReviewersItem({this.reviewer = const SdkOmitted(), this.type_ = const SdkOmitted()});
+  const WebhooksReviewersItem(
+      {this.reviewer = const SdkOmitted(), this.type_ = const SdkOmitted()});
 
-  WebhooksReviewersItem Function({SdkOptional<WebhooksReviewersItemReviewer?> reviewer, SdkOptional<WebhooksReviewersItemType> type_}) get copyWith => _copyWith;
+  WebhooksReviewersItem Function(
+      {SdkOptional<WebhooksReviewersItemReviewer?> reviewer,
+      SdkOptional<WebhooksReviewersItemType> type_}) get copyWith => _copyWith;
 
-  WebhooksReviewersItem _copyWith({Object? reviewer = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => WebhooksReviewersItem(
-    reviewer: identical(reviewer, sdkOmittedValue) ? this.reviewer : reviewer as SdkOptional<WebhooksReviewersItemReviewer?>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhooksReviewersItemType>,
-  );
+  WebhooksReviewersItem _copyWith(
+          {Object? reviewer = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      WebhooksReviewersItem(
+        reviewer: identical(reviewer, sdkOmittedValue)
+            ? this.reviewer
+            : reviewer as SdkOptional<WebhooksReviewersItemReviewer?>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<WebhooksReviewersItemType>,
+      );
 
-  factory WebhooksReviewersItem.fromJson(Map<String, dynamic> json) => WebhooksReviewersItem(
-    reviewer: json.containsKey('reviewer') ? SdkPresent(json['reviewer'] != null ? WebhooksReviewersItemReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhooksReviewersItemType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory WebhooksReviewersItem.fromJson(Map<String, dynamic> json) =>
+      WebhooksReviewersItem(
+        reviewer: json.containsKey('reviewer')
+            ? SdkPresent(json['reviewer'] != null
+                ? WebhooksReviewersItemReviewer.fromJson(
+                    json['reviewer'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? WebhooksReviewersItemType.fromJson(json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (reviewer) {
-      SdkPresent<WebhooksReviewersItemReviewer?>(value: final value) => {'reviewer': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<WebhooksReviewersItemType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reviewer) {
+          SdkPresent<WebhooksReviewersItemReviewer?>(value: final value) => {
+              'reviewer': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<WebhooksReviewersItemType>(value: final value) => {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 // WebhooksReviewers = List<WebhooksReviewersItem>

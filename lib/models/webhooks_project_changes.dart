@@ -8,60 +8,95 @@ part of 'webhooks_project.dart';
 class WebhooksProjectChangesArchivedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `date-time`-formatted value serialized in the `from` wire field.
   final SdkOptional<String?> from;
+
   /// Optional `date-time`-formatted value serialized in the `to` wire field.
   final SdkOptional<String?> to;
 
-  const WebhooksProjectChangesArchivedAt({this.from = const SdkOmitted(), this.to = const SdkOmitted()});
+  const WebhooksProjectChangesArchivedAt(
+      {this.from = const SdkOmitted(), this.to = const SdkOmitted()});
 
-  WebhooksProjectChangesArchivedAt Function({SdkOptional<String?> from, SdkOptional<String?> to}) get copyWith => _copyWith;
+  WebhooksProjectChangesArchivedAt Function(
+      {SdkOptional<String?> from,
+      SdkOptional<String?> to}) get copyWith => _copyWith;
 
-  WebhooksProjectChangesArchivedAt _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => WebhooksProjectChangesArchivedAt(
-    from: identical(from, sdkOmittedValue) ? this.from : from as SdkOptional<String?>,
-    to: identical(to, sdkOmittedValue) ? this.to : to as SdkOptional<String?>,
-  );
+  WebhooksProjectChangesArchivedAt _copyWith(
+          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
+      WebhooksProjectChangesArchivedAt(
+        from: identical(from, sdkOmittedValue)
+            ? this.from
+            : from as SdkOptional<String?>,
+        to: identical(to, sdkOmittedValue)
+            ? this.to
+            : to as SdkOptional<String?>,
+      );
 
-  factory WebhooksProjectChangesArchivedAt.fromJson(Map<String, dynamic> json) => WebhooksProjectChangesArchivedAt(
-    from: json.containsKey('from') ? SdkPresent(json['from'] as String?) : const SdkOmitted(),
-    to: json.containsKey('to') ? SdkPresent(json['to'] as String?) : const SdkOmitted(),
-  );
+  factory WebhooksProjectChangesArchivedAt.fromJson(
+          Map<String, dynamic> json) =>
+      WebhooksProjectChangesArchivedAt(
+        from: json.containsKey('from')
+            ? SdkPresent(json['from'] as String?)
+            : const SdkOmitted(),
+        to: json.containsKey('to')
+            ? SdkPresent(json['to'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (from) {
-      SdkPresent<String?>(value: final value) => {'from': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (to) {
-      SdkPresent<String?>(value: final value) => {'to': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (from) {
+          SdkPresent<String?>(value: final value) => {
+              'from': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (to) {
+          SdkPresent<String?>(value: final value) => {
+              'to': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `WebhooksProjectChanges` API schema.
 class WebhooksProjectChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `archived_at` wire field.
   final SdkOptional<WebhooksProjectChangesArchivedAt> archivedAt;
 
   const WebhooksProjectChanges({this.archivedAt = const SdkOmitted()});
 
-  WebhooksProjectChanges Function({SdkOptional<WebhooksProjectChangesArchivedAt> archivedAt}) get copyWith => _copyWith;
+  WebhooksProjectChanges Function(
+          {SdkOptional<WebhooksProjectChangesArchivedAt> archivedAt})
+      get copyWith => _copyWith;
 
-  WebhooksProjectChanges _copyWith({Object? archivedAt = sdkOmittedValue}) => WebhooksProjectChanges(
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as SdkOptional<WebhooksProjectChangesArchivedAt>,
-  );
+  WebhooksProjectChanges _copyWith({Object? archivedAt = sdkOmittedValue}) =>
+      WebhooksProjectChanges(
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as SdkOptional<WebhooksProjectChangesArchivedAt>,
+      );
 
-  factory WebhooksProjectChanges.fromJson(Map<String, dynamic> json) => WebhooksProjectChanges(
-    archivedAt: json['archived_at'] != null ? SdkPresent((json['archived_at'] != null ? WebhooksProjectChangesArchivedAt.fromJson(json['archived_at'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory WebhooksProjectChanges.fromJson(Map<String, dynamic> json) =>
+      WebhooksProjectChanges(
+        archivedAt: json['archived_at'] != null
+            ? SdkPresent((json['archived_at'] != null
+                ? WebhooksProjectChangesArchivedAt.fromJson(
+                    json['archived_at'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (archivedAt) {
-      SdkPresent<WebhooksProjectChangesArchivedAt>(value: final value) => {'archived_at': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (archivedAt) {
+          SdkPresent<WebhooksProjectChangesArchivedAt>(value: final value) => {
+              'archived_at': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

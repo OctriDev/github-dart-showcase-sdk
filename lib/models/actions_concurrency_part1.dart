@@ -8,262 +8,510 @@ part of 'actions_concurrency.dart';
 class ConcurrencyGroupGroupMembersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the workflow run.
   final int runId;
+
   /// The name of the workflow run.
   final String runName;
+
   /// API URL for the workflow run.
   final String? runUrl;
+
   /// Web URL for the workflow run.
   final String? runHtmlUrl;
+
   /// The ID of the job, when the item represents a job-level or reusable-workflow-level lease.
   final SdkOptional<int> jobId;
+
   /// The display name of the job, when the item represents a job-level or reusable-workflow-level lease.
   final SdkOptional<String> jobName;
+
   /// API URL for the job.
   final SdkOptional<String?> jobUrl;
+
   /// Web URL for the job.
   final SdkOptional<String?> jobHtmlUrl;
+
   /// Required enumerated value serialized in the `status` wire field.
   final ConcurrencyGroupGroupMembersItemStatus status;
 
-  const ConcurrencyGroupGroupMembersItem({required this.runId, required this.runName, required this.runUrl, required this.runHtmlUrl, this.jobId = const SdkOmitted(), this.jobName = const SdkOmitted(), this.jobUrl = const SdkOmitted(), this.jobHtmlUrl = const SdkOmitted(), required this.status});
+  const ConcurrencyGroupGroupMembersItem(
+      {required this.runId,
+      required this.runName,
+      required this.runUrl,
+      required this.runHtmlUrl,
+      this.jobId = const SdkOmitted(),
+      this.jobName = const SdkOmitted(),
+      this.jobUrl = const SdkOmitted(),
+      this.jobHtmlUrl = const SdkOmitted(),
+      required this.status});
 
-  ConcurrencyGroupGroupMembersItem Function({int runId, String runName, String? runUrl, String? runHtmlUrl, SdkOptional<int> jobId, SdkOptional<String> jobName, SdkOptional<String?> jobUrl, SdkOptional<String?> jobHtmlUrl, ConcurrencyGroupGroupMembersItemStatus status}) get copyWith => _copyWith;
+  ConcurrencyGroupGroupMembersItem Function(
+      {int runId,
+      String runName,
+      String? runUrl,
+      String? runHtmlUrl,
+      SdkOptional<int> jobId,
+      SdkOptional<String> jobName,
+      SdkOptional<String?> jobUrl,
+      SdkOptional<String?> jobHtmlUrl,
+      ConcurrencyGroupGroupMembersItemStatus status}) get copyWith => _copyWith;
 
-  ConcurrencyGroupGroupMembersItem _copyWith({Object? runId = sdkOmittedValue, Object? runName = sdkOmittedValue, Object? runUrl = sdkOmittedValue, Object? runHtmlUrl = sdkOmittedValue, Object? jobId = sdkOmittedValue, Object? jobName = sdkOmittedValue, Object? jobUrl = sdkOmittedValue, Object? jobHtmlUrl = sdkOmittedValue, Object? status = sdkOmittedValue}) => ConcurrencyGroupGroupMembersItem(
-    runId: identical(runId, sdkOmittedValue) ? this.runId : runId as int,
-    runName: identical(runName, sdkOmittedValue) ? this.runName : runName as String,
-    runUrl: identical(runUrl, sdkOmittedValue) ? this.runUrl : runUrl as String?,
-    runHtmlUrl: identical(runHtmlUrl, sdkOmittedValue) ? this.runHtmlUrl : runHtmlUrl as String?,
-    jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as SdkOptional<int>,
-    jobName: identical(jobName, sdkOmittedValue) ? this.jobName : jobName as SdkOptional<String>,
-    jobUrl: identical(jobUrl, sdkOmittedValue) ? this.jobUrl : jobUrl as SdkOptional<String?>,
-    jobHtmlUrl: identical(jobHtmlUrl, sdkOmittedValue) ? this.jobHtmlUrl : jobHtmlUrl as SdkOptional<String?>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as ConcurrencyGroupGroupMembersItemStatus,
-  );
+  ConcurrencyGroupGroupMembersItem _copyWith(
+          {Object? runId = sdkOmittedValue,
+          Object? runName = sdkOmittedValue,
+          Object? runUrl = sdkOmittedValue,
+          Object? runHtmlUrl = sdkOmittedValue,
+          Object? jobId = sdkOmittedValue,
+          Object? jobName = sdkOmittedValue,
+          Object? jobUrl = sdkOmittedValue,
+          Object? jobHtmlUrl = sdkOmittedValue,
+          Object? status = sdkOmittedValue}) =>
+      ConcurrencyGroupGroupMembersItem(
+        runId: identical(runId, sdkOmittedValue) ? this.runId : runId as int,
+        runName: identical(runName, sdkOmittedValue)
+            ? this.runName
+            : runName as String,
+        runUrl: identical(runUrl, sdkOmittedValue)
+            ? this.runUrl
+            : runUrl as String?,
+        runHtmlUrl: identical(runHtmlUrl, sdkOmittedValue)
+            ? this.runHtmlUrl
+            : runHtmlUrl as String?,
+        jobId: identical(jobId, sdkOmittedValue)
+            ? this.jobId
+            : jobId as SdkOptional<int>,
+        jobName: identical(jobName, sdkOmittedValue)
+            ? this.jobName
+            : jobName as SdkOptional<String>,
+        jobUrl: identical(jobUrl, sdkOmittedValue)
+            ? this.jobUrl
+            : jobUrl as SdkOptional<String?>,
+        jobHtmlUrl: identical(jobHtmlUrl, sdkOmittedValue)
+            ? this.jobHtmlUrl
+            : jobHtmlUrl as SdkOptional<String?>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as ConcurrencyGroupGroupMembersItemStatus,
+      );
 
-  factory ConcurrencyGroupGroupMembersItem.fromJson(Map<String, dynamic> json) => ConcurrencyGroupGroupMembersItem(
-    runId: ((json['run_id'] as num?)?.toInt())!,
-    runName: (json['run_name'] as String?)!,
-    runUrl: json.containsKey('run_url') ? json['run_url'] as String? : throw ArgumentError.value(null, 'run_url', 'Required property is missing'),
-    runHtmlUrl: json.containsKey('run_html_url') ? json['run_html_url'] as String? : throw ArgumentError.value(null, 'run_html_url', 'Required property is missing'),
-    jobId: json['job_id'] != null ? SdkPresent(((json['job_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    jobName: json['job_name'] != null ? SdkPresent((json['job_name'] as String?)!) : const SdkOmitted(),
-    jobUrl: json.containsKey('job_url') ? SdkPresent(json['job_url'] as String?) : const SdkOmitted(),
-    jobHtmlUrl: json.containsKey('job_html_url') ? SdkPresent(json['job_html_url'] as String?) : const SdkOmitted(),
-    status: (json['status'] != null ? ConcurrencyGroupGroupMembersItemStatus.fromJson(json['status'] as String) : null)!,
-  );
+  factory ConcurrencyGroupGroupMembersItem.fromJson(
+          Map<String, dynamic> json) =>
+      ConcurrencyGroupGroupMembersItem(
+        runId: ((json['run_id'] as num?)?.toInt())!,
+        runName: (json['run_name'] as String?)!,
+        runUrl: json.containsKey('run_url')
+            ? json['run_url'] as String?
+            : throw ArgumentError.value(
+                null, 'run_url', 'Required property is missing'),
+        runHtmlUrl: json.containsKey('run_html_url')
+            ? json['run_html_url'] as String?
+            : throw ArgumentError.value(
+                null, 'run_html_url', 'Required property is missing'),
+        jobId: json['job_id'] != null
+            ? SdkPresent(((json['job_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        jobName: json['job_name'] != null
+            ? SdkPresent((json['job_name'] as String?)!)
+            : const SdkOmitted(),
+        jobUrl: json.containsKey('job_url')
+            ? SdkPresent(json['job_url'] as String?)
+            : const SdkOmitted(),
+        jobHtmlUrl: json.containsKey('job_html_url')
+            ? SdkPresent(json['job_html_url'] as String?)
+            : const SdkOmitted(),
+        status: (json['status'] != null
+            ? ConcurrencyGroupGroupMembersItemStatus.fromJson(
+                json['status'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'run_id': runId,
-    'run_name': runName,
-    'run_url': runUrl,
-    'run_html_url': runHtmlUrl,
-    ...switch (jobId) {
-      SdkPresent<int>(value: final value) => {'job_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jobName) {
-      SdkPresent<String>(value: final value) => {'job_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jobUrl) {
-      SdkPresent<String?>(value: final value) => {'job_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jobHtmlUrl) {
-      SdkPresent<String?>(value: final value) => {'job_html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'status': status.toJson(),
-  };
+        'run_id': runId,
+        'run_name': runName,
+        'run_url': runUrl,
+        'run_html_url': runHtmlUrl,
+        ...switch (jobId) {
+          SdkPresent<int>(value: final value) => {
+              'job_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jobName) {
+          SdkPresent<String>(value: final value) => {
+              'job_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jobUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'job_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jobHtmlUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'job_html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'status': status.toJson(),
+      };
 }
 
 /// A concurrency group with the workflow runs and jobs that are either currently holding or waiting for the concurrency group lease.
 class ConcurrencyGroup {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the concurrency group.
   final String groupName;
+
   /// API URL for this concurrency group.
   final String groupUrl;
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Required array value serialized in the `group_members` wire field.
   final List<ConcurrencyGroupGroupMembersItem> groupMembers;
 
-  const ConcurrencyGroup({required this.groupName, required this.groupUrl, required this.totalCount, required this.groupMembers});
+  const ConcurrencyGroup(
+      {required this.groupName,
+      required this.groupUrl,
+      required this.totalCount,
+      required this.groupMembers});
 
-  ConcurrencyGroup Function({String groupName, String groupUrl, int totalCount, List<ConcurrencyGroupGroupMembersItem> groupMembers}) get copyWith => _copyWith;
+  ConcurrencyGroup Function(
+          {String groupName,
+          String groupUrl,
+          int totalCount,
+          List<ConcurrencyGroupGroupMembersItem> groupMembers})
+      get copyWith => _copyWith;
 
-  ConcurrencyGroup _copyWith({Object? groupName = sdkOmittedValue, Object? groupUrl = sdkOmittedValue, Object? totalCount = sdkOmittedValue, Object? groupMembers = sdkOmittedValue}) => ConcurrencyGroup(
-    groupName: identical(groupName, sdkOmittedValue) ? this.groupName : groupName as String,
-    groupUrl: identical(groupUrl, sdkOmittedValue) ? this.groupUrl : groupUrl as String,
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    groupMembers: identical(groupMembers, sdkOmittedValue) ? this.groupMembers : groupMembers as List<ConcurrencyGroupGroupMembersItem>,
-  );
+  ConcurrencyGroup _copyWith(
+          {Object? groupName = sdkOmittedValue,
+          Object? groupUrl = sdkOmittedValue,
+          Object? totalCount = sdkOmittedValue,
+          Object? groupMembers = sdkOmittedValue}) =>
+      ConcurrencyGroup(
+        groupName: identical(groupName, sdkOmittedValue)
+            ? this.groupName
+            : groupName as String,
+        groupUrl: identical(groupUrl, sdkOmittedValue)
+            ? this.groupUrl
+            : groupUrl as String,
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        groupMembers: identical(groupMembers, sdkOmittedValue)
+            ? this.groupMembers
+            : groupMembers as List<ConcurrencyGroupGroupMembersItem>,
+      );
 
-  factory ConcurrencyGroup.fromJson(Map<String, dynamic> json) => ConcurrencyGroup(
-    groupName: (json['group_name'] as String?)!,
-    groupUrl: (json['group_url'] as String?)!,
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    groupMembers: ((json['group_members'] as List?)?.map((e) => ConcurrencyGroupGroupMembersItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ConcurrencyGroup.fromJson(Map<String, dynamic> json) =>
+      ConcurrencyGroup(
+        groupName: (json['group_name'] as String?)!,
+        groupUrl: (json['group_url'] as String?)!,
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        groupMembers: ((json['group_members'] as List?)
+            ?.map((e) => ConcurrencyGroupGroupMembersItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'group_name': groupName,
-    'group_url': groupUrl,
-    'total_count': totalCount,
-    'group_members': groupMembers.map((item) => item.toJson()).toList(),
-  };
+        'group_name': groupName,
+        'group_url': groupUrl,
+        'total_count': totalCount,
+        'group_members': groupMembers.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Required object value serialized in the `concurrency_groups[]` wire field.
 class ConcurrencyGroupListConcurrencyGroupsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the concurrency group.
   final String groupName;
+
   /// API URL for this concurrency group.
   final String groupUrl;
+
   /// Required `date-time`-formatted value serialized in the `last_acquired_at` wire field.
   final String? lastAcquiredAt;
 
-  const ConcurrencyGroupListConcurrencyGroupsItem({required this.groupName, required this.groupUrl, required this.lastAcquiredAt});
+  const ConcurrencyGroupListConcurrencyGroupsItem(
+      {required this.groupName,
+      required this.groupUrl,
+      required this.lastAcquiredAt});
 
-  ConcurrencyGroupListConcurrencyGroupsItem Function({String groupName, String groupUrl, String? lastAcquiredAt}) get copyWith => _copyWith;
+  ConcurrencyGroupListConcurrencyGroupsItem Function(
+      {String groupName,
+      String groupUrl,
+      String? lastAcquiredAt}) get copyWith => _copyWith;
 
-  ConcurrencyGroupListConcurrencyGroupsItem _copyWith({Object? groupName = sdkOmittedValue, Object? groupUrl = sdkOmittedValue, Object? lastAcquiredAt = sdkOmittedValue}) => ConcurrencyGroupListConcurrencyGroupsItem(
-    groupName: identical(groupName, sdkOmittedValue) ? this.groupName : groupName as String,
-    groupUrl: identical(groupUrl, sdkOmittedValue) ? this.groupUrl : groupUrl as String,
-    lastAcquiredAt: identical(lastAcquiredAt, sdkOmittedValue) ? this.lastAcquiredAt : lastAcquiredAt as String?,
-  );
+  ConcurrencyGroupListConcurrencyGroupsItem _copyWith(
+          {Object? groupName = sdkOmittedValue,
+          Object? groupUrl = sdkOmittedValue,
+          Object? lastAcquiredAt = sdkOmittedValue}) =>
+      ConcurrencyGroupListConcurrencyGroupsItem(
+        groupName: identical(groupName, sdkOmittedValue)
+            ? this.groupName
+            : groupName as String,
+        groupUrl: identical(groupUrl, sdkOmittedValue)
+            ? this.groupUrl
+            : groupUrl as String,
+        lastAcquiredAt: identical(lastAcquiredAt, sdkOmittedValue)
+            ? this.lastAcquiredAt
+            : lastAcquiredAt as String?,
+      );
 
-  factory ConcurrencyGroupListConcurrencyGroupsItem.fromJson(Map<String, dynamic> json) => ConcurrencyGroupListConcurrencyGroupsItem(
-    groupName: (json['group_name'] as String?)!,
-    groupUrl: (json['group_url'] as String?)!,
-    lastAcquiredAt: json.containsKey('last_acquired_at') ? json['last_acquired_at'] as String? : throw ArgumentError.value(null, 'last_acquired_at', 'Required property is missing'),
-  );
+  factory ConcurrencyGroupListConcurrencyGroupsItem.fromJson(
+          Map<String, dynamic> json) =>
+      ConcurrencyGroupListConcurrencyGroupsItem(
+        groupName: (json['group_name'] as String?)!,
+        groupUrl: (json['group_url'] as String?)!,
+        lastAcquiredAt: json.containsKey('last_acquired_at')
+            ? json['last_acquired_at'] as String?
+            : throw ArgumentError.value(
+                null, 'last_acquired_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'group_name': groupName,
-    'group_url': groupUrl,
-    'last_acquired_at': lastAcquiredAt,
-  };
+        'group_name': groupName,
+        'group_url': groupUrl,
+        'last_acquired_at': lastAcquiredAt,
+      };
 }
 
 /// A list of active concurrency groups for a repository.
 class ConcurrencyGroupList {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Required array value serialized in the `concurrency_groups` wire field.
   final List<ConcurrencyGroupListConcurrencyGroupsItem> concurrencyGroups;
 
-  const ConcurrencyGroupList({required this.totalCount, required this.concurrencyGroups});
+  const ConcurrencyGroupList(
+      {required this.totalCount, required this.concurrencyGroups});
 
-  ConcurrencyGroupList Function({int totalCount, List<ConcurrencyGroupListConcurrencyGroupsItem> concurrencyGroups}) get copyWith => _copyWith;
+  ConcurrencyGroupList Function(
+          {int totalCount,
+          List<ConcurrencyGroupListConcurrencyGroupsItem> concurrencyGroups})
+      get copyWith => _copyWith;
 
-  ConcurrencyGroupList _copyWith({Object? totalCount = sdkOmittedValue, Object? concurrencyGroups = sdkOmittedValue}) => ConcurrencyGroupList(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    concurrencyGroups: identical(concurrencyGroups, sdkOmittedValue) ? this.concurrencyGroups : concurrencyGroups as List<ConcurrencyGroupListConcurrencyGroupsItem>,
-  );
+  ConcurrencyGroupList _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? concurrencyGroups = sdkOmittedValue}) =>
+      ConcurrencyGroupList(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        concurrencyGroups: identical(concurrencyGroups, sdkOmittedValue)
+            ? this.concurrencyGroups
+            : concurrencyGroups
+                as List<ConcurrencyGroupListConcurrencyGroupsItem>,
+      );
 
-  factory ConcurrencyGroupList.fromJson(Map<String, dynamic> json) => ConcurrencyGroupList(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    concurrencyGroups: ((json['concurrency_groups'] as List?)?.map((e) => ConcurrencyGroupListConcurrencyGroupsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ConcurrencyGroupList.fromJson(Map<String, dynamic> json) =>
+      ConcurrencyGroupList(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        concurrencyGroups: ((json['concurrency_groups'] as List?)
+            ?.map((e) => ConcurrencyGroupListConcurrencyGroupsItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'concurrency_groups': concurrencyGroups.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'concurrency_groups':
+            concurrencyGroups.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Required object value serialized in the `group_members[]` wire field.
 class ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the workflow run.
   final int runId;
+
   /// The name of the workflow run.
   final String runName;
+
   /// API URL for the workflow run.
   final String? runUrl;
+
   /// Web URL for the workflow run.
   final String? runHtmlUrl;
+
   /// Queue position. 0 means the item holds the concurrency lease (in_progress), 1 or higher means queued (pending).
   final int position;
+
   /// API URL to get items ahead of this item in the concurrency group.
   final String positionUrl;
+
   /// The ID of the job, when the item represents a job-level or reusable-workflow-level lease.
   final SdkOptional<int?> jobId;
+
   /// The display name of the job, when the item represents a job-level or reusable-workflow-level lease.
   final SdkOptional<String?> jobName;
+
   /// API URL for the job.
   final SdkOptional<String?> jobUrl;
+
   /// Web URL for the job.
   final SdkOptional<String?> jobHtmlUrl;
+
   /// Required enumerated value serialized in the `status` wire field.
-  final ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus status;
+  final ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus
+      status;
 
-  const ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem({required this.runId, required this.runName, required this.runUrl, required this.runHtmlUrl, required this.position, required this.positionUrl, this.jobId = const SdkOmitted(), this.jobName = const SdkOmitted(), this.jobUrl = const SdkOmitted(), this.jobHtmlUrl = const SdkOmitted(), required this.status});
+  const ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(
+      {required this.runId,
+      required this.runName,
+      required this.runUrl,
+      required this.runHtmlUrl,
+      required this.position,
+      required this.positionUrl,
+      this.jobId = const SdkOmitted(),
+      this.jobName = const SdkOmitted(),
+      this.jobUrl = const SdkOmitted(),
+      this.jobHtmlUrl = const SdkOmitted(),
+      required this.status});
 
-  ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem Function({int runId, String runName, String? runUrl, String? runHtmlUrl, int position, String positionUrl, SdkOptional<int?> jobId, SdkOptional<String?> jobName, SdkOptional<String?> jobUrl, SdkOptional<String?> jobHtmlUrl, ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus status}) get copyWith => _copyWith;
+  ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem Function(
+      {int runId,
+      String runName,
+      String? runUrl,
+      String? runHtmlUrl,
+      int position,
+      String positionUrl,
+      SdkOptional<int?> jobId,
+      SdkOptional<String?> jobName,
+      SdkOptional<String?> jobUrl,
+      SdkOptional<String?> jobHtmlUrl,
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus
+          status}) get copyWith => _copyWith;
 
-  ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem _copyWith({Object? runId = sdkOmittedValue, Object? runName = sdkOmittedValue, Object? runUrl = sdkOmittedValue, Object? runHtmlUrl = sdkOmittedValue, Object? position = sdkOmittedValue, Object? positionUrl = sdkOmittedValue, Object? jobId = sdkOmittedValue, Object? jobName = sdkOmittedValue, Object? jobUrl = sdkOmittedValue, Object? jobHtmlUrl = sdkOmittedValue, Object? status = sdkOmittedValue}) => ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(
-    runId: identical(runId, sdkOmittedValue) ? this.runId : runId as int,
-    runName: identical(runName, sdkOmittedValue) ? this.runName : runName as String,
-    runUrl: identical(runUrl, sdkOmittedValue) ? this.runUrl : runUrl as String?,
-    runHtmlUrl: identical(runHtmlUrl, sdkOmittedValue) ? this.runHtmlUrl : runHtmlUrl as String?,
-    position: identical(position, sdkOmittedValue) ? this.position : position as int,
-    positionUrl: identical(positionUrl, sdkOmittedValue) ? this.positionUrl : positionUrl as String,
-    jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as SdkOptional<int?>,
-    jobName: identical(jobName, sdkOmittedValue) ? this.jobName : jobName as SdkOptional<String?>,
-    jobUrl: identical(jobUrl, sdkOmittedValue) ? this.jobUrl : jobUrl as SdkOptional<String?>,
-    jobHtmlUrl: identical(jobHtmlUrl, sdkOmittedValue) ? this.jobHtmlUrl : jobHtmlUrl as SdkOptional<String?>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus,
-  );
+  ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem _copyWith(
+          {Object? runId = sdkOmittedValue,
+          Object? runName = sdkOmittedValue,
+          Object? runUrl = sdkOmittedValue,
+          Object? runHtmlUrl = sdkOmittedValue,
+          Object? position = sdkOmittedValue,
+          Object? positionUrl = sdkOmittedValue,
+          Object? jobId = sdkOmittedValue,
+          Object? jobName = sdkOmittedValue,
+          Object? jobUrl = sdkOmittedValue,
+          Object? jobHtmlUrl = sdkOmittedValue,
+          Object? status = sdkOmittedValue}) =>
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(
+        runId: identical(runId, sdkOmittedValue) ? this.runId : runId as int,
+        runName: identical(runName, sdkOmittedValue)
+            ? this.runName
+            : runName as String,
+        runUrl: identical(runUrl, sdkOmittedValue)
+            ? this.runUrl
+            : runUrl as String?,
+        runHtmlUrl: identical(runHtmlUrl, sdkOmittedValue)
+            ? this.runHtmlUrl
+            : runHtmlUrl as String?,
+        position: identical(position, sdkOmittedValue)
+            ? this.position
+            : position as int,
+        positionUrl: identical(positionUrl, sdkOmittedValue)
+            ? this.positionUrl
+            : positionUrl as String,
+        jobId: identical(jobId, sdkOmittedValue)
+            ? this.jobId
+            : jobId as SdkOptional<int?>,
+        jobName: identical(jobName, sdkOmittedValue)
+            ? this.jobName
+            : jobName as SdkOptional<String?>,
+        jobUrl: identical(jobUrl, sdkOmittedValue)
+            ? this.jobUrl
+            : jobUrl as SdkOptional<String?>,
+        jobHtmlUrl: identical(jobHtmlUrl, sdkOmittedValue)
+            ? this.jobHtmlUrl
+            : jobHtmlUrl as SdkOptional<String?>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status
+                as ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus,
+      );
 
-  factory ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem.fromJson(Map<String, dynamic> json) => ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(
-    runId: ((json['run_id'] as num?)?.toInt())!,
-    runName: (json['run_name'] as String?)!,
-    runUrl: json.containsKey('run_url') ? json['run_url'] as String? : throw ArgumentError.value(null, 'run_url', 'Required property is missing'),
-    runHtmlUrl: json.containsKey('run_html_url') ? json['run_html_url'] as String? : throw ArgumentError.value(null, 'run_html_url', 'Required property is missing'),
-    position: ((json['position'] as num?)?.toInt())!,
-    positionUrl: (json['position_url'] as String?)!,
-    jobId: json.containsKey('job_id') ? SdkPresent((json['job_id'] as num?)?.toInt()) : const SdkOmitted(),
-    jobName: json.containsKey('job_name') ? SdkPresent(json['job_name'] as String?) : const SdkOmitted(),
-    jobUrl: json.containsKey('job_url') ? SdkPresent(json['job_url'] as String?) : const SdkOmitted(),
-    jobHtmlUrl: json.containsKey('job_html_url') ? SdkPresent(json['job_html_url'] as String?) : const SdkOmitted(),
-    status: (json['status'] != null ? ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus.fromJson(json['status'] as String) : null)!,
-  );
+  factory ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem.fromJson(
+          Map<String, dynamic> json) =>
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItem(
+        runId: ((json['run_id'] as num?)?.toInt())!,
+        runName: (json['run_name'] as String?)!,
+        runUrl: json.containsKey('run_url')
+            ? json['run_url'] as String?
+            : throw ArgumentError.value(
+                null, 'run_url', 'Required property is missing'),
+        runHtmlUrl: json.containsKey('run_html_url')
+            ? json['run_html_url'] as String?
+            : throw ArgumentError.value(
+                null, 'run_html_url', 'Required property is missing'),
+        position: ((json['position'] as num?)?.toInt())!,
+        positionUrl: (json['position_url'] as String?)!,
+        jobId: json.containsKey('job_id')
+            ? SdkPresent((json['job_id'] as num?)?.toInt())
+            : const SdkOmitted(),
+        jobName: json.containsKey('job_name')
+            ? SdkPresent(json['job_name'] as String?)
+            : const SdkOmitted(),
+        jobUrl: json.containsKey('job_url')
+            ? SdkPresent(json['job_url'] as String?)
+            : const SdkOmitted(),
+        jobHtmlUrl: json.containsKey('job_html_url')
+            ? SdkPresent(json['job_html_url'] as String?)
+            : const SdkOmitted(),
+        status: (json['status'] != null
+            ? ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus
+                .fromJson(json['status'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'run_id': runId,
-    'run_name': runName,
-    'run_url': runUrl,
-    'run_html_url': runHtmlUrl,
-    'position': position,
-    'position_url': positionUrl,
-    ...switch (jobId) {
-      SdkPresent<int?>(value: final value) => {'job_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jobName) {
-      SdkPresent<String?>(value: final value) => {'job_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jobUrl) {
-      SdkPresent<String?>(value: final value) => {'job_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (jobHtmlUrl) {
-      SdkPresent<String?>(value: final value) => {'job_html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'status': status.toJson(),
-  };
+        'run_id': runId,
+        'run_name': runName,
+        'run_url': runUrl,
+        'run_html_url': runHtmlUrl,
+        'position': position,
+        'position_url': positionUrl,
+        ...switch (jobId) {
+          SdkPresent<int?>(value: final value) => {
+              'job_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jobName) {
+          SdkPresent<String?>(value: final value) => {
+              'job_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jobUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'job_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jobHtmlUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'job_html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'status': status.toJson(),
+      };
 }

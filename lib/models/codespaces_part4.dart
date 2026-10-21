@@ -8,157 +8,268 @@ part of 'codespaces.dart';
 class CodespacesSecret {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the secret
   final String name;
+
   /// The date and time at which the secret was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String createdAt;
+
   /// The date and time at which the secret was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String updatedAt;
+
   /// The type of repositories in the organization that the secret is visible to
   final CodespacesSecretVisibility visibility;
+
   /// The API URL at which the list of repositories this secret is visible to can be retrieved
   final String selectedRepositoriesUrl;
 
-  const CodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, required this.selectedRepositoriesUrl});
+  const CodespacesSecret(
+      {required this.name,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.visibility,
+      required this.selectedRepositoriesUrl});
 
-  CodespacesSecret Function({String name, String createdAt, String updatedAt, CodespacesSecretVisibility visibility, String selectedRepositoriesUrl}) get copyWith => _copyWith;
+  CodespacesSecret Function(
+      {String name,
+      String createdAt,
+      String updatedAt,
+      CodespacesSecretVisibility visibility,
+      String selectedRepositoriesUrl}) get copyWith => _copyWith;
 
-  CodespacesSecret _copyWith({Object? name = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue}) => CodespacesSecret(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as CodespacesSecretVisibility,
-    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as String,
-  );
+  CodespacesSecret _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoriesUrl = sdkOmittedValue}) =>
+      CodespacesSecret(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as CodespacesSecretVisibility,
+        selectedRepositoriesUrl:
+            identical(selectedRepositoriesUrl, sdkOmittedValue)
+                ? this.selectedRepositoriesUrl
+                : selectedRepositoriesUrl as String,
+      );
 
-  factory CodespacesSecret.fromJson(Map<String, dynamic> json) => CodespacesSecret(
-    name: (json['name'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    visibility: (json['visibility'] != null ? CodespacesSecretVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedRepositoriesUrl: (json['selected_repositories_url'] as String?)!,
-  );
+  factory CodespacesSecret.fromJson(Map<String, dynamic> json) =>
+      CodespacesSecret(
+        name: (json['name'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        visibility: (json['visibility'] != null
+            ? CodespacesSecretVisibility.fromJson(json['visibility'] as String)
+            : null)!,
+        selectedRepositoriesUrl:
+            (json['selected_repositories_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'visibility': visibility.toJson(),
-    'selected_repositories_url': selectedRepositoriesUrl,
-  };
+        'name': name,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'visibility': visibility.toJson(),
+        'selected_repositories_url': selectedRepositoriesUrl,
+      };
 }
 
 /// The public key used for setting user Codespaces' Secrets.
 class CodespacesUserPublicKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The identifier for the key.
   final String keyId;
+
   /// The Base64 encoded public key.
   final String key;
 
   const CodespacesUserPublicKey({required this.keyId, required this.key});
 
-  CodespacesUserPublicKey Function({String keyId, String key}) get copyWith => _copyWith;
+  CodespacesUserPublicKey Function({String keyId, String key}) get copyWith =>
+      _copyWith;
 
-  CodespacesUserPublicKey _copyWith({Object? keyId = sdkOmittedValue, Object? key = sdkOmittedValue}) => CodespacesUserPublicKey(
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-  );
+  CodespacesUserPublicKey _copyWith(
+          {Object? keyId = sdkOmittedValue, Object? key = sdkOmittedValue}) =>
+      CodespacesUserPublicKey(
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+      );
 
-  factory CodespacesUserPublicKey.fromJson(Map<String, dynamic> json) => CodespacesUserPublicKey(
-    keyId: (json['key_id'] as String?)!,
-    key: (json['key'] as String?)!,
-  );
+  factory CodespacesUserPublicKey.fromJson(Map<String, dynamic> json) =>
+      CodespacesUserPublicKey(
+        keyId: (json['key_id'] as String?)!,
+        key: (json['key'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'key_id': keyId,
-    'key': key,
-  };
+        'key_id': keyId,
+        'key': key,
+      };
 }
 
 /// Details about the codespace's git repository.
 class CodespaceWithFullRepositoryGitStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of commits the local repository is ahead of the remote.
   final SdkOptional<int> ahead;
+
   /// The number of commits the local repository is behind the remote.
   final SdkOptional<int> behind;
+
   /// Whether the local repository has unpushed changes.
   final SdkOptional<bool> hasUnpushedChanges;
+
   /// Whether the local repository has uncommitted changes.
   final SdkOptional<bool> hasUncommittedChanges;
+
   /// The current branch (or SHA if in detached HEAD state) of the local repository.
   final SdkOptional<String> ref;
 
-  const CodespaceWithFullRepositoryGitStatus({this.ahead = const SdkOmitted(), this.behind = const SdkOmitted(), this.hasUnpushedChanges = const SdkOmitted(), this.hasUncommittedChanges = const SdkOmitted(), this.ref = const SdkOmitted()});
+  const CodespaceWithFullRepositoryGitStatus(
+      {this.ahead = const SdkOmitted(),
+      this.behind = const SdkOmitted(),
+      this.hasUnpushedChanges = const SdkOmitted(),
+      this.hasUncommittedChanges = const SdkOmitted(),
+      this.ref = const SdkOmitted()});
 
-  CodespaceWithFullRepositoryGitStatus Function({SdkOptional<int> ahead, SdkOptional<int> behind, SdkOptional<bool> hasUnpushedChanges, SdkOptional<bool> hasUncommittedChanges, SdkOptional<String> ref}) get copyWith => _copyWith;
+  CodespaceWithFullRepositoryGitStatus Function(
+      {SdkOptional<int> ahead,
+      SdkOptional<int> behind,
+      SdkOptional<bool> hasUnpushedChanges,
+      SdkOptional<bool> hasUncommittedChanges,
+      SdkOptional<String> ref}) get copyWith => _copyWith;
 
-  CodespaceWithFullRepositoryGitStatus _copyWith({Object? ahead = sdkOmittedValue, Object? behind = sdkOmittedValue, Object? hasUnpushedChanges = sdkOmittedValue, Object? hasUncommittedChanges = sdkOmittedValue, Object? ref = sdkOmittedValue}) => CodespaceWithFullRepositoryGitStatus(
-    ahead: identical(ahead, sdkOmittedValue) ? this.ahead : ahead as SdkOptional<int>,
-    behind: identical(behind, sdkOmittedValue) ? this.behind : behind as SdkOptional<int>,
-    hasUnpushedChanges: identical(hasUnpushedChanges, sdkOmittedValue) ? this.hasUnpushedChanges : hasUnpushedChanges as SdkOptional<bool>,
-    hasUncommittedChanges: identical(hasUncommittedChanges, sdkOmittedValue) ? this.hasUncommittedChanges : hasUncommittedChanges as SdkOptional<bool>,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-  );
+  CodespaceWithFullRepositoryGitStatus _copyWith(
+          {Object? ahead = sdkOmittedValue,
+          Object? behind = sdkOmittedValue,
+          Object? hasUnpushedChanges = sdkOmittedValue,
+          Object? hasUncommittedChanges = sdkOmittedValue,
+          Object? ref = sdkOmittedValue}) =>
+      CodespaceWithFullRepositoryGitStatus(
+        ahead: identical(ahead, sdkOmittedValue)
+            ? this.ahead
+            : ahead as SdkOptional<int>,
+        behind: identical(behind, sdkOmittedValue)
+            ? this.behind
+            : behind as SdkOptional<int>,
+        hasUnpushedChanges: identical(hasUnpushedChanges, sdkOmittedValue)
+            ? this.hasUnpushedChanges
+            : hasUnpushedChanges as SdkOptional<bool>,
+        hasUncommittedChanges: identical(hasUncommittedChanges, sdkOmittedValue)
+            ? this.hasUncommittedChanges
+            : hasUncommittedChanges as SdkOptional<bool>,
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+      );
 
-  factory CodespaceWithFullRepositoryGitStatus.fromJson(Map<String, dynamic> json) => CodespaceWithFullRepositoryGitStatus(
-    ahead: json['ahead'] != null ? SdkPresent(((json['ahead'] as num?)?.toInt())!) : const SdkOmitted(),
-    behind: json['behind'] != null ? SdkPresent(((json['behind'] as num?)?.toInt())!) : const SdkOmitted(),
-    hasUnpushedChanges: json['has_unpushed_changes'] != null ? SdkPresent((json['has_unpushed_changes'] as bool?)!) : const SdkOmitted(),
-    hasUncommittedChanges: json['has_uncommitted_changes'] != null ? SdkPresent((json['has_uncommitted_changes'] as bool?)!) : const SdkOmitted(),
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-  );
+  factory CodespaceWithFullRepositoryGitStatus.fromJson(
+          Map<String, dynamic> json) =>
+      CodespaceWithFullRepositoryGitStatus(
+        ahead: json['ahead'] != null
+            ? SdkPresent(((json['ahead'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        behind: json['behind'] != null
+            ? SdkPresent(((json['behind'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        hasUnpushedChanges: json['has_unpushed_changes'] != null
+            ? SdkPresent((json['has_unpushed_changes'] as bool?)!)
+            : const SdkOmitted(),
+        hasUncommittedChanges: json['has_uncommitted_changes'] != null
+            ? SdkPresent((json['has_uncommitted_changes'] as bool?)!)
+            : const SdkOmitted(),
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (ahead) {
-      SdkPresent<int>(value: final value) => {'ahead': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (behind) {
-      SdkPresent<int>(value: final value) => {'behind': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasUnpushedChanges) {
-      SdkPresent<bool>(value: final value) => {'has_unpushed_changes': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasUncommittedChanges) {
-      SdkPresent<bool>(value: final value) => {'has_uncommitted_changes': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (ahead) {
+          SdkPresent<int>(value: final value) => {
+              'ahead': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (behind) {
+          SdkPresent<int>(value: final value) => {
+              'behind': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasUnpushedChanges) {
+          SdkPresent<bool>(value: final value) => {
+              'has_unpushed_changes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasUncommittedChanges) {
+          SdkPresent<bool>(value: final value) => {
+              'has_uncommitted_changes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `runtime_constraints` wire field.
 class CodespaceWithFullRepositoryRuntimeConstraints {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The privacy settings a user can select from when forwarding a port.
   final SdkOptional<List<String>?> allowedPortPrivacySettings;
 
-  const CodespaceWithFullRepositoryRuntimeConstraints({this.allowedPortPrivacySettings = const SdkOmitted()});
+  const CodespaceWithFullRepositoryRuntimeConstraints(
+      {this.allowedPortPrivacySettings = const SdkOmitted()});
 
-  CodespaceWithFullRepositoryRuntimeConstraints Function({SdkOptional<List<String>?> allowedPortPrivacySettings}) get copyWith => _copyWith;
+  CodespaceWithFullRepositoryRuntimeConstraints Function(
+          {SdkOptional<List<String>?> allowedPortPrivacySettings})
+      get copyWith => _copyWith;
 
-  CodespaceWithFullRepositoryRuntimeConstraints _copyWith({Object? allowedPortPrivacySettings = sdkOmittedValue}) => CodespaceWithFullRepositoryRuntimeConstraints(
-    allowedPortPrivacySettings: identical(allowedPortPrivacySettings, sdkOmittedValue) ? this.allowedPortPrivacySettings : allowedPortPrivacySettings as SdkOptional<List<String>?>,
-  );
+  CodespaceWithFullRepositoryRuntimeConstraints _copyWith(
+          {Object? allowedPortPrivacySettings = sdkOmittedValue}) =>
+      CodespaceWithFullRepositoryRuntimeConstraints(
+        allowedPortPrivacySettings:
+            identical(allowedPortPrivacySettings, sdkOmittedValue)
+                ? this.allowedPortPrivacySettings
+                : allowedPortPrivacySettings as SdkOptional<List<String>?>,
+      );
 
-  factory CodespaceWithFullRepositoryRuntimeConstraints.fromJson(Map<String, dynamic> json) => CodespaceWithFullRepositoryRuntimeConstraints(
-    allowedPortPrivacySettings: json.containsKey('allowed_port_privacy_settings') ? SdkPresent((json['allowed_port_privacy_settings'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
-  );
+  factory CodespaceWithFullRepositoryRuntimeConstraints.fromJson(
+          Map<String, dynamic> json) =>
+      CodespaceWithFullRepositoryRuntimeConstraints(
+        allowedPortPrivacySettings:
+            json.containsKey('allowed_port_privacy_settings')
+                ? SdkPresent((json['allowed_port_privacy_settings'] as List?)
+                    ?.map((e) => e as String)
+                    .toList())
+                : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowedPortPrivacySettings) {
-      SdkPresent<List<String>?>(value: final value) => {'allowed_port_privacy_settings': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (allowedPortPrivacySettings) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'allowed_port_privacy_settings': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

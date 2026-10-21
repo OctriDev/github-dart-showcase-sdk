@@ -8,145 +8,266 @@ part of 'repos_status.dart';
 class Status {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `avatar_url` wire field.
   final String? avatarUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `state` wire field.
   final String state;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Required `string` value serialized in the `target_url` wire field.
   final String? targetUrl;
+
   /// Required `string` value serialized in the `context` wire field.
   final String context;
+
   /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `string` value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// A GitHub user.
   final NullableSimpleUser? creator;
 
-  const Status({required this.url, required this.avatarUrl, required this.id, required this.nodeId, required this.state, required this.description, required this.targetUrl, required this.context, required this.createdAt, required this.updatedAt, required this.creator});
+  const Status(
+      {required this.url,
+      required this.avatarUrl,
+      required this.id,
+      required this.nodeId,
+      required this.state,
+      required this.description,
+      required this.targetUrl,
+      required this.context,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.creator});
 
-  Status Function({String url, String? avatarUrl, int id, String nodeId, String state, String? description, String? targetUrl, String context, String createdAt, String updatedAt, NullableSimpleUser? creator}) get copyWith => _copyWith;
+  Status Function(
+      {String url,
+      String? avatarUrl,
+      int id,
+      String nodeId,
+      String state,
+      String? description,
+      String? targetUrl,
+      String context,
+      String createdAt,
+      String updatedAt,
+      NullableSimpleUser? creator}) get copyWith => _copyWith;
 
-  Status _copyWith({Object? url = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? state = sdkOmittedValue, Object? description = sdkOmittedValue, Object? targetUrl = sdkOmittedValue, Object? context = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? creator = sdkOmittedValue}) => Status(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    targetUrl: identical(targetUrl, sdkOmittedValue) ? this.targetUrl : targetUrl as String?,
-    context: identical(context, sdkOmittedValue) ? this.context : context as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as NullableSimpleUser?,
-  );
+  Status _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? targetUrl = sdkOmittedValue,
+          Object? context = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? creator = sdkOmittedValue}) =>
+      Status(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        targetUrl: identical(targetUrl, sdkOmittedValue)
+            ? this.targetUrl
+            : targetUrl as String?,
+        context: identical(context, sdkOmittedValue)
+            ? this.context
+            : context as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as NullableSimpleUser?,
+      );
 
   factory Status.fromJson(Map<String, dynamic> json) => Status(
-    url: (json['url'] as String?)!,
-    avatarUrl: json.containsKey('avatar_url') ? json['avatar_url'] as String? : throw ArgumentError.value(null, 'avatar_url', 'Required property is missing'),
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    state: (json['state'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    targetUrl: json.containsKey('target_url') ? json['target_url'] as String? : throw ArgumentError.value(null, 'target_url', 'Required property is missing'),
-    context: (json['context'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    creator: json.containsKey('creator') ? json['creator'] != null ? NullableSimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'creator', 'Required property is missing'),
-  );
+        url: (json['url'] as String?)!,
+        avatarUrl: json.containsKey('avatar_url')
+            ? json['avatar_url'] as String?
+            : throw ArgumentError.value(
+                null, 'avatar_url', 'Required property is missing'),
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        state: (json['state'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        targetUrl: json.containsKey('target_url')
+            ? json['target_url'] as String?
+            : throw ArgumentError.value(
+                null, 'target_url', 'Required property is missing'),
+        context: (json['context'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        creator: json.containsKey('creator')
+            ? json['creator'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['creator'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'creator', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'avatar_url': avatarUrl,
-    'id': id,
-    'node_id': nodeId,
-    'state': state,
-    'description': description,
-    'target_url': targetUrl,
-    'context': context,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'creator': creator?.toJson(),
-  };
+        'url': url,
+        'avatar_url': avatarUrl,
+        'id': id,
+        'node_id': nodeId,
+        'state': state,
+        'description': description,
+        'target_url': targetUrl,
+        'context': context,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'creator': creator?.toJson(),
+      };
 }
 
 /// Required object value serialized in the `checks[]` wire field.
 class StatusCheckPolicyChecksItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `context` wire field.
   final String context;
+
   /// Required `integer` value serialized in the `app_id` wire field.
   final int? appId;
 
-  const StatusCheckPolicyChecksItem({required this.context, required this.appId});
+  const StatusCheckPolicyChecksItem(
+      {required this.context, required this.appId});
 
-  StatusCheckPolicyChecksItem Function({String context, int? appId}) get copyWith => _copyWith;
+  StatusCheckPolicyChecksItem Function({String context, int? appId})
+      get copyWith => _copyWith;
 
-  StatusCheckPolicyChecksItem _copyWith({Object? context = sdkOmittedValue, Object? appId = sdkOmittedValue}) => StatusCheckPolicyChecksItem(
-    context: identical(context, sdkOmittedValue) ? this.context : context as String,
-    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int?,
-  );
+  StatusCheckPolicyChecksItem _copyWith(
+          {Object? context = sdkOmittedValue,
+          Object? appId = sdkOmittedValue}) =>
+      StatusCheckPolicyChecksItem(
+        context: identical(context, sdkOmittedValue)
+            ? this.context
+            : context as String,
+        appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int?,
+      );
 
-  factory StatusCheckPolicyChecksItem.fromJson(Map<String, dynamic> json) => StatusCheckPolicyChecksItem(
-    context: (json['context'] as String?)!,
-    appId: json.containsKey('app_id') ? (json['app_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'app_id', 'Required property is missing'),
-  );
+  factory StatusCheckPolicyChecksItem.fromJson(Map<String, dynamic> json) =>
+      StatusCheckPolicyChecksItem(
+        context: (json['context'] as String?)!,
+        appId: json.containsKey('app_id')
+            ? (json['app_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'app_id', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'context': context,
-    'app_id': appId,
-  };
+        'context': context,
+        'app_id': appId,
+      };
 }
 
 /// Status Check Policy
 class StatusCheckPolicy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `boolean` value serialized in the `strict` wire field.
   final bool strict;
+
   /// Required array value serialized in the `contexts` wire field.
   final List<String> contexts;
+
   /// Required array value serialized in the `checks` wire field.
   final List<StatusCheckPolicyChecksItem> checks;
+
   /// Required `uri`-formatted value serialized in the `contexts_url` wire field.
   final String contextsUrl;
 
-  const StatusCheckPolicy({required this.url, required this.strict, required this.contexts, required this.checks, required this.contextsUrl});
+  const StatusCheckPolicy(
+      {required this.url,
+      required this.strict,
+      required this.contexts,
+      required this.checks,
+      required this.contextsUrl});
 
-  StatusCheckPolicy Function({String url, bool strict, List<String> contexts, List<StatusCheckPolicyChecksItem> checks, String contextsUrl}) get copyWith => _copyWith;
+  StatusCheckPolicy Function(
+      {String url,
+      bool strict,
+      List<String> contexts,
+      List<StatusCheckPolicyChecksItem> checks,
+      String contextsUrl}) get copyWith => _copyWith;
 
-  StatusCheckPolicy _copyWith({Object? url = sdkOmittedValue, Object? strict = sdkOmittedValue, Object? contexts = sdkOmittedValue, Object? checks = sdkOmittedValue, Object? contextsUrl = sdkOmittedValue}) => StatusCheckPolicy(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as bool,
-    contexts: identical(contexts, sdkOmittedValue) ? this.contexts : contexts as List<String>,
-    checks: identical(checks, sdkOmittedValue) ? this.checks : checks as List<StatusCheckPolicyChecksItem>,
-    contextsUrl: identical(contextsUrl, sdkOmittedValue) ? this.contextsUrl : contextsUrl as String,
-  );
+  StatusCheckPolicy _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? strict = sdkOmittedValue,
+          Object? contexts = sdkOmittedValue,
+          Object? checks = sdkOmittedValue,
+          Object? contextsUrl = sdkOmittedValue}) =>
+      StatusCheckPolicy(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        strict:
+            identical(strict, sdkOmittedValue) ? this.strict : strict as bool,
+        contexts: identical(contexts, sdkOmittedValue)
+            ? this.contexts
+            : contexts as List<String>,
+        checks: identical(checks, sdkOmittedValue)
+            ? this.checks
+            : checks as List<StatusCheckPolicyChecksItem>,
+        contextsUrl: identical(contextsUrl, sdkOmittedValue)
+            ? this.contextsUrl
+            : contextsUrl as String,
+      );
 
-  factory StatusCheckPolicy.fromJson(Map<String, dynamic> json) => StatusCheckPolicy(
-    url: (json['url'] as String?)!,
-    strict: (json['strict'] as bool?)!,
-    contexts: ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
-    checks: ((json['checks'] as List?)?.map((e) => StatusCheckPolicyChecksItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    contextsUrl: (json['contexts_url'] as String?)!,
-  );
+  factory StatusCheckPolicy.fromJson(Map<String, dynamic> json) =>
+      StatusCheckPolicy(
+        url: (json['url'] as String?)!,
+        strict: (json['strict'] as bool?)!,
+        contexts:
+            ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
+        checks: ((json['checks'] as List?)
+            ?.map((e) =>
+                StatusCheckPolicyChecksItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        contextsUrl: (json['contexts_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'strict': strict,
-    'contexts': contexts,
-    'checks': checks.map((item) => item.toJson()).toList(),
-    'contexts_url': contextsUrl,
-  };
+        'url': url,
+        'strict': strict,
+        'contexts': contexts,
+        'checks': checks.map((item) => item.toJson()).toList(),
+        'contexts_url': contextsUrl,
+      };
 }

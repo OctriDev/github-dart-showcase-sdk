@@ -8,269 +8,489 @@ part of 'inline.dart';
 class GitCreateTagRequestBodyTagger {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the author of the tag
   final String name;
+
   /// The email of the author of the tag
   final String email;
+
   /// When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String> date;
 
-  const GitCreateTagRequestBodyTagger({required this.name, required this.email, this.date = const SdkOmitted()});
+  const GitCreateTagRequestBodyTagger(
+      {required this.name,
+      required this.email,
+      this.date = const SdkOmitted()});
 
-  GitCreateTagRequestBodyTagger Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
+  GitCreateTagRequestBodyTagger Function(
+      {String name,
+      String email,
+      SdkOptional<String> date}) get copyWith => _copyWith;
 
-  GitCreateTagRequestBodyTagger _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitCreateTagRequestBodyTagger(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
+  GitCreateTagRequestBodyTagger _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? date = sdkOmittedValue}) =>
+      GitCreateTagRequestBodyTagger(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+      );
 
-  factory GitCreateTagRequestBodyTagger.fromJson(Map<String, dynamic> json) => GitCreateTagRequestBodyTagger(
-    name: (json['name'] as String?)!,
-    email: (json['email'] as String?)!,
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitCreateTagRequestBodyTagger.fromJson(Map<String, dynamic> json) =>
+      GitCreateTagRequestBodyTagger(
+        name: (json['name'] as String?)!,
+        email: (json['email'] as String?)!,
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'email': email,
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'email': email,
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GitCreateTagRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The tag's name. This is typically a version (e.g., "v0.0.1").
   final String tag;
+
   /// The tag message.
   final String message;
+
   /// The SHA of the git object this is tagging.
   final String object;
+
   /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
   final GitCreateTagRequestBodyType type_;
+
   /// An object with information about the individual creating the tag.
   final SdkOptional<GitCreateTagRequestBodyTagger> tagger;
 
-  const GitCreateTagRequestBody({required this.tag, required this.message, required this.object, required this.type_, this.tagger = const SdkOmitted()});
+  const GitCreateTagRequestBody(
+      {required this.tag,
+      required this.message,
+      required this.object,
+      required this.type_,
+      this.tagger = const SdkOmitted()});
 
-  GitCreateTagRequestBody Function({String tag, String message, String object, GitCreateTagRequestBodyType type_, SdkOptional<GitCreateTagRequestBodyTagger> tagger}) get copyWith => _copyWith;
+  GitCreateTagRequestBody Function(
+          {String tag,
+          String message,
+          String object,
+          GitCreateTagRequestBodyType type_,
+          SdkOptional<GitCreateTagRequestBodyTagger> tagger})
+      get copyWith => _copyWith;
 
-  GitCreateTagRequestBody _copyWith({Object? tag = sdkOmittedValue, Object? message = sdkOmittedValue, Object? object = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? tagger = sdkOmittedValue}) => GitCreateTagRequestBody(
-    tag: identical(tag, sdkOmittedValue) ? this.tag : tag as String,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    object: identical(object, sdkOmittedValue) ? this.object : object as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as GitCreateTagRequestBodyType,
-    tagger: identical(tagger, sdkOmittedValue) ? this.tagger : tagger as SdkOptional<GitCreateTagRequestBodyTagger>,
-  );
+  GitCreateTagRequestBody _copyWith(
+          {Object? tag = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? object = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? tagger = sdkOmittedValue}) =>
+      GitCreateTagRequestBody(
+        tag: identical(tag, sdkOmittedValue) ? this.tag : tag as String,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        object:
+            identical(object, sdkOmittedValue) ? this.object : object as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as GitCreateTagRequestBodyType,
+        tagger: identical(tagger, sdkOmittedValue)
+            ? this.tagger
+            : tagger as SdkOptional<GitCreateTagRequestBodyTagger>,
+      );
 
-  factory GitCreateTagRequestBody.fromJson(Map<String, dynamic> json) => GitCreateTagRequestBody(
-    tag: (json['tag'] as String?)!,
-    message: (json['message'] as String?)!,
-    object: (json['object'] as String?)!,
-    type_: (json['type'] != null ? GitCreateTagRequestBodyType.fromJson(json['type'] as String) : null)!,
-    tagger: json['tagger'] != null ? SdkPresent((json['tagger'] != null ? GitCreateTagRequestBodyTagger.fromJson(json['tagger'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory GitCreateTagRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateTagRequestBody(
+        tag: (json['tag'] as String?)!,
+        message: (json['message'] as String?)!,
+        object: (json['object'] as String?)!,
+        type_: (json['type'] != null
+            ? GitCreateTagRequestBodyType.fromJson(json['type'] as String)
+            : null)!,
+        tagger: json['tagger'] != null
+            ? SdkPresent((json['tagger'] != null
+                ? GitCreateTagRequestBodyTagger.fromJson(
+                    json['tagger'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'tag': tag,
-    'message': message,
-    'object': object,
-    'type': type_.toJson(),
-    ...switch (tagger) {
-      SdkPresent<GitCreateTagRequestBodyTagger>(value: final value) => {'tagger': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'tag': tag,
+        'message': message,
+        'object': object,
+        'type': type_.toJson(),
+        ...switch (tagger) {
+          SdkPresent<GitCreateTagRequestBodyTagger>(value: final value) => {
+              'tagger': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GitCreateTreeRequestBodyTreeItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The file referenced in the tree.
   final SdkOptional<String> path;
+
   /// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
   final SdkOptional<GitCreateTreeRequestBodyTreeItemMode> mode;
+
   /// Either `blob`, `tree`, or `commit`.
   final SdkOptional<GitCreateTreeRequestBodyTreeItemType> type_;
+
   /// The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted. **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
   final SdkOptional<String?> sha;
+
   /// The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`. **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
   final SdkOptional<String> content;
 
-  const GitCreateTreeRequestBodyTreeItem({this.path = const SdkOmitted(), this.mode = const SdkOmitted(), this.type_ = const SdkOmitted(), this.sha = const SdkOmitted(), this.content = const SdkOmitted()});
+  const GitCreateTreeRequestBodyTreeItem(
+      {this.path = const SdkOmitted(),
+      this.mode = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.sha = const SdkOmitted(),
+      this.content = const SdkOmitted()});
 
-  GitCreateTreeRequestBodyTreeItem Function({SdkOptional<String> path, SdkOptional<GitCreateTreeRequestBodyTreeItemMode> mode, SdkOptional<GitCreateTreeRequestBodyTreeItemType> type_, SdkOptional<String?> sha, SdkOptional<String> content}) get copyWith => _copyWith;
+  GitCreateTreeRequestBodyTreeItem Function(
+      {SdkOptional<String> path,
+      SdkOptional<GitCreateTreeRequestBodyTreeItemMode> mode,
+      SdkOptional<GitCreateTreeRequestBodyTreeItemType> type_,
+      SdkOptional<String?> sha,
+      SdkOptional<String> content}) get copyWith => _copyWith;
 
-  GitCreateTreeRequestBodyTreeItem _copyWith({Object? path = sdkOmittedValue, Object? mode = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? content = sdkOmittedValue}) => GitCreateTreeRequestBodyTreeItem(
-    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String>,
-    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as SdkOptional<GitCreateTreeRequestBodyTreeItemMode>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<GitCreateTreeRequestBodyTreeItemType>,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String?>,
-    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<String>,
-  );
+  GitCreateTreeRequestBodyTreeItem _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? mode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? content = sdkOmittedValue}) =>
+      GitCreateTreeRequestBodyTreeItem(
+        path: identical(path, sdkOmittedValue)
+            ? this.path
+            : path as SdkOptional<String>,
+        mode: identical(mode, sdkOmittedValue)
+            ? this.mode
+            : mode as SdkOptional<GitCreateTreeRequestBodyTreeItemMode>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<GitCreateTreeRequestBodyTreeItemType>,
+        sha: identical(sha, sdkOmittedValue)
+            ? this.sha
+            : sha as SdkOptional<String?>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as SdkOptional<String>,
+      );
 
-  factory GitCreateTreeRequestBodyTreeItem.fromJson(Map<String, dynamic> json) => GitCreateTreeRequestBodyTreeItem(
-    path: json['path'] != null ? SdkPresent((json['path'] as String?)!) : const SdkOmitted(),
-    mode: json['mode'] != null ? SdkPresent((json['mode'] != null ? GitCreateTreeRequestBodyTreeItemMode.fromJson(json['mode'] as String) : null)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? GitCreateTreeRequestBodyTreeItemType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    sha: json.containsKey('sha') ? SdkPresent(json['sha'] as String?) : const SdkOmitted(),
-    content: json['content'] != null ? SdkPresent((json['content'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitCreateTreeRequestBodyTreeItem.fromJson(
+          Map<String, dynamic> json) =>
+      GitCreateTreeRequestBodyTreeItem(
+        path: json['path'] != null
+            ? SdkPresent((json['path'] as String?)!)
+            : const SdkOmitted(),
+        mode: json['mode'] != null
+            ? SdkPresent((json['mode'] != null
+                ? GitCreateTreeRequestBodyTreeItemMode.fromJson(
+                    json['mode'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? GitCreateTreeRequestBodyTreeItemType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        sha: json.containsKey('sha')
+            ? SdkPresent(json['sha'] as String?)
+            : const SdkOmitted(),
+        content: json['content'] != null
+            ? SdkPresent((json['content'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (path) {
-      SdkPresent<String>(value: final value) => {'path': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mode) {
-      SdkPresent<GitCreateTreeRequestBodyTreeItemMode>(value: final value) => {'mode': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<GitCreateTreeRequestBodyTreeItemType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sha) {
-      SdkPresent<String?>(value: final value) => {'sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (content) {
-      SdkPresent<String>(value: final value) => {'content': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (path) {
+          SdkPresent<String>(value: final value) => {
+              'path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mode) {
+          SdkPresent<GitCreateTreeRequestBodyTreeItemMode>(
+            value: final value
+          ) =>
+            {
+              'mode': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<GitCreateTreeRequestBodyTreeItemType>(
+            value: final value
+          ) =>
+            {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sha) {
+          SdkPresent<String?>(value: final value) => {
+              'sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (content) {
+          SdkPresent<String>(value: final value) => {
+              'content': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GitCreateTreeRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
   final List<GitCreateTreeRequestBodyTreeItem> tree;
+
   /// The SHA1 of an existing Git tree object which will be used as the base for the new tree. If provided, a new Git tree object will be created from entries in the Git tree object pointed to by `base_tree` and entries defined in the `tree` parameter. Entries defined in the `tree` parameter will overwrite items from `base_tree` with the same `path`. If you're creating new changes on a branch, then normally you'd set `base_tree` to the SHA1 of the Git tree object of the current latest commit on the branch you're working on. If not provided, GitHub will create a new Git tree object from only the entries defined in the `tree` parameter. If you create a new commit pointing to such a tree, then all files which were a part of the parent commit's tree and were not defined in the `tree` parameter will be listed as deleted by the new commit.
   final SdkOptional<String> baseTree;
 
-  const GitCreateTreeRequestBody({required this.tree, this.baseTree = const SdkOmitted()});
+  const GitCreateTreeRequestBody(
+      {required this.tree, this.baseTree = const SdkOmitted()});
 
-  GitCreateTreeRequestBody Function({List<GitCreateTreeRequestBodyTreeItem> tree, SdkOptional<String> baseTree}) get copyWith => _copyWith;
+  GitCreateTreeRequestBody Function(
+      {List<GitCreateTreeRequestBodyTreeItem> tree,
+      SdkOptional<String> baseTree}) get copyWith => _copyWith;
 
-  GitCreateTreeRequestBody _copyWith({Object? tree = sdkOmittedValue, Object? baseTree = sdkOmittedValue}) => GitCreateTreeRequestBody(
-    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as List<GitCreateTreeRequestBodyTreeItem>,
-    baseTree: identical(baseTree, sdkOmittedValue) ? this.baseTree : baseTree as SdkOptional<String>,
-  );
+  GitCreateTreeRequestBody _copyWith(
+          {Object? tree = sdkOmittedValue,
+          Object? baseTree = sdkOmittedValue}) =>
+      GitCreateTreeRequestBody(
+        tree: identical(tree, sdkOmittedValue)
+            ? this.tree
+            : tree as List<GitCreateTreeRequestBodyTreeItem>,
+        baseTree: identical(baseTree, sdkOmittedValue)
+            ? this.baseTree
+            : baseTree as SdkOptional<String>,
+      );
 
-  factory GitCreateTreeRequestBody.fromJson(Map<String, dynamic> json) => GitCreateTreeRequestBody(
-    tree: ((json['tree'] as List?)?.map((e) => GitCreateTreeRequestBodyTreeItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    baseTree: json['base_tree'] != null ? SdkPresent((json['base_tree'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitCreateTreeRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateTreeRequestBody(
+        tree: ((json['tree'] as List?)
+            ?.map((e) => GitCreateTreeRequestBodyTreeItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        baseTree: json['base_tree'] != null
+            ? SdkPresent((json['base_tree'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'tree': tree.map((item) => item.toJson()).toList(),
-    ...switch (baseTree) {
-      SdkPresent<String>(value: final value) => {'base_tree': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'tree': tree.map((item) => item.toJson()).toList(),
+        ...switch (baseTree) {
+          SdkPresent<String>(value: final value) => {
+              'base_tree': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class PullsCreateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The title of the new pull request. Required unless `issue` is specified.
   final SdkOptional<String> title;
+
   /// The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace `head` with a user like this: `username:branch`.
   final String head;
+
   /// The name of the repository where the changes in the pull request were made. This field is required for cross-repository pull requests if both repositories are owned by the same organization.
   final SdkOptional<String> headRepo;
+
   /// The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
   final String base_;
+
   /// The contents of the pull request.
   final SdkOptional<String> body;
+
   /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
   final SdkOptional<bool> maintainerCanModify;
+
   /// Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://docs.github.com/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
   final SdkOptional<bool> draft;
+
   /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.
   final SdkOptional<int> issue;
 
-  const PullsCreateRequestBody({this.title = const SdkOmitted(), required this.head, this.headRepo = const SdkOmitted(), required this.base_, this.body = const SdkOmitted(), this.maintainerCanModify = const SdkOmitted(), this.draft = const SdkOmitted(), this.issue = const SdkOmitted()});
+  const PullsCreateRequestBody(
+      {this.title = const SdkOmitted(),
+      required this.head,
+      this.headRepo = const SdkOmitted(),
+      required this.base_,
+      this.body = const SdkOmitted(),
+      this.maintainerCanModify = const SdkOmitted(),
+      this.draft = const SdkOmitted(),
+      this.issue = const SdkOmitted()});
 
-  PullsCreateRequestBody Function({SdkOptional<String> title, String head, SdkOptional<String> headRepo, String base_, SdkOptional<String> body, SdkOptional<bool> maintainerCanModify, SdkOptional<bool> draft, SdkOptional<int> issue}) get copyWith => _copyWith;
+  PullsCreateRequestBody Function(
+      {SdkOptional<String> title,
+      String head,
+      SdkOptional<String> headRepo,
+      String base_,
+      SdkOptional<String> body,
+      SdkOptional<bool> maintainerCanModify,
+      SdkOptional<bool> draft,
+      SdkOptional<int> issue}) get copyWith => _copyWith;
 
-  PullsCreateRequestBody _copyWith({Object? title = sdkOmittedValue, Object? head = sdkOmittedValue, Object? headRepo = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? body = sdkOmittedValue, Object? maintainerCanModify = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? issue = sdkOmittedValue}) => PullsCreateRequestBody(
-    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
-    head: identical(head, sdkOmittedValue) ? this.head : head as String,
-    headRepo: identical(headRepo, sdkOmittedValue) ? this.headRepo : headRepo as SdkOptional<String>,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
-    maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue) ? this.maintainerCanModify : maintainerCanModify as SdkOptional<bool>,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as SdkOptional<int>,
-  );
+  PullsCreateRequestBody _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? head = sdkOmittedValue,
+          Object? headRepo = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? maintainerCanModify = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? issue = sdkOmittedValue}) =>
+      PullsCreateRequestBody(
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        head: identical(head, sdkOmittedValue) ? this.head : head as String,
+        headRepo: identical(headRepo, sdkOmittedValue)
+            ? this.headRepo
+            : headRepo as SdkOptional<String>,
+        base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+        maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue)
+            ? this.maintainerCanModify
+            : maintainerCanModify as SdkOptional<bool>,
+        draft: identical(draft, sdkOmittedValue)
+            ? this.draft
+            : draft as SdkOptional<bool>,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue as SdkOptional<int>,
+      );
 
-  factory PullsCreateRequestBody.fromJson(Map<String, dynamic> json) => PullsCreateRequestBody(
-    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
-    head: (json['head'] as String?)!,
-    headRepo: json['head_repo'] != null ? SdkPresent((json['head_repo'] as String?)!) : const SdkOmitted(),
-    base_: (json['base'] as String?)!,
-    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
-    maintainerCanModify: json['maintainer_can_modify'] != null ? SdkPresent((json['maintainer_can_modify'] as bool?)!) : const SdkOmitted(),
-    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
-    issue: json['issue'] != null ? SdkPresent(((json['issue'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory PullsCreateRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsCreateRequestBody(
+        title: json['title'] != null
+            ? SdkPresent((json['title'] as String?)!)
+            : const SdkOmitted(),
+        head: (json['head'] as String?)!,
+        headRepo: json['head_repo'] != null
+            ? SdkPresent((json['head_repo'] as String?)!)
+            : const SdkOmitted(),
+        base_: (json['base'] as String?)!,
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
+            : const SdkOmitted(),
+        maintainerCanModify: json['maintainer_can_modify'] != null
+            ? SdkPresent((json['maintainer_can_modify'] as bool?)!)
+            : const SdkOmitted(),
+        draft: json['draft'] != null
+            ? SdkPresent((json['draft'] as bool?)!)
+            : const SdkOmitted(),
+        issue: json['issue'] != null
+            ? SdkPresent(((json['issue'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (title) {
-      SdkPresent<String>(value: final value) => {'title': value,},
-      _ => const <String, dynamic>{},
-    },
-    'head': head,
-    ...switch (headRepo) {
-      SdkPresent<String>(value: final value) => {'head_repo': value,},
-      _ => const <String, dynamic>{},
-    },
-    'base': base_,
-    ...switch (body) {
-      SdkPresent<String>(value: final value) => {'body': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (maintainerCanModify) {
-      SdkPresent<bool>(value: final value) => {'maintainer_can_modify': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (draft) {
-      SdkPresent<bool>(value: final value) => {'draft': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issue) {
-      SdkPresent<int>(value: final value) => {'issue': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (title) {
+          SdkPresent<String>(value: final value) => {
+              'title': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'head': head,
+        ...switch (headRepo) {
+          SdkPresent<String>(value: final value) => {
+              'head_repo': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'base': base_,
+        ...switch (body) {
+          SdkPresent<String>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (maintainerCanModify) {
+          SdkPresent<bool>(value: final value) => {
+              'maintainer_can_modify': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (draft) {
+          SdkPresent<bool>(value: final value) => {
+              'draft': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issue) {
+          SdkPresent<int>(value: final value) => {
+              'issue': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class PullsUpdateReviewCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The text of the reply to the review comment.
   final String body;
 
   const PullsUpdateReviewCommentRequestBody({required this.body});
 
-  PullsUpdateReviewCommentRequestBody Function({String body}) get copyWith => _copyWith;
+  PullsUpdateReviewCommentRequestBody Function({String body}) get copyWith =>
+      _copyWith;
 
-  PullsUpdateReviewCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => PullsUpdateReviewCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
+  PullsUpdateReviewCommentRequestBody _copyWith(
+          {Object? body = sdkOmittedValue}) =>
+      PullsUpdateReviewCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
 
-  factory PullsUpdateReviewCommentRequestBody.fromJson(Map<String, dynamic> json) => PullsUpdateReviewCommentRequestBody(
-    body: (json['body'] as String?)!,
-  );
+  factory PullsUpdateReviewCommentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      PullsUpdateReviewCommentRequestBody(
+        body: (json['body'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
+        'body': body,
+      };
 }

@@ -6,30 +6,36 @@ part of 'security_advisories.dart';
 // security_advisories domain models
 /// The type of credit the user is receiving.
 final class SecurityAdvisoryCreditTypes {
-
   final String value;
 
   const SecurityAdvisoryCreditTypes._(this.value);
 
-  factory SecurityAdvisoryCreditTypes.fromJson(String value) => SecurityAdvisoryCreditTypes._(value);
+  factory SecurityAdvisoryCreditTypes.fromJson(String value) =>
+      SecurityAdvisoryCreditTypes._(value);
 
   static const analyst = SecurityAdvisoryCreditTypes._('analyst');
   static const finder = SecurityAdvisoryCreditTypes._('finder');
   static const reporter = SecurityAdvisoryCreditTypes._('reporter');
   static const coordinator = SecurityAdvisoryCreditTypes._('coordinator');
-  static const remediationDeveloper = SecurityAdvisoryCreditTypes._('remediation_developer');
-  static const remediationReviewer = SecurityAdvisoryCreditTypes._('remediation_reviewer');
-  static const remediationVerifier = SecurityAdvisoryCreditTypes._('remediation_verifier');
+  static const remediationDeveloper =
+      SecurityAdvisoryCreditTypes._('remediation_developer');
+  static const remediationReviewer =
+      SecurityAdvisoryCreditTypes._('remediation_reviewer');
+  static const remediationVerifier =
+      SecurityAdvisoryCreditTypes._('remediation_verifier');
   static const tool = SecurityAdvisoryCreditTypes._('tool');
   static const sponsor = SecurityAdvisoryCreditTypes._('sponsor');
   static const other = SecurityAdvisoryCreditTypes._('other');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecurityAdvisoryCreditTypes && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecurityAdvisoryCreditTypes && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

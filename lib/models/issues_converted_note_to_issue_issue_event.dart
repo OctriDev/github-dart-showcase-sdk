@@ -8,122 +8,242 @@ part of 'issues.dart';
 class ConvertedNoteToIssueIssueEventProjectCard {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `integer` value serialized in the `project_id` wire field.
   final int projectId;
+
   /// Required `uri`-formatted value serialized in the `project_url` wire field.
   final String projectUrl;
+
   /// Required `string` value serialized in the `column_name` wire field.
   final String columnName;
+
   /// Optional `string` value serialized in the `previous_column_name` wire field.
   final SdkOptional<String> previousColumnName;
 
-  const ConvertedNoteToIssueIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName = const SdkOmitted()});
+  const ConvertedNoteToIssueIssueEventProjectCard(
+      {required this.id,
+      required this.url,
+      required this.projectId,
+      required this.projectUrl,
+      required this.columnName,
+      this.previousColumnName = const SdkOmitted()});
 
-  ConvertedNoteToIssueIssueEventProjectCard Function({int id, String url, int projectId, String projectUrl, String columnName, SdkOptional<String> previousColumnName}) get copyWith => _copyWith;
+  ConvertedNoteToIssueIssueEventProjectCard Function(
+      {int id,
+      String url,
+      int projectId,
+      String projectUrl,
+      String columnName,
+      SdkOptional<String> previousColumnName}) get copyWith => _copyWith;
 
-  ConvertedNoteToIssueIssueEventProjectCard _copyWith({Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? projectId = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? columnName = sdkOmittedValue, Object? previousColumnName = sdkOmittedValue}) => ConvertedNoteToIssueIssueEventProjectCard(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    projectId: identical(projectId, sdkOmittedValue) ? this.projectId : projectId as int,
-    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
-    columnName: identical(columnName, sdkOmittedValue) ? this.columnName : columnName as String,
-    previousColumnName: identical(previousColumnName, sdkOmittedValue) ? this.previousColumnName : previousColumnName as SdkOptional<String>,
-  );
+  ConvertedNoteToIssueIssueEventProjectCard _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? projectId = sdkOmittedValue,
+          Object? projectUrl = sdkOmittedValue,
+          Object? columnName = sdkOmittedValue,
+          Object? previousColumnName = sdkOmittedValue}) =>
+      ConvertedNoteToIssueIssueEventProjectCard(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        projectId: identical(projectId, sdkOmittedValue)
+            ? this.projectId
+            : projectId as int,
+        projectUrl: identical(projectUrl, sdkOmittedValue)
+            ? this.projectUrl
+            : projectUrl as String,
+        columnName: identical(columnName, sdkOmittedValue)
+            ? this.columnName
+            : columnName as String,
+        previousColumnName: identical(previousColumnName, sdkOmittedValue)
+            ? this.previousColumnName
+            : previousColumnName as SdkOptional<String>,
+      );
 
-  factory ConvertedNoteToIssueIssueEventProjectCard.fromJson(Map<String, dynamic> json) => ConvertedNoteToIssueIssueEventProjectCard(
-    id: ((json['id'] as num?)?.toInt())!,
-    url: (json['url'] as String?)!,
-    projectId: ((json['project_id'] as num?)?.toInt())!,
-    projectUrl: (json['project_url'] as String?)!,
-    columnName: (json['column_name'] as String?)!,
-    previousColumnName: json['previous_column_name'] != null ? SdkPresent((json['previous_column_name'] as String?)!) : const SdkOmitted(),
-  );
+  factory ConvertedNoteToIssueIssueEventProjectCard.fromJson(
+          Map<String, dynamic> json) =>
+      ConvertedNoteToIssueIssueEventProjectCard(
+        id: ((json['id'] as num?)?.toInt())!,
+        url: (json['url'] as String?)!,
+        projectId: ((json['project_id'] as num?)?.toInt())!,
+        projectUrl: (json['project_url'] as String?)!,
+        columnName: (json['column_name'] as String?)!,
+        previousColumnName: json['previous_column_name'] != null
+            ? SdkPresent((json['previous_column_name'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'url': url,
-    'project_id': projectId,
-    'project_url': projectUrl,
-    'column_name': columnName,
-    ...switch (previousColumnName) {
-      SdkPresent<String>(value: final value) => {'previous_column_name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'url': url,
+        'project_id': projectId,
+        'project_url': projectUrl,
+        'column_name': columnName,
+        ...switch (previousColumnName) {
+          SdkPresent<String>(value: final value) => {
+              'previous_column_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Converted Note to Issue Issue Event
 class ConvertedNoteToIssueIssueEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// A GitHub user.
   final SimpleUser actor;
+
   /// Required `string` value serialized in the `event` wire field.
   final String event;
+
   /// Required `string` value serialized in the `commit_id` wire field.
   final String? commitId;
+
   /// Required `string` value serialized in the `commit_url` wire field.
   final String? commitUrl;
+
   /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final Integration? performedViaGithubApp;
+
   /// Optional object value serialized in the `project_card` wire field.
   final SdkOptional<ConvertedNoteToIssueIssueEventProjectCard> projectCard;
 
-  const ConvertedNoteToIssueIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard = const SdkOmitted()});
+  const ConvertedNoteToIssueIssueEvent(
+      {required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.actor,
+      required this.event,
+      required this.commitId,
+      required this.commitUrl,
+      required this.createdAt,
+      required this.performedViaGithubApp,
+      this.projectCard = const SdkOmitted()});
 
-  ConvertedNoteToIssueIssueEvent Function({int id, String nodeId, String url, SimpleUser actor, String event, String? commitId, String? commitUrl, String createdAt, Integration? performedViaGithubApp, SdkOptional<ConvertedNoteToIssueIssueEventProjectCard> projectCard}) get copyWith => _copyWith;
+  ConvertedNoteToIssueIssueEvent Function(
+          {int id,
+          String nodeId,
+          String url,
+          SimpleUser actor,
+          String event,
+          String? commitId,
+          String? commitUrl,
+          String createdAt,
+          Integration? performedViaGithubApp,
+          SdkOptional<ConvertedNoteToIssueIssueEventProjectCard> projectCard})
+      get copyWith => _copyWith;
 
-  ConvertedNoteToIssueIssueEvent _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? actor = sdkOmittedValue, Object? event = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? commitUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? projectCard = sdkOmittedValue}) => ConvertedNoteToIssueIssueEvent(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as SimpleUser,
-    event: identical(event, sdkOmittedValue) ? this.event : event as String,
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String?,
-    commitUrl: identical(commitUrl, sdkOmittedValue) ? this.commitUrl : commitUrl as String?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as Integration?,
-    projectCard: identical(projectCard, sdkOmittedValue) ? this.projectCard : projectCard as SdkOptional<ConvertedNoteToIssueIssueEventProjectCard>,
-  );
+  ConvertedNoteToIssueIssueEvent _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? actor = sdkOmittedValue,
+          Object? event = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? commitUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? performedViaGithubApp = sdkOmittedValue,
+          Object? projectCard = sdkOmittedValue}) =>
+      ConvertedNoteToIssueIssueEvent(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        actor: identical(actor, sdkOmittedValue)
+            ? this.actor
+            : actor as SimpleUser,
+        event: identical(event, sdkOmittedValue) ? this.event : event as String,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String?,
+        commitUrl: identical(commitUrl, sdkOmittedValue)
+            ? this.commitUrl
+            : commitUrl as String?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
+            ? this.performedViaGithubApp
+            : performedViaGithubApp as Integration?,
+        projectCard: identical(projectCard, sdkOmittedValue)
+            ? this.projectCard
+            : projectCard
+                as SdkOptional<ConvertedNoteToIssueIssueEventProjectCard>,
+      );
 
-  factory ConvertedNoteToIssueIssueEvent.fromJson(Map<String, dynamic> json) => ConvertedNoteToIssueIssueEvent(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    actor: (json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
-    event: (json['event'] as String?)!,
-    commitId: json.containsKey('commit_id') ? json['commit_id'] as String? : throw ArgumentError.value(null, 'commit_id', 'Required property is missing'),
-    commitUrl: json.containsKey('commit_url') ? json['commit_url'] as String? : throw ArgumentError.value(null, 'commit_url', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    performedViaGithubApp: json.containsKey('performed_via_github_app') ? json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'performed_via_github_app', 'Required property is missing'),
-    projectCard: json['project_card'] != null ? SdkPresent((json['project_card'] != null ? ConvertedNoteToIssueIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory ConvertedNoteToIssueIssueEvent.fromJson(Map<String, dynamic> json) =>
+      ConvertedNoteToIssueIssueEvent(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        actor: (json['actor'] != null
+            ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>)
+            : null)!,
+        event: (json['event'] as String?)!,
+        commitId: json.containsKey('commit_id')
+            ? json['commit_id'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_id', 'Required property is missing'),
+        commitUrl: json.containsKey('commit_url')
+            ? json['commit_url'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_url', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        performedViaGithubApp: json.containsKey('performed_via_github_app')
+            ? json['performed_via_github_app'] != null
+                ? Integration.fromJson(
+                    json['performed_via_github_app'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(null, 'performed_via_github_app',
+                'Required property is missing'),
+        projectCard: json['project_card'] != null
+            ? SdkPresent((json['project_card'] != null
+                ? ConvertedNoteToIssueIssueEventProjectCard.fromJson(
+                    json['project_card'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'actor': actor.toJson(),
-    'event': event,
-    'commit_id': commitId,
-    'commit_url': commitUrl,
-    'created_at': createdAt,
-    'performed_via_github_app': performedViaGithubApp?.toJson(),
-    ...switch (projectCard) {
-      SdkPresent<ConvertedNoteToIssueIssueEventProjectCard>(value: final value) => {'project_card': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'actor': actor.toJson(),
+        'event': event,
+        'commit_id': commitId,
+        'commit_url': commitUrl,
+        'created_at': createdAt,
+        'performed_via_github_app': performedViaGithubApp?.toJson(),
+        ...switch (projectCard) {
+          SdkPresent<ConvertedNoteToIssueIssueEventProjectCard>(
+            value: final value
+          ) =>
+            {
+              'project_card': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

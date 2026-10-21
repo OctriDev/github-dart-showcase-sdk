@@ -8,27 +8,33 @@ part of 'repos_release.dart';
 class ReleaseNotesContent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The generated name of the release
   final String name;
+
   /// The generated body describing the contents of the release supporting markdown formatting
   final String body;
 
   const ReleaseNotesContent({required this.name, required this.body});
 
-  ReleaseNotesContent Function({String name, String body}) get copyWith => _copyWith;
+  ReleaseNotesContent Function({String name, String body}) get copyWith =>
+      _copyWith;
 
-  ReleaseNotesContent _copyWith({Object? name = sdkOmittedValue, Object? body = sdkOmittedValue}) => ReleaseNotesContent(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
+  ReleaseNotesContent _copyWith(
+          {Object? name = sdkOmittedValue, Object? body = sdkOmittedValue}) =>
+      ReleaseNotesContent(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
 
-  factory ReleaseNotesContent.fromJson(Map<String, dynamic> json) => ReleaseNotesContent(
-    name: (json['name'] as String?)!,
-    body: (json['body'] as String?)!,
-  );
+  factory ReleaseNotesContent.fromJson(Map<String, dynamic> json) =>
+      ReleaseNotesContent(
+        name: (json['name'] as String?)!,
+        body: (json['body'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'body': body,
-  };
+        'name': name,
+        'body': body,
+      };
 }

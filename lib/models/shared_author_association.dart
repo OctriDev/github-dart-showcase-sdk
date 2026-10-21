@@ -6,17 +6,18 @@ part of 'shared.dart';
 // shared domain models
 /// How the author is associated with the repository.
 final class AuthorAssociation {
-
   final String value;
 
   const AuthorAssociation._(this.value);
 
-  factory AuthorAssociation.fromJson(String value) => AuthorAssociation._(value);
+  factory AuthorAssociation.fromJson(String value) =>
+      AuthorAssociation._(value);
 
   static const collaborator = AuthorAssociation._('COLLABORATOR');
   static const contributor = AuthorAssociation._('CONTRIBUTOR');
   static const firstTimer = AuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+  static const firstTimeContributor =
+      AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
   static const mannequin = AuthorAssociation._('MANNEQUIN');
   static const member = AuthorAssociation._('MEMBER');
   static const none = AuthorAssociation._('NONE');
@@ -24,10 +25,13 @@ final class AuthorAssociation {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AuthorAssociation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AuthorAssociation && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

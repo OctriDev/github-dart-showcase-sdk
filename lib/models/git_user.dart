@@ -8,41 +8,72 @@ part of 'git.dart';
 class GitUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String> email;
+
   /// Optional `date-time`-formatted value serialized in the `date` wire field.
   final SdkOptional<String> date;
 
-  const GitUser({this.name = const SdkOmitted(), this.email = const SdkOmitted(), this.date = const SdkOmitted()});
+  const GitUser(
+      {this.name = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.date = const SdkOmitted()});
 
-  GitUser Function({SdkOptional<String> name, SdkOptional<String> email, SdkOptional<String> date}) get copyWith => _copyWith;
+  GitUser Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email,
+      SdkOptional<String> date}) get copyWith => _copyWith;
 
-  GitUser _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitUser(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
+  GitUser _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? date = sdkOmittedValue}) =>
+      GitUser(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+      );
 
   factory GitUser.fromJson(Map<String, dynamic> json) => GitUser(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

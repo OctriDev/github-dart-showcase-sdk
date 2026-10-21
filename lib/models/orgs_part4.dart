@@ -8,199 +8,356 @@ part of 'orgs.dart';
 class OrganizationCreateIssueField {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Name of the issue field.
   final String name;
+
   /// Description of the issue field.
   final SdkOptional<String?> description;
+
   /// The data type of the issue field.
   final OrganizationCreateIssueFieldDataType dataType;
+
   /// The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues). Only used when the visibility settings feature is enabled. Defaults to `organization_members_only`.
   final SdkOptional<OrganizationCreateIssueFieldVisibility> visibility;
+
   /// Options for select fields. Required when data_type is 'single_select' or 'multi_select'.
   final SdkOptional<List<OrganizationCreateIssueFieldOptionsItem>?> options;
 
-  const OrganizationCreateIssueField({required this.name, this.description = const SdkOmitted(), required this.dataType, this.visibility = const SdkOmitted(), this.options = const SdkOmitted()});
+  const OrganizationCreateIssueField(
+      {required this.name,
+      this.description = const SdkOmitted(),
+      required this.dataType,
+      this.visibility = const SdkOmitted(),
+      this.options = const SdkOmitted()});
 
-  OrganizationCreateIssueField Function({String name, SdkOptional<String?> description, OrganizationCreateIssueFieldDataType dataType, SdkOptional<OrganizationCreateIssueFieldVisibility> visibility, SdkOptional<List<OrganizationCreateIssueFieldOptionsItem>?> options}) get copyWith => _copyWith;
+  OrganizationCreateIssueField Function(
+          {String name,
+          SdkOptional<String?> description,
+          OrganizationCreateIssueFieldDataType dataType,
+          SdkOptional<OrganizationCreateIssueFieldVisibility> visibility,
+          SdkOptional<List<OrganizationCreateIssueFieldOptionsItem>?> options})
+      get copyWith => _copyWith;
 
-  OrganizationCreateIssueField _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dataType = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? options = sdkOmittedValue}) => OrganizationCreateIssueField(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    dataType: identical(dataType, sdkOmittedValue) ? this.dataType : dataType as OrganizationCreateIssueFieldDataType,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<OrganizationCreateIssueFieldVisibility>,
-    options: identical(options, sdkOmittedValue) ? this.options : options as SdkOptional<List<OrganizationCreateIssueFieldOptionsItem>?>,
-  );
+  OrganizationCreateIssueField _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? dataType = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? options = sdkOmittedValue}) =>
+      OrganizationCreateIssueField(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as OrganizationCreateIssueFieldDataType,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as SdkOptional<OrganizationCreateIssueFieldVisibility>,
+        options: identical(options, sdkOmittedValue)
+            ? this.options
+            : options
+                as SdkOptional<List<OrganizationCreateIssueFieldOptionsItem>?>,
+      );
 
-  factory OrganizationCreateIssueField.fromJson(Map<String, dynamic> json) => OrganizationCreateIssueField(
-    name: (json['name'] as String?)!,
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    dataType: (json['data_type'] != null ? OrganizationCreateIssueFieldDataType.fromJson(json['data_type'] as String) : null)!,
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? OrganizationCreateIssueFieldVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    options: json.containsKey('options') ? SdkPresent((json['options'] as List?)?.map((e) => OrganizationCreateIssueFieldOptionsItem.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
-  );
+  factory OrganizationCreateIssueField.fromJson(Map<String, dynamic> json) =>
+      OrganizationCreateIssueField(
+        name: (json['name'] as String?)!,
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        dataType: (json['data_type'] != null
+            ? OrganizationCreateIssueFieldDataType.fromJson(
+                json['data_type'] as String)
+            : null)!,
+        visibility: json['visibility'] != null
+            ? SdkPresent((json['visibility'] != null
+                ? OrganizationCreateIssueFieldVisibility.fromJson(
+                    json['visibility'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        options: json.containsKey('options')
+            ? SdkPresent((json['options'] as List?)
+                ?.map((e) => OrganizationCreateIssueFieldOptionsItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    'data_type': dataType.toJson(),
-    ...switch (visibility) {
-      SdkPresent<OrganizationCreateIssueFieldVisibility>(value: final value) => {'visibility': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (options) {
-      SdkPresent<List<OrganizationCreateIssueFieldOptionsItem>?>(value: final value) => {'options': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'data_type': dataType.toJson(),
+        ...switch (visibility) {
+          SdkPresent<OrganizationCreateIssueFieldVisibility>(
+            value: final value
+          ) =>
+            {
+              'visibility': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (options) {
+          SdkPresent<List<OrganizationCreateIssueFieldOptionsItem>?>(
+            value: final value
+          ) =>
+            {
+              'options': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `OrganizationCreateIssueType` API schema.
 class OrganizationCreateIssueType {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Name of the issue type.
   final String name;
+
   /// Whether or not the issue type is enabled at the organization level.
   final bool isEnabled;
+
   /// Description of the issue type.
   final SdkOptional<String?> description;
+
   /// Color for the issue type.
   final SdkOptional<OrganizationCreateIssueTypeColor?> color;
 
-  const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description = const SdkOmitted(), this.color = const SdkOmitted()});
+  const OrganizationCreateIssueType(
+      {required this.name,
+      required this.isEnabled,
+      this.description = const SdkOmitted(),
+      this.color = const SdkOmitted()});
 
-  OrganizationCreateIssueType Function({String name, bool isEnabled, SdkOptional<String?> description, SdkOptional<OrganizationCreateIssueTypeColor?> color}) get copyWith => _copyWith;
+  OrganizationCreateIssueType Function(
+          {String name,
+          bool isEnabled,
+          SdkOptional<String?> description,
+          SdkOptional<OrganizationCreateIssueTypeColor?> color})
+      get copyWith => _copyWith;
 
-  OrganizationCreateIssueType _copyWith({Object? name = sdkOmittedValue, Object? isEnabled = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue}) => OrganizationCreateIssueType(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    isEnabled: identical(isEnabled, sdkOmittedValue) ? this.isEnabled : isEnabled as bool,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<OrganizationCreateIssueTypeColor?>,
-  );
+  OrganizationCreateIssueType _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? isEnabled = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? color = sdkOmittedValue}) =>
+      OrganizationCreateIssueType(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        isEnabled: identical(isEnabled, sdkOmittedValue)
+            ? this.isEnabled
+            : isEnabled as bool,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as SdkOptional<OrganizationCreateIssueTypeColor?>,
+      );
 
-  factory OrganizationCreateIssueType.fromJson(Map<String, dynamic> json) => OrganizationCreateIssueType(
-    name: (json['name'] as String?)!,
-    isEnabled: (json['is_enabled'] as bool?)!,
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    color: json.containsKey('color') ? SdkPresent(json['color'] != null ? OrganizationCreateIssueTypeColor.fromJson(json['color'] as String) : null) : const SdkOmitted(),
-  );
+  factory OrganizationCreateIssueType.fromJson(Map<String, dynamic> json) =>
+      OrganizationCreateIssueType(
+        name: (json['name'] as String?)!,
+        isEnabled: (json['is_enabled'] as bool?)!,
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        color: json.containsKey('color')
+            ? SdkPresent(json['color'] != null
+                ? OrganizationCreateIssueTypeColor.fromJson(
+                    json['color'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'is_enabled': isEnabled,
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (color) {
-      SdkPresent<OrganizationCreateIssueTypeColor?>(value: final value) => {'color': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'is_enabled': isEnabled,
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (color) {
+          SdkPresent<OrganizationCreateIssueTypeColor?>(value: final value) => {
+              'color': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The GitHub App installation that was registered.
 class OrganizationExternalPropertyInstallationInstallation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the GitHub App installation.
   final int id;
 
-  const OrganizationExternalPropertyInstallationInstallation({required this.id});
+  const OrganizationExternalPropertyInstallationInstallation(
+      {required this.id});
 
-  OrganizationExternalPropertyInstallationInstallation Function({int id}) get copyWith => _copyWith;
+  OrganizationExternalPropertyInstallationInstallation Function({int id})
+      get copyWith => _copyWith;
 
-  OrganizationExternalPropertyInstallationInstallation _copyWith({Object? id = sdkOmittedValue}) => OrganizationExternalPropertyInstallationInstallation(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-  );
+  OrganizationExternalPropertyInstallationInstallation _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      OrganizationExternalPropertyInstallationInstallation(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+      );
 
-  factory OrganizationExternalPropertyInstallationInstallation.fromJson(Map<String, dynamic> json) => OrganizationExternalPropertyInstallationInstallation(
-    id: ((json['id'] as num?)?.toInt())!,
-  );
+  factory OrganizationExternalPropertyInstallationInstallation.fromJson(
+          Map<String, dynamic> json) =>
+      OrganizationExternalPropertyInstallationInstallation(
+        id: ((json['id'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-  };
+        'id': id,
+      };
 }
 
 /// A GitHub App installation that has been registered to read and write an organization's external custom properties, together with the display name assigned to it.
 class OrganizationExternalPropertyInstallation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The display name assigned to the app installation's external custom properties in the organization.
   final String displayName;
+
   /// The GitHub App installation that was registered.
   final OrganizationExternalPropertyInstallationInstallation installation;
 
-  const OrganizationExternalPropertyInstallation({required this.displayName, required this.installation});
+  const OrganizationExternalPropertyInstallation(
+      {required this.displayName, required this.installation});
 
-  OrganizationExternalPropertyInstallation Function({String displayName, OrganizationExternalPropertyInstallationInstallation installation}) get copyWith => _copyWith;
+  OrganizationExternalPropertyInstallation Function(
+          {String displayName,
+          OrganizationExternalPropertyInstallationInstallation installation})
+      get copyWith => _copyWith;
 
-  OrganizationExternalPropertyInstallation _copyWith({Object? displayName = sdkOmittedValue, Object? installation = sdkOmittedValue}) => OrganizationExternalPropertyInstallation(
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as OrganizationExternalPropertyInstallationInstallation,
-  );
+  OrganizationExternalPropertyInstallation _copyWith(
+          {Object? displayName = sdkOmittedValue,
+          Object? installation = sdkOmittedValue}) =>
+      OrganizationExternalPropertyInstallation(
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as String,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation
+                as OrganizationExternalPropertyInstallationInstallation,
+      );
 
-  factory OrganizationExternalPropertyInstallation.fromJson(Map<String, dynamic> json) => OrganizationExternalPropertyInstallation(
-    displayName: (json['display_name'] as String?)!,
-    installation: (json['installation'] != null ? OrganizationExternalPropertyInstallationInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!,
-  );
+  factory OrganizationExternalPropertyInstallation.fromJson(
+          Map<String, dynamic> json) =>
+      OrganizationExternalPropertyInstallation(
+        displayName: (json['display_name'] as String?)!,
+        installation: (json['installation'] != null
+            ? OrganizationExternalPropertyInstallationInstallation.fromJson(
+                json['installation'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'display_name': displayName,
-    'installation': installation.toJson(),
-  };
+        'display_name': displayName,
+        'installation': installation.toJson(),
+      };
 }
 
 /// Optional object value serialized in the `plan` wire field.
 class OrganizationFullPlan {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `integer` value serialized in the `space` wire field.
   final int space;
+
   /// Required `integer` value serialized in the `private_repos` wire field.
   final int privateRepos;
+
   /// Optional `integer` value serialized in the `filled_seats` wire field.
   final SdkOptional<int> filledSeats;
+
   /// Optional `integer` value serialized in the `seats` wire field.
   final SdkOptional<int> seats;
 
-  const OrganizationFullPlan({required this.name, required this.space, required this.privateRepos, this.filledSeats = const SdkOmitted(), this.seats = const SdkOmitted()});
+  const OrganizationFullPlan(
+      {required this.name,
+      required this.space,
+      required this.privateRepos,
+      this.filledSeats = const SdkOmitted(),
+      this.seats = const SdkOmitted()});
 
-  OrganizationFullPlan Function({String name, int space, int privateRepos, SdkOptional<int> filledSeats, SdkOptional<int> seats}) get copyWith => _copyWith;
+  OrganizationFullPlan Function(
+      {String name,
+      int space,
+      int privateRepos,
+      SdkOptional<int> filledSeats,
+      SdkOptional<int> seats}) get copyWith => _copyWith;
 
-  OrganizationFullPlan _copyWith({Object? name = sdkOmittedValue, Object? space = sdkOmittedValue, Object? privateRepos = sdkOmittedValue, Object? filledSeats = sdkOmittedValue, Object? seats = sdkOmittedValue}) => OrganizationFullPlan(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    space: identical(space, sdkOmittedValue) ? this.space : space as int,
-    privateRepos: identical(privateRepos, sdkOmittedValue) ? this.privateRepos : privateRepos as int,
-    filledSeats: identical(filledSeats, sdkOmittedValue) ? this.filledSeats : filledSeats as SdkOptional<int>,
-    seats: identical(seats, sdkOmittedValue) ? this.seats : seats as SdkOptional<int>,
-  );
+  OrganizationFullPlan _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? space = sdkOmittedValue,
+          Object? privateRepos = sdkOmittedValue,
+          Object? filledSeats = sdkOmittedValue,
+          Object? seats = sdkOmittedValue}) =>
+      OrganizationFullPlan(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        space: identical(space, sdkOmittedValue) ? this.space : space as int,
+        privateRepos: identical(privateRepos, sdkOmittedValue)
+            ? this.privateRepos
+            : privateRepos as int,
+        filledSeats: identical(filledSeats, sdkOmittedValue)
+            ? this.filledSeats
+            : filledSeats as SdkOptional<int>,
+        seats: identical(seats, sdkOmittedValue)
+            ? this.seats
+            : seats as SdkOptional<int>,
+      );
 
-  factory OrganizationFullPlan.fromJson(Map<String, dynamic> json) => OrganizationFullPlan(
-    name: (json['name'] as String?)!,
-    space: ((json['space'] as num?)?.toInt())!,
-    privateRepos: ((json['private_repos'] as num?)?.toInt())!,
-    filledSeats: json['filled_seats'] != null ? SdkPresent(((json['filled_seats'] as num?)?.toInt())!) : const SdkOmitted(),
-    seats: json['seats'] != null ? SdkPresent(((json['seats'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory OrganizationFullPlan.fromJson(Map<String, dynamic> json) =>
+      OrganizationFullPlan(
+        name: (json['name'] as String?)!,
+        space: ((json['space'] as num?)?.toInt())!,
+        privateRepos: ((json['private_repos'] as num?)?.toInt())!,
+        filledSeats: json['filled_seats'] != null
+            ? SdkPresent(((json['filled_seats'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        seats: json['seats'] != null
+            ? SdkPresent(((json['seats'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'space': space,
-    'private_repos': privateRepos,
-    ...switch (filledSeats) {
-      SdkPresent<int>(value: final value) => {'filled_seats': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (seats) {
-      SdkPresent<int>(value: final value) => {'seats': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'space': space,
+        'private_repos': privateRepos,
+        ...switch (filledSeats) {
+          SdkPresent<int>(value: final value) => {
+              'filled_seats': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (seats) {
+          SdkPresent<int>(value: final value) => {
+              'seats': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -8,218 +8,551 @@ part of 'webhook_issue_comment_pinned.dart';
 class WebhookIssueCommentPinnedIssueVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `active_lock_reason` wire field.
-  final WebhookIssueCommentPinnedIssueVariant0ActiveLockReason? activeLockReason;
+  final WebhookIssueCommentPinnedIssueVariant0ActiveLockReason?
+      activeLockReason;
+
   /// Optional object value serialized in the `assignee` wire field.
   final SdkOptional<WebhookIssueCommentPinnedIssueVariant0Assignee?> assignee;
+
   /// Required array value serialized in the `assignees` wire field.
   final List<WebhookIssueCommentPinnedIssueVariant0AssigneesItem?> assignees;
+
   /// How the author is associated with the repository.
-  final WebhookIssueCommentPinnedIssueVariant0AuthorAssociation authorAssociation;
+  final WebhookIssueCommentPinnedIssueVariant0AuthorAssociation
+      authorAssociation;
+
   /// Contents of the issue
   final String? body;
+
   /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
   final String? closedAt;
+
   /// Required `integer` value serialized in the `comments` wire field.
   final int comments;
+
   /// Required `uri`-formatted value serialized in the `comments_url` wire field.
   final String commentsUrl;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Optional `boolean` value serialized in the `draft` wire field.
   final SdkOptional<bool> draft;
+
   /// Required `uri`-formatted value serialized in the `events_url` wire field.
   final String eventsUrl;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Optional array value serialized in the `labels` wire field.
-  final SdkOptional<List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>> labels;
+  final SdkOptional<List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>>
+      labels;
+
   /// Required `uri-template`-formatted value serialized in the `labels_url` wire field.
   final String labelsUrl;
+
   /// Optional `boolean` value serialized in the `locked` wire field.
   final SdkOptional<bool> locked;
+
   /// A collection of related issues and pull requests.
   final WebhookIssueCommentPinnedIssueVariant0Milestone? milestone;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
+
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?> performedViaGithubApp;
+  final SdkOptional<
+          WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?>
+      performedViaGithubApp;
+
   /// Optional object value serialized in the `pull_request` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PullRequest> pullRequest;
+  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PullRequest>
+      pullRequest;
+
   /// Required object value serialized in the `reactions` wire field.
   final WebhookIssueCommentPinnedIssueVariant0Reactions reactions;
+
   /// Required `uri`-formatted value serialized in the `repository_url` wire field.
   final String repositoryUrl;
+
   /// Optional object value serialized in the `sub_issues_summary` wire field.
   final SdkOptional<SubIssuesSummary> subIssuesSummary;
+
   /// Optional object value serialized in the `issue_dependencies_summary` wire field.
   final SdkOptional<IssueDependenciesSummary> issueDependenciesSummary;
+
   /// State of the issue; either 'open' or 'closed'
   final SdkOptional<WebhookIssueCommentPinnedIssueVariant0State> state;
+
   /// Optional `string` value serialized in the `state_reason` wire field.
   final SdkOptional<String?> stateReason;
+
   /// Optional `uri`-formatted value serialized in the `timeline_url` wire field.
   final SdkOptional<String> timelineUrl;
+
   /// Title of the issue
   final String title;
+
   /// The type assigned to the issue. This is only present for issues in repositories where issue types are supported.
   final SdkOptional<IssueType?> type_;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// URL for the issue
   final String url;
+
   /// Required object value serialized in the `user` wire field.
   final WebhookIssueCommentPinnedIssueVariant0User? user;
 
-  const WebhookIssueCommentPinnedIssueVariant0({required this.activeLockReason, this.assignee = const SdkOmitted(), required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft = const SdkOmitted(), required this.eventsUrl, required this.htmlUrl, required this.id, this.labels = const SdkOmitted(), required this.labelsUrl, this.locked = const SdkOmitted(), required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp = const SdkOmitted(), this.pullRequest = const SdkOmitted(), required this.reactions, required this.repositoryUrl, this.subIssuesSummary = const SdkOmitted(), this.issueDependenciesSummary = const SdkOmitted(), this.state = const SdkOmitted(), this.stateReason = const SdkOmitted(), this.timelineUrl = const SdkOmitted(), required this.title, this.type_ = const SdkOmitted(), required this.updatedAt, required this.url, required this.user});
+  const WebhookIssueCommentPinnedIssueVariant0(
+      {required this.activeLockReason,
+      this.assignee = const SdkOmitted(),
+      required this.assignees,
+      required this.authorAssociation,
+      required this.body,
+      required this.closedAt,
+      required this.comments,
+      required this.commentsUrl,
+      required this.createdAt,
+      this.draft = const SdkOmitted(),
+      required this.eventsUrl,
+      required this.htmlUrl,
+      required this.id,
+      this.labels = const SdkOmitted(),
+      required this.labelsUrl,
+      this.locked = const SdkOmitted(),
+      required this.milestone,
+      required this.nodeId,
+      required this.number,
+      this.performedViaGithubApp = const SdkOmitted(),
+      this.pullRequest = const SdkOmitted(),
+      required this.reactions,
+      required this.repositoryUrl,
+      this.subIssuesSummary = const SdkOmitted(),
+      this.issueDependenciesSummary = const SdkOmitted(),
+      this.state = const SdkOmitted(),
+      this.stateReason = const SdkOmitted(),
+      this.timelineUrl = const SdkOmitted(),
+      required this.title,
+      this.type_ = const SdkOmitted(),
+      required this.updatedAt,
+      required this.url,
+      required this.user});
 
-  WebhookIssueCommentPinnedIssueVariant0 Function({WebhookIssueCommentPinnedIssueVariant0ActiveLockReason? activeLockReason, SdkOptional<WebhookIssueCommentPinnedIssueVariant0Assignee?> assignee, List<WebhookIssueCommentPinnedIssueVariant0AssigneesItem?> assignees, WebhookIssueCommentPinnedIssueVariant0AuthorAssociation authorAssociation, String? body, String? closedAt, int comments, String commentsUrl, String createdAt, SdkOptional<bool> draft, String eventsUrl, String htmlUrl, int id, SdkOptional<List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>> labels, String labelsUrl, SdkOptional<bool> locked, WebhookIssueCommentPinnedIssueVariant0Milestone? milestone, String nodeId, int number, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?> performedViaGithubApp, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PullRequest> pullRequest, WebhookIssueCommentPinnedIssueVariant0Reactions reactions, String repositoryUrl, SdkOptional<SubIssuesSummary> subIssuesSummary, SdkOptional<IssueDependenciesSummary> issueDependenciesSummary, SdkOptional<WebhookIssueCommentPinnedIssueVariant0State> state, SdkOptional<String?> stateReason, SdkOptional<String> timelineUrl, String title, SdkOptional<IssueType?> type_, String updatedAt, String url, WebhookIssueCommentPinnedIssueVariant0User? user}) get copyWith => _copyWith;
+  WebhookIssueCommentPinnedIssueVariant0 Function(
+      {WebhookIssueCommentPinnedIssueVariant0ActiveLockReason? activeLockReason,
+      SdkOptional<WebhookIssueCommentPinnedIssueVariant0Assignee?> assignee,
+      List<WebhookIssueCommentPinnedIssueVariant0AssigneesItem?> assignees,
+      WebhookIssueCommentPinnedIssueVariant0AuthorAssociation authorAssociation,
+      String? body,
+      String? closedAt,
+      int comments,
+      String commentsUrl,
+      String createdAt,
+      SdkOptional<bool> draft,
+      String eventsUrl,
+      String htmlUrl,
+      int id,
+      SdkOptional<List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>>
+          labels,
+      String labelsUrl,
+      SdkOptional<bool> locked,
+      WebhookIssueCommentPinnedIssueVariant0Milestone? milestone,
+      String nodeId,
+      int number,
+      SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?>
+          performedViaGithubApp,
+      SdkOptional<WebhookIssueCommentPinnedIssueVariant0PullRequest>
+          pullRequest,
+      WebhookIssueCommentPinnedIssueVariant0Reactions reactions,
+      String repositoryUrl,
+      SdkOptional<SubIssuesSummary> subIssuesSummary,
+      SdkOptional<IssueDependenciesSummary> issueDependenciesSummary,
+      SdkOptional<WebhookIssueCommentPinnedIssueVariant0State> state,
+      SdkOptional<String?> stateReason,
+      SdkOptional<String> timelineUrl,
+      String title,
+      SdkOptional<IssueType?> type_,
+      String updatedAt,
+      String url,
+      WebhookIssueCommentPinnedIssueVariant0User?
+          user}) get copyWith => _copyWith;
 
-  WebhookIssueCommentPinnedIssueVariant0 _copyWith({Object? activeLockReason = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? body = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? comments = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? locked = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? number = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? subIssuesSummary = sdkOmittedValue, Object? issueDependenciesSummary = sdkOmittedValue, Object? state = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? timelineUrl = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookIssueCommentPinnedIssueVariant0(
-    activeLockReason: identical(activeLockReason, sdkOmittedValue) ? this.activeLockReason : activeLockReason as WebhookIssueCommentPinnedIssueVariant0ActiveLockReason?,
-    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<WebhookIssueCommentPinnedIssueVariant0Assignee?>,
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as List<WebhookIssueCommentPinnedIssueVariant0AssigneesItem?>,
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as WebhookIssueCommentPinnedIssueVariant0AuthorAssociation,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as int,
-    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>>,
-    labelsUrl: identical(labelsUrl, sdkOmittedValue) ? this.labelsUrl : labelsUrl as String,
-    locked: identical(locked, sdkOmittedValue) ? this.locked : locked as SdkOptional<bool>,
-    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as WebhookIssueCommentPinnedIssueVariant0Milestone?,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?>,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PullRequest>,
-    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as WebhookIssueCommentPinnedIssueVariant0Reactions,
-    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
-    subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue) ? this.subIssuesSummary : subIssuesSummary as SdkOptional<SubIssuesSummary>,
-    issueDependenciesSummary: identical(issueDependenciesSummary, sdkOmittedValue) ? this.issueDependenciesSummary : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<WebhookIssueCommentPinnedIssueVariant0State>,
-    stateReason: identical(stateReason, sdkOmittedValue) ? this.stateReason : stateReason as SdkOptional<String?>,
-    timelineUrl: identical(timelineUrl, sdkOmittedValue) ? this.timelineUrl : timelineUrl as SdkOptional<String>,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<IssueType?>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookIssueCommentPinnedIssueVariant0User?,
-  );
+  WebhookIssueCommentPinnedIssueVariant0 _copyWith(
+          {Object? activeLockReason = sdkOmittedValue,
+          Object? assignee = sdkOmittedValue,
+          Object? assignees = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? closedAt = sdkOmittedValue,
+          Object? comments = sdkOmittedValue,
+          Object? commentsUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? labelsUrl = sdkOmittedValue,
+          Object? locked = sdkOmittedValue,
+          Object? milestone = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? performedViaGithubApp = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue,
+          Object? reactions = sdkOmittedValue,
+          Object? repositoryUrl = sdkOmittedValue,
+          Object? subIssuesSummary = sdkOmittedValue,
+          Object? issueDependenciesSummary = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? stateReason = sdkOmittedValue,
+          Object? timelineUrl = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      WebhookIssueCommentPinnedIssueVariant0(
+        activeLockReason: identical(activeLockReason, sdkOmittedValue)
+            ? this.activeLockReason
+            : activeLockReason
+                as WebhookIssueCommentPinnedIssueVariant0ActiveLockReason?,
+        assignee: identical(assignee, sdkOmittedValue)
+            ? this.assignee
+            : assignee
+                as SdkOptional<WebhookIssueCommentPinnedIssueVariant0Assignee?>,
+        assignees: identical(assignees, sdkOmittedValue)
+            ? this.assignees
+            : assignees
+                as List<WebhookIssueCommentPinnedIssueVariant0AssigneesItem?>,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation
+                as WebhookIssueCommentPinnedIssueVariant0AuthorAssociation,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+        closedAt: identical(closedAt, sdkOmittedValue)
+            ? this.closedAt
+            : closedAt as String?,
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments as int,
+        commentsUrl: identical(commentsUrl, sdkOmittedValue)
+            ? this.commentsUrl
+            : commentsUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        draft: identical(draft, sdkOmittedValue)
+            ? this.draft
+            : draft as SdkOptional<bool>,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as SdkOptional<
+                List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>>,
+        labelsUrl: identical(labelsUrl, sdkOmittedValue)
+            ? this.labelsUrl
+            : labelsUrl as String,
+        locked: identical(locked, sdkOmittedValue)
+            ? this.locked
+            : locked as SdkOptional<bool>,
+        milestone: identical(milestone, sdkOmittedValue)
+            ? this.milestone
+            : milestone as WebhookIssueCommentPinnedIssueVariant0Milestone?,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
+            ? this.performedViaGithubApp
+            : performedViaGithubApp as SdkOptional<
+                WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?>,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as SdkOptional<
+                WebhookIssueCommentPinnedIssueVariant0PullRequest>,
+        reactions: identical(reactions, sdkOmittedValue)
+            ? this.reactions
+            : reactions as WebhookIssueCommentPinnedIssueVariant0Reactions,
+        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
+            ? this.repositoryUrl
+            : repositoryUrl as String,
+        subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue)
+            ? this.subIssuesSummary
+            : subIssuesSummary as SdkOptional<SubIssuesSummary>,
+        issueDependenciesSummary: identical(
+                issueDependenciesSummary, sdkOmittedValue)
+            ? this.issueDependenciesSummary
+            : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<WebhookIssueCommentPinnedIssueVariant0State>,
+        stateReason: identical(stateReason, sdkOmittedValue)
+            ? this.stateReason
+            : stateReason as SdkOptional<String?>,
+        timelineUrl: identical(timelineUrl, sdkOmittedValue)
+            ? this.timelineUrl
+            : timelineUrl as SdkOptional<String>,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<IssueType?>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as WebhookIssueCommentPinnedIssueVariant0User?,
+      );
 
-  factory WebhookIssueCommentPinnedIssueVariant0.fromJson(Map<String, dynamic> json) => WebhookIssueCommentPinnedIssueVariant0(
-    activeLockReason: json.containsKey('active_lock_reason') ? json['active_lock_reason'] != null ? WebhookIssueCommentPinnedIssueVariant0ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null : throw ArgumentError.value(null, 'active_lock_reason', 'Required property is missing'),
-    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] != null ? WebhookIssueCommentPinnedIssueVariant0Assignee.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    assignees: ((json['assignees'] as List?)?.map((e) => e == null ? null : WebhookIssueCommentPinnedIssueVariant0AssigneesItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    authorAssociation: (json['author_association'] != null ? WebhookIssueCommentPinnedIssueVariant0AuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
-    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
-    comments: ((json['comments'] as num?)?.toInt())!,
-    commentsUrl: (json['comments_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
-    eventsUrl: (json['events_url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => WebhookIssueCommentPinnedIssueVariant0LabelsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    labelsUrl: (json['labels_url'] as String?)!,
-    locked: json['locked'] != null ? SdkPresent((json['locked'] as bool?)!) : const SdkOmitted(),
-    milestone: json.containsKey('milestone') ? json['milestone'] != null ? WebhookIssueCommentPinnedIssueVariant0Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'milestone', 'Required property is missing'),
-    nodeId: (json['node_id'] as String?)!,
-    number: ((json['number'] as num?)?.toInt())!,
-    performedViaGithubApp: json.containsKey('performed_via_github_app') ? SdkPresent(json['performed_via_github_app'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    pullRequest: json['pull_request'] != null ? SdkPresent((json['pull_request'] != null ? WebhookIssueCommentPinnedIssueVariant0PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    reactions: (json['reactions'] != null ? WebhookIssueCommentPinnedIssueVariant0Reactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!,
-    repositoryUrl: (json['repository_url'] as String?)!,
-    subIssuesSummary: json['sub_issues_summary'] != null ? SdkPresent((json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    issueDependenciesSummary: json['issue_dependencies_summary'] != null ? SdkPresent((json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    state: json['state'] != null ? SdkPresent((json['state'] != null ? WebhookIssueCommentPinnedIssueVariant0State.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
-    stateReason: json.containsKey('state_reason') ? SdkPresent(json['state_reason'] as String?) : const SdkOmitted(),
-    timelineUrl: json['timeline_url'] != null ? SdkPresent((json['timeline_url'] as String?)!) : const SdkOmitted(),
-    title: (json['title'] as String?)!,
-    type_: json.containsKey('type') ? SdkPresent(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    updatedAt: (json['updated_at'] as String?)!,
-    url: (json['url'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? WebhookIssueCommentPinnedIssueVariant0User.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+  factory WebhookIssueCommentPinnedIssueVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookIssueCommentPinnedIssueVariant0(
+        activeLockReason: json.containsKey('active_lock_reason')
+            ? json['active_lock_reason'] != null
+                ? WebhookIssueCommentPinnedIssueVariant0ActiveLockReason
+                    .fromJson(json['active_lock_reason'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'active_lock_reason', 'Required property is missing'),
+        assignee: json.containsKey('assignee')
+            ? SdkPresent(json['assignee'] != null
+                ? WebhookIssueCommentPinnedIssueVariant0Assignee.fromJson(
+                    json['assignee'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        assignees: ((json['assignees'] as List?)
+            ?.map((e) => e == null
+                ? null
+                : WebhookIssueCommentPinnedIssueVariant0AssigneesItem.fromJson(
+                    e as Map<String, dynamic>))
+            .toList())!,
+        authorAssociation: (json['author_association'] != null
+            ? WebhookIssueCommentPinnedIssueVariant0AuthorAssociation.fromJson(
+                json['author_association'] as String)
+            : null)!,
+        body: json.containsKey('body')
+            ? json['body'] as String?
+            : throw ArgumentError.value(
+                null, 'body', 'Required property is missing'),
+        closedAt: json.containsKey('closed_at')
+            ? json['closed_at'] as String?
+            : throw ArgumentError.value(
+                null, 'closed_at', 'Required property is missing'),
+        comments: ((json['comments'] as num?)?.toInt())!,
+        commentsUrl: (json['comments_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        draft: json['draft'] != null
+            ? SdkPresent((json['draft'] as bool?)!)
+            : const SdkOmitted(),
+        eventsUrl: (json['events_url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        labels: json['labels'] != null
+            ? SdkPresent(((json['labels'] as List?)
+                ?.map((e) =>
+                    WebhookIssueCommentPinnedIssueVariant0LabelsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        labelsUrl: (json['labels_url'] as String?)!,
+        locked: json['locked'] != null
+            ? SdkPresent((json['locked'] as bool?)!)
+            : const SdkOmitted(),
+        milestone: json.containsKey('milestone')
+            ? json['milestone'] != null
+                ? WebhookIssueCommentPinnedIssueVariant0Milestone.fromJson(
+                    json['milestone'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'milestone', 'Required property is missing'),
+        nodeId: (json['node_id'] as String?)!,
+        number: ((json['number'] as num?)?.toInt())!,
+        performedViaGithubApp: json.containsKey('performed_via_github_app')
+            ? SdkPresent(json['performed_via_github_app'] != null
+                ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp
+                    .fromJson(json['performed_via_github_app']
+                        as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        pullRequest: json['pull_request'] != null
+            ? SdkPresent((json['pull_request'] != null
+                ? WebhookIssueCommentPinnedIssueVariant0PullRequest.fromJson(
+                    json['pull_request'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        reactions: (json['reactions'] != null
+            ? WebhookIssueCommentPinnedIssueVariant0Reactions.fromJson(
+                json['reactions'] as Map<String, dynamic>)
+            : null)!,
+        repositoryUrl: (json['repository_url'] as String?)!,
+        subIssuesSummary: json['sub_issues_summary'] != null
+            ? SdkPresent((json['sub_issues_summary'] != null
+                ? SubIssuesSummary.fromJson(
+                    json['sub_issues_summary'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        issueDependenciesSummary: json['issue_dependencies_summary'] != null
+            ? SdkPresent((json['issue_dependencies_summary'] != null
+                ? IssueDependenciesSummary.fromJson(
+                    json['issue_dependencies_summary'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        state: json['state'] != null
+            ? SdkPresent((json['state'] != null
+                ? WebhookIssueCommentPinnedIssueVariant0State.fromJson(
+                    json['state'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        stateReason: json.containsKey('state_reason')
+            ? SdkPresent(json['state_reason'] as String?)
+            : const SdkOmitted(),
+        timelineUrl: json['timeline_url'] != null
+            ? SdkPresent((json['timeline_url'] as String?)!)
+            : const SdkOmitted(),
+        title: (json['title'] as String?)!,
+        type_: json.containsKey('type')
+            ? SdkPresent(json['type'] != null
+                ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? WebhookIssueCommentPinnedIssueVariant0User.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'active_lock_reason': activeLockReason?.toJson(),
-    ...switch (assignee) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0Assignee?>(value: final value) => {'assignee': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'assignees': assignees.map((item) => item?.toJson()).toList(),
-    'author_association': authorAssociation.toJson(),
-    'body': body,
-    'closed_at': closedAt,
-    'comments': comments,
-    'comments_url': commentsUrl,
-    'created_at': createdAt,
-    ...switch (draft) {
-      SdkPresent<bool>(value: final value) => {'draft': value,},
-      _ => const <String, dynamic>{},
-    },
-    'events_url': eventsUrl,
-    'html_url': htmlUrl,
-    'id': id,
-    ...switch (labels) {
-      SdkPresent<List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>>(value: final value) => {'labels': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    'labels_url': labelsUrl,
-    ...switch (locked) {
-      SdkPresent<bool>(value: final value) => {'locked': value,},
-      _ => const <String, dynamic>{},
-    },
-    'milestone': milestone?.toJson(),
-    'node_id': nodeId,
-    'number': number,
-    ...switch (performedViaGithubApp) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?>(value: final value) => {'performed_via_github_app': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pullRequest) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PullRequest>(value: final value) => {'pull_request': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'reactions': reactions.toJson(),
-    'repository_url': repositoryUrl,
-    ...switch (subIssuesSummary) {
-      SdkPresent<SubIssuesSummary>(value: final value) => {'sub_issues_summary': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issueDependenciesSummary) {
-      SdkPresent<IssueDependenciesSummary>(value: final value) => {'issue_dependencies_summary': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (state) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0State>(value: final value) => {'state': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (stateReason) {
-      SdkPresent<String?>(value: final value) => {'state_reason': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (timelineUrl) {
-      SdkPresent<String>(value: final value) => {'timeline_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'title': title,
-    ...switch (type_) {
-      SdkPresent<IssueType?>(value: final value) => {'type': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'updated_at': updatedAt,
-    'url': url,
-    'user': user?.toJson(),
-  };
+        'active_lock_reason': activeLockReason?.toJson(),
+        ...switch (assignee) {
+          SdkPresent<WebhookIssueCommentPinnedIssueVariant0Assignee?>(
+            value: final value
+          ) =>
+            {
+              'assignee': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'assignees': assignees.map((item) => item?.toJson()).toList(),
+        'author_association': authorAssociation.toJson(),
+        'body': body,
+        'closed_at': closedAt,
+        'comments': comments,
+        'comments_url': commentsUrl,
+        'created_at': createdAt,
+        ...switch (draft) {
+          SdkPresent<bool>(value: final value) => {
+              'draft': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'events_url': eventsUrl,
+        'html_url': htmlUrl,
+        'id': id,
+        ...switch (labels) {
+          SdkPresent<List<WebhookIssueCommentPinnedIssueVariant0LabelsItem>>(
+            value: final value
+          ) =>
+            {
+              'labels': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'labels_url': labelsUrl,
+        ...switch (locked) {
+          SdkPresent<bool>(value: final value) => {
+              'locked': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'milestone': milestone?.toJson(),
+        'node_id': nodeId,
+        'number': number,
+        ...switch (performedViaGithubApp) {
+          SdkPresent<
+                WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp?>(
+            value: final value
+          ) =>
+            {
+              'performed_via_github_app': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequest) {
+          SdkPresent<WebhookIssueCommentPinnedIssueVariant0PullRequest>(
+            value: final value
+          ) =>
+            {
+              'pull_request': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'reactions': reactions.toJson(),
+        'repository_url': repositoryUrl,
+        ...switch (subIssuesSummary) {
+          SdkPresent<SubIssuesSummary>(value: final value) => {
+              'sub_issues_summary': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueDependenciesSummary) {
+          SdkPresent<IssueDependenciesSummary>(value: final value) => {
+              'issue_dependencies_summary': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<WebhookIssueCommentPinnedIssueVariant0State>(
+            value: final value
+          ) =>
+            {
+              'state': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (stateReason) {
+          SdkPresent<String?>(value: final value) => {
+              'state_reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (timelineUrl) {
+          SdkPresent<String>(value: final value) => {
+              'timeline_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'title': title,
+        ...switch (type_) {
+          SdkPresent<IssueType?>(value: final value) => {
+              'type': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'updated_at': updatedAt,
+        'url': url,
+        'user': user?.toJson(),
+      };
 }

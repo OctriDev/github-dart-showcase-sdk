@@ -8,113 +8,187 @@ part of 'webhook_workflow_run_completed.dart';
 class WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
+
   /// Required object value serialized in the `repo` wire field.
   final WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHeadRepo repo;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead({required this.ref, required this.repo, required this.sha});
+  const WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead(
+      {required this.ref, required this.repo, required this.sha});
 
-  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead Function({String ref, WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHeadRepo repo, String sha}) get copyWith => _copyWith;
+  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead Function(
+      {String ref,
+      WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHeadRepo repo,
+      String sha}) get copyWith => _copyWith;
 
-  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead _copyWith({Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHeadRepo,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? sha = sdkOmittedValue}) =>
+      WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repo: identical(repo, sdkOmittedValue)
+            ? this.repo
+            : repo
+                as WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHeadRepo,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead.fromJson(Map<String, dynamic> json) => WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead(
-    ref: (json['ref'] as String?)!,
-    repo: (json['repo'] != null ? WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-  );
+  factory WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead(
+        ref: (json['ref'] as String?)!,
+        repo: (json['repo'] != null
+            ? WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHeadRepo
+                .fromJson(json['repo'] as Map<String, dynamic>)
+            : null)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    'repo': repo.toJson(),
-    'sha': sha,
-  };
+        'ref': ref,
+        'repo': repo.toJson(),
+        'sha': sha,
+      };
 }
 
 /// Required object value serialized in the `pull_requests[]` wire field.
 class WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `base` wire field.
   final WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemBase base_;
+
   /// Required object value serialized in the `head` wire field.
   final WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead head;
+
   /// Required `number` value serialized in the `id` wire field.
   final double id;
+
   /// Required `number` value serialized in the `number` wire field.
   final double number;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem({required this.base_, required this.head, required this.id, required this.number, required this.url});
+  const WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem(
+      {required this.base_,
+      required this.head,
+      required this.id,
+      required this.number,
+      required this.url});
 
-  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem Function({WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemBase base_, WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead head, double id, double number, String url}) get copyWith => _copyWith;
+  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem Function(
+      {WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemBase base_,
+      WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead head,
+      double id,
+      double number,
+      String url}) get copyWith => _copyWith;
 
-  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem _copyWith({Object? base_ = sdkOmittedValue, Object? head = sdkOmittedValue, Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem(
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemBase,
-    head: identical(head, sdkOmittedValue) ? this.head : head as WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead,
-    id: identical(id, sdkOmittedValue) ? this.id : id as double,
-    number: identical(number, sdkOmittedValue) ? this.number : number as double,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem _copyWith(
+          {Object? base_ = sdkOmittedValue,
+          Object? head = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem(
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_
+                as WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemBase,
+        head: identical(head, sdkOmittedValue)
+            ? this.head
+            : head
+                as WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead,
+        id: identical(id, sdkOmittedValue) ? this.id : id as double,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as double,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem.fromJson(Map<String, dynamic> json) => WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem(
-    base_: (json['base'] != null ? WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    head: (json['head'] != null ? WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
-    id: ((json['id'] as num?)?.toDouble())!,
-    number: ((json['number'] as num?)?.toDouble())!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookWorkflowRunCompletedWorkflowRunPullRequestsItem(
+        base_: (json['base'] != null
+            ? WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemBase
+                .fromJson(json['base'] as Map<String, dynamic>)
+            : null)!,
+        head: (json['head'] != null
+            ? WebhookWorkflowRunCompletedWorkflowRunPullRequestsItemHead
+                .fromJson(json['head'] as Map<String, dynamic>)
+            : null)!,
+        id: ((json['id'] as num?)?.toDouble())!,
+        number: ((json['number'] as num?)?.toDouble())!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'base': base_.toJson(),
-    'head': head.toJson(),
-    'id': id,
-    'number': number,
-    'url': url,
-  };
+        'base': base_.toJson(),
+        'head': head.toJson(),
+        'id': id,
+        'number': number,
+        'url': url,
+      };
 }
 
 /// Required object value serialized in the `referenced_workflows[]` wire field.
 class WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Optional `string` value serialized in the `ref` wire field.
   final SdkOptional<String> ref;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem({required this.path, this.ref = const SdkOmitted(), required this.sha});
+  const WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem(
+      {required this.path, this.ref = const SdkOmitted(), required this.sha});
 
-  WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem Function({String path, SdkOptional<String> ref, String sha}) get copyWith => _copyWith;
+  WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem Function(
+      {String path,
+      SdkOptional<String> ref,
+      String sha}) get copyWith => _copyWith;
 
-  WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem _copyWith({Object? path = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? sha = sdkOmittedValue}) =>
+      WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem.fromJson(Map<String, dynamic> json) => WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem(
-    path: (json['path'] as String?)!,
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-    sha: (json['sha'] as String?)!,
-  );
+  factory WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookWorkflowRunCompletedWorkflowRunReferencedWorkflowsItem(
+        path: (json['path'] as String?)!,
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    'sha': sha,
-  };
+        'path': path,
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'sha': sha,
+      };
 }

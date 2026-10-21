@@ -6,93 +6,127 @@ part of 'inline.dart';
 // Inline operation models (part 15)
 /// The attachment status of the code security configuration on the repository.
 final class CodeSecurityConfigurationForRepositoryStatus {
-
   final String value;
 
   const CodeSecurityConfigurationForRepositoryStatus._(this.value);
 
-  factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String value) => CodeSecurityConfigurationForRepositoryStatus._(value);
+  factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String value) =>
+      CodeSecurityConfigurationForRepositoryStatus._(value);
 
-  static const attached = CodeSecurityConfigurationForRepositoryStatus._('attached');
-  static const attaching = CodeSecurityConfigurationForRepositoryStatus._('attaching');
-  static const detached = CodeSecurityConfigurationForRepositoryStatus._('detached');
-  static const removed = CodeSecurityConfigurationForRepositoryStatus._('removed');
-  static const enforced = CodeSecurityConfigurationForRepositoryStatus._('enforced');
-  static const failed = CodeSecurityConfigurationForRepositoryStatus._('failed');
-  static const updating = CodeSecurityConfigurationForRepositoryStatus._('updating');
-  static const removedByEnterprise = CodeSecurityConfigurationForRepositoryStatus._('removed_by_enterprise');
-  static const enterpriseEnforced = CodeSecurityConfigurationForRepositoryStatus._('enterprise_enforced');
+  static const attached =
+      CodeSecurityConfigurationForRepositoryStatus._('attached');
+  static const attaching =
+      CodeSecurityConfigurationForRepositoryStatus._('attaching');
+  static const detached =
+      CodeSecurityConfigurationForRepositoryStatus._('detached');
+  static const removed =
+      CodeSecurityConfigurationForRepositoryStatus._('removed');
+  static const enforced =
+      CodeSecurityConfigurationForRepositoryStatus._('enforced');
+  static const failed =
+      CodeSecurityConfigurationForRepositoryStatus._('failed');
+  static const updating =
+      CodeSecurityConfigurationForRepositoryStatus._('updating');
+  static const removedByEnterprise =
+      CodeSecurityConfigurationForRepositoryStatus._('removed_by_enterprise');
+  static const enterpriseEnforced =
+      CodeSecurityConfigurationForRepositoryStatus._('enterprise_enforced');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityConfigurationForRepositoryStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityConfigurationForRepositoryStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The attachment status of the code security configuration on the repository.
 final class CodeSecurityConfigurationRepositoriesStatus {
-
   final String value;
 
   const CodeSecurityConfigurationRepositoriesStatus._(this.value);
 
-  factory CodeSecurityConfigurationRepositoriesStatus.fromJson(String value) => CodeSecurityConfigurationRepositoriesStatus._(value);
+  factory CodeSecurityConfigurationRepositoriesStatus.fromJson(String value) =>
+      CodeSecurityConfigurationRepositoriesStatus._(value);
 
-  static const attached = CodeSecurityConfigurationRepositoriesStatus._('attached');
-  static const attaching = CodeSecurityConfigurationRepositoriesStatus._('attaching');
-  static const detached = CodeSecurityConfigurationRepositoriesStatus._('detached');
-  static const removed = CodeSecurityConfigurationRepositoriesStatus._('removed');
-  static const enforced = CodeSecurityConfigurationRepositoriesStatus._('enforced');
+  static const attached =
+      CodeSecurityConfigurationRepositoriesStatus._('attached');
+  static const attaching =
+      CodeSecurityConfigurationRepositoriesStatus._('attaching');
+  static const detached =
+      CodeSecurityConfigurationRepositoriesStatus._('detached');
+  static const removed =
+      CodeSecurityConfigurationRepositoriesStatus._('removed');
+  static const enforced =
+      CodeSecurityConfigurationRepositoriesStatus._('enforced');
   static const failed = CodeSecurityConfigurationRepositoriesStatus._('failed');
-  static const updating = CodeSecurityConfigurationRepositoriesStatus._('updating');
-  static const removedByEnterprise = CodeSecurityConfigurationRepositoriesStatus._('removed_by_enterprise');
-  static const enterpriseEnforced = CodeSecurityConfigurationRepositoriesStatus._('enterprise_enforced');
+  static const updating =
+      CodeSecurityConfigurationRepositoriesStatus._('updating');
+  static const removedByEnterprise =
+      CodeSecurityConfigurationRepositoriesStatus._('removed_by_enterprise');
+  static const enterpriseEnforced =
+      CodeSecurityConfigurationRepositoriesStatus._('enterprise_enforced');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityConfigurationRepositoriesStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityConfigurationRepositoriesStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The visibility of newly created repositories for which the code security configuration will be applied to by default
 final class CodeSecurityDefaultConfigurationsItemDefaultForNewRepos {
-
   final String value;
 
   const CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(this.value);
 
-  factory CodeSecurityDefaultConfigurationsItemDefaultForNewRepos.fromJson(String value) => CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(value);
+  factory CodeSecurityDefaultConfigurationsItemDefaultForNewRepos.fromJson(
+          String value) =>
+      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(value);
 
-  static const public = CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('public');
-  static const privateAndInternal = CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('private_and_internal');
-  static const all = CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('all');
+  static const public =
+      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('public');
+  static const privateAndInternal =
+      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(
+          'private_and_internal');
+  static const all =
+      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityDefaultConfigurationsItemDefaultForNewRepos && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityDefaultConfigurationsItemDefaultForNewRepos &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The initally assigned location of a new codespace.
 final class CodespaceLocation {
-
   final String value;
 
   const CodespaceLocation._(this.value);
 
-  factory CodespaceLocation.fromJson(String value) => CodespaceLocation._(value);
+  factory CodespaceLocation.fromJson(String value) =>
+      CodespaceLocation._(value);
 
   static const eastus = CodespaceLocation._('EastUs');
   static const southeastasia = CodespaceLocation._('SouthEastAsia');
@@ -101,17 +135,19 @@ final class CodespaceLocation {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespaceLocation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespaceLocation && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of this codespace.
 final class CodespaceState {
-
   final String value;
 
   const CodespaceState._(this.value);
@@ -138,45 +174,52 @@ final class CodespaceState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespaceState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespaceState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
 final class CodespaceMachinePrebuildAvailability {
-
   final String value;
 
   const CodespaceMachinePrebuildAvailability._(this.value);
 
-  factory CodespaceMachinePrebuildAvailability.fromJson(String value) => CodespaceMachinePrebuildAvailability._(value);
+  factory CodespaceMachinePrebuildAvailability.fromJson(String value) =>
+      CodespaceMachinePrebuildAvailability._(value);
 
   static const none = CodespaceMachinePrebuildAvailability._('none');
   static const ready = CodespaceMachinePrebuildAvailability._('ready');
-  static const inProgress = CodespaceMachinePrebuildAvailability._('in_progress');
+  static const inProgress =
+      CodespaceMachinePrebuildAvailability._('in_progress');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespaceMachinePrebuildAvailability && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespaceMachinePrebuildAvailability && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of repositories in the organization that the secret is visible to
 final class CodespacesOrgSecretVisibility {
-
   final String value;
 
   const CodespacesOrgSecretVisibility._(this.value);
 
-  factory CodespacesOrgSecretVisibility.fromJson(String value) => CodespacesOrgSecretVisibility._(value);
+  factory CodespacesOrgSecretVisibility.fromJson(String value) =>
+      CodespacesOrgSecretVisibility._(value);
 
   static const all = CodespacesOrgSecretVisibility._('all');
   static const private = CodespacesOrgSecretVisibility._('private');
@@ -184,22 +227,25 @@ final class CodespacesOrgSecretVisibility {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesOrgSecretVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesOrgSecretVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of repositories in the organization that the secret is visible to
 final class CodespacesSecretVisibility {
-
   final String value;
 
   const CodespacesSecretVisibility._(this.value);
 
-  factory CodespacesSecretVisibility.fromJson(String value) => CodespacesSecretVisibility._(value);
+  factory CodespacesSecretVisibility.fromJson(String value) =>
+      CodespacesSecretVisibility._(value);
 
   static const all = CodespacesSecretVisibility._('all');
   static const private = CodespacesSecretVisibility._('private');
@@ -207,51 +253,59 @@ final class CodespacesSecretVisibility {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesSecretVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesSecretVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The initally assigned location of a new codespace.
 final class CodespaceWithFullRepositoryLocation {
-
   final String value;
 
   const CodespaceWithFullRepositoryLocation._(this.value);
 
-  factory CodespaceWithFullRepositoryLocation.fromJson(String value) => CodespaceWithFullRepositoryLocation._(value);
+  factory CodespaceWithFullRepositoryLocation.fromJson(String value) =>
+      CodespaceWithFullRepositoryLocation._(value);
 
   static const eastus = CodespaceWithFullRepositoryLocation._('EastUs');
-  static const southeastasia = CodespaceWithFullRepositoryLocation._('SouthEastAsia');
+  static const southeastasia =
+      CodespaceWithFullRepositoryLocation._('SouthEastAsia');
   static const westeurope = CodespaceWithFullRepositoryLocation._('WestEurope');
   static const westus2 = CodespaceWithFullRepositoryLocation._('WestUs2');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespaceWithFullRepositoryLocation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespaceWithFullRepositoryLocation && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of this codespace.
 final class CodespaceWithFullRepositoryState {
-
   final String value;
 
   const CodespaceWithFullRepositoryState._(this.value);
 
-  factory CodespaceWithFullRepositoryState.fromJson(String value) => CodespaceWithFullRepositoryState._(value);
+  factory CodespaceWithFullRepositoryState.fromJson(String value) =>
+      CodespaceWithFullRepositoryState._(value);
 
   static const unknown = CodespaceWithFullRepositoryState._('Unknown');
   static const created = CodespaceWithFullRepositoryState._('Created');
   static const queued = CodespaceWithFullRepositoryState._('Queued');
-  static const provisioning = CodespaceWithFullRepositoryState._('Provisioning');
+  static const provisioning =
+      CodespaceWithFullRepositoryState._('Provisioning');
   static const available = CodespaceWithFullRepositoryState._('Available');
   static const awaiting = CodespaceWithFullRepositoryState._('Awaiting');
   static const unavailable = CodespaceWithFullRepositoryState._('Unavailable');
@@ -260,7 +314,8 @@ final class CodespaceWithFullRepositoryState {
   static const shutdown = CodespaceWithFullRepositoryState._('Shutdown');
   static const archived = CodespaceWithFullRepositoryState._('Archived');
   static const starting = CodespaceWithFullRepositoryState._('Starting');
-  static const shuttingdown = CodespaceWithFullRepositoryState._('ShuttingDown');
+  static const shuttingdown =
+      CodespaceWithFullRepositoryState._('ShuttingDown');
   static const failed = CodespaceWithFullRepositoryState._('Failed');
   static const exporting = CodespaceWithFullRepositoryState._('Exporting');
   static const updating = CodespaceWithFullRepositoryState._('Updating');
@@ -268,10 +323,13 @@ final class CodespaceWithFullRepositoryState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespaceWithFullRepositoryState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespaceWithFullRepositoryState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -7,35 +7,71 @@ part of 'code_security.dart';
 class CodeSecurityDefaultConfigurationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The visibility of newly created repositories for which the code security configuration will be applied to by default
-  final SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos> defaultForNewRepos;
+  final SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>
+      defaultForNewRepos;
+
   /// A code security configuration
   final SdkOptional<CodeSecurityConfiguration> configuration;
 
-  const CodeSecurityDefaultConfigurationsItem({this.defaultForNewRepos = const SdkOmitted(), this.configuration = const SdkOmitted()});
+  const CodeSecurityDefaultConfigurationsItem(
+      {this.defaultForNewRepos = const SdkOmitted(),
+      this.configuration = const SdkOmitted()});
 
-  CodeSecurityDefaultConfigurationsItem Function({SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos> defaultForNewRepos, SdkOptional<CodeSecurityConfiguration> configuration}) get copyWith => _copyWith;
+  CodeSecurityDefaultConfigurationsItem Function(
+          {SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>
+              defaultForNewRepos,
+          SdkOptional<CodeSecurityConfiguration> configuration})
+      get copyWith => _copyWith;
 
-  CodeSecurityDefaultConfigurationsItem _copyWith({Object? defaultForNewRepos = sdkOmittedValue, Object? configuration = sdkOmittedValue}) => CodeSecurityDefaultConfigurationsItem(
-    defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue) ? this.defaultForNewRepos : defaultForNewRepos as SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>,
-    configuration: identical(configuration, sdkOmittedValue) ? this.configuration : configuration as SdkOptional<CodeSecurityConfiguration>,
-  );
+  CodeSecurityDefaultConfigurationsItem _copyWith(
+          {Object? defaultForNewRepos = sdkOmittedValue,
+          Object? configuration = sdkOmittedValue}) =>
+      CodeSecurityDefaultConfigurationsItem(
+        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
+            ? this.defaultForNewRepos
+            : defaultForNewRepos as SdkOptional<
+                CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>,
+        configuration: identical(configuration, sdkOmittedValue)
+            ? this.configuration
+            : configuration as SdkOptional<CodeSecurityConfiguration>,
+      );
 
-  factory CodeSecurityDefaultConfigurationsItem.fromJson(Map<String, dynamic> json) => CodeSecurityDefaultConfigurationsItem(
-    defaultForNewRepos: json['default_for_new_repos'] != null ? SdkPresent((json['default_for_new_repos'] != null ? CodeSecurityDefaultConfigurationsItemDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null)!) : const SdkOmitted(),
-    configuration: json['configuration'] != null ? SdkPresent((json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory CodeSecurityDefaultConfigurationsItem.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityDefaultConfigurationsItem(
+        defaultForNewRepos: json['default_for_new_repos'] != null
+            ? SdkPresent((json['default_for_new_repos'] != null
+                ? CodeSecurityDefaultConfigurationsItemDefaultForNewRepos
+                    .fromJson(json['default_for_new_repos'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        configuration: json['configuration'] != null
+            ? SdkPresent((json['configuration'] != null
+                ? CodeSecurityConfiguration.fromJson(
+                    json['configuration'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (defaultForNewRepos) {
-      SdkPresent<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>(value: final value) => {'default_for_new_repos': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (configuration) {
-      SdkPresent<CodeSecurityConfiguration>(value: final value) => {'configuration': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (defaultForNewRepos) {
+          SdkPresent<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>(
+            value: final value
+          ) =>
+            {
+              'default_for_new_repos': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (configuration) {
+          SdkPresent<CodeSecurityConfiguration>(value: final value) => {
+              'configuration': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 // CodeSecurityDefaultConfigurations = List<CodeSecurityDefaultConfigurationsItem>

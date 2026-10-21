@@ -8,199 +8,464 @@ part of 'codespaces.dart';
 class CodespaceWithFullRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Automatically generated name of this codespace.
   final String name;
+
   /// Display name for this codespace.
   final SdkOptional<String?> displayName;
+
   /// UUID identifying this codespace's environment.
   final String? environmentId;
+
   /// A GitHub user.
   final SimpleUser owner;
+
   /// A GitHub user.
   final SimpleUser billableOwner;
+
   /// Full Repository
   final FullRepository repository;
+
   /// A description of the machine powering a codespace.
   final NullableCodespaceMachine? machine;
+
   /// Path to devcontainer.json from repo root used to create Codespace.
   final SdkOptional<String?> devcontainerPath;
+
   /// Whether the codespace was created from a prebuild.
   final bool? prebuild;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Last known time this codespace was started.
   final String lastUsedAt;
+
   /// State of this codespace.
   final CodespaceWithFullRepositoryState state;
+
   /// API URL for this codespace.
   final String url;
+
   /// Details about the codespace's git repository.
   final CodespaceWithFullRepositoryGitStatus gitStatus;
+
   /// The initally assigned location of a new codespace.
   final CodespaceWithFullRepositoryLocation location;
+
   /// The number of minutes of inactivity after which this codespace will be automatically stopped.
   final int? idleTimeoutMinutes;
+
   /// URL to access this codespace on the web.
   final String webUrl;
+
   /// API URL to access available alternate machine types for this codespace.
   final String machinesUrl;
+
   /// API URL to start this codespace.
   final String startUrl;
+
   /// API URL to stop this codespace.
   final String stopUrl;
+
   /// API URL to publish this codespace to a new repository.
   final SdkOptional<String?> publishUrl;
+
   /// API URL for the Pull Request associated with this codespace, if any.
   final String? pullsUrl;
+
   /// Required array value serialized in the `recent_folders` wire field.
   final List<String> recentFolders;
+
   /// Optional object value serialized in the `runtime_constraints` wire field.
-  final SdkOptional<CodespaceWithFullRepositoryRuntimeConstraints> runtimeConstraints;
+  final SdkOptional<CodespaceWithFullRepositoryRuntimeConstraints>
+      runtimeConstraints;
+
   /// Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
   final SdkOptional<bool?> pendingOperation;
+
   /// Text to show user when codespace is disabled by a pending operation
   final SdkOptional<String?> pendingOperationDisabledReason;
+
   /// Text to show user when codespace idle timeout minutes has been overriden by an organization policy
   final SdkOptional<String?> idleTimeoutNotice;
+
   /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
   final SdkOptional<int?> retentionPeriodMinutes;
+
   /// When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
   final SdkOptional<String?> retentionExpiresAt;
 
-  const CodespaceWithFullRepository({required this.id, required this.name, this.displayName = const SdkOmitted(), required this.environmentId, required this.owner, required this.billableOwner, required this.repository, required this.machine, this.devcontainerPath = const SdkOmitted(), required this.prebuild, required this.createdAt, required this.updatedAt, required this.lastUsedAt, required this.state, required this.url, required this.gitStatus, required this.location, required this.idleTimeoutMinutes, required this.webUrl, required this.machinesUrl, required this.startUrl, required this.stopUrl, this.publishUrl = const SdkOmitted(), required this.pullsUrl, required this.recentFolders, this.runtimeConstraints = const SdkOmitted(), this.pendingOperation = const SdkOmitted(), this.pendingOperationDisabledReason = const SdkOmitted(), this.idleTimeoutNotice = const SdkOmitted(), this.retentionPeriodMinutes = const SdkOmitted(), this.retentionExpiresAt = const SdkOmitted()});
+  const CodespaceWithFullRepository(
+      {required this.id,
+      required this.name,
+      this.displayName = const SdkOmitted(),
+      required this.environmentId,
+      required this.owner,
+      required this.billableOwner,
+      required this.repository,
+      required this.machine,
+      this.devcontainerPath = const SdkOmitted(),
+      required this.prebuild,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.lastUsedAt,
+      required this.state,
+      required this.url,
+      required this.gitStatus,
+      required this.location,
+      required this.idleTimeoutMinutes,
+      required this.webUrl,
+      required this.machinesUrl,
+      required this.startUrl,
+      required this.stopUrl,
+      this.publishUrl = const SdkOmitted(),
+      required this.pullsUrl,
+      required this.recentFolders,
+      this.runtimeConstraints = const SdkOmitted(),
+      this.pendingOperation = const SdkOmitted(),
+      this.pendingOperationDisabledReason = const SdkOmitted(),
+      this.idleTimeoutNotice = const SdkOmitted(),
+      this.retentionPeriodMinutes = const SdkOmitted(),
+      this.retentionExpiresAt = const SdkOmitted()});
 
-  CodespaceWithFullRepository Function({int id, String name, SdkOptional<String?> displayName, String? environmentId, SimpleUser owner, SimpleUser billableOwner, FullRepository repository, NullableCodespaceMachine? machine, SdkOptional<String?> devcontainerPath, bool? prebuild, String createdAt, String updatedAt, String lastUsedAt, CodespaceWithFullRepositoryState state, String url, CodespaceWithFullRepositoryGitStatus gitStatus, CodespaceWithFullRepositoryLocation location, int? idleTimeoutMinutes, String webUrl, String machinesUrl, String startUrl, String stopUrl, SdkOptional<String?> publishUrl, String? pullsUrl, List<String> recentFolders, SdkOptional<CodespaceWithFullRepositoryRuntimeConstraints> runtimeConstraints, SdkOptional<bool?> pendingOperation, SdkOptional<String?> pendingOperationDisabledReason, SdkOptional<String?> idleTimeoutNotice, SdkOptional<int?> retentionPeriodMinutes, SdkOptional<String?> retentionExpiresAt}) get copyWith => _copyWith;
+  CodespaceWithFullRepository Function(
+      {int id,
+      String name,
+      SdkOptional<String?> displayName,
+      String? environmentId,
+      SimpleUser owner,
+      SimpleUser billableOwner,
+      FullRepository repository,
+      NullableCodespaceMachine? machine,
+      SdkOptional<String?> devcontainerPath,
+      bool? prebuild,
+      String createdAt,
+      String updatedAt,
+      String lastUsedAt,
+      CodespaceWithFullRepositoryState state,
+      String url,
+      CodespaceWithFullRepositoryGitStatus gitStatus,
+      CodespaceWithFullRepositoryLocation location,
+      int? idleTimeoutMinutes,
+      String webUrl,
+      String machinesUrl,
+      String startUrl,
+      String stopUrl,
+      SdkOptional<String?> publishUrl,
+      String? pullsUrl,
+      List<String> recentFolders,
+      SdkOptional<CodespaceWithFullRepositoryRuntimeConstraints>
+          runtimeConstraints,
+      SdkOptional<bool?> pendingOperation,
+      SdkOptional<String?> pendingOperationDisabledReason,
+      SdkOptional<String?> idleTimeoutNotice,
+      SdkOptional<int?> retentionPeriodMinutes,
+      SdkOptional<String?> retentionExpiresAt}) get copyWith => _copyWith;
 
-  CodespaceWithFullRepository _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? environmentId = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? billableOwner = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? machine = sdkOmittedValue, Object? devcontainerPath = sdkOmittedValue, Object? prebuild = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? lastUsedAt = sdkOmittedValue, Object? state = sdkOmittedValue, Object? url = sdkOmittedValue, Object? gitStatus = sdkOmittedValue, Object? location = sdkOmittedValue, Object? idleTimeoutMinutes = sdkOmittedValue, Object? webUrl = sdkOmittedValue, Object? machinesUrl = sdkOmittedValue, Object? startUrl = sdkOmittedValue, Object? stopUrl = sdkOmittedValue, Object? publishUrl = sdkOmittedValue, Object? pullsUrl = sdkOmittedValue, Object? recentFolders = sdkOmittedValue, Object? runtimeConstraints = sdkOmittedValue, Object? pendingOperation = sdkOmittedValue, Object? pendingOperationDisabledReason = sdkOmittedValue, Object? idleTimeoutNotice = sdkOmittedValue, Object? retentionPeriodMinutes = sdkOmittedValue, Object? retentionExpiresAt = sdkOmittedValue}) => CodespaceWithFullRepository(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as SdkOptional<String?>,
-    environmentId: identical(environmentId, sdkOmittedValue) ? this.environmentId : environmentId as String?,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SimpleUser,
-    billableOwner: identical(billableOwner, sdkOmittedValue) ? this.billableOwner : billableOwner as SimpleUser,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as FullRepository,
-    machine: identical(machine, sdkOmittedValue) ? this.machine : machine as NullableCodespaceMachine?,
-    devcontainerPath: identical(devcontainerPath, sdkOmittedValue) ? this.devcontainerPath : devcontainerPath as SdkOptional<String?>,
-    prebuild: identical(prebuild, sdkOmittedValue) ? this.prebuild : prebuild as bool?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    lastUsedAt: identical(lastUsedAt, sdkOmittedValue) ? this.lastUsedAt : lastUsedAt as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as CodespaceWithFullRepositoryState,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    gitStatus: identical(gitStatus, sdkOmittedValue) ? this.gitStatus : gitStatus as CodespaceWithFullRepositoryGitStatus,
-    location: identical(location, sdkOmittedValue) ? this.location : location as CodespaceWithFullRepositoryLocation,
-    idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue) ? this.idleTimeoutMinutes : idleTimeoutMinutes as int?,
-    webUrl: identical(webUrl, sdkOmittedValue) ? this.webUrl : webUrl as String,
-    machinesUrl: identical(machinesUrl, sdkOmittedValue) ? this.machinesUrl : machinesUrl as String,
-    startUrl: identical(startUrl, sdkOmittedValue) ? this.startUrl : startUrl as String,
-    stopUrl: identical(stopUrl, sdkOmittedValue) ? this.stopUrl : stopUrl as String,
-    publishUrl: identical(publishUrl, sdkOmittedValue) ? this.publishUrl : publishUrl as SdkOptional<String?>,
-    pullsUrl: identical(pullsUrl, sdkOmittedValue) ? this.pullsUrl : pullsUrl as String?,
-    recentFolders: identical(recentFolders, sdkOmittedValue) ? this.recentFolders : recentFolders as List<String>,
-    runtimeConstraints: identical(runtimeConstraints, sdkOmittedValue) ? this.runtimeConstraints : runtimeConstraints as SdkOptional<CodespaceWithFullRepositoryRuntimeConstraints>,
-    pendingOperation: identical(pendingOperation, sdkOmittedValue) ? this.pendingOperation : pendingOperation as SdkOptional<bool?>,
-    pendingOperationDisabledReason: identical(pendingOperationDisabledReason, sdkOmittedValue) ? this.pendingOperationDisabledReason : pendingOperationDisabledReason as SdkOptional<String?>,
-    idleTimeoutNotice: identical(idleTimeoutNotice, sdkOmittedValue) ? this.idleTimeoutNotice : idleTimeoutNotice as SdkOptional<String?>,
-    retentionPeriodMinutes: identical(retentionPeriodMinutes, sdkOmittedValue) ? this.retentionPeriodMinutes : retentionPeriodMinutes as SdkOptional<int?>,
-    retentionExpiresAt: identical(retentionExpiresAt, sdkOmittedValue) ? this.retentionExpiresAt : retentionExpiresAt as SdkOptional<String?>,
-  );
+  CodespaceWithFullRepository _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue,
+          Object? environmentId = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? billableOwner = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? machine = sdkOmittedValue,
+          Object? devcontainerPath = sdkOmittedValue,
+          Object? prebuild = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? lastUsedAt = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? gitStatus = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? idleTimeoutMinutes = sdkOmittedValue,
+          Object? webUrl = sdkOmittedValue,
+          Object? machinesUrl = sdkOmittedValue,
+          Object? startUrl = sdkOmittedValue,
+          Object? stopUrl = sdkOmittedValue,
+          Object? publishUrl = sdkOmittedValue,
+          Object? pullsUrl = sdkOmittedValue,
+          Object? recentFolders = sdkOmittedValue,
+          Object? runtimeConstraints = sdkOmittedValue,
+          Object? pendingOperation = sdkOmittedValue,
+          Object? pendingOperationDisabledReason = sdkOmittedValue,
+          Object? idleTimeoutNotice = sdkOmittedValue,
+          Object? retentionPeriodMinutes = sdkOmittedValue,
+          Object? retentionExpiresAt = sdkOmittedValue}) =>
+      CodespaceWithFullRepository(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as SdkOptional<String?>,
+        environmentId: identical(environmentId, sdkOmittedValue)
+            ? this.environmentId
+            : environmentId as String?,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SimpleUser,
+        billableOwner: identical(billableOwner, sdkOmittedValue)
+            ? this.billableOwner
+            : billableOwner as SimpleUser,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as FullRepository,
+        machine: identical(machine, sdkOmittedValue)
+            ? this.machine
+            : machine as NullableCodespaceMachine?,
+        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
+            ? this.devcontainerPath
+            : devcontainerPath as SdkOptional<String?>,
+        prebuild: identical(prebuild, sdkOmittedValue)
+            ? this.prebuild
+            : prebuild as bool?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        lastUsedAt: identical(lastUsedAt, sdkOmittedValue)
+            ? this.lastUsedAt
+            : lastUsedAt as String,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as CodespaceWithFullRepositoryState,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        gitStatus: identical(gitStatus, sdkOmittedValue)
+            ? this.gitStatus
+            : gitStatus as CodespaceWithFullRepositoryGitStatus,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as CodespaceWithFullRepositoryLocation,
+        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
+            ? this.idleTimeoutMinutes
+            : idleTimeoutMinutes as int?,
+        webUrl:
+            identical(webUrl, sdkOmittedValue) ? this.webUrl : webUrl as String,
+        machinesUrl: identical(machinesUrl, sdkOmittedValue)
+            ? this.machinesUrl
+            : machinesUrl as String,
+        startUrl: identical(startUrl, sdkOmittedValue)
+            ? this.startUrl
+            : startUrl as String,
+        stopUrl: identical(stopUrl, sdkOmittedValue)
+            ? this.stopUrl
+            : stopUrl as String,
+        publishUrl: identical(publishUrl, sdkOmittedValue)
+            ? this.publishUrl
+            : publishUrl as SdkOptional<String?>,
+        pullsUrl: identical(pullsUrl, sdkOmittedValue)
+            ? this.pullsUrl
+            : pullsUrl as String?,
+        recentFolders: identical(recentFolders, sdkOmittedValue)
+            ? this.recentFolders
+            : recentFolders as List<String>,
+        runtimeConstraints: identical(runtimeConstraints, sdkOmittedValue)
+            ? this.runtimeConstraints
+            : runtimeConstraints
+                as SdkOptional<CodespaceWithFullRepositoryRuntimeConstraints>,
+        pendingOperation: identical(pendingOperation, sdkOmittedValue)
+            ? this.pendingOperation
+            : pendingOperation as SdkOptional<bool?>,
+        pendingOperationDisabledReason:
+            identical(pendingOperationDisabledReason, sdkOmittedValue)
+                ? this.pendingOperationDisabledReason
+                : pendingOperationDisabledReason as SdkOptional<String?>,
+        idleTimeoutNotice: identical(idleTimeoutNotice, sdkOmittedValue)
+            ? this.idleTimeoutNotice
+            : idleTimeoutNotice as SdkOptional<String?>,
+        retentionPeriodMinutes:
+            identical(retentionPeriodMinutes, sdkOmittedValue)
+                ? this.retentionPeriodMinutes
+                : retentionPeriodMinutes as SdkOptional<int?>,
+        retentionExpiresAt: identical(retentionExpiresAt, sdkOmittedValue)
+            ? this.retentionExpiresAt
+            : retentionExpiresAt as SdkOptional<String?>,
+      );
 
-  factory CodespaceWithFullRepository.fromJson(Map<String, dynamic> json) => CodespaceWithFullRepository(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    displayName: json.containsKey('display_name') ? SdkPresent(json['display_name'] as String?) : const SdkOmitted(),
-    environmentId: json.containsKey('environment_id') ? json['environment_id'] as String? : throw ArgumentError.value(null, 'environment_id', 'Required property is missing'),
-    owner: (json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null)!,
-    billableOwner: (json['billable_owner'] != null ? SimpleUser.fromJson(json['billable_owner'] as Map<String, dynamic>) : null)!,
-    repository: (json['repository'] != null ? FullRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    machine: json.containsKey('machine') ? json['machine'] != null ? NullableCodespaceMachine.fromJson(json['machine'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'machine', 'Required property is missing'),
-    devcontainerPath: json.containsKey('devcontainer_path') ? SdkPresent(json['devcontainer_path'] as String?) : const SdkOmitted(),
-    prebuild: json.containsKey('prebuild') ? json['prebuild'] as bool? : throw ArgumentError.value(null, 'prebuild', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    lastUsedAt: (json['last_used_at'] as String?)!,
-    state: (json['state'] != null ? CodespaceWithFullRepositoryState.fromJson(json['state'] as String) : null)!,
-    url: (json['url'] as String?)!,
-    gitStatus: (json['git_status'] != null ? CodespaceWithFullRepositoryGitStatus.fromJson(json['git_status'] as Map<String, dynamic>) : null)!,
-    location: (json['location'] != null ? CodespaceWithFullRepositoryLocation.fromJson(json['location'] as String) : null)!,
-    idleTimeoutMinutes: json.containsKey('idle_timeout_minutes') ? (json['idle_timeout_minutes'] as num?)?.toInt() : throw ArgumentError.value(null, 'idle_timeout_minutes', 'Required property is missing'),
-    webUrl: (json['web_url'] as String?)!,
-    machinesUrl: (json['machines_url'] as String?)!,
-    startUrl: (json['start_url'] as String?)!,
-    stopUrl: (json['stop_url'] as String?)!,
-    publishUrl: json.containsKey('publish_url') ? SdkPresent(json['publish_url'] as String?) : const SdkOmitted(),
-    pullsUrl: json.containsKey('pulls_url') ? json['pulls_url'] as String? : throw ArgumentError.value(null, 'pulls_url', 'Required property is missing'),
-    recentFolders: ((json['recent_folders'] as List?)?.map((e) => e as String).toList())!,
-    runtimeConstraints: json['runtime_constraints'] != null ? SdkPresent((json['runtime_constraints'] != null ? CodespaceWithFullRepositoryRuntimeConstraints.fromJson(json['runtime_constraints'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pendingOperation: json.containsKey('pending_operation') ? SdkPresent(json['pending_operation'] as bool?) : const SdkOmitted(),
-    pendingOperationDisabledReason: json.containsKey('pending_operation_disabled_reason') ? SdkPresent(json['pending_operation_disabled_reason'] as String?) : const SdkOmitted(),
-    idleTimeoutNotice: json.containsKey('idle_timeout_notice') ? SdkPresent(json['idle_timeout_notice'] as String?) : const SdkOmitted(),
-    retentionPeriodMinutes: json.containsKey('retention_period_minutes') ? SdkPresent((json['retention_period_minutes'] as num?)?.toInt()) : const SdkOmitted(),
-    retentionExpiresAt: json.containsKey('retention_expires_at') ? SdkPresent(json['retention_expires_at'] as String?) : const SdkOmitted(),
-  );
+  factory CodespaceWithFullRepository.fromJson(Map<String, dynamic> json) =>
+      CodespaceWithFullRepository(
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        displayName: json.containsKey('display_name')
+            ? SdkPresent(json['display_name'] as String?)
+            : const SdkOmitted(),
+        environmentId: json.containsKey('environment_id')
+            ? json['environment_id'] as String?
+            : throw ArgumentError.value(
+                null, 'environment_id', 'Required property is missing'),
+        owner: (json['owner'] != null
+            ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
+            : null)!,
+        billableOwner: (json['billable_owner'] != null
+            ? SimpleUser.fromJson(
+                json['billable_owner'] as Map<String, dynamic>)
+            : null)!,
+        repository: (json['repository'] != null
+            ? FullRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        machine: json.containsKey('machine')
+            ? json['machine'] != null
+                ? NullableCodespaceMachine.fromJson(
+                    json['machine'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'machine', 'Required property is missing'),
+        devcontainerPath: json.containsKey('devcontainer_path')
+            ? SdkPresent(json['devcontainer_path'] as String?)
+            : const SdkOmitted(),
+        prebuild: json.containsKey('prebuild')
+            ? json['prebuild'] as bool?
+            : throw ArgumentError.value(
+                null, 'prebuild', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        lastUsedAt: (json['last_used_at'] as String?)!,
+        state: (json['state'] != null
+            ? CodespaceWithFullRepositoryState.fromJson(json['state'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+        gitStatus: (json['git_status'] != null
+            ? CodespaceWithFullRepositoryGitStatus.fromJson(
+                json['git_status'] as Map<String, dynamic>)
+            : null)!,
+        location: (json['location'] != null
+            ? CodespaceWithFullRepositoryLocation.fromJson(
+                json['location'] as String)
+            : null)!,
+        idleTimeoutMinutes: json.containsKey('idle_timeout_minutes')
+            ? (json['idle_timeout_minutes'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'idle_timeout_minutes', 'Required property is missing'),
+        webUrl: (json['web_url'] as String?)!,
+        machinesUrl: (json['machines_url'] as String?)!,
+        startUrl: (json['start_url'] as String?)!,
+        stopUrl: (json['stop_url'] as String?)!,
+        publishUrl: json.containsKey('publish_url')
+            ? SdkPresent(json['publish_url'] as String?)
+            : const SdkOmitted(),
+        pullsUrl: json.containsKey('pulls_url')
+            ? json['pulls_url'] as String?
+            : throw ArgumentError.value(
+                null, 'pulls_url', 'Required property is missing'),
+        recentFolders: ((json['recent_folders'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        runtimeConstraints: json['runtime_constraints'] != null
+            ? SdkPresent((json['runtime_constraints'] != null
+                ? CodespaceWithFullRepositoryRuntimeConstraints.fromJson(
+                    json['runtime_constraints'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pendingOperation: json.containsKey('pending_operation')
+            ? SdkPresent(json['pending_operation'] as bool?)
+            : const SdkOmitted(),
+        pendingOperationDisabledReason: json
+                .containsKey('pending_operation_disabled_reason')
+            ? SdkPresent(json['pending_operation_disabled_reason'] as String?)
+            : const SdkOmitted(),
+        idleTimeoutNotice: json.containsKey('idle_timeout_notice')
+            ? SdkPresent(json['idle_timeout_notice'] as String?)
+            : const SdkOmitted(),
+        retentionPeriodMinutes: json.containsKey('retention_period_minutes')
+            ? SdkPresent((json['retention_period_minutes'] as num?)?.toInt())
+            : const SdkOmitted(),
+        retentionExpiresAt: json.containsKey('retention_expires_at')
+            ? SdkPresent(json['retention_expires_at'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    ...switch (displayName) {
-      SdkPresent<String?>(value: final value) => {'display_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'environment_id': environmentId,
-    'owner': owner.toJson(),
-    'billable_owner': billableOwner.toJson(),
-    'repository': repository.toJson(),
-    'machine': machine?.toJson(),
-    ...switch (devcontainerPath) {
-      SdkPresent<String?>(value: final value) => {'devcontainer_path': value,},
-      _ => const <String, dynamic>{},
-    },
-    'prebuild': prebuild,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'last_used_at': lastUsedAt,
-    'state': state.toJson(),
-    'url': url,
-    'git_status': gitStatus.toJson(),
-    'location': location.toJson(),
-    'idle_timeout_minutes': idleTimeoutMinutes,
-    'web_url': webUrl,
-    'machines_url': machinesUrl,
-    'start_url': startUrl,
-    'stop_url': stopUrl,
-    ...switch (publishUrl) {
-      SdkPresent<String?>(value: final value) => {'publish_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'pulls_url': pullsUrl,
-    'recent_folders': recentFolders,
-    ...switch (runtimeConstraints) {
-      SdkPresent<CodespaceWithFullRepositoryRuntimeConstraints>(value: final value) => {'runtime_constraints': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pendingOperation) {
-      SdkPresent<bool?>(value: final value) => {'pending_operation': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pendingOperationDisabledReason) {
-      SdkPresent<String?>(value: final value) => {'pending_operation_disabled_reason': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (idleTimeoutNotice) {
-      SdkPresent<String?>(value: final value) => {'idle_timeout_notice': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (retentionPeriodMinutes) {
-      SdkPresent<int?>(value: final value) => {'retention_period_minutes': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (retentionExpiresAt) {
-      SdkPresent<String?>(value: final value) => {'retention_expires_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'name': name,
+        ...switch (displayName) {
+          SdkPresent<String?>(value: final value) => {
+              'display_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'environment_id': environmentId,
+        'owner': owner.toJson(),
+        'billable_owner': billableOwner.toJson(),
+        'repository': repository.toJson(),
+        'machine': machine?.toJson(),
+        ...switch (devcontainerPath) {
+          SdkPresent<String?>(value: final value) => {
+              'devcontainer_path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'prebuild': prebuild,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'last_used_at': lastUsedAt,
+        'state': state.toJson(),
+        'url': url,
+        'git_status': gitStatus.toJson(),
+        'location': location.toJson(),
+        'idle_timeout_minutes': idleTimeoutMinutes,
+        'web_url': webUrl,
+        'machines_url': machinesUrl,
+        'start_url': startUrl,
+        'stop_url': stopUrl,
+        ...switch (publishUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'publish_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'pulls_url': pullsUrl,
+        'recent_folders': recentFolders,
+        ...switch (runtimeConstraints) {
+          SdkPresent<CodespaceWithFullRepositoryRuntimeConstraints>(
+            value: final value
+          ) =>
+            {
+              'runtime_constraints': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pendingOperation) {
+          SdkPresent<bool?>(value: final value) => {
+              'pending_operation': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pendingOperationDisabledReason) {
+          SdkPresent<String?>(value: final value) => {
+              'pending_operation_disabled_reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (idleTimeoutNotice) {
+          SdkPresent<String?>(value: final value) => {
+              'idle_timeout_notice': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (retentionPeriodMinutes) {
+          SdkPresent<int?>(value: final value) => {
+              'retention_period_minutes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (retentionExpiresAt) {
+          SdkPresent<String?>(value: final value) => {
+              'retention_expires_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

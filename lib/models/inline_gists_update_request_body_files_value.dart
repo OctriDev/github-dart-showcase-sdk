@@ -7,250 +7,428 @@ part of 'inline.dart';
 class GistsUpdateRequestBodyFilesValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The new content of the file.
   final SdkOptional<String> content;
+
   /// The new filename for the file.
   final SdkOptional<String?> filename;
 
-  const GistsUpdateRequestBodyFilesValue({this.content = const SdkOmitted(), this.filename = const SdkOmitted()});
+  const GistsUpdateRequestBodyFilesValue(
+      {this.content = const SdkOmitted(), this.filename = const SdkOmitted()});
 
-  GistsUpdateRequestBodyFilesValue Function({SdkOptional<String> content, SdkOptional<String?> filename}) get copyWith => _copyWith;
+  GistsUpdateRequestBodyFilesValue Function(
+      {SdkOptional<String> content,
+      SdkOptional<String?> filename}) get copyWith => _copyWith;
 
-  GistsUpdateRequestBodyFilesValue _copyWith({Object? content = sdkOmittedValue, Object? filename = sdkOmittedValue}) => GistsUpdateRequestBodyFilesValue(
-    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<String>,
-    filename: identical(filename, sdkOmittedValue) ? this.filename : filename as SdkOptional<String?>,
-  );
+  GistsUpdateRequestBodyFilesValue _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? filename = sdkOmittedValue}) =>
+      GistsUpdateRequestBodyFilesValue(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as SdkOptional<String>,
+        filename: identical(filename, sdkOmittedValue)
+            ? this.filename
+            : filename as SdkOptional<String?>,
+      );
 
-  factory GistsUpdateRequestBodyFilesValue.fromJson(Map<String, dynamic> json) => GistsUpdateRequestBodyFilesValue(
-    content: json['content'] != null ? SdkPresent((json['content'] as String?)!) : const SdkOmitted(),
-    filename: json.containsKey('filename') ? SdkPresent(json['filename'] as String?) : const SdkOmitted(),
-  );
+  factory GistsUpdateRequestBodyFilesValue.fromJson(
+          Map<String, dynamic> json) =>
+      GistsUpdateRequestBodyFilesValue(
+        content: json['content'] != null
+            ? SdkPresent((json['content'] as String?)!)
+            : const SdkOmitted(),
+        filename: json.containsKey('filename')
+            ? SdkPresent(json['filename'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (content) {
-      SdkPresent<String>(value: final value) => {'content': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (filename) {
-      SdkPresent<String?>(value: final value) => {'filename': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (content) {
+          SdkPresent<String>(value: final value) => {
+              'content': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (filename) {
+          SdkPresent<String?>(value: final value) => {
+              'filename': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GistsUpdateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The description of the gist.
   final SdkOptional<String> description;
+
   /// The gist files to be updated, renamed, or deleted. Each `key` must match the current filename (including extension) of the targeted gist file. For example: `hello.py`. To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be deleted if the specified object does not contain at least one of `content` or `filename`.
   final SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>> files;
 
-  const GistsUpdateRequestBody({this.description = const SdkOmitted(), this.files = const SdkOmitted()});
+  const GistsUpdateRequestBody(
+      {this.description = const SdkOmitted(), this.files = const SdkOmitted()});
 
-  GistsUpdateRequestBody Function({SdkOptional<String> description, SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>> files}) get copyWith => _copyWith;
+  GistsUpdateRequestBody Function(
+          {SdkOptional<String> description,
+          SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>> files})
+      get copyWith => _copyWith;
 
-  GistsUpdateRequestBody _copyWith({Object? description = sdkOmittedValue, Object? files = sdkOmittedValue}) => GistsUpdateRequestBody(
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    files: identical(files, sdkOmittedValue) ? this.files : files as SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>>,
-  );
+  GistsUpdateRequestBody _copyWith(
+          {Object? description = sdkOmittedValue,
+          Object? files = sdkOmittedValue}) =>
+      GistsUpdateRequestBody(
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        files: identical(files, sdkOmittedValue)
+            ? this.files
+            : files
+                as SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>>,
+      );
 
-  factory GistsUpdateRequestBody.fromJson(Map<String, dynamic> json) => GistsUpdateRequestBody(
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    files: json['files'] != null ? SdkPresent((json['files'] == null ? null : Map<String, dynamic>.from(json['files'] as Map).map((key, value) => MapEntry(key, GistsUpdateRequestBodyFilesValue.fromJson(value as Map<String, dynamic>))))!) : const SdkOmitted(),
-  );
+  factory GistsUpdateRequestBody.fromJson(Map<String, dynamic> json) =>
+      GistsUpdateRequestBody(
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        files: json['files'] != null
+            ? SdkPresent((json['files'] == null
+                ? null
+                : Map<String, dynamic>.from(json['files'] as Map).map(
+                    (key, value) => MapEntry(
+                        key,
+                        GistsUpdateRequestBodyFilesValue.fromJson(
+                            value as Map<String, dynamic>))))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (files) {
-      SdkPresent<Map<String, GistsUpdateRequestBodyFilesValue>>(value: final value) => {'files': value.map((key, value) => MapEntry(key, value.toJson())),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (files) {
+          SdkPresent<Map<String, GistsUpdateRequestBodyFilesValue>>(
+            value: final value
+          ) =>
+            {
+              'files': value.map((key, value) => MapEntry(key, value.toJson())),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GistsCreateCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The comment text.
   final String body;
 
   const GistsCreateCommentRequestBody({required this.body});
 
-  GistsCreateCommentRequestBody Function({String body}) get copyWith => _copyWith;
+  GistsCreateCommentRequestBody Function({String body}) get copyWith =>
+      _copyWith;
 
-  GistsCreateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => GistsCreateCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
+  GistsCreateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) =>
+      GistsCreateCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
 
-  factory GistsCreateCommentRequestBody.fromJson(Map<String, dynamic> json) => GistsCreateCommentRequestBody(
-    body: (json['body'] as String?)!,
-  );
+  factory GistsCreateCommentRequestBody.fromJson(Map<String, dynamic> json) =>
+      GistsCreateCommentRequestBody(
+        body: (json['body'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
+        'body': body,
+      };
 }
 
 class GistsUpdateCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The comment text.
   final String body;
 
   const GistsUpdateCommentRequestBody({required this.body});
 
-  GistsUpdateCommentRequestBody Function({String body}) get copyWith => _copyWith;
+  GistsUpdateCommentRequestBody Function({String body}) get copyWith =>
+      _copyWith;
 
-  GistsUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => GistsUpdateCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
+  GistsUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) =>
+      GistsUpdateCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
 
-  factory GistsUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) => GistsUpdateCommentRequestBody(
-    body: (json['body'] as String?)!,
-  );
+  factory GistsUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) =>
+      GistsUpdateCommentRequestBody(
+        body: (json['body'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
+        'body': body,
+      };
 }
 
 class IssuesCreateRequestBodyIssueFieldValuesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the issue field to set
   final int fieldId;
+
   /// The value to set for the field. For multi-select fields, provide an array of option names.
   final dynamic value;
 
-  const IssuesCreateRequestBodyIssueFieldValuesItem({required this.fieldId, required this.value});
+  const IssuesCreateRequestBodyIssueFieldValuesItem(
+      {required this.fieldId, required this.value});
 
-  IssuesCreateRequestBodyIssueFieldValuesItem Function({int fieldId, dynamic value}) get copyWith => _copyWith;
+  IssuesCreateRequestBodyIssueFieldValuesItem Function(
+      {int fieldId, dynamic value}) get copyWith => _copyWith;
 
-  IssuesCreateRequestBodyIssueFieldValuesItem _copyWith({Object? fieldId = sdkOmittedValue, Object? value = sdkOmittedValue}) => IssuesCreateRequestBodyIssueFieldValuesItem(
-    fieldId: identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
-    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
-  );
+  IssuesCreateRequestBodyIssueFieldValuesItem _copyWith(
+          {Object? fieldId = sdkOmittedValue,
+          Object? value = sdkOmittedValue}) =>
+      IssuesCreateRequestBodyIssueFieldValuesItem(
+        fieldId:
+            identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
+        value:
+            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+      );
 
-  factory IssuesCreateRequestBodyIssueFieldValuesItem.fromJson(Map<String, dynamic> json) => IssuesCreateRequestBodyIssueFieldValuesItem(
-    fieldId: ((json['field_id'] as num?)?.toInt())!,
-    value: (json['value'])!,
-  );
+  factory IssuesCreateRequestBodyIssueFieldValuesItem.fromJson(
+          Map<String, dynamic> json) =>
+      IssuesCreateRequestBodyIssueFieldValuesItem(
+        fieldId: ((json['field_id'] as num?)?.toInt())!,
+        value: (json['value'])!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'field_id': fieldId,
-    'value': value,
-  };
+        'field_id': fieldId,
+        'value': value,
+      };
 }
 
 class IssuesCreateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The title of the issue.
   final dynamic title;
+
   /// The contents of the issue.
   final SdkOptional<String> body;
+
   /// Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is closing down.**_
   final SdkOptional<String?> assignee;
   final SdkOptional<dynamic> milestone;
+
   /// Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
   final SdkOptional<List<IssuesCreateRequestLabelsItem>> labels;
+
   /// Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
   final SdkOptional<List<String>> assignees;
+
   /// An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Issue fields are only available for organization-owned repositories with the feature enabled. Field values are silently dropped otherwise.
-  final SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>> issueFieldValues;
+  final SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>>
+      issueFieldValues;
+
   /// The name of the issue type to associate with this issue. _NOTE: Only users with push access can set the type for new issues. The type is silently dropped otherwise._
   final SdkOptional<String?> type_;
+
   /// The id of the parent issue to add this issue to as a sub-issue. _NOTE: Only users with triage access to both the parent issue's repository and this repository can set the parent issue._
   final SdkOptional<int> parentIssueId;
 
-  const IssuesCreateRequestBody({required this.title, this.body = const SdkOmitted(), this.assignee = const SdkOmitted(), this.milestone = const SdkOmitted(), this.labels = const SdkOmitted(), this.assignees = const SdkOmitted(), this.issueFieldValues = const SdkOmitted(), this.type_ = const SdkOmitted(), this.parentIssueId = const SdkOmitted()});
+  const IssuesCreateRequestBody(
+      {required this.title,
+      this.body = const SdkOmitted(),
+      this.assignee = const SdkOmitted(),
+      this.milestone = const SdkOmitted(),
+      this.labels = const SdkOmitted(),
+      this.assignees = const SdkOmitted(),
+      this.issueFieldValues = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.parentIssueId = const SdkOmitted()});
 
-  IssuesCreateRequestBody Function({dynamic title, SdkOptional<String> body, SdkOptional<String?> assignee, SdkOptional<dynamic> milestone, SdkOptional<List<IssuesCreateRequestLabelsItem>> labels, SdkOptional<List<String>> assignees, SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>> issueFieldValues, SdkOptional<String?> type_, SdkOptional<int> parentIssueId}) get copyWith => _copyWith;
+  IssuesCreateRequestBody Function(
+      {dynamic title,
+      SdkOptional<String> body,
+      SdkOptional<String?> assignee,
+      SdkOptional<dynamic> milestone,
+      SdkOptional<List<IssuesCreateRequestLabelsItem>> labels,
+      SdkOptional<List<String>> assignees,
+      SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>>
+          issueFieldValues,
+      SdkOptional<String?> type_,
+      SdkOptional<int> parentIssueId}) get copyWith => _copyWith;
 
-  IssuesCreateRequestBody _copyWith({Object? title = sdkOmittedValue, Object? body = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? issueFieldValues = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? parentIssueId = sdkOmittedValue}) => IssuesCreateRequestBody(
-    title: identical(title, sdkOmittedValue) ? this.title : title as dynamic,
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
-    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<String?>,
-    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as SdkOptional<dynamic>,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<IssuesCreateRequestLabelsItem>>,
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
-    issueFieldValues: identical(issueFieldValues, sdkOmittedValue) ? this.issueFieldValues : issueFieldValues as SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String?>,
-    parentIssueId: identical(parentIssueId, sdkOmittedValue) ? this.parentIssueId : parentIssueId as SdkOptional<int>,
-  );
+  IssuesCreateRequestBody _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? assignee = sdkOmittedValue,
+          Object? milestone = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? assignees = sdkOmittedValue,
+          Object? issueFieldValues = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? parentIssueId = sdkOmittedValue}) =>
+      IssuesCreateRequestBody(
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as dynamic,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+        assignee: identical(assignee, sdkOmittedValue)
+            ? this.assignee
+            : assignee as SdkOptional<String?>,
+        milestone: identical(milestone, sdkOmittedValue)
+            ? this.milestone
+            : milestone as SdkOptional<dynamic>,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as SdkOptional<List<IssuesCreateRequestLabelsItem>>,
+        assignees: identical(assignees, sdkOmittedValue)
+            ? this.assignees
+            : assignees as SdkOptional<List<String>>,
+        issueFieldValues: identical(issueFieldValues, sdkOmittedValue)
+            ? this.issueFieldValues
+            : issueFieldValues as SdkOptional<
+                List<IssuesCreateRequestBodyIssueFieldValuesItem>>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<String?>,
+        parentIssueId: identical(parentIssueId, sdkOmittedValue)
+            ? this.parentIssueId
+            : parentIssueId as SdkOptional<int>,
+      );
 
-  factory IssuesCreateRequestBody.fromJson(Map<String, dynamic> json) => IssuesCreateRequestBody(
-    title: (json['title'])!,
-    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
-    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] as String?) : const SdkOmitted(),
-    milestone: json.containsKey('milestone') ? SdkPresent(json['milestone']) : const SdkOmitted(),
-    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => IssuesCreateRequestLabelsItem.fromJson(e)).toList())!) : const SdkOmitted(),
-    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    issueFieldValues: json['issue_field_values'] != null ? SdkPresent(((json['issue_field_values'] as List?)?.map((e) => IssuesCreateRequestBodyIssueFieldValuesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    type_: json.containsKey('type') ? SdkPresent(json['type'] as String?) : const SdkOmitted(),
-    parentIssueId: json['parent_issue_id'] != null ? SdkPresent(((json['parent_issue_id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory IssuesCreateRequestBody.fromJson(Map<String, dynamic> json) =>
+      IssuesCreateRequestBody(
+        title: (json['title'])!,
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
+            : const SdkOmitted(),
+        assignee: json.containsKey('assignee')
+            ? SdkPresent(json['assignee'] as String?)
+            : const SdkOmitted(),
+        milestone: json.containsKey('milestone')
+            ? SdkPresent(json['milestone'])
+            : const SdkOmitted(),
+        labels: json['labels'] != null
+            ? SdkPresent(((json['labels'] as List?)
+                ?.map((e) => IssuesCreateRequestLabelsItem.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        assignees: json['assignees'] != null
+            ? SdkPresent(((json['assignees'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        issueFieldValues: json['issue_field_values'] != null
+            ? SdkPresent(((json['issue_field_values'] as List?)
+                ?.map((e) =>
+                    IssuesCreateRequestBodyIssueFieldValuesItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        type_: json.containsKey('type')
+            ? SdkPresent(json['type'] as String?)
+            : const SdkOmitted(),
+        parentIssueId: json['parent_issue_id'] != null
+            ? SdkPresent(((json['parent_issue_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-    ...switch (body) {
-      SdkPresent<String>(value: final value) => {'body': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (assignee) {
-      SdkPresent<String?>(value: final value) => {'assignee': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (milestone) {
-      SdkPresent<dynamic>(value: final value) => {'milestone': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (labels) {
-      SdkPresent<List<IssuesCreateRequestLabelsItem>>(value: final value) => {'labels': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (assignees) {
-      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issueFieldValues) {
-      SdkPresent<List<IssuesCreateRequestBodyIssueFieldValuesItem>>(value: final value) => {'issue_field_values': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<String?>(value: final value) => {'type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (parentIssueId) {
-      SdkPresent<int>(value: final value) => {'parent_issue_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'title': title,
+        ...switch (body) {
+          SdkPresent<String>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (assignee) {
+          SdkPresent<String?>(value: final value) => {
+              'assignee': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (milestone) {
+          SdkPresent<dynamic>(value: final value) => {
+              'milestone': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (labels) {
+          SdkPresent<List<IssuesCreateRequestLabelsItem>>(value: final value) =>
+            {
+              'labels': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (assignees) {
+          SdkPresent<List<String>>(value: final value) => {
+              'assignees': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueFieldValues) {
+          SdkPresent<List<IssuesCreateRequestBodyIssueFieldValuesItem>>(
+            value: final value
+          ) =>
+            {
+              'issue_field_values': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<String?>(value: final value) => {
+              'type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (parentIssueId) {
+          SdkPresent<int>(value: final value) => {
+              'parent_issue_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class IssuesUpdateCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The contents of the comment.
   final String body;
 
   const IssuesUpdateCommentRequestBody({required this.body});
 
-  IssuesUpdateCommentRequestBody Function({String body}) get copyWith => _copyWith;
+  IssuesUpdateCommentRequestBody Function({String body}) get copyWith =>
+      _copyWith;
 
-  IssuesUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => IssuesUpdateCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
+  IssuesUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) =>
+      IssuesUpdateCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
 
-  factory IssuesUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) => IssuesUpdateCommentRequestBody(
-    body: (json['body'] as String?)!,
-  );
+  factory IssuesUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) =>
+      IssuesUpdateCommentRequestBody(
+        body: (json['body'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
+        'body': body,
+      };
 }

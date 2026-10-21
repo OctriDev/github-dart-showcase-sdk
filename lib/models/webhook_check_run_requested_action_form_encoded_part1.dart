@@ -8,22 +8,30 @@ part of 'webhook_check_run_requested_action_form_encoded.dart';
 class WebhookCheckRunRequestedActionFormEncoded {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A URL-encoded string of the check_run.requested_action JSON payload. The decoded payload is a JSON object.
   final String payload;
 
   const WebhookCheckRunRequestedActionFormEncoded({required this.payload});
 
-  WebhookCheckRunRequestedActionFormEncoded Function({String payload}) get copyWith => _copyWith;
+  WebhookCheckRunRequestedActionFormEncoded Function({String payload})
+      get copyWith => _copyWith;
 
-  WebhookCheckRunRequestedActionFormEncoded _copyWith({Object? payload = sdkOmittedValue}) => WebhookCheckRunRequestedActionFormEncoded(
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String,
-  );
+  WebhookCheckRunRequestedActionFormEncoded _copyWith(
+          {Object? payload = sdkOmittedValue}) =>
+      WebhookCheckRunRequestedActionFormEncoded(
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as String,
+      );
 
-  factory WebhookCheckRunRequestedActionFormEncoded.fromJson(Map<String, dynamic> json) => WebhookCheckRunRequestedActionFormEncoded(
-    payload: (json['payload'] as String?)!,
-  );
+  factory WebhookCheckRunRequestedActionFormEncoded.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCheckRunRequestedActionFormEncoded(
+        payload: (json['payload'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'payload': payload,
-  };
+        'payload': payload,
+      };
 }

@@ -8,69 +8,109 @@ part of 'repos_pages.dart';
 class PagesHttpsCertificate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `state` wire field.
   final PagesHttpsCertificateState state;
+
   /// Required `string` value serialized in the `description` wire field.
   final String description;
+
   /// Array of the domain set and its alternate name (if it is configured)
   final List<String> domains;
+
   /// Optional `date`-formatted value serialized in the `expires_at` wire field.
   final SdkOptional<String> expiresAt;
 
-  const PagesHttpsCertificate({required this.state, required this.description, required this.domains, this.expiresAt = const SdkOmitted()});
+  const PagesHttpsCertificate(
+      {required this.state,
+      required this.description,
+      required this.domains,
+      this.expiresAt = const SdkOmitted()});
 
-  PagesHttpsCertificate Function({PagesHttpsCertificateState state, String description, List<String> domains, SdkOptional<String> expiresAt}) get copyWith => _copyWith;
+  PagesHttpsCertificate Function(
+      {PagesHttpsCertificateState state,
+      String description,
+      List<String> domains,
+      SdkOptional<String> expiresAt}) get copyWith => _copyWith;
 
-  PagesHttpsCertificate _copyWith({Object? state = sdkOmittedValue, Object? description = sdkOmittedValue, Object? domains = sdkOmittedValue, Object? expiresAt = sdkOmittedValue}) => PagesHttpsCertificate(
-    state: identical(state, sdkOmittedValue) ? this.state : state as PagesHttpsCertificateState,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    domains: identical(domains, sdkOmittedValue) ? this.domains : domains as List<String>,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<String>,
-  );
+  PagesHttpsCertificate _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? domains = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue}) =>
+      PagesHttpsCertificate(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as PagesHttpsCertificateState,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        domains: identical(domains, sdkOmittedValue)
+            ? this.domains
+            : domains as List<String>,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as SdkOptional<String>,
+      );
 
-  factory PagesHttpsCertificate.fromJson(Map<String, dynamic> json) => PagesHttpsCertificate(
-    state: (json['state'] != null ? PagesHttpsCertificateState.fromJson(json['state'] as String) : null)!,
-    description: (json['description'] as String?)!,
-    domains: ((json['domains'] as List?)?.map((e) => e as String).toList())!,
-    expiresAt: json['expires_at'] != null ? SdkPresent((json['expires_at'] as String?)!) : const SdkOmitted(),
-  );
+  factory PagesHttpsCertificate.fromJson(Map<String, dynamic> json) =>
+      PagesHttpsCertificate(
+        state: (json['state'] != null
+            ? PagesHttpsCertificateState.fromJson(json['state'] as String)
+            : null)!,
+        description: (json['description'] as String?)!,
+        domains:
+            ((json['domains'] as List?)?.map((e) => e as String).toList())!,
+        expiresAt: json['expires_at'] != null
+            ? SdkPresent((json['expires_at'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'state': state.toJson(),
-    'description': description,
-    'domains': domains,
-    ...switch (expiresAt) {
-      SdkPresent<String>(value: final value) => {'expires_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'state': state.toJson(),
+        'description': description,
+        'domains': domains,
+        ...switch (expiresAt) {
+          SdkPresent<String>(value: final value) => {
+              'expires_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `PagesSourceHash` API schema.
 class PagesSourceHash {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `branch` wire field.
   final String branch;
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
 
   const PagesSourceHash({required this.branch, required this.path});
 
-  PagesSourceHash Function({String branch, String path}) get copyWith => _copyWith;
+  PagesSourceHash Function({String branch, String path}) get copyWith =>
+      _copyWith;
 
-  PagesSourceHash _copyWith({Object? branch = sdkOmittedValue, Object? path = sdkOmittedValue}) => PagesSourceHash(
-    branch: identical(branch, sdkOmittedValue) ? this.branch : branch as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-  );
+  PagesSourceHash _copyWith(
+          {Object? branch = sdkOmittedValue, Object? path = sdkOmittedValue}) =>
+      PagesSourceHash(
+        branch:
+            identical(branch, sdkOmittedValue) ? this.branch : branch as String,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+      );
 
-  factory PagesSourceHash.fromJson(Map<String, dynamic> json) => PagesSourceHash(
-    branch: (json['branch'] as String?)!,
-    path: (json['path'] as String?)!,
-  );
+  factory PagesSourceHash.fromJson(Map<String, dynamic> json) =>
+      PagesSourceHash(
+        branch: (json['branch'] as String?)!,
+        path: (json['path'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'branch': branch,
-    'path': path,
-  };
+        'branch': branch,
+        'path': path,
+      };
 }

@@ -11,27 +11,40 @@ class ContentDirectoryItemLinks {
   final String? html;
   final String self;
 
-  const ContentDirectoryItemLinks({required this.git, required this.html, required this.self});
+  const ContentDirectoryItemLinks(
+      {required this.git, required this.html, required this.self});
 
-  ContentDirectoryItemLinks Function({String? git, String? html, String self}) get copyWith => _copyWith;
+  ContentDirectoryItemLinks Function({String? git, String? html, String self})
+      get copyWith => _copyWith;
 
-  ContentDirectoryItemLinks _copyWith({Object? git = sdkOmittedValue, Object? html = sdkOmittedValue, Object? self = sdkOmittedValue}) => ContentDirectoryItemLinks(
-    git: identical(git, sdkOmittedValue) ? this.git : git as String?,
-    html: identical(html, sdkOmittedValue) ? this.html : html as String?,
-    self: identical(self, sdkOmittedValue) ? this.self : self as String,
-  );
+  ContentDirectoryItemLinks _copyWith(
+          {Object? git = sdkOmittedValue,
+          Object? html = sdkOmittedValue,
+          Object? self = sdkOmittedValue}) =>
+      ContentDirectoryItemLinks(
+        git: identical(git, sdkOmittedValue) ? this.git : git as String?,
+        html: identical(html, sdkOmittedValue) ? this.html : html as String?,
+        self: identical(self, sdkOmittedValue) ? this.self : self as String,
+      );
 
-  factory ContentDirectoryItemLinks.fromJson(Map<String, dynamic> json) => ContentDirectoryItemLinks(
-    git: json.containsKey('git') ? json['git'] as String? : throw ArgumentError.value(null, 'git', 'Required property is missing'),
-    html: json.containsKey('html') ? json['html'] as String? : throw ArgumentError.value(null, 'html', 'Required property is missing'),
-    self: (json['self'] as String?)!,
-  );
+  factory ContentDirectoryItemLinks.fromJson(Map<String, dynamic> json) =>
+      ContentDirectoryItemLinks(
+        git: json.containsKey('git')
+            ? json['git'] as String?
+            : throw ArgumentError.value(
+                null, 'git', 'Required property is missing'),
+        html: json.containsKey('html')
+            ? json['html'] as String?
+            : throw ArgumentError.value(
+                null, 'html', 'Required property is missing'),
+        self: (json['self'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'git': git,
-    'html': html,
-    'self': self,
-  };
+        'git': git,
+        'html': html,
+        'self': self,
+      };
 }
 
 class ContentDirectoryItem {
@@ -49,54 +62,119 @@ class ContentDirectoryItem {
   final String? downloadUrl;
   final ContentDirectoryItemLinks links;
 
-  const ContentDirectoryItem({required this.type_, required this.size, required this.name, required this.path, this.content = const SdkOmitted(), required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links});
+  const ContentDirectoryItem(
+      {required this.type_,
+      required this.size,
+      required this.name,
+      required this.path,
+      this.content = const SdkOmitted(),
+      required this.sha,
+      required this.url,
+      required this.gitUrl,
+      required this.htmlUrl,
+      required this.downloadUrl,
+      required this.links});
 
-  ContentDirectoryItem Function({ContentDirectoryItemType type_, int size, String name, String path, SdkOptional<String> content, String sha, String url, String? gitUrl, String? htmlUrl, String? downloadUrl, ContentDirectoryItemLinks links}) get copyWith => _copyWith;
+  ContentDirectoryItem Function(
+      {ContentDirectoryItemType type_,
+      int size,
+      String name,
+      String path,
+      SdkOptional<String> content,
+      String sha,
+      String url,
+      String? gitUrl,
+      String? htmlUrl,
+      String? downloadUrl,
+      ContentDirectoryItemLinks links}) get copyWith => _copyWith;
 
-  ContentDirectoryItem _copyWith({Object? type_ = sdkOmittedValue, Object? size = sdkOmittedValue, Object? name = sdkOmittedValue, Object? path = sdkOmittedValue, Object? content = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue, Object? gitUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? downloadUrl = sdkOmittedValue, Object? links = sdkOmittedValue}) => ContentDirectoryItem(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ContentDirectoryItemType,
-    size: identical(size, sdkOmittedValue) ? this.size : size as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<String>,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    gitUrl: identical(gitUrl, sdkOmittedValue) ? this.gitUrl : gitUrl as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String?,
-    downloadUrl: identical(downloadUrl, sdkOmittedValue) ? this.downloadUrl : downloadUrl as String?,
-    links: identical(links, sdkOmittedValue) ? this.links : links as ContentDirectoryItemLinks,
-  );
+  ContentDirectoryItem _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? gitUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? downloadUrl = sdkOmittedValue,
+          Object? links = sdkOmittedValue}) =>
+      ContentDirectoryItem(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ContentDirectoryItemType,
+        size: identical(size, sdkOmittedValue) ? this.size : size as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as SdkOptional<String>,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        gitUrl: identical(gitUrl, sdkOmittedValue)
+            ? this.gitUrl
+            : gitUrl as String?,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String?,
+        downloadUrl: identical(downloadUrl, sdkOmittedValue)
+            ? this.downloadUrl
+            : downloadUrl as String?,
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as ContentDirectoryItemLinks,
+      );
 
-  factory ContentDirectoryItem.fromJson(Map<String, dynamic> json) => ContentDirectoryItem(
-    type_: (json['type'] != null ? ContentDirectoryItemType.fromJson(json['type'] as String) : null)!,
-    size: ((json['size'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    path: (json['path'] as String?)!,
-    content: json['content'] != null ? SdkPresent((json['content'] as String?)!) : const SdkOmitted(),
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-    gitUrl: json.containsKey('git_url') ? json['git_url'] as String? : throw ArgumentError.value(null, 'git_url', 'Required property is missing'),
-    htmlUrl: json.containsKey('html_url') ? json['html_url'] as String? : throw ArgumentError.value(null, 'html_url', 'Required property is missing'),
-    downloadUrl: json.containsKey('download_url') ? json['download_url'] as String? : throw ArgumentError.value(null, 'download_url', 'Required property is missing'),
-    links: (json['_links'] != null ? ContentDirectoryItemLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-  );
+  factory ContentDirectoryItem.fromJson(Map<String, dynamic> json) =>
+      ContentDirectoryItem(
+        type_: (json['type'] != null
+            ? ContentDirectoryItemType.fromJson(json['type'] as String)
+            : null)!,
+        size: ((json['size'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        path: (json['path'] as String?)!,
+        content: json['content'] != null
+            ? SdkPresent((json['content'] as String?)!)
+            : const SdkOmitted(),
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+        gitUrl: json.containsKey('git_url')
+            ? json['git_url'] as String?
+            : throw ArgumentError.value(
+                null, 'git_url', 'Required property is missing'),
+        htmlUrl: json.containsKey('html_url')
+            ? json['html_url'] as String?
+            : throw ArgumentError.value(
+                null, 'html_url', 'Required property is missing'),
+        downloadUrl: json.containsKey('download_url')
+            ? json['download_url'] as String?
+            : throw ArgumentError.value(
+                null, 'download_url', 'Required property is missing'),
+        links: (json['_links'] != null
+            ? ContentDirectoryItemLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'size': size,
-    'name': name,
-    'path': path,
-    ...switch (content) {
-      SdkPresent<String>(value: final value) => {'content': value,},
-      _ => const <String, dynamic>{},
-    },
-    'sha': sha,
-    'url': url,
-    'git_url': gitUrl,
-    'html_url': htmlUrl,
-    'download_url': downloadUrl,
-    '_links': links.toJson(),
-  };
+        'type': type_.toJson(),
+        'size': size,
+        'name': name,
+        'path': path,
+        ...switch (content) {
+          SdkPresent<String>(value: final value) => {
+              'content': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'sha': sha,
+        'url': url,
+        'git_url': gitUrl,
+        'html_url': htmlUrl,
+        'download_url': downloadUrl,
+        '_links': links.toJson(),
+      };
 }
 
 // ContentDirectory = List<ContentDirectoryItem>

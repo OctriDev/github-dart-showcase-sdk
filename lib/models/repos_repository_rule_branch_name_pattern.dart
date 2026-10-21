@@ -8,75 +8,141 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleBranchNamePatternParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// How this rule appears when configuring it.
   final SdkOptional<String> name;
+
   /// If true, the rule will fail if the pattern matches.
   final SdkOptional<bool> negate;
+
   /// The operator to use for matching.
   final RepositoryRuleBranchNamePatternParametersOperator operator_;
+
   /// The pattern to match with.
   final String pattern;
 
-  const RepositoryRuleBranchNamePatternParameters({this.name = const SdkOmitted(), this.negate = const SdkOmitted(), required this.operator_, required this.pattern});
+  const RepositoryRuleBranchNamePatternParameters(
+      {this.name = const SdkOmitted(),
+      this.negate = const SdkOmitted(),
+      required this.operator_,
+      required this.pattern});
 
-  RepositoryRuleBranchNamePatternParameters Function({SdkOptional<String> name, SdkOptional<bool> negate, RepositoryRuleBranchNamePatternParametersOperator operator_, String pattern}) get copyWith => _copyWith;
+  RepositoryRuleBranchNamePatternParameters Function(
+      {SdkOptional<String> name,
+      SdkOptional<bool> negate,
+      RepositoryRuleBranchNamePatternParametersOperator operator_,
+      String pattern}) get copyWith => _copyWith;
 
-  RepositoryRuleBranchNamePatternParameters _copyWith({Object? name = sdkOmittedValue, Object? negate = sdkOmittedValue, Object? operator_ = sdkOmittedValue, Object? pattern = sdkOmittedValue}) => RepositoryRuleBranchNamePatternParameters(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    negate: identical(negate, sdkOmittedValue) ? this.negate : negate as SdkOptional<bool>,
-    operator_: identical(operator_, sdkOmittedValue) ? this.operator_ : operator_ as RepositoryRuleBranchNamePatternParametersOperator,
-    pattern: identical(pattern, sdkOmittedValue) ? this.pattern : pattern as String,
-  );
+  RepositoryRuleBranchNamePatternParameters _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? negate = sdkOmittedValue,
+          Object? operator_ = sdkOmittedValue,
+          Object? pattern = sdkOmittedValue}) =>
+      RepositoryRuleBranchNamePatternParameters(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        negate: identical(negate, sdkOmittedValue)
+            ? this.negate
+            : negate as SdkOptional<bool>,
+        operator_: identical(operator_, sdkOmittedValue)
+            ? this.operator_
+            : operator_ as RepositoryRuleBranchNamePatternParametersOperator,
+        pattern: identical(pattern, sdkOmittedValue)
+            ? this.pattern
+            : pattern as String,
+      );
 
-  factory RepositoryRuleBranchNamePatternParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleBranchNamePatternParameters(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    negate: json['negate'] != null ? SdkPresent((json['negate'] as bool?)!) : const SdkOmitted(),
-    operator_: (json['operator'] != null ? RepositoryRuleBranchNamePatternParametersOperator.fromJson(json['operator'] as String) : null)!,
-    pattern: (json['pattern'] as String?)!,
-  );
+  factory RepositoryRuleBranchNamePatternParameters.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleBranchNamePatternParameters(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        negate: json['negate'] != null
+            ? SdkPresent((json['negate'] as bool?)!)
+            : const SdkOmitted(),
+        operator_: (json['operator'] != null
+            ? RepositoryRuleBranchNamePatternParametersOperator.fromJson(
+                json['operator'] as String)
+            : null)!,
+        pattern: (json['pattern'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (negate) {
-      SdkPresent<bool>(value: final value) => {'negate': value,},
-      _ => const <String, dynamic>{},
-    },
-    'operator': operator_.toJson(),
-    'pattern': pattern,
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (negate) {
+          SdkPresent<bool>(value: final value) => {
+              'negate': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'operator': operator_.toJson(),
+        'pattern': pattern,
+      };
 }
 
 /// Parameters to be used for the branch_name_pattern rule
 class RepositoryRuleBranchNamePattern {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleBranchNamePatternType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleBranchNamePatternParameters> parameters;
 
-  const RepositoryRuleBranchNamePattern({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleBranchNamePattern(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleBranchNamePattern Function({RepositoryRuleBranchNamePatternType type_, SdkOptional<RepositoryRuleBranchNamePatternParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleBranchNamePattern Function(
+          {RepositoryRuleBranchNamePatternType type_,
+          SdkOptional<RepositoryRuleBranchNamePatternParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleBranchNamePattern _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleBranchNamePattern(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleBranchNamePatternType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleBranchNamePatternParameters>,
-  );
+  RepositoryRuleBranchNamePattern _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleBranchNamePattern(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleBranchNamePatternType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters
+                as SdkOptional<RepositoryRuleBranchNamePatternParameters>,
+      );
 
-  factory RepositoryRuleBranchNamePattern.fromJson(Map<String, dynamic> json) => RepositoryRuleBranchNamePattern(
-    type_: (json['type'] != null ? RepositoryRuleBranchNamePatternType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleBranchNamePattern.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleBranchNamePattern(
+        type_: (json['type'] != null
+            ? RepositoryRuleBranchNamePatternType.fromJson(
+                json['type'] as String)
+            : null)!,
+        parameters: json['parameters'] != null
+            ? SdkPresent((json['parameters'] != null
+                ? RepositoryRuleBranchNamePatternParameters.fromJson(
+                    json['parameters'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleBranchNamePatternParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleBranchNamePatternParameters>(
+            value: final value
+          ) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

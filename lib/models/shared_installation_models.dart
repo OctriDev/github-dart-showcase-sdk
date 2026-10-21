@@ -8,136 +8,301 @@ part of 'shared_installation.dart';
 class Installation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the installation.
   final int id;
+
   /// Required API value serialized in the `account` wire field.
   final InstallationAccount? account;
+
   /// Describe whether all repositories have been selected or there's a selection involved
   final InstallationRepositorySelection repositorySelection;
+
   /// Required `uri`-formatted value serialized in the `access_tokens_url` wire field.
   final String accessTokensUrl;
+
   /// Required `uri`-formatted value serialized in the `repositories_url` wire field.
   final String repositoriesUrl;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `integer` value serialized in the `app_id` wire field.
   final int appId;
+
   /// Optional `string` value serialized in the `client_id` wire field.
   final SdkOptional<String> clientId;
+
   /// The ID of the user or organization this token is being scoped to.
   final int targetId;
+
   /// Required `string` value serialized in the `target_type` wire field.
   final String targetType;
+
   /// The permissions granted to the fine-grained access token.
   final AppPermissions permissions;
+
   /// Required array value serialized in the `events` wire field.
   final List<String> events;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `string` value serialized in the `single_file_name` wire field.
   final String? singleFileName;
+
   /// Optional `boolean` value serialized in the `has_multiple_single_files` wire field.
   final SdkOptional<bool> hasMultipleSingleFiles;
+
   /// Optional array value serialized in the `single_file_paths` wire field.
   final SdkOptional<List<String>> singleFilePaths;
+
   /// Required `string` value serialized in the `app_slug` wire field.
   final String appSlug;
+
   /// A GitHub user.
   final NullableSimpleUser? suspendedBy;
+
   /// Required `date-time`-formatted value serialized in the `suspended_at` wire field.
   final String? suspendedAt;
+
   /// Optional `string` value serialized in the `contact_email` wire field.
   final SdkOptional<String?> contactEmail;
 
-  const Installation({required this.id, required this.account, required this.repositorySelection, required this.accessTokensUrl, required this.repositoriesUrl, required this.htmlUrl, required this.appId, this.clientId = const SdkOmitted(), required this.targetId, required this.targetType, required this.permissions, required this.events, required this.createdAt, required this.updatedAt, required this.singleFileName, this.hasMultipleSingleFiles = const SdkOmitted(), this.singleFilePaths = const SdkOmitted(), required this.appSlug, required this.suspendedBy, required this.suspendedAt, this.contactEmail = const SdkOmitted()});
+  const Installation(
+      {required this.id,
+      required this.account,
+      required this.repositorySelection,
+      required this.accessTokensUrl,
+      required this.repositoriesUrl,
+      required this.htmlUrl,
+      required this.appId,
+      this.clientId = const SdkOmitted(),
+      required this.targetId,
+      required this.targetType,
+      required this.permissions,
+      required this.events,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.singleFileName,
+      this.hasMultipleSingleFiles = const SdkOmitted(),
+      this.singleFilePaths = const SdkOmitted(),
+      required this.appSlug,
+      required this.suspendedBy,
+      required this.suspendedAt,
+      this.contactEmail = const SdkOmitted()});
 
-  Installation Function({int id, InstallationAccount? account, InstallationRepositorySelection repositorySelection, String accessTokensUrl, String repositoriesUrl, String htmlUrl, int appId, SdkOptional<String> clientId, int targetId, String targetType, AppPermissions permissions, List<String> events, String createdAt, String updatedAt, String? singleFileName, SdkOptional<bool> hasMultipleSingleFiles, SdkOptional<List<String>> singleFilePaths, String appSlug, NullableSimpleUser? suspendedBy, String? suspendedAt, SdkOptional<String?> contactEmail}) get copyWith => _copyWith;
+  Installation Function(
+      {int id,
+      InstallationAccount? account,
+      InstallationRepositorySelection repositorySelection,
+      String accessTokensUrl,
+      String repositoriesUrl,
+      String htmlUrl,
+      int appId,
+      SdkOptional<String> clientId,
+      int targetId,
+      String targetType,
+      AppPermissions permissions,
+      List<String> events,
+      String createdAt,
+      String updatedAt,
+      String? singleFileName,
+      SdkOptional<bool> hasMultipleSingleFiles,
+      SdkOptional<List<String>> singleFilePaths,
+      String appSlug,
+      NullableSimpleUser? suspendedBy,
+      String? suspendedAt,
+      SdkOptional<String?> contactEmail}) get copyWith => _copyWith;
 
-  Installation _copyWith({Object? id = sdkOmittedValue, Object? account = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue, Object? accessTokensUrl = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? appId = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? targetId = sdkOmittedValue, Object? targetType = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? events = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? singleFileName = sdkOmittedValue, Object? hasMultipleSingleFiles = sdkOmittedValue, Object? singleFilePaths = sdkOmittedValue, Object? appSlug = sdkOmittedValue, Object? suspendedBy = sdkOmittedValue, Object? suspendedAt = sdkOmittedValue, Object? contactEmail = sdkOmittedValue}) => Installation(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    account: identical(account, sdkOmittedValue) ? this.account : account as InstallationAccount?,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as InstallationRepositorySelection,
-    accessTokensUrl: identical(accessTokensUrl, sdkOmittedValue) ? this.accessTokensUrl : accessTokensUrl as String,
-    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String>,
-    targetId: identical(targetId, sdkOmittedValue) ? this.targetId : targetId as int,
-    targetType: identical(targetType, sdkOmittedValue) ? this.targetType : targetType as String,
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as AppPermissions,
-    events: identical(events, sdkOmittedValue) ? this.events : events as List<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    singleFileName: identical(singleFileName, sdkOmittedValue) ? this.singleFileName : singleFileName as String?,
-    hasMultipleSingleFiles: identical(hasMultipleSingleFiles, sdkOmittedValue) ? this.hasMultipleSingleFiles : hasMultipleSingleFiles as SdkOptional<bool>,
-    singleFilePaths: identical(singleFilePaths, sdkOmittedValue) ? this.singleFilePaths : singleFilePaths as SdkOptional<List<String>>,
-    appSlug: identical(appSlug, sdkOmittedValue) ? this.appSlug : appSlug as String,
-    suspendedBy: identical(suspendedBy, sdkOmittedValue) ? this.suspendedBy : suspendedBy as NullableSimpleUser?,
-    suspendedAt: identical(suspendedAt, sdkOmittedValue) ? this.suspendedAt : suspendedAt as String?,
-    contactEmail: identical(contactEmail, sdkOmittedValue) ? this.contactEmail : contactEmail as SdkOptional<String?>,
-  );
+  Installation _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? account = sdkOmittedValue,
+          Object? repositorySelection = sdkOmittedValue,
+          Object? accessTokensUrl = sdkOmittedValue,
+          Object? repositoriesUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? appId = sdkOmittedValue,
+          Object? clientId = sdkOmittedValue,
+          Object? targetId = sdkOmittedValue,
+          Object? targetType = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue,
+          Object? events = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? singleFileName = sdkOmittedValue,
+          Object? hasMultipleSingleFiles = sdkOmittedValue,
+          Object? singleFilePaths = sdkOmittedValue,
+          Object? appSlug = sdkOmittedValue,
+          Object? suspendedBy = sdkOmittedValue,
+          Object? suspendedAt = sdkOmittedValue,
+          Object? contactEmail = sdkOmittedValue}) =>
+      Installation(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        account: identical(account, sdkOmittedValue)
+            ? this.account
+            : account as InstallationAccount?,
+        repositorySelection: identical(repositorySelection, sdkOmittedValue)
+            ? this.repositorySelection
+            : repositorySelection as InstallationRepositorySelection,
+        accessTokensUrl: identical(accessTokensUrl, sdkOmittedValue)
+            ? this.accessTokensUrl
+            : accessTokensUrl as String,
+        repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
+            ? this.repositoriesUrl
+            : repositoriesUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int,
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as SdkOptional<String>,
+        targetId: identical(targetId, sdkOmittedValue)
+            ? this.targetId
+            : targetId as int,
+        targetType: identical(targetType, sdkOmittedValue)
+            ? this.targetType
+            : targetType as String,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as AppPermissions,
+        events: identical(events, sdkOmittedValue)
+            ? this.events
+            : events as List<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        singleFileName: identical(singleFileName, sdkOmittedValue)
+            ? this.singleFileName
+            : singleFileName as String?,
+        hasMultipleSingleFiles:
+            identical(hasMultipleSingleFiles, sdkOmittedValue)
+                ? this.hasMultipleSingleFiles
+                : hasMultipleSingleFiles as SdkOptional<bool>,
+        singleFilePaths: identical(singleFilePaths, sdkOmittedValue)
+            ? this.singleFilePaths
+            : singleFilePaths as SdkOptional<List<String>>,
+        appSlug: identical(appSlug, sdkOmittedValue)
+            ? this.appSlug
+            : appSlug as String,
+        suspendedBy: identical(suspendedBy, sdkOmittedValue)
+            ? this.suspendedBy
+            : suspendedBy as NullableSimpleUser?,
+        suspendedAt: identical(suspendedAt, sdkOmittedValue)
+            ? this.suspendedAt
+            : suspendedAt as String?,
+        contactEmail: identical(contactEmail, sdkOmittedValue)
+            ? this.contactEmail
+            : contactEmail as SdkOptional<String?>,
+      );
 
   factory Installation.fromJson(Map<String, dynamic> json) => Installation(
-    id: ((json['id'] as num?)?.toInt())!,
-    account: json.containsKey('account') ? json['account'] != null ? InstallationAccount.fromJson(json['account']) : null : throw ArgumentError.value(null, 'account', 'Required property is missing'),
-    repositorySelection: (json['repository_selection'] != null ? InstallationRepositorySelection.fromJson(json['repository_selection'] as String) : null)!,
-    accessTokensUrl: (json['access_tokens_url'] as String?)!,
-    repositoriesUrl: (json['repositories_url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    appId: ((json['app_id'] as num?)?.toInt())!,
-    clientId: json['client_id'] != null ? SdkPresent((json['client_id'] as String?)!) : const SdkOmitted(),
-    targetId: ((json['target_id'] as num?)?.toInt())!,
-    targetType: (json['target_type'] as String?)!,
-    permissions: (json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!,
-    events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    singleFileName: json.containsKey('single_file_name') ? json['single_file_name'] as String? : throw ArgumentError.value(null, 'single_file_name', 'Required property is missing'),
-    hasMultipleSingleFiles: json['has_multiple_single_files'] != null ? SdkPresent((json['has_multiple_single_files'] as bool?)!) : const SdkOmitted(),
-    singleFilePaths: json['single_file_paths'] != null ? SdkPresent(((json['single_file_paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    appSlug: (json['app_slug'] as String?)!,
-    suspendedBy: json.containsKey('suspended_by') ? json['suspended_by'] != null ? NullableSimpleUser.fromJson(json['suspended_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'suspended_by', 'Required property is missing'),
-    suspendedAt: json.containsKey('suspended_at') ? json['suspended_at'] as String? : throw ArgumentError.value(null, 'suspended_at', 'Required property is missing'),
-    contactEmail: json.containsKey('contact_email') ? SdkPresent(json['contact_email'] as String?) : const SdkOmitted(),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        account: json.containsKey('account')
+            ? json['account'] != null
+                ? InstallationAccount.fromJson(json['account'])
+                : null
+            : throw ArgumentError.value(
+                null, 'account', 'Required property is missing'),
+        repositorySelection: (json['repository_selection'] != null
+            ? InstallationRepositorySelection.fromJson(
+                json['repository_selection'] as String)
+            : null)!,
+        accessTokensUrl: (json['access_tokens_url'] as String?)!,
+        repositoriesUrl: (json['repositories_url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        appId: ((json['app_id'] as num?)?.toInt())!,
+        clientId: json['client_id'] != null
+            ? SdkPresent((json['client_id'] as String?)!)
+            : const SdkOmitted(),
+        targetId: ((json['target_id'] as num?)?.toInt())!,
+        targetType: (json['target_type'] as String?)!,
+        permissions: (json['permissions'] != null
+            ? AppPermissions.fromJson(
+                json['permissions'] as Map<String, dynamic>)
+            : null)!,
+        events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        singleFileName: json.containsKey('single_file_name')
+            ? json['single_file_name'] as String?
+            : throw ArgumentError.value(
+                null, 'single_file_name', 'Required property is missing'),
+        hasMultipleSingleFiles: json['has_multiple_single_files'] != null
+            ? SdkPresent((json['has_multiple_single_files'] as bool?)!)
+            : const SdkOmitted(),
+        singleFilePaths: json['single_file_paths'] != null
+            ? SdkPresent(((json['single_file_paths'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        appSlug: (json['app_slug'] as String?)!,
+        suspendedBy: json.containsKey('suspended_by')
+            ? json['suspended_by'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['suspended_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'suspended_by', 'Required property is missing'),
+        suspendedAt: json.containsKey('suspended_at')
+            ? json['suspended_at'] as String?
+            : throw ArgumentError.value(
+                null, 'suspended_at', 'Required property is missing'),
+        contactEmail: json.containsKey('contact_email')
+            ? SdkPresent(json['contact_email'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'account': account?.toJson(),
-    'repository_selection': repositorySelection.toJson(),
-    'access_tokens_url': accessTokensUrl,
-    'repositories_url': repositoriesUrl,
-    'html_url': htmlUrl,
-    'app_id': appId,
-    ...switch (clientId) {
-      SdkPresent<String>(value: final value) => {'client_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'target_id': targetId,
-    'target_type': targetType,
-    'permissions': permissions.toJson(),
-    'events': events,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'single_file_name': singleFileName,
-    ...switch (hasMultipleSingleFiles) {
-      SdkPresent<bool>(value: final value) => {'has_multiple_single_files': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (singleFilePaths) {
-      SdkPresent<List<String>>(value: final value) => {'single_file_paths': value,},
-      _ => const <String, dynamic>{},
-    },
-    'app_slug': appSlug,
-    'suspended_by': suspendedBy?.toJson(),
-    'suspended_at': suspendedAt,
-    ...switch (contactEmail) {
-      SdkPresent<String?>(value: final value) => {'contact_email': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'account': account?.toJson(),
+        'repository_selection': repositorySelection.toJson(),
+        'access_tokens_url': accessTokensUrl,
+        'repositories_url': repositoriesUrl,
+        'html_url': htmlUrl,
+        'app_id': appId,
+        ...switch (clientId) {
+          SdkPresent<String>(value: final value) => {
+              'client_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'target_id': targetId,
+        'target_type': targetType,
+        'permissions': permissions.toJson(),
+        'events': events,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'single_file_name': singleFileName,
+        ...switch (hasMultipleSingleFiles) {
+          SdkPresent<bool>(value: final value) => {
+              'has_multiple_single_files': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (singleFilePaths) {
+          SdkPresent<List<String>>(value: final value) => {
+              'single_file_paths': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'app_slug': appSlug,
+        'suspended_by': suspendedBy?.toJson(),
+        'suspended_at': suspendedAt,
+        ...switch (contactEmail) {
+          SdkPresent<String?>(value: final value) => {
+              'contact_email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class InstallationAccount {
@@ -146,11 +311,27 @@ sealed class InstallationAccount {
   const InstallationAccount();
   factory InstallationAccount.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return InstallationAccountSimpleUser(value); } } catch (_) {}
-      try { final value = Enterprise.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return InstallationAccountEnterprise(value); } } catch (_) {}
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return InstallationAccountSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = Enterprise.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return InstallationAccountEnterprise(value);
+        }
+      } catch (_) {}
     }
-    try { return InstallationAccountSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return InstallationAccountEnterprise(Enterprise.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return InstallationAccountSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return InstallationAccountEnterprise(
+          Enterprise.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for InstallationAccount");
   }
   Object? toJson();
@@ -159,11 +340,13 @@ sealed class InstallationAccount {
 final class InstallationAccountSimpleUser extends InstallationAccount {
   final SimpleUser value;
   const InstallationAccountSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class InstallationAccountEnterprise extends InstallationAccount {
   final Enterprise value;
   const InstallationAccountEnterprise(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

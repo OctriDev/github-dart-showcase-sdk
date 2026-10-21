@@ -8,137 +8,250 @@ part of 'webhook_workflow_run_completed.dart';
 class WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `date-time`-formatted value serialized in the `date` wire field.
   final SdkOptional<String> date;
+
   /// Required `email`-formatted value serialized in the `email` wire field.
   final String? email;
+
   /// The git author's name.
   final String name;
+
   /// Optional `string` value serialized in the `username` wire field.
   final SdkOptional<String> username;
 
-  const WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor({this.date = const SdkOmitted(), required this.email, required this.name, this.username = const SdkOmitted()});
+  const WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor(
+      {this.date = const SdkOmitted(),
+      required this.email,
+      required this.name,
+      this.username = const SdkOmitted()});
 
-  WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor Function({SdkOptional<String> date, String? email, String name, SdkOptional<String> username}) get copyWith => _copyWith;
+  WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor Function(
+      {SdkOptional<String> date,
+      String? email,
+      String name,
+      SdkOptional<String> username}) get copyWith => _copyWith;
 
-  WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue, Object? username = sdkOmittedValue}) => WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor(
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String?,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String>,
-  );
+  WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor _copyWith(
+          {Object? date = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? username = sdkOmittedValue}) =>
+      WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor(
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+        email:
+            identical(email, sdkOmittedValue) ? this.email : email as String?,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        username: identical(username, sdkOmittedValue)
+            ? this.username
+            : username as SdkOptional<String>,
+      );
 
-  factory WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor.fromJson(Map<String, dynamic> json) => WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor(
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? json['email'] as String? : throw ArgumentError.value(null, 'email', 'Required property is missing'),
-    name: (json['name'] as String?)!,
-    username: json['username'] != null ? SdkPresent((json['username'] as String?)!) : const SdkOmitted(),
-  );
+  factory WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor(
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? json['email'] as String?
+            : throw ArgumentError.value(
+                null, 'email', 'Required property is missing'),
+        name: (json['name'] as String?)!,
+        username: json['username'] != null
+            ? SdkPresent((json['username'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-    'email': email,
-    'name': name,
-    ...switch (username) {
-      SdkPresent<String>(value: final value) => {'username': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'email': email,
+        'name': name,
+        ...switch (username) {
+          SdkPresent<String>(value: final value) => {
+              'username': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Metaproperties for Git author/committer information.
 class WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `date-time`-formatted value serialized in the `date` wire field.
   final SdkOptional<String> date;
+
   /// Required `email`-formatted value serialized in the `email` wire field.
   final String? email;
+
   /// The git author's name.
   final String name;
+
   /// Optional `string` value serialized in the `username` wire field.
   final SdkOptional<String> username;
 
-  const WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter({this.date = const SdkOmitted(), required this.email, required this.name, this.username = const SdkOmitted()});
+  const WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter(
+      {this.date = const SdkOmitted(),
+      required this.email,
+      required this.name,
+      this.username = const SdkOmitted()});
 
-  WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter Function({SdkOptional<String> date, String? email, String name, SdkOptional<String> username}) get copyWith => _copyWith;
+  WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter Function(
+      {SdkOptional<String> date,
+      String? email,
+      String name,
+      SdkOptional<String> username}) get copyWith => _copyWith;
 
-  WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue, Object? username = sdkOmittedValue}) => WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter(
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String?,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String>,
-  );
+  WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter _copyWith(
+          {Object? date = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? username = sdkOmittedValue}) =>
+      WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter(
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+        email:
+            identical(email, sdkOmittedValue) ? this.email : email as String?,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        username: identical(username, sdkOmittedValue)
+            ? this.username
+            : username as SdkOptional<String>,
+      );
 
-  factory WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter.fromJson(Map<String, dynamic> json) => WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter(
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? json['email'] as String? : throw ArgumentError.value(null, 'email', 'Required property is missing'),
-    name: (json['name'] as String?)!,
-    username: json['username'] != null ? SdkPresent((json['username'] as String?)!) : const SdkOmitted(),
-  );
+  factory WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter(
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? json['email'] as String?
+            : throw ArgumentError.value(
+                null, 'email', 'Required property is missing'),
+        name: (json['name'] as String?)!,
+        username: json['username'] != null
+            ? SdkPresent((json['username'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-    'email': email,
-    'name': name,
-    ...switch (username) {
-      SdkPresent<String>(value: final value) => {'username': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'email': email,
+        'name': name,
+        ...switch (username) {
+          SdkPresent<String>(value: final value) => {
+              'username': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `head_commit` wire field.
 class WebhookWorkflowRunCompletedWorkflowRunHeadCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Metaproperties for Git author/committer information.
   final WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor author;
+
   /// Metaproperties for Git author/committer information.
   final WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter committer;
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `timestamp` wire field.
   final String timestamp;
+
   /// Required `string` value serialized in the `tree_id` wire field.
   final String treeId;
 
-  const WebhookWorkflowRunCompletedWorkflowRunHeadCommit({required this.author, required this.committer, required this.id, required this.message, required this.timestamp, required this.treeId});
+  const WebhookWorkflowRunCompletedWorkflowRunHeadCommit(
+      {required this.author,
+      required this.committer,
+      required this.id,
+      required this.message,
+      required this.timestamp,
+      required this.treeId});
 
-  WebhookWorkflowRunCompletedWorkflowRunHeadCommit Function({WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor author, WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter committer, String id, String message, String timestamp, String treeId}) get copyWith => _copyWith;
+  WebhookWorkflowRunCompletedWorkflowRunHeadCommit Function(
+      {WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor author,
+      WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter committer,
+      String id,
+      String message,
+      String timestamp,
+      String treeId}) get copyWith => _copyWith;
 
-  WebhookWorkflowRunCompletedWorkflowRunHeadCommit _copyWith({Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? id = sdkOmittedValue, Object? message = sdkOmittedValue, Object? timestamp = sdkOmittedValue, Object? treeId = sdkOmittedValue}) => WebhookWorkflowRunCompletedWorkflowRunHeadCommit(
-    author: identical(author, sdkOmittedValue) ? this.author : author as WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor,
-    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    timestamp: identical(timestamp, sdkOmittedValue) ? this.timestamp : timestamp as String,
-    treeId: identical(treeId, sdkOmittedValue) ? this.treeId : treeId as String,
-  );
+  WebhookWorkflowRunCompletedWorkflowRunHeadCommit _copyWith(
+          {Object? author = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? timestamp = sdkOmittedValue,
+          Object? treeId = sdkOmittedValue}) =>
+      WebhookWorkflowRunCompletedWorkflowRunHeadCommit(
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer
+                as WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        timestamp: identical(timestamp, sdkOmittedValue)
+            ? this.timestamp
+            : timestamp as String,
+        treeId:
+            identical(treeId, sdkOmittedValue) ? this.treeId : treeId as String,
+      );
 
-  factory WebhookWorkflowRunCompletedWorkflowRunHeadCommit.fromJson(Map<String, dynamic> json) => WebhookWorkflowRunCompletedWorkflowRunHeadCommit(
-    author: (json['author'] != null ? WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!,
-    committer: (json['committer'] != null ? WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!,
-    id: (json['id'] as String?)!,
-    message: (json['message'] as String?)!,
-    timestamp: (json['timestamp'] as String?)!,
-    treeId: (json['tree_id'] as String?)!,
-  );
+  factory WebhookWorkflowRunCompletedWorkflowRunHeadCommit.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookWorkflowRunCompletedWorkflowRunHeadCommit(
+        author: (json['author'] != null
+            ? WebhookWorkflowRunCompletedWorkflowRunHeadCommitAuthor.fromJson(
+                json['author'] as Map<String, dynamic>)
+            : null)!,
+        committer: (json['committer'] != null
+            ? WebhookWorkflowRunCompletedWorkflowRunHeadCommitCommitter
+                .fromJson(json['committer'] as Map<String, dynamic>)
+            : null)!,
+        id: (json['id'] as String?)!,
+        message: (json['message'] as String?)!,
+        timestamp: (json['timestamp'] as String?)!,
+        treeId: (json['tree_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'author': author.toJson(),
-    'committer': committer.toJson(),
-    'id': id,
-    'message': message,
-    'timestamp': timestamp,
-    'tree_id': treeId,
-  };
+        'author': author.toJson(),
+        'committer': committer.toJson(),
+        'id': id,
+        'message': message,
+        'timestamp': timestamp,
+        'tree_id': treeId,
+      };
 }

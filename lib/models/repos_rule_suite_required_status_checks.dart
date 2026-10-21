@@ -8,135 +8,259 @@ part of 'repos_rule.dart';
 class RuleSuiteRequiredStatusChecksChecksItemApp {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the GitHub App.
   final SdkOptional<int> id;
+
   /// The slug of the GitHub App.
   final SdkOptional<String> slug;
+
   /// The name of the GitHub App.
   final SdkOptional<String> name;
 
-  const RuleSuiteRequiredStatusChecksChecksItemApp({this.id = const SdkOmitted(), this.slug = const SdkOmitted(), this.name = const SdkOmitted()});
+  const RuleSuiteRequiredStatusChecksChecksItemApp(
+      {this.id = const SdkOmitted(),
+      this.slug = const SdkOmitted(),
+      this.name = const SdkOmitted()});
 
-  RuleSuiteRequiredStatusChecksChecksItemApp Function({SdkOptional<int> id, SdkOptional<String> slug, SdkOptional<String> name}) get copyWith => _copyWith;
+  RuleSuiteRequiredStatusChecksChecksItemApp Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> slug,
+      SdkOptional<String> name}) get copyWith => _copyWith;
 
-  RuleSuiteRequiredStatusChecksChecksItemApp _copyWith({Object? id = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? name = sdkOmittedValue}) => RuleSuiteRequiredStatusChecksChecksItemApp(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-  );
+  RuleSuiteRequiredStatusChecksChecksItemApp _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? slug = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      RuleSuiteRequiredStatusChecksChecksItemApp(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        slug: identical(slug, sdkOmittedValue)
+            ? this.slug
+            : slug as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+      );
 
-  factory RuleSuiteRequiredStatusChecksChecksItemApp.fromJson(Map<String, dynamic> json) => RuleSuiteRequiredStatusChecksChecksItemApp(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    slug: json['slug'] != null ? SdkPresent((json['slug'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-  );
+  factory RuleSuiteRequiredStatusChecksChecksItemApp.fromJson(
+          Map<String, dynamic> json) =>
+      RuleSuiteRequiredStatusChecksChecksItemApp(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        slug: json['slug'] != null
+            ? SdkPresent((json['slug'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (slug) {
-      SdkPresent<String>(value: final value) => {'slug': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (slug) {
+          SdkPresent<String>(value: final value) => {
+              'slug': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `checks[]` wire field.
 class RuleSuiteRequiredStatusChecksChecksItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the status check.
   final SdkOptional<int> id;
+
   /// The context name of the status check.
   final SdkOptional<String> context;
+
   /// The state of the status check.
   final SdkOptional<String> state;
+
   /// The type of the status check.
   final SdkOptional<String> type_;
+
   /// The GitHub App associated with the status check.
   final SdkOptional<RuleSuiteRequiredStatusChecksChecksItemApp?> app;
 
-  const RuleSuiteRequiredStatusChecksChecksItem({this.id = const SdkOmitted(), this.context = const SdkOmitted(), this.state = const SdkOmitted(), this.type_ = const SdkOmitted(), this.app = const SdkOmitted()});
+  const RuleSuiteRequiredStatusChecksChecksItem(
+      {this.id = const SdkOmitted(),
+      this.context = const SdkOmitted(),
+      this.state = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.app = const SdkOmitted()});
 
-  RuleSuiteRequiredStatusChecksChecksItem Function({SdkOptional<int> id, SdkOptional<String> context, SdkOptional<String> state, SdkOptional<String> type_, SdkOptional<RuleSuiteRequiredStatusChecksChecksItemApp?> app}) get copyWith => _copyWith;
+  RuleSuiteRequiredStatusChecksChecksItem Function(
+          {SdkOptional<int> id,
+          SdkOptional<String> context,
+          SdkOptional<String> state,
+          SdkOptional<String> type_,
+          SdkOptional<RuleSuiteRequiredStatusChecksChecksItemApp?> app})
+      get copyWith => _copyWith;
 
-  RuleSuiteRequiredStatusChecksChecksItem _copyWith({Object? id = sdkOmittedValue, Object? context = sdkOmittedValue, Object? state = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? app = sdkOmittedValue}) => RuleSuiteRequiredStatusChecksChecksItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    context: identical(context, sdkOmittedValue) ? this.context : context as SdkOptional<String>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
-    app: identical(app, sdkOmittedValue) ? this.app : app as SdkOptional<RuleSuiteRequiredStatusChecksChecksItemApp?>,
-  );
+  RuleSuiteRequiredStatusChecksChecksItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? context = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? app = sdkOmittedValue}) =>
+      RuleSuiteRequiredStatusChecksChecksItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        context: identical(context, sdkOmittedValue)
+            ? this.context
+            : context as SdkOptional<String>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<String>,
+        app: identical(app, sdkOmittedValue)
+            ? this.app
+            : app as SdkOptional<RuleSuiteRequiredStatusChecksChecksItemApp?>,
+      );
 
-  factory RuleSuiteRequiredStatusChecksChecksItem.fromJson(Map<String, dynamic> json) => RuleSuiteRequiredStatusChecksChecksItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    context: json['context'] != null ? SdkPresent((json['context'] as String?)!) : const SdkOmitted(),
-    state: json['state'] != null ? SdkPresent((json['state'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
-    app: json.containsKey('app') ? SdkPresent(json['app'] != null ? RuleSuiteRequiredStatusChecksChecksItemApp.fromJson(json['app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory RuleSuiteRequiredStatusChecksChecksItem.fromJson(
+          Map<String, dynamic> json) =>
+      RuleSuiteRequiredStatusChecksChecksItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        context: json['context'] != null
+            ? SdkPresent((json['context'] as String?)!)
+            : const SdkOmitted(),
+        state: json['state'] != null
+            ? SdkPresent((json['state'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] as String?)!)
+            : const SdkOmitted(),
+        app: json.containsKey('app')
+            ? SdkPresent(json['app'] != null
+                ? RuleSuiteRequiredStatusChecksChecksItemApp.fromJson(
+                    json['app'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (context) {
-      SdkPresent<String>(value: final value) => {'context': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (state) {
-      SdkPresent<String>(value: final value) => {'state': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<String>(value: final value) => {'type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (app) {
-      SdkPresent<RuleSuiteRequiredStatusChecksChecksItemApp?>(value: final value) => {'app': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (context) {
+          SdkPresent<String>(value: final value) => {
+              'context': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<String>(value: final value) => {
+              'state': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<String>(value: final value) => {
+              'type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (app) {
+          SdkPresent<RuleSuiteRequiredStatusChecksChecksItemApp?>(
+            value: final value
+          ) =>
+            {
+              'app': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Metadata for a required status checks rule evaluation result.
 class RuleSuiteRequiredStatusChecks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The status checks associated with the rule evaluation.
   final SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>> checks;
+
   /// Optional enumerated value serialized in the `rule_type` wire field.
   final SdkOptional<RuleSuiteRequiredStatusChecksRuleType> ruleType;
 
-  const RuleSuiteRequiredStatusChecks({this.checks = const SdkOmitted(), this.ruleType = const SdkOmitted()});
+  const RuleSuiteRequiredStatusChecks(
+      {this.checks = const SdkOmitted(), this.ruleType = const SdkOmitted()});
 
-  RuleSuiteRequiredStatusChecks Function({SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>> checks, SdkOptional<RuleSuiteRequiredStatusChecksRuleType> ruleType}) get copyWith => _copyWith;
+  RuleSuiteRequiredStatusChecks Function(
+          {SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>> checks,
+          SdkOptional<RuleSuiteRequiredStatusChecksRuleType> ruleType})
+      get copyWith => _copyWith;
 
-  RuleSuiteRequiredStatusChecks _copyWith({Object? checks = sdkOmittedValue, Object? ruleType = sdkOmittedValue}) => RuleSuiteRequiredStatusChecks(
-    checks: identical(checks, sdkOmittedValue) ? this.checks : checks as SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>>,
-    ruleType: identical(ruleType, sdkOmittedValue) ? this.ruleType : ruleType as SdkOptional<RuleSuiteRequiredStatusChecksRuleType>,
-  );
+  RuleSuiteRequiredStatusChecks _copyWith(
+          {Object? checks = sdkOmittedValue,
+          Object? ruleType = sdkOmittedValue}) =>
+      RuleSuiteRequiredStatusChecks(
+        checks: identical(checks, sdkOmittedValue)
+            ? this.checks
+            : checks
+                as SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>>,
+        ruleType: identical(ruleType, sdkOmittedValue)
+            ? this.ruleType
+            : ruleType as SdkOptional<RuleSuiteRequiredStatusChecksRuleType>,
+      );
 
-  factory RuleSuiteRequiredStatusChecks.fromJson(Map<String, dynamic> json) => RuleSuiteRequiredStatusChecks(
-    checks: json['checks'] != null ? SdkPresent(((json['checks'] as List?)?.map((e) => RuleSuiteRequiredStatusChecksChecksItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    ruleType: json['rule_type'] != null ? SdkPresent((json['rule_type'] != null ? RuleSuiteRequiredStatusChecksRuleType.fromJson(json['rule_type'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory RuleSuiteRequiredStatusChecks.fromJson(Map<String, dynamic> json) =>
+      RuleSuiteRequiredStatusChecks(
+        checks: json['checks'] != null
+            ? SdkPresent(((json['checks'] as List?)
+                ?.map((e) => RuleSuiteRequiredStatusChecksChecksItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        ruleType: json['rule_type'] != null
+            ? SdkPresent((json['rule_type'] != null
+                ? RuleSuiteRequiredStatusChecksRuleType.fromJson(
+                    json['rule_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (checks) {
-      SdkPresent<List<RuleSuiteRequiredStatusChecksChecksItem>>(value: final value) => {'checks': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ruleType) {
-      SdkPresent<RuleSuiteRequiredStatusChecksRuleType>(value: final value) => {'rule_type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (checks) {
+          SdkPresent<List<RuleSuiteRequiredStatusChecksChecksItem>>(
+            value: final value
+          ) =>
+            {
+              'checks': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ruleType) {
+          SdkPresent<RuleSuiteRequiredStatusChecksRuleType>(
+            value: final value
+          ) =>
+            {
+              'rule_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

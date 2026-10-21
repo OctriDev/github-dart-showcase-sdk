@@ -8,313 +8,721 @@ part of 'webhook_package_published.dart';
 class WebhookPackagePublishedPackagePackageVersionNpmMetadata {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `version` wire field.
   final SdkOptional<String> version;
+
   /// Optional `string` value serialized in the `npm_user` wire field.
   final SdkOptional<String> npmUser;
+
   /// Optional object value serialized in the `author` wire field.
   final SdkOptional<Map<String, dynamic>?> author;
+
   /// Optional object value serialized in the `bugs` wire field.
   final SdkOptional<Map<String, dynamic>?> bugs;
+
   /// Optional object value serialized in the `dependencies` wire field.
   final SdkOptional<Map<String, dynamic>> dependencies;
+
   /// Optional object value serialized in the `dev_dependencies` wire field.
   final SdkOptional<Map<String, dynamic>> devDependencies;
+
   /// Optional object value serialized in the `peer_dependencies` wire field.
   final SdkOptional<Map<String, dynamic>> peerDependencies;
+
   /// Optional object value serialized in the `optional_dependencies` wire field.
   final SdkOptional<Map<String, dynamic>> optionalDependencies;
+
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String> description;
+
   /// Optional object value serialized in the `dist` wire field.
   final SdkOptional<Map<String, dynamic>?> dist;
+
   /// Optional `string` value serialized in the `git_head` wire field.
   final SdkOptional<String> gitHead;
+
   /// Optional `string` value serialized in the `homepage` wire field.
   final SdkOptional<String> homepage;
+
   /// Optional `string` value serialized in the `license` wire field.
   final SdkOptional<String> license;
+
   /// Optional `string` value serialized in the `main` wire field.
   final SdkOptional<String> main;
+
   /// Optional object value serialized in the `repository` wire field.
   final SdkOptional<Map<String, dynamic>?> repository;
+
   /// Optional object value serialized in the `scripts` wire field.
   final SdkOptional<Map<String, dynamic>> scripts;
+
   /// Optional `string` value serialized in the `id` wire field.
   final SdkOptional<String> id;
+
   /// Optional `string` value serialized in the `node_version` wire field.
   final SdkOptional<String> nodeVersion;
+
   /// Optional `string` value serialized in the `npm_version` wire field.
   final SdkOptional<String> npmVersion;
+
   /// Optional `boolean` value serialized in the `has_shrinkwrap` wire field.
   final SdkOptional<bool> hasShrinkwrap;
+
   /// Optional array value serialized in the `maintainers` wire field.
   final SdkOptional<List<Map<String, dynamic>>> maintainers;
+
   /// Optional array value serialized in the `contributors` wire field.
   final SdkOptional<List<Map<String, dynamic>>> contributors;
+
   /// Optional object value serialized in the `engines` wire field.
   final SdkOptional<Map<String, dynamic>> engines;
+
   /// Optional array value serialized in the `keywords` wire field.
   final SdkOptional<List<String>> keywords;
+
   /// Optional array value serialized in the `files` wire field.
   final SdkOptional<List<String>> files;
+
   /// Optional object value serialized in the `bin` wire field.
   final SdkOptional<Map<String, dynamic>> bin;
+
   /// Optional object value serialized in the `man` wire field.
   final SdkOptional<Map<String, dynamic>> man;
+
   /// Optional object value serialized in the `directories` wire field.
   final SdkOptional<Map<String, dynamic>?> directories;
+
   /// Optional array value serialized in the `os` wire field.
   final SdkOptional<List<String>> os;
+
   /// Optional array value serialized in the `cpu` wire field.
   final SdkOptional<List<String>> cpu;
+
   /// Optional `string` value serialized in the `readme` wire field.
   final SdkOptional<String> readme;
+
   /// Optional `string` value serialized in the `installation_command` wire field.
   final SdkOptional<String> installationCommand;
+
   /// Optional `integer` value serialized in the `release_id` wire field.
   final SdkOptional<int> releaseId;
+
   /// Optional `string` value serialized in the `commit_oid` wire field.
   final SdkOptional<String> commitOid;
+
   /// Optional `boolean` value serialized in the `published_via_actions` wire field.
   final SdkOptional<bool> publishedViaActions;
+
   /// Optional `integer` value serialized in the `deleted_by_id` wire field.
   final SdkOptional<int> deletedById;
 
-  const WebhookPackagePublishedPackagePackageVersionNpmMetadata({this.name = const SdkOmitted(), this.version = const SdkOmitted(), this.npmUser = const SdkOmitted(), this.author = const SdkOmitted(), this.bugs = const SdkOmitted(), this.dependencies = const SdkOmitted(), this.devDependencies = const SdkOmitted(), this.peerDependencies = const SdkOmitted(), this.optionalDependencies = const SdkOmitted(), this.description = const SdkOmitted(), this.dist = const SdkOmitted(), this.gitHead = const SdkOmitted(), this.homepage = const SdkOmitted(), this.license = const SdkOmitted(), this.main = const SdkOmitted(), this.repository = const SdkOmitted(), this.scripts = const SdkOmitted(), this.id = const SdkOmitted(), this.nodeVersion = const SdkOmitted(), this.npmVersion = const SdkOmitted(), this.hasShrinkwrap = const SdkOmitted(), this.maintainers = const SdkOmitted(), this.contributors = const SdkOmitted(), this.engines = const SdkOmitted(), this.keywords = const SdkOmitted(), this.files = const SdkOmitted(), this.bin = const SdkOmitted(), this.man = const SdkOmitted(), this.directories = const SdkOmitted(), this.os = const SdkOmitted(), this.cpu = const SdkOmitted(), this.readme = const SdkOmitted(), this.installationCommand = const SdkOmitted(), this.releaseId = const SdkOmitted(), this.commitOid = const SdkOmitted(), this.publishedViaActions = const SdkOmitted(), this.deletedById = const SdkOmitted()});
+  const WebhookPackagePublishedPackagePackageVersionNpmMetadata(
+      {this.name = const SdkOmitted(),
+      this.version = const SdkOmitted(),
+      this.npmUser = const SdkOmitted(),
+      this.author = const SdkOmitted(),
+      this.bugs = const SdkOmitted(),
+      this.dependencies = const SdkOmitted(),
+      this.devDependencies = const SdkOmitted(),
+      this.peerDependencies = const SdkOmitted(),
+      this.optionalDependencies = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.dist = const SdkOmitted(),
+      this.gitHead = const SdkOmitted(),
+      this.homepage = const SdkOmitted(),
+      this.license = const SdkOmitted(),
+      this.main = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.scripts = const SdkOmitted(),
+      this.id = const SdkOmitted(),
+      this.nodeVersion = const SdkOmitted(),
+      this.npmVersion = const SdkOmitted(),
+      this.hasShrinkwrap = const SdkOmitted(),
+      this.maintainers = const SdkOmitted(),
+      this.contributors = const SdkOmitted(),
+      this.engines = const SdkOmitted(),
+      this.keywords = const SdkOmitted(),
+      this.files = const SdkOmitted(),
+      this.bin = const SdkOmitted(),
+      this.man = const SdkOmitted(),
+      this.directories = const SdkOmitted(),
+      this.os = const SdkOmitted(),
+      this.cpu = const SdkOmitted(),
+      this.readme = const SdkOmitted(),
+      this.installationCommand = const SdkOmitted(),
+      this.releaseId = const SdkOmitted(),
+      this.commitOid = const SdkOmitted(),
+      this.publishedViaActions = const SdkOmitted(),
+      this.deletedById = const SdkOmitted()});
 
-  WebhookPackagePublishedPackagePackageVersionNpmMetadata Function({SdkOptional<String> name, SdkOptional<String> version, SdkOptional<String> npmUser, SdkOptional<Map<String, dynamic>?> author, SdkOptional<Map<String, dynamic>?> bugs, SdkOptional<Map<String, dynamic>> dependencies, SdkOptional<Map<String, dynamic>> devDependencies, SdkOptional<Map<String, dynamic>> peerDependencies, SdkOptional<Map<String, dynamic>> optionalDependencies, SdkOptional<String> description, SdkOptional<Map<String, dynamic>?> dist, SdkOptional<String> gitHead, SdkOptional<String> homepage, SdkOptional<String> license, SdkOptional<String> main, SdkOptional<Map<String, dynamic>?> repository, SdkOptional<Map<String, dynamic>> scripts, SdkOptional<String> id, SdkOptional<String> nodeVersion, SdkOptional<String> npmVersion, SdkOptional<bool> hasShrinkwrap, SdkOptional<List<Map<String, dynamic>>> maintainers, SdkOptional<List<Map<String, dynamic>>> contributors, SdkOptional<Map<String, dynamic>> engines, SdkOptional<List<String>> keywords, SdkOptional<List<String>> files, SdkOptional<Map<String, dynamic>> bin, SdkOptional<Map<String, dynamic>> man, SdkOptional<Map<String, dynamic>?> directories, SdkOptional<List<String>> os, SdkOptional<List<String>> cpu, SdkOptional<String> readme, SdkOptional<String> installationCommand, SdkOptional<int> releaseId, SdkOptional<String> commitOid, SdkOptional<bool> publishedViaActions, SdkOptional<int> deletedById}) get copyWith => _copyWith;
+  WebhookPackagePublishedPackagePackageVersionNpmMetadata Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> version,
+      SdkOptional<String> npmUser,
+      SdkOptional<Map<String, dynamic>?> author,
+      SdkOptional<Map<String, dynamic>?> bugs,
+      SdkOptional<Map<String, dynamic>> dependencies,
+      SdkOptional<Map<String, dynamic>> devDependencies,
+      SdkOptional<Map<String, dynamic>> peerDependencies,
+      SdkOptional<Map<String, dynamic>> optionalDependencies,
+      SdkOptional<String> description,
+      SdkOptional<Map<String, dynamic>?> dist,
+      SdkOptional<String> gitHead,
+      SdkOptional<String> homepage,
+      SdkOptional<String> license,
+      SdkOptional<String> main,
+      SdkOptional<Map<String, dynamic>?> repository,
+      SdkOptional<Map<String, dynamic>> scripts,
+      SdkOptional<String> id,
+      SdkOptional<String> nodeVersion,
+      SdkOptional<String> npmVersion,
+      SdkOptional<bool> hasShrinkwrap,
+      SdkOptional<List<Map<String, dynamic>>> maintainers,
+      SdkOptional<List<Map<String, dynamic>>> contributors,
+      SdkOptional<Map<String, dynamic>> engines,
+      SdkOptional<List<String>> keywords,
+      SdkOptional<List<String>> files,
+      SdkOptional<Map<String, dynamic>> bin,
+      SdkOptional<Map<String, dynamic>> man,
+      SdkOptional<Map<String, dynamic>?> directories,
+      SdkOptional<List<String>> os,
+      SdkOptional<List<String>> cpu,
+      SdkOptional<String> readme,
+      SdkOptional<String> installationCommand,
+      SdkOptional<int> releaseId,
+      SdkOptional<String> commitOid,
+      SdkOptional<bool> publishedViaActions,
+      SdkOptional<int> deletedById}) get copyWith => _copyWith;
 
-  WebhookPackagePublishedPackagePackageVersionNpmMetadata _copyWith({Object? name = sdkOmittedValue, Object? version = sdkOmittedValue, Object? npmUser = sdkOmittedValue, Object? author = sdkOmittedValue, Object? bugs = sdkOmittedValue, Object? dependencies = sdkOmittedValue, Object? devDependencies = sdkOmittedValue, Object? peerDependencies = sdkOmittedValue, Object? optionalDependencies = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dist = sdkOmittedValue, Object? gitHead = sdkOmittedValue, Object? homepage = sdkOmittedValue, Object? license = sdkOmittedValue, Object? main = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? scripts = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeVersion = sdkOmittedValue, Object? npmVersion = sdkOmittedValue, Object? hasShrinkwrap = sdkOmittedValue, Object? maintainers = sdkOmittedValue, Object? contributors = sdkOmittedValue, Object? engines = sdkOmittedValue, Object? keywords = sdkOmittedValue, Object? files = sdkOmittedValue, Object? bin = sdkOmittedValue, Object? man = sdkOmittedValue, Object? directories = sdkOmittedValue, Object? os = sdkOmittedValue, Object? cpu = sdkOmittedValue, Object? readme = sdkOmittedValue, Object? installationCommand = sdkOmittedValue, Object? releaseId = sdkOmittedValue, Object? commitOid = sdkOmittedValue, Object? publishedViaActions = sdkOmittedValue, Object? deletedById = sdkOmittedValue}) => WebhookPackagePublishedPackagePackageVersionNpmMetadata(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
-    npmUser: identical(npmUser, sdkOmittedValue) ? this.npmUser : npmUser as SdkOptional<String>,
-    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<Map<String, dynamic>?>,
-    bugs: identical(bugs, sdkOmittedValue) ? this.bugs : bugs as SdkOptional<Map<String, dynamic>?>,
-    dependencies: identical(dependencies, sdkOmittedValue) ? this.dependencies : dependencies as SdkOptional<Map<String, dynamic>>,
-    devDependencies: identical(devDependencies, sdkOmittedValue) ? this.devDependencies : devDependencies as SdkOptional<Map<String, dynamic>>,
-    peerDependencies: identical(peerDependencies, sdkOmittedValue) ? this.peerDependencies : peerDependencies as SdkOptional<Map<String, dynamic>>,
-    optionalDependencies: identical(optionalDependencies, sdkOmittedValue) ? this.optionalDependencies : optionalDependencies as SdkOptional<Map<String, dynamic>>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    dist: identical(dist, sdkOmittedValue) ? this.dist : dist as SdkOptional<Map<String, dynamic>?>,
-    gitHead: identical(gitHead, sdkOmittedValue) ? this.gitHead : gitHead as SdkOptional<String>,
-    homepage: identical(homepage, sdkOmittedValue) ? this.homepage : homepage as SdkOptional<String>,
-    license: identical(license, sdkOmittedValue) ? this.license : license as SdkOptional<String>,
-    main: identical(main, sdkOmittedValue) ? this.main : main as SdkOptional<String>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<Map<String, dynamic>?>,
-    scripts: identical(scripts, sdkOmittedValue) ? this.scripts : scripts as SdkOptional<Map<String, dynamic>>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
-    nodeVersion: identical(nodeVersion, sdkOmittedValue) ? this.nodeVersion : nodeVersion as SdkOptional<String>,
-    npmVersion: identical(npmVersion, sdkOmittedValue) ? this.npmVersion : npmVersion as SdkOptional<String>,
-    hasShrinkwrap: identical(hasShrinkwrap, sdkOmittedValue) ? this.hasShrinkwrap : hasShrinkwrap as SdkOptional<bool>,
-    maintainers: identical(maintainers, sdkOmittedValue) ? this.maintainers : maintainers as SdkOptional<List<Map<String, dynamic>>>,
-    contributors: identical(contributors, sdkOmittedValue) ? this.contributors : contributors as SdkOptional<List<Map<String, dynamic>>>,
-    engines: identical(engines, sdkOmittedValue) ? this.engines : engines as SdkOptional<Map<String, dynamic>>,
-    keywords: identical(keywords, sdkOmittedValue) ? this.keywords : keywords as SdkOptional<List<String>>,
-    files: identical(files, sdkOmittedValue) ? this.files : files as SdkOptional<List<String>>,
-    bin: identical(bin, sdkOmittedValue) ? this.bin : bin as SdkOptional<Map<String, dynamic>>,
-    man: identical(man, sdkOmittedValue) ? this.man : man as SdkOptional<Map<String, dynamic>>,
-    directories: identical(directories, sdkOmittedValue) ? this.directories : directories as SdkOptional<Map<String, dynamic>?>,
-    os: identical(os, sdkOmittedValue) ? this.os : os as SdkOptional<List<String>>,
-    cpu: identical(cpu, sdkOmittedValue) ? this.cpu : cpu as SdkOptional<List<String>>,
-    readme: identical(readme, sdkOmittedValue) ? this.readme : readme as SdkOptional<String>,
-    installationCommand: identical(installationCommand, sdkOmittedValue) ? this.installationCommand : installationCommand as SdkOptional<String>,
-    releaseId: identical(releaseId, sdkOmittedValue) ? this.releaseId : releaseId as SdkOptional<int>,
-    commitOid: identical(commitOid, sdkOmittedValue) ? this.commitOid : commitOid as SdkOptional<String>,
-    publishedViaActions: identical(publishedViaActions, sdkOmittedValue) ? this.publishedViaActions : publishedViaActions as SdkOptional<bool>,
-    deletedById: identical(deletedById, sdkOmittedValue) ? this.deletedById : deletedById as SdkOptional<int>,
-  );
+  WebhookPackagePublishedPackagePackageVersionNpmMetadata _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? version = sdkOmittedValue,
+          Object? npmUser = sdkOmittedValue,
+          Object? author = sdkOmittedValue,
+          Object? bugs = sdkOmittedValue,
+          Object? dependencies = sdkOmittedValue,
+          Object? devDependencies = sdkOmittedValue,
+          Object? peerDependencies = sdkOmittedValue,
+          Object? optionalDependencies = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? dist = sdkOmittedValue,
+          Object? gitHead = sdkOmittedValue,
+          Object? homepage = sdkOmittedValue,
+          Object? license = sdkOmittedValue,
+          Object? main = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? scripts = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeVersion = sdkOmittedValue,
+          Object? npmVersion = sdkOmittedValue,
+          Object? hasShrinkwrap = sdkOmittedValue,
+          Object? maintainers = sdkOmittedValue,
+          Object? contributors = sdkOmittedValue,
+          Object? engines = sdkOmittedValue,
+          Object? keywords = sdkOmittedValue,
+          Object? files = sdkOmittedValue,
+          Object? bin = sdkOmittedValue,
+          Object? man = sdkOmittedValue,
+          Object? directories = sdkOmittedValue,
+          Object? os = sdkOmittedValue,
+          Object? cpu = sdkOmittedValue,
+          Object? readme = sdkOmittedValue,
+          Object? installationCommand = sdkOmittedValue,
+          Object? releaseId = sdkOmittedValue,
+          Object? commitOid = sdkOmittedValue,
+          Object? publishedViaActions = sdkOmittedValue,
+          Object? deletedById = sdkOmittedValue}) =>
+      WebhookPackagePublishedPackagePackageVersionNpmMetadata(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<String>,
+        npmUser: identical(npmUser, sdkOmittedValue)
+            ? this.npmUser
+            : npmUser as SdkOptional<String>,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<Map<String, dynamic>?>,
+        bugs: identical(bugs, sdkOmittedValue)
+            ? this.bugs
+            : bugs as SdkOptional<Map<String, dynamic>?>,
+        dependencies: identical(dependencies, sdkOmittedValue)
+            ? this.dependencies
+            : dependencies as SdkOptional<Map<String, dynamic>>,
+        devDependencies: identical(devDependencies, sdkOmittedValue)
+            ? this.devDependencies
+            : devDependencies as SdkOptional<Map<String, dynamic>>,
+        peerDependencies: identical(peerDependencies, sdkOmittedValue)
+            ? this.peerDependencies
+            : peerDependencies as SdkOptional<Map<String, dynamic>>,
+        optionalDependencies: identical(optionalDependencies, sdkOmittedValue)
+            ? this.optionalDependencies
+            : optionalDependencies as SdkOptional<Map<String, dynamic>>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        dist: identical(dist, sdkOmittedValue)
+            ? this.dist
+            : dist as SdkOptional<Map<String, dynamic>?>,
+        gitHead: identical(gitHead, sdkOmittedValue)
+            ? this.gitHead
+            : gitHead as SdkOptional<String>,
+        homepage: identical(homepage, sdkOmittedValue)
+            ? this.homepage
+            : homepage as SdkOptional<String>,
+        license: identical(license, sdkOmittedValue)
+            ? this.license
+            : license as SdkOptional<String>,
+        main: identical(main, sdkOmittedValue)
+            ? this.main
+            : main as SdkOptional<String>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<Map<String, dynamic>?>,
+        scripts: identical(scripts, sdkOmittedValue)
+            ? this.scripts
+            : scripts as SdkOptional<Map<String, dynamic>>,
+        id: identical(id, sdkOmittedValue)
+            ? this.id
+            : id as SdkOptional<String>,
+        nodeVersion: identical(nodeVersion, sdkOmittedValue)
+            ? this.nodeVersion
+            : nodeVersion as SdkOptional<String>,
+        npmVersion: identical(npmVersion, sdkOmittedValue)
+            ? this.npmVersion
+            : npmVersion as SdkOptional<String>,
+        hasShrinkwrap: identical(hasShrinkwrap, sdkOmittedValue)
+            ? this.hasShrinkwrap
+            : hasShrinkwrap as SdkOptional<bool>,
+        maintainers: identical(maintainers, sdkOmittedValue)
+            ? this.maintainers
+            : maintainers as SdkOptional<List<Map<String, dynamic>>>,
+        contributors: identical(contributors, sdkOmittedValue)
+            ? this.contributors
+            : contributors as SdkOptional<List<Map<String, dynamic>>>,
+        engines: identical(engines, sdkOmittedValue)
+            ? this.engines
+            : engines as SdkOptional<Map<String, dynamic>>,
+        keywords: identical(keywords, sdkOmittedValue)
+            ? this.keywords
+            : keywords as SdkOptional<List<String>>,
+        files: identical(files, sdkOmittedValue)
+            ? this.files
+            : files as SdkOptional<List<String>>,
+        bin: identical(bin, sdkOmittedValue)
+            ? this.bin
+            : bin as SdkOptional<Map<String, dynamic>>,
+        man: identical(man, sdkOmittedValue)
+            ? this.man
+            : man as SdkOptional<Map<String, dynamic>>,
+        directories: identical(directories, sdkOmittedValue)
+            ? this.directories
+            : directories as SdkOptional<Map<String, dynamic>?>,
+        os: identical(os, sdkOmittedValue)
+            ? this.os
+            : os as SdkOptional<List<String>>,
+        cpu: identical(cpu, sdkOmittedValue)
+            ? this.cpu
+            : cpu as SdkOptional<List<String>>,
+        readme: identical(readme, sdkOmittedValue)
+            ? this.readme
+            : readme as SdkOptional<String>,
+        installationCommand: identical(installationCommand, sdkOmittedValue)
+            ? this.installationCommand
+            : installationCommand as SdkOptional<String>,
+        releaseId: identical(releaseId, sdkOmittedValue)
+            ? this.releaseId
+            : releaseId as SdkOptional<int>,
+        commitOid: identical(commitOid, sdkOmittedValue)
+            ? this.commitOid
+            : commitOid as SdkOptional<String>,
+        publishedViaActions: identical(publishedViaActions, sdkOmittedValue)
+            ? this.publishedViaActions
+            : publishedViaActions as SdkOptional<bool>,
+        deletedById: identical(deletedById, sdkOmittedValue)
+            ? this.deletedById
+            : deletedById as SdkOptional<int>,
+      );
 
-  factory WebhookPackagePublishedPackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> json) => WebhookPackagePublishedPackagePackageVersionNpmMetadata(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
-    npmUser: json['npm_user'] != null ? SdkPresent((json['npm_user'] as String?)!) : const SdkOmitted(),
-    author: json.containsKey('author') ? SdkPresent(json['author'] == null ? null : json['author'] as Map<String, dynamic>) : const SdkOmitted(),
-    bugs: json.containsKey('bugs') ? SdkPresent(json['bugs'] == null ? null : json['bugs'] as Map<String, dynamic>) : const SdkOmitted(),
-    dependencies: json['dependencies'] != null ? SdkPresent((json['dependencies'] == null ? null : json['dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    devDependencies: json['dev_dependencies'] != null ? SdkPresent((json['dev_dependencies'] == null ? null : json['dev_dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    peerDependencies: json['peer_dependencies'] != null ? SdkPresent((json['peer_dependencies'] == null ? null : json['peer_dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    optionalDependencies: json['optional_dependencies'] != null ? SdkPresent((json['optional_dependencies'] == null ? null : json['optional_dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    dist: json.containsKey('dist') ? SdkPresent(json['dist'] == null ? null : json['dist'] as Map<String, dynamic>) : const SdkOmitted(),
-    gitHead: json['git_head'] != null ? SdkPresent((json['git_head'] as String?)!) : const SdkOmitted(),
-    homepage: json['homepage'] != null ? SdkPresent((json['homepage'] as String?)!) : const SdkOmitted(),
-    license: json['license'] != null ? SdkPresent((json['license'] as String?)!) : const SdkOmitted(),
-    main: json['main'] != null ? SdkPresent((json['main'] as String?)!) : const SdkOmitted(),
-    repository: json.containsKey('repository') ? SdkPresent(json['repository'] == null ? null : json['repository'] as Map<String, dynamic>) : const SdkOmitted(),
-    scripts: json['scripts'] != null ? SdkPresent((json['scripts'] == null ? null : json['scripts'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
-    nodeVersion: json['node_version'] != null ? SdkPresent((json['node_version'] as String?)!) : const SdkOmitted(),
-    npmVersion: json['npm_version'] != null ? SdkPresent((json['npm_version'] as String?)!) : const SdkOmitted(),
-    hasShrinkwrap: json['has_shrinkwrap'] != null ? SdkPresent((json['has_shrinkwrap'] as bool?)!) : const SdkOmitted(),
-    maintainers: json['maintainers'] != null ? SdkPresent(((json['maintainers'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
-    contributors: json['contributors'] != null ? SdkPresent(((json['contributors'] as List?)?.map((e) => e as Map<String, dynamic>).toList())!) : const SdkOmitted(),
-    engines: json['engines'] != null ? SdkPresent((json['engines'] == null ? null : json['engines'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    keywords: json['keywords'] != null ? SdkPresent(((json['keywords'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    files: json['files'] != null ? SdkPresent(((json['files'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    bin: json['bin'] != null ? SdkPresent((json['bin'] == null ? null : json['bin'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    man: json['man'] != null ? SdkPresent((json['man'] == null ? null : json['man'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    directories: json.containsKey('directories') ? SdkPresent(json['directories'] == null ? null : json['directories'] as Map<String, dynamic>) : const SdkOmitted(),
-    os: json['os'] != null ? SdkPresent(((json['os'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    cpu: json['cpu'] != null ? SdkPresent(((json['cpu'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    readme: json['readme'] != null ? SdkPresent((json['readme'] as String?)!) : const SdkOmitted(),
-    installationCommand: json['installation_command'] != null ? SdkPresent((json['installation_command'] as String?)!) : const SdkOmitted(),
-    releaseId: json['release_id'] != null ? SdkPresent(((json['release_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    commitOid: json['commit_oid'] != null ? SdkPresent((json['commit_oid'] as String?)!) : const SdkOmitted(),
-    publishedViaActions: json['published_via_actions'] != null ? SdkPresent((json['published_via_actions'] as bool?)!) : const SdkOmitted(),
-    deletedById: json['deleted_by_id'] != null ? SdkPresent(((json['deleted_by_id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory WebhookPackagePublishedPackagePackageVersionNpmMetadata.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPackagePublishedPackagePackageVersionNpmMetadata(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        version: json['version'] != null
+            ? SdkPresent((json['version'] as String?)!)
+            : const SdkOmitted(),
+        npmUser: json['npm_user'] != null
+            ? SdkPresent((json['npm_user'] as String?)!)
+            : const SdkOmitted(),
+        author: json.containsKey('author')
+            ? SdkPresent(json['author'] == null
+                ? null
+                : json['author'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        bugs: json.containsKey('bugs')
+            ? SdkPresent(json['bugs'] == null
+                ? null
+                : json['bugs'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        dependencies: json['dependencies'] != null
+            ? SdkPresent((json['dependencies'] == null
+                ? null
+                : json['dependencies'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        devDependencies: json['dev_dependencies'] != null
+            ? SdkPresent((json['dev_dependencies'] == null
+                ? null
+                : json['dev_dependencies'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        peerDependencies: json['peer_dependencies'] != null
+            ? SdkPresent((json['peer_dependencies'] == null
+                ? null
+                : json['peer_dependencies'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        optionalDependencies: json['optional_dependencies'] != null
+            ? SdkPresent((json['optional_dependencies'] == null
+                ? null
+                : json['optional_dependencies'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        dist: json.containsKey('dist')
+            ? SdkPresent(json['dist'] == null
+                ? null
+                : json['dist'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        gitHead: json['git_head'] != null
+            ? SdkPresent((json['git_head'] as String?)!)
+            : const SdkOmitted(),
+        homepage: json['homepage'] != null
+            ? SdkPresent((json['homepage'] as String?)!)
+            : const SdkOmitted(),
+        license: json['license'] != null
+            ? SdkPresent((json['license'] as String?)!)
+            : const SdkOmitted(),
+        main: json['main'] != null
+            ? SdkPresent((json['main'] as String?)!)
+            : const SdkOmitted(),
+        repository: json.containsKey('repository')
+            ? SdkPresent(json['repository'] == null
+                ? null
+                : json['repository'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        scripts: json['scripts'] != null
+            ? SdkPresent((json['scripts'] == null
+                ? null
+                : json['scripts'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent((json['id'] as String?)!)
+            : const SdkOmitted(),
+        nodeVersion: json['node_version'] != null
+            ? SdkPresent((json['node_version'] as String?)!)
+            : const SdkOmitted(),
+        npmVersion: json['npm_version'] != null
+            ? SdkPresent((json['npm_version'] as String?)!)
+            : const SdkOmitted(),
+        hasShrinkwrap: json['has_shrinkwrap'] != null
+            ? SdkPresent((json['has_shrinkwrap'] as bool?)!)
+            : const SdkOmitted(),
+        maintainers: json['maintainers'] != null
+            ? SdkPresent(((json['maintainers'] as List?)
+                ?.map((e) => e as Map<String, dynamic>)
+                .toList())!)
+            : const SdkOmitted(),
+        contributors: json['contributors'] != null
+            ? SdkPresent(((json['contributors'] as List?)
+                ?.map((e) => e as Map<String, dynamic>)
+                .toList())!)
+            : const SdkOmitted(),
+        engines: json['engines'] != null
+            ? SdkPresent((json['engines'] == null
+                ? null
+                : json['engines'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        keywords: json['keywords'] != null
+            ? SdkPresent(((json['keywords'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        files: json['files'] != null
+            ? SdkPresent(
+                ((json['files'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        bin: json['bin'] != null
+            ? SdkPresent((json['bin'] == null
+                ? null
+                : json['bin'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        man: json['man'] != null
+            ? SdkPresent((json['man'] == null
+                ? null
+                : json['man'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        directories: json.containsKey('directories')
+            ? SdkPresent(json['directories'] == null
+                ? null
+                : json['directories'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        os: json['os'] != null
+            ? SdkPresent(
+                ((json['os'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        cpu: json['cpu'] != null
+            ? SdkPresent(
+                ((json['cpu'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        readme: json['readme'] != null
+            ? SdkPresent((json['readme'] as String?)!)
+            : const SdkOmitted(),
+        installationCommand: json['installation_command'] != null
+            ? SdkPresent((json['installation_command'] as String?)!)
+            : const SdkOmitted(),
+        releaseId: json['release_id'] != null
+            ? SdkPresent(((json['release_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        commitOid: json['commit_oid'] != null
+            ? SdkPresent((json['commit_oid'] as String?)!)
+            : const SdkOmitted(),
+        publishedViaActions: json['published_via_actions'] != null
+            ? SdkPresent((json['published_via_actions'] as bool?)!)
+            : const SdkOmitted(),
+        deletedById: json['deleted_by_id'] != null
+            ? SdkPresent(((json['deleted_by_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (version) {
-      SdkPresent<String>(value: final value) => {'version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (npmUser) {
-      SdkPresent<String>(value: final value) => {'npm_user': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (author) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'author': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bugs) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'bugs': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dependencies) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'dependencies': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (devDependencies) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'dev_dependencies': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (peerDependencies) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'peer_dependencies': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (optionalDependencies) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'optional_dependencies': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dist) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'dist': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gitHead) {
-      SdkPresent<String>(value: final value) => {'git_head': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (homepage) {
-      SdkPresent<String>(value: final value) => {'homepage': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (license) {
-      SdkPresent<String>(value: final value) => {'license': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (main) {
-      SdkPresent<String>(value: final value) => {'main': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'repository': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (scripts) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'scripts': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (id) {
-      SdkPresent<String>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeVersion) {
-      SdkPresent<String>(value: final value) => {'node_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (npmVersion) {
-      SdkPresent<String>(value: final value) => {'npm_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasShrinkwrap) {
-      SdkPresent<bool>(value: final value) => {'has_shrinkwrap': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (maintainers) {
-      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'maintainers': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (contributors) {
-      SdkPresent<List<Map<String, dynamic>>>(value: final value) => {'contributors': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (engines) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'engines': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (keywords) {
-      SdkPresent<List<String>>(value: final value) => {'keywords': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (files) {
-      SdkPresent<List<String>>(value: final value) => {'files': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bin) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'bin': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (man) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'man': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (directories) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'directories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (os) {
-      SdkPresent<List<String>>(value: final value) => {'os': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cpu) {
-      SdkPresent<List<String>>(value: final value) => {'cpu': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (readme) {
-      SdkPresent<String>(value: final value) => {'readme': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installationCommand) {
-      SdkPresent<String>(value: final value) => {'installation_command': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (releaseId) {
-      SdkPresent<int>(value: final value) => {'release_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (commitOid) {
-      SdkPresent<String>(value: final value) => {'commit_oid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (publishedViaActions) {
-      SdkPresent<bool>(value: final value) => {'published_via_actions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deletedById) {
-      SdkPresent<int>(value: final value) => {'deleted_by_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (version) {
+          SdkPresent<String>(value: final value) => {
+              'version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (npmUser) {
+          SdkPresent<String>(value: final value) => {
+              'npm_user': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (author) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'author': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bugs) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'bugs': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dependencies) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'dependencies': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (devDependencies) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'dev_dependencies': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (peerDependencies) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'peer_dependencies': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (optionalDependencies) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'optional_dependencies': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dist) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'dist': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gitHead) {
+          SdkPresent<String>(value: final value) => {
+              'git_head': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (homepage) {
+          SdkPresent<String>(value: final value) => {
+              'homepage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (license) {
+          SdkPresent<String>(value: final value) => {
+              'license': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (main) {
+          SdkPresent<String>(value: final value) => {
+              'main': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'repository': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (scripts) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'scripts': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<String>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeVersion) {
+          SdkPresent<String>(value: final value) => {
+              'node_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (npmVersion) {
+          SdkPresent<String>(value: final value) => {
+              'npm_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasShrinkwrap) {
+          SdkPresent<bool>(value: final value) => {
+              'has_shrinkwrap': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (maintainers) {
+          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
+              'maintainers': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contributors) {
+          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
+              'contributors': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (engines) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'engines': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (keywords) {
+          SdkPresent<List<String>>(value: final value) => {
+              'keywords': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (files) {
+          SdkPresent<List<String>>(value: final value) => {
+              'files': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bin) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'bin': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (man) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'man': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (directories) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'directories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (os) {
+          SdkPresent<List<String>>(value: final value) => {
+              'os': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cpu) {
+          SdkPresent<List<String>>(value: final value) => {
+              'cpu': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (readme) {
+          SdkPresent<String>(value: final value) => {
+              'readme': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installationCommand) {
+          SdkPresent<String>(value: final value) => {
+              'installation_command': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (releaseId) {
+          SdkPresent<int>(value: final value) => {
+              'release_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (commitOid) {
+          SdkPresent<String>(value: final value) => {
+              'commit_oid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (publishedViaActions) {
+          SdkPresent<bool>(value: final value) => {
+              'published_via_actions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deletedById) {
+          SdkPresent<int>(value: final value) => {
+              'deleted_by_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

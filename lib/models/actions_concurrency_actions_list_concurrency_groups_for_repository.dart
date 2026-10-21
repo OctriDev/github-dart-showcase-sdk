@@ -8,61 +8,104 @@ part of 'actions_concurrency.dart';
 class ConcurrencyGroupListConcurrencyGroupsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the concurrency group.
   final String groupName;
+
   /// API URL for this concurrency group.
   final String groupUrl;
+
   /// Required `date-time`-formatted value serialized in the `last_acquired_at` wire field.
   final String? lastAcquiredAt;
 
-  const ConcurrencyGroupListConcurrencyGroupsItem({required this.groupName, required this.groupUrl, required this.lastAcquiredAt});
+  const ConcurrencyGroupListConcurrencyGroupsItem(
+      {required this.groupName,
+      required this.groupUrl,
+      required this.lastAcquiredAt});
 
-  ConcurrencyGroupListConcurrencyGroupsItem Function({String groupName, String groupUrl, String? lastAcquiredAt}) get copyWith => _copyWith;
+  ConcurrencyGroupListConcurrencyGroupsItem Function(
+      {String groupName,
+      String groupUrl,
+      String? lastAcquiredAt}) get copyWith => _copyWith;
 
-  ConcurrencyGroupListConcurrencyGroupsItem _copyWith({Object? groupName = sdkOmittedValue, Object? groupUrl = sdkOmittedValue, Object? lastAcquiredAt = sdkOmittedValue}) => ConcurrencyGroupListConcurrencyGroupsItem(
-    groupName: identical(groupName, sdkOmittedValue) ? this.groupName : groupName as String,
-    groupUrl: identical(groupUrl, sdkOmittedValue) ? this.groupUrl : groupUrl as String,
-    lastAcquiredAt: identical(lastAcquiredAt, sdkOmittedValue) ? this.lastAcquiredAt : lastAcquiredAt as String?,
-  );
+  ConcurrencyGroupListConcurrencyGroupsItem _copyWith(
+          {Object? groupName = sdkOmittedValue,
+          Object? groupUrl = sdkOmittedValue,
+          Object? lastAcquiredAt = sdkOmittedValue}) =>
+      ConcurrencyGroupListConcurrencyGroupsItem(
+        groupName: identical(groupName, sdkOmittedValue)
+            ? this.groupName
+            : groupName as String,
+        groupUrl: identical(groupUrl, sdkOmittedValue)
+            ? this.groupUrl
+            : groupUrl as String,
+        lastAcquiredAt: identical(lastAcquiredAt, sdkOmittedValue)
+            ? this.lastAcquiredAt
+            : lastAcquiredAt as String?,
+      );
 
-  factory ConcurrencyGroupListConcurrencyGroupsItem.fromJson(Map<String, dynamic> json) => ConcurrencyGroupListConcurrencyGroupsItem(
-    groupName: (json['group_name'] as String?)!,
-    groupUrl: (json['group_url'] as String?)!,
-    lastAcquiredAt: json.containsKey('last_acquired_at') ? json['last_acquired_at'] as String? : throw ArgumentError.value(null, 'last_acquired_at', 'Required property is missing'),
-  );
+  factory ConcurrencyGroupListConcurrencyGroupsItem.fromJson(
+          Map<String, dynamic> json) =>
+      ConcurrencyGroupListConcurrencyGroupsItem(
+        groupName: (json['group_name'] as String?)!,
+        groupUrl: (json['group_url'] as String?)!,
+        lastAcquiredAt: json.containsKey('last_acquired_at')
+            ? json['last_acquired_at'] as String?
+            : throw ArgumentError.value(
+                null, 'last_acquired_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'group_name': groupName,
-    'group_url': groupUrl,
-    'last_acquired_at': lastAcquiredAt,
-  };
+        'group_name': groupName,
+        'group_url': groupUrl,
+        'last_acquired_at': lastAcquiredAt,
+      };
 }
 
 /// A list of active concurrency groups for a repository.
 class ConcurrencyGroupList {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Required array value serialized in the `concurrency_groups` wire field.
   final List<ConcurrencyGroupListConcurrencyGroupsItem> concurrencyGroups;
 
-  const ConcurrencyGroupList({required this.totalCount, required this.concurrencyGroups});
+  const ConcurrencyGroupList(
+      {required this.totalCount, required this.concurrencyGroups});
 
-  ConcurrencyGroupList Function({int totalCount, List<ConcurrencyGroupListConcurrencyGroupsItem> concurrencyGroups}) get copyWith => _copyWith;
+  ConcurrencyGroupList Function(
+          {int totalCount,
+          List<ConcurrencyGroupListConcurrencyGroupsItem> concurrencyGroups})
+      get copyWith => _copyWith;
 
-  ConcurrencyGroupList _copyWith({Object? totalCount = sdkOmittedValue, Object? concurrencyGroups = sdkOmittedValue}) => ConcurrencyGroupList(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    concurrencyGroups: identical(concurrencyGroups, sdkOmittedValue) ? this.concurrencyGroups : concurrencyGroups as List<ConcurrencyGroupListConcurrencyGroupsItem>,
-  );
+  ConcurrencyGroupList _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? concurrencyGroups = sdkOmittedValue}) =>
+      ConcurrencyGroupList(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        concurrencyGroups: identical(concurrencyGroups, sdkOmittedValue)
+            ? this.concurrencyGroups
+            : concurrencyGroups
+                as List<ConcurrencyGroupListConcurrencyGroupsItem>,
+      );
 
-  factory ConcurrencyGroupList.fromJson(Map<String, dynamic> json) => ConcurrencyGroupList(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    concurrencyGroups: ((json['concurrency_groups'] as List?)?.map((e) => ConcurrencyGroupListConcurrencyGroupsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ConcurrencyGroupList.fromJson(Map<String, dynamic> json) =>
+      ConcurrencyGroupList(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        concurrencyGroups: ((json['concurrency_groups'] as List?)
+            ?.map((e) => ConcurrencyGroupListConcurrencyGroupsItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'concurrency_groups': concurrencyGroups.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'concurrency_groups':
+            concurrencyGroups.map((item) => item.toJson()).toList(),
+      };
 }

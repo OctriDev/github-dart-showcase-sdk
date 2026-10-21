@@ -5,12 +5,12 @@ part of 'inline.dart';
 
 // Inline operation models
 final class IssuesListMilestonesState {
-
   final String value;
 
   const IssuesListMilestonesState._(this.value);
 
-  factory IssuesListMilestonesState.fromJson(String value) => IssuesListMilestonesState._(value);
+  factory IssuesListMilestonesState.fromJson(String value) =>
+      IssuesListMilestonesState._(value);
 
   static const open = IssuesListMilestonesState._('open');
   static const closed = IssuesListMilestonesState._('closed');
@@ -18,168 +18,197 @@ final class IssuesListMilestonesState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListMilestonesState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListMilestonesState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListMilestonesSort {
-
   final String value;
 
   const IssuesListMilestonesSort._(this.value);
 
-  factory IssuesListMilestonesSort.fromJson(String value) => IssuesListMilestonesSort._(value);
+  factory IssuesListMilestonesSort.fromJson(String value) =>
+      IssuesListMilestonesSort._(value);
 
   static const dueOn = IssuesListMilestonesSort._('due_on');
   static const completeness = IssuesListMilestonesSort._('completeness');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListMilestonesSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListMilestonesSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListMilestonesDirection {
-
   final String value;
 
   const IssuesListMilestonesDirection._(this.value);
 
-  factory IssuesListMilestonesDirection.fromJson(String value) => IssuesListMilestonesDirection._(value);
+  factory IssuesListMilestonesDirection.fromJson(String value) =>
+      IssuesListMilestonesDirection._(value);
 
   static const asc = IssuesListMilestonesDirection._('asc');
   static const desc = IssuesListMilestonesDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListMilestonesDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListMilestonesDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone. Either `open` or `closed`.
 final class IssuesCreateMilestoneRequestBodyState {
-
   final String value;
 
   const IssuesCreateMilestoneRequestBodyState._(this.value);
 
-  factory IssuesCreateMilestoneRequestBodyState.fromJson(String value) => IssuesCreateMilestoneRequestBodyState._(value);
+  factory IssuesCreateMilestoneRequestBodyState.fromJson(String value) =>
+      IssuesCreateMilestoneRequestBodyState._(value);
 
   static const open = IssuesCreateMilestoneRequestBodyState._('open');
   static const closed = IssuesCreateMilestoneRequestBodyState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesCreateMilestoneRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesCreateMilestoneRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone. Either `open` or `closed`.
 final class IssuesUpdateMilestoneRequestBodyState {
-
   final String value;
 
   const IssuesUpdateMilestoneRequestBodyState._(this.value);
 
-  factory IssuesUpdateMilestoneRequestBodyState.fromJson(String value) => IssuesUpdateMilestoneRequestBodyState._(value);
+  factory IssuesUpdateMilestoneRequestBodyState.fromJson(String value) =>
+      IssuesUpdateMilestoneRequestBodyState._(value);
 
   static const open = IssuesUpdateMilestoneRequestBodyState._('open');
   static const closed = IssuesUpdateMilestoneRequestBodyState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesUpdateMilestoneRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateMilestoneRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
 final class ReposCreatePagesSiteRequestBodyBuildType {
-
   final String value;
 
   const ReposCreatePagesSiteRequestBodyBuildType._(this.value);
 
-  factory ReposCreatePagesSiteRequestBodyBuildType.fromJson(String value) => ReposCreatePagesSiteRequestBodyBuildType._(value);
+  factory ReposCreatePagesSiteRequestBodyBuildType.fromJson(String value) =>
+      ReposCreatePagesSiteRequestBodyBuildType._(value);
 
   static const legacy = ReposCreatePagesSiteRequestBodyBuildType._('legacy');
-  static const workflow = ReposCreatePagesSiteRequestBodyBuildType._('workflow');
+  static const workflow =
+      ReposCreatePagesSiteRequestBodyBuildType._('workflow');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreatePagesSiteRequestBodyBuildType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreatePagesSiteRequestBodyBuildType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`
 final class ReposCreatePagesSiteRequestBodySourcePath {
-
   final String value;
 
   const ReposCreatePagesSiteRequestBodySourcePath._(this.value);
 
-  factory ReposCreatePagesSiteRequestBodySourcePath.fromJson(String value) => ReposCreatePagesSiteRequestBodySourcePath._(value);
+  factory ReposCreatePagesSiteRequestBodySourcePath.fromJson(String value) =>
+      ReposCreatePagesSiteRequestBodySourcePath._(value);
 
   static const unknown = ReposCreatePagesSiteRequestBodySourcePath._('/');
   static const docs = ReposCreatePagesSiteRequestBodySourcePath._('/docs');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreatePagesSiteRequestBodySourcePath && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreatePagesSiteRequestBodySourcePath &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
 final class ReposUpdateInformationAboutPagesSiteRequestBodyBuildType {
-
   final String value;
 
   const ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._(this.value);
 
-  factory ReposUpdateInformationAboutPagesSiteRequestBodyBuildType.fromJson(String value) => ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._(value);
+  factory ReposUpdateInformationAboutPagesSiteRequestBodyBuildType.fromJson(
+          String value) =>
+      ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._(value);
 
-  static const legacy = ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('legacy');
-  static const workflow = ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('workflow');
+  static const legacy =
+      ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('legacy');
+  static const workflow =
+      ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('workflow');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateInformationAboutPagesSiteRequestBodyBuildType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateInformationAboutPagesSiteRequestBodyBuildType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListState {
-
   final String value;
 
   const PullsListState._(this.value);
@@ -192,16 +221,18 @@ final class PullsListState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListSort {
-
   final String value;
 
   const PullsListSort._(this.value);
@@ -215,77 +246,96 @@ final class PullsListSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListDirection {
-
   final String value;
 
   const PullsListDirection._(this.value);
 
-  factory PullsListDirection.fromJson(String value) => PullsListDirection._(value);
+  factory PullsListDirection.fromJson(String value) =>
+      PullsListDirection._(value);
 
   static const asc = PullsListDirection._('asc');
   static const desc = PullsListDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of this Pull Request. Either `open` or `closed`.
 final class PullsUpdateRequestBodyState {
-
   final String value;
 
   const PullsUpdateRequestBodyState._(this.value);
 
-  factory PullsUpdateRequestBodyState.fromJson(String value) => PullsUpdateRequestBodyState._(value);
+  factory PullsUpdateRequestBodyState.fromJson(String value) =>
+      PullsUpdateRequestBodyState._(value);
 
   static const open = PullsUpdateRequestBodyState._('open');
   static const closed = PullsUpdateRequestBodyState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsUpdateRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsUpdateRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 final class CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo {
-
   final String value;
 
   const CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(this.value);
 
-  factory CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo.fromJson(String value) => CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(value);
+  factory CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo.fromJson(
+          String value) =>
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(value);
 
-  static const europewest = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('EuropeWest');
-  static const southeastasia = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('SoutheastAsia');
-  static const useast = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsEast');
-  static const uswest = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsWest');
+  static const europewest =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('EuropeWest');
+  static const southeastasia =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(
+          'SoutheastAsia');
+  static const useast =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsEast');
+  static const uswest =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsWest');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

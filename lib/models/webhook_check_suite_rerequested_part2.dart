@@ -8,345 +8,1188 @@ part of 'webhook_check_suite_rerequested.dart';
 class WebhookCheckSuiteRerequestedCheckSuiteAppPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `actions` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions> actions;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions>
+      actions;
+
   /// Optional enumerated value serialized in the `administration` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration> administration;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration>
+      administration;
+
   /// Optional enumerated value serialized in the `artifact_metadata` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata> artifactMetadata;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata>
+      artifactMetadata;
+
   /// Optional enumerated value serialized in the `attestations` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations> attestations;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations>
+      attestations;
+
   /// Optional enumerated value serialized in the `checks` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks> checks;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks>
+      checks;
+
   /// Optional enumerated value serialized in the `code_quality` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality> codeQuality;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality>
+      codeQuality;
+
   /// Optional enumerated value serialized in the `content_references` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences> contentReferences;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences>
+      contentReferences;
+
   /// Optional enumerated value serialized in the `contents` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents> contents;
+  final SdkOptional<
+      WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents> contents;
+
   /// Optional enumerated value serialized in the `copilot_requests` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests> copilotRequests;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests>
+      copilotRequests;
+
   /// Optional enumerated value serialized in the `deployments` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments> deployments;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments>
+      deployments;
+
   /// Optional enumerated value serialized in the `discussions` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions> discussions;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions>
+      discussions;
+
   /// Optional enumerated value serialized in the `drives` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives> drives;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives>
+      drives;
+
   /// Optional enumerated value serialized in the `emails` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails> emails;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails>
+      emails;
+
   /// Optional enumerated value serialized in the `environments` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments> environments;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments>
+      environments;
+
   /// Optional enumerated value serialized in the `issues` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues> issues;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues>
+      issues;
+
   /// Optional enumerated value serialized in the `keys` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys> keys;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys>
+      keys;
+
   /// Optional enumerated value serialized in the `members` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers> members;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers>
+      members;
+
   /// Optional enumerated value serialized in the `merge_queues` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues> mergeQueues;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues>
+      mergeQueues;
+
   /// Optional enumerated value serialized in the `metadata` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata> metadata;
+  final SdkOptional<
+      WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata> metadata;
+
   /// Optional enumerated value serialized in the `models` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels> models;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels>
+      models;
+
   /// Optional enumerated value serialized in the `organization_administration` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration> organizationAdministration;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration>
+      organizationAdministration;
+
   /// Optional enumerated value serialized in the `organization_hooks` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks> organizationHooks;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks>
+      organizationHooks;
+
   /// Optional enumerated value serialized in the `organization_packages` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages> organizationPackages;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages>
+      organizationPackages;
+
   /// Optional enumerated value serialized in the `organization_plan` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan> organizationPlan;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan>
+      organizationPlan;
+
   /// Optional enumerated value serialized in the `organization_projects` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects> organizationProjects;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects>
+      organizationProjects;
+
   /// Optional enumerated value serialized in the `organization_secrets` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets> organizationSecrets;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets>
+      organizationSecrets;
+
   /// Optional enumerated value serialized in the `organization_self_hosted_runners` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners> organizationSelfHostedRunners;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners>
+      organizationSelfHostedRunners;
+
   /// Optional enumerated value serialized in the `organization_user_blocking` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking> organizationUserBlocking;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking>
+      organizationUserBlocking;
+
   /// Optional enumerated value serialized in the `packages` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages> packages;
+  final SdkOptional<
+      WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages> packages;
+
   /// Optional enumerated value serialized in the `pages` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages> pages;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages>
+      pages;
+
   /// Optional enumerated value serialized in the `pull_requests` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests> pullRequests;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests>
+      pullRequests;
+
   /// Optional enumerated value serialized in the `repository_hooks` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks> repositoryHooks;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks>
+      repositoryHooks;
+
   /// Optional enumerated value serialized in the `repository_projects` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects> repositoryProjects;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects>
+      repositoryProjects;
+
   /// Optional enumerated value serialized in the `secret_scanning_alerts` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts> secretScanningAlerts;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts>
+      secretScanningAlerts;
+
   /// Optional enumerated value serialized in the `secrets` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets> secrets;
+  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets>
+      secrets;
+
   /// Optional enumerated value serialized in the `security_events` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents> securityEvents;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents>
+      securityEvents;
+
   /// Optional enumerated value serialized in the `security_scanning_alert` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert> securityScanningAlert;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert>
+      securityScanningAlert;
+
   /// Optional enumerated value serialized in the `single_file` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile> singleFile;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile>
+      singleFile;
+
   /// Optional enumerated value serialized in the `statuses` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses> statuses;
+  final SdkOptional<
+      WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses> statuses;
+
   /// Optional enumerated value serialized in the `vulnerability_alerts` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts> vulnerabilityAlerts;
+  final SdkOptional<
+          WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts>
+      vulnerabilityAlerts;
+
   /// Optional enumerated value serialized in the `workflows` wire field.
-  final SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows> workflows;
+  final SdkOptional<
+      WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows> workflows;
 
-  const WebhookCheckSuiteRerequestedCheckSuiteAppPermissions({this.actions = const SdkOmitted(), this.administration = const SdkOmitted(), this.artifactMetadata = const SdkOmitted(), this.attestations = const SdkOmitted(), this.checks = const SdkOmitted(), this.codeQuality = const SdkOmitted(), this.contentReferences = const SdkOmitted(), this.contents = const SdkOmitted(), this.copilotRequests = const SdkOmitted(), this.deployments = const SdkOmitted(), this.discussions = const SdkOmitted(), this.drives = const SdkOmitted(), this.emails = const SdkOmitted(), this.environments = const SdkOmitted(), this.issues = const SdkOmitted(), this.keys = const SdkOmitted(), this.members = const SdkOmitted(), this.mergeQueues = const SdkOmitted(), this.metadata = const SdkOmitted(), this.models = const SdkOmitted(), this.organizationAdministration = const SdkOmitted(), this.organizationHooks = const SdkOmitted(), this.organizationPackages = const SdkOmitted(), this.organizationPlan = const SdkOmitted(), this.organizationProjects = const SdkOmitted(), this.organizationSecrets = const SdkOmitted(), this.organizationSelfHostedRunners = const SdkOmitted(), this.organizationUserBlocking = const SdkOmitted(), this.packages = const SdkOmitted(), this.pages = const SdkOmitted(), this.pullRequests = const SdkOmitted(), this.repositoryHooks = const SdkOmitted(), this.repositoryProjects = const SdkOmitted(), this.secretScanningAlerts = const SdkOmitted(), this.secrets = const SdkOmitted(), this.securityEvents = const SdkOmitted(), this.securityScanningAlert = const SdkOmitted(), this.singleFile = const SdkOmitted(), this.statuses = const SdkOmitted(), this.vulnerabilityAlerts = const SdkOmitted(), this.workflows = const SdkOmitted()});
+  const WebhookCheckSuiteRerequestedCheckSuiteAppPermissions(
+      {this.actions = const SdkOmitted(),
+      this.administration = const SdkOmitted(),
+      this.artifactMetadata = const SdkOmitted(),
+      this.attestations = const SdkOmitted(),
+      this.checks = const SdkOmitted(),
+      this.codeQuality = const SdkOmitted(),
+      this.contentReferences = const SdkOmitted(),
+      this.contents = const SdkOmitted(),
+      this.copilotRequests = const SdkOmitted(),
+      this.deployments = const SdkOmitted(),
+      this.discussions = const SdkOmitted(),
+      this.drives = const SdkOmitted(),
+      this.emails = const SdkOmitted(),
+      this.environments = const SdkOmitted(),
+      this.issues = const SdkOmitted(),
+      this.keys = const SdkOmitted(),
+      this.members = const SdkOmitted(),
+      this.mergeQueues = const SdkOmitted(),
+      this.metadata = const SdkOmitted(),
+      this.models = const SdkOmitted(),
+      this.organizationAdministration = const SdkOmitted(),
+      this.organizationHooks = const SdkOmitted(),
+      this.organizationPackages = const SdkOmitted(),
+      this.organizationPlan = const SdkOmitted(),
+      this.organizationProjects = const SdkOmitted(),
+      this.organizationSecrets = const SdkOmitted(),
+      this.organizationSelfHostedRunners = const SdkOmitted(),
+      this.organizationUserBlocking = const SdkOmitted(),
+      this.packages = const SdkOmitted(),
+      this.pages = const SdkOmitted(),
+      this.pullRequests = const SdkOmitted(),
+      this.repositoryHooks = const SdkOmitted(),
+      this.repositoryProjects = const SdkOmitted(),
+      this.secretScanningAlerts = const SdkOmitted(),
+      this.secrets = const SdkOmitted(),
+      this.securityEvents = const SdkOmitted(),
+      this.securityScanningAlert = const SdkOmitted(),
+      this.singleFile = const SdkOmitted(),
+      this.statuses = const SdkOmitted(),
+      this.vulnerabilityAlerts = const SdkOmitted(),
+      this.workflows = const SdkOmitted()});
 
-  WebhookCheckSuiteRerequestedCheckSuiteAppPermissions Function({SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions> actions, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration> administration, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata> artifactMetadata, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations> attestations, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks> checks, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality> codeQuality, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences> contentReferences, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents> contents, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests> copilotRequests, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments> deployments, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions> discussions, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives> drives, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails> emails, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments> environments, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues> issues, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys> keys, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers> members, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues> mergeQueues, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata> metadata, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels> models, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration> organizationAdministration, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks> organizationHooks, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages> organizationPackages, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan> organizationPlan, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects> organizationProjects, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets> organizationSecrets, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners> organizationSelfHostedRunners, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking> organizationUserBlocking, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages> packages, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages> pages, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests> pullRequests, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks> repositoryHooks, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects> repositoryProjects, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts> secretScanningAlerts, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets> secrets, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents> securityEvents, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert> securityScanningAlert, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile> singleFile, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses> statuses, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts> vulnerabilityAlerts, SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows> workflows}) get copyWith => _copyWith;
+  WebhookCheckSuiteRerequestedCheckSuiteAppPermissions Function(
+      {SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions>
+          actions,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration>
+          administration,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata>
+          artifactMetadata,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations>
+          attestations,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks>
+          checks,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality>
+          codeQuality,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences>
+          contentReferences,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents>
+          contents,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests>
+          copilotRequests,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments>
+          deployments,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions>
+          discussions,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives>
+          drives,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails>
+          emails,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments>
+          environments,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues>
+          issues,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys>
+          keys,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers>
+          members,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues>
+          mergeQueues,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata>
+          metadata,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels>
+          models,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration>
+          organizationAdministration,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks>
+          organizationHooks,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages>
+          organizationPackages,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan>
+          organizationPlan,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects>
+          organizationProjects,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets>
+          organizationSecrets,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners>
+          organizationSelfHostedRunners,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking>
+          organizationUserBlocking,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages>
+          packages,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages>
+          pages,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests>
+          pullRequests,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks> repositoryHooks,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects> repositoryProjects,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts> secretScanningAlerts,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets> secrets,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents> securityEvents,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert> securityScanningAlert,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile> singleFile,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses> statuses,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts> vulnerabilityAlerts,
+      SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows> workflows}) get copyWith => _copyWith;
 
-  WebhookCheckSuiteRerequestedCheckSuiteAppPermissions _copyWith({Object? actions = sdkOmittedValue, Object? administration = sdkOmittedValue, Object? artifactMetadata = sdkOmittedValue, Object? attestations = sdkOmittedValue, Object? checks = sdkOmittedValue, Object? codeQuality = sdkOmittedValue, Object? contentReferences = sdkOmittedValue, Object? contents = sdkOmittedValue, Object? copilotRequests = sdkOmittedValue, Object? deployments = sdkOmittedValue, Object? discussions = sdkOmittedValue, Object? drives = sdkOmittedValue, Object? emails = sdkOmittedValue, Object? environments = sdkOmittedValue, Object? issues = sdkOmittedValue, Object? keys = sdkOmittedValue, Object? members = sdkOmittedValue, Object? mergeQueues = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? models = sdkOmittedValue, Object? organizationAdministration = sdkOmittedValue, Object? organizationHooks = sdkOmittedValue, Object? organizationPackages = sdkOmittedValue, Object? organizationPlan = sdkOmittedValue, Object? organizationProjects = sdkOmittedValue, Object? organizationSecrets = sdkOmittedValue, Object? organizationSelfHostedRunners = sdkOmittedValue, Object? organizationUserBlocking = sdkOmittedValue, Object? packages = sdkOmittedValue, Object? pages = sdkOmittedValue, Object? pullRequests = sdkOmittedValue, Object? repositoryHooks = sdkOmittedValue, Object? repositoryProjects = sdkOmittedValue, Object? secretScanningAlerts = sdkOmittedValue, Object? secrets = sdkOmittedValue, Object? securityEvents = sdkOmittedValue, Object? securityScanningAlert = sdkOmittedValue, Object? singleFile = sdkOmittedValue, Object? statuses = sdkOmittedValue, Object? vulnerabilityAlerts = sdkOmittedValue, Object? workflows = sdkOmittedValue}) => WebhookCheckSuiteRerequestedCheckSuiteAppPermissions(
-    actions: identical(actions, sdkOmittedValue) ? this.actions : actions as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions>,
-    administration: identical(administration, sdkOmittedValue) ? this.administration : administration as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration>,
-    artifactMetadata: identical(artifactMetadata, sdkOmittedValue) ? this.artifactMetadata : artifactMetadata as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata>,
-    attestations: identical(attestations, sdkOmittedValue) ? this.attestations : attestations as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations>,
-    checks: identical(checks, sdkOmittedValue) ? this.checks : checks as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks>,
-    codeQuality: identical(codeQuality, sdkOmittedValue) ? this.codeQuality : codeQuality as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality>,
-    contentReferences: identical(contentReferences, sdkOmittedValue) ? this.contentReferences : contentReferences as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences>,
-    contents: identical(contents, sdkOmittedValue) ? this.contents : contents as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents>,
-    copilotRequests: identical(copilotRequests, sdkOmittedValue) ? this.copilotRequests : copilotRequests as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests>,
-    deployments: identical(deployments, sdkOmittedValue) ? this.deployments : deployments as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments>,
-    discussions: identical(discussions, sdkOmittedValue) ? this.discussions : discussions as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions>,
-    drives: identical(drives, sdkOmittedValue) ? this.drives : drives as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives>,
-    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails>,
-    environments: identical(environments, sdkOmittedValue) ? this.environments : environments as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments>,
-    issues: identical(issues, sdkOmittedValue) ? this.issues : issues as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues>,
-    keys: identical(keys, sdkOmittedValue) ? this.keys : keys as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys>,
-    members: identical(members, sdkOmittedValue) ? this.members : members as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers>,
-    mergeQueues: identical(mergeQueues, sdkOmittedValue) ? this.mergeQueues : mergeQueues as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata>,
-    models: identical(models, sdkOmittedValue) ? this.models : models as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels>,
-    organizationAdministration: identical(organizationAdministration, sdkOmittedValue) ? this.organizationAdministration : organizationAdministration as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration>,
-    organizationHooks: identical(organizationHooks, sdkOmittedValue) ? this.organizationHooks : organizationHooks as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks>,
-    organizationPackages: identical(organizationPackages, sdkOmittedValue) ? this.organizationPackages : organizationPackages as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages>,
-    organizationPlan: identical(organizationPlan, sdkOmittedValue) ? this.organizationPlan : organizationPlan as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan>,
-    organizationProjects: identical(organizationProjects, sdkOmittedValue) ? this.organizationProjects : organizationProjects as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects>,
-    organizationSecrets: identical(organizationSecrets, sdkOmittedValue) ? this.organizationSecrets : organizationSecrets as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets>,
-    organizationSelfHostedRunners: identical(organizationSelfHostedRunners, sdkOmittedValue) ? this.organizationSelfHostedRunners : organizationSelfHostedRunners as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners>,
-    organizationUserBlocking: identical(organizationUserBlocking, sdkOmittedValue) ? this.organizationUserBlocking : organizationUserBlocking as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking>,
-    packages: identical(packages, sdkOmittedValue) ? this.packages : packages as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages>,
-    pages: identical(pages, sdkOmittedValue) ? this.pages : pages as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages>,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests>,
-    repositoryHooks: identical(repositoryHooks, sdkOmittedValue) ? this.repositoryHooks : repositoryHooks as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks>,
-    repositoryProjects: identical(repositoryProjects, sdkOmittedValue) ? this.repositoryProjects : repositoryProjects as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects>,
-    secretScanningAlerts: identical(secretScanningAlerts, sdkOmittedValue) ? this.secretScanningAlerts : secretScanningAlerts as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts>,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets>,
-    securityEvents: identical(securityEvents, sdkOmittedValue) ? this.securityEvents : securityEvents as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents>,
-    securityScanningAlert: identical(securityScanningAlert, sdkOmittedValue) ? this.securityScanningAlert : securityScanningAlert as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert>,
-    singleFile: identical(singleFile, sdkOmittedValue) ? this.singleFile : singleFile as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile>,
-    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses>,
-    vulnerabilityAlerts: identical(vulnerabilityAlerts, sdkOmittedValue) ? this.vulnerabilityAlerts : vulnerabilityAlerts as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts>,
-    workflows: identical(workflows, sdkOmittedValue) ? this.workflows : workflows as SdkOptional<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows>,
-  );
+  WebhookCheckSuiteRerequestedCheckSuiteAppPermissions _copyWith(
+          {Object? actions = sdkOmittedValue,
+          Object? administration = sdkOmittedValue,
+          Object? artifactMetadata = sdkOmittedValue,
+          Object? attestations = sdkOmittedValue,
+          Object? checks = sdkOmittedValue,
+          Object? codeQuality = sdkOmittedValue,
+          Object? contentReferences = sdkOmittedValue,
+          Object? contents = sdkOmittedValue,
+          Object? copilotRequests = sdkOmittedValue,
+          Object? deployments = sdkOmittedValue,
+          Object? discussions = sdkOmittedValue,
+          Object? drives = sdkOmittedValue,
+          Object? emails = sdkOmittedValue,
+          Object? environments = sdkOmittedValue,
+          Object? issues = sdkOmittedValue,
+          Object? keys = sdkOmittedValue,
+          Object? members = sdkOmittedValue,
+          Object? mergeQueues = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? models = sdkOmittedValue,
+          Object? organizationAdministration = sdkOmittedValue,
+          Object? organizationHooks = sdkOmittedValue,
+          Object? organizationPackages = sdkOmittedValue,
+          Object? organizationPlan = sdkOmittedValue,
+          Object? organizationProjects = sdkOmittedValue,
+          Object? organizationSecrets = sdkOmittedValue,
+          Object? organizationSelfHostedRunners = sdkOmittedValue,
+          Object? organizationUserBlocking = sdkOmittedValue,
+          Object? packages = sdkOmittedValue,
+          Object? pages = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue,
+          Object? repositoryHooks = sdkOmittedValue,
+          Object? repositoryProjects = sdkOmittedValue,
+          Object? secretScanningAlerts = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue,
+          Object? securityEvents = sdkOmittedValue,
+          Object? securityScanningAlert = sdkOmittedValue,
+          Object? singleFile = sdkOmittedValue,
+          Object? statuses = sdkOmittedValue,
+          Object? vulnerabilityAlerts = sdkOmittedValue,
+          Object? workflows = sdkOmittedValue}) =>
+      WebhookCheckSuiteRerequestedCheckSuiteAppPermissions(
+        actions: identical(actions, sdkOmittedValue)
+            ? this.actions
+            : actions as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions>,
+        administration: identical(administration, sdkOmittedValue)
+            ? this.administration
+            : administration as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration>,
+        artifactMetadata: identical(artifactMetadata, sdkOmittedValue)
+            ? this.artifactMetadata
+            : artifactMetadata as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata>,
+        attestations: identical(attestations, sdkOmittedValue)
+            ? this.attestations
+            : attestations as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations>,
+        checks: identical(checks, sdkOmittedValue)
+            ? this.checks
+            : checks as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks>,
+        codeQuality: identical(codeQuality, sdkOmittedValue)
+            ? this.codeQuality
+            : codeQuality as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality>,
+        contentReferences: identical(contentReferences, sdkOmittedValue)
+            ? this.contentReferences
+            : contentReferences as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences>,
+        contents: identical(contents, sdkOmittedValue)
+            ? this.contents
+            : contents as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents>,
+        copilotRequests: identical(copilotRequests, sdkOmittedValue)
+            ? this.copilotRequests
+            : copilotRequests as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests>,
+        deployments: identical(deployments, sdkOmittedValue)
+            ? this.deployments
+            : deployments as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments>,
+        discussions: identical(discussions, sdkOmittedValue)
+            ? this.discussions
+            : discussions as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions>,
+        drives: identical(drives, sdkOmittedValue)
+            ? this.drives
+            : drives as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives>,
+        emails: identical(emails, sdkOmittedValue)
+            ? this.emails
+            : emails as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails>,
+        environments: identical(environments, sdkOmittedValue)
+            ? this.environments
+            : environments as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments>,
+        issues: identical(issues, sdkOmittedValue)
+            ? this.issues
+            : issues as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues>,
+        keys: identical(keys, sdkOmittedValue)
+            ? this.keys
+            : keys as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys>,
+        members: identical(members, sdkOmittedValue)
+            ? this.members
+            : members as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers>,
+        mergeQueues: identical(mergeQueues, sdkOmittedValue)
+            ? this.mergeQueues
+            : mergeQueues as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata>,
+        models: identical(models, sdkOmittedValue)
+            ? this.models
+            : models as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels>,
+        organizationAdministration: identical(
+                organizationAdministration, sdkOmittedValue)
+            ? this.organizationAdministration
+            : organizationAdministration as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration>,
+        organizationHooks: identical(organizationHooks, sdkOmittedValue)
+            ? this.organizationHooks
+            : organizationHooks as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks>,
+        organizationPackages: identical(organizationPackages, sdkOmittedValue)
+            ? this.organizationPackages
+            : organizationPackages as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages>,
+        organizationPlan: identical(organizationPlan, sdkOmittedValue)
+            ? this.organizationPlan
+            : organizationPlan as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan>,
+        organizationProjects: identical(organizationProjects, sdkOmittedValue)
+            ? this.organizationProjects
+            : organizationProjects as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects>,
+        organizationSecrets: identical(organizationSecrets, sdkOmittedValue)
+            ? this.organizationSecrets
+            : organizationSecrets as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets>,
+        organizationSelfHostedRunners: identical(
+                organizationSelfHostedRunners, sdkOmittedValue)
+            ? this.organizationSelfHostedRunners
+            : organizationSelfHostedRunners as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners>,
+        organizationUserBlocking: identical(
+                organizationUserBlocking, sdkOmittedValue)
+            ? this.organizationUserBlocking
+            : organizationUserBlocking as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking>,
+        packages: identical(packages, sdkOmittedValue)
+            ? this.packages
+            : packages as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages>,
+        pages: identical(pages, sdkOmittedValue)
+            ? this.pages
+            : pages as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages>,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests>,
+        repositoryHooks: identical(repositoryHooks, sdkOmittedValue)
+            ? this.repositoryHooks
+            : repositoryHooks as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks>,
+        repositoryProjects: identical(repositoryProjects, sdkOmittedValue)
+            ? this.repositoryProjects
+            : repositoryProjects as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects>,
+        secretScanningAlerts: identical(secretScanningAlerts, sdkOmittedValue)
+            ? this.secretScanningAlerts
+            : secretScanningAlerts as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts>,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets>,
+        securityEvents: identical(securityEvents, sdkOmittedValue)
+            ? this.securityEvents
+            : securityEvents as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents>,
+        securityScanningAlert: identical(securityScanningAlert, sdkOmittedValue)
+            ? this.securityScanningAlert
+            : securityScanningAlert as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert>,
+        singleFile: identical(singleFile, sdkOmittedValue)
+            ? this.singleFile
+            : singleFile as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile>,
+        statuses: identical(statuses, sdkOmittedValue)
+            ? this.statuses
+            : statuses as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses>,
+        vulnerabilityAlerts: identical(vulnerabilityAlerts, sdkOmittedValue)
+            ? this.vulnerabilityAlerts
+            : vulnerabilityAlerts as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts>,
+        workflows: identical(workflows, sdkOmittedValue)
+            ? this.workflows
+            : workflows as SdkOptional<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows>,
+      );
 
-  factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissions.fromJson(Map<String, dynamic> json) => WebhookCheckSuiteRerequestedCheckSuiteAppPermissions(
-    actions: json['actions'] != null ? SdkPresent((json['actions'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions.fromJson(json['actions'] as String) : null)!) : const SdkOmitted(),
-    administration: json['administration'] != null ? SdkPresent((json['administration'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration.fromJson(json['administration'] as String) : null)!) : const SdkOmitted(),
-    artifactMetadata: json['artifact_metadata'] != null ? SdkPresent((json['artifact_metadata'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata.fromJson(json['artifact_metadata'] as String) : null)!) : const SdkOmitted(),
-    attestations: json['attestations'] != null ? SdkPresent((json['attestations'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations.fromJson(json['attestations'] as String) : null)!) : const SdkOmitted(),
-    checks: json['checks'] != null ? SdkPresent((json['checks'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks.fromJson(json['checks'] as String) : null)!) : const SdkOmitted(),
-    codeQuality: json['code_quality'] != null ? SdkPresent((json['code_quality'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality.fromJson(json['code_quality'] as String) : null)!) : const SdkOmitted(),
-    contentReferences: json['content_references'] != null ? SdkPresent((json['content_references'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences.fromJson(json['content_references'] as String) : null)!) : const SdkOmitted(),
-    contents: json['contents'] != null ? SdkPresent((json['contents'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents.fromJson(json['contents'] as String) : null)!) : const SdkOmitted(),
-    copilotRequests: json['copilot_requests'] != null ? SdkPresent((json['copilot_requests'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests.fromJson(json['copilot_requests'] as String) : null)!) : const SdkOmitted(),
-    deployments: json['deployments'] != null ? SdkPresent((json['deployments'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments.fromJson(json['deployments'] as String) : null)!) : const SdkOmitted(),
-    discussions: json['discussions'] != null ? SdkPresent((json['discussions'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions.fromJson(json['discussions'] as String) : null)!) : const SdkOmitted(),
-    drives: json['drives'] != null ? SdkPresent((json['drives'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives.fromJson(json['drives'] as String) : null)!) : const SdkOmitted(),
-    emails: json['emails'] != null ? SdkPresent((json['emails'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails.fromJson(json['emails'] as String) : null)!) : const SdkOmitted(),
-    environments: json['environments'] != null ? SdkPresent((json['environments'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments.fromJson(json['environments'] as String) : null)!) : const SdkOmitted(),
-    issues: json['issues'] != null ? SdkPresent((json['issues'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues.fromJson(json['issues'] as String) : null)!) : const SdkOmitted(),
-    keys: json['keys'] != null ? SdkPresent((json['keys'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys.fromJson(json['keys'] as String) : null)!) : const SdkOmitted(),
-    members: json['members'] != null ? SdkPresent((json['members'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers.fromJson(json['members'] as String) : null)!) : const SdkOmitted(),
-    mergeQueues: json['merge_queues'] != null ? SdkPresent((json['merge_queues'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues.fromJson(json['merge_queues'] as String) : null)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata.fromJson(json['metadata'] as String) : null)!) : const SdkOmitted(),
-    models: json['models'] != null ? SdkPresent((json['models'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels.fromJson(json['models'] as String) : null)!) : const SdkOmitted(),
-    organizationAdministration: json['organization_administration'] != null ? SdkPresent((json['organization_administration'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration.fromJson(json['organization_administration'] as String) : null)!) : const SdkOmitted(),
-    organizationHooks: json['organization_hooks'] != null ? SdkPresent((json['organization_hooks'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks.fromJson(json['organization_hooks'] as String) : null)!) : const SdkOmitted(),
-    organizationPackages: json['organization_packages'] != null ? SdkPresent((json['organization_packages'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages.fromJson(json['organization_packages'] as String) : null)!) : const SdkOmitted(),
-    organizationPlan: json['organization_plan'] != null ? SdkPresent((json['organization_plan'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan.fromJson(json['organization_plan'] as String) : null)!) : const SdkOmitted(),
-    organizationProjects: json['organization_projects'] != null ? SdkPresent((json['organization_projects'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects.fromJson(json['organization_projects'] as String) : null)!) : const SdkOmitted(),
-    organizationSecrets: json['organization_secrets'] != null ? SdkPresent((json['organization_secrets'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets.fromJson(json['organization_secrets'] as String) : null)!) : const SdkOmitted(),
-    organizationSelfHostedRunners: json['organization_self_hosted_runners'] != null ? SdkPresent((json['organization_self_hosted_runners'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners.fromJson(json['organization_self_hosted_runners'] as String) : null)!) : const SdkOmitted(),
-    organizationUserBlocking: json['organization_user_blocking'] != null ? SdkPresent((json['organization_user_blocking'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking.fromJson(json['organization_user_blocking'] as String) : null)!) : const SdkOmitted(),
-    packages: json['packages'] != null ? SdkPresent((json['packages'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages.fromJson(json['packages'] as String) : null)!) : const SdkOmitted(),
-    pages: json['pages'] != null ? SdkPresent((json['pages'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages.fromJson(json['pages'] as String) : null)!) : const SdkOmitted(),
-    pullRequests: json['pull_requests'] != null ? SdkPresent((json['pull_requests'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests.fromJson(json['pull_requests'] as String) : null)!) : const SdkOmitted(),
-    repositoryHooks: json['repository_hooks'] != null ? SdkPresent((json['repository_hooks'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks.fromJson(json['repository_hooks'] as String) : null)!) : const SdkOmitted(),
-    repositoryProjects: json['repository_projects'] != null ? SdkPresent((json['repository_projects'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects.fromJson(json['repository_projects'] as String) : null)!) : const SdkOmitted(),
-    secretScanningAlerts: json['secret_scanning_alerts'] != null ? SdkPresent((json['secret_scanning_alerts'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts.fromJson(json['secret_scanning_alerts'] as String) : null)!) : const SdkOmitted(),
-    secrets: json['secrets'] != null ? SdkPresent((json['secrets'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets.fromJson(json['secrets'] as String) : null)!) : const SdkOmitted(),
-    securityEvents: json['security_events'] != null ? SdkPresent((json['security_events'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents.fromJson(json['security_events'] as String) : null)!) : const SdkOmitted(),
-    securityScanningAlert: json['security_scanning_alert'] != null ? SdkPresent((json['security_scanning_alert'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert.fromJson(json['security_scanning_alert'] as String) : null)!) : const SdkOmitted(),
-    singleFile: json['single_file'] != null ? SdkPresent((json['single_file'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile.fromJson(json['single_file'] as String) : null)!) : const SdkOmitted(),
-    statuses: json['statuses'] != null ? SdkPresent((json['statuses'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses.fromJson(json['statuses'] as String) : null)!) : const SdkOmitted(),
-    vulnerabilityAlerts: json['vulnerability_alerts'] != null ? SdkPresent((json['vulnerability_alerts'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts.fromJson(json['vulnerability_alerts'] as String) : null)!) : const SdkOmitted(),
-    workflows: json['workflows'] != null ? SdkPresent((json['workflows'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows.fromJson(json['workflows'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissions.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCheckSuiteRerequestedCheckSuiteAppPermissions(
+        actions: json['actions'] != null
+            ? SdkPresent((json['actions'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions
+                    .fromJson(json['actions'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        administration: json['administration'] != null
+            ? SdkPresent((json['administration'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration
+                    .fromJson(json['administration'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        artifactMetadata: json['artifact_metadata'] != null
+            ? SdkPresent((json['artifact_metadata'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata
+                    .fromJson(json['artifact_metadata'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        attestations: json['attestations'] != null
+            ? SdkPresent((json['attestations'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations
+                    .fromJson(json['attestations'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        checks: json['checks'] != null
+            ? SdkPresent((json['checks'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks
+                    .fromJson(json['checks'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        codeQuality: json['code_quality'] != null
+            ? SdkPresent((json['code_quality'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality
+                    .fromJson(json['code_quality'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        contentReferences: json['content_references'] != null
+            ? SdkPresent((json['content_references'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences
+                    .fromJson(json['content_references'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        contents: json['contents'] != null
+            ? SdkPresent((json['contents'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents
+                    .fromJson(json['contents'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        copilotRequests: json['copilot_requests'] != null
+            ? SdkPresent((json['copilot_requests'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests
+                    .fromJson(json['copilot_requests'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        deployments: json['deployments'] != null
+            ? SdkPresent((json['deployments'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments
+                    .fromJson(json['deployments'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        discussions: json['discussions'] != null
+            ? SdkPresent((json['discussions'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions
+                    .fromJson(json['discussions'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        drives: json['drives'] != null
+            ? SdkPresent((json['drives'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives
+                    .fromJson(json['drives'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        emails: json['emails'] != null
+            ? SdkPresent((json['emails'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails
+                    .fromJson(json['emails'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        environments: json['environments'] != null
+            ? SdkPresent((json['environments'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments
+                    .fromJson(json['environments'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        issues: json['issues'] != null
+            ? SdkPresent((json['issues'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues
+                    .fromJson(json['issues'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        keys: json['keys'] != null
+            ? SdkPresent((json['keys'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys
+                    .fromJson(json['keys'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        members: json['members'] != null
+            ? SdkPresent((json['members'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers
+                    .fromJson(json['members'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        mergeQueues: json['merge_queues'] != null
+            ? SdkPresent((json['merge_queues'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues
+                    .fromJson(json['merge_queues'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata
+                    .fromJson(json['metadata'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        models: json['models'] != null
+            ? SdkPresent((json['models'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels
+                    .fromJson(json['models'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationAdministration: json['organization_administration'] != null
+            ? SdkPresent((json['organization_administration'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration
+                    .fromJson(json['organization_administration'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationHooks: json['organization_hooks'] != null
+            ? SdkPresent((json['organization_hooks'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks
+                    .fromJson(json['organization_hooks'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationPackages: json['organization_packages'] != null
+            ? SdkPresent((json['organization_packages'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages
+                    .fromJson(json['organization_packages'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationPlan: json['organization_plan'] != null
+            ? SdkPresent((json['organization_plan'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan
+                    .fromJson(json['organization_plan'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationProjects: json['organization_projects'] != null
+            ? SdkPresent((json['organization_projects'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects
+                    .fromJson(json['organization_projects'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationSecrets: json['organization_secrets'] != null
+            ? SdkPresent((json['organization_secrets'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets
+                    .fromJson(json['organization_secrets'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationSelfHostedRunners: json[
+                    'organization_self_hosted_runners'] !=
+                null
+            ? SdkPresent((json['organization_self_hosted_runners'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners
+                    .fromJson(
+                        json['organization_self_hosted_runners'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        organizationUserBlocking: json['organization_user_blocking'] != null
+            ? SdkPresent((json['organization_user_blocking'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking
+                    .fromJson(json['organization_user_blocking'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        packages: json['packages'] != null
+            ? SdkPresent((json['packages'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages
+                    .fromJson(json['packages'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        pages: json['pages'] != null
+            ? SdkPresent((json['pages'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages
+                    .fromJson(json['pages'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequests: json['pull_requests'] != null
+            ? SdkPresent((json['pull_requests'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests
+                    .fromJson(json['pull_requests'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        repositoryHooks: json['repository_hooks'] != null
+            ? SdkPresent((json['repository_hooks'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks
+                    .fromJson(json['repository_hooks'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        repositoryProjects: json['repository_projects'] != null
+            ? SdkPresent((json['repository_projects'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects
+                    .fromJson(json['repository_projects'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        secretScanningAlerts: json['secret_scanning_alerts'] != null
+            ? SdkPresent((json['secret_scanning_alerts'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts
+                    .fromJson(json['secret_scanning_alerts'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        secrets: json['secrets'] != null
+            ? SdkPresent((json['secrets'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets
+                    .fromJson(json['secrets'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        securityEvents: json['security_events'] != null
+            ? SdkPresent((json['security_events'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents
+                    .fromJson(json['security_events'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        securityScanningAlert: json['security_scanning_alert'] != null
+            ? SdkPresent((json['security_scanning_alert'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert
+                    .fromJson(json['security_scanning_alert'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        singleFile: json['single_file'] != null
+            ? SdkPresent((json['single_file'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile
+                    .fromJson(json['single_file'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        statuses: json['statuses'] != null
+            ? SdkPresent((json['statuses'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses
+                    .fromJson(json['statuses'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        vulnerabilityAlerts: json['vulnerability_alerts'] != null
+            ? SdkPresent((json['vulnerability_alerts'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts
+                    .fromJson(json['vulnerability_alerts'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        workflows: json['workflows'] != null
+            ? SdkPresent((json['workflows'] != null
+                ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows
+                    .fromJson(json['workflows'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (actions) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions>(value: final value) => {'actions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (administration) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration>(value: final value) => {'administration': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (artifactMetadata) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata>(value: final value) => {'artifact_metadata': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (attestations) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations>(value: final value) => {'attestations': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (checks) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks>(value: final value) => {'checks': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (codeQuality) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality>(value: final value) => {'code_quality': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (contentReferences) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences>(value: final value) => {'content_references': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (contents) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents>(value: final value) => {'contents': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (copilotRequests) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests>(value: final value) => {'copilot_requests': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deployments) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments>(value: final value) => {'deployments': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (discussions) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions>(value: final value) => {'discussions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (drives) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives>(value: final value) => {'drives': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (emails) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails>(value: final value) => {'emails': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environments) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments>(value: final value) => {'environments': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issues) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues>(value: final value) => {'issues': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (keys) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys>(value: final value) => {'keys': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (members) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers>(value: final value) => {'members': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mergeQueues) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues>(value: final value) => {'merge_queues': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata>(value: final value) => {'metadata': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (models) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels>(value: final value) => {'models': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationAdministration) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration>(value: final value) => {'organization_administration': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationHooks) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks>(value: final value) => {'organization_hooks': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationPackages) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages>(value: final value) => {'organization_packages': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationPlan) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan>(value: final value) => {'organization_plan': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationProjects) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects>(value: final value) => {'organization_projects': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationSecrets) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets>(value: final value) => {'organization_secrets': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationSelfHostedRunners) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners>(value: final value) => {'organization_self_hosted_runners': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationUserBlocking) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking>(value: final value) => {'organization_user_blocking': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (packages) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages>(value: final value) => {'packages': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pages) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages>(value: final value) => {'pages': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pullRequests) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests>(value: final value) => {'pull_requests': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryHooks) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks>(value: final value) => {'repository_hooks': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryProjects) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects>(value: final value) => {'repository_projects': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningAlerts) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts>(value: final value) => {'secret_scanning_alerts': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secrets) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets>(value: final value) => {'secrets': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (securityEvents) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents>(value: final value) => {'security_events': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (securityScanningAlert) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert>(value: final value) => {'security_scanning_alert': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (singleFile) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile>(value: final value) => {'single_file': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (statuses) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses>(value: final value) => {'statuses': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (vulnerabilityAlerts) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts>(value: final value) => {'vulnerability_alerts': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (workflows) {
-      SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows>(value: final value) => {'workflows': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (actions) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions>(
+            value: final value
+          ) =>
+            {
+              'actions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (administration) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration>(
+            value: final value
+          ) =>
+            {
+              'administration': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (artifactMetadata) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata>(
+            value: final value
+          ) =>
+            {
+              'artifact_metadata': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (attestations) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations>(
+            value: final value
+          ) =>
+            {
+              'attestations': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (checks) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks>(
+            value: final value
+          ) =>
+            {
+              'checks': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (codeQuality) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCodeQuality>(
+            value: final value
+          ) =>
+            {
+              'code_quality': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contentReferences) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences>(
+            value: final value
+          ) =>
+            {
+              'content_references': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contents) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents>(
+            value: final value
+          ) =>
+            {
+              'contents': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (copilotRequests) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests>(
+            value: final value
+          ) =>
+            {
+              'copilot_requests': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deployments) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments>(
+            value: final value
+          ) =>
+            {
+              'deployments': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (discussions) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions>(
+            value: final value
+          ) =>
+            {
+              'discussions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (drives) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDrives>(
+            value: final value
+          ) =>
+            {
+              'drives': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (emails) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails>(
+            value: final value
+          ) =>
+            {
+              'emails': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environments) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments>(
+            value: final value
+          ) =>
+            {
+              'environments': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issues) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues>(
+            value: final value
+          ) =>
+            {
+              'issues': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (keys) {
+          SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys>(
+            value: final value
+          ) =>
+            {
+              'keys': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (members) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers>(
+            value: final value
+          ) =>
+            {
+              'members': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mergeQueues) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues>(
+            value: final value
+          ) =>
+            {
+              'merge_queues': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata>(
+            value: final value
+          ) =>
+            {
+              'metadata': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (models) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels>(
+            value: final value
+          ) =>
+            {
+              'models': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationAdministration) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration>(
+            value: final value
+          ) =>
+            {
+              'organization_administration': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationHooks) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks>(
+            value: final value
+          ) =>
+            {
+              'organization_hooks': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationPackages) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages>(
+            value: final value
+          ) =>
+            {
+              'organization_packages': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationPlan) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan>(
+            value: final value
+          ) =>
+            {
+              'organization_plan': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationProjects) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects>(
+            value: final value
+          ) =>
+            {
+              'organization_projects': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationSecrets) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets>(
+            value: final value
+          ) =>
+            {
+              'organization_secrets': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationSelfHostedRunners) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners>(
+            value: final value
+          ) =>
+            {
+              'organization_self_hosted_runners': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationUserBlocking) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking>(
+            value: final value
+          ) =>
+            {
+              'organization_user_blocking': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (packages) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages>(
+            value: final value
+          ) =>
+            {
+              'packages': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pages) {
+          SdkPresent<WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages>(
+            value: final value
+          ) =>
+            {
+              'pages': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequests) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests>(
+            value: final value
+          ) =>
+            {
+              'pull_requests': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryHooks) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks>(
+            value: final value
+          ) =>
+            {
+              'repository_hooks': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryProjects) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects>(
+            value: final value
+          ) =>
+            {
+              'repository_projects': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningAlerts) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts>(
+            value: final value
+          ) =>
+            {
+              'secret_scanning_alerts': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secrets) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets>(
+            value: final value
+          ) =>
+            {
+              'secrets': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (securityEvents) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents>(
+            value: final value
+          ) =>
+            {
+              'security_events': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (securityScanningAlert) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert>(
+            value: final value
+          ) =>
+            {
+              'security_scanning_alert': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (singleFile) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile>(
+            value: final value
+          ) =>
+            {
+              'single_file': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (statuses) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses>(
+            value: final value
+          ) =>
+            {
+              'statuses': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (vulnerabilityAlerts) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts>(
+            value: final value
+          ) =>
+            {
+              'vulnerability_alerts': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (workflows) {
+          SdkPresent<
+                WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows>(
+            value: final value
+          ) =>
+            {
+              'workflows': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

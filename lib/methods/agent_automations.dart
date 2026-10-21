@@ -18,7 +18,8 @@ Future<List<AgentAutomationsListAutomationsResponseItem>>
     agentAutomationsListAutomations(ClientConfig config,
         {SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<AgentAutomationsListAutomationsOwnerType> ownerType = const SdkOmitted(),
+        SdkOptional<AgentAutomationsListAutomationsOwnerType> ownerType =
+            const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   if (page is SdkPresent<int>) {
     validateRange('page', page.value, min: 1);
@@ -31,61 +32,81 @@ Future<List<AgentAutomationsListAutomationsResponseItem>>
           'GET', '/agents/automations',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'owner_type': SdkQueryValue(SdkUtils.unwrapOptional(ownerType), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'owner_type': SdkQueryValue(SdkUtils.unwrapOptional(ownerType),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsListAutomations',
-          fromJsonRaw: (value) => (value as List).map((item) => AgentAutomationsListAutomationsResponseItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  AgentAutomationsListAutomationsResponseItem.fromJson(
+                      item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
 
-
 /// Returns the tools available to the authenticated caller for use when creating or updating an automation. **Fine-grained access tokens for "List available automation tools"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) This endpoint does not require repository permissions. GitHub App installation access tokens are not supported for this endpoint.
-Future<List<AgentAutomationsListAvailableAutomationToolsResponseItem>> agentAutomationsListAvailableAutomationTools(ClientConfig config,
-    {RequestOptions? requestOptions}) async {
-  return (await sdkRequest<List<AgentAutomationsListAvailableAutomationToolsResponseItem>>(
+Future<List<AgentAutomationsListAvailableAutomationToolsResponseItem>>
+    agentAutomationsListAvailableAutomationTools(ClientConfig config,
+        {RequestOptions? requestOptions}) async {
+  return (await sdkRequest<
+              List<AgentAutomationsListAvailableAutomationToolsResponseItem>>(
           'GET', '/agents/automations/available-tools',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsListAvailableAutomationTools',
-          fromJsonRaw: (value) => (value as List).map((item) => AgentAutomationsListAvailableAutomationToolsResponseItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  AgentAutomationsListAvailableAutomationToolsResponseItem
+                      .fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
 
-
 /// Returns the triggers available to the authenticated caller, including machine-readable schemas for their configurable fields. **Fine-grained access tokens for "List available automation triggers"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) This endpoint does not require repository permissions. GitHub App installation access tokens are not supported for this endpoint.
-Future<List<AgentAutomationsListAvailableAutomationTriggersResponseItem>> agentAutomationsListAvailableAutomationTriggers(ClientConfig config,
-    {RequestOptions? requestOptions}) async {
-  return (await sdkRequest<List<AgentAutomationsListAvailableAutomationTriggersResponseItem>>(
+Future<List<AgentAutomationsListAvailableAutomationTriggersResponseItem>>
+    agentAutomationsListAvailableAutomationTriggers(ClientConfig config,
+        {RequestOptions? requestOptions}) async {
+  return (await sdkRequest<
+              List<
+                  AgentAutomationsListAvailableAutomationTriggersResponseItem>>(
           'GET', '/agents/automations/available-triggers',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsListAvailableAutomationTriggers',
-          fromJsonRaw: (value) => (value as List).map((item) => AgentAutomationsListAvailableAutomationTriggersResponseItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  AgentAutomationsListAvailableAutomationTriggersResponseItem
+                      .fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
 
-
 /// Returns an automation by ID without requiring repository context when its `created_by` user is the authenticated caller and the caller can read its repository. This includes both user-owned and repository-owned automations created by the caller but excludes repository-owned automations created by someone else even if the caller has write access to the repository. Use the repository-scoped get operation for those automations. The response includes repository identity so clients can link back to the repository. **Fine-grained access tokens for "Get an automation by ID"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have one of the following permission sets for each repository accessed by this request: * "Agent tasks" repository permissions (read) * "Contents" repository permissions (read) The required permission set depends on each repository's Automation permission configuration. GitHub App installation access tokens are not supported for this endpoint.
 ///
 /// [automationId] The unique identifier of the automation.
-Future<AgentAutomationsGetAutomationResponse> agentAutomationsGetAutomation(ClientConfig config,
-    {required String automationId, RequestOptions? requestOptions}) async {
+Future<AgentAutomationsGetAutomationResponse> agentAutomationsGetAutomation(
+    ClientConfig config,
+    {required String automationId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<AgentAutomationsGetAutomationResponse>('GET',
           '/agents/automations/${Uri.encodeComponent(automationId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsGetAutomation',
-          fromJsonRaw: (value) => AgentAutomationsGetAutomationResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AgentAutomationsGetAutomationResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Returns a list of tasks triggered by the specified automation. User-owned automation history is available only to its creator, while repository-owned automation history is available to anyone with read access to the repository. Deleted and unlisted tasks are excluded. Tasks produced by private-session agents are excluded unless the caller created the task, is a task collaborator, or the task is shared. **Fine-grained access tokens for "List tasks for an automation"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have one of the following permission sets for each repository accessed by this request: * "Agent tasks" repository permissions (read) * "Contents" repository permissions (read) The required permission set depends on each repository's Automation permission configuration. GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -105,8 +126,10 @@ Future<AgentAutomationsListAutomationTasksResponse>
         {required String automationId,
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<AgentAutomationsListAutomationTasksSort> sort = const SdkOmitted(),
-        SdkOptional<AgentAutomationsListAutomationTasksDirection> direction = const SdkOmitted(),
+        SdkOptional<AgentAutomationsListAutomationTasksSort> sort =
+            const SdkOmitted(),
+        SdkOptional<AgentAutomationsListAutomationTasksDirection> direction =
+            const SdkOmitted(),
         SdkOptional<String> state = const SdkOmitted(),
         SdkOptional<bool> isArchived = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
@@ -121,20 +144,27 @@ Future<AgentAutomationsListAutomationTasksResponse>
           '/agents/automations/${Uri.encodeComponent(automationId.toString())}/tasks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'is_archived': SdkQueryValue(SdkUtils.unwrapOptional(isArchived), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'is_archived': SdkQueryValue(SdkUtils.unwrapOptional(isArchived),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsListAutomationTasks',
-          fromJsonRaw: (value) => AgentAutomationsListAutomationTasksResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AgentAutomationsListAutomationTasksResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Returns a paginated list of the authenticated user's automations for a repository, together with every repository-owned automation in it. `total_count` is the number of caller-visible automations matching the supplied filters across all pages. Repository-owned automations are visible to anyone with read access to the repository, so the results are not limited to automations the caller created. Use the `owner_type` field on each automation to tell the two apart. **Fine-grained access tokens for "List automations for a repository"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have one of the following permission sets for each repository accessed by this request: * "Agent tasks" repository permissions (read) * "Contents" repository permissions (read) The required permission set depends on each repository's Automation permission configuration. GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -151,7 +181,8 @@ Future<AgentAutomationsListRepoAutomationsResponse>
         required String repo,
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<AgentAutomationsListRepoAutomationsOwnerType> ownerType = const SdkOmitted(),
+        SdkOptional<AgentAutomationsListRepoAutomationsOwnerType> ownerType =
+            const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   if (page is SdkPresent<int>) {
     validateRange('page', page.value, min: 1);
@@ -164,17 +195,21 @@ Future<AgentAutomationsListRepoAutomationsResponse>
           '/agents/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/automations',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'owner_type': SdkQueryValue(SdkUtils.unwrapOptional(ownerType), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'owner_type': SdkQueryValue(SdkUtils.unwrapOptional(ownerType),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsListRepoAutomations',
-          fromJsonRaw: (value) => AgentAutomationsListRepoAutomationsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AgentAutomationsListRepoAutomationsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a new automation in a repository. User-owned automations remain private to their creator. Repository-owned automations are visible to anyone with read access to the repository and manageable by anyone with write access to the repository. **Fine-grained access tokens for "Create an automation for a repository"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have one of the following permission sets for each repository accessed by this request: * "Agent tasks" repository permissions (read and write) * "Contents" repository permissions (read and write) The required permission set depends on each repository's Automation permission configuration. GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -217,14 +252,17 @@ Future<AgentAutomationsCreateRepoAutomationResponse>
         required String repo,
         required String name,
         required String prompt,
-        SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggers> triggers = const SdkOmitted(),
+        SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggers>
+            triggers = const SdkOmitted(),
         SdkOptional<String> model = const SdkOmitted(),
         SdkOptional<String> reasoningEffort = const SdkOmitted(),
         SdkOptional<List<String>> tools = const SdkOmitted(),
         SdkOptional<List<String>> allowedCustomAgents = const SdkOmitted(),
         SdkOptional<bool> enabled = const SdkOmitted(),
-        SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyOwnerType> ownerType = const SdkOmitted(),
-        SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyWriteScope> writeScope = const SdkOmitted(),
+        SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyOwnerType>
+            ownerType = const SdkOmitted(),
+        SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyWriteScope>
+            writeScope = const SdkOmitted(),
         SdkOptional<bool> requireActorWritePermission = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   return (await sdkRequest<AgentAutomationsCreateRepoAutomationResponse>('POST',
@@ -237,19 +275,22 @@ Future<AgentAutomationsCreateRepoAutomationResponse>
             'model': SdkUtils.unwrapOptional(model),
             'reasoning_effort': SdkUtils.unwrapOptional(reasoningEffort),
             'tools': SdkUtils.unwrapOptional(tools),
-            'allowed_custom_agents': SdkUtils.unwrapOptional(allowedCustomAgents),
+            'allowed_custom_agents':
+                SdkUtils.unwrapOptional(allowedCustomAgents),
             'enabled': SdkUtils.unwrapOptional(enabled),
             'owner_type': SdkUtils.unwrapOptional(ownerType),
             'write_scope': SdkUtils.unwrapOptional(writeScope),
-            'require_actor_write_permission': SdkUtils.unwrapOptional(requireActorWritePermission)
+            'require_actor_write_permission':
+                SdkUtils.unwrapOptional(requireActorWritePermission)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsCreateRepoAutomation',
-          fromJsonRaw: (value) => AgentAutomationsCreateRepoAutomationResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AgentAutomationsCreateRepoAutomationResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Returns an automation by ID in a repository. User-owned automations are visible only to their creator. Repository-owned automations are visible to anyone with read access to the repository. The `created_by` field identifies the creator and is distinct from the automation's `owner_type`. **Fine-grained access tokens for "Get an automation for a repository"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have one of the following permission sets for each repository accessed by this request: * "Agent tasks" repository permissions (read) * "Contents" repository permissions (read) The required permission set depends on each repository's Automation permission configuration. GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -267,11 +308,12 @@ Future<AgentAutomationsGetRepoAutomationResponse>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsGetRepoAutomation',
-          fromJsonRaw: (value) => AgentAutomationsGetRepoAutomationResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AgentAutomationsGetRepoAutomationResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Edits specified fields on an existing automation in a repository. Omitted fields are left unchanged. The automation's `owner_type` is immutable and cannot be changed by this operation. **Fine-grained access tokens for "Edit an automation for a repository"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have one of the following permission sets for each repository accessed by this request: * "Agent tasks" repository permissions (read and write) * "Contents" repository permissions (read and write) The required permission set depends on each repository's Automation permission configuration. GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -312,11 +354,13 @@ Future<AgentAutomationsEditRepoAutomationResponse>
         required String automationId,
         SdkOptional<String> name = const SdkOmitted(),
         SdkOptional<bool> enabled = const SdkOmitted(),
-        SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyWriteScope> writeScope = const SdkOmitted(),
+        SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyWriteScope>
+            writeScope = const SdkOmitted(),
         SdkOptional<bool> requireActorWritePermission = const SdkOmitted(),
         SdkOptional<String> model = const SdkOmitted(),
         SdkOptional<String> reasoningEffort = const SdkOmitted(),
-        SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggers> triggers = const SdkOmitted(),
+        SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggers>
+            triggers = const SdkOmitted(),
         SdkOptional<String> prompt = const SdkOmitted(),
         SdkOptional<List<String>> tools = const SdkOmitted(),
         SdkOptional<List<String>> allowedCustomAgents = const SdkOmitted(),
@@ -328,21 +372,24 @@ Future<AgentAutomationsEditRepoAutomationResponse>
             'name': SdkUtils.unwrapOptional(name),
             'enabled': SdkUtils.unwrapOptional(enabled),
             'write_scope': SdkUtils.unwrapOptional(writeScope),
-            'require_actor_write_permission': SdkUtils.unwrapOptional(requireActorWritePermission),
+            'require_actor_write_permission':
+                SdkUtils.unwrapOptional(requireActorWritePermission),
             'model': SdkUtils.unwrapOptional(model),
             'reasoning_effort': SdkUtils.unwrapOptional(reasoningEffort),
             'triggers': SdkUtils.unwrapOptional(triggers),
             'prompt': SdkUtils.unwrapOptional(prompt),
             'tools': SdkUtils.unwrapOptional(tools),
-            'allowed_custom_agents': SdkUtils.unwrapOptional(allowedCustomAgents)
+            'allowed_custom_agents':
+                SdkUtils.unwrapOptional(allowedCustomAgents)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentAutomationsEditRepoAutomation',
-          fromJsonRaw: (value) => AgentAutomationsEditRepoAutomationResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AgentAutomationsEditRepoAutomationResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an automation in a repository. **Fine-grained access tokens for "Delete an automation for a repository"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have one of the following permission sets for each repository accessed by this request: * "Agent tasks" repository permissions (read and write) * "Contents" repository permissions (read and write) The required permission set depends on each repository's Automation permission configuration. GitHub App installation access tokens are not supported for this endpoint.
 ///

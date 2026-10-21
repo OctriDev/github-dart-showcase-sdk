@@ -8,204 +8,375 @@ part of 'shared_pull.dart';
 class PullRequestSimpleHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `label` wire field.
   final String label;
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
+
   /// A repository on GitHub.
   final Repository repo;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// A GitHub user.
   final NullableSimpleUser? user;
 
-  const PullRequestSimpleHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
+  const PullRequestSimpleHead(
+      {required this.label,
+      required this.ref,
+      required this.repo,
+      required this.sha,
+      required this.user});
 
-  PullRequestSimpleHead Function({String label, String ref, Repository repo, String sha, NullableSimpleUser? user}) get copyWith => _copyWith;
+  PullRequestSimpleHead Function(
+      {String label,
+      String ref,
+      Repository repo,
+      String sha,
+      NullableSimpleUser? user}) get copyWith => _copyWith;
 
-  PullRequestSimpleHead _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => PullRequestSimpleHead(
-    label: identical(label, sdkOmittedValue) ? this.label : label as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-  );
+  PullRequestSimpleHead _copyWith(
+          {Object? label = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      PullRequestSimpleHead(
+        label: identical(label, sdkOmittedValue) ? this.label : label as String,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+      );
 
-  factory PullRequestSimpleHead.fromJson(Map<String, dynamic> json) => PullRequestSimpleHead(
-    label: (json['label'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    repo: (json['repo'] != null ? Repository.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+  factory PullRequestSimpleHead.fromJson(Map<String, dynamic> json) =>
+      PullRequestSimpleHead(
+        label: (json['label'] as String?)!,
+        ref: (json['ref'] as String?)!,
+        repo: (json['repo'] != null
+            ? Repository.fromJson(json['repo'] as Map<String, dynamic>)
+            : null)!,
+        sha: (json['sha'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'label': label,
-    'ref': ref,
-    'repo': repo.toJson(),
-    'sha': sha,
-    'user': user?.toJson(),
-  };
+        'label': label,
+        'ref': ref,
+        'repo': repo.toJson(),
+        'sha': sha,
+        'user': user?.toJson(),
+      };
 }
 
 /// Required object value serialized in the `base` wire field.
 class PullRequestSimpleBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `label` wire field.
   final String label;
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
+
   /// A repository on GitHub.
   final Repository repo;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// A GitHub user.
   final NullableSimpleUser? user;
 
-  const PullRequestSimpleBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
+  const PullRequestSimpleBase(
+      {required this.label,
+      required this.ref,
+      required this.repo,
+      required this.sha,
+      required this.user});
 
-  PullRequestSimpleBase Function({String label, String ref, Repository repo, String sha, NullableSimpleUser? user}) get copyWith => _copyWith;
+  PullRequestSimpleBase Function(
+      {String label,
+      String ref,
+      Repository repo,
+      String sha,
+      NullableSimpleUser? user}) get copyWith => _copyWith;
 
-  PullRequestSimpleBase _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => PullRequestSimpleBase(
-    label: identical(label, sdkOmittedValue) ? this.label : label as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-  );
+  PullRequestSimpleBase _copyWith(
+          {Object? label = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      PullRequestSimpleBase(
+        label: identical(label, sdkOmittedValue) ? this.label : label as String,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+      );
 
-  factory PullRequestSimpleBase.fromJson(Map<String, dynamic> json) => PullRequestSimpleBase(
-    label: (json['label'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    repo: (json['repo'] != null ? Repository.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+  factory PullRequestSimpleBase.fromJson(Map<String, dynamic> json) =>
+      PullRequestSimpleBase(
+        label: (json['label'] as String?)!,
+        ref: (json['ref'] as String?)!,
+        repo: (json['repo'] != null
+            ? Repository.fromJson(json['repo'] as Map<String, dynamic>)
+            : null)!,
+        sha: (json['sha'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'label': label,
-    'ref': ref,
-    'repo': repo.toJson(),
-    'sha': sha,
-    'user': user?.toJson(),
-  };
+        'label': label,
+        'ref': ref,
+        'repo': repo.toJson(),
+        'sha': sha,
+        'user': user?.toJson(),
+      };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class PullRequestSimpleLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Hypermedia Link
   final Link comments;
+
   /// Hypermedia Link
   final Link commits;
+
   /// Hypermedia Link
   final Link statuses;
+
   /// Hypermedia Link
   final Link html;
+
   /// Hypermedia Link
   final Link issue;
+
   /// Hypermedia Link
   final Link reviewComments;
+
   /// Hypermedia Link
   final Link reviewComment;
+
   /// Hypermedia Link
   final Link self;
 
-  const PullRequestSimpleLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self});
+  const PullRequestSimpleLinks(
+      {required this.comments,
+      required this.commits,
+      required this.statuses,
+      required this.html,
+      required this.issue,
+      required this.reviewComments,
+      required this.reviewComment,
+      required this.self});
 
-  PullRequestSimpleLinks Function({Link comments, Link commits, Link statuses, Link html, Link issue, Link reviewComments, Link reviewComment, Link self}) get copyWith => _copyWith;
+  PullRequestSimpleLinks Function(
+      {Link comments,
+      Link commits,
+      Link statuses,
+      Link html,
+      Link issue,
+      Link reviewComments,
+      Link reviewComment,
+      Link self}) get copyWith => _copyWith;
 
-  PullRequestSimpleLinks _copyWith({Object? comments = sdkOmittedValue, Object? commits = sdkOmittedValue, Object? statuses = sdkOmittedValue, Object? html = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? reviewComments = sdkOmittedValue, Object? reviewComment = sdkOmittedValue, Object? self = sdkOmittedValue}) => PullRequestSimpleLinks(
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as Link,
-    commits: identical(commits, sdkOmittedValue) ? this.commits : commits as Link,
-    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as Link,
-    html: identical(html, sdkOmittedValue) ? this.html : html as Link,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as Link,
-    reviewComments: identical(reviewComments, sdkOmittedValue) ? this.reviewComments : reviewComments as Link,
-    reviewComment: identical(reviewComment, sdkOmittedValue) ? this.reviewComment : reviewComment as Link,
-    self: identical(self, sdkOmittedValue) ? this.self : self as Link,
-  );
+  PullRequestSimpleLinks _copyWith(
+          {Object? comments = sdkOmittedValue,
+          Object? commits = sdkOmittedValue,
+          Object? statuses = sdkOmittedValue,
+          Object? html = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? reviewComments = sdkOmittedValue,
+          Object? reviewComment = sdkOmittedValue,
+          Object? self = sdkOmittedValue}) =>
+      PullRequestSimpleLinks(
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments as Link,
+        commits: identical(commits, sdkOmittedValue)
+            ? this.commits
+            : commits as Link,
+        statuses: identical(statuses, sdkOmittedValue)
+            ? this.statuses
+            : statuses as Link,
+        html: identical(html, sdkOmittedValue) ? this.html : html as Link,
+        issue: identical(issue, sdkOmittedValue) ? this.issue : issue as Link,
+        reviewComments: identical(reviewComments, sdkOmittedValue)
+            ? this.reviewComments
+            : reviewComments as Link,
+        reviewComment: identical(reviewComment, sdkOmittedValue)
+            ? this.reviewComment
+            : reviewComment as Link,
+        self: identical(self, sdkOmittedValue) ? this.self : self as Link,
+      );
 
-  factory PullRequestSimpleLinks.fromJson(Map<String, dynamic> json) => PullRequestSimpleLinks(
-    comments: (json['comments'] != null ? Link.fromJson(json['comments'] as Map<String, dynamic>) : null)!,
-    commits: (json['commits'] != null ? Link.fromJson(json['commits'] as Map<String, dynamic>) : null)!,
-    statuses: (json['statuses'] != null ? Link.fromJson(json['statuses'] as Map<String, dynamic>) : null)!,
-    html: (json['html'] != null ? Link.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    issue: (json['issue'] != null ? Link.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
-    reviewComments: (json['review_comments'] != null ? Link.fromJson(json['review_comments'] as Map<String, dynamic>) : null)!,
-    reviewComment: (json['review_comment'] != null ? Link.fromJson(json['review_comment'] as Map<String, dynamic>) : null)!,
-    self: (json['self'] != null ? Link.fromJson(json['self'] as Map<String, dynamic>) : null)!,
-  );
+  factory PullRequestSimpleLinks.fromJson(Map<String, dynamic> json) =>
+      PullRequestSimpleLinks(
+        comments: (json['comments'] != null
+            ? Link.fromJson(json['comments'] as Map<String, dynamic>)
+            : null)!,
+        commits: (json['commits'] != null
+            ? Link.fromJson(json['commits'] as Map<String, dynamic>)
+            : null)!,
+        statuses: (json['statuses'] != null
+            ? Link.fromJson(json['statuses'] as Map<String, dynamic>)
+            : null)!,
+        html: (json['html'] != null
+            ? Link.fromJson(json['html'] as Map<String, dynamic>)
+            : null)!,
+        issue: (json['issue'] != null
+            ? Link.fromJson(json['issue'] as Map<String, dynamic>)
+            : null)!,
+        reviewComments: (json['review_comments'] != null
+            ? Link.fromJson(json['review_comments'] as Map<String, dynamic>)
+            : null)!,
+        reviewComment: (json['review_comment'] != null
+            ? Link.fromJson(json['review_comment'] as Map<String, dynamic>)
+            : null)!,
+        self: (json['self'] != null
+            ? Link.fromJson(json['self'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'comments': comments.toJson(),
-    'commits': commits.toJson(),
-    'statuses': statuses.toJson(),
-    'html': html.toJson(),
-    'issue': issue.toJson(),
-    'review_comments': reviewComments.toJson(),
-    'review_comment': reviewComment.toJson(),
-    'self': self.toJson(),
-  };
+        'comments': comments.toJson(),
+        'commits': commits.toJson(),
+        'statuses': statuses.toJson(),
+        'html': html.toJson(),
+        'issue': issue.toJson(),
+        'review_comments': reviewComments.toJson(),
+        'review_comment': reviewComment.toJson(),
+        'self': self.toJson(),
+      };
 }
 
 /// Required object value serialized in the `labels[]` wire field.
 class PullRequestSimpleLabelsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `description` wire field.
   final String description;
+
   /// Required `string` value serialized in the `color` wire field.
   final String color;
+
   /// Required `boolean` value serialized in the `default` wire field.
   final bool default_;
+
   /// The user who archived the label, or `null` if it has not been archived.
   final SimpleUser? archivedBy;
 
-  const PullRequestSimpleLabelsItem({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.default_, required this.archivedBy});
+  const PullRequestSimpleLabelsItem(
+      {required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.name,
+      required this.description,
+      required this.color,
+      required this.default_,
+      required this.archivedBy});
 
-  PullRequestSimpleLabelsItem Function({int id, String nodeId, String url, String name, String description, String color, bool default_, SimpleUser? archivedBy}) get copyWith => _copyWith;
+  PullRequestSimpleLabelsItem Function(
+      {int id,
+      String nodeId,
+      String url,
+      String name,
+      String description,
+      String color,
+      bool default_,
+      SimpleUser? archivedBy}) get copyWith => _copyWith;
 
-  PullRequestSimpleLabelsItem _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? archivedBy = sdkOmittedValue}) => PullRequestSimpleLabelsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as bool,
-    archivedBy: identical(archivedBy, sdkOmittedValue) ? this.archivedBy : archivedBy as SimpleUser?,
-  );
+  PullRequestSimpleLabelsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? archivedBy = sdkOmittedValue}) =>
+      PullRequestSimpleLabelsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as bool,
+        archivedBy: identical(archivedBy, sdkOmittedValue)
+            ? this.archivedBy
+            : archivedBy as SimpleUser?,
+      );
 
-  factory PullRequestSimpleLabelsItem.fromJson(Map<String, dynamic> json) => PullRequestSimpleLabelsItem(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    name: (json['name'] as String?)!,
-    description: (json['description'] as String?)!,
-    color: (json['color'] as String?)!,
-    default_: (json['default'] as bool?)!,
-    archivedBy: json.containsKey('archived_by') ? json['archived_by'] != null ? SimpleUser.fromJson(json['archived_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'archived_by', 'Required property is missing'),
-  );
+  factory PullRequestSimpleLabelsItem.fromJson(Map<String, dynamic> json) =>
+      PullRequestSimpleLabelsItem(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        name: (json['name'] as String?)!,
+        description: (json['description'] as String?)!,
+        color: (json['color'] as String?)!,
+        default_: (json['default'] as bool?)!,
+        archivedBy: json.containsKey('archived_by')
+            ? json['archived_by'] != null
+                ? SimpleUser.fromJson(
+                    json['archived_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'archived_by', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'name': name,
-    'description': description,
-    'color': color,
-    'default': default_,
-    'archived_by': archivedBy?.toJson(),
-  };
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'name': name,
+        'description': description,
+        'color': color,
+        'default': default_,
+        'archived_by': archivedBy?.toJson(),
+      };
 }

@@ -8,152 +8,280 @@ part of 'webhook_discussion_edited.dart';
 class WebhookDiscussionEditedChangesBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `from` wire field.
   final String from;
 
   const WebhookDiscussionEditedChangesBody({required this.from});
 
-  WebhookDiscussionEditedChangesBody Function({String from}) get copyWith => _copyWith;
+  WebhookDiscussionEditedChangesBody Function({String from}) get copyWith =>
+      _copyWith;
 
-  WebhookDiscussionEditedChangesBody _copyWith({Object? from = sdkOmittedValue}) => WebhookDiscussionEditedChangesBody(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-  );
+  WebhookDiscussionEditedChangesBody _copyWith(
+          {Object? from = sdkOmittedValue}) =>
+      WebhookDiscussionEditedChangesBody(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+      );
 
-  factory WebhookDiscussionEditedChangesBody.fromJson(Map<String, dynamic> json) => WebhookDiscussionEditedChangesBody(
-    from: (json['from'] as String?)!,
-  );
+  factory WebhookDiscussionEditedChangesBody.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDiscussionEditedChangesBody(
+        from: (json['from'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'from': from,
-  };
+        'from': from,
+      };
 }
 
 /// Optional object value serialized in the `title` wire field.
 class WebhookDiscussionEditedChangesTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `from` wire field.
   final String from;
 
   const WebhookDiscussionEditedChangesTitle({required this.from});
 
-  WebhookDiscussionEditedChangesTitle Function({String from}) get copyWith => _copyWith;
+  WebhookDiscussionEditedChangesTitle Function({String from}) get copyWith =>
+      _copyWith;
 
-  WebhookDiscussionEditedChangesTitle _copyWith({Object? from = sdkOmittedValue}) => WebhookDiscussionEditedChangesTitle(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-  );
+  WebhookDiscussionEditedChangesTitle _copyWith(
+          {Object? from = sdkOmittedValue}) =>
+      WebhookDiscussionEditedChangesTitle(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+      );
 
-  factory WebhookDiscussionEditedChangesTitle.fromJson(Map<String, dynamic> json) => WebhookDiscussionEditedChangesTitle(
-    from: (json['from'] as String?)!,
-  );
+  factory WebhookDiscussionEditedChangesTitle.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDiscussionEditedChangesTitle(
+        from: (json['from'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'from': from,
-  };
+        'from': from,
+      };
 }
 
 /// Optional object value serialized in the `changes` wire field.
 class WebhookDiscussionEditedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `body` wire field.
   final SdkOptional<WebhookDiscussionEditedChangesBody> body;
+
   /// Optional object value serialized in the `title` wire field.
   final SdkOptional<WebhookDiscussionEditedChangesTitle> title;
 
-  const WebhookDiscussionEditedChanges({this.body = const SdkOmitted(), this.title = const SdkOmitted()});
+  const WebhookDiscussionEditedChanges(
+      {this.body = const SdkOmitted(), this.title = const SdkOmitted()});
 
-  WebhookDiscussionEditedChanges Function({SdkOptional<WebhookDiscussionEditedChangesBody> body, SdkOptional<WebhookDiscussionEditedChangesTitle> title}) get copyWith => _copyWith;
+  WebhookDiscussionEditedChanges Function(
+          {SdkOptional<WebhookDiscussionEditedChangesBody> body,
+          SdkOptional<WebhookDiscussionEditedChangesTitle> title})
+      get copyWith => _copyWith;
 
-  WebhookDiscussionEditedChanges _copyWith({Object? body = sdkOmittedValue, Object? title = sdkOmittedValue}) => WebhookDiscussionEditedChanges(
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<WebhookDiscussionEditedChangesBody>,
-    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<WebhookDiscussionEditedChangesTitle>,
-  );
+  WebhookDiscussionEditedChanges _copyWith(
+          {Object? body = sdkOmittedValue, Object? title = sdkOmittedValue}) =>
+      WebhookDiscussionEditedChanges(
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<WebhookDiscussionEditedChangesBody>,
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<WebhookDiscussionEditedChangesTitle>,
+      );
 
-  factory WebhookDiscussionEditedChanges.fromJson(Map<String, dynamic> json) => WebhookDiscussionEditedChanges(
-    body: json['body'] != null ? SdkPresent((json['body'] != null ? WebhookDiscussionEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    title: json['title'] != null ? SdkPresent((json['title'] != null ? WebhookDiscussionEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory WebhookDiscussionEditedChanges.fromJson(Map<String, dynamic> json) =>
+      WebhookDiscussionEditedChanges(
+        body: json['body'] != null
+            ? SdkPresent((json['body'] != null
+                ? WebhookDiscussionEditedChangesBody.fromJson(
+                    json['body'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        title: json['title'] != null
+            ? SdkPresent((json['title'] != null
+                ? WebhookDiscussionEditedChangesTitle.fromJson(
+                    json['title'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (body) {
-      SdkPresent<WebhookDiscussionEditedChangesBody>(value: final value) => {'body': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (title) {
-      SdkPresent<WebhookDiscussionEditedChangesTitle>(value: final value) => {'title': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (body) {
+          SdkPresent<WebhookDiscussionEditedChangesBody>(value: final value) =>
+            {
+              'body': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (title) {
+          SdkPresent<WebhookDiscussionEditedChangesTitle>(value: final value) =>
+            {
+              'title': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `WebhookDiscussionEdited` API schema.
 class WebhookDiscussionEdited {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookDiscussionEditedAction action;
+
   /// Optional object value serialized in the `changes` wire field.
   final SdkOptional<WebhookDiscussionEditedChanges> changes;
+
   /// A Discussion in a repository.
   final Discussion discussion;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookDiscussionEdited({required this.action, this.changes = const SdkOmitted(), required this.discussion, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.repository, required this.sender});
+  const WebhookDiscussionEdited(
+      {required this.action,
+      this.changes = const SdkOmitted(),
+      required this.discussion,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      required this.repository,
+      required this.sender});
 
-  WebhookDiscussionEdited Function({WebhookDiscussionEditedAction action, SdkOptional<WebhookDiscussionEditedChanges> changes, Discussion discussion, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookDiscussionEdited Function(
+      {WebhookDiscussionEditedAction action,
+      SdkOptional<WebhookDiscussionEditedChanges> changes,
+      Discussion discussion,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookDiscussionEdited _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? discussion = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookDiscussionEdited(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookDiscussionEditedAction,
-    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as SdkOptional<WebhookDiscussionEditedChanges>,
-    discussion: identical(discussion, sdkOmittedValue) ? this.discussion : discussion as Discussion,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookDiscussionEdited _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? changes = sdkOmittedValue,
+          Object? discussion = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookDiscussionEdited(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookDiscussionEditedAction,
+        changes: identical(changes, sdkOmittedValue)
+            ? this.changes
+            : changes as SdkOptional<WebhookDiscussionEditedChanges>,
+        discussion: identical(discussion, sdkOmittedValue)
+            ? this.discussion
+            : discussion as Discussion,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookDiscussionEdited.fromJson(Map<String, dynamic> json) => WebhookDiscussionEdited(
-    action: (json['action'] != null ? WebhookDiscussionEditedAction.fromJson(json['action'] as String) : null)!,
-    changes: json['changes'] != null ? SdkPresent((json['changes'] != null ? WebhookDiscussionEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    discussion: (json['discussion'] != null ? Discussion.fromJson(json['discussion'] as Map<String, dynamic>) : null)!,
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookDiscussionEdited.fromJson(Map<String, dynamic> json) =>
+      WebhookDiscussionEdited(
+        action: (json['action'] != null
+            ? WebhookDiscussionEditedAction.fromJson(json['action'] as String)
+            : null)!,
+        changes: json['changes'] != null
+            ? SdkPresent((json['changes'] != null
+                ? WebhookDiscussionEditedChanges.fromJson(
+                    json['changes'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        discussion: (json['discussion'] != null
+            ? Discussion.fromJson(json['discussion'] as Map<String, dynamic>)
+            : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (changes) {
-      SdkPresent<WebhookDiscussionEditedChanges>(value: final value) => {'changes': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'discussion': discussion.toJson(),
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (changes) {
+          SdkPresent<WebhookDiscussionEditedChanges>(value: final value) => {
+              'changes': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'discussion': discussion.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+      };
 }

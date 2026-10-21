@@ -8,27 +8,38 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleParamsReviewer {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the reviewer which must review changes to matching files.
   final int id;
+
   /// The type of the reviewer
   final RepositoryRuleParamsReviewerType type_;
 
   const RepositoryRuleParamsReviewer({required this.id, required this.type_});
 
-  RepositoryRuleParamsReviewer Function({int id, RepositoryRuleParamsReviewerType type_}) get copyWith => _copyWith;
+  RepositoryRuleParamsReviewer Function(
+      {int id,
+      RepositoryRuleParamsReviewerType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsReviewer _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RepositoryRuleParamsReviewer(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleParamsReviewerType,
-  );
+  RepositoryRuleParamsReviewer _copyWith(
+          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      RepositoryRuleParamsReviewer(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleParamsReviewerType,
+      );
 
-  factory RepositoryRuleParamsReviewer.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsReviewer(
-    id: ((json['id'] as num?)?.toInt())!,
-    type_: (json['type'] != null ? RepositoryRuleParamsReviewerType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RepositoryRuleParamsReviewer.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleParamsReviewer(
+        id: ((json['id'] as num?)?.toInt())!,
+        type_: (json['type'] != null
+            ? RepositoryRuleParamsReviewerType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'type': type_.toJson(),
-  };
+        'id': id,
+        'type': type_.toJson(),
+      };
 }

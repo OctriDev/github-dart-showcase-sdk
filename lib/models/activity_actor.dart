@@ -8,50 +8,88 @@ part of 'activity.dart';
 class Actor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Optional `string` value serialized in the `display_login` wire field.
   final SdkOptional<String> displayLogin;
+
   /// Required `string` value serialized in the `gravatar_id` wire field.
   final String? gravatarId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
   final String avatarUrl;
 
-  const Actor({required this.id, required this.login, this.displayLogin = const SdkOmitted(), required this.gravatarId, required this.url, required this.avatarUrl});
+  const Actor(
+      {required this.id,
+      required this.login,
+      this.displayLogin = const SdkOmitted(),
+      required this.gravatarId,
+      required this.url,
+      required this.avatarUrl});
 
-  Actor Function({int id, String login, SdkOptional<String> displayLogin, String? gravatarId, String url, String avatarUrl}) get copyWith => _copyWith;
+  Actor Function(
+      {int id,
+      String login,
+      SdkOptional<String> displayLogin,
+      String? gravatarId,
+      String url,
+      String avatarUrl}) get copyWith => _copyWith;
 
-  Actor _copyWith({Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? displayLogin = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue}) => Actor(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    displayLogin: identical(displayLogin, sdkOmittedValue) ? this.displayLogin : displayLogin as SdkOptional<String>,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
-  );
+  Actor _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? displayLogin = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue}) =>
+      Actor(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        displayLogin: identical(displayLogin, sdkOmittedValue)
+            ? this.displayLogin
+            : displayLogin as SdkOptional<String>,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String,
+      );
 
   factory Actor.fromJson(Map<String, dynamic> json) => Actor(
-    id: ((json['id'] as num?)?.toInt())!,
-    login: (json['login'] as String?)!,
-    displayLogin: json['display_login'] != null ? SdkPresent((json['display_login'] as String?)!) : const SdkOmitted(),
-    gravatarId: json.containsKey('gravatar_id') ? json['gravatar_id'] as String? : throw ArgumentError.value(null, 'gravatar_id', 'Required property is missing'),
-    url: (json['url'] as String?)!,
-    avatarUrl: (json['avatar_url'] as String?)!,
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        login: (json['login'] as String?)!,
+        displayLogin: json['display_login'] != null
+            ? SdkPresent((json['display_login'] as String?)!)
+            : const SdkOmitted(),
+        gravatarId: json.containsKey('gravatar_id')
+            ? json['gravatar_id'] as String?
+            : throw ArgumentError.value(
+                null, 'gravatar_id', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        avatarUrl: (json['avatar_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'login': login,
-    ...switch (displayLogin) {
-      SdkPresent<String>(value: final value) => {'display_login': value,},
-      _ => const <String, dynamic>{},
-    },
-    'gravatar_id': gravatarId,
-    'url': url,
-    'avatar_url': avatarUrl,
-  };
+        'id': id,
+        'login': login,
+        ...switch (displayLogin) {
+          SdkPresent<String>(value: final value) => {
+              'display_login': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'gravatar_id': gravatarId,
+        'url': url,
+        'avatar_url': avatarUrl,
+      };
 }

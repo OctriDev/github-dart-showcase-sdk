@@ -8,32 +8,43 @@ part of 'activity.dart';
 class StargazerHistory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of stars created on each day of the week, starting on Sunday.
   final List<int> days;
+
   /// The number of stars created during the week.
   final int total;
+
   /// The start of the week, given as a Unix timestamp.
   final int week;
 
-  const StargazerHistory({required this.days, required this.total, required this.week});
+  const StargazerHistory(
+      {required this.days, required this.total, required this.week});
 
-  StargazerHistory Function({List<int> days, int total, int week}) get copyWith => _copyWith;
+  StargazerHistory Function({List<int> days, int total, int week})
+      get copyWith => _copyWith;
 
-  StargazerHistory _copyWith({Object? days = sdkOmittedValue, Object? total = sdkOmittedValue, Object? week = sdkOmittedValue}) => StargazerHistory(
-    days: identical(days, sdkOmittedValue) ? this.days : days as List<int>,
-    total: identical(total, sdkOmittedValue) ? this.total : total as int,
-    week: identical(week, sdkOmittedValue) ? this.week : week as int,
-  );
+  StargazerHistory _copyWith(
+          {Object? days = sdkOmittedValue,
+          Object? total = sdkOmittedValue,
+          Object? week = sdkOmittedValue}) =>
+      StargazerHistory(
+        days: identical(days, sdkOmittedValue) ? this.days : days as List<int>,
+        total: identical(total, sdkOmittedValue) ? this.total : total as int,
+        week: identical(week, sdkOmittedValue) ? this.week : week as int,
+      );
 
-  factory StargazerHistory.fromJson(Map<String, dynamic> json) => StargazerHistory(
-    days: ((json['days'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-    total: ((json['total'] as num?)?.toInt())!,
-    week: ((json['week'] as num?)?.toInt())!,
-  );
+  factory StargazerHistory.fromJson(Map<String, dynamic> json) =>
+      StargazerHistory(
+        days:
+            ((json['days'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+        total: ((json['total'] as num?)?.toInt())!,
+        week: ((json['week'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'days': days,
-    'total': total,
-    'week': week,
-  };
+        'days': days,
+        'total': total,
+        'week': week,
+      };
 }

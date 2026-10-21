@@ -11,19 +11,23 @@ class PullRequestStacksAddResponseBase {
 
   const PullRequestStacksAddResponseBase({required this.ref});
 
-  PullRequestStacksAddResponseBase Function({String ref}) get copyWith => _copyWith;
+  PullRequestStacksAddResponseBase Function({String ref}) get copyWith =>
+      _copyWith;
 
-  PullRequestStacksAddResponseBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStacksAddResponseBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStacksAddResponseBase _copyWith({Object? ref = sdkOmittedValue}) =>
+      PullRequestStacksAddResponseBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStacksAddResponseBase.fromJson(Map<String, dynamic> json) => PullRequestStacksAddResponseBase(
-    ref: (json['ref'] as String?)!,
-  );
+  factory PullRequestStacksAddResponseBase.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStacksAddResponseBase(
+        ref: (json['ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }
 
 class PullRequestStacksAddResponse {
@@ -34,47 +38,89 @@ class PullRequestStacksAddResponse {
   final String nodeId;
   final String url;
   final PullRequestStacksAddResponseBase base_;
+
   /// Whether the stack has any open pull request. False when all pull requests are merged or closed.
   final bool open;
   final String createdAt;
   final List<PullRequestStackPullRequest> pullRequests;
 
-  const PullRequestStacksAddResponse({required this.id, required this.number, required this.nodeId, required this.url, required this.base_, required this.open, required this.createdAt, required this.pullRequests});
+  const PullRequestStacksAddResponse(
+      {required this.id,
+      required this.number,
+      required this.nodeId,
+      required this.url,
+      required this.base_,
+      required this.open,
+      required this.createdAt,
+      required this.pullRequests});
 
-  PullRequestStacksAddResponse Function({int id, int number, String nodeId, String url, PullRequestStacksAddResponseBase base_, bool open, String createdAt, List<PullRequestStackPullRequest> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksAddResponse Function(
+          {int id,
+          int number,
+          String nodeId,
+          String url,
+          PullRequestStacksAddResponseBase base_,
+          bool open,
+          String createdAt,
+          List<PullRequestStackPullRequest> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksAddResponse _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? open = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? pullRequests = sdkOmittedValue}) => PullRequestStacksAddResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStacksAddResponseBase,
-    open: identical(open, sdkOmittedValue) ? this.open : open as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestStackPullRequest>,
-  );
+  PullRequestStacksAddResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? open = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksAddResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as PullRequestStacksAddResponseBase,
+        open: identical(open, sdkOmittedValue) ? this.open : open as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<PullRequestStackPullRequest>,
+      );
 
-  factory PullRequestStacksAddResponse.fromJson(Map<String, dynamic> json) => PullRequestStacksAddResponse(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    base_: (json['base'] != null ? PullRequestStacksAddResponseBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    open: (json['open'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory PullRequestStacksAddResponse.fromJson(Map<String, dynamic> json) =>
+      PullRequestStacksAddResponse(
+        id: ((json['id'] as num?)?.toInt())!,
+        number: ((json['number'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        base_: (json['base'] != null
+            ? PullRequestStacksAddResponseBase.fromJson(
+                json['base'] as Map<String, dynamic>)
+            : null)!,
+        open: (json['open'] as bool?)!,
+        createdAt: (json['created_at'] as String?)!,
+        pullRequests: ((json['pull_requests'] as List?)
+            ?.map((e) =>
+                PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'node_id': nodeId,
-    'url': url,
-    'base': base_.toJson(),
-    'open': open,
-    'created_at': createdAt,
-    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-  };
+        'id': id,
+        'number': number,
+        'node_id': nodeId,
+        'url': url,
+        'base': base_.toJson(),
+        'open': open,
+        'created_at': createdAt,
+        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+      };
 }
 
 class PullRequestStacksUnstackResponseBase {
@@ -84,19 +130,24 @@ class PullRequestStacksUnstackResponseBase {
 
   const PullRequestStacksUnstackResponseBase({required this.ref});
 
-  PullRequestStacksUnstackResponseBase Function({String ref}) get copyWith => _copyWith;
+  PullRequestStacksUnstackResponseBase Function({String ref}) get copyWith =>
+      _copyWith;
 
-  PullRequestStacksUnstackResponseBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStacksUnstackResponseBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStacksUnstackResponseBase _copyWith(
+          {Object? ref = sdkOmittedValue}) =>
+      PullRequestStacksUnstackResponseBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStacksUnstackResponseBase.fromJson(Map<String, dynamic> json) => PullRequestStacksUnstackResponseBase(
-    ref: (json['ref'] as String?)!,
-  );
+  factory PullRequestStacksUnstackResponseBase.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStacksUnstackResponseBase(
+        ref: (json['ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }
 
 class PullRequestStacksUnstackResponse {
@@ -107,47 +158,90 @@ class PullRequestStacksUnstackResponse {
   final String nodeId;
   final String url;
   final PullRequestStacksUnstackResponseBase base_;
+
   /// Whether the stack has any open pull request. False when all pull requests are merged or closed.
   final bool open;
   final String createdAt;
   final List<PullRequestStackPullRequest> pullRequests;
 
-  const PullRequestStacksUnstackResponse({required this.id, required this.number, required this.nodeId, required this.url, required this.base_, required this.open, required this.createdAt, required this.pullRequests});
+  const PullRequestStacksUnstackResponse(
+      {required this.id,
+      required this.number,
+      required this.nodeId,
+      required this.url,
+      required this.base_,
+      required this.open,
+      required this.createdAt,
+      required this.pullRequests});
 
-  PullRequestStacksUnstackResponse Function({int id, int number, String nodeId, String url, PullRequestStacksUnstackResponseBase base_, bool open, String createdAt, List<PullRequestStackPullRequest> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksUnstackResponse Function(
+          {int id,
+          int number,
+          String nodeId,
+          String url,
+          PullRequestStacksUnstackResponseBase base_,
+          bool open,
+          String createdAt,
+          List<PullRequestStackPullRequest> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksUnstackResponse _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? open = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? pullRequests = sdkOmittedValue}) => PullRequestStacksUnstackResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStacksUnstackResponseBase,
-    open: identical(open, sdkOmittedValue) ? this.open : open as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestStackPullRequest>,
-  );
+  PullRequestStacksUnstackResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? open = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksUnstackResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as PullRequestStacksUnstackResponseBase,
+        open: identical(open, sdkOmittedValue) ? this.open : open as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<PullRequestStackPullRequest>,
+      );
 
-  factory PullRequestStacksUnstackResponse.fromJson(Map<String, dynamic> json) => PullRequestStacksUnstackResponse(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    base_: (json['base'] != null ? PullRequestStacksUnstackResponseBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    open: (json['open'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory PullRequestStacksUnstackResponse.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStacksUnstackResponse(
+        id: ((json['id'] as num?)?.toInt())!,
+        number: ((json['number'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        base_: (json['base'] != null
+            ? PullRequestStacksUnstackResponseBase.fromJson(
+                json['base'] as Map<String, dynamic>)
+            : null)!,
+        open: (json['open'] as bool?)!,
+        createdAt: (json['created_at'] as String?)!,
+        pullRequests: ((json['pull_requests'] as List?)
+            ?.map((e) =>
+                PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'node_id': nodeId,
-    'url': url,
-    'base': base_.toJson(),
-    'open': open,
-    'created_at': createdAt,
-    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-  };
+        'id': id,
+        'number': number,
+        'node_id': nodeId,
+        'url': url,
+        'base': base_.toJson(),
+        'open': open,
+        'created_at': createdAt,
+        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SearchCodeResponse {
@@ -157,27 +251,47 @@ class SearchCodeResponse {
   final bool incompleteResults;
   final List<CodeSearchResultItem> items;
 
-  const SearchCodeResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchCodeResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchCodeResponse Function({int totalCount, bool incompleteResults, List<CodeSearchResultItem> items}) get copyWith => _copyWith;
+  SearchCodeResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<CodeSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchCodeResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchCodeResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<CodeSearchResultItem>,
-  );
+  SearchCodeResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchCodeResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<CodeSearchResultItem>,
+      );
 
-  factory SearchCodeResponse.fromJson(Map<String, dynamic> json) => SearchCodeResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => CodeSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchCodeResponse.fromJson(Map<String, dynamic> json) =>
+      SearchCodeResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map(
+                (e) => CodeSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SearchCommitsResponse {
@@ -187,27 +301,47 @@ class SearchCommitsResponse {
   final bool incompleteResults;
   final List<CommitSearchResultItem> items;
 
-  const SearchCommitsResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchCommitsResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchCommitsResponse Function({int totalCount, bool incompleteResults, List<CommitSearchResultItem> items}) get copyWith => _copyWith;
+  SearchCommitsResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<CommitSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchCommitsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchCommitsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<CommitSearchResultItem>,
-  );
+  SearchCommitsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchCommitsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<CommitSearchResultItem>,
+      );
 
-  factory SearchCommitsResponse.fromJson(Map<String, dynamic> json) => SearchCommitsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => CommitSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchCommitsResponse.fromJson(Map<String, dynamic> json) =>
+      SearchCommitsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map((e) =>
+                CommitSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SearchIssuesAndPullRequestsResponse {
@@ -216,41 +350,98 @@ class SearchIssuesAndPullRequestsResponse {
   final int totalCount;
   final bool incompleteResults;
   final List<IssueSearchResultItem> items;
+
   /// The type of search that was performed. Possible values are `lexical`, `semantic`, or `hybrid`.
   final SearchIssuesAndPullRequestsResponseSearchType searchType;
+
   /// When a semantic or hybrid search falls back to lexical search, this field contains the reasons for the fallback. Only present when a fallback occurred.
-  final SdkOptional<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>> lexicalFallbackReason;
+  final SdkOptional<
+          List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>
+      lexicalFallbackReason;
 
-  const SearchIssuesAndPullRequestsResponse({required this.totalCount, required this.incompleteResults, required this.items, required this.searchType, this.lexicalFallbackReason = const SdkOmitted()});
+  const SearchIssuesAndPullRequestsResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items,
+      required this.searchType,
+      this.lexicalFallbackReason = const SdkOmitted()});
 
-  SearchIssuesAndPullRequestsResponse Function({int totalCount, bool incompleteResults, List<IssueSearchResultItem> items, SearchIssuesAndPullRequestsResponseSearchType searchType, SdkOptional<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>> lexicalFallbackReason}) get copyWith => _copyWith;
+  SearchIssuesAndPullRequestsResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<IssueSearchResultItem> items,
+      SearchIssuesAndPullRequestsResponseSearchType searchType,
+      SdkOptional<
+              List<
+                  SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>
+          lexicalFallbackReason}) get copyWith => _copyWith;
 
-  SearchIssuesAndPullRequestsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue, Object? searchType = sdkOmittedValue, Object? lexicalFallbackReason = sdkOmittedValue}) => SearchIssuesAndPullRequestsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<IssueSearchResultItem>,
-    searchType: identical(searchType, sdkOmittedValue) ? this.searchType : searchType as SearchIssuesAndPullRequestsResponseSearchType,
-    lexicalFallbackReason: identical(lexicalFallbackReason, sdkOmittedValue) ? this.lexicalFallbackReason : lexicalFallbackReason as SdkOptional<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>,
-  );
+  SearchIssuesAndPullRequestsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue,
+          Object? searchType = sdkOmittedValue,
+          Object? lexicalFallbackReason = sdkOmittedValue}) =>
+      SearchIssuesAndPullRequestsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<IssueSearchResultItem>,
+        searchType: identical(searchType, sdkOmittedValue)
+            ? this.searchType
+            : searchType as SearchIssuesAndPullRequestsResponseSearchType,
+        lexicalFallbackReason: identical(lexicalFallbackReason, sdkOmittedValue)
+            ? this.lexicalFallbackReason
+            : lexicalFallbackReason as SdkOptional<
+                List<
+                    SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>,
+      );
 
-  factory SearchIssuesAndPullRequestsResponse.fromJson(Map<String, dynamic> json) => SearchIssuesAndPullRequestsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => IssueSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    searchType: (json['search_type'] != null ? SearchIssuesAndPullRequestsResponseSearchType.fromJson(json['search_type'] as String) : null)!,
-    lexicalFallbackReason: json['lexical_fallback_reason'] != null ? SdkPresent(((json['lexical_fallback_reason'] as List?)?.map((e) => SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
-  );
+  factory SearchIssuesAndPullRequestsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      SearchIssuesAndPullRequestsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map((e) =>
+                IssueSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        searchType: (json['search_type'] != null
+            ? SearchIssuesAndPullRequestsResponseSearchType.fromJson(
+                json['search_type'] as String)
+            : null)!,
+        lexicalFallbackReason: json['lexical_fallback_reason'] != null
+            ? SdkPresent(((json['lexical_fallback_reason'] as List?)
+                ?.map((e) =>
+                    SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem
+                        .fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-    'search_type': searchType.toJson(),
-    ...switch (lexicalFallbackReason) {
-      SdkPresent<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>(value: final value) => {'lexical_fallback_reason': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+        'search_type': searchType.toJson(),
+        ...switch (lexicalFallbackReason) {
+          SdkPresent<
+                List<
+                    SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>(
+            value: final value
+          ) =>
+            {
+              'lexical_fallback_reason':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SearchLabelsResponse {
@@ -260,25 +451,45 @@ class SearchLabelsResponse {
   final bool incompleteResults;
   final List<LabelSearchResultItem> items;
 
-  const SearchLabelsResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchLabelsResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchLabelsResponse Function({int totalCount, bool incompleteResults, List<LabelSearchResultItem> items}) get copyWith => _copyWith;
+  SearchLabelsResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<LabelSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchLabelsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchLabelsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<LabelSearchResultItem>,
-  );
+  SearchLabelsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchLabelsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<LabelSearchResultItem>,
+      );
 
-  factory SearchLabelsResponse.fromJson(Map<String, dynamic> json) => SearchLabelsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => LabelSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchLabelsResponse.fromJson(Map<String, dynamic> json) =>
+      SearchLabelsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map((e) =>
+                LabelSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }

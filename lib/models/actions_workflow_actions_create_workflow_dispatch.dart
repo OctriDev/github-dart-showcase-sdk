@@ -8,34 +8,53 @@ part of 'actions_workflow.dart';
 class WorkflowDispatchResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the workflow run.
   final int workflowRunId;
+
   /// The URL to the workflow run.
   final String runUrl;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
 
-  const WorkflowDispatchResponse({required this.workflowRunId, required this.runUrl, required this.htmlUrl});
+  const WorkflowDispatchResponse(
+      {required this.workflowRunId,
+      required this.runUrl,
+      required this.htmlUrl});
 
-  WorkflowDispatchResponse Function({int workflowRunId, String runUrl, String htmlUrl}) get copyWith => _copyWith;
+  WorkflowDispatchResponse Function(
+      {int workflowRunId,
+      String runUrl,
+      String htmlUrl}) get copyWith => _copyWith;
 
-  WorkflowDispatchResponse _copyWith({Object? workflowRunId = sdkOmittedValue, Object? runUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => WorkflowDispatchResponse(
-    workflowRunId: identical(workflowRunId, sdkOmittedValue) ? this.workflowRunId : workflowRunId as int,
-    runUrl: identical(runUrl, sdkOmittedValue) ? this.runUrl : runUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-  );
+  WorkflowDispatchResponse _copyWith(
+          {Object? workflowRunId = sdkOmittedValue,
+          Object? runUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      WorkflowDispatchResponse(
+        workflowRunId: identical(workflowRunId, sdkOmittedValue)
+            ? this.workflowRunId
+            : workflowRunId as int,
+        runUrl:
+            identical(runUrl, sdkOmittedValue) ? this.runUrl : runUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+      );
 
-  factory WorkflowDispatchResponse.fromJson(Map<String, dynamic> json) => WorkflowDispatchResponse(
-    workflowRunId: ((json['workflow_run_id'] as num?)?.toInt())!,
-    runUrl: (json['run_url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-  );
+  factory WorkflowDispatchResponse.fromJson(Map<String, dynamic> json) =>
+      WorkflowDispatchResponse(
+        workflowRunId: ((json['workflow_run_id'] as num?)?.toInt())!,
+        runUrl: (json['run_url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'workflow_run_id': workflowRunId,
-    'run_url': runUrl,
-    'html_url': htmlUrl,
-  };
+        'workflow_run_id': workflowRunId,
+        'run_url': runUrl,
+        'html_url': htmlUrl,
+      };
 }
 
 // WorkflowRunId = int

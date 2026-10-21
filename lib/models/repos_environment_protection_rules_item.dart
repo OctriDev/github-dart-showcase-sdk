@@ -8,189 +8,323 @@ part of 'repos_environment.dart';
 class EnvironmentProtectionRulesItemVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
   final SdkOptional<int> waitTimer;
 
-  const EnvironmentProtectionRulesItemVariant0({required this.id, required this.nodeId, required this.type_, this.waitTimer = const SdkOmitted()});
+  const EnvironmentProtectionRulesItemVariant0(
+      {required this.id,
+      required this.nodeId,
+      required this.type_,
+      this.waitTimer = const SdkOmitted()});
 
-  EnvironmentProtectionRulesItemVariant0 Function({int id, String nodeId, String type_, SdkOptional<int> waitTimer}) get copyWith => _copyWith;
+  EnvironmentProtectionRulesItemVariant0 Function(
+      {int id,
+      String nodeId,
+      String type_,
+      SdkOptional<int> waitTimer}) get copyWith => _copyWith;
 
-  EnvironmentProtectionRulesItemVariant0 _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? waitTimer = sdkOmittedValue}) => EnvironmentProtectionRulesItemVariant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    waitTimer: identical(waitTimer, sdkOmittedValue) ? this.waitTimer : waitTimer as SdkOptional<int>,
-  );
+  EnvironmentProtectionRulesItemVariant0 _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? waitTimer = sdkOmittedValue}) =>
+      EnvironmentProtectionRulesItemVariant0(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        waitTimer: identical(waitTimer, sdkOmittedValue)
+            ? this.waitTimer
+            : waitTimer as SdkOptional<int>,
+      );
 
-  factory EnvironmentProtectionRulesItemVariant0.fromJson(Map<String, dynamic> json) => EnvironmentProtectionRulesItemVariant0(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    type_: (json['type'] as String?)!,
-    waitTimer: json['wait_timer'] != null ? SdkPresent(((json['wait_timer'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory EnvironmentProtectionRulesItemVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      EnvironmentProtectionRulesItemVariant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        type_: (json['type'] as String?)!,
+        waitTimer: json['wait_timer'] != null
+            ? SdkPresent(((json['wait_timer'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'type': type_,
-    ...switch (waitTimer) {
-      SdkPresent<int>(value: final value) => {'wait_timer': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        'type': type_,
+        ...switch (waitTimer) {
+          SdkPresent<int>(value: final value) => {
+              'wait_timer': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer();
-  factory EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer.fromJson(Object? json) {
+  factory EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer.fromJson(
+      Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(value); } } catch (_) {}
-      try { final value = Team.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(value); } } catch (_) {}
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = Team.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(Team.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer");
+    try {
+      return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(
+          Team.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer");
   }
   Object? toJson();
 }
 
-final class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser extends EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
+final class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser
+    extends EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
   final SimpleUser value;
-  const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam extends EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
+final class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam
+    extends EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
   final Team value;
-  const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(this.value);
-  @override Object? toJson() => value.toJson();
+  const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Required object value serialized in the `reviewers[]` wire field.
 class EnvironmentProtectionRulesItemVariant1ReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The type of reviewer.
   final SdkOptional<DeploymentReviewerType> type_;
+
   /// Optional API value serialized in the `reviewer` wire field.
   final SdkOptional<dynamic> reviewer;
 
-  const EnvironmentProtectionRulesItemVariant1ReviewersItem({this.type_ = const SdkOmitted(), this.reviewer = const SdkOmitted()});
+  const EnvironmentProtectionRulesItemVariant1ReviewersItem(
+      {this.type_ = const SdkOmitted(), this.reviewer = const SdkOmitted()});
 
-  EnvironmentProtectionRulesItemVariant1ReviewersItem Function({SdkOptional<DeploymentReviewerType> type_, SdkOptional<dynamic> reviewer}) get copyWith => _copyWith;
+  EnvironmentProtectionRulesItemVariant1ReviewersItem Function(
+      {SdkOptional<DeploymentReviewerType> type_,
+      SdkOptional<dynamic> reviewer}) get copyWith => _copyWith;
 
-  EnvironmentProtectionRulesItemVariant1ReviewersItem _copyWith({Object? type_ = sdkOmittedValue, Object? reviewer = sdkOmittedValue}) => EnvironmentProtectionRulesItemVariant1ReviewersItem(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<DeploymentReviewerType>,
-    reviewer: identical(reviewer, sdkOmittedValue) ? this.reviewer : reviewer as SdkOptional<dynamic>,
-  );
+  EnvironmentProtectionRulesItemVariant1ReviewersItem _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? reviewer = sdkOmittedValue}) =>
+      EnvironmentProtectionRulesItemVariant1ReviewersItem(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<DeploymentReviewerType>,
+        reviewer: identical(reviewer, sdkOmittedValue)
+            ? this.reviewer
+            : reviewer as SdkOptional<dynamic>,
+      );
 
-  factory EnvironmentProtectionRulesItemVariant1ReviewersItem.fromJson(Map<String, dynamic> json) => EnvironmentProtectionRulesItemVariant1ReviewersItem(
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    reviewer: json['reviewer'] != null ? SdkPresent((SdkUtils.unionBranch(json['reviewer'], [SimpleUser.fromJson, Team.fromJson]))!) : const SdkOmitted(),
-  );
+  factory EnvironmentProtectionRulesItemVariant1ReviewersItem.fromJson(
+          Map<String, dynamic> json) =>
+      EnvironmentProtectionRulesItemVariant1ReviewersItem(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? DeploymentReviewerType.fromJson(json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        reviewer: json['reviewer'] != null
+            ? SdkPresent((SdkUtils.unionBranch(
+                json['reviewer'], [SimpleUser.fromJson, Team.fromJson]))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<DeploymentReviewerType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reviewer) {
-      SdkPresent<dynamic>(value: final value) => {'reviewer': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<DeploymentReviewerType>(value: final value) => {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reviewer) {
+          SdkPresent<dynamic>(value: final value) => {
+              'reviewer': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `protection_rules[]` wire field.
 class EnvironmentProtectionRulesItemVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Whether deployments to this environment can be approved by the user who created the deployment.
   final SdkOptional<bool> preventSelfReview;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
-  final SdkOptional<List<EnvironmentProtectionRulesItemVariant1ReviewersItem>> reviewers;
+  final SdkOptional<List<EnvironmentProtectionRulesItemVariant1ReviewersItem>>
+      reviewers;
 
-  const EnvironmentProtectionRulesItemVariant1({required this.id, required this.nodeId, this.preventSelfReview = const SdkOmitted(), required this.type_, this.reviewers = const SdkOmitted()});
+  const EnvironmentProtectionRulesItemVariant1(
+      {required this.id,
+      required this.nodeId,
+      this.preventSelfReview = const SdkOmitted(),
+      required this.type_,
+      this.reviewers = const SdkOmitted()});
 
-  EnvironmentProtectionRulesItemVariant1 Function({int id, String nodeId, SdkOptional<bool> preventSelfReview, String type_, SdkOptional<List<EnvironmentProtectionRulesItemVariant1ReviewersItem>> reviewers}) get copyWith => _copyWith;
+  EnvironmentProtectionRulesItemVariant1 Function(
+      {int id,
+      String nodeId,
+      SdkOptional<bool> preventSelfReview,
+      String type_,
+      SdkOptional<List<EnvironmentProtectionRulesItemVariant1ReviewersItem>>
+          reviewers}) get copyWith => _copyWith;
 
-  EnvironmentProtectionRulesItemVariant1 _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? preventSelfReview = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? reviewers = sdkOmittedValue}) => EnvironmentProtectionRulesItemVariant1(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    preventSelfReview: identical(preventSelfReview, sdkOmittedValue) ? this.preventSelfReview : preventSelfReview as SdkOptional<bool>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<EnvironmentProtectionRulesItemVariant1ReviewersItem>>,
-  );
+  EnvironmentProtectionRulesItemVariant1 _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? preventSelfReview = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? reviewers = sdkOmittedValue}) =>
+      EnvironmentProtectionRulesItemVariant1(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        preventSelfReview: identical(preventSelfReview, sdkOmittedValue)
+            ? this.preventSelfReview
+            : preventSelfReview as SdkOptional<bool>,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        reviewers: identical(reviewers, sdkOmittedValue)
+            ? this.reviewers
+            : reviewers as SdkOptional<
+                List<EnvironmentProtectionRulesItemVariant1ReviewersItem>>,
+      );
 
-  factory EnvironmentProtectionRulesItemVariant1.fromJson(Map<String, dynamic> json) => EnvironmentProtectionRulesItemVariant1(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    preventSelfReview: json['prevent_self_review'] != null ? SdkPresent((json['prevent_self_review'] as bool?)!) : const SdkOmitted(),
-    type_: (json['type'] as String?)!,
-    reviewers: json['reviewers'] != null ? SdkPresent(((json['reviewers'] as List?)?.map((e) => EnvironmentProtectionRulesItemVariant1ReviewersItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory EnvironmentProtectionRulesItemVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      EnvironmentProtectionRulesItemVariant1(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        preventSelfReview: json['prevent_self_review'] != null
+            ? SdkPresent((json['prevent_self_review'] as bool?)!)
+            : const SdkOmitted(),
+        type_: (json['type'] as String?)!,
+        reviewers: json['reviewers'] != null
+            ? SdkPresent(((json['reviewers'] as List?)
+                ?.map((e) => EnvironmentProtectionRulesItemVariant1ReviewersItem
+                    .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    ...switch (preventSelfReview) {
-      SdkPresent<bool>(value: final value) => {'prevent_self_review': value,},
-      _ => const <String, dynamic>{},
-    },
-    'type': type_,
-    ...switch (reviewers) {
-      SdkPresent<List<EnvironmentProtectionRulesItemVariant1ReviewersItem>>(value: final value) => {'reviewers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        ...switch (preventSelfReview) {
+          SdkPresent<bool>(value: final value) => {
+              'prevent_self_review': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'type': type_,
+        ...switch (reviewers) {
+          SdkPresent<List<EnvironmentProtectionRulesItemVariant1ReviewersItem>>(
+            value: final value
+          ) =>
+            {
+              'reviewers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `protection_rules[]` wire field.
 class EnvironmentProtectionRulesItemVariant2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
 
-  const EnvironmentProtectionRulesItemVariant2({required this.id, required this.nodeId, required this.type_});
+  const EnvironmentProtectionRulesItemVariant2(
+      {required this.id, required this.nodeId, required this.type_});
 
-  EnvironmentProtectionRulesItemVariant2 Function({int id, String nodeId, String type_}) get copyWith => _copyWith;
+  EnvironmentProtectionRulesItemVariant2 Function(
+      {int id, String nodeId, String type_}) get copyWith => _copyWith;
 
-  EnvironmentProtectionRulesItemVariant2 _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => EnvironmentProtectionRulesItemVariant2(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-  );
+  EnvironmentProtectionRulesItemVariant2 _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      EnvironmentProtectionRulesItemVariant2(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+      );
 
-  factory EnvironmentProtectionRulesItemVariant2.fromJson(Map<String, dynamic> json) => EnvironmentProtectionRulesItemVariant2(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    type_: (json['type'] as String?)!,
-  );
+  factory EnvironmentProtectionRulesItemVariant2.fromJson(
+          Map<String, dynamic> json) =>
+      EnvironmentProtectionRulesItemVariant2(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        type_: (json['type'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'type': type_,
-  };
+        'id': id,
+        'node_id': nodeId,
+        'type': type_,
+      };
 }
 
 sealed class EnvironmentProtectionRulesItem {
@@ -199,32 +333,72 @@ sealed class EnvironmentProtectionRulesItem {
   const EnvironmentProtectionRulesItem();
   factory EnvironmentProtectionRulesItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = EnvironmentProtectionRulesItemVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(value); } } catch (_) {}
-      try { final value = EnvironmentProtectionRulesItemVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(value); } } catch (_) {}
-      try { final value = EnvironmentProtectionRulesItemVariant2.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(value); } } catch (_) {}
+      try {
+        final value = EnvironmentProtectionRulesItemVariant0.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = EnvironmentProtectionRulesItemVariant1.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = EnvironmentProtectionRulesItemVariant2.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(EnvironmentProtectionRulesItemVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(EnvironmentProtectionRulesItemVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(EnvironmentProtectionRulesItemVariant2.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for EnvironmentProtectionRulesItem");
+    try {
+      return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(
+          EnvironmentProtectionRulesItemVariant0.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(
+          EnvironmentProtectionRulesItemVariant1.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(
+          EnvironmentProtectionRulesItemVariant2.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for EnvironmentProtectionRulesItem");
   }
   Object? toJson();
 }
 
-final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0 extends EnvironmentProtectionRulesItem {
+final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0
+    extends EnvironmentProtectionRulesItem {
   final EnvironmentProtectionRulesItemVariant0 value;
-  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1 extends EnvironmentProtectionRulesItem {
+final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1
+    extends EnvironmentProtectionRulesItem {
   final EnvironmentProtectionRulesItemVariant1 value;
-  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2 extends EnvironmentProtectionRulesItem {
+final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2
+    extends EnvironmentProtectionRulesItem {
   final EnvironmentProtectionRulesItemVariant2 value;
-  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(this.value);
-  @override Object? toJson() => value.toJson();
+  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

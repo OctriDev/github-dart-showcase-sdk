@@ -8,55 +8,98 @@ part of 'git.dart';
 class Blob {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `content` wire field.
   final String content;
+
   /// Required `string` value serialized in the `encoding` wire field.
   final String encoding;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `integer` value serialized in the `size` wire field.
   final int? size;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Optional `string` value serialized in the `highlighted_content` wire field.
   final SdkOptional<String> highlightedContent;
 
-  const Blob({required this.content, required this.encoding, required this.url, required this.sha, required this.size, required this.nodeId, this.highlightedContent = const SdkOmitted()});
+  const Blob(
+      {required this.content,
+      required this.encoding,
+      required this.url,
+      required this.sha,
+      required this.size,
+      required this.nodeId,
+      this.highlightedContent = const SdkOmitted()});
 
-  Blob Function({String content, String encoding, String url, String sha, int? size, String nodeId, SdkOptional<String> highlightedContent}) get copyWith => _copyWith;
+  Blob Function(
+      {String content,
+      String encoding,
+      String url,
+      String sha,
+      int? size,
+      String nodeId,
+      SdkOptional<String> highlightedContent}) get copyWith => _copyWith;
 
-  Blob _copyWith({Object? content = sdkOmittedValue, Object? encoding = sdkOmittedValue, Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? size = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? highlightedContent = sdkOmittedValue}) => Blob(
-    content: identical(content, sdkOmittedValue) ? this.content : content as String,
-    encoding: identical(encoding, sdkOmittedValue) ? this.encoding : encoding as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    size: identical(size, sdkOmittedValue) ? this.size : size as int?,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    highlightedContent: identical(highlightedContent, sdkOmittedValue) ? this.highlightedContent : highlightedContent as SdkOptional<String>,
-  );
+  Blob _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? encoding = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? highlightedContent = sdkOmittedValue}) =>
+      Blob(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String,
+        encoding: identical(encoding, sdkOmittedValue)
+            ? this.encoding
+            : encoding as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        size: identical(size, sdkOmittedValue) ? this.size : size as int?,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        highlightedContent: identical(highlightedContent, sdkOmittedValue)
+            ? this.highlightedContent
+            : highlightedContent as SdkOptional<String>,
+      );
 
   factory Blob.fromJson(Map<String, dynamic> json) => Blob(
-    content: (json['content'] as String?)!,
-    encoding: (json['encoding'] as String?)!,
-    url: (json['url'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    size: json.containsKey('size') ? (json['size'] as num?)?.toInt() : throw ArgumentError.value(null, 'size', 'Required property is missing'),
-    nodeId: (json['node_id'] as String?)!,
-    highlightedContent: json['highlighted_content'] != null ? SdkPresent((json['highlighted_content'] as String?)!) : const SdkOmitted(),
-  );
+        content: (json['content'] as String?)!,
+        encoding: (json['encoding'] as String?)!,
+        url: (json['url'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        size: json.containsKey('size')
+            ? (json['size'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'size', 'Required property is missing'),
+        nodeId: (json['node_id'] as String?)!,
+        highlightedContent: json['highlighted_content'] != null
+            ? SdkPresent((json['highlighted_content'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content,
-    'encoding': encoding,
-    'url': url,
-    'sha': sha,
-    'size': size,
-    'node_id': nodeId,
-    ...switch (highlightedContent) {
-      SdkPresent<String>(value: final value) => {'highlighted_content': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'content': content,
+        'encoding': encoding,
+        'url': url,
+        'sha': sha,
+        'size': size,
+        'node_id': nodeId,
+        ...switch (highlightedContent) {
+          SdkPresent<String>(value: final value) => {
+              'highlighted_content': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

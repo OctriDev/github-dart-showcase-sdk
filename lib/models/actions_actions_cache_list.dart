@@ -8,102 +8,190 @@ part of 'actions_actions_cache.dart';
 class ActionsCacheListActionsCachesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `ref` wire field.
   final SdkOptional<String> ref;
+
   /// Optional `string` value serialized in the `key` wire field.
   final SdkOptional<String> key;
+
   /// Optional `string` value serialized in the `version` wire field.
   final SdkOptional<String> version;
+
   /// Optional `date-time`-formatted value serialized in the `last_accessed_at` wire field.
   final SdkOptional<String> lastAccessedAt;
+
   /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Optional `integer` value serialized in the `size_in_bytes` wire field.
   final SdkOptional<int> sizeInBytes;
 
-  const ActionsCacheListActionsCachesItem({this.id = const SdkOmitted(), this.ref = const SdkOmitted(), this.key = const SdkOmitted(), this.version = const SdkOmitted(), this.lastAccessedAt = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.sizeInBytes = const SdkOmitted()});
+  const ActionsCacheListActionsCachesItem(
+      {this.id = const SdkOmitted(),
+      this.ref = const SdkOmitted(),
+      this.key = const SdkOmitted(),
+      this.version = const SdkOmitted(),
+      this.lastAccessedAt = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.sizeInBytes = const SdkOmitted()});
 
-  ActionsCacheListActionsCachesItem Function({SdkOptional<int> id, SdkOptional<String> ref, SdkOptional<String> key, SdkOptional<String> version, SdkOptional<String> lastAccessedAt, SdkOptional<String> createdAt, SdkOptional<int> sizeInBytes}) get copyWith => _copyWith;
+  ActionsCacheListActionsCachesItem Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> ref,
+      SdkOptional<String> key,
+      SdkOptional<String> version,
+      SdkOptional<String> lastAccessedAt,
+      SdkOptional<String> createdAt,
+      SdkOptional<int> sizeInBytes}) get copyWith => _copyWith;
 
-  ActionsCacheListActionsCachesItem _copyWith({Object? id = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? key = sdkOmittedValue, Object? version = sdkOmittedValue, Object? lastAccessedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? sizeInBytes = sdkOmittedValue}) => ActionsCacheListActionsCachesItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-    key: identical(key, sdkOmittedValue) ? this.key : key as SdkOptional<String>,
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
-    lastAccessedAt: identical(lastAccessedAt, sdkOmittedValue) ? this.lastAccessedAt : lastAccessedAt as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    sizeInBytes: identical(sizeInBytes, sdkOmittedValue) ? this.sizeInBytes : sizeInBytes as SdkOptional<int>,
-  );
+  ActionsCacheListActionsCachesItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? key = sdkOmittedValue,
+          Object? version = sdkOmittedValue,
+          Object? lastAccessedAt = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? sizeInBytes = sdkOmittedValue}) =>
+      ActionsCacheListActionsCachesItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+        key: identical(key, sdkOmittedValue)
+            ? this.key
+            : key as SdkOptional<String>,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<String>,
+        lastAccessedAt: identical(lastAccessedAt, sdkOmittedValue)
+            ? this.lastAccessedAt
+            : lastAccessedAt as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        sizeInBytes: identical(sizeInBytes, sdkOmittedValue)
+            ? this.sizeInBytes
+            : sizeInBytes as SdkOptional<int>,
+      );
 
-  factory ActionsCacheListActionsCachesItem.fromJson(Map<String, dynamic> json) => ActionsCacheListActionsCachesItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-    key: json['key'] != null ? SdkPresent((json['key'] as String?)!) : const SdkOmitted(),
-    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
-    lastAccessedAt: json['last_accessed_at'] != null ? SdkPresent((json['last_accessed_at'] as String?)!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    sizeInBytes: json['size_in_bytes'] != null ? SdkPresent(((json['size_in_bytes'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory ActionsCacheListActionsCachesItem.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCacheListActionsCachesItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+        key: json['key'] != null
+            ? SdkPresent((json['key'] as String?)!)
+            : const SdkOmitted(),
+        version: json['version'] != null
+            ? SdkPresent((json['version'] as String?)!)
+            : const SdkOmitted(),
+        lastAccessedAt: json['last_accessed_at'] != null
+            ? SdkPresent((json['last_accessed_at'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        sizeInBytes: json['size_in_bytes'] != null
+            ? SdkPresent(((json['size_in_bytes'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (key) {
-      SdkPresent<String>(value: final value) => {'key': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (version) {
-      SdkPresent<String>(value: final value) => {'version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (lastAccessedAt) {
-      SdkPresent<String>(value: final value) => {'last_accessed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sizeInBytes) {
-      SdkPresent<int>(value: final value) => {'size_in_bytes': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (key) {
+          SdkPresent<String>(value: final value) => {
+              'key': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (version) {
+          SdkPresent<String>(value: final value) => {
+              'version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (lastAccessedAt) {
+          SdkPresent<String>(value: final value) => {
+              'last_accessed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sizeInBytes) {
+          SdkPresent<int>(value: final value) => {
+              'size_in_bytes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Repository actions caches
 class ActionsCacheList {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Total number of caches
   final int totalCount;
+
   /// Array of caches
   final List<ActionsCacheListActionsCachesItem> actionsCaches;
 
-  const ActionsCacheList({required this.totalCount, required this.actionsCaches});
+  const ActionsCacheList(
+      {required this.totalCount, required this.actionsCaches});
 
-  ActionsCacheList Function({int totalCount, List<ActionsCacheListActionsCachesItem> actionsCaches}) get copyWith => _copyWith;
+  ActionsCacheList Function(
+          {int totalCount,
+          List<ActionsCacheListActionsCachesItem> actionsCaches})
+      get copyWith => _copyWith;
 
-  ActionsCacheList _copyWith({Object? totalCount = sdkOmittedValue, Object? actionsCaches = sdkOmittedValue}) => ActionsCacheList(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    actionsCaches: identical(actionsCaches, sdkOmittedValue) ? this.actionsCaches : actionsCaches as List<ActionsCacheListActionsCachesItem>,
-  );
+  ActionsCacheList _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? actionsCaches = sdkOmittedValue}) =>
+      ActionsCacheList(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        actionsCaches: identical(actionsCaches, sdkOmittedValue)
+            ? this.actionsCaches
+            : actionsCaches as List<ActionsCacheListActionsCachesItem>,
+      );
 
-  factory ActionsCacheList.fromJson(Map<String, dynamic> json) => ActionsCacheList(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    actionsCaches: ((json['actions_caches'] as List?)?.map((e) => ActionsCacheListActionsCachesItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ActionsCacheList.fromJson(Map<String, dynamic> json) =>
+      ActionsCacheList(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        actionsCaches: ((json['actions_caches'] as List?)
+            ?.map((e) => ActionsCacheListActionsCachesItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'actions_caches': actionsCaches.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'actions_caches': actionsCaches.map((item) => item.toJson()).toList(),
+      };
 }

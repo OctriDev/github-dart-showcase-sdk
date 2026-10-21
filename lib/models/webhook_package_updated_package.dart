@@ -8,140 +8,303 @@ part of 'webhook_package_updated.dart';
 class WebhookPackageUpdatedPackage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Required `string` value serialized in the `ecosystem` wire field.
   final String ecosystem;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `namespace` wire field.
   final String namespace;
+
   /// Required object value serialized in the `owner` wire field.
   final WebhookPackageUpdatedPackageOwner? owner;
+
   /// Required `string` value serialized in the `package_type` wire field.
   final String packageType;
+
   /// Required object value serialized in the `package_version` wire field.
   final WebhookPackageUpdatedPackagePackageVersion packageVersion;
+
   /// Required object value serialized in the `registry` wire field.
   final WebhookPackageUpdatedPackageRegistry? registry;
+
   /// Required `string` value serialized in the `updated_at` wire field.
   final String updatedAt;
 
-  const WebhookPackageUpdatedPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt});
+  const WebhookPackageUpdatedPackage(
+      {required this.createdAt,
+      required this.description,
+      required this.ecosystem,
+      required this.htmlUrl,
+      required this.id,
+      required this.name,
+      required this.namespace,
+      required this.owner,
+      required this.packageType,
+      required this.packageVersion,
+      required this.registry,
+      required this.updatedAt});
 
-  WebhookPackageUpdatedPackage Function({String createdAt, String? description, String ecosystem, String htmlUrl, int id, String name, String namespace, WebhookPackageUpdatedPackageOwner? owner, String packageType, WebhookPackageUpdatedPackagePackageVersion packageVersion, WebhookPackageUpdatedPackageRegistry? registry, String updatedAt}) get copyWith => _copyWith;
+  WebhookPackageUpdatedPackage Function(
+      {String createdAt,
+      String? description,
+      String ecosystem,
+      String htmlUrl,
+      int id,
+      String name,
+      String namespace,
+      WebhookPackageUpdatedPackageOwner? owner,
+      String packageType,
+      WebhookPackageUpdatedPackagePackageVersion packageVersion,
+      WebhookPackageUpdatedPackageRegistry? registry,
+      String updatedAt}) get copyWith => _copyWith;
 
-  WebhookPackageUpdatedPackage _copyWith({Object? createdAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? ecosystem = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? namespace = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? packageType = sdkOmittedValue, Object? packageVersion = sdkOmittedValue, Object? registry = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => WebhookPackageUpdatedPackage(
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    namespace: identical(namespace, sdkOmittedValue) ? this.namespace : namespace as String,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as WebhookPackageUpdatedPackageOwner?,
-    packageType: identical(packageType, sdkOmittedValue) ? this.packageType : packageType as String,
-    packageVersion: identical(packageVersion, sdkOmittedValue) ? this.packageVersion : packageVersion as WebhookPackageUpdatedPackagePackageVersion,
-    registry: identical(registry, sdkOmittedValue) ? this.registry : registry as WebhookPackageUpdatedPackageRegistry?,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-  );
+  WebhookPackageUpdatedPackage _copyWith(
+          {Object? createdAt = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? ecosystem = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? namespace = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? packageType = sdkOmittedValue,
+          Object? packageVersion = sdkOmittedValue,
+          Object? registry = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      WebhookPackageUpdatedPackage(
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        namespace: identical(namespace, sdkOmittedValue)
+            ? this.namespace
+            : namespace as String,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as WebhookPackageUpdatedPackageOwner?,
+        packageType: identical(packageType, sdkOmittedValue)
+            ? this.packageType
+            : packageType as String,
+        packageVersion: identical(packageVersion, sdkOmittedValue)
+            ? this.packageVersion
+            : packageVersion as WebhookPackageUpdatedPackagePackageVersion,
+        registry: identical(registry, sdkOmittedValue)
+            ? this.registry
+            : registry as WebhookPackageUpdatedPackageRegistry?,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+      );
 
-  factory WebhookPackageUpdatedPackage.fromJson(Map<String, dynamic> json) => WebhookPackageUpdatedPackage(
-    createdAt: (json['created_at'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    ecosystem: (json['ecosystem'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    namespace: (json['namespace'] as String?)!,
-    owner: json.containsKey('owner') ? json['owner'] != null ? WebhookPackageUpdatedPackageOwner.fromJson(json['owner'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'owner', 'Required property is missing'),
-    packageType: (json['package_type'] as String?)!,
-    packageVersion: (json['package_version'] != null ? WebhookPackageUpdatedPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>) : null)!,
-    registry: json.containsKey('registry') ? json['registry'] != null ? WebhookPackageUpdatedPackageRegistry.fromJson(json['registry'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'registry', 'Required property is missing'),
-    updatedAt: (json['updated_at'] as String?)!,
-  );
+  factory WebhookPackageUpdatedPackage.fromJson(Map<String, dynamic> json) =>
+      WebhookPackageUpdatedPackage(
+        createdAt: (json['created_at'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        ecosystem: (json['ecosystem'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        namespace: (json['namespace'] as String?)!,
+        owner: json.containsKey('owner')
+            ? json['owner'] != null
+                ? WebhookPackageUpdatedPackageOwner.fromJson(
+                    json['owner'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'owner', 'Required property is missing'),
+        packageType: (json['package_type'] as String?)!,
+        packageVersion: (json['package_version'] != null
+            ? WebhookPackageUpdatedPackagePackageVersion.fromJson(
+                json['package_version'] as Map<String, dynamic>)
+            : null)!,
+        registry: json.containsKey('registry')
+            ? json['registry'] != null
+                ? WebhookPackageUpdatedPackageRegistry.fromJson(
+                    json['registry'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'registry', 'Required property is missing'),
+        updatedAt: (json['updated_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'created_at': createdAt,
-    'description': description,
-    'ecosystem': ecosystem,
-    'html_url': htmlUrl,
-    'id': id,
-    'name': name,
-    'namespace': namespace,
-    'owner': owner?.toJson(),
-    'package_type': packageType,
-    'package_version': packageVersion.toJson(),
-    'registry': registry?.toJson(),
-    'updated_at': updatedAt,
-  };
+        'created_at': createdAt,
+        'description': description,
+        'ecosystem': ecosystem,
+        'html_url': htmlUrl,
+        'id': id,
+        'name': name,
+        'namespace': namespace,
+        'owner': owner?.toJson(),
+        'package_type': packageType,
+        'package_version': packageVersion.toJson(),
+        'registry': registry?.toJson(),
+        'updated_at': updatedAt,
+      };
 }
 
 /// Typed representation of the `WebhookPackageUpdated` API schema.
 class WebhookPackageUpdated {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookPackageUpdatedAction action;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// Information about the package.
   final WebhookPackageUpdatedPackage package;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookPackageUpdated({required this.action, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.package, required this.repository, required this.sender});
+  const WebhookPackageUpdated(
+      {required this.action,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      required this.package,
+      required this.repository,
+      required this.sender});
 
-  WebhookPackageUpdated Function({WebhookPackageUpdatedAction action, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, WebhookPackageUpdatedPackage package, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookPackageUpdated Function(
+      {WebhookPackageUpdatedAction action,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      WebhookPackageUpdatedPackage package,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookPackageUpdated _copyWith({Object? action = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? package = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookPackageUpdated(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookPackageUpdatedAction,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    package: identical(package, sdkOmittedValue) ? this.package : package as WebhookPackageUpdatedPackage,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookPackageUpdated _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? package = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookPackageUpdated(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookPackageUpdatedAction,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        package: identical(package, sdkOmittedValue)
+            ? this.package
+            : package as WebhookPackageUpdatedPackage,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookPackageUpdated.fromJson(Map<String, dynamic> json) => WebhookPackageUpdated(
-    action: (json['action'] != null ? WebhookPackageUpdatedAction.fromJson(json['action'] as String) : null)!,
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    package: (json['package'] != null ? WebhookPackageUpdatedPackage.fromJson(json['package'] as Map<String, dynamic>) : null)!,
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookPackageUpdated.fromJson(Map<String, dynamic> json) =>
+      WebhookPackageUpdated(
+        action: (json['action'] != null
+            ? WebhookPackageUpdatedAction.fromJson(json['action'] as String)
+            : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        package: (json['package'] != null
+            ? WebhookPackageUpdatedPackage.fromJson(
+                json['package'] as Map<String, dynamic>)
+            : null)!,
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'package': package.toJson(),
-    'repository': repository.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'package': package.toJson(),
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+      };
 }

@@ -8,64 +8,104 @@ part of 'actions_review.dart';
 class ReviewCustomGatesCommentRequired {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the environment to approve or reject.
   final String environmentName;
+
   /// Comment associated with the pending deployment protection rule. **Required when state is not provided.**
   final String comment;
 
-  const ReviewCustomGatesCommentRequired({required this.environmentName, required this.comment});
+  const ReviewCustomGatesCommentRequired(
+      {required this.environmentName, required this.comment});
 
-  ReviewCustomGatesCommentRequired Function({String environmentName, String comment}) get copyWith => _copyWith;
+  ReviewCustomGatesCommentRequired Function(
+      {String environmentName, String comment}) get copyWith => _copyWith;
 
-  ReviewCustomGatesCommentRequired _copyWith({Object? environmentName = sdkOmittedValue, Object? comment = sdkOmittedValue}) => ReviewCustomGatesCommentRequired(
-    environmentName: identical(environmentName, sdkOmittedValue) ? this.environmentName : environmentName as String,
-    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as String,
-  );
+  ReviewCustomGatesCommentRequired _copyWith(
+          {Object? environmentName = sdkOmittedValue,
+          Object? comment = sdkOmittedValue}) =>
+      ReviewCustomGatesCommentRequired(
+        environmentName: identical(environmentName, sdkOmittedValue)
+            ? this.environmentName
+            : environmentName as String,
+        comment: identical(comment, sdkOmittedValue)
+            ? this.comment
+            : comment as String,
+      );
 
-  factory ReviewCustomGatesCommentRequired.fromJson(Map<String, dynamic> json) => ReviewCustomGatesCommentRequired(
-    environmentName: (json['environment_name'] as String?)!,
-    comment: (json['comment'] as String?)!,
-  );
+  factory ReviewCustomGatesCommentRequired.fromJson(
+          Map<String, dynamic> json) =>
+      ReviewCustomGatesCommentRequired(
+        environmentName: (json['environment_name'] as String?)!,
+        comment: (json['comment'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'environment_name': environmentName,
-    'comment': comment,
-  };
+        'environment_name': environmentName,
+        'comment': comment,
+      };
 }
 
 /// Typed representation of the `ReviewCustomGatesStateRequired` API schema.
 class ReviewCustomGatesStateRequired {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the environment to approve or reject.
   final String environmentName;
+
   /// Whether to approve or reject deployment to the specified environments.
   final ReviewCustomGatesStateRequiredState state;
+
   /// Optional comment to include with the review.
   final SdkOptional<String> comment;
 
-  const ReviewCustomGatesStateRequired({required this.environmentName, required this.state, this.comment = const SdkOmitted()});
+  const ReviewCustomGatesStateRequired(
+      {required this.environmentName,
+      required this.state,
+      this.comment = const SdkOmitted()});
 
-  ReviewCustomGatesStateRequired Function({String environmentName, ReviewCustomGatesStateRequiredState state, SdkOptional<String> comment}) get copyWith => _copyWith;
+  ReviewCustomGatesStateRequired Function(
+      {String environmentName,
+      ReviewCustomGatesStateRequiredState state,
+      SdkOptional<String> comment}) get copyWith => _copyWith;
 
-  ReviewCustomGatesStateRequired _copyWith({Object? environmentName = sdkOmittedValue, Object? state = sdkOmittedValue, Object? comment = sdkOmittedValue}) => ReviewCustomGatesStateRequired(
-    environmentName: identical(environmentName, sdkOmittedValue) ? this.environmentName : environmentName as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as ReviewCustomGatesStateRequiredState,
-    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as SdkOptional<String>,
-  );
+  ReviewCustomGatesStateRequired _copyWith(
+          {Object? environmentName = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? comment = sdkOmittedValue}) =>
+      ReviewCustomGatesStateRequired(
+        environmentName: identical(environmentName, sdkOmittedValue)
+            ? this.environmentName
+            : environmentName as String,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as ReviewCustomGatesStateRequiredState,
+        comment: identical(comment, sdkOmittedValue)
+            ? this.comment
+            : comment as SdkOptional<String>,
+      );
 
-  factory ReviewCustomGatesStateRequired.fromJson(Map<String, dynamic> json) => ReviewCustomGatesStateRequired(
-    environmentName: (json['environment_name'] as String?)!,
-    state: (json['state'] != null ? ReviewCustomGatesStateRequiredState.fromJson(json['state'] as String) : null)!,
-    comment: json['comment'] != null ? SdkPresent((json['comment'] as String?)!) : const SdkOmitted(),
-  );
+  factory ReviewCustomGatesStateRequired.fromJson(Map<String, dynamic> json) =>
+      ReviewCustomGatesStateRequired(
+        environmentName: (json['environment_name'] as String?)!,
+        state: (json['state'] != null
+            ? ReviewCustomGatesStateRequiredState.fromJson(
+                json['state'] as String)
+            : null)!,
+        comment: json['comment'] != null
+            ? SdkPresent((json['comment'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'environment_name': environmentName,
-    'state': state.toJson(),
-    ...switch (comment) {
-      SdkPresent<String>(value: final value) => {'comment': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'environment_name': environmentName,
+        'state': state.toJson(),
+        ...switch (comment) {
+          SdkPresent<String>(value: final value) => {
+              'comment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

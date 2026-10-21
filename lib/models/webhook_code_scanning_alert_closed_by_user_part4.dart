@@ -8,180 +8,427 @@ part of 'webhook_code_scanning_alert_closed_by_user.dart';
 class WebhookCodeScanningAlertClosedByUserAlert {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional array value serialized in the `assignees` wire field.
   final SdkOptional<List<SimpleUser>> assignees;
+
   /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
   final String createdAt;
+
   /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String dismissedAt;
+
   /// Required object value serialized in the `dismissed_by` wire field.
   final WebhookCodeScanningAlertClosedByUserAlertDismissedBy? dismissedBy;
+
   /// The dismissal comment associated with the dismissal of the alert.
   final SdkOptional<String?> dismissedComment;
+
   /// The reason for dismissing or closing the alert.
-  final WebhookCodeScanningAlertClosedByUserAlertDismissedReason? dismissedReason;
+  final WebhookCodeScanningAlertClosedByUserAlertDismissedReason?
+      dismissedReason;
+
   /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<dynamic> fixedAt;
+
   /// The GitHub URL of the alert resource.
   final String htmlUrl;
+
   /// Optional object value serialized in the `most_recent_instance` wire field.
-  final SdkOptional<WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?> mostRecentInstance;
+  final SdkOptional<
+          WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>
+      mostRecentInstance;
+
   /// The code scanning alert number.
   final int number;
+
   /// Required object value serialized in the `rule` wire field.
   final WebhookCodeScanningAlertClosedByUserAlertRule rule;
+
   /// State of a code scanning alert.
   final WebhookCodeScanningAlertClosedByUserAlertState state;
+
   /// Required object value serialized in the `tool` wire field.
   final WebhookCodeScanningAlertClosedByUserAlertTool tool;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Optional object value serialized in the `dismissal_approved_by` wire field.
-  final SdkOptional<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?> dismissalApprovedBy;
+  final SdkOptional<
+          WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>
+      dismissalApprovedBy;
 
-  const WebhookCodeScanningAlertClosedByUserAlert({this.assignees = const SdkOmitted(), required this.createdAt, required this.dismissedAt, required this.dismissedBy, this.dismissedComment = const SdkOmitted(), required this.dismissedReason, this.fixedAt = const SdkOmitted(), required this.htmlUrl, this.mostRecentInstance = const SdkOmitted(), required this.number, required this.rule, required this.state, required this.tool, required this.url, this.dismissalApprovedBy = const SdkOmitted()});
+  const WebhookCodeScanningAlertClosedByUserAlert(
+      {this.assignees = const SdkOmitted(),
+      required this.createdAt,
+      required this.dismissedAt,
+      required this.dismissedBy,
+      this.dismissedComment = const SdkOmitted(),
+      required this.dismissedReason,
+      this.fixedAt = const SdkOmitted(),
+      required this.htmlUrl,
+      this.mostRecentInstance = const SdkOmitted(),
+      required this.number,
+      required this.rule,
+      required this.state,
+      required this.tool,
+      required this.url,
+      this.dismissalApprovedBy = const SdkOmitted()});
 
-  WebhookCodeScanningAlertClosedByUserAlert Function({SdkOptional<List<SimpleUser>> assignees, String createdAt, String dismissedAt, WebhookCodeScanningAlertClosedByUserAlertDismissedBy? dismissedBy, SdkOptional<String?> dismissedComment, WebhookCodeScanningAlertClosedByUserAlertDismissedReason? dismissedReason, SdkOptional<dynamic> fixedAt, String htmlUrl, SdkOptional<WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?> mostRecentInstance, int number, WebhookCodeScanningAlertClosedByUserAlertRule rule, WebhookCodeScanningAlertClosedByUserAlertState state, WebhookCodeScanningAlertClosedByUserAlertTool tool, String url, SdkOptional<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?> dismissalApprovedBy}) get copyWith => _copyWith;
+  WebhookCodeScanningAlertClosedByUserAlert Function(
+      {SdkOptional<List<SimpleUser>> assignees,
+      String createdAt,
+      String dismissedAt,
+      WebhookCodeScanningAlertClosedByUserAlertDismissedBy? dismissedBy,
+      SdkOptional<String?> dismissedComment,
+      WebhookCodeScanningAlertClosedByUserAlertDismissedReason? dismissedReason,
+      SdkOptional<dynamic> fixedAt,
+      String htmlUrl,
+      SdkOptional<WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>
+          mostRecentInstance,
+      int number,
+      WebhookCodeScanningAlertClosedByUserAlertRule rule,
+      WebhookCodeScanningAlertClosedByUserAlertState state,
+      WebhookCodeScanningAlertClosedByUserAlertTool tool,
+      String url,
+      SdkOptional<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>
+          dismissalApprovedBy}) get copyWith => _copyWith;
 
-  WebhookCodeScanningAlertClosedByUserAlert _copyWith({Object? assignees = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? dismissedAt = sdkOmittedValue, Object? dismissedBy = sdkOmittedValue, Object? dismissedComment = sdkOmittedValue, Object? dismissedReason = sdkOmittedValue, Object? fixedAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? mostRecentInstance = sdkOmittedValue, Object? number = sdkOmittedValue, Object? rule = sdkOmittedValue, Object? state = sdkOmittedValue, Object? tool = sdkOmittedValue, Object? url = sdkOmittedValue, Object? dismissalApprovedBy = sdkOmittedValue}) => WebhookCodeScanningAlertClosedByUserAlert(
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<SimpleUser>>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    dismissedAt: identical(dismissedAt, sdkOmittedValue) ? this.dismissedAt : dismissedAt as String,
-    dismissedBy: identical(dismissedBy, sdkOmittedValue) ? this.dismissedBy : dismissedBy as WebhookCodeScanningAlertClosedByUserAlertDismissedBy?,
-    dismissedComment: identical(dismissedComment, sdkOmittedValue) ? this.dismissedComment : dismissedComment as SdkOptional<String?>,
-    dismissedReason: identical(dismissedReason, sdkOmittedValue) ? this.dismissedReason : dismissedReason as WebhookCodeScanningAlertClosedByUserAlertDismissedReason?,
-    fixedAt: identical(fixedAt, sdkOmittedValue) ? this.fixedAt : fixedAt as SdkOptional<dynamic>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    mostRecentInstance: identical(mostRecentInstance, sdkOmittedValue) ? this.mostRecentInstance : mostRecentInstance as SdkOptional<WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    rule: identical(rule, sdkOmittedValue) ? this.rule : rule as WebhookCodeScanningAlertClosedByUserAlertRule,
-    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookCodeScanningAlertClosedByUserAlertState,
-    tool: identical(tool, sdkOmittedValue) ? this.tool : tool as WebhookCodeScanningAlertClosedByUserAlertTool,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    dismissalApprovedBy: identical(dismissalApprovedBy, sdkOmittedValue) ? this.dismissalApprovedBy : dismissalApprovedBy as SdkOptional<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>,
-  );
+  WebhookCodeScanningAlertClosedByUserAlert _copyWith(
+          {Object? assignees = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? dismissedAt = sdkOmittedValue,
+          Object? dismissedBy = sdkOmittedValue,
+          Object? dismissedComment = sdkOmittedValue,
+          Object? dismissedReason = sdkOmittedValue,
+          Object? fixedAt = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? mostRecentInstance = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? rule = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? tool = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? dismissalApprovedBy = sdkOmittedValue}) =>
+      WebhookCodeScanningAlertClosedByUserAlert(
+        assignees: identical(assignees, sdkOmittedValue)
+            ? this.assignees
+            : assignees as SdkOptional<List<SimpleUser>>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        dismissedAt: identical(dismissedAt, sdkOmittedValue)
+            ? this.dismissedAt
+            : dismissedAt as String,
+        dismissedBy: identical(dismissedBy, sdkOmittedValue)
+            ? this.dismissedBy
+            : dismissedBy
+                as WebhookCodeScanningAlertClosedByUserAlertDismissedBy?,
+        dismissedComment: identical(dismissedComment, sdkOmittedValue)
+            ? this.dismissedComment
+            : dismissedComment as SdkOptional<String?>,
+        dismissedReason: identical(dismissedReason, sdkOmittedValue)
+            ? this.dismissedReason
+            : dismissedReason
+                as WebhookCodeScanningAlertClosedByUserAlertDismissedReason?,
+        fixedAt: identical(fixedAt, sdkOmittedValue)
+            ? this.fixedAt
+            : fixedAt as SdkOptional<dynamic>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        mostRecentInstance: identical(mostRecentInstance, sdkOmittedValue)
+            ? this.mostRecentInstance
+            : mostRecentInstance as SdkOptional<
+                WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        rule: identical(rule, sdkOmittedValue)
+            ? this.rule
+            : rule as WebhookCodeScanningAlertClosedByUserAlertRule,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as WebhookCodeScanningAlertClosedByUserAlertState,
+        tool: identical(tool, sdkOmittedValue)
+            ? this.tool
+            : tool as WebhookCodeScanningAlertClosedByUserAlertTool,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        dismissalApprovedBy: identical(dismissalApprovedBy, sdkOmittedValue)
+            ? this.dismissalApprovedBy
+            : dismissalApprovedBy as SdkOptional<
+                WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>,
+      );
 
-  factory WebhookCodeScanningAlertClosedByUserAlert.fromJson(Map<String, dynamic> json) => WebhookCodeScanningAlertClosedByUserAlert(
-    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    createdAt: (json['created_at'] as String?)!,
-    dismissedAt: (json['dismissed_at'] as String?)!,
-    dismissedBy: json.containsKey('dismissed_by') ? json['dismissed_by'] != null ? WebhookCodeScanningAlertClosedByUserAlertDismissedBy.fromJson(json['dismissed_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'dismissed_by', 'Required property is missing'),
-    dismissedComment: json.containsKey('dismissed_comment') ? SdkPresent(json['dismissed_comment'] as String?) : const SdkOmitted(),
-    dismissedReason: json.containsKey('dismissed_reason') ? json['dismissed_reason'] != null ? WebhookCodeScanningAlertClosedByUserAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null : throw ArgumentError.value(null, 'dismissed_reason', 'Required property is missing'),
-    fixedAt: json.containsKey('fixed_at') ? SdkPresent(json['fixed_at']) : const SdkOmitted(),
-    htmlUrl: (json['html_url'] as String?)!,
-    mostRecentInstance: json.containsKey('most_recent_instance') ? SdkPresent(json['most_recent_instance'] != null ? WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    number: ((json['number'] as num?)?.toInt())!,
-    rule: (json['rule'] != null ? WebhookCodeScanningAlertClosedByUserAlertRule.fromJson(json['rule'] as Map<String, dynamic>) : null)!,
-    state: (json['state'] != null ? WebhookCodeScanningAlertClosedByUserAlertState.fromJson(json['state'] as String) : null)!,
-    tool: (json['tool'] != null ? WebhookCodeScanningAlertClosedByUserAlertTool.fromJson(json['tool'] as Map<String, dynamic>) : null)!,
-    url: (json['url'] as String?)!,
-    dismissalApprovedBy: json.containsKey('dismissal_approved_by') ? SdkPresent(json['dismissal_approved_by'] != null ? WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory WebhookCodeScanningAlertClosedByUserAlert.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCodeScanningAlertClosedByUserAlert(
+        assignees: json['assignees'] != null
+            ? SdkPresent(((json['assignees'] as List?)
+                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        dismissedAt: (json['dismissed_at'] as String?)!,
+        dismissedBy: json.containsKey('dismissed_by')
+            ? json['dismissed_by'] != null
+                ? WebhookCodeScanningAlertClosedByUserAlertDismissedBy.fromJson(
+                    json['dismissed_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'dismissed_by', 'Required property is missing'),
+        dismissedComment: json.containsKey('dismissed_comment')
+            ? SdkPresent(json['dismissed_comment'] as String?)
+            : const SdkOmitted(),
+        dismissedReason: json.containsKey('dismissed_reason')
+            ? json['dismissed_reason'] != null
+                ? WebhookCodeScanningAlertClosedByUserAlertDismissedReason
+                    .fromJson(json['dismissed_reason'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'dismissed_reason', 'Required property is missing'),
+        fixedAt: json.containsKey('fixed_at')
+            ? SdkPresent(json['fixed_at'])
+            : const SdkOmitted(),
+        htmlUrl: (json['html_url'] as String?)!,
+        mostRecentInstance: json.containsKey('most_recent_instance')
+            ? SdkPresent(json['most_recent_instance'] != null
+                ? WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance
+                    .fromJson(
+                        json['most_recent_instance'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        number: ((json['number'] as num?)?.toInt())!,
+        rule: (json['rule'] != null
+            ? WebhookCodeScanningAlertClosedByUserAlertRule.fromJson(
+                json['rule'] as Map<String, dynamic>)
+            : null)!,
+        state: (json['state'] != null
+            ? WebhookCodeScanningAlertClosedByUserAlertState.fromJson(
+                json['state'] as String)
+            : null)!,
+        tool: (json['tool'] != null
+            ? WebhookCodeScanningAlertClosedByUserAlertTool.fromJson(
+                json['tool'] as Map<String, dynamic>)
+            : null)!,
+        url: (json['url'] as String?)!,
+        dismissalApprovedBy: json.containsKey('dismissal_approved_by')
+            ? SdkPresent(json['dismissal_approved_by'] != null
+                ? WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy
+                    .fromJson(
+                        json['dismissal_approved_by'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (assignees) {
-      SdkPresent<List<SimpleUser>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    'created_at': createdAt,
-    'dismissed_at': dismissedAt,
-    'dismissed_by': dismissedBy?.toJson(),
-    ...switch (dismissedComment) {
-      SdkPresent<String?>(value: final value) => {'dismissed_comment': value,},
-      _ => const <String, dynamic>{},
-    },
-    'dismissed_reason': dismissedReason?.toJson(),
-    ...switch (fixedAt) {
-      SdkPresent<dynamic>(value: final value) => {'fixed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'html_url': htmlUrl,
-    ...switch (mostRecentInstance) {
-      SdkPresent<WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>(value: final value) => {'most_recent_instance': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'number': number,
-    'rule': rule.toJson(),
-    'state': state.toJson(),
-    'tool': tool.toJson(),
-    'url': url,
-    ...switch (dismissalApprovedBy) {
-      SdkPresent<WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>(value: final value) => {'dismissal_approved_by': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (assignees) {
+          SdkPresent<List<SimpleUser>>(value: final value) => {
+              'assignees': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'created_at': createdAt,
+        'dismissed_at': dismissedAt,
+        'dismissed_by': dismissedBy?.toJson(),
+        ...switch (dismissedComment) {
+          SdkPresent<String?>(value: final value) => {
+              'dismissed_comment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'dismissed_reason': dismissedReason?.toJson(),
+        ...switch (fixedAt) {
+          SdkPresent<dynamic>(value: final value) => {
+              'fixed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'html_url': htmlUrl,
+        ...switch (mostRecentInstance) {
+          SdkPresent<
+                WebhookCodeScanningAlertClosedByUserAlertMostRecentInstance?>(
+            value: final value
+          ) =>
+            {
+              'most_recent_instance': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'number': number,
+        'rule': rule.toJson(),
+        'state': state.toJson(),
+        'tool': tool.toJson(),
+        'url': url,
+        ...switch (dismissalApprovedBy) {
+          SdkPresent<
+                WebhookCodeScanningAlertClosedByUserAlertDismissalApprovedBy?>(
+            value: final value
+          ) =>
+            {
+              'dismissal_approved_by': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `WebhookCodeScanningAlertClosedByUser` API schema.
 class WebhookCodeScanningAlertClosedByUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookCodeScanningAlertClosedByUserAction action;
+
   /// The code scanning alert involved in the event.
   final WebhookCodeScanningAlertClosedByUserAlert alert;
+
   /// The commit SHA of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
   final String commitOid;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// The Git reference of the code scanning alert. When the action is `reopened_by_user` or `closed_by_user`, the event was triggered by the `sender` and this value will be empty.
   final String ref;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookCodeScanningAlertClosedByUser({required this.action, required this.alert, required this.commitOid, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.ref, required this.repository, required this.sender});
+  const WebhookCodeScanningAlertClosedByUser(
+      {required this.action,
+      required this.alert,
+      required this.commitOid,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      required this.ref,
+      required this.repository,
+      required this.sender});
 
-  WebhookCodeScanningAlertClosedByUser Function({WebhookCodeScanningAlertClosedByUserAction action, WebhookCodeScanningAlertClosedByUserAlert alert, String commitOid, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, String ref, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookCodeScanningAlertClosedByUser Function(
+      {WebhookCodeScanningAlertClosedByUserAction action,
+      WebhookCodeScanningAlertClosedByUserAlert alert,
+      String commitOid,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      String ref,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookCodeScanningAlertClosedByUser _copyWith({Object? action = sdkOmittedValue, Object? alert = sdkOmittedValue, Object? commitOid = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookCodeScanningAlertClosedByUser(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookCodeScanningAlertClosedByUserAction,
-    alert: identical(alert, sdkOmittedValue) ? this.alert : alert as WebhookCodeScanningAlertClosedByUserAlert,
-    commitOid: identical(commitOid, sdkOmittedValue) ? this.commitOid : commitOid as String,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookCodeScanningAlertClosedByUser _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? alert = sdkOmittedValue,
+          Object? commitOid = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookCodeScanningAlertClosedByUser(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookCodeScanningAlertClosedByUserAction,
+        alert: identical(alert, sdkOmittedValue)
+            ? this.alert
+            : alert as WebhookCodeScanningAlertClosedByUserAlert,
+        commitOid: identical(commitOid, sdkOmittedValue)
+            ? this.commitOid
+            : commitOid as String,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookCodeScanningAlertClosedByUser.fromJson(Map<String, dynamic> json) => WebhookCodeScanningAlertClosedByUser(
-    action: (json['action'] != null ? WebhookCodeScanningAlertClosedByUserAction.fromJson(json['action'] as String) : null)!,
-    alert: (json['alert'] != null ? WebhookCodeScanningAlertClosedByUserAlert.fromJson(json['alert'] as Map<String, dynamic>) : null)!,
-    commitOid: (json['commit_oid'] as String?)!,
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    ref: (json['ref'] as String?)!,
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookCodeScanningAlertClosedByUser.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCodeScanningAlertClosedByUser(
+        action: (json['action'] != null
+            ? WebhookCodeScanningAlertClosedByUserAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        alert: (json['alert'] != null
+            ? WebhookCodeScanningAlertClosedByUserAlert.fromJson(
+                json['alert'] as Map<String, dynamic>)
+            : null)!,
+        commitOid: (json['commit_oid'] as String?)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        ref: (json['ref'] as String?)!,
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    'alert': alert.toJson(),
-    'commit_oid': commitOid,
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'ref': ref,
-    'repository': repository.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        'alert': alert.toJson(),
+        'commit_oid': commitOid,
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'ref': ref,
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+      };
 }

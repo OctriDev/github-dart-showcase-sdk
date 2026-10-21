@@ -8,45 +8,94 @@ part of 'webhook_projects_v2_project_deleted.dart';
 class WebhookProjectsV2ProjectDeleted {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookProjectsV2ProjectDeletedAction action;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final OrganizationSimpleWebhooks organization;
+
   /// A projects v2 project
   final ProjectsV2 projectsV2;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookProjectsV2ProjectDeleted({required this.action, this.installation = const SdkOmitted(), required this.organization, required this.projectsV2, required this.sender});
+  const WebhookProjectsV2ProjectDeleted(
+      {required this.action,
+      this.installation = const SdkOmitted(),
+      required this.organization,
+      required this.projectsV2,
+      required this.sender});
 
-  WebhookProjectsV2ProjectDeleted Function({WebhookProjectsV2ProjectDeletedAction action, SdkOptional<SimpleInstallation> installation, OrganizationSimpleWebhooks organization, ProjectsV2 projectsV2, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookProjectsV2ProjectDeleted Function(
+      {WebhookProjectsV2ProjectDeletedAction action,
+      SdkOptional<SimpleInstallation> installation,
+      OrganizationSimpleWebhooks organization,
+      ProjectsV2 projectsV2,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookProjectsV2ProjectDeleted _copyWith({Object? action = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? projectsV2 = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookProjectsV2ProjectDeleted(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookProjectsV2ProjectDeletedAction,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as OrganizationSimpleWebhooks,
-    projectsV2: identical(projectsV2, sdkOmittedValue) ? this.projectsV2 : projectsV2 as ProjectsV2,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookProjectsV2ProjectDeleted _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? projectsV2 = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookProjectsV2ProjectDeleted(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookProjectsV2ProjectDeletedAction,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as OrganizationSimpleWebhooks,
+        projectsV2: identical(projectsV2, sdkOmittedValue)
+            ? this.projectsV2
+            : projectsV2 as ProjectsV2,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookProjectsV2ProjectDeleted.fromJson(Map<String, dynamic> json) => WebhookProjectsV2ProjectDeleted(
-    action: (json['action'] != null ? WebhookProjectsV2ProjectDeletedAction.fromJson(json['action'] as String) : null)!,
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: (json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!,
-    projectsV2: (json['projects_v2'] != null ? ProjectsV2.fromJson(json['projects_v2'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookProjectsV2ProjectDeleted.fromJson(Map<String, dynamic> json) =>
+      WebhookProjectsV2ProjectDeleted(
+        action: (json['action'] != null
+            ? WebhookProjectsV2ProjectDeletedAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: (json['organization'] != null
+            ? OrganizationSimpleWebhooks.fromJson(
+                json['organization'] as Map<String, dynamic>)
+            : null)!,
+        projectsV2: (json['projects_v2'] != null
+            ? ProjectsV2.fromJson(json['projects_v2'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'organization': organization.toJson(),
-    'projects_v2': projectsV2.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'organization': organization.toJson(),
+        'projects_v2': projectsV2.toJson(),
+        'sender': sender.toJson(),
+      };
 }

@@ -9,8 +9,13 @@ sealed class CustomPropertyValueValue {
   static const String constructionSurface = 'named';
   const CustomPropertyValueValue();
   factory CustomPropertyValueValue.fromJson(Object? json) {
-    if (json is String) { return CustomPropertyValueValueString(json); }
-    if (json is List) { return CustomPropertyValueValueListString(json.map((e) => e as String).toList().cast<String>()); }
+    if (json is String) {
+      return CustomPropertyValueValueString(json);
+    }
+    if (json is List) {
+      return CustomPropertyValueValueListString(
+          json.map((e) => e as String).toList().cast<String>());
+    }
     throw FormatException("No variant matched for CustomPropertyValueValue");
   }
   Object? toJson();
@@ -19,40 +24,56 @@ sealed class CustomPropertyValueValue {
 final class CustomPropertyValueValueString extends CustomPropertyValueValue {
   final String value;
   const CustomPropertyValueValueString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class CustomPropertyValueValueListString extends CustomPropertyValueValue {
+final class CustomPropertyValueValueListString
+    extends CustomPropertyValueValue {
   final List<String> value;
   const CustomPropertyValueValueListString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Custom property name and associated value
 class CustomPropertyValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the property
   final String propertyName;
+
   /// The value assigned to the property
   final dynamic value;
 
   const CustomPropertyValue({required this.propertyName, required this.value});
 
-  CustomPropertyValue Function({String propertyName, dynamic value}) get copyWith => _copyWith;
+  CustomPropertyValue Function({String propertyName, dynamic value})
+      get copyWith => _copyWith;
 
-  CustomPropertyValue _copyWith({Object? propertyName = sdkOmittedValue, Object? value = sdkOmittedValue}) => CustomPropertyValue(
-    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
-  );
+  CustomPropertyValue _copyWith(
+          {Object? propertyName = sdkOmittedValue,
+          Object? value = sdkOmittedValue}) =>
+      CustomPropertyValue(
+        propertyName: identical(propertyName, sdkOmittedValue)
+            ? this.propertyName
+            : propertyName as String,
+        value:
+            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+      );
 
-  factory CustomPropertyValue.fromJson(Map<String, dynamic> json) => CustomPropertyValue(
-    propertyName: (json['property_name'] as String?)!,
-    value: json.containsKey('value') ? json['value'] : throw ArgumentError.value(null, 'value', 'Required property is missing'),
-  );
+  factory CustomPropertyValue.fromJson(Map<String, dynamic> json) =>
+      CustomPropertyValue(
+        propertyName: (json['property_name'] as String?)!,
+        value: json.containsKey('value')
+            ? json['value']
+            : throw ArgumentError.value(
+                null, 'value', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'property_name': propertyName,
-    'value': value,
-  };
+        'property_name': propertyName,
+        'value': value,
+      };
 }

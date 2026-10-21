@@ -8,224 +8,416 @@ part of 'security_advisories.dart';
 class RepositoryAdvisoryDescriptionValidationErrorErrorsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `resource` wire field.
   final SdkOptional<String> resource;
+
   /// Optional `string` value serialized in the `field` wire field.
   final SdkOptional<String> field;
+
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
+
   /// A machine-readable identifier for the problem. `missing_section`, `empty_section`, `unchecked_required_option`, and `sections_out_of_order` come from validating the description against the repository's report template; other codes are shared with other validation failures on this endpoint.
   final String code;
+
   /// Optional `integer` value serialized in the `index` wire field.
   final SdkOptional<int> index;
+
   /// Optional API value serialized in the `value` wire field.
   final SdkOptional<dynamic> value;
+
   /// The report template section the violation concerns.
   final SdkOptional<String> section;
+
   /// The checkbox option left unticked. Only present when `code` is `unchecked_required_option`.
   final SdkOptional<String> option;
 
-  const RepositoryAdvisoryDescriptionValidationErrorErrorsItem({this.resource = const SdkOmitted(), this.field = const SdkOmitted(), this.message = const SdkOmitted(), required this.code, this.index = const SdkOmitted(), this.value = const SdkOmitted(), this.section = const SdkOmitted(), this.option = const SdkOmitted()});
+  const RepositoryAdvisoryDescriptionValidationErrorErrorsItem(
+      {this.resource = const SdkOmitted(),
+      this.field = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      required this.code,
+      this.index = const SdkOmitted(),
+      this.value = const SdkOmitted(),
+      this.section = const SdkOmitted(),
+      this.option = const SdkOmitted()});
 
-  RepositoryAdvisoryDescriptionValidationErrorErrorsItem Function({SdkOptional<String> resource, SdkOptional<String> field, SdkOptional<String> message, String code, SdkOptional<int> index, SdkOptional<dynamic> value, SdkOptional<String> section, SdkOptional<String> option}) get copyWith => _copyWith;
+  RepositoryAdvisoryDescriptionValidationErrorErrorsItem Function(
+      {SdkOptional<String> resource,
+      SdkOptional<String> field,
+      SdkOptional<String> message,
+      String code,
+      SdkOptional<int> index,
+      SdkOptional<dynamic> value,
+      SdkOptional<String> section,
+      SdkOptional<String> option}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryDescriptionValidationErrorErrorsItem _copyWith({Object? resource = sdkOmittedValue, Object? field = sdkOmittedValue, Object? message = sdkOmittedValue, Object? code = sdkOmittedValue, Object? index = sdkOmittedValue, Object? value = sdkOmittedValue, Object? section = sdkOmittedValue, Object? option = sdkOmittedValue}) => RepositoryAdvisoryDescriptionValidationErrorErrorsItem(
-    resource: identical(resource, sdkOmittedValue) ? this.resource : resource as SdkOptional<String>,
-    field: identical(field, sdkOmittedValue) ? this.field : field as SdkOptional<String>,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
-    code: identical(code, sdkOmittedValue) ? this.code : code as String,
-    index: identical(index, sdkOmittedValue) ? this.index : index as SdkOptional<int>,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<dynamic>,
-    section: identical(section, sdkOmittedValue) ? this.section : section as SdkOptional<String>,
-    option: identical(option, sdkOmittedValue) ? this.option : option as SdkOptional<String>,
-  );
+  RepositoryAdvisoryDescriptionValidationErrorErrorsItem _copyWith(
+          {Object? resource = sdkOmittedValue,
+          Object? field = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? code = sdkOmittedValue,
+          Object? index = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? section = sdkOmittedValue,
+          Object? option = sdkOmittedValue}) =>
+      RepositoryAdvisoryDescriptionValidationErrorErrorsItem(
+        resource: identical(resource, sdkOmittedValue)
+            ? this.resource
+            : resource as SdkOptional<String>,
+        field: identical(field, sdkOmittedValue)
+            ? this.field
+            : field as SdkOptional<String>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+        code: identical(code, sdkOmittedValue) ? this.code : code as String,
+        index: identical(index, sdkOmittedValue)
+            ? this.index
+            : index as SdkOptional<int>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<dynamic>,
+        section: identical(section, sdkOmittedValue)
+            ? this.section
+            : section as SdkOptional<String>,
+        option: identical(option, sdkOmittedValue)
+            ? this.option
+            : option as SdkOptional<String>,
+      );
 
-  factory RepositoryAdvisoryDescriptionValidationErrorErrorsItem.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryDescriptionValidationErrorErrorsItem(
-    resource: json['resource'] != null ? SdkPresent((json['resource'] as String?)!) : const SdkOmitted(),
-    field: json['field'] != null ? SdkPresent((json['field'] as String?)!) : const SdkOmitted(),
-    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
-    code: (json['code'] as String?)!,
-    index: json['index'] != null ? SdkPresent(((json['index'] as num?)?.toInt())!) : const SdkOmitted(),
-    value: json.containsKey('value') ? SdkPresent(json['value']) : const SdkOmitted(),
-    section: json['section'] != null ? SdkPresent((json['section'] as String?)!) : const SdkOmitted(),
-    option: json['option'] != null ? SdkPresent((json['option'] as String?)!) : const SdkOmitted(),
-  );
+  factory RepositoryAdvisoryDescriptionValidationErrorErrorsItem.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryDescriptionValidationErrorErrorsItem(
+        resource: json['resource'] != null
+            ? SdkPresent((json['resource'] as String?)!)
+            : const SdkOmitted(),
+        field: json['field'] != null
+            ? SdkPresent((json['field'] as String?)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+        code: (json['code'] as String?)!,
+        index: json['index'] != null
+            ? SdkPresent(((json['index'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        value: json.containsKey('value')
+            ? SdkPresent(json['value'])
+            : const SdkOmitted(),
+        section: json['section'] != null
+            ? SdkPresent((json['section'] as String?)!)
+            : const SdkOmitted(),
+        option: json['option'] != null
+            ? SdkPresent((json['option'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (resource) {
-      SdkPresent<String>(value: final value) => {'resource': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (field) {
-      SdkPresent<String>(value: final value) => {'field': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (message) {
-      SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-    'code': code,
-    ...switch (index) {
-      SdkPresent<int>(value: final value) => {'index': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (value) {
-      SdkPresent<dynamic>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (section) {
-      SdkPresent<String>(value: final value) => {'section': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (option) {
-      SdkPresent<String>(value: final value) => {'option': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (resource) {
+          SdkPresent<String>(value: final value) => {
+              'resource': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (field) {
+          SdkPresent<String>(value: final value) => {
+              'field': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'code': code,
+        ...switch (index) {
+          SdkPresent<int>(value: final value) => {
+              'index': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (value) {
+          SdkPresent<dynamic>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (section) {
+          SdkPresent<String>(value: final value) => {
+              'section': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (option) {
+          SdkPresent<String>(value: final value) => {
+              'option': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The description does not answer the repository's report template.
 class RepositoryAdvisoryDescriptionValidationError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `documentation_url` wire field.
   final String documentationUrl;
+
   /// Optional array value serialized in the `errors` wire field.
-  final SdkOptional<List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>> errors;
+  final SdkOptional<
+      List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>> errors;
 
-  const RepositoryAdvisoryDescriptionValidationError({required this.message, required this.documentationUrl, this.errors = const SdkOmitted()});
+  const RepositoryAdvisoryDescriptionValidationError(
+      {required this.message,
+      required this.documentationUrl,
+      this.errors = const SdkOmitted()});
 
-  RepositoryAdvisoryDescriptionValidationError Function({String message, String documentationUrl, SdkOptional<List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>> errors}) get copyWith => _copyWith;
+  RepositoryAdvisoryDescriptionValidationError Function(
+      {String message,
+      String documentationUrl,
+      SdkOptional<List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>>
+          errors}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryDescriptionValidationError _copyWith({Object? message = sdkOmittedValue, Object? documentationUrl = sdkOmittedValue, Object? errors = sdkOmittedValue}) => RepositoryAdvisoryDescriptionValidationError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    documentationUrl: identical(documentationUrl, sdkOmittedValue) ? this.documentationUrl : documentationUrl as String,
-    errors: identical(errors, sdkOmittedValue) ? this.errors : errors as SdkOptional<List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>>,
-  );
+  RepositoryAdvisoryDescriptionValidationError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? documentationUrl = sdkOmittedValue,
+          Object? errors = sdkOmittedValue}) =>
+      RepositoryAdvisoryDescriptionValidationError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        documentationUrl: identical(documentationUrl, sdkOmittedValue)
+            ? this.documentationUrl
+            : documentationUrl as String,
+        errors: identical(errors, sdkOmittedValue)
+            ? this.errors
+            : errors as SdkOptional<
+                List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>>,
+      );
 
-  factory RepositoryAdvisoryDescriptionValidationError.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryDescriptionValidationError(
-    message: (json['message'] as String?)!,
-    documentationUrl: (json['documentation_url'] as String?)!,
-    errors: json['errors'] != null ? SdkPresent(((json['errors'] as List?)?.map((e) => RepositoryAdvisoryDescriptionValidationErrorErrorsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory RepositoryAdvisoryDescriptionValidationError.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryDescriptionValidationError(
+        message: (json['message'] as String?)!,
+        documentationUrl: (json['documentation_url'] as String?)!,
+        errors: json['errors'] != null
+            ? SdkPresent(((json['errors'] as List?)
+                ?.map((e) =>
+                    RepositoryAdvisoryDescriptionValidationErrorErrorsItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'documentation_url': documentationUrl,
-    ...switch (errors) {
-      SdkPresent<List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>>(value: final value) => {'errors': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'message': message,
+        'documentation_url': documentationUrl,
+        ...switch (errors) {
+          SdkPresent<
+                List<RepositoryAdvisoryDescriptionValidationErrorErrorsItem>>(
+            value: final value
+          ) =>
+            {
+              'errors': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The name of the package affected by the vulnerability.
 class RepositoryAdvisoryUpdateVulnerabilitiesItemPackage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The package's language or package management ecosystem.
   final SecurityAdvisoryEcosystems ecosystem;
+
   /// The unique package name within its ecosystem.
   final SdkOptional<String?> name;
 
-  const RepositoryAdvisoryUpdateVulnerabilitiesItemPackage({required this.ecosystem, this.name = const SdkOmitted()});
+  const RepositoryAdvisoryUpdateVulnerabilitiesItemPackage(
+      {required this.ecosystem, this.name = const SdkOmitted()});
 
-  RepositoryAdvisoryUpdateVulnerabilitiesItemPackage Function({SecurityAdvisoryEcosystems ecosystem, SdkOptional<String?> name}) get copyWith => _copyWith;
+  RepositoryAdvisoryUpdateVulnerabilitiesItemPackage Function(
+      {SecurityAdvisoryEcosystems ecosystem,
+      SdkOptional<String?> name}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryUpdateVulnerabilitiesItemPackage _copyWith({Object? ecosystem = sdkOmittedValue, Object? name = sdkOmittedValue}) => RepositoryAdvisoryUpdateVulnerabilitiesItemPackage(
-    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as SecurityAdvisoryEcosystems,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-  );
+  RepositoryAdvisoryUpdateVulnerabilitiesItemPackage _copyWith(
+          {Object? ecosystem = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      RepositoryAdvisoryUpdateVulnerabilitiesItemPackage(
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as SecurityAdvisoryEcosystems,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+      );
 
-  factory RepositoryAdvisoryUpdateVulnerabilitiesItemPackage.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryUpdateVulnerabilitiesItemPackage(
-    ecosystem: (json['ecosystem'] != null ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String) : null)!,
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-  );
+  factory RepositoryAdvisoryUpdateVulnerabilitiesItemPackage.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryUpdateVulnerabilitiesItemPackage(
+        ecosystem: (json['ecosystem'] != null
+            ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String)
+            : null)!,
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'ecosystem': ecosystem.toJson(),
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'ecosystem': ecosystem.toJson(),
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `vulnerabilities[]` wire field.
 class RepositoryAdvisoryUpdateVulnerabilitiesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the package affected by the vulnerability.
   final RepositoryAdvisoryUpdateVulnerabilitiesItemPackage package;
+
   /// The range of the package versions affected by the vulnerability.
   final SdkOptional<String?> vulnerableVersionRange;
+
   /// The package version(s) that resolve the vulnerability.
   final SdkOptional<String?> patchedVersions;
+
   /// The functions in the package that are affected.
   final SdkOptional<List<String>?> vulnerableFunctions;
 
-  const RepositoryAdvisoryUpdateVulnerabilitiesItem({required this.package, this.vulnerableVersionRange = const SdkOmitted(), this.patchedVersions = const SdkOmitted(), this.vulnerableFunctions = const SdkOmitted()});
+  const RepositoryAdvisoryUpdateVulnerabilitiesItem(
+      {required this.package,
+      this.vulnerableVersionRange = const SdkOmitted(),
+      this.patchedVersions = const SdkOmitted(),
+      this.vulnerableFunctions = const SdkOmitted()});
 
-  RepositoryAdvisoryUpdateVulnerabilitiesItem Function({RepositoryAdvisoryUpdateVulnerabilitiesItemPackage package, SdkOptional<String?> vulnerableVersionRange, SdkOptional<String?> patchedVersions, SdkOptional<List<String>?> vulnerableFunctions}) get copyWith => _copyWith;
+  RepositoryAdvisoryUpdateVulnerabilitiesItem Function(
+          {RepositoryAdvisoryUpdateVulnerabilitiesItemPackage package,
+          SdkOptional<String?> vulnerableVersionRange,
+          SdkOptional<String?> patchedVersions,
+          SdkOptional<List<String>?> vulnerableFunctions})
+      get copyWith => _copyWith;
 
-  RepositoryAdvisoryUpdateVulnerabilitiesItem _copyWith({Object? package = sdkOmittedValue, Object? vulnerableVersionRange = sdkOmittedValue, Object? patchedVersions = sdkOmittedValue, Object? vulnerableFunctions = sdkOmittedValue}) => RepositoryAdvisoryUpdateVulnerabilitiesItem(
-    package: identical(package, sdkOmittedValue) ? this.package : package as RepositoryAdvisoryUpdateVulnerabilitiesItemPackage,
-    vulnerableVersionRange: identical(vulnerableVersionRange, sdkOmittedValue) ? this.vulnerableVersionRange : vulnerableVersionRange as SdkOptional<String?>,
-    patchedVersions: identical(patchedVersions, sdkOmittedValue) ? this.patchedVersions : patchedVersions as SdkOptional<String?>,
-    vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue) ? this.vulnerableFunctions : vulnerableFunctions as SdkOptional<List<String>?>,
-  );
+  RepositoryAdvisoryUpdateVulnerabilitiesItem _copyWith(
+          {Object? package = sdkOmittedValue,
+          Object? vulnerableVersionRange = sdkOmittedValue,
+          Object? patchedVersions = sdkOmittedValue,
+          Object? vulnerableFunctions = sdkOmittedValue}) =>
+      RepositoryAdvisoryUpdateVulnerabilitiesItem(
+        package: identical(package, sdkOmittedValue)
+            ? this.package
+            : package as RepositoryAdvisoryUpdateVulnerabilitiesItemPackage,
+        vulnerableVersionRange:
+            identical(vulnerableVersionRange, sdkOmittedValue)
+                ? this.vulnerableVersionRange
+                : vulnerableVersionRange as SdkOptional<String?>,
+        patchedVersions: identical(patchedVersions, sdkOmittedValue)
+            ? this.patchedVersions
+            : patchedVersions as SdkOptional<String?>,
+        vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue)
+            ? this.vulnerableFunctions
+            : vulnerableFunctions as SdkOptional<List<String>?>,
+      );
 
-  factory RepositoryAdvisoryUpdateVulnerabilitiesItem.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryUpdateVulnerabilitiesItem(
-    package: (json['package'] != null ? RepositoryAdvisoryUpdateVulnerabilitiesItemPackage.fromJson(json['package'] as Map<String, dynamic>) : null)!,
-    vulnerableVersionRange: json.containsKey('vulnerable_version_range') ? SdkPresent(json['vulnerable_version_range'] as String?) : const SdkOmitted(),
-    patchedVersions: json.containsKey('patched_versions') ? SdkPresent(json['patched_versions'] as String?) : const SdkOmitted(),
-    vulnerableFunctions: json.containsKey('vulnerable_functions') ? SdkPresent((json['vulnerable_functions'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
-  );
+  factory RepositoryAdvisoryUpdateVulnerabilitiesItem.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryUpdateVulnerabilitiesItem(
+        package: (json['package'] != null
+            ? RepositoryAdvisoryUpdateVulnerabilitiesItemPackage.fromJson(
+                json['package'] as Map<String, dynamic>)
+            : null)!,
+        vulnerableVersionRange: json.containsKey('vulnerable_version_range')
+            ? SdkPresent(json['vulnerable_version_range'] as String?)
+            : const SdkOmitted(),
+        patchedVersions: json.containsKey('patched_versions')
+            ? SdkPresent(json['patched_versions'] as String?)
+            : const SdkOmitted(),
+        vulnerableFunctions: json.containsKey('vulnerable_functions')
+            ? SdkPresent((json['vulnerable_functions'] as List?)
+                ?.map((e) => e as String)
+                .toList())
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'package': package.toJson(),
-    ...switch (vulnerableVersionRange) {
-      SdkPresent<String?>(value: final value) => {'vulnerable_version_range': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (patchedVersions) {
-      SdkPresent<String?>(value: final value) => {'patched_versions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (vulnerableFunctions) {
-      SdkPresent<List<String>?>(value: final value) => {'vulnerable_functions': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'package': package.toJson(),
+        ...switch (vulnerableVersionRange) {
+          SdkPresent<String?>(value: final value) => {
+              'vulnerable_version_range': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (patchedVersions) {
+          SdkPresent<String?>(value: final value) => {
+              'patched_versions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (vulnerableFunctions) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'vulnerable_functions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `credits[]` wire field.
 class RepositoryAdvisoryUpdateCreditsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The username of the user credited.
   final String login;
+
   /// The type of credit the user is receiving.
   final SecurityAdvisoryCreditTypes type_;
 
-  const RepositoryAdvisoryUpdateCreditsItem({required this.login, required this.type_});
+  const RepositoryAdvisoryUpdateCreditsItem(
+      {required this.login, required this.type_});
 
-  RepositoryAdvisoryUpdateCreditsItem Function({String login, SecurityAdvisoryCreditTypes type_}) get copyWith => _copyWith;
+  RepositoryAdvisoryUpdateCreditsItem Function(
+      {String login,
+      SecurityAdvisoryCreditTypes type_}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryUpdateCreditsItem _copyWith({Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RepositoryAdvisoryUpdateCreditsItem(
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SecurityAdvisoryCreditTypes,
-  );
+  RepositoryAdvisoryUpdateCreditsItem _copyWith(
+          {Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      RepositoryAdvisoryUpdateCreditsItem(
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SecurityAdvisoryCreditTypes,
+      );
 
-  factory RepositoryAdvisoryUpdateCreditsItem.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryUpdateCreditsItem(
-    login: (json['login'] as String?)!,
-    type_: (json['type'] != null ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String) : null)!,
-  );
+  factory RepositoryAdvisoryUpdateCreditsItem.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryUpdateCreditsItem(
+        login: (json['login'] as String?)!,
+        type_: (json['type'] != null
+            ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'login': login,
-    'type': type_.toJson(),
-  };
+        'login': login,
+        'type': type_.toJson(),
+      };
 }

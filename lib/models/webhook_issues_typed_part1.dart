@@ -8,66 +8,151 @@ part of 'webhook_issues_typed.dart';
 class WebhookIssuesTyped {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookIssuesTypedAction action;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
   final WebhooksIssue issue;
+
   /// The type assigned to the issue. This is only present for issues in repositories where issue types are supported.
   final IssueType? type_;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookIssuesTyped({required this.action, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), required this.issue, required this.type_, this.organization = const SdkOmitted(), required this.repository, required this.sender});
+  const WebhookIssuesTyped(
+      {required this.action,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      required this.issue,
+      required this.type_,
+      this.organization = const SdkOmitted(),
+      required this.repository,
+      required this.sender});
 
-  WebhookIssuesTyped Function({WebhookIssuesTypedAction action, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, WebhooksIssue issue, IssueType? type_, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookIssuesTyped Function(
+      {WebhookIssuesTypedAction action,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      WebhooksIssue issue,
+      IssueType? type_,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookIssuesTyped _copyWith({Object? action = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookIssuesTyped(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookIssuesTypedAction,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as WebhooksIssue,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as IssueType?,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookIssuesTyped _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookIssuesTyped(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookIssuesTypedAction,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue as WebhooksIssue,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as IssueType?,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookIssuesTyped.fromJson(Map<String, dynamic> json) => WebhookIssuesTyped(
-    action: (json['action'] != null ? WebhookIssuesTypedAction.fromJson(json['action'] as String) : null)!,
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    issue: (json['issue'] != null ? WebhooksIssue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
-    type_: json.containsKey('type') ? json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'type', 'Required property is missing'),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookIssuesTyped.fromJson(Map<String, dynamic> json) =>
+      WebhookIssuesTyped(
+        action: (json['action'] != null
+            ? WebhookIssuesTypedAction.fromJson(json['action'] as String)
+            : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        issue: (json['issue'] != null
+            ? WebhooksIssue.fromJson(json['issue'] as Map<String, dynamic>)
+            : null)!,
+        type_: json.containsKey('type')
+            ? json['type'] != null
+                ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'type', 'Required property is missing'),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'issue': issue.toJson(),
-    'type': type_?.toJson(),
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'issue': issue.toJson(),
+        'type': type_?.toJson(),
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+      };
 }

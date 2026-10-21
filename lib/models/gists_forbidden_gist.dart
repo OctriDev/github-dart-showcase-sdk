@@ -8,84 +8,150 @@ part of 'gists.dart';
 class ForbiddenGistBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `reason` wire field.
   final SdkOptional<String> reason;
+
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String?> htmlUrl;
 
-  const ForbiddenGistBlock({this.reason = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.htmlUrl = const SdkOmitted()});
+  const ForbiddenGistBlock(
+      {this.reason = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted()});
 
-  ForbiddenGistBlock Function({SdkOptional<String> reason, SdkOptional<String> createdAt, SdkOptional<String?> htmlUrl}) get copyWith => _copyWith;
+  ForbiddenGistBlock Function(
+      {SdkOptional<String> reason,
+      SdkOptional<String> createdAt,
+      SdkOptional<String?> htmlUrl}) get copyWith => _copyWith;
 
-  ForbiddenGistBlock _copyWith({Object? reason = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => ForbiddenGistBlock(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String?>,
-  );
+  ForbiddenGistBlock _copyWith(
+          {Object? reason = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      ForbiddenGistBlock(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String?>,
+      );
 
-  factory ForbiddenGistBlock.fromJson(Map<String, dynamic> json) => ForbiddenGistBlock(
-    reason: json['reason'] != null ? SdkPresent((json['reason'] as String?)!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json.containsKey('html_url') ? SdkPresent(json['html_url'] as String?) : const SdkOmitted(),
-  );
+  factory ForbiddenGistBlock.fromJson(Map<String, dynamic> json) =>
+      ForbiddenGistBlock(
+        reason: json['reason'] != null
+            ? SdkPresent((json['reason'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json.containsKey('html_url')
+            ? SdkPresent(json['html_url'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (reason) {
-      SdkPresent<String>(value: final value) => {'reason': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String?>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reason) {
+          SdkPresent<String>(value: final value) => {
+              'reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `ForbiddenGist` API schema.
 class ForbiddenGist {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `block` wire field.
   final SdkOptional<ForbiddenGistBlock> block;
+
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
+
   /// Optional `string` value serialized in the `documentation_url` wire field.
   final SdkOptional<String> documentationUrl;
 
-  const ForbiddenGist({this.block = const SdkOmitted(), this.message = const SdkOmitted(), this.documentationUrl = const SdkOmitted()});
+  const ForbiddenGist(
+      {this.block = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      this.documentationUrl = const SdkOmitted()});
 
-  ForbiddenGist Function({SdkOptional<ForbiddenGistBlock> block, SdkOptional<String> message, SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
+  ForbiddenGist Function(
+      {SdkOptional<ForbiddenGistBlock> block,
+      SdkOptional<String> message,
+      SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
 
-  ForbiddenGist _copyWith({Object? block = sdkOmittedValue, Object? message = sdkOmittedValue, Object? documentationUrl = sdkOmittedValue}) => ForbiddenGist(
-    block: identical(block, sdkOmittedValue) ? this.block : block as SdkOptional<ForbiddenGistBlock>,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
-    documentationUrl: identical(documentationUrl, sdkOmittedValue) ? this.documentationUrl : documentationUrl as SdkOptional<String>,
-  );
+  ForbiddenGist _copyWith(
+          {Object? block = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? documentationUrl = sdkOmittedValue}) =>
+      ForbiddenGist(
+        block: identical(block, sdkOmittedValue)
+            ? this.block
+            : block as SdkOptional<ForbiddenGistBlock>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+        documentationUrl: identical(documentationUrl, sdkOmittedValue)
+            ? this.documentationUrl
+            : documentationUrl as SdkOptional<String>,
+      );
 
   factory ForbiddenGist.fromJson(Map<String, dynamic> json) => ForbiddenGist(
-    block: json['block'] != null ? SdkPresent((json['block'] != null ? ForbiddenGistBlock.fromJson(json['block'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
-    documentationUrl: json['documentation_url'] != null ? SdkPresent((json['documentation_url'] as String?)!) : const SdkOmitted(),
-  );
+        block: json['block'] != null
+            ? SdkPresent((json['block'] != null
+                ? ForbiddenGistBlock.fromJson(
+                    json['block'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+        documentationUrl: json['documentation_url'] != null
+            ? SdkPresent((json['documentation_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (block) {
-      SdkPresent<ForbiddenGistBlock>(value: final value) => {'block': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (message) {
-      SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (documentationUrl) {
-      SdkPresent<String>(value: final value) => {'documentation_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (block) {
+          SdkPresent<ForbiddenGistBlock>(value: final value) => {
+              'block': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (documentationUrl) {
+          SdkPresent<String>(value: final value) => {
+              'documentation_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

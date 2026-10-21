@@ -8,27 +8,38 @@ part of 'activity.dart';
 class MemberEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `action` wire field.
   final String action;
+
   /// A GitHub user.
   final SimpleUser member;
 
   const MemberEvent({required this.action, required this.member});
 
-  MemberEvent Function({String action, SimpleUser member}) get copyWith => _copyWith;
+  MemberEvent Function({String action, SimpleUser member}) get copyWith =>
+      _copyWith;
 
-  MemberEvent _copyWith({Object? action = sdkOmittedValue, Object? member = sdkOmittedValue}) => MemberEvent(
-    action: identical(action, sdkOmittedValue) ? this.action : action as String,
-    member: identical(member, sdkOmittedValue) ? this.member : member as SimpleUser,
-  );
+  MemberEvent _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? member = sdkOmittedValue}) =>
+      MemberEvent(
+        action:
+            identical(action, sdkOmittedValue) ? this.action : action as String,
+        member: identical(member, sdkOmittedValue)
+            ? this.member
+            : member as SimpleUser,
+      );
 
   factory MemberEvent.fromJson(Map<String, dynamic> json) => MemberEvent(
-    action: (json['action'] as String?)!,
-    member: (json['member'] != null ? SimpleUser.fromJson(json['member'] as Map<String, dynamic>) : null)!,
-  );
+        action: (json['action'] as String?)!,
+        member: (json['member'] != null
+            ? SimpleUser.fromJson(json['member'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action,
-    'member': member.toJson(),
-  };
+        'action': action,
+        'member': member.toJson(),
+      };
 }

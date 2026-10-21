@@ -8,120 +8,234 @@ part of 'webhook_sponsorship_edited.dart';
 class WebhookSponsorshipEditedChangesPrivacyLevel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The `edited` event types include the details about the change when someone edits a sponsorship to change the privacy.
   final String from;
 
   const WebhookSponsorshipEditedChangesPrivacyLevel({required this.from});
 
-  WebhookSponsorshipEditedChangesPrivacyLevel Function({String from}) get copyWith => _copyWith;
+  WebhookSponsorshipEditedChangesPrivacyLevel Function({String from})
+      get copyWith => _copyWith;
 
-  WebhookSponsorshipEditedChangesPrivacyLevel _copyWith({Object? from = sdkOmittedValue}) => WebhookSponsorshipEditedChangesPrivacyLevel(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-  );
+  WebhookSponsorshipEditedChangesPrivacyLevel _copyWith(
+          {Object? from = sdkOmittedValue}) =>
+      WebhookSponsorshipEditedChangesPrivacyLevel(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+      );
 
-  factory WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(Map<String, dynamic> json) => WebhookSponsorshipEditedChangesPrivacyLevel(
-    from: (json['from'] as String?)!,
-  );
+  factory WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookSponsorshipEditedChangesPrivacyLevel(
+        from: (json['from'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'from': from,
-  };
+        'from': from,
+      };
 }
 
 /// Required object value serialized in the `changes` wire field.
 class WebhookSponsorshipEditedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `privacy_level` wire field.
   final SdkOptional<WebhookSponsorshipEditedChangesPrivacyLevel> privacyLevel;
 
-  const WebhookSponsorshipEditedChanges({this.privacyLevel = const SdkOmitted()});
+  const WebhookSponsorshipEditedChanges(
+      {this.privacyLevel = const SdkOmitted()});
 
-  WebhookSponsorshipEditedChanges Function({SdkOptional<WebhookSponsorshipEditedChangesPrivacyLevel> privacyLevel}) get copyWith => _copyWith;
+  WebhookSponsorshipEditedChanges Function(
+      {SdkOptional<WebhookSponsorshipEditedChangesPrivacyLevel>
+          privacyLevel}) get copyWith => _copyWith;
 
-  WebhookSponsorshipEditedChanges _copyWith({Object? privacyLevel = sdkOmittedValue}) => WebhookSponsorshipEditedChanges(
-    privacyLevel: identical(privacyLevel, sdkOmittedValue) ? this.privacyLevel : privacyLevel as SdkOptional<WebhookSponsorshipEditedChangesPrivacyLevel>,
-  );
+  WebhookSponsorshipEditedChanges _copyWith(
+          {Object? privacyLevel = sdkOmittedValue}) =>
+      WebhookSponsorshipEditedChanges(
+        privacyLevel: identical(privacyLevel, sdkOmittedValue)
+            ? this.privacyLevel
+            : privacyLevel
+                as SdkOptional<WebhookSponsorshipEditedChangesPrivacyLevel>,
+      );
 
-  factory WebhookSponsorshipEditedChanges.fromJson(Map<String, dynamic> json) => WebhookSponsorshipEditedChanges(
-    privacyLevel: json['privacy_level'] != null ? SdkPresent((json['privacy_level'] != null ? WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(json['privacy_level'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory WebhookSponsorshipEditedChanges.fromJson(Map<String, dynamic> json) =>
+      WebhookSponsorshipEditedChanges(
+        privacyLevel: json['privacy_level'] != null
+            ? SdkPresent((json['privacy_level'] != null
+                ? WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(
+                    json['privacy_level'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (privacyLevel) {
-      SdkPresent<WebhookSponsorshipEditedChangesPrivacyLevel>(value: final value) => {'privacy_level': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (privacyLevel) {
+          SdkPresent<WebhookSponsorshipEditedChangesPrivacyLevel>(
+            value: final value
+          ) =>
+            {
+              'privacy_level': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `WebhookSponsorshipEdited` API schema.
 class WebhookSponsorshipEdited {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookSponsorshipEditedAction action;
+
   /// Required object value serialized in the `changes` wire field.
   final WebhookSponsorshipEditedChanges changes;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final SdkOptional<RepositoryWebhooks> repository;
+
   /// A GitHub user.
   final SimpleUser sender;
+
   /// Required object value serialized in the `sponsorship` wire field.
   final WebhooksSponsorship sponsorship;
 
-  const WebhookSponsorshipEdited({required this.action, required this.changes, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), this.repository = const SdkOmitted(), required this.sender, required this.sponsorship});
+  const WebhookSponsorshipEdited(
+      {required this.action,
+      required this.changes,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      required this.sender,
+      required this.sponsorship});
 
-  WebhookSponsorshipEdited Function({WebhookSponsorshipEditedAction action, WebhookSponsorshipEditedChanges changes, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, SdkOptional<RepositoryWebhooks> repository, SimpleUser sender, WebhooksSponsorship sponsorship}) get copyWith => _copyWith;
+  WebhookSponsorshipEdited Function(
+      {WebhookSponsorshipEditedAction action,
+      WebhookSponsorshipEditedChanges changes,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      SdkOptional<RepositoryWebhooks> repository,
+      SimpleUser sender,
+      WebhooksSponsorship sponsorship}) get copyWith => _copyWith;
 
-  WebhookSponsorshipEdited _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue, Object? sponsorship = sdkOmittedValue}) => WebhookSponsorshipEdited(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookSponsorshipEditedAction,
-    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as WebhookSponsorshipEditedChanges,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<RepositoryWebhooks>,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-    sponsorship: identical(sponsorship, sdkOmittedValue) ? this.sponsorship : sponsorship as WebhooksSponsorship,
-  );
+  WebhookSponsorshipEdited _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? changes = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue,
+          Object? sponsorship = sdkOmittedValue}) =>
+      WebhookSponsorshipEdited(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookSponsorshipEditedAction,
+        changes: identical(changes, sdkOmittedValue)
+            ? this.changes
+            : changes as WebhookSponsorshipEditedChanges,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<RepositoryWebhooks>,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+        sponsorship: identical(sponsorship, sdkOmittedValue)
+            ? this.sponsorship
+            : sponsorship as WebhooksSponsorship,
+      );
 
-  factory WebhookSponsorshipEdited.fromJson(Map<String, dynamic> json) => WebhookSponsorshipEdited(
-    action: (json['action'] != null ? WebhookSponsorshipEditedAction.fromJson(json['action'] as String) : null)!,
-    changes: (json['changes'] != null ? WebhookSponsorshipEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!,
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-    sponsorship: (json['sponsorship'] != null ? WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookSponsorshipEdited.fromJson(Map<String, dynamic> json) =>
+      WebhookSponsorshipEdited(
+        action: (json['action'] != null
+            ? WebhookSponsorshipEditedAction.fromJson(json['action'] as String)
+            : null)!,
+        changes: (json['changes'] != null
+            ? WebhookSponsorshipEditedChanges.fromJson(
+                json['changes'] as Map<String, dynamic>)
+            : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? RepositoryWebhooks.fromJson(
+                    json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+        sponsorship: (json['sponsorship'] != null
+            ? WebhooksSponsorship.fromJson(
+                json['sponsorship'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    'changes': changes.toJson(),
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<RepositoryWebhooks>(value: final value) => {'repository': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'sender': sender.toJson(),
-    'sponsorship': sponsorship.toJson(),
-  };
+        'action': action.toJson(),
+        'changes': changes.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<RepositoryWebhooks>(value: final value) => {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'sender': sender.toJson(),
+        'sponsorship': sponsorship.toJson(),
+      };
 }

@@ -8,47 +8,85 @@ part of 'apps.dart';
 class IntegrationInstallationRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier of the request installation.
   final int id;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// Required API value serialized in the `account` wire field.
   final IntegrationInstallationRequestAccount account;
+
   /// A GitHub user.
   final SimpleUser requester;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
 
-  const IntegrationInstallationRequest({required this.id, this.nodeId = const SdkOmitted(), required this.account, required this.requester, required this.createdAt});
+  const IntegrationInstallationRequest(
+      {required this.id,
+      this.nodeId = const SdkOmitted(),
+      required this.account,
+      required this.requester,
+      required this.createdAt});
 
-  IntegrationInstallationRequest Function({int id, SdkOptional<String> nodeId, IntegrationInstallationRequestAccount account, SimpleUser requester, String createdAt}) get copyWith => _copyWith;
+  IntegrationInstallationRequest Function(
+      {int id,
+      SdkOptional<String> nodeId,
+      IntegrationInstallationRequestAccount account,
+      SimpleUser requester,
+      String createdAt}) get copyWith => _copyWith;
 
-  IntegrationInstallationRequest _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? account = sdkOmittedValue, Object? requester = sdkOmittedValue, Object? createdAt = sdkOmittedValue}) => IntegrationInstallationRequest(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    account: identical(account, sdkOmittedValue) ? this.account : account as IntegrationInstallationRequestAccount,
-    requester: identical(requester, sdkOmittedValue) ? this.requester : requester as SimpleUser,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-  );
+  IntegrationInstallationRequest _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? account = sdkOmittedValue,
+          Object? requester = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue}) =>
+      IntegrationInstallationRequest(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        account: identical(account, sdkOmittedValue)
+            ? this.account
+            : account as IntegrationInstallationRequestAccount,
+        requester: identical(requester, sdkOmittedValue)
+            ? this.requester
+            : requester as SimpleUser,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+      );
 
-  factory IntegrationInstallationRequest.fromJson(Map<String, dynamic> json) => IntegrationInstallationRequest(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    account: (json['account'] != null ? IntegrationInstallationRequestAccount.fromJson(json['account']) : null)!,
-    requester: (json['requester'] != null ? SimpleUser.fromJson(json['requester'] as Map<String, dynamic>) : null)!,
-    createdAt: (json['created_at'] as String?)!,
-  );
+  factory IntegrationInstallationRequest.fromJson(Map<String, dynamic> json) =>
+      IntegrationInstallationRequest(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        account: (json['account'] != null
+            ? IntegrationInstallationRequestAccount.fromJson(json['account'])
+            : null)!,
+        requester: (json['requester'] != null
+            ? SimpleUser.fromJson(json['requester'] as Map<String, dynamic>)
+            : null)!,
+        createdAt: (json['created_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'account': account.toJson(),
-    'requester': requester.toJson(),
-    'created_at': createdAt,
-  };
+        'id': id,
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'account': account.toJson(),
+        'requester': requester.toJson(),
+        'created_at': createdAt,
+      };
 }
 
 sealed class IntegrationInstallationRequestAccount {
@@ -57,24 +95,45 @@ sealed class IntegrationInstallationRequestAccount {
   const IntegrationInstallationRequestAccount();
   factory IntegrationInstallationRequestAccount.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IntegrationInstallationRequestAccountSimpleUser(value); } } catch (_) {}
-      try { final value = Enterprise.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IntegrationInstallationRequestAccountEnterprise(value); } } catch (_) {}
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return IntegrationInstallationRequestAccountSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = Enterprise.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return IntegrationInstallationRequestAccountEnterprise(value);
+        }
+      } catch (_) {}
     }
-    try { return IntegrationInstallationRequestAccountSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IntegrationInstallationRequestAccountEnterprise(Enterprise.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for IntegrationInstallationRequestAccount");
+    try {
+      return IntegrationInstallationRequestAccountSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IntegrationInstallationRequestAccountEnterprise(
+          Enterprise.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for IntegrationInstallationRequestAccount");
   }
   Object? toJson();
 }
 
-final class IntegrationInstallationRequestAccountSimpleUser extends IntegrationInstallationRequestAccount {
+final class IntegrationInstallationRequestAccountSimpleUser
+    extends IntegrationInstallationRequestAccount {
   final SimpleUser value;
   const IntegrationInstallationRequestAccountSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IntegrationInstallationRequestAccountEnterprise extends IntegrationInstallationRequestAccount {
+final class IntegrationInstallationRequestAccountEnterprise
+    extends IntegrationInstallationRequestAccount {
   final Enterprise value;
   const IntegrationInstallationRequestAccountEnterprise(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

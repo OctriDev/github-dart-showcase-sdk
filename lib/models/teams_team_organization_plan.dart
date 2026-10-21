@@ -8,48 +8,84 @@ part of 'teams.dart';
 class TeamOrganizationPlan {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `integer` value serialized in the `space` wire field.
   final int space;
+
   /// Required `integer` value serialized in the `private_repos` wire field.
   final int privateRepos;
+
   /// Optional `integer` value serialized in the `filled_seats` wire field.
   final SdkOptional<int> filledSeats;
+
   /// Optional `integer` value serialized in the `seats` wire field.
   final SdkOptional<int> seats;
 
-  const TeamOrganizationPlan({required this.name, required this.space, required this.privateRepos, this.filledSeats = const SdkOmitted(), this.seats = const SdkOmitted()});
+  const TeamOrganizationPlan(
+      {required this.name,
+      required this.space,
+      required this.privateRepos,
+      this.filledSeats = const SdkOmitted(),
+      this.seats = const SdkOmitted()});
 
-  TeamOrganizationPlan Function({String name, int space, int privateRepos, SdkOptional<int> filledSeats, SdkOptional<int> seats}) get copyWith => _copyWith;
+  TeamOrganizationPlan Function(
+      {String name,
+      int space,
+      int privateRepos,
+      SdkOptional<int> filledSeats,
+      SdkOptional<int> seats}) get copyWith => _copyWith;
 
-  TeamOrganizationPlan _copyWith({Object? name = sdkOmittedValue, Object? space = sdkOmittedValue, Object? privateRepos = sdkOmittedValue, Object? filledSeats = sdkOmittedValue, Object? seats = sdkOmittedValue}) => TeamOrganizationPlan(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    space: identical(space, sdkOmittedValue) ? this.space : space as int,
-    privateRepos: identical(privateRepos, sdkOmittedValue) ? this.privateRepos : privateRepos as int,
-    filledSeats: identical(filledSeats, sdkOmittedValue) ? this.filledSeats : filledSeats as SdkOptional<int>,
-    seats: identical(seats, sdkOmittedValue) ? this.seats : seats as SdkOptional<int>,
-  );
+  TeamOrganizationPlan _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? space = sdkOmittedValue,
+          Object? privateRepos = sdkOmittedValue,
+          Object? filledSeats = sdkOmittedValue,
+          Object? seats = sdkOmittedValue}) =>
+      TeamOrganizationPlan(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        space: identical(space, sdkOmittedValue) ? this.space : space as int,
+        privateRepos: identical(privateRepos, sdkOmittedValue)
+            ? this.privateRepos
+            : privateRepos as int,
+        filledSeats: identical(filledSeats, sdkOmittedValue)
+            ? this.filledSeats
+            : filledSeats as SdkOptional<int>,
+        seats: identical(seats, sdkOmittedValue)
+            ? this.seats
+            : seats as SdkOptional<int>,
+      );
 
-  factory TeamOrganizationPlan.fromJson(Map<String, dynamic> json) => TeamOrganizationPlan(
-    name: (json['name'] as String?)!,
-    space: ((json['space'] as num?)?.toInt())!,
-    privateRepos: ((json['private_repos'] as num?)?.toInt())!,
-    filledSeats: json['filled_seats'] != null ? SdkPresent(((json['filled_seats'] as num?)?.toInt())!) : const SdkOmitted(),
-    seats: json['seats'] != null ? SdkPresent(((json['seats'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory TeamOrganizationPlan.fromJson(Map<String, dynamic> json) =>
+      TeamOrganizationPlan(
+        name: (json['name'] as String?)!,
+        space: ((json['space'] as num?)?.toInt())!,
+        privateRepos: ((json['private_repos'] as num?)?.toInt())!,
+        filledSeats: json['filled_seats'] != null
+            ? SdkPresent(((json['filled_seats'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        seats: json['seats'] != null
+            ? SdkPresent(((json['seats'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'space': space,
-    'private_repos': privateRepos,
-    ...switch (filledSeats) {
-      SdkPresent<int>(value: final value) => {'filled_seats': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (seats) {
-      SdkPresent<int>(value: final value) => {'seats': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'space': space,
+        'private_repos': privateRepos,
+        ...switch (filledSeats) {
+          SdkPresent<int>(value: final value) => {
+              'filled_seats': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (seats) {
+          SdkPresent<int>(value: final value) => {
+              'seats': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

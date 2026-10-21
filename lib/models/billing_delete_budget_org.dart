@@ -8,8 +8,10 @@ part of 'billing.dart';
 class DeleteBudget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A message indicating the result of the deletion operation
   final String message;
+
   /// The ID of the deleted budget
   final String id;
 
@@ -17,18 +19,22 @@ class DeleteBudget {
 
   DeleteBudget Function({String message, String id}) get copyWith => _copyWith;
 
-  DeleteBudget _copyWith({Object? message = sdkOmittedValue, Object? id = sdkOmittedValue}) => DeleteBudget(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-  );
+  DeleteBudget _copyWith(
+          {Object? message = sdkOmittedValue, Object? id = sdkOmittedValue}) =>
+      DeleteBudget(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+      );
 
   factory DeleteBudget.fromJson(Map<String, dynamic> json) => DeleteBudget(
-    message: (json['message'] as String?)!,
-    id: (json['id'] as String?)!,
-  );
+        message: (json['message'] as String?)!,
+        id: (json['id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'id': id,
-  };
+        'message': message,
+        'id': id,
+      };
 }

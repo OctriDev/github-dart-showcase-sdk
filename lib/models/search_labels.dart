@@ -8,75 +8,152 @@ part of 'search.dart';
 class LabelSearchResultItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `color` wire field.
   final String color;
+
   /// Required `boolean` value serialized in the `default` wire field.
   final bool default_;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Timestamp indicating when the label was archived, or `null` if it has not been archived.
   final String? archivedAt;
+
   /// The user who archived the label, or `null` if it has not been archived.
   final SimpleUser? archivedBy;
+
   /// Required `number` value serialized in the `score` wire field.
   final double score;
+
   /// Optional array value serialized in the `text_matches` wire field.
   final SdkOptional<List<SearchResultTextMatchesItem>> textMatches;
 
-  const LabelSearchResultItem({required this.id, required this.nodeId, required this.url, required this.name, required this.color, required this.default_, required this.description, required this.archivedAt, required this.archivedBy, required this.score, this.textMatches = const SdkOmitted()});
+  const LabelSearchResultItem(
+      {required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.name,
+      required this.color,
+      required this.default_,
+      required this.description,
+      required this.archivedAt,
+      required this.archivedBy,
+      required this.score,
+      this.textMatches = const SdkOmitted()});
 
-  LabelSearchResultItem Function({int id, String nodeId, String url, String name, String color, bool default_, String? description, String? archivedAt, SimpleUser? archivedBy, double score, SdkOptional<List<SearchResultTextMatchesItem>> textMatches}) get copyWith => _copyWith;
+  LabelSearchResultItem Function(
+          {int id,
+          String nodeId,
+          String url,
+          String name,
+          String color,
+          bool default_,
+          String? description,
+          String? archivedAt,
+          SimpleUser? archivedBy,
+          double score,
+          SdkOptional<List<SearchResultTextMatchesItem>> textMatches})
+      get copyWith => _copyWith;
 
-  LabelSearchResultItem _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? archivedBy = sdkOmittedValue, Object? score = sdkOmittedValue, Object? textMatches = sdkOmittedValue}) => LabelSearchResultItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as bool,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    archivedBy: identical(archivedBy, sdkOmittedValue) ? this.archivedBy : archivedBy as SimpleUser?,
-    score: identical(score, sdkOmittedValue) ? this.score : score as double,
-    textMatches: identical(textMatches, sdkOmittedValue) ? this.textMatches : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
-  );
+  LabelSearchResultItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? archivedBy = sdkOmittedValue,
+          Object? score = sdkOmittedValue,
+          Object? textMatches = sdkOmittedValue}) =>
+      LabelSearchResultItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as bool,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        archivedBy: identical(archivedBy, sdkOmittedValue)
+            ? this.archivedBy
+            : archivedBy as SimpleUser?,
+        score: identical(score, sdkOmittedValue) ? this.score : score as double,
+        textMatches: identical(textMatches, sdkOmittedValue)
+            ? this.textMatches
+            : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
+      );
 
-  factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) => LabelSearchResultItem(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    name: (json['name'] as String?)!,
-    color: (json['color'] as String?)!,
-    default_: (json['default'] as bool?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    archivedBy: json.containsKey('archived_by') ? json['archived_by'] != null ? SimpleUser.fromJson(json['archived_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'archived_by', 'Required property is missing'),
-    score: ((json['score'] as num?)?.toDouble())!,
-    textMatches: json['text_matches'] != null ? SdkPresent(((json['text_matches'] as List?)?.map((e) => SearchResultTextMatchesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) =>
+      LabelSearchResultItem(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        name: (json['name'] as String?)!,
+        color: (json['color'] as String?)!,
+        default_: (json['default'] as bool?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        archivedBy: json.containsKey('archived_by')
+            ? json['archived_by'] != null
+                ? SimpleUser.fromJson(
+                    json['archived_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'archived_by', 'Required property is missing'),
+        score: ((json['score'] as num?)?.toDouble())!,
+        textMatches: json['text_matches'] != null
+            ? SdkPresent(((json['text_matches'] as List?)
+                ?.map((e) => SearchResultTextMatchesItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'name': name,
-    'color': color,
-    'default': default_,
-    'description': description,
-    'archived_at': archivedAt,
-    'archived_by': archivedBy?.toJson(),
-    'score': score,
-    ...switch (textMatches) {
-      SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {'text_matches': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'name': name,
+        'color': color,
+        'default': default_,
+        'description': description,
+        'archived_at': archivedAt,
+        'archived_by': archivedBy?.toJson(),
+        'score': score,
+        ...switch (textMatches) {
+          SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {
+              'text_matches': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

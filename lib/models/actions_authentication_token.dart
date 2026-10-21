@@ -8,59 +8,123 @@ part of 'actions.dart';
 class AuthenticationToken {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The token used for authentication
   final String token;
+
   /// The time this token expires
   final String expiresAt;
+
   /// Optional object value serialized in the `permissions` wire field.
   final SdkOptional<Map<String, dynamic>> permissions;
+
   /// The repositories this token has access to
   final SdkOptional<List<Repository>> repositories;
+
   /// Optional `string` value serialized in the `single_file` wire field.
   final SdkOptional<String?> singleFile;
+
   /// Describe whether all repositories have been selected or there's a selection involved
   final SdkOptional<AuthenticationTokenRepositorySelection> repositorySelection;
 
-  const AuthenticationToken({required this.token, required this.expiresAt, this.permissions = const SdkOmitted(), this.repositories = const SdkOmitted(), this.singleFile = const SdkOmitted(), this.repositorySelection = const SdkOmitted()});
+  const AuthenticationToken(
+      {required this.token,
+      required this.expiresAt,
+      this.permissions = const SdkOmitted(),
+      this.repositories = const SdkOmitted(),
+      this.singleFile = const SdkOmitted(),
+      this.repositorySelection = const SdkOmitted()});
 
-  AuthenticationToken Function({String token, String expiresAt, SdkOptional<Map<String, dynamic>> permissions, SdkOptional<List<Repository>> repositories, SdkOptional<String?> singleFile, SdkOptional<AuthenticationTokenRepositorySelection> repositorySelection}) get copyWith => _copyWith;
+  AuthenticationToken Function(
+      {String token,
+      String expiresAt,
+      SdkOptional<Map<String, dynamic>> permissions,
+      SdkOptional<List<Repository>> repositories,
+      SdkOptional<String?> singleFile,
+      SdkOptional<AuthenticationTokenRepositorySelection>
+          repositorySelection}) get copyWith => _copyWith;
 
-  AuthenticationToken _copyWith({Object? token = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? singleFile = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue}) => AuthenticationToken(
-    token: identical(token, sdkOmittedValue) ? this.token : token as String,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String,
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<Map<String, dynamic>>,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as SdkOptional<List<Repository>>,
-    singleFile: identical(singleFile, sdkOmittedValue) ? this.singleFile : singleFile as SdkOptional<String?>,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as SdkOptional<AuthenticationTokenRepositorySelection>,
-  );
+  AuthenticationToken _copyWith(
+          {Object? token = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue,
+          Object? singleFile = sdkOmittedValue,
+          Object? repositorySelection = sdkOmittedValue}) =>
+      AuthenticationToken(
+        token: identical(token, sdkOmittedValue) ? this.token : token as String,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as String,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as SdkOptional<Map<String, dynamic>>,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as SdkOptional<List<Repository>>,
+        singleFile: identical(singleFile, sdkOmittedValue)
+            ? this.singleFile
+            : singleFile as SdkOptional<String?>,
+        repositorySelection: identical(repositorySelection, sdkOmittedValue)
+            ? this.repositorySelection
+            : repositorySelection
+                as SdkOptional<AuthenticationTokenRepositorySelection>,
+      );
 
-  factory AuthenticationToken.fromJson(Map<String, dynamic> json) => AuthenticationToken(
-    token: (json['token'] as String?)!,
-    expiresAt: (json['expires_at'] as String?)!,
-    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] == null ? null : json['permissions'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    repositories: json['repositories'] != null ? SdkPresent(((json['repositories'] as List?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    singleFile: json.containsKey('single_file') ? SdkPresent(json['single_file'] as String?) : const SdkOmitted(),
-    repositorySelection: json['repository_selection'] != null ? SdkPresent((json['repository_selection'] != null ? AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory AuthenticationToken.fromJson(Map<String, dynamic> json) =>
+      AuthenticationToken(
+        token: (json['token'] as String?)!,
+        expiresAt: (json['expires_at'] as String?)!,
+        permissions: json['permissions'] != null
+            ? SdkPresent((json['permissions'] == null
+                ? null
+                : json['permissions'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        repositories: json['repositories'] != null
+            ? SdkPresent(((json['repositories'] as List?)
+                ?.map((e) => Repository.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        singleFile: json.containsKey('single_file')
+            ? SdkPresent(json['single_file'] as String?)
+            : const SdkOmitted(),
+        repositorySelection: json['repository_selection'] != null
+            ? SdkPresent((json['repository_selection'] != null
+                ? AuthenticationTokenRepositorySelection.fromJson(
+                    json['repository_selection'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'token': token,
-    'expires_at': expiresAt,
-    ...switch (permissions) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'permissions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositories) {
-      SdkPresent<List<Repository>>(value: final value) => {'repositories': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (singleFile) {
-      SdkPresent<String?>(value: final value) => {'single_file': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositorySelection) {
-      SdkPresent<AuthenticationTokenRepositorySelection>(value: final value) => {'repository_selection': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'token': token,
+        'expires_at': expiresAt,
+        ...switch (permissions) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'permissions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositories) {
+          SdkPresent<List<Repository>>(value: final value) => {
+              'repositories': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (singleFile) {
+          SdkPresent<String?>(value: final value) => {
+              'single_file': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositorySelection) {
+          SdkPresent<AuthenticationTokenRepositorySelection>(
+            value: final value
+          ) =>
+            {
+              'repository_selection': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

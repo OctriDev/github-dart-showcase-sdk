@@ -65,53 +65,81 @@ import '../types.dart';
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<DependabotAlertWithRepository>>
-    dependabotListAlertsForEnterprise(ClientConfig config,
-        {required String enterprise,
-        SdkOptional<String> classification = const SdkOmitted(),
-        SdkOptional<String> state = const SdkOmitted(),
-        SdkOptional<String> severity = const SdkOmitted(),
-        SdkOptional<String> ecosystem = const SdkOmitted(),
-        SdkOptional<String> package = const SdkOmitted(),
-        SdkOptional<String> epssPercentage = const SdkOmitted(),
-        SdkOptional<dynamic> has = const SdkOmitted(),
-        SdkOptional<String> assignee = const SdkOmitted(),
-        SdkOptional<SchemaSchemaa304fedd> scope = const SdkOmitted(),
-        SdkOptional<String> relationship = const SdkOmitted(),
-        SdkOptional<SchemaSchemab6482dba> sort = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<DependabotAlertWithRepository>> dependabotListAlertsForEnterprise(
+    ClientConfig config,
+    {required String enterprise,
+    SdkOptional<String> classification = const SdkOmitted(),
+    SdkOptional<String> state = const SdkOmitted(),
+    SdkOptional<String> severity = const SdkOmitted(),
+    SdkOptional<String> ecosystem = const SdkOmitted(),
+    SdkOptional<String> package = const SdkOmitted(),
+    SdkOptional<String> epssPercentage = const SdkOmitted(),
+    SdkOptional<dynamic> has = const SdkOmitted(),
+    SdkOptional<String> assignee = const SdkOmitted(),
+    SdkOptional<SchemaSchemaa304fedd> scope = const SdkOmitted(),
+    SdkOptional<String> relationship = const SdkOmitted(),
+    SdkOptional<SchemaSchemab6482dba> sort = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<DependabotAlertWithRepository>>('GET',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/dependabot/alerts',
           config: config,
           query: {
-            'classification': SdkQueryValue(SdkUtils.unwrapOptional(classification), style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity), style: 'form', explode: true),
-            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem), style: 'form', explode: true),
-            'package': SdkQueryValue(SdkUtils.unwrapOptional(package), style: 'form', explode: true),
-            'epss_percentage': SdkQueryValue(SdkUtils.unwrapOptional(epssPercentage), style: 'form', explode: true),
-            'has': SdkQueryValue(SdkUtils.unwrapOptional(has), style: 'form', explode: true),
-            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee), style: 'form', explode: true),
-            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope), style: 'form', explode: true),
-            'relationship': SdkQueryValue(SdkUtils.unwrapOptional(relationship), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'classification': SdkQueryValue(
+                SdkUtils.unwrapOptional(classification),
+                style: 'form',
+                explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity),
+                style: 'form', explode: true),
+            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem),
+                style: 'form', explode: true),
+            'package': SdkQueryValue(SdkUtils.unwrapOptional(package),
+                style: 'form', explode: true),
+            'epss_percentage': SdkQueryValue(
+                SdkUtils.unwrapOptional(epssPercentage),
+                style: 'form',
+                explode: true),
+            'has': SdkQueryValue(SdkUtils.unwrapOptional(has),
+                style: 'form', explode: true),
+            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee),
+                style: 'form', explode: true),
+            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope),
+                style: 'form', explode: true),
+            'relationship': SdkQueryValue(SdkUtils.unwrapOptional(relationship),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotListAlertsForEnterprise',
-          fromJsonRaw: (value) => (value as List).map((item) => DependabotAlertWithRepository.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => DependabotAlertWithRepository.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise. The authenticated user must be an enterprise owner to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
@@ -135,17 +163,23 @@ Future<DependabotRepositoryAccessDetails>
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/dependabot/repository-access',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotRepositoryAccessForEnterprise',
-          fromJsonRaw: (value) => DependabotRepositoryAccessDetails.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DependabotRepositoryAccessDetails.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they've updated dependencies across organizations in the enterprise. The authenticated user must be an enterprise owner to use this endpoint. **Example request body:** ```json { "repository_ids_to_add": [123, 456], "repository_ids_to_remove": [789] } ``` &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
@@ -161,26 +195,32 @@ Future<void> dependabotUpdateRepositoryAccessForEnterprise(ClientConfig config,
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/dependabot/repository-access',
           config: config,
           body: {
-            'repository_ids_to_add': SdkUtils.unwrapOptional(repositoryIdsToAdd),
-            'repository_ids_to_remove': SdkUtils.unwrapOptional(repositoryIdsToRemove)
+            'repository_ids_to_add':
+                SdkUtils.unwrapOptional(repositoryIdsToAdd),
+            'repository_ids_to_remove':
+                SdkUtils.unwrapOptional(repositoryIdsToRemove)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'dependabotUpdateRepositoryAccessForEnterprise',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Sets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. Available values are: - 'public' - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories. - 'internal' - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories. The authenticated user must be an enterprise owner to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
 /// [enterprise] The slug version of the enterprise name.
 /// [defaultLevel] The default repository access level for Dependabot updates.
-Future<void>
-    dependabotSetRepositoryAccessDefaultLevelForEnterprise(ClientConfig config,
-        {required String enterprise,
-        required DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel defaultLevel,
-        RequestOptions? requestOptions}) async {
+Future<void> dependabotSetRepositoryAccessDefaultLevelForEnterprise(
+    ClientConfig config,
+    {required String enterprise,
+    required DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel
+        defaultLevel,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/dependabot/repository-access/default-level',
           config: config,
@@ -188,10 +228,13 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'dependabotSetRepositoryAccessDefaultLevelForEnterprise',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists Dependabot alerts for an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
@@ -261,71 +304,108 @@ Future<void>
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<DependabotAlertWithRepository>>
-    dependabotListAlertsForOrg(ClientConfig config,
-        {required String org,
-        SdkOptional<String> classification = const SdkOmitted(),
-        SdkOptional<String> state = const SdkOmitted(),
-        SdkOptional<String> severity = const SdkOmitted(),
-        SdkOptional<String> ecosystem = const SdkOmitted(),
-        SdkOptional<String> package = const SdkOmitted(),
-        SdkOptional<String> epssPercentage = const SdkOmitted(),
-        SdkOptional<String> artifactRegistryUrl = const SdkOmitted(),
-        SdkOptional<String> artifactRegistry = const SdkOmitted(),
-        SdkOptional<dynamic> has = const SdkOmitted(),
-        SdkOptional<String> assignee = const SdkOmitted(),
-        SdkOptional<String> runtimeRisk = const SdkOmitted(),
-        SdkOptional<SchemaSchemaa304fedd> scope = const SdkOmitted(),
-        SdkOptional<String> relationship = const SdkOmitted(),
-        SdkOptional<SchemaSchemab6482dba> sort = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<DependabotAlertWithRepository>> dependabotListAlertsForOrg(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<String> classification = const SdkOmitted(),
+    SdkOptional<String> state = const SdkOmitted(),
+    SdkOptional<String> severity = const SdkOmitted(),
+    SdkOptional<String> ecosystem = const SdkOmitted(),
+    SdkOptional<String> package = const SdkOmitted(),
+    SdkOptional<String> epssPercentage = const SdkOmitted(),
+    SdkOptional<String> artifactRegistryUrl = const SdkOmitted(),
+    SdkOptional<String> artifactRegistry = const SdkOmitted(),
+    SdkOptional<dynamic> has = const SdkOmitted(),
+    SdkOptional<String> assignee = const SdkOmitted(),
+    SdkOptional<String> runtimeRisk = const SdkOmitted(),
+    SdkOptional<SchemaSchemaa304fedd> scope = const SdkOmitted(),
+    SdkOptional<String> relationship = const SdkOmitted(),
+    SdkOptional<SchemaSchemab6482dba> sort = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<DependabotAlertWithRepository>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/dependabot/alerts',
           config: config,
           query: {
-            'classification': SdkQueryValue(SdkUtils.unwrapOptional(classification), style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity), style: 'form', explode: true),
-            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem), style: 'form', explode: true),
-            'package': SdkQueryValue(SdkUtils.unwrapOptional(package), style: 'form', explode: true),
-            'epss_percentage': SdkQueryValue(SdkUtils.unwrapOptional(epssPercentage), style: 'form', explode: true),
-            'artifact_registry_url': SdkQueryValue(SdkUtils.unwrapOptional(artifactRegistryUrl), style: 'form', explode: true),
-            'artifact_registry': SdkQueryValue(SdkUtils.unwrapOptional(artifactRegistry), style: 'form', explode: true),
-            'has': SdkQueryValue(SdkUtils.unwrapOptional(has), style: 'form', explode: true),
-            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee), style: 'form', explode: true),
-            'runtime_risk': SdkQueryValue(SdkUtils.unwrapOptional(runtimeRisk), style: 'form', explode: true),
-            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope), style: 'form', explode: true),
-            'relationship': SdkQueryValue(SdkUtils.unwrapOptional(relationship), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'classification': SdkQueryValue(
+                SdkUtils.unwrapOptional(classification),
+                style: 'form',
+                explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity),
+                style: 'form', explode: true),
+            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem),
+                style: 'form', explode: true),
+            'package': SdkQueryValue(SdkUtils.unwrapOptional(package),
+                style: 'form', explode: true),
+            'epss_percentage': SdkQueryValue(
+                SdkUtils.unwrapOptional(epssPercentage),
+                style: 'form',
+                explode: true),
+            'artifact_registry_url': SdkQueryValue(
+                SdkUtils.unwrapOptional(artifactRegistryUrl),
+                style: 'form',
+                explode: true),
+            'artifact_registry': SdkQueryValue(
+                SdkUtils.unwrapOptional(artifactRegistry),
+                style: 'form',
+                explode: true),
+            'has': SdkQueryValue(SdkUtils.unwrapOptional(has),
+                style: 'form', explode: true),
+            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee),
+                style: 'form', explode: true),
+            'runtime_risk': SdkQueryValue(SdkUtils.unwrapOptional(runtimeRisk),
+                style: 'form', explode: true),
+            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope),
+                style: 'form', explode: true),
+            'relationship': SdkQueryValue(SdkUtils.unwrapOptional(relationship),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotListAlertsForOrg',
-          fromJsonRaw: (value) => (value as List).map((item) => DependabotAlertWithRepository.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => DependabotAlertWithRepository.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists repositories that organization admins have allowed Dependabot to access when updating dependencies. &gt; [!NOTE] &gt; This operation supports both server-to-server and user-to-server access. Unauthorized users will not see the existence of this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [page] The page number of results to fetch.
 /// [perPage] Number of results per page.
-Future<DependabotRepositoryAccessDetails>
-    dependabotRepositoryAccessForOrg(ClientConfig config,
-        {required String org,
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<DependabotRepositoryAccessDetails> dependabotRepositoryAccessForOrg(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (page is SdkPresent<int>) {
     validateRange('page', page.value, min: 1);
   }
@@ -337,17 +417,23 @@ Future<DependabotRepositoryAccessDetails>
           '/orgs/${Uri.encodeComponent(org.toString())}/dependabot/repository-access',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotRepositoryAccessForOrg',
-          fromJsonRaw: (value) => DependabotRepositoryAccessDetails.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DependabotRepositoryAccessDetails.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they've updated dependencies. &gt; [!NOTE] &gt; This operation supports both server-to-server and user-to-server access. Unauthorized users will not see the existence of this endpoint. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint. **Example request body:** ```json { "repository_ids_to_add": [123, 456], "repository_ids_to_remove": [789] } ```
 ///
@@ -363,16 +449,21 @@ Future<void> dependabotUpdateRepositoryAccessForOrg(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/dependabot/repository-access',
           config: config,
           body: {
-            'repository_ids_to_add': SdkUtils.unwrapOptional(repositoryIdsToAdd),
-            'repository_ids_to_remove': SdkUtils.unwrapOptional(repositoryIdsToRemove)
+            'repository_ids_to_add':
+                SdkUtils.unwrapOptional(repositoryIdsToAdd),
+            'repository_ids_to_remove':
+                SdkUtils.unwrapOptional(repositoryIdsToRemove)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'dependabotUpdateRepositoryAccessForOrg',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Sets the default level of repository access Dependabot will have while performing an update. Available values are: - 'public' - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories. - 'internal' - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories. Unauthorized users will not see the existence of this endpoint. This operation supports both server-to-server and user-to-server access. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -380,7 +471,8 @@ Future<void> dependabotUpdateRepositoryAccessForOrg(ClientConfig config,
 /// [defaultLevel] The default repository access level for Dependabot updates.
 Future<void> dependabotSetRepositoryAccessDefaultLevel(ClientConfig config,
     {required String org,
-    required DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel defaultLevel,
+    required DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel
+        defaultLevel,
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/dependabot/repository-access/default-level',
@@ -389,10 +481,13 @@ Future<void> dependabotSetRepositoryAccessDefaultLevel(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'dependabotSetRepositoryAccessDefaultLevel',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists all secrets available in an organization without revealing their encrypted values. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -405,26 +500,28 @@ Future<void> dependabotSetRepositoryAccessDefaultLevel(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<DependabotListOrgSecretsResponse>
-    dependabotListOrgSecrets(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<DependabotListOrgSecretsResponse> dependabotListOrgSecrets(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<DependabotListOrgSecretsResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/dependabot/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotListOrgSecrets',
-          fromJsonRaw: (value) => DependabotListOrgSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DependabotListOrgSecretsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -436,11 +533,11 @@ Future<DependabotPublicKey> dependabotGetOrgPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotGetOrgPublicKey',
-          fromJsonRaw: (value) => DependabotPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependabotPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single organization secret without revealing its encrypted value. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -455,11 +552,11 @@ Future<OrganizationDependabotSecret> dependabotGetOrgSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotGetOrgSecret',
-          fromJsonRaw: (value) => OrganizationDependabotSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OrganizationDependabotSecret.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates an organization secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -486,17 +583,18 @@ Future<OrganizationDependabotSecret> dependabotGetOrgSecret(ClientConfig config,
 ///   organization
 ///   secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repo
 ///   sitory-from-an-organization-secret) endpoints.
-Future<Map<String, dynamic>>
-    dependabotCreateOrUpdateOrgSecret(ClientConfig config,
-        {required String org,
-        required String secretName,
-        required DependabotCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
-        SdkOptional<String> encryptedValue = const SdkOmitted(),
-        SdkOptional<String> keyId = const SdkOmitted(),
-        SdkOptional<List<dynamic>> selectedRepositoryIds = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> dependabotCreateOrUpdateOrgSecret(
+    ClientConfig config,
+    {required String org,
+    required String secretName,
+    required DependabotCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
+    SdkOptional<String> encryptedValue = const SdkOmitted(),
+    SdkOptional<String> keyId = const SdkOmitted(),
+    SdkOptional<List<dynamic>> selectedRepositoryIds = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (encryptedValue is SdkPresent<String>) {
-    sdkValidatePattern('encrypted_value', encryptedValue.value, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+    sdkValidatePattern('encrypted_value', encryptedValue.value,
+        '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
   }
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
@@ -506,7 +604,8 @@ Future<Map<String, dynamic>>
             'visibility': visibility,
             'encrypted_value': SdkUtils.unwrapOptional(encryptedValue),
             'key_id': SdkUtils.unwrapOptional(keyId),
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotCreateOrUpdateOrgSecret',
@@ -514,7 +613,6 @@ Future<Map<String, dynamic>>
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a secret in an organization using the secret name. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -532,7 +630,6 @@ Future<void> dependabotDeleteOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -553,20 +650,24 @@ Future<DependabotListSelectedReposForOrgSecretResponse>
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<DependabotListSelectedReposForOrgSecretResponse>('GET',
+  return (await sdkRequest<DependabotListSelectedReposForOrgSecretResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/dependabot/secrets/${Uri.encodeComponent(secretName.toString())}/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotListSelectedReposForOrgSecret',
-          fromJsonRaw: (value) => DependabotListSelectedReposForOrgSecretResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependabotListSelectedReposForOrgSecretResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret). OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -596,7 +697,6 @@ Future<void> dependabotSetSelectedReposForOrgSecret(ClientConfig config,
       .data;
 }
 
-
 /// Adds a repository to an organization secret's selected repository list. Use this operation when the secret's repository `visibility` is set to `selected`; OAuth app tokens and personal access tokens (classic) need the `admin:org` scope.
 ///
 /// Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret). OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
@@ -617,7 +717,6 @@ Future<void> dependabotAddSelectedRepoToOrgSecret(ClientConfig config,
       .data;
 }
 
-
 /// Removes a repository from an organization secret's selected repository list. Use this operation when the secret's repository `visibility` is set to `selected`; OAuth app tokens and personal access tokens (classic) need the `admin:org` scope.
 ///
 /// Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret). OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
@@ -637,7 +736,6 @@ Future<void> dependabotRemoveSelectedRepoFromOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
@@ -725,31 +823,62 @@ Future<List<DependabotAlert>> dependabotListAlertsForRepo(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/dependabot/alerts',
           config: config,
           query: {
-            'classification': SdkQueryValue(SdkUtils.unwrapOptional(classification), style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity), style: 'form', explode: true),
-            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem), style: 'form', explode: true),
-            'package': SdkQueryValue(SdkUtils.unwrapOptional(package), style: 'form', explode: true),
-            'manifest': SdkQueryValue(SdkUtils.unwrapOptional(manifest), style: 'form', explode: true),
-            'epss_percentage': SdkQueryValue(SdkUtils.unwrapOptional(epssPercentage), style: 'form', explode: true),
-            'has': SdkQueryValue(SdkUtils.unwrapOptional(has), style: 'form', explode: true),
-            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee), style: 'form', explode: true),
-            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope), style: 'form', explode: true),
-            'relationship': SdkQueryValue(SdkUtils.unwrapOptional(relationship), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'classification': SdkQueryValue(
+                SdkUtils.unwrapOptional(classification),
+                style: 'form',
+                explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity),
+                style: 'form', explode: true),
+            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem),
+                style: 'form', explode: true),
+            'package': SdkQueryValue(SdkUtils.unwrapOptional(package),
+                style: 'form', explode: true),
+            'manifest': SdkQueryValue(SdkUtils.unwrapOptional(manifest),
+                style: 'form', explode: true),
+            'epss_percentage': SdkQueryValue(
+                SdkUtils.unwrapOptional(epssPercentage),
+                style: 'form',
+                explode: true),
+            'has': SdkQueryValue(SdkUtils.unwrapOptional(has),
+                style: 'form', explode: true),
+            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee),
+                style: 'form', explode: true),
+            'scope': SdkQueryValue(SdkUtils.unwrapOptional(scope),
+                style: 'form', explode: true),
+            'relationship': SdkQueryValue(SdkUtils.unwrapOptional(relationship),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotListAlertsForRepo',
-          fromJsonRaw: (value) => (value as List).map((item) => DependabotAlert.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  DependabotAlert.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Retrieves a Dependabot alert from a repository by its alert number. Use the `alert_number` value returned by the repository's Dependabot alerts listing, and provide a token with the required scope for the repository's visibility.
 ///
@@ -772,12 +901,16 @@ Future<DependabotAlert> dependabotGetAlert(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotGetAlert',
-          fromJsonRaw: (value) => DependabotAlert.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependabotAlert.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates a Dependabot alert in a repository, changing its state, dismissal details, assignees, or agent assignment. Provide `state` or `assignees` at minimum; when dismissing an alert, include `dismissed_reason`, and use `assignees` to replace or clear the existing assignments. The authenticated user needs access to repository security alerts, and OAuth app tokens or classic personal access tokens need the `security_events` scope, or `public_repo` for public repositories.
 ///
@@ -806,11 +939,14 @@ Future<DependabotAlert> dependabotUpdateAlert(ClientConfig config,
     {required String owner,
     required String repo,
     required int alertNumber,
-    SdkOptional<DependabotUpdateAlertRequestBodyState> state = const SdkOmitted(),
-    SdkOptional<DependabotUpdateAlertRequestBodyDismissedReason> dismissedReason = const SdkOmitted(),
+    SdkOptional<DependabotUpdateAlertRequestBodyState> state =
+        const SdkOmitted(),
+    SdkOptional<DependabotUpdateAlertRequestBodyDismissedReason>
+        dismissedReason = const SdkOmitted(),
     SdkOptional<String> dismissedComment = const SdkOmitted(),
     SdkOptional<List<String>> assignees = const SdkOmitted(),
-    SdkOptional<DependabotUpdateAlertRequestBodyAgentAssignment> agentAssignment = const SdkOmitted(),
+    SdkOptional<DependabotUpdateAlertRequestBodyAgentAssignment>
+        agentAssignment = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   if (dismissedComment is SdkPresent<String>) {
     validateLength('dismissed_comment', dismissedComment.value, max: 280);
@@ -828,12 +964,25 @@ Future<DependabotAlert> dependabotUpdateAlert(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotUpdateAlert',
-          fromJsonRaw: (value) => DependabotAlert.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependabotAlert.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '410': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists all secrets available in a repository without revealing their encrypted values. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -848,27 +997,29 @@ Future<DependabotAlert> dependabotUpdateAlert(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<DependabotListRepoSecretsResponse>
-    dependabotListRepoSecrets(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<DependabotListRepoSecretsResponse> dependabotListRepoSecrets(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<DependabotListRepoSecretsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/dependabot/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotListRepoSecrets',
-          fromJsonRaw: (value) => DependabotListRepoSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DependabotListRepoSecretsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint if the repository is private.
 ///
@@ -884,11 +1035,11 @@ Future<DependabotPublicKey> dependabotGetRepoPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotGetRepoPublicKey',
-          fromJsonRaw: (value) => DependabotPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependabotPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single repository secret without revealing its encrypted value. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -906,11 +1057,11 @@ Future<DependabotSecret> dependabotGetRepoSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'dependabotGetRepoSecret',
-          fromJsonRaw: (value) => DependabotSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependabotSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates a repository secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -924,16 +1075,17 @@ Future<DependabotSecret> dependabotGetRepoSecret(ClientConfig config,
 ///   key](https://docs.github.com/rest/dependabot/secrets#get-a-repository-public
 ///   -key) endpoint.
 /// [keyId] ID of the key you used to encrypt the secret.
-Future<Map<String, dynamic>>
-    dependabotCreateOrUpdateRepoSecret(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String secretName,
-        SdkOptional<String> encryptedValue = const SdkOmitted(),
-        SdkOptional<String> keyId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> dependabotCreateOrUpdateRepoSecret(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String secretName,
+    SdkOptional<String> encryptedValue = const SdkOmitted(),
+    SdkOptional<String> keyId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (encryptedValue is SdkPresent<String>) {
-    sdkValidatePattern('encrypted_value', encryptedValue.value, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+    sdkValidatePattern('encrypted_value', encryptedValue.value,
+        '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
   }
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
@@ -949,7 +1101,6 @@ Future<Map<String, dynamic>>
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a secret in a repository using the secret name. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///

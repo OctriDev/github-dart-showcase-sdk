@@ -8,60 +8,99 @@ part of 'repos_repository_ruleset.dart';
 class RepositoryRulesetConditionsRefName {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Array of ref names or patterns to include. One of these patterns must match for the condition to pass. Also accepts `~DEFAULT_BRANCH` to include the default branch or `~ALL` to include all branches.
   final SdkOptional<List<String>> include;
+
   /// Array of ref names or patterns to exclude. The condition will not pass if any of these patterns match.
   final SdkOptional<List<String>> exclude;
 
-  const RepositoryRulesetConditionsRefName({this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
+  const RepositoryRulesetConditionsRefName(
+      {this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
 
-  RepositoryRulesetConditionsRefName Function({SdkOptional<List<String>> include, SdkOptional<List<String>> exclude}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRefName Function(
+      {SdkOptional<List<String>> include,
+      SdkOptional<List<String>> exclude}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRefName _copyWith({Object? include = sdkOmittedValue, Object? exclude = sdkOmittedValue}) => RepositoryRulesetConditionsRefName(
-    include: identical(include, sdkOmittedValue) ? this.include : include as SdkOptional<List<String>>,
-    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<String>>,
-  );
+  RepositoryRulesetConditionsRefName _copyWith(
+          {Object? include = sdkOmittedValue,
+          Object? exclude = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRefName(
+        include: identical(include, sdkOmittedValue)
+            ? this.include
+            : include as SdkOptional<List<String>>,
+        exclude: identical(exclude, sdkOmittedValue)
+            ? this.exclude
+            : exclude as SdkOptional<List<String>>,
+      );
 
-  factory RepositoryRulesetConditionsRefName.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRefName(
-    include: json['include'] != null ? SdkPresent(((json['include'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditionsRefName.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRefName(
+        include: json['include'] != null
+            ? SdkPresent(
+                ((json['include'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        exclude: json['exclude'] != null
+            ? SdkPresent(
+                ((json['exclude'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (include) {
-      SdkPresent<List<String>>(value: final value) => {'include': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (exclude) {
-      SdkPresent<List<String>>(value: final value) => {'exclude': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (include) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (exclude) {
+          SdkPresent<List<String>>(value: final value) => {
+              'exclude': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Parameters for a repository ruleset ref name condition
 class RepositoryRulesetConditions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `ref_name` wire field.
   final SdkOptional<RepositoryRulesetConditionsRefName> refName;
 
   const RepositoryRulesetConditions({this.refName = const SdkOmitted()});
 
-  RepositoryRulesetConditions Function({SdkOptional<RepositoryRulesetConditionsRefName> refName}) get copyWith => _copyWith;
+  RepositoryRulesetConditions Function(
+          {SdkOptional<RepositoryRulesetConditionsRefName> refName})
+      get copyWith => _copyWith;
 
-  RepositoryRulesetConditions _copyWith({Object? refName = sdkOmittedValue}) => RepositoryRulesetConditions(
-    refName: identical(refName, sdkOmittedValue) ? this.refName : refName as SdkOptional<RepositoryRulesetConditionsRefName>,
-  );
+  RepositoryRulesetConditions _copyWith({Object? refName = sdkOmittedValue}) =>
+      RepositoryRulesetConditions(
+        refName: identical(refName, sdkOmittedValue)
+            ? this.refName
+            : refName as SdkOptional<RepositoryRulesetConditionsRefName>,
+      );
 
-  factory RepositoryRulesetConditions.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditions(
-    refName: json['ref_name'] != null ? SdkPresent((json['ref_name'] != null ? RepositoryRulesetConditionsRefName.fromJson(json['ref_name'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditions.fromJson(Map<String, dynamic> json) =>
+      RepositoryRulesetConditions(
+        refName: json['ref_name'] != null
+            ? SdkPresent((json['ref_name'] != null
+                ? RepositoryRulesetConditionsRefName.fromJson(
+                    json['ref_name'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (refName) {
-      SdkPresent<RepositoryRulesetConditionsRefName>(value: final value) => {'ref_name': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (refName) {
+          SdkPresent<RepositoryRulesetConditionsRefName>(value: final value) =>
+            {
+              'ref_name': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
