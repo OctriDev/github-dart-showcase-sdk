@@ -8,398 +8,206 @@ part of 'repos_repository_ruleset.dart';
 class RepositoryRulesetLinksSelf {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URL of the ruleset
   final SdkOptional<String> href;
 
   const RepositoryRulesetLinksSelf({this.href = const SdkOmitted()});
 
-  RepositoryRulesetLinksSelf Function({SdkOptional<String> href})
-      get copyWith => _copyWith;
+  RepositoryRulesetLinksSelf Function({SdkOptional<String> href}) get copyWith => _copyWith;
 
-  RepositoryRulesetLinksSelf _copyWith({Object? href = sdkOmittedValue}) =>
-      RepositoryRulesetLinksSelf(
-        href: identical(href, sdkOmittedValue)
-            ? this.href
-            : href as SdkOptional<String>,
-      );
+  RepositoryRulesetLinksSelf _copyWith({Object? href = sdkOmittedValue}) => RepositoryRulesetLinksSelf(
+    href: identical(href, sdkOmittedValue) ? this.href : href as SdkOptional<String>,
+  );
 
-  factory RepositoryRulesetLinksSelf.fromJson(Map<String, dynamic> json) =>
-      RepositoryRulesetLinksSelf(
-        href: json['href'] != null
-            ? SdkPresent((json['href'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRulesetLinksSelf.fromJson(Map<String, dynamic> json) => RepositoryRulesetLinksSelf(
+    href: json['href'] != null ? SdkPresent((json['href'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (href) {
-          SdkPresent<String>(value: final value) => {
-              'href': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (href) {
+      SdkPresent<String>(value: final value) => {'href': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `html` wire field.
 class RepositoryRulesetLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The html URL of the ruleset
   final SdkOptional<String> href;
 
   const RepositoryRulesetLinksHtml({this.href = const SdkOmitted()});
 
-  RepositoryRulesetLinksHtml Function({SdkOptional<String> href})
-      get copyWith => _copyWith;
+  RepositoryRulesetLinksHtml Function({SdkOptional<String> href}) get copyWith => _copyWith;
 
-  RepositoryRulesetLinksHtml _copyWith({Object? href = sdkOmittedValue}) =>
-      RepositoryRulesetLinksHtml(
-        href: identical(href, sdkOmittedValue)
-            ? this.href
-            : href as SdkOptional<String>,
-      );
+  RepositoryRulesetLinksHtml _copyWith({Object? href = sdkOmittedValue}) => RepositoryRulesetLinksHtml(
+    href: identical(href, sdkOmittedValue) ? this.href : href as SdkOptional<String>,
+  );
 
-  factory RepositoryRulesetLinksHtml.fromJson(Map<String, dynamic> json) =>
-      RepositoryRulesetLinksHtml(
-        href: json['href'] != null
-            ? SdkPresent((json['href'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRulesetLinksHtml.fromJson(Map<String, dynamic> json) => RepositoryRulesetLinksHtml(
+    href: json['href'] != null ? SdkPresent((json['href'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (href) {
-          SdkPresent<String>(value: final value) => {
-              'href': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (href) {
+      SdkPresent<String>(value: final value) => {'href': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `_links` wire field.
 class RepositoryRulesetLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `self` wire field.
   final SdkOptional<RepositoryRulesetLinksSelf> self;
-
   /// Optional object value serialized in the `html` wire field.
   final SdkOptional<RepositoryRulesetLinksHtml?> html;
 
-  const RepositoryRulesetLinks(
-      {this.self = const SdkOmitted(), this.html = const SdkOmitted()});
+  const RepositoryRulesetLinks({this.self = const SdkOmitted(), this.html = const SdkOmitted()});
 
-  RepositoryRulesetLinks Function(
-      {SdkOptional<RepositoryRulesetLinksSelf> self,
-      SdkOptional<RepositoryRulesetLinksHtml?> html}) get copyWith => _copyWith;
+  RepositoryRulesetLinks Function({SdkOptional<RepositoryRulesetLinksSelf> self, SdkOptional<RepositoryRulesetLinksHtml?> html}) get copyWith => _copyWith;
 
-  RepositoryRulesetLinks _copyWith(
-          {Object? self = sdkOmittedValue, Object? html = sdkOmittedValue}) =>
-      RepositoryRulesetLinks(
-        self: identical(self, sdkOmittedValue)
-            ? this.self
-            : self as SdkOptional<RepositoryRulesetLinksSelf>,
-        html: identical(html, sdkOmittedValue)
-            ? this.html
-            : html as SdkOptional<RepositoryRulesetLinksHtml?>,
-      );
+  RepositoryRulesetLinks _copyWith({Object? self = sdkOmittedValue, Object? html = sdkOmittedValue}) => RepositoryRulesetLinks(
+    self: identical(self, sdkOmittedValue) ? this.self : self as SdkOptional<RepositoryRulesetLinksSelf>,
+    html: identical(html, sdkOmittedValue) ? this.html : html as SdkOptional<RepositoryRulesetLinksHtml?>,
+  );
 
-  factory RepositoryRulesetLinks.fromJson(Map<String, dynamic> json) =>
-      RepositoryRulesetLinks(
-        self: json['self'] != null
-            ? SdkPresent((json['self'] != null
-                ? RepositoryRulesetLinksSelf.fromJson(
-                    json['self'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        html: json.containsKey('html')
-            ? SdkPresent(json['html'] != null
-                ? RepositoryRulesetLinksHtml.fromJson(
-                    json['html'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRulesetLinks.fromJson(Map<String, dynamic> json) => RepositoryRulesetLinks(
+    self: json['self'] != null ? SdkPresent((json['self'] != null ? RepositoryRulesetLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    html: json.containsKey('html') ? SdkPresent(json['html'] != null ? RepositoryRulesetLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (self) {
-          SdkPresent<RepositoryRulesetLinksSelf>(value: final value) => {
-              'self': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (html) {
-          SdkPresent<RepositoryRulesetLinksHtml?>(value: final value) => {
-              'html': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (self) {
+      SdkPresent<RepositoryRulesetLinksSelf>(value: final value) => {'self': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (html) {
+      SdkPresent<RepositoryRulesetLinksHtml?>(value: final value) => {'html': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A set of rules to apply when specified conditions are met.
 class RepositoryRuleset {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of the ruleset
   final int id;
-
   /// The name of the ruleset
   final String name;
-
   /// The target of the ruleset
   final SdkOptional<RepositoryRulesetTarget> target;
-
   /// The type of the source of the ruleset
   final SdkOptional<RepositoryRulesetSourceType> sourceType;
-
   /// The name of the source
   final String source;
-
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final RepositoryRuleEnforcement enforcement;
-
   /// The actors that can bypass the rules in this ruleset
   final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
-
   /// The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
   final SdkOptional<RepositoryRulesetCurrentUserCanBypass> currentUserCanBypass;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional object value serialized in the `_links` wire field.
   final SdkOptional<RepositoryRulesetLinks> links;
-
   /// Optional API value serialized in the `conditions` wire field.
   final SdkOptional<RepositoryRulesetConditions2?> conditions;
-
   /// Optional array value serialized in the `rules` wire field.
   final SdkOptional<List<RepositoryRule>> rules;
-
   /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
-
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
 
-  const RepositoryRuleset(
-      {required this.id,
-      required this.name,
-      this.target = const SdkOmitted(),
-      this.sourceType = const SdkOmitted(),
-      required this.source,
-      required this.enforcement,
-      this.bypassActors = const SdkOmitted(),
-      this.currentUserCanBypass = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.links = const SdkOmitted(),
-      this.conditions = const SdkOmitted(),
-      this.rules = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted()});
+  const RepositoryRuleset({required this.id, required this.name, this.target = const SdkOmitted(), this.sourceType = const SdkOmitted(), required this.source, required this.enforcement, this.bypassActors = const SdkOmitted(), this.currentUserCanBypass = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.links = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted()});
 
-  RepositoryRuleset Function(
-      {int id,
-      String name,
-      SdkOptional<RepositoryRulesetTarget> target,
-      SdkOptional<RepositoryRulesetSourceType> sourceType,
-      String source,
-      RepositoryRuleEnforcement enforcement,
-      SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors,
-      SdkOptional<RepositoryRulesetCurrentUserCanBypass> currentUserCanBypass,
-      SdkOptional<String> nodeId,
-      SdkOptional<RepositoryRulesetLinks> links,
-      SdkOptional<RepositoryRulesetConditions2?> conditions,
-      SdkOptional<List<RepositoryRule>> rules,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> updatedAt}) get copyWith => _copyWith;
+  RepositoryRuleset Function({int id, String name, SdkOptional<RepositoryRulesetTarget> target, SdkOptional<RepositoryRulesetSourceType> sourceType, String source, RepositoryRuleEnforcement enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<RepositoryRulesetCurrentUserCanBypass> currentUserCanBypass, SdkOptional<String> nodeId, SdkOptional<RepositoryRulesetLinks> links, SdkOptional<RepositoryRulesetConditions2?> conditions, SdkOptional<List<RepositoryRule>> rules, SdkOptional<String> createdAt, SdkOptional<String> updatedAt}) get copyWith => _copyWith;
 
-  RepositoryRuleset _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? target = sdkOmittedValue,
-          Object? sourceType = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? enforcement = sdkOmittedValue,
-          Object? bypassActors = sdkOmittedValue,
-          Object? currentUserCanBypass = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? links = sdkOmittedValue,
-          Object? conditions = sdkOmittedValue,
-          Object? rules = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      RepositoryRuleset(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        target: identical(target, sdkOmittedValue)
-            ? this.target
-            : target as SdkOptional<RepositoryRulesetTarget>,
-        sourceType: identical(sourceType, sdkOmittedValue)
-            ? this.sourceType
-            : sourceType as SdkOptional<RepositoryRulesetSourceType>,
-        source:
-            identical(source, sdkOmittedValue) ? this.source : source as String,
-        enforcement: identical(enforcement, sdkOmittedValue)
-            ? this.enforcement
-            : enforcement as RepositoryRuleEnforcement,
-        bypassActors: identical(bypassActors, sdkOmittedValue)
-            ? this.bypassActors
-            : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
-        currentUserCanBypass: identical(currentUserCanBypass, sdkOmittedValue)
-            ? this.currentUserCanBypass
-            : currentUserCanBypass
-                as SdkOptional<RepositoryRulesetCurrentUserCanBypass>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        links: identical(links, sdkOmittedValue)
-            ? this.links
-            : links as SdkOptional<RepositoryRulesetLinks>,
-        conditions: identical(conditions, sdkOmittedValue)
-            ? this.conditions
-            : conditions as SdkOptional<RepositoryRulesetConditions2?>,
-        rules: identical(rules, sdkOmittedValue)
-            ? this.rules
-            : rules as SdkOptional<List<RepositoryRule>>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-      );
+  RepositoryRuleset _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? sourceType = sdkOmittedValue, Object? source = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? currentUserCanBypass = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? links = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => RepositoryRuleset(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<RepositoryRulesetTarget>,
+    sourceType: identical(sourceType, sdkOmittedValue) ? this.sourceType : sourceType as SdkOptional<RepositoryRulesetSourceType>,
+    source: identical(source, sdkOmittedValue) ? this.source : source as String,
+    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
+    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
+    currentUserCanBypass: identical(currentUserCanBypass, sdkOmittedValue) ? this.currentUserCanBypass : currentUserCanBypass as SdkOptional<RepositoryRulesetCurrentUserCanBypass>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    links: identical(links, sdkOmittedValue) ? this.links : links as SdkOptional<RepositoryRulesetLinks>,
+    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<RepositoryRulesetConditions2?>,
+    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<RepositoryRule>>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+  );
 
-  factory RepositoryRuleset.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleset(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        target: json['target'] != null
-            ? SdkPresent((json['target'] != null
-                ? RepositoryRulesetTarget.fromJson(json['target'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        sourceType: json['source_type'] != null
-            ? SdkPresent((json['source_type'] != null
-                ? RepositoryRulesetSourceType.fromJson(
-                    json['source_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        source: (json['source'] as String?)!,
-        enforcement: (json['enforcement'] != null
-            ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String)
-            : null)!,
-        bypassActors: json['bypass_actors'] != null
-            ? SdkPresent(((json['bypass_actors'] as List?)
-                ?.map((e) => RepositoryRulesetBypassActor.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        currentUserCanBypass: json['current_user_can_bypass'] != null
-            ? SdkPresent((json['current_user_can_bypass'] != null
-                ? RepositoryRulesetCurrentUserCanBypass.fromJson(
-                    json['current_user_can_bypass'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        links: json['_links'] != null
-            ? SdkPresent((json['_links'] != null
-                ? RepositoryRulesetLinks.fromJson(
-                    json['_links'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        conditions: json.containsKey('conditions')
-            ? SdkPresent(json['conditions'] != null
-                ? RepositoryRulesetConditions2.fromJson(json['conditions'])
-                : null)
-            : const SdkOmitted(),
-        rules: json['rules'] != null
-            ? SdkPresent(((json['rules'] as List?)
-                ?.map((e) => RepositoryRule.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRuleset.fromJson(Map<String, dynamic> json) => RepositoryRuleset(
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    target: json['target'] != null ? SdkPresent((json['target'] != null ? RepositoryRulesetTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
+    sourceType: json['source_type'] != null ? SdkPresent((json['source_type'] != null ? RepositoryRulesetSourceType.fromJson(json['source_type'] as String) : null)!) : const SdkOmitted(),
+    source: (json['source'] as String?)!,
+    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
+    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    currentUserCanBypass: json['current_user_can_bypass'] != null ? SdkPresent((json['current_user_can_bypass'] != null ? RepositoryRulesetCurrentUserCanBypass.fromJson(json['current_user_can_bypass'] as String) : null)!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    links: json['_links'] != null ? SdkPresent((json['_links'] != null ? RepositoryRulesetLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    conditions: json.containsKey('conditions') ? SdkPresent(json['conditions'] != null ? RepositoryRulesetConditions2.fromJson(json['conditions']) : null) : const SdkOmitted(),
+    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => RepositoryRule.fromJson(e)).toList())!) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        ...switch (target) {
-          SdkPresent<RepositoryRulesetTarget>(value: final value) => {
-              'target': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sourceType) {
-          SdkPresent<RepositoryRulesetSourceType>(value: final value) => {
-              'source_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'source': source,
-        'enforcement': enforcement.toJson(),
-        ...switch (bypassActors) {
-          SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) =>
-            {
-              'bypass_actors': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (currentUserCanBypass) {
-          SdkPresent<RepositoryRulesetCurrentUserCanBypass>(
-            value: final value
-          ) =>
-            {
-              'current_user_can_bypass': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (links) {
-          SdkPresent<RepositoryRulesetLinks>(value: final value) => {
-              '_links': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conditions) {
-          SdkPresent<RepositoryRulesetConditions2?>(value: final value) => {
-              'conditions': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rules) {
-          SdkPresent<List<RepositoryRule>>(value: final value) => {
-              'rules': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'name': name,
+    ...switch (target) {
+      SdkPresent<RepositoryRulesetTarget>(value: final value) => {'target': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sourceType) {
+      SdkPresent<RepositoryRulesetSourceType>(value: final value) => {'source_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'source': source,
+    'enforcement': enforcement.toJson(),
+    ...switch (bypassActors) {
+      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (currentUserCanBypass) {
+      SdkPresent<RepositoryRulesetCurrentUserCanBypass>(value: final value) => {'current_user_can_bypass': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (links) {
+      SdkPresent<RepositoryRulesetLinks>(value: final value) => {'_links': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conditions) {
+      SdkPresent<RepositoryRulesetConditions2?>(value: final value) => {'conditions': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rules) {
+      SdkPresent<List<RepositoryRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

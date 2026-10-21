@@ -8,703 +8,294 @@ part of 'webhook_issues_reopened.dart';
 class WebhookIssuesReopenedIssue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `active_lock_reason` wire field.
   final WebhookIssuesReopenedIssueActiveLockReason? activeLockReason;
-
   /// Optional object value serialized in the `assignee` wire field.
   final SdkOptional<WebhookIssuesReopenedIssueAssignee?> assignee;
-
   /// Required array value serialized in the `assignees` wire field.
   final List<WebhookIssuesReopenedIssueAssigneesItem?> assignees;
-
   /// How the author is associated with the repository.
   final WebhookIssuesReopenedIssueAuthorAssociation authorAssociation;
-
   /// Contents of the issue
   final String? body;
-
   /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
   final String? closedAt;
-
   /// Required `integer` value serialized in the `comments` wire field.
   final int comments;
-
   /// Required `uri`-formatted value serialized in the `comments_url` wire field.
   final String commentsUrl;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Optional `boolean` value serialized in the `draft` wire field.
   final SdkOptional<bool> draft;
-
   /// Required `uri`-formatted value serialized in the `events_url` wire field.
   final String eventsUrl;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// Optional array value serialized in the `labels` wire field.
   final SdkOptional<List<WebhookIssuesReopenedIssueLabelsItem?>> labels;
-
   /// Required `uri-template`-formatted value serialized in the `labels_url` wire field.
   final String labelsUrl;
-
   /// Optional `boolean` value serialized in the `locked` wire field.
   final SdkOptional<bool> locked;
-
   /// A collection of related issues and pull requests.
   final WebhookIssuesReopenedIssueMilestone? milestone;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
-
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-  final SdkOptional<WebhookIssuesReopenedIssuePerformedViaGithubApp?>
-      performedViaGithubApp;
-
+  final SdkOptional<WebhookIssuesReopenedIssuePerformedViaGithubApp?> performedViaGithubApp;
   /// Optional object value serialized in the `pull_request` wire field.
   final SdkOptional<WebhookIssuesReopenedIssuePullRequest> pullRequest;
-
   /// Required object value serialized in the `reactions` wire field.
   final WebhookIssuesReopenedIssueReactions reactions;
-
   /// Required `uri`-formatted value serialized in the `repository_url` wire field.
   final String repositoryUrl;
-
   /// Comments provide a way for people to collaborate on an issue.
   final SdkOptional<NullableIssueComment?> pinnedComment;
-
   /// Optional object value serialized in the `sub_issues_summary` wire field.
   final SdkOptional<SubIssuesSummary> subIssuesSummary;
-
   /// Optional object value serialized in the `issue_dependencies_summary` wire field.
   final SdkOptional<IssueDependenciesSummary> issueDependenciesSummary;
-
   /// Optional array value serialized in the `issue_field_values` wire field.
   final SdkOptional<List<IssueFieldValue>> issueFieldValues;
-
   /// State of the issue; either 'open' or 'closed'
   final WebhookIssuesReopenedIssueState state;
-
   /// Optional `string` value serialized in the `state_reason` wire field.
   final SdkOptional<String?> stateReason;
-
   /// Optional `uri`-formatted value serialized in the `timeline_url` wire field.
   final SdkOptional<String> timelineUrl;
-
   /// Title of the issue
   final String title;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// URL for the issue
   final String url;
-
   /// Required object value serialized in the `user` wire field.
   final WebhookIssuesReopenedIssueUser? user;
-
   /// The type assigned to the issue. This is only present for issues in repositories where issue types are supported.
   final SdkOptional<IssueType?> type_;
 
-  const WebhookIssuesReopenedIssue(
-      {required this.activeLockReason,
-      this.assignee = const SdkOmitted(),
-      required this.assignees,
-      required this.authorAssociation,
-      required this.body,
-      required this.closedAt,
-      required this.comments,
-      required this.commentsUrl,
-      required this.createdAt,
-      this.draft = const SdkOmitted(),
-      required this.eventsUrl,
-      required this.htmlUrl,
-      required this.id,
-      this.labels = const SdkOmitted(),
-      required this.labelsUrl,
-      this.locked = const SdkOmitted(),
-      required this.milestone,
-      required this.nodeId,
-      required this.number,
-      this.performedViaGithubApp = const SdkOmitted(),
-      this.pullRequest = const SdkOmitted(),
-      required this.reactions,
-      required this.repositoryUrl,
-      this.pinnedComment = const SdkOmitted(),
-      this.subIssuesSummary = const SdkOmitted(),
-      this.issueDependenciesSummary = const SdkOmitted(),
-      this.issueFieldValues = const SdkOmitted(),
-      required this.state,
-      this.stateReason = const SdkOmitted(),
-      this.timelineUrl = const SdkOmitted(),
-      required this.title,
-      required this.updatedAt,
-      required this.url,
-      required this.user,
-      this.type_ = const SdkOmitted()});
+  const WebhookIssuesReopenedIssue({required this.activeLockReason, this.assignee = const SdkOmitted(), required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft = const SdkOmitted(), required this.eventsUrl, required this.htmlUrl, required this.id, this.labels = const SdkOmitted(), required this.labelsUrl, this.locked = const SdkOmitted(), required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp = const SdkOmitted(), this.pullRequest = const SdkOmitted(), required this.reactions, required this.repositoryUrl, this.pinnedComment = const SdkOmitted(), this.subIssuesSummary = const SdkOmitted(), this.issueDependenciesSummary = const SdkOmitted(), this.issueFieldValues = const SdkOmitted(), required this.state, this.stateReason = const SdkOmitted(), this.timelineUrl = const SdkOmitted(), required this.title, required this.updatedAt, required this.url, required this.user, this.type_ = const SdkOmitted()});
 
-  WebhookIssuesReopenedIssue Function(
-      {WebhookIssuesReopenedIssueActiveLockReason? activeLockReason,
-      SdkOptional<WebhookIssuesReopenedIssueAssignee?> assignee,
-      List<WebhookIssuesReopenedIssueAssigneesItem?> assignees,
-      WebhookIssuesReopenedIssueAuthorAssociation authorAssociation,
-      String? body,
-      String? closedAt,
-      int comments,
-      String commentsUrl,
-      String createdAt,
-      SdkOptional<bool> draft,
-      String eventsUrl,
-      String htmlUrl,
-      int id,
-      SdkOptional<List<WebhookIssuesReopenedIssueLabelsItem?>> labels,
-      String labelsUrl,
-      SdkOptional<bool> locked,
-      WebhookIssuesReopenedIssueMilestone? milestone,
-      String nodeId,
-      int number,
-      SdkOptional<WebhookIssuesReopenedIssuePerformedViaGithubApp?>
-          performedViaGithubApp,
-      SdkOptional<WebhookIssuesReopenedIssuePullRequest> pullRequest,
-      WebhookIssuesReopenedIssueReactions reactions,
-      String repositoryUrl,
-      SdkOptional<NullableIssueComment?> pinnedComment,
-      SdkOptional<SubIssuesSummary> subIssuesSummary,
-      SdkOptional<IssueDependenciesSummary> issueDependenciesSummary,
-      SdkOptional<List<IssueFieldValue>> issueFieldValues,
-      WebhookIssuesReopenedIssueState state,
-      SdkOptional<String?> stateReason,
-      SdkOptional<String> timelineUrl,
-      String title,
-      String updatedAt,
-      String url,
-      WebhookIssuesReopenedIssueUser? user,
-      SdkOptional<IssueType?> type_}) get copyWith => _copyWith;
+  WebhookIssuesReopenedIssue Function({WebhookIssuesReopenedIssueActiveLockReason? activeLockReason, SdkOptional<WebhookIssuesReopenedIssueAssignee?> assignee, List<WebhookIssuesReopenedIssueAssigneesItem?> assignees, WebhookIssuesReopenedIssueAuthorAssociation authorAssociation, String? body, String? closedAt, int comments, String commentsUrl, String createdAt, SdkOptional<bool> draft, String eventsUrl, String htmlUrl, int id, SdkOptional<List<WebhookIssuesReopenedIssueLabelsItem?>> labels, String labelsUrl, SdkOptional<bool> locked, WebhookIssuesReopenedIssueMilestone? milestone, String nodeId, int number, SdkOptional<WebhookIssuesReopenedIssuePerformedViaGithubApp?> performedViaGithubApp, SdkOptional<WebhookIssuesReopenedIssuePullRequest> pullRequest, WebhookIssuesReopenedIssueReactions reactions, String repositoryUrl, SdkOptional<NullableIssueComment?> pinnedComment, SdkOptional<SubIssuesSummary> subIssuesSummary, SdkOptional<IssueDependenciesSummary> issueDependenciesSummary, SdkOptional<List<IssueFieldValue>> issueFieldValues, WebhookIssuesReopenedIssueState state, SdkOptional<String?> stateReason, SdkOptional<String> timelineUrl, String title, String updatedAt, String url, WebhookIssuesReopenedIssueUser? user, SdkOptional<IssueType?> type_}) get copyWith => _copyWith;
 
-  WebhookIssuesReopenedIssue _copyWith(
-          {Object? activeLockReason = sdkOmittedValue,
-          Object? assignee = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue,
-          Object? authorAssociation = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? closedAt = sdkOmittedValue,
-          Object? comments = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? draft = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? labels = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
-          Object? locked = sdkOmittedValue,
-          Object? milestone = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? performedViaGithubApp = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? reactions = sdkOmittedValue,
-          Object? repositoryUrl = sdkOmittedValue,
-          Object? pinnedComment = sdkOmittedValue,
-          Object? subIssuesSummary = sdkOmittedValue,
-          Object? issueDependenciesSummary = sdkOmittedValue,
-          Object? issueFieldValues = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? stateReason = sdkOmittedValue,
-          Object? timelineUrl = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      WebhookIssuesReopenedIssue(
-        activeLockReason: identical(activeLockReason, sdkOmittedValue)
-            ? this.activeLockReason
-            : activeLockReason as WebhookIssuesReopenedIssueActiveLockReason?,
-        assignee: identical(assignee, sdkOmittedValue)
-            ? this.assignee
-            : assignee as SdkOptional<WebhookIssuesReopenedIssueAssignee?>,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as List<WebhookIssuesReopenedIssueAssigneesItem?>,
-        authorAssociation: identical(authorAssociation, sdkOmittedValue)
-            ? this.authorAssociation
-            : authorAssociation as WebhookIssuesReopenedIssueAuthorAssociation,
-        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-        closedAt: identical(closedAt, sdkOmittedValue)
-            ? this.closedAt
-            : closedAt as String?,
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments as int,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        draft: identical(draft, sdkOmittedValue)
-            ? this.draft
-            : draft as SdkOptional<bool>,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        labels: identical(labels, sdkOmittedValue)
-            ? this.labels
-            : labels
-                as SdkOptional<List<WebhookIssuesReopenedIssueLabelsItem?>>,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as String,
-        locked: identical(locked, sdkOmittedValue)
-            ? this.locked
-            : locked as SdkOptional<bool>,
-        milestone: identical(milestone, sdkOmittedValue)
-            ? this.milestone
-            : milestone as WebhookIssuesReopenedIssueMilestone?,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
-            ? this.performedViaGithubApp
-            : performedViaGithubApp as SdkOptional<
-                WebhookIssuesReopenedIssuePerformedViaGithubApp?>,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as SdkOptional<WebhookIssuesReopenedIssuePullRequest>,
-        reactions: identical(reactions, sdkOmittedValue)
-            ? this.reactions
-            : reactions as WebhookIssuesReopenedIssueReactions,
-        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
-            ? this.repositoryUrl
-            : repositoryUrl as String,
-        pinnedComment: identical(pinnedComment, sdkOmittedValue)
-            ? this.pinnedComment
-            : pinnedComment as SdkOptional<NullableIssueComment?>,
-        subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue)
-            ? this.subIssuesSummary
-            : subIssuesSummary as SdkOptional<SubIssuesSummary>,
-        issueDependenciesSummary: identical(
-                issueDependenciesSummary, sdkOmittedValue)
-            ? this.issueDependenciesSummary
-            : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
-        issueFieldValues: identical(issueFieldValues, sdkOmittedValue)
-            ? this.issueFieldValues
-            : issueFieldValues as SdkOptional<List<IssueFieldValue>>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as WebhookIssuesReopenedIssueState,
-        stateReason: identical(stateReason, sdkOmittedValue)
-            ? this.stateReason
-            : stateReason as SdkOptional<String?>,
-        timelineUrl: identical(timelineUrl, sdkOmittedValue)
-            ? this.timelineUrl
-            : timelineUrl as SdkOptional<String>,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as WebhookIssuesReopenedIssueUser?,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<IssueType?>,
-      );
+  WebhookIssuesReopenedIssue _copyWith({Object? activeLockReason = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? body = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? comments = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? locked = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? number = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? pinnedComment = sdkOmittedValue, Object? subIssuesSummary = sdkOmittedValue, Object? issueDependenciesSummary = sdkOmittedValue, Object? issueFieldValues = sdkOmittedValue, Object? state = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? timelineUrl = sdkOmittedValue, Object? title = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? user = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => WebhookIssuesReopenedIssue(
+    activeLockReason: identical(activeLockReason, sdkOmittedValue) ? this.activeLockReason : activeLockReason as WebhookIssuesReopenedIssueActiveLockReason?,
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<WebhookIssuesReopenedIssueAssignee?>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as List<WebhookIssuesReopenedIssueAssigneesItem?>,
+    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as WebhookIssuesReopenedIssueAuthorAssociation,
+    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as int,
+    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
+    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<WebhookIssuesReopenedIssueLabelsItem?>>,
+    labelsUrl: identical(labelsUrl, sdkOmittedValue) ? this.labelsUrl : labelsUrl as String,
+    locked: identical(locked, sdkOmittedValue) ? this.locked : locked as SdkOptional<bool>,
+    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as WebhookIssuesReopenedIssueMilestone?,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as SdkOptional<WebhookIssuesReopenedIssuePerformedViaGithubApp?>,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as SdkOptional<WebhookIssuesReopenedIssuePullRequest>,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as WebhookIssuesReopenedIssueReactions,
+    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
+    pinnedComment: identical(pinnedComment, sdkOmittedValue) ? this.pinnedComment : pinnedComment as SdkOptional<NullableIssueComment?>,
+    subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue) ? this.subIssuesSummary : subIssuesSummary as SdkOptional<SubIssuesSummary>,
+    issueDependenciesSummary: identical(issueDependenciesSummary, sdkOmittedValue) ? this.issueDependenciesSummary : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
+    issueFieldValues: identical(issueFieldValues, sdkOmittedValue) ? this.issueFieldValues : issueFieldValues as SdkOptional<List<IssueFieldValue>>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookIssuesReopenedIssueState,
+    stateReason: identical(stateReason, sdkOmittedValue) ? this.stateReason : stateReason as SdkOptional<String?>,
+    timelineUrl: identical(timelineUrl, sdkOmittedValue) ? this.timelineUrl : timelineUrl as SdkOptional<String>,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookIssuesReopenedIssueUser?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<IssueType?>,
+  );
 
-  factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) =>
-      WebhookIssuesReopenedIssue(
-        activeLockReason: json.containsKey('active_lock_reason')
-            ? json['active_lock_reason'] != null
-                ? WebhookIssuesReopenedIssueActiveLockReason.fromJson(
-                    json['active_lock_reason'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'active_lock_reason', 'Required property is missing'),
-        assignee: json.containsKey('assignee')
-            ? SdkPresent(json['assignee'] != null
-                ? WebhookIssuesReopenedIssueAssignee.fromJson(
-                    json['assignee'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        assignees: ((json['assignees'] as List?)
-            ?.map((e) => e == null
-                ? null
-                : WebhookIssuesReopenedIssueAssigneesItem.fromJson(
-                    e as Map<String, dynamic>))
-            .toList())!,
-        authorAssociation: (json['author_association'] != null
-            ? WebhookIssuesReopenedIssueAuthorAssociation.fromJson(
-                json['author_association'] as String)
-            : null)!,
-        body: json.containsKey('body')
-            ? json['body'] as String?
-            : throw ArgumentError.value(
-                null, 'body', 'Required property is missing'),
-        closedAt: json.containsKey('closed_at')
-            ? json['closed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'closed_at', 'Required property is missing'),
-        comments: ((json['comments'] as num?)?.toInt())!,
-        commentsUrl: (json['comments_url'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        draft: json['draft'] != null
-            ? SdkPresent((json['draft'] as bool?)!)
-            : const SdkOmitted(),
-        eventsUrl: (json['events_url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        labels: json['labels'] != null
-            ? SdkPresent(((json['labels'] as List?)
-                ?.map((e) => e == null
-                    ? null
-                    : WebhookIssuesReopenedIssueLabelsItem.fromJson(
-                        e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        labelsUrl: (json['labels_url'] as String?)!,
-        locked: json['locked'] != null
-            ? SdkPresent((json['locked'] as bool?)!)
-            : const SdkOmitted(),
-        milestone: json.containsKey('milestone')
-            ? json['milestone'] != null
-                ? WebhookIssuesReopenedIssueMilestone.fromJson(
-                    json['milestone'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'milestone', 'Required property is missing'),
-        nodeId: (json['node_id'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        performedViaGithubApp: json.containsKey('performed_via_github_app')
-            ? SdkPresent(json['performed_via_github_app'] != null
-                ? WebhookIssuesReopenedIssuePerformedViaGithubApp.fromJson(
-                    json['performed_via_github_app'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        pullRequest: json['pull_request'] != null
-            ? SdkPresent((json['pull_request'] != null
-                ? WebhookIssuesReopenedIssuePullRequest.fromJson(
-                    json['pull_request'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        reactions: (json['reactions'] != null
-            ? WebhookIssuesReopenedIssueReactions.fromJson(
-                json['reactions'] as Map<String, dynamic>)
-            : null)!,
-        repositoryUrl: (json['repository_url'] as String?)!,
-        pinnedComment: json.containsKey('pinned_comment')
-            ? SdkPresent(json['pinned_comment'] != null
-                ? NullableIssueComment.fromJson(
-                    json['pinned_comment'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        subIssuesSummary: json['sub_issues_summary'] != null
-            ? SdkPresent((json['sub_issues_summary'] != null
-                ? SubIssuesSummary.fromJson(
-                    json['sub_issues_summary'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueDependenciesSummary: json['issue_dependencies_summary'] != null
-            ? SdkPresent((json['issue_dependencies_summary'] != null
-                ? IssueDependenciesSummary.fromJson(
-                    json['issue_dependencies_summary'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueFieldValues: json['issue_field_values'] != null
-            ? SdkPresent(((json['issue_field_values'] as List?)
-                ?.map(
-                    (e) => IssueFieldValue.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        state: (json['state'] != null
-            ? WebhookIssuesReopenedIssueState.fromJson(json['state'] as String)
-            : null)!,
-        stateReason: json.containsKey('state_reason')
-            ? SdkPresent(json['state_reason'] as String?)
-            : const SdkOmitted(),
-        timelineUrl: json['timeline_url'] != null
-            ? SdkPresent((json['timeline_url'] as String?)!)
-            : const SdkOmitted(),
-        title: (json['title'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        url: (json['url'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhookIssuesReopenedIssueUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-        type_: json.containsKey('type')
-            ? SdkPresent(json['type'] != null
-                ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) => WebhookIssuesReopenedIssue(
+    activeLockReason: json.containsKey('active_lock_reason') ? json['active_lock_reason'] != null ? WebhookIssuesReopenedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null : throw ArgumentError.value(null, 'active_lock_reason', 'Required property is missing'),
+    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] != null ? WebhookIssuesReopenedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    assignees: ((json['assignees'] as List?)?.map((e) => e == null ? null : WebhookIssuesReopenedIssueAssigneesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    authorAssociation: (json['author_association'] != null ? WebhookIssuesReopenedIssueAuthorAssociation.fromJson(json['author_association'] as String) : null)!,
+    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
+    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
+    comments: ((json['comments'] as num?)?.toInt())!,
+    commentsUrl: (json['comments_url'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
+    eventsUrl: (json['events_url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => e == null ? null : WebhookIssuesReopenedIssueLabelsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    labelsUrl: (json['labels_url'] as String?)!,
+    locked: json['locked'] != null ? SdkPresent((json['locked'] as bool?)!) : const SdkOmitted(),
+    milestone: json.containsKey('milestone') ? json['milestone'] != null ? WebhookIssuesReopenedIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'milestone', 'Required property is missing'),
+    nodeId: (json['node_id'] as String?)!,
+    number: ((json['number'] as num?)?.toInt())!,
+    performedViaGithubApp: json.containsKey('performed_via_github_app') ? SdkPresent(json['performed_via_github_app'] != null ? WebhookIssuesReopenedIssuePerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    pullRequest: json['pull_request'] != null ? SdkPresent((json['pull_request'] != null ? WebhookIssuesReopenedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    reactions: (json['reactions'] != null ? WebhookIssuesReopenedIssueReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!,
+    repositoryUrl: (json['repository_url'] as String?)!,
+    pinnedComment: json.containsKey('pinned_comment') ? SdkPresent(json['pinned_comment'] != null ? NullableIssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    subIssuesSummary: json['sub_issues_summary'] != null ? SdkPresent((json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueDependenciesSummary: json['issue_dependencies_summary'] != null ? SdkPresent((json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueFieldValues: json['issue_field_values'] != null ? SdkPresent(((json['issue_field_values'] as List?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    state: (json['state'] != null ? WebhookIssuesReopenedIssueState.fromJson(json['state'] as String) : null)!,
+    stateReason: json.containsKey('state_reason') ? SdkPresent(json['state_reason'] as String?) : const SdkOmitted(),
+    timelineUrl: json['timeline_url'] != null ? SdkPresent((json['timeline_url'] as String?)!) : const SdkOmitted(),
+    title: (json['title'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    url: (json['url'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhookIssuesReopenedIssueUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+    type_: json.containsKey('type') ? SdkPresent(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'active_lock_reason': activeLockReason?.toJson(),
-        ...switch (assignee) {
-          SdkPresent<WebhookIssuesReopenedIssueAssignee?>(value: final value) =>
-            {
-              'assignee': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'assignees': assignees.map((item) => item?.toJson()).toList(),
-        'author_association': authorAssociation.toJson(),
-        'body': body,
-        'closed_at': closedAt,
-        'comments': comments,
-        'comments_url': commentsUrl,
-        'created_at': createdAt,
-        ...switch (draft) {
-          SdkPresent<bool>(value: final value) => {
-              'draft': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'events_url': eventsUrl,
-        'html_url': htmlUrl,
-        'id': id,
-        ...switch (labels) {
-          SdkPresent<List<WebhookIssuesReopenedIssueLabelsItem?>>(
-            value: final value
-          ) =>
-            {
-              'labels': value.map((item) => item?.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'labels_url': labelsUrl,
-        ...switch (locked) {
-          SdkPresent<bool>(value: final value) => {
-              'locked': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'milestone': milestone?.toJson(),
-        'node_id': nodeId,
-        'number': number,
-        ...switch (performedViaGithubApp) {
-          SdkPresent<WebhookIssuesReopenedIssuePerformedViaGithubApp?>(
-            value: final value
-          ) =>
-            {
-              'performed_via_github_app': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequest) {
-          SdkPresent<WebhookIssuesReopenedIssuePullRequest>(
-            value: final value
-          ) =>
-            {
-              'pull_request': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'reactions': reactions.toJson(),
-        'repository_url': repositoryUrl,
-        ...switch (pinnedComment) {
-          SdkPresent<NullableIssueComment?>(value: final value) => {
-              'pinned_comment': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subIssuesSummary) {
-          SdkPresent<SubIssuesSummary>(value: final value) => {
-              'sub_issues_summary': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueDependenciesSummary) {
-          SdkPresent<IssueDependenciesSummary>(value: final value) => {
-              'issue_dependencies_summary': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueFieldValues) {
-          SdkPresent<List<IssueFieldValue>>(value: final value) => {
-              'issue_field_values': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'state': state.toJson(),
-        ...switch (stateReason) {
-          SdkPresent<String?>(value: final value) => {
-              'state_reason': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (timelineUrl) {
-          SdkPresent<String>(value: final value) => {
-              'timeline_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'title': title,
-        'updated_at': updatedAt,
-        'url': url,
-        'user': user?.toJson(),
-        ...switch (type_) {
-          SdkPresent<IssueType?>(value: final value) => {
-              'type': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'active_lock_reason': activeLockReason?.toJson(),
+    ...switch (assignee) {
+      SdkPresent<WebhookIssuesReopenedIssueAssignee?>(value: final value) => {'assignee': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'assignees': assignees.map((item) => item?.toJson()).toList(),
+    'author_association': authorAssociation.toJson(),
+    'body': body,
+    'closed_at': closedAt,
+    'comments': comments,
+    'comments_url': commentsUrl,
+    'created_at': createdAt,
+    ...switch (draft) {
+      SdkPresent<bool>(value: final value) => {'draft': value,},
+      _ => const <String, dynamic>{},
+    },
+    'events_url': eventsUrl,
+    'html_url': htmlUrl,
+    'id': id,
+    ...switch (labels) {
+      SdkPresent<List<WebhookIssuesReopenedIssueLabelsItem?>>(value: final value) => {'labels': value.map((item) => item?.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'labels_url': labelsUrl,
+    ...switch (locked) {
+      SdkPresent<bool>(value: final value) => {'locked': value,},
+      _ => const <String, dynamic>{},
+    },
+    'milestone': milestone?.toJson(),
+    'node_id': nodeId,
+    'number': number,
+    ...switch (performedViaGithubApp) {
+      SdkPresent<WebhookIssuesReopenedIssuePerformedViaGithubApp?>(value: final value) => {'performed_via_github_app': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequest) {
+      SdkPresent<WebhookIssuesReopenedIssuePullRequest>(value: final value) => {'pull_request': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'reactions': reactions.toJson(),
+    'repository_url': repositoryUrl,
+    ...switch (pinnedComment) {
+      SdkPresent<NullableIssueComment?>(value: final value) => {'pinned_comment': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subIssuesSummary) {
+      SdkPresent<SubIssuesSummary>(value: final value) => {'sub_issues_summary': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueDependenciesSummary) {
+      SdkPresent<IssueDependenciesSummary>(value: final value) => {'issue_dependencies_summary': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueFieldValues) {
+      SdkPresent<List<IssueFieldValue>>(value: final value) => {'issue_field_values': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'state': state.toJson(),
+    ...switch (stateReason) {
+      SdkPresent<String?>(value: final value) => {'state_reason': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (timelineUrl) {
+      SdkPresent<String>(value: final value) => {'timeline_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'title': title,
+    'updated_at': updatedAt,
+    'url': url,
+    'user': user?.toJson(),
+    ...switch (type_) {
+      SdkPresent<IssueType?>(value: final value) => {'type': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `WebhookIssuesReopened` API schema.
 class WebhookIssuesReopened {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookIssuesReopenedAction action;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
   final WebhookIssuesReopenedIssue issue;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookIssuesReopened(
-      {required this.action,
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      required this.issue,
-      this.organization = const SdkOmitted(),
-      required this.repository,
-      required this.sender});
+  const WebhookIssuesReopened({required this.action, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), required this.issue, this.organization = const SdkOmitted(), required this.repository, required this.sender});
 
-  WebhookIssuesReopened Function(
-      {WebhookIssuesReopenedAction action,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      WebhookIssuesReopenedIssue issue,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      RepositoryWebhooks repository,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookIssuesReopened Function({WebhookIssuesReopenedAction action, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, WebhookIssuesReopenedIssue issue, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookIssuesReopened _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? issue = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookIssuesReopened(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookIssuesReopenedAction,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        issue: identical(issue, sdkOmittedValue)
-            ? this.issue
-            : issue as WebhookIssuesReopenedIssue,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookIssuesReopened _copyWith({Object? action = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookIssuesReopened(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookIssuesReopenedAction,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as WebhookIssuesReopenedIssue,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookIssuesReopened.fromJson(Map<String, dynamic> json) =>
-      WebhookIssuesReopened(
-        action: (json['action'] != null
-            ? WebhookIssuesReopenedAction.fromJson(json['action'] as String)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issue: (json['issue'] != null
-            ? WebhookIssuesReopenedIssue.fromJson(
-                json['issue'] as Map<String, dynamic>)
-            : null)!,
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookIssuesReopened.fromJson(Map<String, dynamic> json) => WebhookIssuesReopened(
+    action: (json['action'] != null ? WebhookIssuesReopenedAction.fromJson(json['action'] as String) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issue: (json['issue'] != null ? WebhookIssuesReopenedIssue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'issue': issue.toJson(),
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'issue': issue.toJson(),
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+  };
 }

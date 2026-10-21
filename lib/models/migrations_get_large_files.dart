@@ -8,54 +8,37 @@ part of 'migrations.dart';
 class PorterLargeFile {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref_name` wire field.
   final String refName;
-
   /// Required `string` value serialized in the `path` wire field.
   final String path;
-
   /// Required `string` value serialized in the `oid` wire field.
   final String oid;
-
   /// Required `integer` value serialized in the `size` wire field.
   final int size;
 
-  const PorterLargeFile(
-      {required this.refName,
-      required this.path,
-      required this.oid,
-      required this.size});
+  const PorterLargeFile({required this.refName, required this.path, required this.oid, required this.size});
 
-  PorterLargeFile Function({String refName, String path, String oid, int size})
-      get copyWith => _copyWith;
+  PorterLargeFile Function({String refName, String path, String oid, int size}) get copyWith => _copyWith;
 
-  PorterLargeFile _copyWith(
-          {Object? refName = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? oid = sdkOmittedValue,
-          Object? size = sdkOmittedValue}) =>
-      PorterLargeFile(
-        refName: identical(refName, sdkOmittedValue)
-            ? this.refName
-            : refName as String,
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        oid: identical(oid, sdkOmittedValue) ? this.oid : oid as String,
-        size: identical(size, sdkOmittedValue) ? this.size : size as int,
-      );
+  PorterLargeFile _copyWith({Object? refName = sdkOmittedValue, Object? path = sdkOmittedValue, Object? oid = sdkOmittedValue, Object? size = sdkOmittedValue}) => PorterLargeFile(
+    refName: identical(refName, sdkOmittedValue) ? this.refName : refName as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    oid: identical(oid, sdkOmittedValue) ? this.oid : oid as String,
+    size: identical(size, sdkOmittedValue) ? this.size : size as int,
+  );
 
-  factory PorterLargeFile.fromJson(Map<String, dynamic> json) =>
-      PorterLargeFile(
-        refName: (json['ref_name'] as String?)!,
-        path: (json['path'] as String?)!,
-        oid: (json['oid'] as String?)!,
-        size: ((json['size'] as num?)?.toInt())!,
-      );
+  factory PorterLargeFile.fromJson(Map<String, dynamic> json) => PorterLargeFile(
+    refName: (json['ref_name'] as String?)!,
+    path: (json['path'] as String?)!,
+    oid: (json['oid'] as String?)!,
+    size: ((json['size'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref_name': refName,
-        'path': path,
-        'oid': oid,
-        'size': size,
-      };
+    'ref_name': refName,
+    'path': path,
+    'oid': oid,
+    'size': size,
+  };
 }

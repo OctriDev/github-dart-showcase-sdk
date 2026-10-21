@@ -10,25 +10,22 @@ part of 'code_scanning_code_scanning_alert.dart';
 
 /// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
 final class CodeScanningAlertSetState {
+
   final String value;
 
   const CodeScanningAlertSetState._(this.value);
 
-  factory CodeScanningAlertSetState.fromJson(String value) =>
-      CodeScanningAlertSetState._(value);
+  factory CodeScanningAlertSetState.fromJson(String value) => CodeScanningAlertSetState._(value);
 
   static const open = CodeScanningAlertSetState._('open');
   static const dismissed = CodeScanningAlertSetState._('dismissed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningAlertSetState && other.value == value;
+  @override bool operator ==(Object other) => other is CodeScanningAlertSetState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

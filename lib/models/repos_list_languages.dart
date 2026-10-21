@@ -13,12 +13,12 @@ class Language {
   const Language({this.value = const <String, int>{}});
 
   factory Language.fromJson(Map<String, dynamic> json) => Language(
-        value: json.map((key, value) => MapEntry(key, (value as num).toInt())),
-      );
+    value: json.map((key, value) => MapEntry(key, (value as num).toInt())),
+  );
 
   Map<String, dynamic> toJson() => value.map(
-        (key, value) => MapEntry(key, value),
-      );
+    (key, value) => MapEntry(key, value),
+  );
 
   int? operator [](String key) => value[key];
   Iterable<String> get keys => value.keys;

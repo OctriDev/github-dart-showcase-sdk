@@ -8,372 +8,162 @@ part of 'dependabot.dart';
 class DependabotAlertDependency {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Details for the vulnerable package.
   final SdkOptional<DependabotAlertPackage> package;
-
   /// The full path to the dependency manifest file, relative to the root of the repository.
   final SdkOptional<String> manifestPath;
-
   /// The execution scope of the vulnerable dependency.
   final SdkOptional<DependabotAlertDependencyScope?> scope;
-
   /// The vulnerable dependency's relationship to your project. &gt; [!NOTE] &gt; We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
   final SdkOptional<DependabotAlertDependencyRelationship?> relationship;
 
-  const DependabotAlertDependency(
-      {this.package = const SdkOmitted(),
-      this.manifestPath = const SdkOmitted(),
-      this.scope = const SdkOmitted(),
-      this.relationship = const SdkOmitted()});
+  const DependabotAlertDependency({this.package = const SdkOmitted(), this.manifestPath = const SdkOmitted(), this.scope = const SdkOmitted(), this.relationship = const SdkOmitted()});
 
-  DependabotAlertDependency Function(
-          {SdkOptional<DependabotAlertPackage> package,
-          SdkOptional<String> manifestPath,
-          SdkOptional<DependabotAlertDependencyScope?> scope,
-          SdkOptional<DependabotAlertDependencyRelationship?> relationship})
-      get copyWith => _copyWith;
+  DependabotAlertDependency Function({SdkOptional<DependabotAlertPackage> package, SdkOptional<String> manifestPath, SdkOptional<DependabotAlertDependencyScope?> scope, SdkOptional<DependabotAlertDependencyRelationship?> relationship}) get copyWith => _copyWith;
 
-  DependabotAlertDependency _copyWith(
-          {Object? package = sdkOmittedValue,
-          Object? manifestPath = sdkOmittedValue,
-          Object? scope = sdkOmittedValue,
-          Object? relationship = sdkOmittedValue}) =>
-      DependabotAlertDependency(
-        package: identical(package, sdkOmittedValue)
-            ? this.package
-            : package as SdkOptional<DependabotAlertPackage>,
-        manifestPath: identical(manifestPath, sdkOmittedValue)
-            ? this.manifestPath
-            : manifestPath as SdkOptional<String>,
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as SdkOptional<DependabotAlertDependencyScope?>,
-        relationship: identical(relationship, sdkOmittedValue)
-            ? this.relationship
-            : relationship
-                as SdkOptional<DependabotAlertDependencyRelationship?>,
-      );
+  DependabotAlertDependency _copyWith({Object? package = sdkOmittedValue, Object? manifestPath = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? relationship = sdkOmittedValue}) => DependabotAlertDependency(
+    package: identical(package, sdkOmittedValue) ? this.package : package as SdkOptional<DependabotAlertPackage>,
+    manifestPath: identical(manifestPath, sdkOmittedValue) ? this.manifestPath : manifestPath as SdkOptional<String>,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<DependabotAlertDependencyScope?>,
+    relationship: identical(relationship, sdkOmittedValue) ? this.relationship : relationship as SdkOptional<DependabotAlertDependencyRelationship?>,
+  );
 
-  factory DependabotAlertDependency.fromJson(Map<String, dynamic> json) =>
-      DependabotAlertDependency(
-        package: json['package'] != null
-            ? SdkPresent((json['package'] != null
-                ? DependabotAlertPackage.fromJson(
-                    json['package'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        manifestPath: json['manifest_path'] != null
-            ? SdkPresent((json['manifest_path'] as String?)!)
-            : const SdkOmitted(),
-        scope: json.containsKey('scope')
-            ? SdkPresent(json['scope'] != null
-                ? DependabotAlertDependencyScope.fromJson(
-                    json['scope'] as String)
-                : null)
-            : const SdkOmitted(),
-        relationship: json.containsKey('relationship')
-            ? SdkPresent(json['relationship'] != null
-                ? DependabotAlertDependencyRelationship.fromJson(
-                    json['relationship'] as String)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory DependabotAlertDependency.fromJson(Map<String, dynamic> json) => DependabotAlertDependency(
+    package: json['package'] != null ? SdkPresent((json['package'] != null ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    manifestPath: json['manifest_path'] != null ? SdkPresent((json['manifest_path'] as String?)!) : const SdkOmitted(),
+    scope: json.containsKey('scope') ? SdkPresent(json['scope'] != null ? DependabotAlertDependencyScope.fromJson(json['scope'] as String) : null) : const SdkOmitted(),
+    relationship: json.containsKey('relationship') ? SdkPresent(json['relationship'] != null ? DependabotAlertDependencyRelationship.fromJson(json['relationship'] as String) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (package) {
-          SdkPresent<DependabotAlertPackage>(value: final value) => {
-              'package': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (manifestPath) {
-          SdkPresent<String>(value: final value) => {
-              'manifest_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (scope) {
-          SdkPresent<DependabotAlertDependencyScope?>(value: final value) => {
-              'scope': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (relationship) {
-          SdkPresent<DependabotAlertDependencyRelationship?>(
-            value: final value
-          ) =>
-            {
-              'relationship': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (package) {
+      SdkPresent<DependabotAlertPackage>(value: final value) => {'package': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (manifestPath) {
+      SdkPresent<String>(value: final value) => {'manifest_path': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (scope) {
+      SdkPresent<DependabotAlertDependencyScope?>(value: final value) => {'scope': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (relationship) {
+      SdkPresent<DependabotAlertDependencyRelationship?>(value: final value) => {'relationship': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A Dependabot alert.
 class DependabotAlert {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The security alert number.
   final int number;
-
   /// The state of the Dependabot alert.
   final DependabotAlertState state;
-
   /// Details for the vulnerable dependency.
   final DependabotAlertDependency dependency;
-
   /// Details for the GitHub Security Advisory.
   final DependabotAlertSecurityAdvisory securityAdvisory;
-
   /// Details pertaining to one vulnerable version range for the advisory.
   final DependabotAlertSecurityVulnerability securityVulnerability;
-
   /// The REST API URL of the alert resource.
   final String url;
-
   /// The GitHub URL of the alert resource.
   final String htmlUrl;
-
   /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String createdAt;
-
   /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String updatedAt;
-
   /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String? dismissedAt;
-
   /// A GitHub user.
   final NullableSimpleUser? dismissedBy;
-
   /// The reason that the alert was dismissed.
   final DependabotAlertDismissedReason? dismissedReason;
-
   /// An optional comment associated with the alert's dismissal.
   final String? dismissedComment;
-
   /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String? fixedAt;
-
   /// The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String?> autoDismissedAt;
-
   /// Information about an active dismissal request for this Dependabot alert.
   final SdkOptional<DependabotAlertDismissalRequestSimple?> dismissalRequest;
-
   /// The users assigned to this alert.
   final SdkOptional<List<SimpleUser>> assignees;
 
-  const DependabotAlert(
-      {required this.number,
-      required this.state,
-      required this.dependency,
-      required this.securityAdvisory,
-      required this.securityVulnerability,
-      required this.url,
-      required this.htmlUrl,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.dismissedAt,
-      required this.dismissedBy,
-      required this.dismissedReason,
-      required this.dismissedComment,
-      required this.fixedAt,
-      this.autoDismissedAt = const SdkOmitted(),
-      this.dismissalRequest = const SdkOmitted(),
-      this.assignees = const SdkOmitted()});
+  const DependabotAlert({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt = const SdkOmitted(), this.dismissalRequest = const SdkOmitted(), this.assignees = const SdkOmitted()});
 
-  DependabotAlert Function(
-      {int number,
-      DependabotAlertState state,
-      DependabotAlertDependency dependency,
-      DependabotAlertSecurityAdvisory securityAdvisory,
-      DependabotAlertSecurityVulnerability securityVulnerability,
-      String url,
-      String htmlUrl,
-      String createdAt,
-      String updatedAt,
-      String? dismissedAt,
-      NullableSimpleUser? dismissedBy,
-      DependabotAlertDismissedReason? dismissedReason,
-      String? dismissedComment,
-      String? fixedAt,
-      SdkOptional<String?> autoDismissedAt,
-      SdkOptional<DependabotAlertDismissalRequestSimple?> dismissalRequest,
-      SdkOptional<List<SimpleUser>> assignees}) get copyWith => _copyWith;
+  DependabotAlert Function({int number, DependabotAlertState state, DependabotAlertDependency dependency, DependabotAlertSecurityAdvisory securityAdvisory, DependabotAlertSecurityVulnerability securityVulnerability, String url, String htmlUrl, String createdAt, String updatedAt, String? dismissedAt, NullableSimpleUser? dismissedBy, DependabotAlertDismissedReason? dismissedReason, String? dismissedComment, String? fixedAt, SdkOptional<String?> autoDismissedAt, SdkOptional<DependabotAlertDismissalRequestSimple?> dismissalRequest, SdkOptional<List<SimpleUser>> assignees}) get copyWith => _copyWith;
 
-  DependabotAlert _copyWith(
-          {Object? number = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? dependency = sdkOmittedValue,
-          Object? securityAdvisory = sdkOmittedValue,
-          Object? securityVulnerability = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? dismissedAt = sdkOmittedValue,
-          Object? dismissedBy = sdkOmittedValue,
-          Object? dismissedReason = sdkOmittedValue,
-          Object? dismissedComment = sdkOmittedValue,
-          Object? fixedAt = sdkOmittedValue,
-          Object? autoDismissedAt = sdkOmittedValue,
-          Object? dismissalRequest = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue}) =>
-      DependabotAlert(
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as DependabotAlertState,
-        dependency: identical(dependency, sdkOmittedValue)
-            ? this.dependency
-            : dependency as DependabotAlertDependency,
-        securityAdvisory: identical(securityAdvisory, sdkOmittedValue)
-            ? this.securityAdvisory
-            : securityAdvisory as DependabotAlertSecurityAdvisory,
-        securityVulnerability: identical(securityVulnerability, sdkOmittedValue)
-            ? this.securityVulnerability
-            : securityVulnerability as DependabotAlertSecurityVulnerability,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        dismissedAt: identical(dismissedAt, sdkOmittedValue)
-            ? this.dismissedAt
-            : dismissedAt as String?,
-        dismissedBy: identical(dismissedBy, sdkOmittedValue)
-            ? this.dismissedBy
-            : dismissedBy as NullableSimpleUser?,
-        dismissedReason: identical(dismissedReason, sdkOmittedValue)
-            ? this.dismissedReason
-            : dismissedReason as DependabotAlertDismissedReason?,
-        dismissedComment: identical(dismissedComment, sdkOmittedValue)
-            ? this.dismissedComment
-            : dismissedComment as String?,
-        fixedAt: identical(fixedAt, sdkOmittedValue)
-            ? this.fixedAt
-            : fixedAt as String?,
-        autoDismissedAt: identical(autoDismissedAt, sdkOmittedValue)
-            ? this.autoDismissedAt
-            : autoDismissedAt as SdkOptional<String?>,
-        dismissalRequest: identical(dismissalRequest, sdkOmittedValue)
-            ? this.dismissalRequest
-            : dismissalRequest
-                as SdkOptional<DependabotAlertDismissalRequestSimple?>,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as SdkOptional<List<SimpleUser>>,
-      );
+  DependabotAlert _copyWith({Object? number = sdkOmittedValue, Object? state = sdkOmittedValue, Object? dependency = sdkOmittedValue, Object? securityAdvisory = sdkOmittedValue, Object? securityVulnerability = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? dismissedAt = sdkOmittedValue, Object? dismissedBy = sdkOmittedValue, Object? dismissedReason = sdkOmittedValue, Object? dismissedComment = sdkOmittedValue, Object? fixedAt = sdkOmittedValue, Object? autoDismissedAt = sdkOmittedValue, Object? dismissalRequest = sdkOmittedValue, Object? assignees = sdkOmittedValue}) => DependabotAlert(
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    state: identical(state, sdkOmittedValue) ? this.state : state as DependabotAlertState,
+    dependency: identical(dependency, sdkOmittedValue) ? this.dependency : dependency as DependabotAlertDependency,
+    securityAdvisory: identical(securityAdvisory, sdkOmittedValue) ? this.securityAdvisory : securityAdvisory as DependabotAlertSecurityAdvisory,
+    securityVulnerability: identical(securityVulnerability, sdkOmittedValue) ? this.securityVulnerability : securityVulnerability as DependabotAlertSecurityVulnerability,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    dismissedAt: identical(dismissedAt, sdkOmittedValue) ? this.dismissedAt : dismissedAt as String?,
+    dismissedBy: identical(dismissedBy, sdkOmittedValue) ? this.dismissedBy : dismissedBy as NullableSimpleUser?,
+    dismissedReason: identical(dismissedReason, sdkOmittedValue) ? this.dismissedReason : dismissedReason as DependabotAlertDismissedReason?,
+    dismissedComment: identical(dismissedComment, sdkOmittedValue) ? this.dismissedComment : dismissedComment as String?,
+    fixedAt: identical(fixedAt, sdkOmittedValue) ? this.fixedAt : fixedAt as String?,
+    autoDismissedAt: identical(autoDismissedAt, sdkOmittedValue) ? this.autoDismissedAt : autoDismissedAt as SdkOptional<String?>,
+    dismissalRequest: identical(dismissalRequest, sdkOmittedValue) ? this.dismissalRequest : dismissalRequest as SdkOptional<DependabotAlertDismissalRequestSimple?>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<SimpleUser>>,
+  );
 
-  factory DependabotAlert.fromJson(Map<String, dynamic> json) =>
-      DependabotAlert(
-        number: ((json['number'] as num?)?.toInt())!,
-        state: (json['state'] != null
-            ? DependabotAlertState.fromJson(json['state'] as String)
-            : null)!,
-        dependency: (json['dependency'] != null
-            ? DependabotAlertDependency.fromJson(
-                json['dependency'] as Map<String, dynamic>)
-            : null)!,
-        securityAdvisory: (json['security_advisory'] != null
-            ? DependabotAlertSecurityAdvisory.fromJson(
-                json['security_advisory'] as Map<String, dynamic>)
-            : null)!,
-        securityVulnerability: (json['security_vulnerability'] != null
-            ? DependabotAlertSecurityVulnerability.fromJson(
-                json['security_vulnerability'] as Map<String, dynamic>)
-            : null)!,
-        url: (json['url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        dismissedAt: json.containsKey('dismissed_at')
-            ? json['dismissed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'dismissed_at', 'Required property is missing'),
-        dismissedBy: json.containsKey('dismissed_by')
-            ? json['dismissed_by'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['dismissed_by'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'dismissed_by', 'Required property is missing'),
-        dismissedReason: json.containsKey('dismissed_reason')
-            ? json['dismissed_reason'] != null
-                ? DependabotAlertDismissedReason.fromJson(
-                    json['dismissed_reason'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'dismissed_reason', 'Required property is missing'),
-        dismissedComment: json.containsKey('dismissed_comment')
-            ? json['dismissed_comment'] as String?
-            : throw ArgumentError.value(
-                null, 'dismissed_comment', 'Required property is missing'),
-        fixedAt: json.containsKey('fixed_at')
-            ? json['fixed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'fixed_at', 'Required property is missing'),
-        autoDismissedAt: json.containsKey('auto_dismissed_at')
-            ? SdkPresent(json['auto_dismissed_at'] as String?)
-            : const SdkOmitted(),
-        dismissalRequest: json.containsKey('dismissal_request')
-            ? SdkPresent(json['dismissal_request'] != null
-                ? DependabotAlertDismissalRequestSimple.fromJson(
-                    json['dismissal_request'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory DependabotAlert.fromJson(Map<String, dynamic> json) => DependabotAlert(
+    number: ((json['number'] as num?)?.toInt())!,
+    state: (json['state'] != null ? DependabotAlertState.fromJson(json['state'] as String) : null)!,
+    dependency: (json['dependency'] != null ? DependabotAlertDependency.fromJson(json['dependency'] as Map<String, dynamic>) : null)!,
+    securityAdvisory: (json['security_advisory'] != null ? DependabotAlertSecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>) : null)!,
+    securityVulnerability: (json['security_vulnerability'] != null ? DependabotAlertSecurityVulnerability.fromJson(json['security_vulnerability'] as Map<String, dynamic>) : null)!,
+    url: (json['url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    dismissedAt: json.containsKey('dismissed_at') ? json['dismissed_at'] as String? : throw ArgumentError.value(null, 'dismissed_at', 'Required property is missing'),
+    dismissedBy: json.containsKey('dismissed_by') ? json['dismissed_by'] != null ? NullableSimpleUser.fromJson(json['dismissed_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'dismissed_by', 'Required property is missing'),
+    dismissedReason: json.containsKey('dismissed_reason') ? json['dismissed_reason'] != null ? DependabotAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null : throw ArgumentError.value(null, 'dismissed_reason', 'Required property is missing'),
+    dismissedComment: json.containsKey('dismissed_comment') ? json['dismissed_comment'] as String? : throw ArgumentError.value(null, 'dismissed_comment', 'Required property is missing'),
+    fixedAt: json.containsKey('fixed_at') ? json['fixed_at'] as String? : throw ArgumentError.value(null, 'fixed_at', 'Required property is missing'),
+    autoDismissedAt: json.containsKey('auto_dismissed_at') ? SdkPresent(json['auto_dismissed_at'] as String?) : const SdkOmitted(),
+    dismissalRequest: json.containsKey('dismissal_request') ? SdkPresent(json['dismissal_request'] != null ? DependabotAlertDismissalRequestSimple.fromJson(json['dismissal_request'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'number': number,
-        'state': state.toJson(),
-        'dependency': dependency.toJson(),
-        'security_advisory': securityAdvisory.toJson(),
-        'security_vulnerability': securityVulnerability.toJson(),
-        'url': url,
-        'html_url': htmlUrl,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'dismissed_at': dismissedAt,
-        'dismissed_by': dismissedBy?.toJson(),
-        'dismissed_reason': dismissedReason?.toJson(),
-        'dismissed_comment': dismissedComment,
-        'fixed_at': fixedAt,
-        ...switch (autoDismissedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'auto_dismissed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dismissalRequest) {
-          SdkPresent<DependabotAlertDismissalRequestSimple?>(
-            value: final value
-          ) =>
-            {
-              'dismissal_request': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<SimpleUser>>(value: final value) => {
-              'assignees': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'number': number,
+    'state': state.toJson(),
+    'dependency': dependency.toJson(),
+    'security_advisory': securityAdvisory.toJson(),
+    'security_vulnerability': securityVulnerability.toJson(),
+    'url': url,
+    'html_url': htmlUrl,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'dismissed_at': dismissedAt,
+    'dismissed_by': dismissedBy?.toJson(),
+    'dismissed_reason': dismissedReason?.toJson(),
+    'dismissed_comment': dismissedComment,
+    'fixed_at': fixedAt,
+    ...switch (autoDismissedAt) {
+      SdkPresent<String?>(value: final value) => {'auto_dismissed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dismissalRequest) {
+      SdkPresent<DependabotAlertDismissalRequestSimple?>(value: final value) => {'dismissal_request': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<SimpleUser>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

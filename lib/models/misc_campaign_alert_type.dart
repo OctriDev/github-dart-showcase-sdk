@@ -6,25 +6,22 @@ part of 'misc.dart';
 // misc domain models
 /// Indicates the alert type of a campaign
 final class CampaignAlertType {
+
   final String value;
 
   const CampaignAlertType._(this.value);
 
-  factory CampaignAlertType.fromJson(String value) =>
-      CampaignAlertType._(value);
+  factory CampaignAlertType.fromJson(String value) => CampaignAlertType._(value);
 
   static const codeScanning = CampaignAlertType._('code_scanning');
   static const secretScanning = CampaignAlertType._('secret_scanning');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CampaignAlertType && other.value == value;
+  @override bool operator ==(Object other) => other is CampaignAlertType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

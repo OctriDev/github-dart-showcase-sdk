@@ -8,155 +8,85 @@ part of 'gists.dart';
 class GistCommitChangeStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `total` wire field.
   final SdkOptional<int> total;
-
   /// Optional `integer` value serialized in the `additions` wire field.
   final SdkOptional<int> additions;
-
   /// Optional `integer` value serialized in the `deletions` wire field.
   final SdkOptional<int> deletions;
 
-  const GistCommitChangeStatus(
-      {this.total = const SdkOmitted(),
-      this.additions = const SdkOmitted(),
-      this.deletions = const SdkOmitted()});
+  const GistCommitChangeStatus({this.total = const SdkOmitted(), this.additions = const SdkOmitted(), this.deletions = const SdkOmitted()});
 
-  GistCommitChangeStatus Function(
-      {SdkOptional<int> total,
-      SdkOptional<int> additions,
-      SdkOptional<int> deletions}) get copyWith => _copyWith;
+  GistCommitChangeStatus Function({SdkOptional<int> total, SdkOptional<int> additions, SdkOptional<int> deletions}) get copyWith => _copyWith;
 
-  GistCommitChangeStatus _copyWith(
-          {Object? total = sdkOmittedValue,
-          Object? additions = sdkOmittedValue,
-          Object? deletions = sdkOmittedValue}) =>
-      GistCommitChangeStatus(
-        total: identical(total, sdkOmittedValue)
-            ? this.total
-            : total as SdkOptional<int>,
-        additions: identical(additions, sdkOmittedValue)
-            ? this.additions
-            : additions as SdkOptional<int>,
-        deletions: identical(deletions, sdkOmittedValue)
-            ? this.deletions
-            : deletions as SdkOptional<int>,
-      );
+  GistCommitChangeStatus _copyWith({Object? total = sdkOmittedValue, Object? additions = sdkOmittedValue, Object? deletions = sdkOmittedValue}) => GistCommitChangeStatus(
+    total: identical(total, sdkOmittedValue) ? this.total : total as SdkOptional<int>,
+    additions: identical(additions, sdkOmittedValue) ? this.additions : additions as SdkOptional<int>,
+    deletions: identical(deletions, sdkOmittedValue) ? this.deletions : deletions as SdkOptional<int>,
+  );
 
-  factory GistCommitChangeStatus.fromJson(Map<String, dynamic> json) =>
-      GistCommitChangeStatus(
-        total: json['total'] != null
-            ? SdkPresent(((json['total'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        additions: json['additions'] != null
-            ? SdkPresent(((json['additions'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        deletions: json['deletions'] != null
-            ? SdkPresent(((json['deletions'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory GistCommitChangeStatus.fromJson(Map<String, dynamic> json) => GistCommitChangeStatus(
+    total: json['total'] != null ? SdkPresent(((json['total'] as num?)?.toInt())!) : const SdkOmitted(),
+    additions: json['additions'] != null ? SdkPresent(((json['additions'] as num?)?.toInt())!) : const SdkOmitted(),
+    deletions: json['deletions'] != null ? SdkPresent(((json['deletions'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (total) {
-          SdkPresent<int>(value: final value) => {
-              'total': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (additions) {
-          SdkPresent<int>(value: final value) => {
-              'additions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deletions) {
-          SdkPresent<int>(value: final value) => {
-              'deletions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (total) {
+      SdkPresent<int>(value: final value) => {'total': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (additions) {
+      SdkPresent<int>(value: final value) => {'additions': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deletions) {
+      SdkPresent<int>(value: final value) => {'deletions': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Gist Commit
 class GistCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `version` wire field.
   final String version;
-
   /// A GitHub user.
   final NullableSimpleUser? user;
-
   /// Required object value serialized in the `change_status` wire field.
   final GistCommitChangeStatus changeStatus;
-
   /// Required `date-time`-formatted value serialized in the `committed_at` wire field.
   final String committedAt;
 
-  const GistCommit(
-      {required this.url,
-      required this.version,
-      required this.user,
-      required this.changeStatus,
-      required this.committedAt});
+  const GistCommit({required this.url, required this.version, required this.user, required this.changeStatus, required this.committedAt});
 
-  GistCommit Function(
-      {String url,
-      String version,
-      NullableSimpleUser? user,
-      GistCommitChangeStatus changeStatus,
-      String committedAt}) get copyWith => _copyWith;
+  GistCommit Function({String url, String version, NullableSimpleUser? user, GistCommitChangeStatus changeStatus, String committedAt}) get copyWith => _copyWith;
 
-  GistCommit _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? changeStatus = sdkOmittedValue,
-          Object? committedAt = sdkOmittedValue}) =>
-      GistCommit(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as NullableSimpleUser?,
-        changeStatus: identical(changeStatus, sdkOmittedValue)
-            ? this.changeStatus
-            : changeStatus as GistCommitChangeStatus,
-        committedAt: identical(committedAt, sdkOmittedValue)
-            ? this.committedAt
-            : committedAt as String,
-      );
+  GistCommit _copyWith({Object? url = sdkOmittedValue, Object? version = sdkOmittedValue, Object? user = sdkOmittedValue, Object? changeStatus = sdkOmittedValue, Object? committedAt = sdkOmittedValue}) => GistCommit(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    version: identical(version, sdkOmittedValue) ? this.version : version as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
+    changeStatus: identical(changeStatus, sdkOmittedValue) ? this.changeStatus : changeStatus as GistCommitChangeStatus,
+    committedAt: identical(committedAt, sdkOmittedValue) ? this.committedAt : committedAt as String,
+  );
 
   factory GistCommit.fromJson(Map<String, dynamic> json) => GistCommit(
-        url: (json['url'] as String?)!,
-        version: (json['version'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-        changeStatus: (json['change_status'] != null
-            ? GistCommitChangeStatus.fromJson(
-                json['change_status'] as Map<String, dynamic>)
-            : null)!,
-        committedAt: (json['committed_at'] as String?)!,
-      );
+    url: (json['url'] as String?)!,
+    version: (json['version'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+    changeStatus: (json['change_status'] != null ? GistCommitChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>) : null)!,
+    committedAt: (json['committed_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'version': version,
-        'user': user?.toJson(),
-        'change_status': changeStatus.toJson(),
-        'committed_at': committedAt,
-      };
+    'url': url,
+    'version': version,
+    'user': user?.toJson(),
+    'change_status': changeStatus.toJson(),
+    'committed_at': committedAt,
+  };
 }

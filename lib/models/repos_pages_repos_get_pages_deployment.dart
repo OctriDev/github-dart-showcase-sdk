@@ -8,38 +8,25 @@ part of 'repos_pages.dart';
 class PagesDeploymentStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The current status of the deployment.
   final SdkOptional<PagesDeploymentStatusStatus> status;
 
   const PagesDeploymentStatus({this.status = const SdkOmitted()});
 
-  PagesDeploymentStatus Function(
-          {SdkOptional<PagesDeploymentStatusStatus> status})
-      get copyWith => _copyWith;
+  PagesDeploymentStatus Function({SdkOptional<PagesDeploymentStatusStatus> status}) get copyWith => _copyWith;
 
-  PagesDeploymentStatus _copyWith({Object? status = sdkOmittedValue}) =>
-      PagesDeploymentStatus(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<PagesDeploymentStatusStatus>,
-      );
+  PagesDeploymentStatus _copyWith({Object? status = sdkOmittedValue}) => PagesDeploymentStatus(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<PagesDeploymentStatusStatus>,
+  );
 
-  factory PagesDeploymentStatus.fromJson(Map<String, dynamic> json) =>
-      PagesDeploymentStatus(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] != null
-                ? PagesDeploymentStatusStatus.fromJson(json['status'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory PagesDeploymentStatus.fromJson(Map<String, dynamic> json) => PagesDeploymentStatus(
+    status: json['status'] != null ? SdkPresent((json['status'] != null ? PagesDeploymentStatusStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<PagesDeploymentStatusStatus>(value: final value) => {
-              'status': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (status) {
+      SdkPresent<PagesDeploymentStatusStatus>(value: final value) => {'status': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

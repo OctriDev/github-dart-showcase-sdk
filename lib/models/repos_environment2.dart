@@ -8,136 +8,68 @@ part of 'repos_environment.dart';
 class Environment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The id of the environment.
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// The name of the environment.
   final String name;
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// The time that the environment was created, in ISO 8601 format.
   final String createdAt;
-
   /// The time that the environment was last updated, in ISO 8601 format.
   final String updatedAt;
-
   /// Built-in deployment protection rules for the environment.
   final SdkOptional<List<EnvironmentProtectionRulesItem>> protectionRules;
-
   /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
   final SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy;
 
-  const Environment(
-      {required this.id,
-      required this.nodeId,
-      required this.name,
-      required this.url,
-      required this.htmlUrl,
-      required this.createdAt,
-      required this.updatedAt,
-      this.protectionRules = const SdkOmitted(),
-      this.deploymentBranchPolicy = const SdkOmitted()});
+  const Environment({required this.id, required this.nodeId, required this.name, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, this.protectionRules = const SdkOmitted(), this.deploymentBranchPolicy = const SdkOmitted()});
 
-  Environment Function(
-          {int id,
-          String nodeId,
-          String name,
-          String url,
-          String htmlUrl,
-          String createdAt,
-          String updatedAt,
-          SdkOptional<List<EnvironmentProtectionRulesItem>> protectionRules,
-          SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy})
-      get copyWith => _copyWith;
+  Environment Function({int id, String nodeId, String name, String url, String htmlUrl, String createdAt, String updatedAt, SdkOptional<List<EnvironmentProtectionRulesItem>> protectionRules, SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy}) get copyWith => _copyWith;
 
-  Environment _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? protectionRules = sdkOmittedValue,
-          Object? deploymentBranchPolicy = sdkOmittedValue}) =>
-      Environment(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        protectionRules: identical(protectionRules, sdkOmittedValue)
-            ? this.protectionRules
-            : protectionRules
-                as SdkOptional<List<EnvironmentProtectionRulesItem>>,
-        deploymentBranchPolicy:
-            identical(deploymentBranchPolicy, sdkOmittedValue)
-                ? this.deploymentBranchPolicy
-                : deploymentBranchPolicy
-                    as SdkOptional<DeploymentBranchPolicySettings?>,
-      );
+  Environment _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? protectionRules = sdkOmittedValue, Object? deploymentBranchPolicy = sdkOmittedValue}) => Environment(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    protectionRules: identical(protectionRules, sdkOmittedValue) ? this.protectionRules : protectionRules as SdkOptional<List<EnvironmentProtectionRulesItem>>,
+    deploymentBranchPolicy: identical(deploymentBranchPolicy, sdkOmittedValue) ? this.deploymentBranchPolicy : deploymentBranchPolicy as SdkOptional<DeploymentBranchPolicySettings?>,
+  );
 
   factory Environment.fromJson(Map<String, dynamic> json) => Environment(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        name: (json['name'] as String?)!,
-        url: (json['url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        protectionRules: json['protection_rules'] != null
-            ? SdkPresent(((json['protection_rules'] as List?)
-                ?.map((e) => EnvironmentProtectionRulesItem.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-        deploymentBranchPolicy: json.containsKey('deployment_branch_policy')
-            ? SdkPresent(json['deployment_branch_policy'] != null
-                ? DeploymentBranchPolicySettings.fromJson(
-                    json['deployment_branch_policy'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    name: (json['name'] as String?)!,
+    url: (json['url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    protectionRules: json['protection_rules'] != null ? SdkPresent(((json['protection_rules'] as List?)?.map((e) => EnvironmentProtectionRulesItem.fromJson(e)).toList())!) : const SdkOmitted(),
+    deploymentBranchPolicy: json.containsKey('deployment_branch_policy') ? SdkPresent(json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'name': name,
-        'url': url,
-        'html_url': htmlUrl,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        ...switch (protectionRules) {
-          SdkPresent<List<EnvironmentProtectionRulesItem>>(
-            value: final value
-          ) =>
-            {
-              'protection_rules': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deploymentBranchPolicy) {
-          SdkPresent<DeploymentBranchPolicySettings?>(value: final value) => {
-              'deployment_branch_policy': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'node_id': nodeId,
+    'name': name,
+    'url': url,
+    'html_url': htmlUrl,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    ...switch (protectionRules) {
+      SdkPresent<List<EnvironmentProtectionRulesItem>>(value: final value) => {'protection_rules': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deploymentBranchPolicy) {
+      SdkPresent<DeploymentBranchPolicySettings?>(value: final value) => {'deployment_branch_policy': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

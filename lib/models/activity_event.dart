@@ -8,161 +8,94 @@ part of 'activity.dart';
 class EventRepo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
   const EventRepo({required this.id, required this.name, required this.url});
 
-  EventRepo Function({int id, String name, String url}) get copyWith =>
-      _copyWith;
+  EventRepo Function({int id, String name, String url}) get copyWith => _copyWith;
 
-  EventRepo _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      EventRepo(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  EventRepo _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue}) => EventRepo(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
   factory EventRepo.fromJson(Map<String, dynamic> json) => EventRepo(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'url': url,
-      };
+    'id': id,
+    'name': name,
+    'url': url,
+  };
 }
 
 /// Event
 class Event {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `id` wire field.
   final String id;
-
   /// Required `string` value serialized in the `type` wire field.
   final String? type_;
-
   /// Actor
   final Actor actor;
-
   /// Required object value serialized in the `repo` wire field.
   final EventRepo repo;
-
   /// Actor
   final SdkOptional<Actor> org;
-
   /// Required API value serialized in the `payload` wire field.
   final EventPayload payload;
-
   /// Required `boolean` value serialized in the `public` wire field.
   final bool public;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String? createdAt;
 
-  const Event(
-      {required this.id,
-      required this.type_,
-      required this.actor,
-      required this.repo,
-      this.org = const SdkOmitted(),
-      required this.payload,
-      required this.public,
-      required this.createdAt});
+  const Event({required this.id, required this.type_, required this.actor, required this.repo, this.org = const SdkOmitted(), required this.payload, required this.public, required this.createdAt});
 
-  Event Function(
-      {String id,
-      String? type_,
-      Actor actor,
-      EventRepo repo,
-      SdkOptional<Actor> org,
-      EventPayload payload,
-      bool public,
-      String? createdAt}) get copyWith => _copyWith;
+  Event Function({String id, String? type_, Actor actor, EventRepo repo, SdkOptional<Actor> org, EventPayload payload, bool public, String? createdAt}) get copyWith => _copyWith;
 
-  Event _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? actor = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? org = sdkOmittedValue,
-          Object? payload = sdkOmittedValue,
-          Object? public = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue}) =>
-      Event(
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        type_:
-            identical(type_, sdkOmittedValue) ? this.type_ : type_ as String?,
-        actor: identical(actor, sdkOmittedValue) ? this.actor : actor as Actor,
-        repo: identical(repo, sdkOmittedValue) ? this.repo : repo as EventRepo,
-        org: identical(org, sdkOmittedValue)
-            ? this.org
-            : org as SdkOptional<Actor>,
-        payload: identical(payload, sdkOmittedValue)
-            ? this.payload
-            : payload as EventPayload,
-        public:
-            identical(public, sdkOmittedValue) ? this.public : public as bool,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String?,
-      );
+  Event _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? actor = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? org = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? public = sdkOmittedValue, Object? createdAt = sdkOmittedValue}) => Event(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String?,
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as Actor,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as EventRepo,
+    org: identical(org, sdkOmittedValue) ? this.org : org as SdkOptional<Actor>,
+    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as EventPayload,
+    public: identical(public, sdkOmittedValue) ? this.public : public as bool,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String?,
+  );
 
   factory Event.fromJson(Map<String, dynamic> json) => Event(
-        id: (json['id'] as String?)!,
-        type_: json.containsKey('type')
-            ? json['type'] as String?
-            : throw ArgumentError.value(
-                null, 'type', 'Required property is missing'),
-        actor: (json['actor'] != null
-            ? Actor.fromJson(json['actor'] as Map<String, dynamic>)
-            : null)!,
-        repo: (json['repo'] != null
-            ? EventRepo.fromJson(json['repo'] as Map<String, dynamic>)
-            : null)!,
-        org: json['org'] != null
-            ? SdkPresent((json['org'] != null
-                ? Actor.fromJson(json['org'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        payload: (json['payload'] != null
-            ? EventPayload.fromJson(json['payload'])
-            : null)!,
-        public: (json['public'] as bool?)!,
-        createdAt: json.containsKey('created_at')
-            ? json['created_at'] as String?
-            : throw ArgumentError.value(
-                null, 'created_at', 'Required property is missing'),
-      );
+    id: (json['id'] as String?)!,
+    type_: json.containsKey('type') ? json['type'] as String? : throw ArgumentError.value(null, 'type', 'Required property is missing'),
+    actor: (json['actor'] != null ? Actor.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
+    repo: (json['repo'] != null ? EventRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    org: json['org'] != null ? SdkPresent((json['org'] != null ? Actor.fromJson(json['org'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    payload: (json['payload'] != null ? EventPayload.fromJson(json['payload']) : null)!,
+    public: (json['public'] as bool?)!,
+    createdAt: json.containsKey('created_at') ? json['created_at'] as String? : throw ArgumentError.value(null, 'created_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'type': type_,
-        'actor': actor.toJson(),
-        'repo': repo.toJson(),
-        ...switch (org) {
-          SdkPresent<Actor>(value: final value) => {
-              'org': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'payload': payload.toJson(),
-        'public': public,
-        'created_at': createdAt,
-      };
+    'id': id,
+    'type': type_,
+    'actor': actor.toJson(),
+    'repo': repo.toJson(),
+    ...switch (org) {
+      SdkPresent<Actor>(value: final value) => {'org': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'payload': payload.toJson(),
+    'public': public,
+    'created_at': createdAt,
+  };
 }

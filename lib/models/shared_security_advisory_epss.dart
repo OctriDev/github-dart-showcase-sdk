@@ -8,55 +8,33 @@ part of 'shared_security.dart';
 class SecurityAdvisoryEpss {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `number` value serialized in the `percentage` wire field.
   final SdkOptional<double> percentage;
-
   /// Optional `number` value serialized in the `percentile` wire field.
   final SdkOptional<double> percentile;
 
-  const SecurityAdvisoryEpss(
-      {this.percentage = const SdkOmitted(),
-      this.percentile = const SdkOmitted()});
+  const SecurityAdvisoryEpss({this.percentage = const SdkOmitted(), this.percentile = const SdkOmitted()});
 
-  SecurityAdvisoryEpss Function(
-      {SdkOptional<double> percentage,
-      SdkOptional<double> percentile}) get copyWith => _copyWith;
+  SecurityAdvisoryEpss Function({SdkOptional<double> percentage, SdkOptional<double> percentile}) get copyWith => _copyWith;
 
-  SecurityAdvisoryEpss _copyWith(
-          {Object? percentage = sdkOmittedValue,
-          Object? percentile = sdkOmittedValue}) =>
-      SecurityAdvisoryEpss(
-        percentage: identical(percentage, sdkOmittedValue)
-            ? this.percentage
-            : percentage as SdkOptional<double>,
-        percentile: identical(percentile, sdkOmittedValue)
-            ? this.percentile
-            : percentile as SdkOptional<double>,
-      );
+  SecurityAdvisoryEpss _copyWith({Object? percentage = sdkOmittedValue, Object? percentile = sdkOmittedValue}) => SecurityAdvisoryEpss(
+    percentage: identical(percentage, sdkOmittedValue) ? this.percentage : percentage as SdkOptional<double>,
+    percentile: identical(percentile, sdkOmittedValue) ? this.percentile : percentile as SdkOptional<double>,
+  );
 
-  factory SecurityAdvisoryEpss.fromJson(Map<String, dynamic> json) =>
-      SecurityAdvisoryEpss(
-        percentage: json['percentage'] != null
-            ? SdkPresent(((json['percentage'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-        percentile: json['percentile'] != null
-            ? SdkPresent(((json['percentile'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-      );
+  factory SecurityAdvisoryEpss.fromJson(Map<String, dynamic> json) => SecurityAdvisoryEpss(
+    percentage: json['percentage'] != null ? SdkPresent(((json['percentage'] as num?)?.toDouble())!) : const SdkOmitted(),
+    percentile: json['percentile'] != null ? SdkPresent(((json['percentile'] as num?)?.toDouble())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (percentage) {
-          SdkPresent<double>(value: final value) => {
-              'percentage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (percentile) {
-          SdkPresent<double>(value: final value) => {
-              'percentile': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (percentage) {
+      SdkPresent<double>(value: final value) => {'percentage': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (percentile) {
+      SdkPresent<double>(value: final value) => {'percentile': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

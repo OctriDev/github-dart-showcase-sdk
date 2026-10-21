@@ -8,369 +8,175 @@ part of 'repos_branch.dart';
 class BranchRestrictionPolicyAppsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `slug` wire field.
   final SdkOptional<String> slug;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional object value serialized in the `owner` wire field.
   final SdkOptional<BranchRestrictionPolicyAppsItemOwner> owner;
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `client_id` wire field.
   final SdkOptional<String> clientId;
-
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String> description;
-
   /// Optional `string` value serialized in the `external_url` wire field.
   final SdkOptional<String> externalUrl;
-
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
-
   /// Optional `string` value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
-
   /// Optional object value serialized in the `permissions` wire field.
   final SdkOptional<BranchRestrictionPolicyAppsItemPermissions> permissions;
-
   /// Optional array value serialized in the `events` wire field.
   final SdkOptional<List<String>> events;
 
-  const BranchRestrictionPolicyAppsItem(
-      {this.id = const SdkOmitted(),
-      this.slug = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.owner = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.clientId = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.externalUrl = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted(),
-      this.permissions = const SdkOmitted(),
-      this.events = const SdkOmitted()});
+  const BranchRestrictionPolicyAppsItem({this.id = const SdkOmitted(), this.slug = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.owner = const SdkOmitted(), this.name = const SdkOmitted(), this.clientId = const SdkOmitted(), this.description = const SdkOmitted(), this.externalUrl = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), this.permissions = const SdkOmitted(), this.events = const SdkOmitted()});
 
-  BranchRestrictionPolicyAppsItem Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> slug,
-      SdkOptional<String> nodeId,
-      SdkOptional<BranchRestrictionPolicyAppsItemOwner> owner,
-      SdkOptional<String> name,
-      SdkOptional<String> clientId,
-      SdkOptional<String> description,
-      SdkOptional<String> externalUrl,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> updatedAt,
-      SdkOptional<BranchRestrictionPolicyAppsItemPermissions> permissions,
-      SdkOptional<List<String>> events}) get copyWith => _copyWith;
+  BranchRestrictionPolicyAppsItem Function({SdkOptional<int> id, SdkOptional<String> slug, SdkOptional<String> nodeId, SdkOptional<BranchRestrictionPolicyAppsItemOwner> owner, SdkOptional<String> name, SdkOptional<String> clientId, SdkOptional<String> description, SdkOptional<String> externalUrl, SdkOptional<String> htmlUrl, SdkOptional<String> createdAt, SdkOptional<String> updatedAt, SdkOptional<BranchRestrictionPolicyAppsItemPermissions> permissions, SdkOptional<List<String>> events}) get copyWith => _copyWith;
 
-  BranchRestrictionPolicyAppsItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? slug = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? clientId = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? externalUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? events = sdkOmittedValue}) =>
-      BranchRestrictionPolicyAppsItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        slug: identical(slug, sdkOmittedValue)
-            ? this.slug
-            : slug as SdkOptional<String>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SdkOptional<BranchRestrictionPolicyAppsItemOwner>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        clientId: identical(clientId, sdkOmittedValue)
-            ? this.clientId
-            : clientId as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        externalUrl: identical(externalUrl, sdkOmittedValue)
-            ? this.externalUrl
-            : externalUrl as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions
-                as SdkOptional<BranchRestrictionPolicyAppsItemPermissions>,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<List<String>>,
-      );
+  BranchRestrictionPolicyAppsItem _copyWith({Object? id = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? name = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? description = sdkOmittedValue, Object? externalUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? events = sdkOmittedValue}) => BranchRestrictionPolicyAppsItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<String>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<BranchRestrictionPolicyAppsItemOwner>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    externalUrl: identical(externalUrl, sdkOmittedValue) ? this.externalUrl : externalUrl as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<BranchRestrictionPolicyAppsItemPermissions>,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<String>>,
+  );
 
-  factory BranchRestrictionPolicyAppsItem.fromJson(Map<String, dynamic> json) =>
-      BranchRestrictionPolicyAppsItem(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        slug: json['slug'] != null
-            ? SdkPresent((json['slug'] as String?)!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        owner: json['owner'] != null
-            ? SdkPresent((json['owner'] != null
-                ? BranchRestrictionPolicyAppsItemOwner.fromJson(
-                    json['owner'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        clientId: json['client_id'] != null
-            ? SdkPresent((json['client_id'] as String?)!)
-            : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        externalUrl: json['external_url'] != null
-            ? SdkPresent((json['external_url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-        permissions: json['permissions'] != null
-            ? SdkPresent((json['permissions'] != null
-                ? BranchRestrictionPolicyAppsItemPermissions.fromJson(
-                    json['permissions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        events: json['events'] != null
-            ? SdkPresent(
-                ((json['events'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory BranchRestrictionPolicyAppsItem.fromJson(Map<String, dynamic> json) => BranchRestrictionPolicyAppsItem(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    slug: json['slug'] != null ? SdkPresent((json['slug'] as String?)!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    owner: json['owner'] != null ? SdkPresent((json['owner'] != null ? BranchRestrictionPolicyAppsItemOwner.fromJson(json['owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    clientId: json['client_id'] != null ? SdkPresent((json['client_id'] as String?)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    externalUrl: json['external_url'] != null ? SdkPresent((json['external_url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] != null ? BranchRestrictionPolicyAppsItemPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (slug) {
-          SdkPresent<String>(value: final value) => {
-              'slug': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (owner) {
-          SdkPresent<BranchRestrictionPolicyAppsItemOwner>(
-            value: final value
-          ) =>
-            {
-              'owner': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (clientId) {
-          SdkPresent<String>(value: final value) => {
-              'client_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (externalUrl) {
-          SdkPresent<String>(value: final value) => {
-              'external_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (permissions) {
-          SdkPresent<BranchRestrictionPolicyAppsItemPermissions>(
-            value: final value
-          ) =>
-            {
-              'permissions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (events) {
-          SdkPresent<List<String>>(value: final value) => {
-              'events': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (slug) {
+      SdkPresent<String>(value: final value) => {'slug': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (owner) {
+      SdkPresent<BranchRestrictionPolicyAppsItemOwner>(value: final value) => {'owner': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (clientId) {
+      SdkPresent<String>(value: final value) => {'client_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (externalUrl) {
+      SdkPresent<String>(value: final value) => {'external_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (permissions) {
+      SdkPresent<BranchRestrictionPolicyAppsItemPermissions>(value: final value) => {'permissions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (events) {
+      SdkPresent<List<String>>(value: final value) => {'events': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Branch Restriction Policy
 class BranchRestrictionPolicy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `uri`-formatted value serialized in the `users_url` wire field.
   final String usersUrl;
-
   /// Required `uri`-formatted value serialized in the `teams_url` wire field.
   final String teamsUrl;
-
   /// Required `uri`-formatted value serialized in the `apps_url` wire field.
   final String appsUrl;
-
   /// Required array value serialized in the `users` wire field.
   final List<BranchRestrictionPolicyUsersItem> users;
-
   /// Required array value serialized in the `teams` wire field.
   final List<Team> teams;
-
   /// Required array value serialized in the `apps` wire field.
   final List<BranchRestrictionPolicyAppsItem> apps;
 
-  const BranchRestrictionPolicy(
-      {required this.url,
-      required this.usersUrl,
-      required this.teamsUrl,
-      required this.appsUrl,
-      required this.users,
-      required this.teams,
-      required this.apps});
+  const BranchRestrictionPolicy({required this.url, required this.usersUrl, required this.teamsUrl, required this.appsUrl, required this.users, required this.teams, required this.apps});
 
-  BranchRestrictionPolicy Function(
-      {String url,
-      String usersUrl,
-      String teamsUrl,
-      String appsUrl,
-      List<BranchRestrictionPolicyUsersItem> users,
-      List<Team> teams,
-      List<BranchRestrictionPolicyAppsItem> apps}) get copyWith => _copyWith;
+  BranchRestrictionPolicy Function({String url, String usersUrl, String teamsUrl, String appsUrl, List<BranchRestrictionPolicyUsersItem> users, List<Team> teams, List<BranchRestrictionPolicyAppsItem> apps}) get copyWith => _copyWith;
 
-  BranchRestrictionPolicy _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? usersUrl = sdkOmittedValue,
-          Object? teamsUrl = sdkOmittedValue,
-          Object? appsUrl = sdkOmittedValue,
-          Object? users = sdkOmittedValue,
-          Object? teams = sdkOmittedValue,
-          Object? apps = sdkOmittedValue}) =>
-      BranchRestrictionPolicy(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        usersUrl: identical(usersUrl, sdkOmittedValue)
-            ? this.usersUrl
-            : usersUrl as String,
-        teamsUrl: identical(teamsUrl, sdkOmittedValue)
-            ? this.teamsUrl
-            : teamsUrl as String,
-        appsUrl: identical(appsUrl, sdkOmittedValue)
-            ? this.appsUrl
-            : appsUrl as String,
-        users: identical(users, sdkOmittedValue)
-            ? this.users
-            : users as List<BranchRestrictionPolicyUsersItem>,
-        teams: identical(teams, sdkOmittedValue)
-            ? this.teams
-            : teams as List<Team>,
-        apps: identical(apps, sdkOmittedValue)
-            ? this.apps
-            : apps as List<BranchRestrictionPolicyAppsItem>,
-      );
+  BranchRestrictionPolicy _copyWith({Object? url = sdkOmittedValue, Object? usersUrl = sdkOmittedValue, Object? teamsUrl = sdkOmittedValue, Object? appsUrl = sdkOmittedValue, Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => BranchRestrictionPolicy(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    usersUrl: identical(usersUrl, sdkOmittedValue) ? this.usersUrl : usersUrl as String,
+    teamsUrl: identical(teamsUrl, sdkOmittedValue) ? this.teamsUrl : teamsUrl as String,
+    appsUrl: identical(appsUrl, sdkOmittedValue) ? this.appsUrl : appsUrl as String,
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<BranchRestrictionPolicyUsersItem>,
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<Team>,
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as List<BranchRestrictionPolicyAppsItem>,
+  );
 
-  factory BranchRestrictionPolicy.fromJson(Map<String, dynamic> json) =>
-      BranchRestrictionPolicy(
-        url: (json['url'] as String?)!,
-        usersUrl: (json['users_url'] as String?)!,
-        teamsUrl: (json['teams_url'] as String?)!,
-        appsUrl: (json['apps_url'] as String?)!,
-        users: ((json['users'] as List?)
-            ?.map((e) => BranchRestrictionPolicyUsersItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        teams: ((json['teams'] as List?)
-            ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        apps: ((json['apps'] as List?)
-            ?.map((e) => BranchRestrictionPolicyAppsItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory BranchRestrictionPolicy.fromJson(Map<String, dynamic> json) => BranchRestrictionPolicy(
+    url: (json['url'] as String?)!,
+    usersUrl: (json['users_url'] as String?)!,
+    teamsUrl: (json['teams_url'] as String?)!,
+    appsUrl: (json['apps_url'] as String?)!,
+    users: ((json['users'] as List?)?.map((e) => BranchRestrictionPolicyUsersItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    teams: ((json['teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!,
+    apps: ((json['apps'] as List?)?.map((e) => BranchRestrictionPolicyAppsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'users_url': usersUrl,
-        'teams_url': teamsUrl,
-        'apps_url': appsUrl,
-        'users': users.map((item) => item.toJson()).toList(),
-        'teams': teams.map((item) => item.toJson()).toList(),
-        'apps': apps.map((item) => item.toJson()).toList(),
-      };
+    'url': url,
+    'users_url': usersUrl,
+    'teams_url': teamsUrl,
+    'apps_url': appsUrl,
+    'users': users.map((item) => item.toJson()).toList(),
+    'teams': teams.map((item) => item.toJson()).toList(),
+    'apps': apps.map((item) => item.toJson()).toList(),
+  };
 }

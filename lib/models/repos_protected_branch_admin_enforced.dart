@@ -8,36 +8,27 @@ part of 'repos_protected.dart';
 class ProtectedBranchAdminEnforced {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
-  const ProtectedBranchAdminEnforced(
-      {required this.url, required this.enabled});
+  const ProtectedBranchAdminEnforced({required this.url, required this.enabled});
 
-  ProtectedBranchAdminEnforced Function({String url, bool enabled})
-      get copyWith => _copyWith;
+  ProtectedBranchAdminEnforced Function({String url, bool enabled}) get copyWith => _copyWith;
 
-  ProtectedBranchAdminEnforced _copyWith(
-          {Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) =>
-      ProtectedBranchAdminEnforced(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as bool,
-      );
+  ProtectedBranchAdminEnforced _copyWith({Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => ProtectedBranchAdminEnforced(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+  );
 
-  factory ProtectedBranchAdminEnforced.fromJson(Map<String, dynamic> json) =>
-      ProtectedBranchAdminEnforced(
-        url: (json['url'] as String?)!,
-        enabled: (json['enabled'] as bool?)!,
-      );
+  factory ProtectedBranchAdminEnforced.fromJson(Map<String, dynamic> json) => ProtectedBranchAdminEnforced(
+    url: (json['url'] as String?)!,
+    enabled: (json['enabled'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'enabled': enabled,
-      };
+    'url': url,
+    'enabled': enabled,
+  };
 }

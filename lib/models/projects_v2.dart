@@ -8,247 +8,111 @@ part of 'projects.dart';
 class ProjectsV2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the project.
   final double id;
-
   /// The node ID of the project.
   final String nodeId;
-
   /// A GitHub user.
   final SimpleUser owner;
-
   /// A GitHub user.
   final SimpleUser creator;
-
   /// The project title.
   final String title;
-
   /// A short description of the project.
   final String? description;
-
   /// Whether the project is visible to anyone with access to the owner.
   final bool public;
-
   /// The time when the project was closed.
   final String? closedAt;
-
   /// The time when the project was created.
   final String createdAt;
-
   /// The time when the project was last updated.
   final String updatedAt;
-
   /// The project number.
   final int number;
-
   /// A concise summary of the project.
   final String? shortDescription;
-
   /// The time when the project was deleted.
   final String? deletedAt;
-
   /// A GitHub user.
   final NullableSimpleUser? deletedBy;
-
   /// The current state of the project.
   final SdkOptional<ProjectsV2State> state;
-
   /// An status update belonging to a project
   final SdkOptional<NullableProjectsV2StatusUpdate?> latestStatusUpdate;
-
   /// Whether this project is a template
   final SdkOptional<bool> isTemplate;
 
-  const ProjectsV2(
-      {required this.id,
-      required this.nodeId,
-      required this.owner,
-      required this.creator,
-      required this.title,
-      required this.description,
-      required this.public,
-      required this.closedAt,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.number,
-      required this.shortDescription,
-      required this.deletedAt,
-      required this.deletedBy,
-      this.state = const SdkOmitted(),
-      this.latestStatusUpdate = const SdkOmitted(),
-      this.isTemplate = const SdkOmitted()});
+  const ProjectsV2({required this.id, required this.nodeId, required this.owner, required this.creator, required this.title, required this.description, required this.public, required this.closedAt, required this.createdAt, required this.updatedAt, required this.number, required this.shortDescription, required this.deletedAt, required this.deletedBy, this.state = const SdkOmitted(), this.latestStatusUpdate = const SdkOmitted(), this.isTemplate = const SdkOmitted()});
 
-  ProjectsV2 Function(
-      {double id,
-      String nodeId,
-      SimpleUser owner,
-      SimpleUser creator,
-      String title,
-      String? description,
-      bool public,
-      String? closedAt,
-      String createdAt,
-      String updatedAt,
-      int number,
-      String? shortDescription,
-      String? deletedAt,
-      NullableSimpleUser? deletedBy,
-      SdkOptional<ProjectsV2State> state,
-      SdkOptional<NullableProjectsV2StatusUpdate?> latestStatusUpdate,
-      SdkOptional<bool> isTemplate}) get copyWith => _copyWith;
+  ProjectsV2 Function({double id, String nodeId, SimpleUser owner, SimpleUser creator, String title, String? description, bool public, String? closedAt, String createdAt, String updatedAt, int number, String? shortDescription, String? deletedAt, NullableSimpleUser? deletedBy, SdkOptional<ProjectsV2State> state, SdkOptional<NullableProjectsV2StatusUpdate?> latestStatusUpdate, SdkOptional<bool> isTemplate}) get copyWith => _copyWith;
 
-  ProjectsV2 _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? public = sdkOmittedValue,
-          Object? closedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? shortDescription = sdkOmittedValue,
-          Object? deletedAt = sdkOmittedValue,
-          Object? deletedBy = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? latestStatusUpdate = sdkOmittedValue,
-          Object? isTemplate = sdkOmittedValue}) =>
-      ProjectsV2(
-        id: identical(id, sdkOmittedValue) ? this.id : id as double,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SimpleUser,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as SimpleUser,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        public:
-            identical(public, sdkOmittedValue) ? this.public : public as bool,
-        closedAt: identical(closedAt, sdkOmittedValue)
-            ? this.closedAt
-            : closedAt as String?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        shortDescription: identical(shortDescription, sdkOmittedValue)
-            ? this.shortDescription
-            : shortDescription as String?,
-        deletedAt: identical(deletedAt, sdkOmittedValue)
-            ? this.deletedAt
-            : deletedAt as String?,
-        deletedBy: identical(deletedBy, sdkOmittedValue)
-            ? this.deletedBy
-            : deletedBy as NullableSimpleUser?,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as SdkOptional<ProjectsV2State>,
-        latestStatusUpdate: identical(latestStatusUpdate, sdkOmittedValue)
-            ? this.latestStatusUpdate
-            : latestStatusUpdate
-                as SdkOptional<NullableProjectsV2StatusUpdate?>,
-        isTemplate: identical(isTemplate, sdkOmittedValue)
-            ? this.isTemplate
-            : isTemplate as SdkOptional<bool>,
-      );
+  ProjectsV2 _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? title = sdkOmittedValue, Object? description = sdkOmittedValue, Object? public = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? number = sdkOmittedValue, Object? shortDescription = sdkOmittedValue, Object? deletedAt = sdkOmittedValue, Object? deletedBy = sdkOmittedValue, Object? state = sdkOmittedValue, Object? latestStatusUpdate = sdkOmittedValue, Object? isTemplate = sdkOmittedValue}) => ProjectsV2(
+    id: identical(id, sdkOmittedValue) ? this.id : id as double,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SimpleUser,
+    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SimpleUser,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    public: identical(public, sdkOmittedValue) ? this.public : public as bool,
+    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    shortDescription: identical(shortDescription, sdkOmittedValue) ? this.shortDescription : shortDescription as String?,
+    deletedAt: identical(deletedAt, sdkOmittedValue) ? this.deletedAt : deletedAt as String?,
+    deletedBy: identical(deletedBy, sdkOmittedValue) ? this.deletedBy : deletedBy as NullableSimpleUser?,
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<ProjectsV2State>,
+    latestStatusUpdate: identical(latestStatusUpdate, sdkOmittedValue) ? this.latestStatusUpdate : latestStatusUpdate as SdkOptional<NullableProjectsV2StatusUpdate?>,
+    isTemplate: identical(isTemplate, sdkOmittedValue) ? this.isTemplate : isTemplate as SdkOptional<bool>,
+  );
 
   factory ProjectsV2.fromJson(Map<String, dynamic> json) => ProjectsV2(
-        id: ((json['id'] as num?)?.toDouble())!,
-        nodeId: (json['node_id'] as String?)!,
-        owner: (json['owner'] != null
-            ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
-            : null)!,
-        creator: (json['creator'] != null
-            ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-            : null)!,
-        title: (json['title'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        public: (json['public'] as bool?)!,
-        closedAt: json.containsKey('closed_at')
-            ? json['closed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'closed_at', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        shortDescription: json.containsKey('short_description')
-            ? json['short_description'] as String?
-            : throw ArgumentError.value(
-                null, 'short_description', 'Required property is missing'),
-        deletedAt: json.containsKey('deleted_at')
-            ? json['deleted_at'] as String?
-            : throw ArgumentError.value(
-                null, 'deleted_at', 'Required property is missing'),
-        deletedBy: json.containsKey('deleted_by')
-            ? json['deleted_by'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['deleted_by'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'deleted_by', 'Required property is missing'),
-        state: json['state'] != null
-            ? SdkPresent((json['state'] != null
-                ? ProjectsV2State.fromJson(json['state'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        latestStatusUpdate: json.containsKey('latest_status_update')
-            ? SdkPresent(json['latest_status_update'] != null
-                ? NullableProjectsV2StatusUpdate.fromJson(
-                    json['latest_status_update'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        isTemplate: json['is_template'] != null
-            ? SdkPresent((json['is_template'] as bool?)!)
-            : const SdkOmitted(),
-      );
+    id: ((json['id'] as num?)?.toDouble())!,
+    nodeId: (json['node_id'] as String?)!,
+    owner: (json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null)!,
+    creator: (json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null)!,
+    title: (json['title'] as String?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    public: (json['public'] as bool?)!,
+    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    number: ((json['number'] as num?)?.toInt())!,
+    shortDescription: json.containsKey('short_description') ? json['short_description'] as String? : throw ArgumentError.value(null, 'short_description', 'Required property is missing'),
+    deletedAt: json.containsKey('deleted_at') ? json['deleted_at'] as String? : throw ArgumentError.value(null, 'deleted_at', 'Required property is missing'),
+    deletedBy: json.containsKey('deleted_by') ? json['deleted_by'] != null ? NullableSimpleUser.fromJson(json['deleted_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'deleted_by', 'Required property is missing'),
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? ProjectsV2State.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
+    latestStatusUpdate: json.containsKey('latest_status_update') ? SdkPresent(json['latest_status_update'] != null ? NullableProjectsV2StatusUpdate.fromJson(json['latest_status_update'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    isTemplate: json['is_template'] != null ? SdkPresent((json['is_template'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'owner': owner.toJson(),
-        'creator': creator.toJson(),
-        'title': title,
-        'description': description,
-        'public': public,
-        'closed_at': closedAt,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'number': number,
-        'short_description': shortDescription,
-        'deleted_at': deletedAt,
-        'deleted_by': deletedBy?.toJson(),
-        ...switch (state) {
-          SdkPresent<ProjectsV2State>(value: final value) => {
-              'state': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (latestStatusUpdate) {
-          SdkPresent<NullableProjectsV2StatusUpdate?>(value: final value) => {
-              'latest_status_update': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (isTemplate) {
-          SdkPresent<bool>(value: final value) => {
-              'is_template': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'node_id': nodeId,
+    'owner': owner.toJson(),
+    'creator': creator.toJson(),
+    'title': title,
+    'description': description,
+    'public': public,
+    'closed_at': closedAt,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'number': number,
+    'short_description': shortDescription,
+    'deleted_at': deletedAt,
+    'deleted_by': deletedBy?.toJson(),
+    ...switch (state) {
+      SdkPresent<ProjectsV2State>(value: final value) => {'state': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (latestStatusUpdate) {
+      SdkPresent<NullableProjectsV2StatusUpdate?>(value: final value) => {'latest_status_update': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (isTemplate) {
+      SdkPresent<bool>(value: final value) => {'is_template': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

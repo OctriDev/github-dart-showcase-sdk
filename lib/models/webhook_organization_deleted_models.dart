@@ -8,144 +8,64 @@ part of 'webhook_organization_deleted.dart';
 class WebhookOrganizationDeleted {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookOrganizationDeletedAction action;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// The membership between the user and the organization. Not present when the action is `member_invited`.
   final SdkOptional<WebhooksMembership> membership;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final OrganizationSimpleWebhooks organization;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final SdkOptional<RepositoryWebhooks> repository;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookOrganizationDeleted(
-      {required this.action,
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      this.membership = const SdkOmitted(),
-      required this.organization,
-      this.repository = const SdkOmitted(),
-      required this.sender});
+  const WebhookOrganizationDeleted({required this.action, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.membership = const SdkOmitted(), required this.organization, this.repository = const SdkOmitted(), required this.sender});
 
-  WebhookOrganizationDeleted Function(
-      {WebhookOrganizationDeletedAction action,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      SdkOptional<WebhooksMembership> membership,
-      OrganizationSimpleWebhooks organization,
-      SdkOptional<RepositoryWebhooks> repository,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookOrganizationDeleted Function({WebhookOrganizationDeletedAction action, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<WebhooksMembership> membership, OrganizationSimpleWebhooks organization, SdkOptional<RepositoryWebhooks> repository, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookOrganizationDeleted _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? membership = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookOrganizationDeleted(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookOrganizationDeletedAction,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        membership: identical(membership, sdkOmittedValue)
-            ? this.membership
-            : membership as SdkOptional<WebhooksMembership>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as OrganizationSimpleWebhooks,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<RepositoryWebhooks>,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookOrganizationDeleted _copyWith({Object? action = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? membership = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookOrganizationDeleted(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookOrganizationDeletedAction,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    membership: identical(membership, sdkOmittedValue) ? this.membership : membership as SdkOptional<WebhooksMembership>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as OrganizationSimpleWebhooks,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<RepositoryWebhooks>,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookOrganizationDeleted.fromJson(Map<String, dynamic> json) =>
-      WebhookOrganizationDeleted(
-        action: (json['action'] != null
-            ? WebhookOrganizationDeletedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        membership: json['membership'] != null
-            ? SdkPresent((json['membership'] != null
-                ? WebhooksMembership.fromJson(
-                    json['membership'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: (json['organization'] != null
-            ? OrganizationSimpleWebhooks.fromJson(
-                json['organization'] as Map<String, dynamic>)
-            : null)!,
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] != null
-                ? RepositoryWebhooks.fromJson(
-                    json['repository'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookOrganizationDeleted.fromJson(Map<String, dynamic> json) => WebhookOrganizationDeleted(
+    action: (json['action'] != null ? WebhookOrganizationDeletedAction.fromJson(json['action'] as String) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    membership: json['membership'] != null ? SdkPresent((json['membership'] != null ? WebhooksMembership.fromJson(json['membership'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: (json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!,
+    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (membership) {
-          SdkPresent<WebhooksMembership>(value: final value) => {
-              'membership': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'organization': organization.toJson(),
-        ...switch (repository) {
-          SdkPresent<RepositoryWebhooks>(value: final value) => {
-              'repository': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (membership) {
+      SdkPresent<WebhooksMembership>(value: final value) => {'membership': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'organization': organization.toJson(),
+    ...switch (repository) {
+      SdkPresent<RepositoryWebhooks>(value: final value) => {'repository': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'sender': sender.toJson(),
+  };
 }

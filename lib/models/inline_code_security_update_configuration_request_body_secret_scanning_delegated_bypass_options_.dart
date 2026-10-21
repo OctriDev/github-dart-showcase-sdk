@@ -7,934 +7,288 @@ part of 'inline.dart';
 class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of the team or role selected as a bypass reviewer
   final int reviewerId;
-
   /// The type of the bypass reviewer
-  final CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-      reviewerType;
-
+  final CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType;
   /// The bypass mode for the reviewer
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
-      mode;
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode> mode;
 
-  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-      {required this.reviewerId,
-      required this.reviewerType,
-      this.mode = const SdkOmitted()});
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem({required this.reviewerId, required this.reviewerType, this.mode = const SdkOmitted()});
 
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem Function(
-      {int reviewerId,
-      CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-          reviewerType,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
-          mode}) get copyWith => _copyWith;
+  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem Function({int reviewerId, CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode> mode}) get copyWith => _copyWith;
 
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
-      _copyWith(
-              {Object? reviewerId = sdkOmittedValue,
-              Object? reviewerType = sdkOmittedValue,
-              Object? mode = sdkOmittedValue}) =>
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-            reviewerId: identical(reviewerId, sdkOmittedValue)
-                ? this.reviewerId
-                : reviewerId as int,
-            reviewerType: identical(reviewerType, sdkOmittedValue)
-                ? this.reviewerType
-                : reviewerType
-                    as CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
-            mode: identical(mode, sdkOmittedValue)
-                ? this.mode
-                : mode as SdkOptional<
-                    CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>,
-          );
+  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem _copyWith({Object? reviewerId = sdkOmittedValue, Object? reviewerType = sdkOmittedValue, Object? mode = sdkOmittedValue}) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
+    reviewerId: identical(reviewerId, sdkOmittedValue) ? this.reviewerId : reviewerId as int,
+    reviewerType: identical(reviewerType, sdkOmittedValue) ? this.reviewerType : reviewerType as CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
+    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>,
+  );
 
-  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-        reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
-        reviewerType: (json['reviewer_type'] != null
-            ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-                .fromJson(json['reviewer_type'] as String)
-            : null)!,
-        mode: json['mode'] != null
-            ? SdkPresent((json['mode'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode
-                    .fromJson(json['mode'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem.fromJson(Map<String, dynamic> json) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
+    reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
+    reviewerType: (json['reviewer_type'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(json['reviewer_type'] as String) : null)!,
+    mode: json['mode'] != null ? SdkPresent((json['mode'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(json['mode'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'reviewer_id': reviewerId,
-        'reviewer_type': reviewerType.toJson(),
-        ...switch (mode) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>(
-            value: final value
-          ) =>
-            {
-              'mode': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'reviewer_id': reviewerId,
+    'reviewer_type': reviewerType.toJson(),
+    ...switch (mode) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>(value: final value) => {'mode': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Feature options for secret scanning delegated bypass
 class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The bypass reviewers for secret scanning delegated bypass
-  final SdkOptional<
-          List<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
-      reviewers;
+  final SdkOptional<List<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>> reviewers;
 
-  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-      {this.reviewers = const SdkOmitted()});
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions({this.reviewers = const SdkOmitted()});
 
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions Function(
-      {SdkOptional<
-              List<
-                  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
-          reviewers}) get copyWith => _copyWith;
+  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions Function({SdkOptional<List<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>> reviewers}) get copyWith => _copyWith;
 
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions
-      _copyWith({Object? reviewers = sdkOmittedValue}) =>
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-            reviewers: identical(reviewers, sdkOmittedValue)
-                ? this.reviewers
-                : reviewers as SdkOptional<
-                    List<
-                        CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>,
-          );
+  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions _copyWith({Object? reviewers = sdkOmittedValue}) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
+    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>,
+  );
 
-  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-        reviewers: json['reviewers'] != null
-            ? SdkPresent(((json['reviewers'] as List?)
-                ?.map((e) =>
-                    CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
+    reviewers: json['reviewers'] != null ? SdkPresent(((json['reviewers'] as List?)?.map((e) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (reviewers) {
-          SdkPresent<
-                List<
-                    CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>(
-            value: final value
-          ) =>
-            {
-              'reviewers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (reviewers) {
+      SdkPresent<List<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>(value: final value) => {'reviewers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CodeSecurityUpdateConfigurationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the code security configuration. Must be unique within the organization.
   final SdkOptional<String> name;
-
   /// A description of the code security configuration
   final SdkOptional<String> description;
-
   /// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features. &gt; [!WARNING] &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
-  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity>
-      advancedSecurity;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity> advancedSecurity;
   /// The enablement status of GitHub Code Security features.
-  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity>
-      codeSecurity;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity> codeSecurity;
   /// The enablement status of Dependency Graph
-  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph>
-      dependencyGraph;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph> dependencyGraph;
   /// The enablement status of Automatic dependency submission
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction>
-      dependencyGraphAutosubmitAction;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction> dependencyGraphAutosubmitAction;
   /// Feature options for Automatic dependency submission
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>
-      dependencyGraphAutosubmitActionOptions;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions> dependencyGraphAutosubmitActionOptions;
   /// The enablement status of Dependabot alerts
-  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts>
-      dependabotAlerts;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts> dependabotAlerts;
   /// The enablement status of Dependabot security updates
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates>
-      dependabotSecurityUpdates;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates;
   /// The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal>
-      dependabotDelegatedAlertDismissal;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal> dependabotDelegatedAlertDismissal;
   /// The enablement status of code scanning default setup
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup>
-      codeScanningDefaultSetup;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup;
   /// Feature options for code scanning default setup
-  final SdkOptional<CodeScanningDefaultSetupOptions?>
-      codeScanningDefaultSetupOptions;
-
+  final SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions;
   /// Security Configuration feature options for code scanning
   final SdkOptional<CodeScanningOptions?> codeScanningOptions;
-
   /// The enablement status of code scanning delegated alert dismissal
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>
-      codeScanningDelegatedAlertDismissal;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal> codeScanningDelegatedAlertDismissal;
   /// The enablement status of GitHub Secret Protection features.
-  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretProtection>
-      secretProtection;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretProtection> secretProtection;
   /// The enablement status of secret scanning
-  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanning>
-      secretScanning;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanning> secretScanning;
   /// The enablement status of secret scanning push protection
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection>
-      secretScanningPushProtection;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection;
   /// The enablement status of secret scanning delegated bypass
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass>
-      secretScanningDelegatedBypass;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass> secretScanningDelegatedBypass;
   /// Feature options for secret scanning delegated bypass
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions>
-      secretScanningDelegatedBypassOptions;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions;
   /// The enablement status of secret scanning validity checks
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks>
-      secretScanningValidityChecks;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks;
   /// The enablement status of secret scanning non-provider patterns
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns>
-      secretScanningNonProviderPatterns;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns;
   /// The enablement status of Copilot secret scanning
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets>
-      secretScanningGenericSecrets;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets;
   /// The enablement status of secret scanning delegated alert dismissal
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal>
-      secretScanningDelegatedAlertDismissal;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal;
   /// The enablement status of secret scanning extended metadata
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata>
-      secretScanningExtendedMetadata;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata;
   /// The enablement status of private vulnerability reporting
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting>
-      privateVulnerabilityReporting;
-
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting;
   /// The enforcement status for a security configuration
-  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyEnforcement>
-      enforcement;
+  final SdkOptional<CodeSecurityUpdateConfigurationRequestBodyEnforcement> enforcement;
 
-  const CodeSecurityUpdateConfigurationRequestBody(
-      {this.name = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.advancedSecurity = const SdkOmitted(),
-      this.codeSecurity = const SdkOmitted(),
-      this.dependencyGraph = const SdkOmitted(),
-      this.dependencyGraphAutosubmitAction = const SdkOmitted(),
-      this.dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
-      this.dependabotAlerts = const SdkOmitted(),
-      this.dependabotSecurityUpdates = const SdkOmitted(),
-      this.dependabotDelegatedAlertDismissal = const SdkOmitted(),
-      this.codeScanningDefaultSetup = const SdkOmitted(),
-      this.codeScanningDefaultSetupOptions = const SdkOmitted(),
-      this.codeScanningOptions = const SdkOmitted(),
-      this.codeScanningDelegatedAlertDismissal = const SdkOmitted(),
-      this.secretProtection = const SdkOmitted(),
-      this.secretScanning = const SdkOmitted(),
-      this.secretScanningPushProtection = const SdkOmitted(),
-      this.secretScanningDelegatedBypass = const SdkOmitted(),
-      this.secretScanningDelegatedBypassOptions = const SdkOmitted(),
-      this.secretScanningValidityChecks = const SdkOmitted(),
-      this.secretScanningNonProviderPatterns = const SdkOmitted(),
-      this.secretScanningGenericSecrets = const SdkOmitted(),
-      this.secretScanningDelegatedAlertDismissal = const SdkOmitted(),
-      this.secretScanningExtendedMetadata = const SdkOmitted(),
-      this.privateVulnerabilityReporting = const SdkOmitted(),
-      this.enforcement = const SdkOmitted()});
+  const CodeSecurityUpdateConfigurationRequestBody({this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.advancedSecurity = const SdkOmitted(), this.codeSecurity = const SdkOmitted(), this.dependencyGraph = const SdkOmitted(), this.dependencyGraphAutosubmitAction = const SdkOmitted(), this.dependencyGraphAutosubmitActionOptions = const SdkOmitted(), this.dependabotAlerts = const SdkOmitted(), this.dependabotSecurityUpdates = const SdkOmitted(), this.dependabotDelegatedAlertDismissal = const SdkOmitted(), this.codeScanningDefaultSetup = const SdkOmitted(), this.codeScanningDefaultSetupOptions = const SdkOmitted(), this.codeScanningOptions = const SdkOmitted(), this.codeScanningDelegatedAlertDismissal = const SdkOmitted(), this.secretProtection = const SdkOmitted(), this.secretScanning = const SdkOmitted(), this.secretScanningPushProtection = const SdkOmitted(), this.secretScanningDelegatedBypass = const SdkOmitted(), this.secretScanningDelegatedBypassOptions = const SdkOmitted(), this.secretScanningValidityChecks = const SdkOmitted(), this.secretScanningNonProviderPatterns = const SdkOmitted(), this.secretScanningGenericSecrets = const SdkOmitted(), this.secretScanningDelegatedAlertDismissal = const SdkOmitted(), this.secretScanningExtendedMetadata = const SdkOmitted(), this.privateVulnerabilityReporting = const SdkOmitted(), this.enforcement = const SdkOmitted()});
 
-  CodeSecurityUpdateConfigurationRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> description,
-      SdkOptional<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity>
-          advancedSecurity,
-      SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity>
-          codeSecurity,
-      SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph>
-          dependencyGraph,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction>
-          dependencyGraphAutosubmitAction,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>
-          dependencyGraphAutosubmitActionOptions,
-      SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts>
-          dependabotAlerts,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates>
-          dependabotSecurityUpdates,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal>
-          dependabotDelegatedAlertDismissal,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup>
-          codeScanningDefaultSetup,
-      SdkOptional<CodeScanningDefaultSetupOptions?>
-          codeScanningDefaultSetupOptions,
-      SdkOptional<CodeScanningOptions?> codeScanningOptions,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>
-          codeScanningDelegatedAlertDismissal,
-      SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretProtection>
-          secretProtection,
-      SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanning>
-          secretScanning,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection>
-          secretScanningPushProtection,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass>
-          secretScanningDelegatedBypass,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions>
-          secretScanningDelegatedBypassOptions,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks>
-          secretScanningValidityChecks,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns>
-          secretScanningNonProviderPatterns,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets>
-          secretScanningGenericSecrets,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal>
-          secretScanningDelegatedAlertDismissal,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata>
-          secretScanningExtendedMetadata,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting>
-          privateVulnerabilityReporting,
-      SdkOptional<CodeSecurityUpdateConfigurationRequestBodyEnforcement>
-          enforcement}) get copyWith => _copyWith;
+  CodeSecurityUpdateConfigurationRequestBody Function({SdkOptional<String> name, SdkOptional<String> description, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity> advancedSecurity, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity> codeSecurity, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph> dependencyGraph, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction> dependencyGraphAutosubmitAction, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions> dependencyGraphAutosubmitActionOptions, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts> dependabotAlerts, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal> dependabotDelegatedAlertDismissal, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup, SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions, SdkOptional<CodeScanningOptions?> codeScanningOptions, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal> codeScanningDelegatedAlertDismissal, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretProtection> secretProtection, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanning> secretScanning, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass> secretScanningDelegatedBypass, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal, SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting, SdkOptional<CodeSecurityUpdateConfigurationRequestBodyEnforcement> enforcement}) get copyWith => _copyWith;
 
-  CodeSecurityUpdateConfigurationRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? advancedSecurity = sdkOmittedValue,
-          Object? codeSecurity = sdkOmittedValue,
-          Object? dependencyGraph = sdkOmittedValue,
-          Object? dependencyGraphAutosubmitAction = sdkOmittedValue,
-          Object? dependencyGraphAutosubmitActionOptions = sdkOmittedValue,
-          Object? dependabotAlerts = sdkOmittedValue,
-          Object? dependabotSecurityUpdates = sdkOmittedValue,
-          Object? dependabotDelegatedAlertDismissal = sdkOmittedValue,
-          Object? codeScanningDefaultSetup = sdkOmittedValue,
-          Object? codeScanningDefaultSetupOptions = sdkOmittedValue,
-          Object? codeScanningOptions = sdkOmittedValue,
-          Object? codeScanningDelegatedAlertDismissal = sdkOmittedValue,
-          Object? secretProtection = sdkOmittedValue,
-          Object? secretScanning = sdkOmittedValue,
-          Object? secretScanningPushProtection = sdkOmittedValue,
-          Object? secretScanningDelegatedBypass = sdkOmittedValue,
-          Object? secretScanningDelegatedBypassOptions = sdkOmittedValue,
-          Object? secretScanningValidityChecks = sdkOmittedValue,
-          Object? secretScanningNonProviderPatterns = sdkOmittedValue,
-          Object? secretScanningGenericSecrets = sdkOmittedValue,
-          Object? secretScanningDelegatedAlertDismissal = sdkOmittedValue,
-          Object? secretScanningExtendedMetadata = sdkOmittedValue,
-          Object? privateVulnerabilityReporting = sdkOmittedValue,
-          Object? enforcement = sdkOmittedValue}) =>
-      CodeSecurityUpdateConfigurationRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        advancedSecurity: identical(advancedSecurity, sdkOmittedValue)
-            ? this.advancedSecurity
-            : advancedSecurity as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity>,
-        codeSecurity: identical(codeSecurity, sdkOmittedValue)
-            ? this.codeSecurity
-            : codeSecurity as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyCodeSecurity>,
-        dependencyGraph: identical(dependencyGraph, sdkOmittedValue)
-            ? this.dependencyGraph
-            : dependencyGraph as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyDependencyGraph>,
-        dependencyGraphAutosubmitAction: identical(
-                dependencyGraphAutosubmitAction, sdkOmittedValue)
-            ? this.dependencyGraphAutosubmitAction
-            : dependencyGraphAutosubmitAction as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction>,
-        dependencyGraphAutosubmitActionOptions: identical(
-                dependencyGraphAutosubmitActionOptions, sdkOmittedValue)
-            ? this.dependencyGraphAutosubmitActionOptions
-            : dependencyGraphAutosubmitActionOptions as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>,
-        dependabotAlerts: identical(dependabotAlerts, sdkOmittedValue)
-            ? this.dependabotAlerts
-            : dependabotAlerts as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts>,
-        dependabotSecurityUpdates: identical(
-                dependabotSecurityUpdates, sdkOmittedValue)
-            ? this.dependabotSecurityUpdates
-            : dependabotSecurityUpdates as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates>,
-        dependabotDelegatedAlertDismissal: identical(
-                dependabotDelegatedAlertDismissal, sdkOmittedValue)
-            ? this.dependabotDelegatedAlertDismissal
-            : dependabotDelegatedAlertDismissal as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal>,
-        codeScanningDefaultSetup: identical(
-                codeScanningDefaultSetup, sdkOmittedValue)
-            ? this.codeScanningDefaultSetup
-            : codeScanningDefaultSetup as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup>,
-        codeScanningDefaultSetupOptions:
-            identical(codeScanningDefaultSetupOptions, sdkOmittedValue)
-                ? this.codeScanningDefaultSetupOptions
-                : codeScanningDefaultSetupOptions
-                    as SdkOptional<CodeScanningDefaultSetupOptions?>,
-        codeScanningOptions: identical(codeScanningOptions, sdkOmittedValue)
-            ? this.codeScanningOptions
-            : codeScanningOptions as SdkOptional<CodeScanningOptions?>,
-        codeScanningDelegatedAlertDismissal: identical(
-                codeScanningDelegatedAlertDismissal, sdkOmittedValue)
-            ? this.codeScanningDelegatedAlertDismissal
-            : codeScanningDelegatedAlertDismissal as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>,
-        secretProtection: identical(secretProtection, sdkOmittedValue)
-            ? this.secretProtection
-            : secretProtection as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretProtection>,
-        secretScanning: identical(secretScanning, sdkOmittedValue)
-            ? this.secretScanning
-            : secretScanning as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanning>,
-        secretScanningPushProtection: identical(
-                secretScanningPushProtection, sdkOmittedValue)
-            ? this.secretScanningPushProtection
-            : secretScanningPushProtection as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection>,
-        secretScanningDelegatedBypass: identical(
-                secretScanningDelegatedBypass, sdkOmittedValue)
-            ? this.secretScanningDelegatedBypass
-            : secretScanningDelegatedBypass as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass>,
-        secretScanningDelegatedBypassOptions: identical(
-                secretScanningDelegatedBypassOptions, sdkOmittedValue)
-            ? this.secretScanningDelegatedBypassOptions
-            : secretScanningDelegatedBypassOptions as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions>,
-        secretScanningValidityChecks: identical(
-                secretScanningValidityChecks, sdkOmittedValue)
-            ? this.secretScanningValidityChecks
-            : secretScanningValidityChecks as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks>,
-        secretScanningNonProviderPatterns: identical(
-                secretScanningNonProviderPatterns, sdkOmittedValue)
-            ? this.secretScanningNonProviderPatterns
-            : secretScanningNonProviderPatterns as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns>,
-        secretScanningGenericSecrets: identical(
-                secretScanningGenericSecrets, sdkOmittedValue)
-            ? this.secretScanningGenericSecrets
-            : secretScanningGenericSecrets as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets>,
-        secretScanningDelegatedAlertDismissal: identical(
-                secretScanningDelegatedAlertDismissal, sdkOmittedValue)
-            ? this.secretScanningDelegatedAlertDismissal
-            : secretScanningDelegatedAlertDismissal as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal>,
-        secretScanningExtendedMetadata: identical(
-                secretScanningExtendedMetadata, sdkOmittedValue)
-            ? this.secretScanningExtendedMetadata
-            : secretScanningExtendedMetadata as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata>,
-        privateVulnerabilityReporting: identical(
-                privateVulnerabilityReporting, sdkOmittedValue)
-            ? this.privateVulnerabilityReporting
-            : privateVulnerabilityReporting as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting>,
-        enforcement: identical(enforcement, sdkOmittedValue)
-            ? this.enforcement
-            : enforcement as SdkOptional<
-                CodeSecurityUpdateConfigurationRequestBodyEnforcement>,
-      );
+  CodeSecurityUpdateConfigurationRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? advancedSecurity = sdkOmittedValue, Object? codeSecurity = sdkOmittedValue, Object? dependencyGraph = sdkOmittedValue, Object? dependencyGraphAutosubmitAction = sdkOmittedValue, Object? dependencyGraphAutosubmitActionOptions = sdkOmittedValue, Object? dependabotAlerts = sdkOmittedValue, Object? dependabotSecurityUpdates = sdkOmittedValue, Object? dependabotDelegatedAlertDismissal = sdkOmittedValue, Object? codeScanningDefaultSetup = sdkOmittedValue, Object? codeScanningDefaultSetupOptions = sdkOmittedValue, Object? codeScanningOptions = sdkOmittedValue, Object? codeScanningDelegatedAlertDismissal = sdkOmittedValue, Object? secretProtection = sdkOmittedValue, Object? secretScanning = sdkOmittedValue, Object? secretScanningPushProtection = sdkOmittedValue, Object? secretScanningDelegatedBypass = sdkOmittedValue, Object? secretScanningDelegatedBypassOptions = sdkOmittedValue, Object? secretScanningValidityChecks = sdkOmittedValue, Object? secretScanningNonProviderPatterns = sdkOmittedValue, Object? secretScanningGenericSecrets = sdkOmittedValue, Object? secretScanningDelegatedAlertDismissal = sdkOmittedValue, Object? secretScanningExtendedMetadata = sdkOmittedValue, Object? privateVulnerabilityReporting = sdkOmittedValue, Object? enforcement = sdkOmittedValue}) => CodeSecurityUpdateConfigurationRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    advancedSecurity: identical(advancedSecurity, sdkOmittedValue) ? this.advancedSecurity : advancedSecurity as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity>,
+    codeSecurity: identical(codeSecurity, sdkOmittedValue) ? this.codeSecurity : codeSecurity as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity>,
+    dependencyGraph: identical(dependencyGraph, sdkOmittedValue) ? this.dependencyGraph : dependencyGraph as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph>,
+    dependencyGraphAutosubmitAction: identical(dependencyGraphAutosubmitAction, sdkOmittedValue) ? this.dependencyGraphAutosubmitAction : dependencyGraphAutosubmitAction as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction>,
+    dependencyGraphAutosubmitActionOptions: identical(dependencyGraphAutosubmitActionOptions, sdkOmittedValue) ? this.dependencyGraphAutosubmitActionOptions : dependencyGraphAutosubmitActionOptions as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>,
+    dependabotAlerts: identical(dependabotAlerts, sdkOmittedValue) ? this.dependabotAlerts : dependabotAlerts as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts>,
+    dependabotSecurityUpdates: identical(dependabotSecurityUpdates, sdkOmittedValue) ? this.dependabotSecurityUpdates : dependabotSecurityUpdates as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates>,
+    dependabotDelegatedAlertDismissal: identical(dependabotDelegatedAlertDismissal, sdkOmittedValue) ? this.dependabotDelegatedAlertDismissal : dependabotDelegatedAlertDismissal as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal>,
+    codeScanningDefaultSetup: identical(codeScanningDefaultSetup, sdkOmittedValue) ? this.codeScanningDefaultSetup : codeScanningDefaultSetup as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup>,
+    codeScanningDefaultSetupOptions: identical(codeScanningDefaultSetupOptions, sdkOmittedValue) ? this.codeScanningDefaultSetupOptions : codeScanningDefaultSetupOptions as SdkOptional<CodeScanningDefaultSetupOptions?>,
+    codeScanningOptions: identical(codeScanningOptions, sdkOmittedValue) ? this.codeScanningOptions : codeScanningOptions as SdkOptional<CodeScanningOptions?>,
+    codeScanningDelegatedAlertDismissal: identical(codeScanningDelegatedAlertDismissal, sdkOmittedValue) ? this.codeScanningDelegatedAlertDismissal : codeScanningDelegatedAlertDismissal as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>,
+    secretProtection: identical(secretProtection, sdkOmittedValue) ? this.secretProtection : secretProtection as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretProtection>,
+    secretScanning: identical(secretScanning, sdkOmittedValue) ? this.secretScanning : secretScanning as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanning>,
+    secretScanningPushProtection: identical(secretScanningPushProtection, sdkOmittedValue) ? this.secretScanningPushProtection : secretScanningPushProtection as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection>,
+    secretScanningDelegatedBypass: identical(secretScanningDelegatedBypass, sdkOmittedValue) ? this.secretScanningDelegatedBypass : secretScanningDelegatedBypass as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass>,
+    secretScanningDelegatedBypassOptions: identical(secretScanningDelegatedBypassOptions, sdkOmittedValue) ? this.secretScanningDelegatedBypassOptions : secretScanningDelegatedBypassOptions as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions>,
+    secretScanningValidityChecks: identical(secretScanningValidityChecks, sdkOmittedValue) ? this.secretScanningValidityChecks : secretScanningValidityChecks as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks>,
+    secretScanningNonProviderPatterns: identical(secretScanningNonProviderPatterns, sdkOmittedValue) ? this.secretScanningNonProviderPatterns : secretScanningNonProviderPatterns as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns>,
+    secretScanningGenericSecrets: identical(secretScanningGenericSecrets, sdkOmittedValue) ? this.secretScanningGenericSecrets : secretScanningGenericSecrets as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets>,
+    secretScanningDelegatedAlertDismissal: identical(secretScanningDelegatedAlertDismissal, sdkOmittedValue) ? this.secretScanningDelegatedAlertDismissal : secretScanningDelegatedAlertDismissal as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal>,
+    secretScanningExtendedMetadata: identical(secretScanningExtendedMetadata, sdkOmittedValue) ? this.secretScanningExtendedMetadata : secretScanningExtendedMetadata as SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata>,
+    privateVulnerabilityReporting: identical(privateVulnerabilityReporting, sdkOmittedValue) ? this.privateVulnerabilityReporting : privateVulnerabilityReporting as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting>,
+    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<CodeSecurityUpdateConfigurationRequestBodyEnforcement>,
+  );
 
-  factory CodeSecurityUpdateConfigurationRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityUpdateConfigurationRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        advancedSecurity: json['advanced_security'] != null
-            ? SdkPresent((json['advanced_security'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity
-                    .fromJson(json['advanced_security'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        codeSecurity: json['code_security'] != null
-            ? SdkPresent((json['code_security'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyCodeSecurity
-                    .fromJson(json['code_security'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependencyGraph: json['dependency_graph'] != null
-            ? SdkPresent((json['dependency_graph'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyDependencyGraph
-                    .fromJson(json['dependency_graph'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependencyGraphAutosubmitAction: json[
-                    'dependency_graph_autosubmit_action'] !=
-                null
-            ? SdkPresent((json['dependency_graph_autosubmit_action'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
-                    .fromJson(
-                        json['dependency_graph_autosubmit_action'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependencyGraphAutosubmitActionOptions: json[
-                    'dependency_graph_autosubmit_action_options'] !=
-                null
-            ? SdkPresent((json['dependency_graph_autosubmit_action_options'] !=
-                    null
-                ? CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
-                    .fromJson(json['dependency_graph_autosubmit_action_options']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        dependabotAlerts: json['dependabot_alerts'] != null
-            ? SdkPresent((json['dependabot_alerts'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts
-                    .fromJson(json['dependabot_alerts'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependabotSecurityUpdates: json['dependabot_security_updates'] != null
-            ? SdkPresent((json['dependabot_security_updates'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates
-                    .fromJson(json['dependabot_security_updates'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependabotDelegatedAlertDismissal: json[
-                    'dependabot_delegated_alert_dismissal'] !=
-                null
-            ? SdkPresent((json['dependabot_delegated_alert_dismissal'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
-                    .fromJson(
-                        json['dependabot_delegated_alert_dismissal'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        codeScanningDefaultSetup: json['code_scanning_default_setup'] != null
-            ? SdkPresent((json['code_scanning_default_setup'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup
-                    .fromJson(json['code_scanning_default_setup'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        codeScanningDefaultSetupOptions:
-            json.containsKey('code_scanning_default_setup_options')
-                ? SdkPresent(json['code_scanning_default_setup_options'] != null
-                    ? CodeScanningDefaultSetupOptions.fromJson(
-                        json['code_scanning_default_setup_options']
-                            as Map<String, dynamic>)
-                    : null)
-                : const SdkOmitted(),
-        codeScanningOptions: json.containsKey('code_scanning_options')
-            ? SdkPresent(json['code_scanning_options'] != null
-                ? CodeScanningOptions.fromJson(
-                    json['code_scanning_options'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        codeScanningDelegatedAlertDismissal: json[
-                    'code_scanning_delegated_alert_dismissal'] !=
-                null
-            ? SdkPresent((json['code_scanning_delegated_alert_dismissal'] !=
-                    null
-                ? CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
-                    .fromJson(json['code_scanning_delegated_alert_dismissal']
-                        as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretProtection: json['secret_protection'] != null
-            ? SdkPresent((json['secret_protection'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretProtection
-                    .fromJson(json['secret_protection'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanning: json['secret_scanning'] != null
-            ? SdkPresent((json['secret_scanning'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanning
-                    .fromJson(json['secret_scanning'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningPushProtection: json['secret_scanning_push_protection'] !=
-                null
-            ? SdkPresent((json['secret_scanning_push_protection'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection
-                    .fromJson(json['secret_scanning_push_protection'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningDelegatedBypass: json[
-                    'secret_scanning_delegated_bypass'] !=
-                null
-            ? SdkPresent((json['secret_scanning_delegated_bypass'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass
-                    .fromJson(
-                        json['secret_scanning_delegated_bypass'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningDelegatedBypassOptions: json[
-                    'secret_scanning_delegated_bypass_options'] !=
-                null
-            ? SdkPresent((json['secret_scanning_delegated_bypass_options'] !=
-                    null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions
-                    .fromJson(json['secret_scanning_delegated_bypass_options']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningValidityChecks: json['secret_scanning_validity_checks'] !=
-                null
-            ? SdkPresent((json['secret_scanning_validity_checks'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks
-                    .fromJson(json['secret_scanning_validity_checks'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningNonProviderPatterns: json[
-                    'secret_scanning_non_provider_patterns'] !=
-                null
-            ? SdkPresent((json['secret_scanning_non_provider_patterns'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns
-                    .fromJson(
-                        json['secret_scanning_non_provider_patterns'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningGenericSecrets: json['secret_scanning_generic_secrets'] !=
-                null
-            ? SdkPresent((json['secret_scanning_generic_secrets'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets
-                    .fromJson(json['secret_scanning_generic_secrets'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningDelegatedAlertDismissal: json[
-                    'secret_scanning_delegated_alert_dismissal'] !=
-                null
-            ? SdkPresent((json['secret_scanning_delegated_alert_dismissal'] !=
-                    null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal
-                    .fromJson(json['secret_scanning_delegated_alert_dismissal']
-                        as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningExtendedMetadata: json[
-                    'secret_scanning_extended_metadata'] !=
-                null
-            ? SdkPresent((json['secret_scanning_extended_metadata'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata
-                    .fromJson(
-                        json['secret_scanning_extended_metadata'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        privateVulnerabilityReporting: json[
-                    'private_vulnerability_reporting'] !=
-                null
-            ? SdkPresent((json['private_vulnerability_reporting'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting
-                    .fromJson(json['private_vulnerability_reporting'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        enforcement: json['enforcement'] != null
-            ? SdkPresent((json['enforcement'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodyEnforcement
-                    .fromJson(json['enforcement'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory CodeSecurityUpdateConfigurationRequestBody.fromJson(Map<String, dynamic> json) => CodeSecurityUpdateConfigurationRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    advancedSecurity: json['advanced_security'] != null ? SdkPresent((json['advanced_security'] != null ? CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity.fromJson(json['advanced_security'] as String) : null)!) : const SdkOmitted(),
+    codeSecurity: json['code_security'] != null ? SdkPresent((json['code_security'] != null ? CodeSecurityUpdateConfigurationRequestBodyCodeSecurity.fromJson(json['code_security'] as String) : null)!) : const SdkOmitted(),
+    dependencyGraph: json['dependency_graph'] != null ? SdkPresent((json['dependency_graph'] != null ? CodeSecurityUpdateConfigurationRequestBodyDependencyGraph.fromJson(json['dependency_graph'] as String) : null)!) : const SdkOmitted(),
+    dependencyGraphAutosubmitAction: json['dependency_graph_autosubmit_action'] != null ? SdkPresent((json['dependency_graph_autosubmit_action'] != null ? CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction.fromJson(json['dependency_graph_autosubmit_action'] as String) : null)!) : const SdkOmitted(),
+    dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null ? SdkPresent((json['dependency_graph_autosubmit_action_options'] != null ? CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    dependabotAlerts: json['dependabot_alerts'] != null ? SdkPresent((json['dependabot_alerts'] != null ? CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts.fromJson(json['dependabot_alerts'] as String) : null)!) : const SdkOmitted(),
+    dependabotSecurityUpdates: json['dependabot_security_updates'] != null ? SdkPresent((json['dependabot_security_updates'] != null ? CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as String) : null)!) : const SdkOmitted(),
+    dependabotDelegatedAlertDismissal: json['dependabot_delegated_alert_dismissal'] != null ? SdkPresent((json['dependabot_delegated_alert_dismissal'] != null ? CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal.fromJson(json['dependabot_delegated_alert_dismissal'] as String) : null)!) : const SdkOmitted(),
+    codeScanningDefaultSetup: json['code_scanning_default_setup'] != null ? SdkPresent((json['code_scanning_default_setup'] != null ? CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup.fromJson(json['code_scanning_default_setup'] as String) : null)!) : const SdkOmitted(),
+    codeScanningDefaultSetupOptions: json.containsKey('code_scanning_default_setup_options') ? SdkPresent(json['code_scanning_default_setup_options'] != null ? CodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    codeScanningOptions: json.containsKey('code_scanning_options') ? SdkPresent(json['code_scanning_options'] != null ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    codeScanningDelegatedAlertDismissal: json['code_scanning_delegated_alert_dismissal'] != null ? SdkPresent((json['code_scanning_delegated_alert_dismissal'] != null ? CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal.fromJson(json['code_scanning_delegated_alert_dismissal'] as String) : null)!) : const SdkOmitted(),
+    secretProtection: json['secret_protection'] != null ? SdkPresent((json['secret_protection'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretProtection.fromJson(json['secret_protection'] as String) : null)!) : const SdkOmitted(),
+    secretScanning: json['secret_scanning'] != null ? SdkPresent((json['secret_scanning'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanning.fromJson(json['secret_scanning'] as String) : null)!) : const SdkOmitted(),
+    secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? SdkPresent((json['secret_scanning_push_protection'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as String) : null)!) : const SdkOmitted(),
+    secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? SdkPresent((json['secret_scanning_delegated_bypass'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as String) : null)!) : const SdkOmitted(),
+    secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? SdkPresent((json['secret_scanning_delegated_bypass_options'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanningValidityChecks: json['secret_scanning_validity_checks'] != null ? SdkPresent((json['secret_scanning_validity_checks'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks.fromJson(json['secret_scanning_validity_checks'] as String) : null)!) : const SdkOmitted(),
+    secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? SdkPresent((json['secret_scanning_non_provider_patterns'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as String) : null)!) : const SdkOmitted(),
+    secretScanningGenericSecrets: json['secret_scanning_generic_secrets'] != null ? SdkPresent((json['secret_scanning_generic_secrets'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets.fromJson(json['secret_scanning_generic_secrets'] as String) : null)!) : const SdkOmitted(),
+    secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? SdkPresent((json['secret_scanning_delegated_alert_dismissal'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as String) : null)!) : const SdkOmitted(),
+    secretScanningExtendedMetadata: json['secret_scanning_extended_metadata'] != null ? SdkPresent((json['secret_scanning_extended_metadata'] != null ? CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata.fromJson(json['secret_scanning_extended_metadata'] as String) : null)!) : const SdkOmitted(),
+    privateVulnerabilityReporting: json['private_vulnerability_reporting'] != null ? SdkPresent((json['private_vulnerability_reporting'] != null ? CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting.fromJson(json['private_vulnerability_reporting'] as String) : null)!) : const SdkOmitted(),
+    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? CodeSecurityUpdateConfigurationRequestBodyEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (advancedSecurity) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity>(
-            value: final value
-          ) =>
-            {
-              'advanced_security': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeSecurity) {
-          SdkPresent<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity>(
-            value: final value
-          ) =>
-            {
-              'code_security': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependencyGraph) {
-          SdkPresent<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph>(
-            value: final value
-          ) =>
-            {
-              'dependency_graph': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependencyGraphAutosubmitAction) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction>(
-            value: final value
-          ) =>
-            {
-              'dependency_graph_autosubmit_action': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependencyGraphAutosubmitActionOptions) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>(
-            value: final value
-          ) =>
-            {
-              'dependency_graph_autosubmit_action_options': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependabotAlerts) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts>(
-            value: final value
-          ) =>
-            {
-              'dependabot_alerts': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependabotSecurityUpdates) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates>(
-            value: final value
-          ) =>
-            {
-              'dependabot_security_updates': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependabotDelegatedAlertDismissal) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal>(
-            value: final value
-          ) =>
-            {
-              'dependabot_delegated_alert_dismissal': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningDefaultSetup) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup>(
-            value: final value
-          ) =>
-            {
-              'code_scanning_default_setup': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningDefaultSetupOptions) {
-          SdkPresent<CodeScanningDefaultSetupOptions?>(value: final value) => {
-              'code_scanning_default_setup_options': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningOptions) {
-          SdkPresent<CodeScanningOptions?>(value: final value) => {
-              'code_scanning_options': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningDelegatedAlertDismissal) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>(
-            value: final value
-          ) =>
-            {
-              'code_scanning_delegated_alert_dismissal': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretProtection) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretProtection>(
-            value: final value
-          ) =>
-            {
-              'secret_protection': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanning) {
-          SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanning>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningPushProtection) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_push_protection': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningDelegatedBypass) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_delegated_bypass': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningDelegatedBypassOptions) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_delegated_bypass_options': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningValidityChecks) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_validity_checks': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningNonProviderPatterns) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_non_provider_patterns': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningGenericSecrets) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_generic_secrets': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningDelegatedAlertDismissal) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_delegated_alert_dismissal': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningExtendedMetadata) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_extended_metadata': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (privateVulnerabilityReporting) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting>(
-            value: final value
-          ) =>
-            {
-              'private_vulnerability_reporting': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enforcement) {
-          SdkPresent<CodeSecurityUpdateConfigurationRequestBodyEnforcement>(
-            value: final value
-          ) =>
-            {
-              'enforcement': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (advancedSecurity) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity>(value: final value) => {'advanced_security': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeSecurity) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity>(value: final value) => {'code_security': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dependencyGraph) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph>(value: final value) => {'dependency_graph': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dependencyGraphAutosubmitAction) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction>(value: final value) => {'dependency_graph_autosubmit_action': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dependencyGraphAutosubmitActionOptions) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>(value: final value) => {'dependency_graph_autosubmit_action_options': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dependabotAlerts) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts>(value: final value) => {'dependabot_alerts': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dependabotSecurityUpdates) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates>(value: final value) => {'dependabot_security_updates': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dependabotDelegatedAlertDismissal) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal>(value: final value) => {'dependabot_delegated_alert_dismissal': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeScanningDefaultSetup) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup>(value: final value) => {'code_scanning_default_setup': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeScanningDefaultSetupOptions) {
+      SdkPresent<CodeScanningDefaultSetupOptions?>(value: final value) => {'code_scanning_default_setup_options': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeScanningOptions) {
+      SdkPresent<CodeScanningOptions?>(value: final value) => {'code_scanning_options': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeScanningDelegatedAlertDismissal) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>(value: final value) => {'code_scanning_delegated_alert_dismissal': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretProtection) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretProtection>(value: final value) => {'secret_protection': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanning) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanning>(value: final value) => {'secret_scanning': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningPushProtection) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection>(value: final value) => {'secret_scanning_push_protection': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningDelegatedBypass) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass>(value: final value) => {'secret_scanning_delegated_bypass': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningDelegatedBypassOptions) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions>(value: final value) => {'secret_scanning_delegated_bypass_options': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningValidityChecks) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks>(value: final value) => {'secret_scanning_validity_checks': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningNonProviderPatterns) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns>(value: final value) => {'secret_scanning_non_provider_patterns': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningGenericSecrets) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets>(value: final value) => {'secret_scanning_generic_secrets': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningDelegatedAlertDismissal) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal>(value: final value) => {'secret_scanning_delegated_alert_dismissal': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningExtendedMetadata) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata>(value: final value) => {'secret_scanning_extended_metadata': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (privateVulnerabilityReporting) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting>(value: final value) => {'private_vulnerability_reporting': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enforcement) {
+      SdkPresent<CodeSecurityUpdateConfigurationRequestBodyEnforcement>(value: final value) => {'enforcement': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

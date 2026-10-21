@@ -8,312 +8,163 @@ part of 'webhooks.dart';
 class WebhooksPreviousMarketplacePurchaseAccount {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `login` wire field.
   final String login;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `organization_billing_email` wire field.
   final String? organizationBillingEmail;
-
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
 
-  const WebhooksPreviousMarketplacePurchaseAccount(
-      {required this.id,
-      required this.login,
-      required this.nodeId,
-      required this.organizationBillingEmail,
-      required this.type_});
+  const WebhooksPreviousMarketplacePurchaseAccount({required this.id, required this.login, required this.nodeId, required this.organizationBillingEmail, required this.type_});
 
-  WebhooksPreviousMarketplacePurchaseAccount Function(
-      {int id,
-      String login,
-      String nodeId,
-      String? organizationBillingEmail,
-      String type_}) get copyWith => _copyWith;
+  WebhooksPreviousMarketplacePurchaseAccount Function({int id, String login, String nodeId, String? organizationBillingEmail, String type_}) get copyWith => _copyWith;
 
-  WebhooksPreviousMarketplacePurchaseAccount _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? login = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? organizationBillingEmail = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      WebhooksPreviousMarketplacePurchaseAccount(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        login: identical(login, sdkOmittedValue) ? this.login : login as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        organizationBillingEmail:
-            identical(organizationBillingEmail, sdkOmittedValue)
-                ? this.organizationBillingEmail
-                : organizationBillingEmail as String?,
-        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-      );
+  WebhooksPreviousMarketplacePurchaseAccount _copyWith({Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationBillingEmail = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => WebhooksPreviousMarketplacePurchaseAccount(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    login: identical(login, sdkOmittedValue) ? this.login : login as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    organizationBillingEmail: identical(organizationBillingEmail, sdkOmittedValue) ? this.organizationBillingEmail : organizationBillingEmail as String?,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+  );
 
-  factory WebhooksPreviousMarketplacePurchaseAccount.fromJson(
-          Map<String, dynamic> json) =>
-      WebhooksPreviousMarketplacePurchaseAccount(
-        id: ((json['id'] as num?)?.toInt())!,
-        login: (json['login'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        organizationBillingEmail: json.containsKey('organization_billing_email')
-            ? json['organization_billing_email'] as String?
-            : throw ArgumentError.value(null, 'organization_billing_email',
-                'Required property is missing'),
-        type_: (json['type'] as String?)!,
-      );
+  factory WebhooksPreviousMarketplacePurchaseAccount.fromJson(Map<String, dynamic> json) => WebhooksPreviousMarketplacePurchaseAccount(
+    id: ((json['id'] as num?)?.toInt())!,
+    login: (json['login'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    organizationBillingEmail: json.containsKey('organization_billing_email') ? json['organization_billing_email'] as String? : throw ArgumentError.value(null, 'organization_billing_email', 'Required property is missing'),
+    type_: (json['type'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'login': login,
-        'node_id': nodeId,
-        'organization_billing_email': organizationBillingEmail,
-        'type': type_,
-      };
+    'id': id,
+    'login': login,
+    'node_id': nodeId,
+    'organization_billing_email': organizationBillingEmail,
+    'type': type_,
+  };
 }
 
 /// Required object value serialized in the `plan` wire field.
 class WebhooksPreviousMarketplacePurchasePlan {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `bullets` wire field.
   final List<String> bullets;
-
   /// Required `string` value serialized in the `description` wire field.
   final String description;
-
   /// Required `boolean` value serialized in the `has_free_trial` wire field.
   final bool hasFreeTrial;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `integer` value serialized in the `monthly_price_in_cents` wire field.
   final int monthlyPriceInCents;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required enumerated value serialized in the `price_model` wire field.
   final WebhooksPreviousMarketplacePurchasePlanPriceModel priceModel;
-
   /// Required `string` value serialized in the `unit_name` wire field.
   final String? unitName;
-
   /// Required `integer` value serialized in the `yearly_price_in_cents` wire field.
   final int yearlyPriceInCents;
 
-  const WebhooksPreviousMarketplacePurchasePlan(
-      {required this.bullets,
-      required this.description,
-      required this.hasFreeTrial,
-      required this.id,
-      required this.monthlyPriceInCents,
-      required this.name,
-      required this.priceModel,
-      required this.unitName,
-      required this.yearlyPriceInCents});
+  const WebhooksPreviousMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents});
 
-  WebhooksPreviousMarketplacePurchasePlan Function(
-      {List<String> bullets,
-      String description,
-      bool hasFreeTrial,
-      int id,
-      int monthlyPriceInCents,
-      String name,
-      WebhooksPreviousMarketplacePurchasePlanPriceModel priceModel,
-      String? unitName,
-      int yearlyPriceInCents}) get copyWith => _copyWith;
+  WebhooksPreviousMarketplacePurchasePlan Function({List<String> bullets, String description, bool hasFreeTrial, int id, int monthlyPriceInCents, String name, WebhooksPreviousMarketplacePurchasePlanPriceModel priceModel, String? unitName, int yearlyPriceInCents}) get copyWith => _copyWith;
 
-  WebhooksPreviousMarketplacePurchasePlan _copyWith(
-          {Object? bullets = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? hasFreeTrial = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? monthlyPriceInCents = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? priceModel = sdkOmittedValue,
-          Object? unitName = sdkOmittedValue,
-          Object? yearlyPriceInCents = sdkOmittedValue}) =>
-      WebhooksPreviousMarketplacePurchasePlan(
-        bullets: identical(bullets, sdkOmittedValue)
-            ? this.bullets
-            : bullets as List<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        hasFreeTrial: identical(hasFreeTrial, sdkOmittedValue)
-            ? this.hasFreeTrial
-            : hasFreeTrial as bool,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        monthlyPriceInCents: identical(monthlyPriceInCents, sdkOmittedValue)
-            ? this.monthlyPriceInCents
-            : monthlyPriceInCents as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        priceModel: identical(priceModel, sdkOmittedValue)
-            ? this.priceModel
-            : priceModel as WebhooksPreviousMarketplacePurchasePlanPriceModel,
-        unitName: identical(unitName, sdkOmittedValue)
-            ? this.unitName
-            : unitName as String?,
-        yearlyPriceInCents: identical(yearlyPriceInCents, sdkOmittedValue)
-            ? this.yearlyPriceInCents
-            : yearlyPriceInCents as int,
-      );
+  WebhooksPreviousMarketplacePurchasePlan _copyWith({Object? bullets = sdkOmittedValue, Object? description = sdkOmittedValue, Object? hasFreeTrial = sdkOmittedValue, Object? id = sdkOmittedValue, Object? monthlyPriceInCents = sdkOmittedValue, Object? name = sdkOmittedValue, Object? priceModel = sdkOmittedValue, Object? unitName = sdkOmittedValue, Object? yearlyPriceInCents = sdkOmittedValue}) => WebhooksPreviousMarketplacePurchasePlan(
+    bullets: identical(bullets, sdkOmittedValue) ? this.bullets : bullets as List<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    hasFreeTrial: identical(hasFreeTrial, sdkOmittedValue) ? this.hasFreeTrial : hasFreeTrial as bool,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    monthlyPriceInCents: identical(monthlyPriceInCents, sdkOmittedValue) ? this.monthlyPriceInCents : monthlyPriceInCents as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    priceModel: identical(priceModel, sdkOmittedValue) ? this.priceModel : priceModel as WebhooksPreviousMarketplacePurchasePlanPriceModel,
+    unitName: identical(unitName, sdkOmittedValue) ? this.unitName : unitName as String?,
+    yearlyPriceInCents: identical(yearlyPriceInCents, sdkOmittedValue) ? this.yearlyPriceInCents : yearlyPriceInCents as int,
+  );
 
-  factory WebhooksPreviousMarketplacePurchasePlan.fromJson(
-          Map<String, dynamic> json) =>
-      WebhooksPreviousMarketplacePurchasePlan(
-        bullets:
-            ((json['bullets'] as List?)?.map((e) => e as String).toList())!,
-        description: (json['description'] as String?)!,
-        hasFreeTrial: (json['has_free_trial'] as bool?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        monthlyPriceInCents:
-            ((json['monthly_price_in_cents'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        priceModel: (json['price_model'] != null
-            ? WebhooksPreviousMarketplacePurchasePlanPriceModel.fromJson(
-                json['price_model'] as String)
-            : null)!,
-        unitName: json.containsKey('unit_name')
-            ? json['unit_name'] as String?
-            : throw ArgumentError.value(
-                null, 'unit_name', 'Required property is missing'),
-        yearlyPriceInCents: ((json['yearly_price_in_cents'] as num?)?.toInt())!,
-      );
+  factory WebhooksPreviousMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) => WebhooksPreviousMarketplacePurchasePlan(
+    bullets: ((json['bullets'] as List?)?.map((e) => e as String).toList())!,
+    description: (json['description'] as String?)!,
+    hasFreeTrial: (json['has_free_trial'] as bool?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    monthlyPriceInCents: ((json['monthly_price_in_cents'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    priceModel: (json['price_model'] != null ? WebhooksPreviousMarketplacePurchasePlanPriceModel.fromJson(json['price_model'] as String) : null)!,
+    unitName: json.containsKey('unit_name') ? json['unit_name'] as String? : throw ArgumentError.value(null, 'unit_name', 'Required property is missing'),
+    yearlyPriceInCents: ((json['yearly_price_in_cents'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'bullets': bullets,
-        'description': description,
-        'has_free_trial': hasFreeTrial,
-        'id': id,
-        'monthly_price_in_cents': monthlyPriceInCents,
-        'name': name,
-        'price_model': priceModel.toJson(),
-        'unit_name': unitName,
-        'yearly_price_in_cents': yearlyPriceInCents,
-      };
+    'bullets': bullets,
+    'description': description,
+    'has_free_trial': hasFreeTrial,
+    'id': id,
+    'monthly_price_in_cents': monthlyPriceInCents,
+    'name': name,
+    'price_model': priceModel.toJson(),
+    'unit_name': unitName,
+    'yearly_price_in_cents': yearlyPriceInCents,
+  };
 }
 
 /// Typed representation of the `WebhooksPreviousMarketplacePurchase` API schema.
 class WebhooksPreviousMarketplacePurchase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `account` wire field.
   final WebhooksPreviousMarketplacePurchaseAccount account;
-
   /// Required `string` value serialized in the `billing_cycle` wire field.
   final String billingCycle;
-
   /// Required API value serialized in the `free_trial_ends_on` wire field.
   final dynamic freeTrialEndsOn;
-
   /// Optional `string` value serialized in the `next_billing_date` wire field.
   final SdkOptional<String?> nextBillingDate;
-
   /// Required `boolean` value serialized in the `on_free_trial` wire field.
   final bool onFreeTrial;
-
   /// Required object value serialized in the `plan` wire field.
   final WebhooksPreviousMarketplacePurchasePlan plan;
-
   /// Required `integer` value serialized in the `unit_count` wire field.
   final int unitCount;
 
-  const WebhooksPreviousMarketplacePurchase(
-      {required this.account,
-      required this.billingCycle,
-      required this.freeTrialEndsOn,
-      this.nextBillingDate = const SdkOmitted(),
-      required this.onFreeTrial,
-      required this.plan,
-      required this.unitCount});
+  const WebhooksPreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, this.nextBillingDate = const SdkOmitted(), required this.onFreeTrial, required this.plan, required this.unitCount});
 
-  WebhooksPreviousMarketplacePurchase Function(
-      {WebhooksPreviousMarketplacePurchaseAccount account,
-      String billingCycle,
-      dynamic freeTrialEndsOn,
-      SdkOptional<String?> nextBillingDate,
-      bool onFreeTrial,
-      WebhooksPreviousMarketplacePurchasePlan plan,
-      int unitCount}) get copyWith => _copyWith;
+  WebhooksPreviousMarketplacePurchase Function({WebhooksPreviousMarketplacePurchaseAccount account, String billingCycle, dynamic freeTrialEndsOn, SdkOptional<String?> nextBillingDate, bool onFreeTrial, WebhooksPreviousMarketplacePurchasePlan plan, int unitCount}) get copyWith => _copyWith;
 
-  WebhooksPreviousMarketplacePurchase _copyWith(
-          {Object? account = sdkOmittedValue,
-          Object? billingCycle = sdkOmittedValue,
-          Object? freeTrialEndsOn = sdkOmittedValue,
-          Object? nextBillingDate = sdkOmittedValue,
-          Object? onFreeTrial = sdkOmittedValue,
-          Object? plan = sdkOmittedValue,
-          Object? unitCount = sdkOmittedValue}) =>
-      WebhooksPreviousMarketplacePurchase(
-        account: identical(account, sdkOmittedValue)
-            ? this.account
-            : account as WebhooksPreviousMarketplacePurchaseAccount,
-        billingCycle: identical(billingCycle, sdkOmittedValue)
-            ? this.billingCycle
-            : billingCycle as String,
-        freeTrialEndsOn: identical(freeTrialEndsOn, sdkOmittedValue)
-            ? this.freeTrialEndsOn
-            : freeTrialEndsOn as dynamic,
-        nextBillingDate: identical(nextBillingDate, sdkOmittedValue)
-            ? this.nextBillingDate
-            : nextBillingDate as SdkOptional<String?>,
-        onFreeTrial: identical(onFreeTrial, sdkOmittedValue)
-            ? this.onFreeTrial
-            : onFreeTrial as bool,
-        plan: identical(plan, sdkOmittedValue)
-            ? this.plan
-            : plan as WebhooksPreviousMarketplacePurchasePlan,
-        unitCount: identical(unitCount, sdkOmittedValue)
-            ? this.unitCount
-            : unitCount as int,
-      );
+  WebhooksPreviousMarketplacePurchase _copyWith({Object? account = sdkOmittedValue, Object? billingCycle = sdkOmittedValue, Object? freeTrialEndsOn = sdkOmittedValue, Object? nextBillingDate = sdkOmittedValue, Object? onFreeTrial = sdkOmittedValue, Object? plan = sdkOmittedValue, Object? unitCount = sdkOmittedValue}) => WebhooksPreviousMarketplacePurchase(
+    account: identical(account, sdkOmittedValue) ? this.account : account as WebhooksPreviousMarketplacePurchaseAccount,
+    billingCycle: identical(billingCycle, sdkOmittedValue) ? this.billingCycle : billingCycle as String,
+    freeTrialEndsOn: identical(freeTrialEndsOn, sdkOmittedValue) ? this.freeTrialEndsOn : freeTrialEndsOn as dynamic,
+    nextBillingDate: identical(nextBillingDate, sdkOmittedValue) ? this.nextBillingDate : nextBillingDate as SdkOptional<String?>,
+    onFreeTrial: identical(onFreeTrial, sdkOmittedValue) ? this.onFreeTrial : onFreeTrial as bool,
+    plan: identical(plan, sdkOmittedValue) ? this.plan : plan as WebhooksPreviousMarketplacePurchasePlan,
+    unitCount: identical(unitCount, sdkOmittedValue) ? this.unitCount : unitCount as int,
+  );
 
-  factory WebhooksPreviousMarketplacePurchase.fromJson(
-          Map<String, dynamic> json) =>
-      WebhooksPreviousMarketplacePurchase(
-        account: (json['account'] != null
-            ? WebhooksPreviousMarketplacePurchaseAccount.fromJson(
-                json['account'] as Map<String, dynamic>)
-            : null)!,
-        billingCycle: (json['billing_cycle'] as String?)!,
-        freeTrialEndsOn: json.containsKey('free_trial_ends_on')
-            ? json['free_trial_ends_on']
-            : throw ArgumentError.value(
-                null, 'free_trial_ends_on', 'Required property is missing'),
-        nextBillingDate: json.containsKey('next_billing_date')
-            ? SdkPresent(json['next_billing_date'] as String?)
-            : const SdkOmitted(),
-        onFreeTrial: (json['on_free_trial'] as bool?)!,
-        plan: (json['plan'] != null
-            ? WebhooksPreviousMarketplacePurchasePlan.fromJson(
-                json['plan'] as Map<String, dynamic>)
-            : null)!,
-        unitCount: ((json['unit_count'] as num?)?.toInt())!,
-      );
+  factory WebhooksPreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) => WebhooksPreviousMarketplacePurchase(
+    account: (json['account'] != null ? WebhooksPreviousMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>) : null)!,
+    billingCycle: (json['billing_cycle'] as String?)!,
+    freeTrialEndsOn: json.containsKey('free_trial_ends_on') ? json['free_trial_ends_on'] : throw ArgumentError.value(null, 'free_trial_ends_on', 'Required property is missing'),
+    nextBillingDate: json.containsKey('next_billing_date') ? SdkPresent(json['next_billing_date'] as String?) : const SdkOmitted(),
+    onFreeTrial: (json['on_free_trial'] as bool?)!,
+    plan: (json['plan'] != null ? WebhooksPreviousMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>) : null)!,
+    unitCount: ((json['unit_count'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'account': account.toJson(),
-        'billing_cycle': billingCycle,
-        'free_trial_ends_on': freeTrialEndsOn,
-        ...switch (nextBillingDate) {
-          SdkPresent<String?>(value: final value) => {
-              'next_billing_date': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'on_free_trial': onFreeTrial,
-        'plan': plan.toJson(),
-        'unit_count': unitCount,
-      };
+    'account': account.toJson(),
+    'billing_cycle': billingCycle,
+    'free_trial_ends_on': freeTrialEndsOn,
+    ...switch (nextBillingDate) {
+      SdkPresent<String?>(value: final value) => {'next_billing_date': value,},
+      _ => const <String, dynamic>{},
+    },
+    'on_free_trial': onFreeTrial,
+    'plan': plan.toJson(),
+    'unit_count': unitCount,
+  };
 }

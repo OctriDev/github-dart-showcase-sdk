@@ -8,41 +8,27 @@ part of 'pulls.dart';
 class PullRequestReviewRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `users` wire field.
   final List<SimpleUser> users;
-
   /// Required array value serialized in the `teams` wire field.
   final List<Team> teams;
 
   const PullRequestReviewRequest({required this.users, required this.teams});
 
-  PullRequestReviewRequest Function({List<SimpleUser> users, List<Team> teams})
-      get copyWith => _copyWith;
+  PullRequestReviewRequest Function({List<SimpleUser> users, List<Team> teams}) get copyWith => _copyWith;
 
-  PullRequestReviewRequest _copyWith(
-          {Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue}) =>
-      PullRequestReviewRequest(
-        users: identical(users, sdkOmittedValue)
-            ? this.users
-            : users as List<SimpleUser>,
-        teams: identical(teams, sdkOmittedValue)
-            ? this.teams
-            : teams as List<Team>,
-      );
+  PullRequestReviewRequest _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue}) => PullRequestReviewRequest(
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<SimpleUser>,
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<Team>,
+  );
 
-  factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) =>
-      PullRequestReviewRequest(
-        users: ((json['users'] as List?)
-            ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        teams: ((json['teams'] as List?)
-            ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) => PullRequestReviewRequest(
+    users: ((json['users'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!,
+    teams: ((json['teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'users': users.map((item) => item.toJson()).toList(),
-        'teams': teams.map((item) => item.toJson()).toList(),
-      };
+    'users': users.map((item) => item.toJson()).toList(),
+    'teams': teams.map((item) => item.toJson()).toList(),
+  };
 }

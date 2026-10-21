@@ -24,51 +24,39 @@ Future<CopilotUsageMetrics1DayReport>
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotEnterpriseOneDayUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the latest 28-day enterprise Copilot usage metrics report. The report provides comprehensive usage data for Copilot features across the enterprise. The report contains aggregated metrics for the previous 28 days, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
 ///
 /// [enterprise] The slug version of the enterprise name.
-Future<CopilotUsageMetrics28DayReport> copilotCopilotEnterpriseUsageMetrics(
-    ClientConfig config,
-    {required String enterprise,
-    RequestOptions? requestOptions}) async {
+Future<CopilotUsageMetrics28DayReport> copilotCopilotEnterpriseUsageMetrics(ClientConfig config,
+    {required String enterprise, RequestOptions? requestOptions}) async {
   return (await sdkRequest<CopilotUsageMetrics28DayReport>('GET',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/copilot/metrics/reports/enterprise-28-day/latest',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotEnterpriseUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the Copilot enterprise repository report for a specific day. The report provides per-repository pull request metrics for Copilot across the enterprise, with one entry per repository. The report contains repository-level pull request activity for the specified day, including the Copilot Coding Agent (CCA) and Copilot Code Review (CCR) breakdowns. Only repositories that had activity on the specified day are included. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
 ///
 /// [enterprise] The slug version of the enterprise name.
 /// [day] The day to request data for, in `YYYY-MM-DD` format.
-Future<CopilotUsageMetrics1DayReport> copilotCopilotEnterpriseReposOneDayReport(
-    ClientConfig config,
-    {required String enterprise,
-    required String day,
-    RequestOptions? requestOptions}) async {
+Future<CopilotUsageMetrics1DayReport>
+    copilotCopilotEnterpriseReposOneDayReport(ClientConfig config,
+        {required String enterprise,
+        required String day,
+        RequestOptions? requestOptions}) async {
   sdkValidateDate('day', day);
 
   return (await sdkRequest<CopilotUsageMetrics1DayReport>('GET',
@@ -77,18 +65,12 @@ Future<CopilotUsageMetrics1DayReport> copilotCopilotEnterpriseReposOneDayReport(
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotEnterpriseReposOneDayReport',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the Copilot enterprise user-teams report for a specific day. The report provides user-team join data for Copilot across the enterprise, with one entry per user-team pair. The report contains user-team membership data for the specified day, enabling consumers to join with the existing enterprise user reports to compute team-level usage metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
 ///
@@ -107,28 +89,22 @@ Future<CopilotUsageMetrics1DayReport>
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotEnterpriseUserTeamsOneDayReport',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the Copilot user usage metrics report for a specific day. The report provides detailed user-level usage data and engagement metrics for Copilot features across the enterprise. The report contains user-specific metrics for the specified day, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Reports are available starting from October 10, 2025, and historical data can be accessed for up to 1 year from the current date. Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
 ///
 /// [enterprise] The slug version of the enterprise name.
 /// [day] The day to request data for, in `YYYY-MM-DD` format.
-Future<CopilotUsageMetrics1DayReport> copilotCopilotUsersOneDayUsageMetrics(
-    ClientConfig config,
-    {required String enterprise,
-    required String day,
-    RequestOptions? requestOptions}) async {
+Future<CopilotUsageMetrics1DayReport>
+    copilotCopilotUsersOneDayUsageMetrics(ClientConfig config,
+        {required String enterprise,
+        required String day,
+        RequestOptions? requestOptions}) async {
   sdkValidateDate('day', day);
 
   return (await sdkRequest<CopilotUsageMetrics1DayReport>('GET',
@@ -137,41 +113,29 @@ Future<CopilotUsageMetrics1DayReport> copilotCopilotUsersOneDayUsageMetrics(
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotUsersOneDayUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the latest 28-day enterprise users Copilot usage metrics report. The report provides detailed user-level usage data and engagement metrics for Copilot features across the enterprise. The report contains user-specific metrics for the previous 28 days, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained "View Enterprise Copilot Metrics" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
 ///
 /// [enterprise] The slug version of the enterprise name.
-Future<CopilotUsageMetrics28DayReport> copilotCopilotUsersUsageMetrics(
-    ClientConfig config,
-    {required String enterprise,
-    RequestOptions? requestOptions}) async {
+Future<CopilotUsageMetrics28DayReport> copilotCopilotUsersUsageMetrics(ClientConfig config,
+    {required String enterprise, RequestOptions? requestOptions}) async {
   return (await sdkRequest<CopilotUsageMetrics28DayReport>('GET',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/copilot/metrics/reports/users-28-day/latest',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotUsersUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Sets the policy for Copilot cloud agent usage across an enterprise. Enterprise owners can configure whether Copilot cloud agent is enabled for all organizations, disabled for all organizations, configured by individual organization admins, or enabled for selected organizations only. Only enterprise owners can set the coding agent policy for their enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:enterprise` scopes to use this endpoint.
 ///
@@ -181,8 +145,7 @@ Future<CopilotUsageMetrics28DayReport> copilotCopilotUsersUsageMetrics(
 ///   `enabled_for_selected_orgs`, or `configured_by_org_admins`.
 Future<void> copilotSetEnterpriseCodingAgentPolicy(ClientConfig config,
     {required String enterprise,
-    required CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState
-        policyState,
+    required CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState policyState,
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/copilot/policies/coding_agent',
@@ -191,11 +154,10 @@ Future<void> copilotSetEnterpriseCodingAgentPolicy(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'copilotSetEnterpriseCodingAgentPolicy',
           options: requestOptions,
-          errors: {
-            '400': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Enables Copilot cloud agent for the specified organizations within the enterprise. The enterprise's coding agent policy must be set to `enabled_for_selected_orgs` before using this endpoint. Organizations can be specified by login or matched via custom properties. Only organizations that have Copilot enabled and belong to the enterprise will be affected. Only enterprise owners can add organizations to the coding agent policy. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:enterprise` scopes to use this endpoint.
 ///
@@ -207,15 +169,12 @@ Future<void> copilotSetEnterpriseCodingAgentPolicy(ClientConfig config,
 ///   be included. This is a one-time operation, setting the property on an
 ///   organization in the future will not automatically update its coding agent
 ///   policy.
-Future<void> copilotAddOrganizationsToEnterpriseCodingAgentPolicy(
-    ClientConfig config,
-    {required String enterprise,
-    SdkOptional<List<String>> organizations = const SdkOmitted(),
-    SdkOptional<
-            List<
-                CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>
-        customProperties = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<void>
+    copilotAddOrganizationsToEnterpriseCodingAgentPolicy(ClientConfig config,
+        {required String enterprise,
+        SdkOptional<List<String>> organizations = const SdkOmitted(),
+        SdkOptional<List<CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>> customProperties = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('POST',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/copilot/policies/coding_agent/organizations',
           config: config,
@@ -226,11 +185,10 @@ Future<void> copilotAddOrganizationsToEnterpriseCodingAgentPolicy(
           decoder: SdkResponseDecoder.empty,
           operationId: 'copilotAddOrganizationsToEnterpriseCodingAgentPolicy',
           options: requestOptions,
-          errors: {
-            '400': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Disables Copilot cloud agent for the specified organizations within the enterprise. The enterprise's coding agent policy must be set to `enabled_for_selected_orgs` before using this endpoint. Organizations can be specified by login or matched via custom properties. Only organizations that have Copilot enabled and belong to the enterprise will be affected. Only enterprise owners can remove organizations from the coding agent policy. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:enterprise` scopes to use this endpoint.
 ///
@@ -242,15 +200,12 @@ Future<void> copilotAddOrganizationsToEnterpriseCodingAgentPolicy(
 ///   be included. This is a one-time operation, setting the property on an
 ///   organization in the future will not automatically update its coding agent
 ///   policy.
-Future<void> copilotRemoveOrganizationsFromEnterpriseCodingAgentPolicy(
-    ClientConfig config,
-    {required String enterprise,
-    SdkOptional<List<String>> organizations = const SdkOmitted(),
-    SdkOptional<
-            List<
-                CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>
-        customProperties = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<void>
+    copilotRemoveOrganizationsFromEnterpriseCodingAgentPolicy(ClientConfig config,
+        {required String enterprise,
+        SdkOptional<List<String>> organizations = const SdkOmitted(),
+        SdkOptional<List<CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>> customProperties = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/copilot/policies/coding_agent/organizations',
           config: config,
@@ -259,40 +214,31 @@ Future<void> copilotRemoveOrganizationsFromEnterpriseCodingAgentPolicy(
             'custom_properties': SdkUtils.unwrapOptional(customProperties)
           },
           decoder: SdkResponseDecoder.empty,
-          operationId:
-              'copilotRemoveOrganizationsFromEnterpriseCodingAgentPolicy',
+          operationId: 'copilotRemoveOrganizationsFromEnterpriseCodingAgentPolicy',
           options: requestOptions,
-          errors: {
-            '400': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves an organization's Copilot subscription details, including its seat breakdown and feature policies. Use `org` to identify the organization; only organization owners can view these details. OAuth app tokens and classic personal access tokens need the `manage_billing:copilot` or `read:org` scope.
 ///
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Gets information about an organization's Copilot subscription, including seat breakdown and feature policies. To configure these settings, go to your organization's settings on GitHub.com. For more information, see "[Managing policies for Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-copilot-business-in-your-organization)." Only organization owners can view details about the organization's Copilot Business or Copilot Enterprise subscription. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<CopilotOrganizationDetails> copilotGetCopilotOrganizationDetails(
-    ClientConfig config,
-    {required String org,
-    RequestOptions? requestOptions}) async {
+Future<CopilotOrganizationDetails> copilotGetCopilotOrganizationDetails(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<CopilotOrganizationDetails>(
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/copilot/billing',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotGetCopilotOrganizationDetails',
-          fromJsonRaw: (value) => CopilotOrganizationDetails.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotOrganizationDetails.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Lists all Copilot seats for which an organization with a Copilot Business or Copilot Enterprise subscription is currently being billed. Only organization owners can view assigned seats. Each seat object contains information about the assigned user's most recent Copilot activity. Users must have telemetry enabled in their IDE for Copilot in the IDE activity to be reflected in `last_activity_at`. For more information about activity data, see [Metrics data properties for GitHub Copilot](https://docs.github.com/copilot/reference/metrics-data). OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
@@ -305,37 +251,27 @@ Future<CopilotOrganizationDetails> copilotGetCopilotOrganizationDetails(
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<CopilotListCopilotSeatsResponse> copilotListCopilotSeats(
-    ClientConfig config,
-    {required String org,
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<CopilotListCopilotSeatsResponse>
+    copilotListCopilotSeats(ClientConfig config,
+        {required String org,
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CopilotListCopilotSeatsResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/billing/seats',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotListCopilotSeats',
-          fromJsonRaw: (value) => CopilotListCopilotSeatsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotListCopilotSeatsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates Copilot seats for users in the specified organization teams. Supply `selected_teams` with at least one team name; the organization must have a Copilot Business or Copilot Enterprise subscription and a configured public code suggestions policy. The organization is billed for each seat according to its Copilot plan.
 ///
@@ -344,11 +280,11 @@ Future<CopilotListCopilotSeatsResponse> copilotListCopilotSeats(
 /// [org] The organization name. The name is not case sensitive.
 /// [selectedTeams] List of team names within the organization to which to grant
 ///   access to GitHub Copilot.
-Future<CopilotAddCopilotSeatsForTeamsResponse> copilotAddCopilotSeatsForTeams(
-    ClientConfig config,
-    {required String org,
-    required List<String> selectedTeams,
-    RequestOptions? requestOptions}) async {
+Future<CopilotAddCopilotSeatsForTeamsResponse>
+    copilotAddCopilotSeatsForTeams(ClientConfig config,
+        {required String org,
+        required List<String> selectedTeams,
+        RequestOptions? requestOptions}) async {
   validateItems('selected_teams', selectedTeams, min: 1);
 
   return (await sdkRequest<CopilotAddCopilotSeatsForTeamsResponse>('POST',
@@ -357,21 +293,12 @@ Future<CopilotAddCopilotSeatsForTeamsResponse> copilotAddCopilotSeatsForTeams(
           body: {'selected_teams': selectedTeams},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotAddCopilotSeatsForTeams',
-          fromJsonRaw: (value) =>
-              CopilotAddCopilotSeatsForTeamsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotAddCopilotSeatsForTeamsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Triggers cancellation of Copilot seats for users in the specified organization teams by setting those seats to pending cancellation. Supply `selected_teams` with at least one team name; only organization owners can cancel seats for organization members. Affected users lose Copilot access at the end of the current billing cycle unless they retain access through another team.
 ///
@@ -387,28 +314,18 @@ Future<CopilotCancelCopilotSeatAssignmentForTeamsResponse>
         RequestOptions? requestOptions}) async {
   validateItems('selected_teams', selectedTeams, min: 1);
 
-  return (await sdkRequest<CopilotCancelCopilotSeatAssignmentForTeamsResponse>(
-          'DELETE',
+  return (await sdkRequest<CopilotCancelCopilotSeatAssignmentForTeamsResponse>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/billing/selected_teams',
           config: config,
           body: {'selected_teams': selectedTeams},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCancelCopilotSeatAssignmentForTeams',
-          fromJsonRaw: (value) =>
-              CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates Copilot seats for organization members listed in `selected_usernames`. Submit at least one username; the organization must have a Copilot Business or Copilot Enterprise subscription, billing configured, and a suggestion matching policy set. The organization is billed for each seat, and only organization owners can purchase seats.
 ///
@@ -417,11 +334,11 @@ Future<CopilotCancelCopilotSeatAssignmentForTeamsResponse>
 /// [org] The organization name. The name is not case sensitive.
 /// [selectedUsernames] The usernames of the organization members to be granted
 ///   access to GitHub Copilot.
-Future<CopilotAddCopilotSeatsForUsersResponse> copilotAddCopilotSeatsForUsers(
-    ClientConfig config,
-    {required String org,
-    required List<String> selectedUsernames,
-    RequestOptions? requestOptions}) async {
+Future<CopilotAddCopilotSeatsForUsersResponse>
+    copilotAddCopilotSeatsForUsers(ClientConfig config,
+        {required String org,
+        required List<String> selectedUsernames,
+        RequestOptions? requestOptions}) async {
   validateItems('selected_usernames', selectedUsernames, min: 1);
 
   return (await sdkRequest<CopilotAddCopilotSeatsForUsersResponse>('POST',
@@ -430,21 +347,12 @@ Future<CopilotAddCopilotSeatsForUsersResponse> copilotAddCopilotSeatsForUsers(
           body: {'selected_usernames': selectedUsernames},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotAddCopilotSeatsForUsers',
-          fromJsonRaw: (value) =>
-              CopilotAddCopilotSeatsForUsersResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotAddCopilotSeatsForUsersResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Cancels Copilot seat assignments for the organization members listed in `selected_usernames`. Their seats become pending cancellation, and members lose access at the end of the current billing cycle unless they retain access through team membership. Only organization owners can cancel seats for organization members.
 ///
@@ -460,66 +368,46 @@ Future<CopilotCancelCopilotSeatAssignmentForUsersResponse>
         RequestOptions? requestOptions}) async {
   validateItems('selected_usernames', selectedUsernames, min: 1);
 
-  return (await sdkRequest<CopilotCancelCopilotSeatAssignmentForUsersResponse>(
-          'DELETE',
+  return (await sdkRequest<CopilotCancelCopilotSeatAssignmentForUsersResponse>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/billing/selected_users',
           config: config,
           body: {'selected_usernames': selectedUsernames},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCancelCopilotSeatAssignmentForUsers',
-          fromJsonRaw: (value) =>
-              CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Gets information about which repositories in an organization have been enabled or disabled for the Copilot cloud agent. Organization owners can configure whether Copilot cloud agent is enabled for all repositories, selected repositories, or no repositories owned by organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<CopilotGetCopilotCodingAgentPermissionsOrganizationResponse>
-    copilotGetCopilotCodingAgentPermissionsOrganization(ClientConfig config,
-        {required String org, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<
-              CopilotGetCopilotCodingAgentPermissionsOrganizationResponse>(
-          'GET',
+Future<CopilotGetCopilotCodingAgentPermissionsOrganizationResponse> copilotGetCopilotCodingAgentPermissionsOrganization(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<CopilotGetCopilotCodingAgentPermissionsOrganizationResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/coding-agent/permissions',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotGetCopilotCodingAgentPermissionsOrganization',
-          fromJsonRaw: (value) =>
-              CopilotGetCopilotCodingAgentPermissionsOrganizationResponse
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotGetCopilotCodingAgentPermissionsOrganizationResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Sets the policy for which repositories in an organization can use Copilot cloud agent. Organization owners can configure whether Copilot cloud agent is enabled for all repositories, selected repositories, or no repositories owned by the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [enabledRepositories] The policy for which repositories can use Copilot
 ///   cloud agent. Can be one of `all`, `selected`, or `none`.
-Future<void> copilotSetCopilotCodingAgentPermissionsOrganization(
-    ClientConfig config,
-    {required String org,
-    required CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories
-        enabledRepositories,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    copilotSetCopilotCodingAgentPermissionsOrganization(ClientConfig config,
+        {required String org,
+        required CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories enabledRepositories,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/coding-agent/permissions',
           config: config,
@@ -527,19 +415,10 @@ Future<void> copilotSetCopilotCodingAgentPermissionsOrganization(
           decoder: SdkResponseDecoder.empty,
           operationId: 'copilotSetCopilotCodingAgentPermissionsOrganization',
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Lists the selected repositories that are enabled for Copilot cloud agent in an organization. Organization owners can use this endpoint when the coding agent repository policy is set to `selected` to see which repositories have been enabled. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -553,141 +432,96 @@ Future<void> copilotSetCopilotCodingAgentPermissionsOrganization(
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
 Future<CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse>
-    copilotListCopilotCodingAgentSelectedRepositoriesForOrganization(
-        ClientConfig config,
+    copilotListCopilotCodingAgentSelectedRepositoriesForOrganization(ClientConfig config,
         {required String org,
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<
-              CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse>(
-          'GET',
+  return (await sdkRequest<CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/coding-agent/permissions/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          operationId:
-              'copilotListCopilotCodingAgentSelectedRepositoriesForOrganization',
-          fromJsonRaw: (value) =>
-              CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse
-                  .fromJson(value as Map<String, dynamic>),
+          operationId: 'copilotListCopilotCodingAgentSelectedRepositoriesForOrganization',
+          fromJsonRaw: (value) => CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Replaces the list of selected repositories that are enabled for Copilot cloud agent in an organization. This method can only be called when the cloud agent repository policy is set to `selected`. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [selectedRepositoryIds] List of repository IDs to enable for Copilot cloud
 ///   agent.
-Future<void> copilotSetCopilotCodingAgentSelectedRepositoriesForOrganization(
-    ClientConfig config,
-    {required String org,
-    required List<int> selectedRepositoryIds,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    copilotSetCopilotCodingAgentSelectedRepositoriesForOrganization(ClientConfig config,
+        {required String org,
+        required List<int> selectedRepositoryIds,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/coding-agent/permissions/repositories',
           config: config,
           body: {'selected_repository_ids': selectedRepositoryIds},
           decoder: SdkResponseDecoder.empty,
-          operationId:
-              'copilotSetCopilotCodingAgentSelectedRepositoriesForOrganization',
+          operationId: 'copilotSetCopilotCodingAgentSelectedRepositoriesForOrganization',
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Adds a repository to the list of selected repositories enabled for Copilot cloud agent in an organization. This method can only be called when the cloud agent repository policy is set to `selected`. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void> copilotEnableCopilotCodingAgentForRepositoryInOrganization(
-    ClientConfig config,
-    {required String org,
-    required int repositoryId,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    copilotEnableCopilotCodingAgentForRepositoryInOrganization(ClientConfig config,
+        {required String org,
+        required int repositoryId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/coding-agent/permissions/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId:
-              'copilotEnableCopilotCodingAgentForRepositoryInOrganization',
+          operationId: 'copilotEnableCopilotCodingAgentForRepositoryInOrganization',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Removes a repository from the list of selected repositories enabled for Copilot cloud agent in an organization. This method can only be called when the cloud agent repository policy is set to `selected`. OAuth app tokens and personal access tokens (classic) need the `admin:org` scopes to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void> copilotDisableCopilotCodingAgentForRepositoryInOrganization(
-    ClientConfig config,
-    {required String org,
-    required int repositoryId,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    copilotDisableCopilotCodingAgentForRepositoryInOrganization(ClientConfig config,
+        {required String org,
+        required int repositoryId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/coding-agent/permissions/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId:
-              'copilotDisableCopilotCodingAgentForRepositoryInOrganization',
+          operationId: 'copilotDisableCopilotCodingAgentForRepositoryInOrganization',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves the Copilot content exclusion rules configured for an organization. Use this endpoint to view the organization's path rules; organization owners can view these details. The response does not include comments, and duplicate keys are represented by their last occurrence.
 ///
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Gets information about an organization's Copilot content exclusion path rules. To configure these settings, go to the organization's settings on GitHub. For more information, see "[Excluding content from GitHub Copilot](https://docs.github.com/copilot/managing-copilot/configuring-and-auditing-content-exclusion/excluding-content-from-github-copilot#configuring-content-exclusions-for-your-organization)." Organization owners can view details about Copilot content exclusion rules for the organization. OAuth app tokens and personal access tokens (classic) need either the `copilot` or `read:org` scopes to use this endpoint. &gt; [!CAUTION] &gt; * At this time, the API does not support comments. This endpoint will not return any comments in the existing rules. &gt; * At this time, the API does not support duplicate keys. If your content exclusion configuration contains duplicate keys, the API will return only the last occurrence of that key. For example, if duplicate entries are present, only the final value will be included in the response.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<Map<String, dynamic>> copilotCopilotContentExclusionForOrganization(
-    ClientConfig config,
-    {required String org,
-    RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> copilotCopilotContentExclusionForOrganization(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/content_exclusion',
           config: config,
@@ -695,14 +529,10 @@ Future<Map<String, dynamic>> copilotCopilotContentExclusionForOrganization(
           operationId: 'copilotCopilotContentExclusionForOrganization',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Sets Copilot content exclusion rules for an organization. Submit rule keys mapped to arrays of excluded paths or conditional matching rules; duplicate keys overwrite earlier entries. Existing comments are deleted because the API does not support comments.
 ///
@@ -714,28 +544,18 @@ Future<CopilotSetCopilotContentExclusionForOrganizationResponse>
         {required String org,
         required Map<String, List<dynamic>> body,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<
-              CopilotSetCopilotContentExclusionForOrganizationResponse>('PUT',
+  return (await sdkRequest<CopilotSetCopilotContentExclusionForOrganizationResponse>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/content_exclusion',
           config: config,
           body: body,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotSetCopilotContentExclusionForOrganization',
-          fromJsonRaw: (value) =>
-              CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '413': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationErrorSimple.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '413': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the Copilot organization usage metrics report for a specific day. The report provides comprehensive usage data for Copilot features across the organization. The report contains aggregated metrics for the specified day, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
 ///
@@ -754,41 +574,29 @@ Future<CopilotUsageMetrics1DayReport>
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotOrganizationOneDayUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the latest 28-day organization Copilot usage metrics report. The report provides comprehensive usage data for Copilot features across the organization. The report contains aggregated metrics for the previous 28 days, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed. Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<CopilotUsageMetrics28DayReport> copilotCopilotOrganizationUsageMetrics(
-    ClientConfig config,
-    {required String org,
-    RequestOptions? requestOptions}) async {
+Future<CopilotUsageMetrics28DayReport> copilotCopilotOrganizationUsageMetrics(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<CopilotUsageMetrics28DayReport>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/metrics/reports/organization-28-day/latest',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotOrganizationUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the Copilot organization repository report for a specific day. The report provides per-repository pull request metrics for Copilot across the organization, with one entry per repository. The report contains repository-level pull request activity for the specified day, including the Copilot Coding Agent (CCA) and Copilot Code Review (CCR) breakdowns. Only repositories that had activity on the specified day are included. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
 ///
@@ -807,18 +615,12 @@ Future<CopilotUsageMetrics1DayReport>
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotOrganizationReposOneDayReport',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the Copilot organization user-teams report for a specific day. The report provides user-team join data for Copilot across the organization, with one entry per user-team pair. The report contains user-team membership data for the specified day, enabling consumers to join with the existing organization user reports to compute team-level usage metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
 ///
@@ -837,18 +639,12 @@ Future<CopilotUsageMetrics1DayReport>
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotOrganizationUserTeamsOneDayReport',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the Copilot organization user usage metrics report for a specific day. The report provides detailed user-level usage data and engagement metrics for Copilot features across the organization. The report contains user-specific metrics for the specified day, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
 ///
@@ -867,66 +663,50 @@ Future<CopilotUsageMetrics1DayReport>
           query: {'day': SdkQueryValue(day, style: 'form', explode: true)},
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotOrganizationUsersOneDayUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics1DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use this endpoint to retrieve download links for the latest 28-day organization users Copilot usage metrics report. The report provides detailed user-level usage data and engagement metrics for Copilot features across the organization. The report contains user-specific metrics for the previous 28 days, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed. Organization owners and authorized users with fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. For more information about organization metrics attribution, see [How are metrics attributed across organizations](https://docs.github.com/copilot/concepts/copilot-metrics#how-are-metrics-attributed-across-organizations).
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<CopilotUsageMetrics28DayReport>
-    copilotCopilotOrganizationUsersUsageMetrics(ClientConfig config,
-        {required String org, RequestOptions? requestOptions}) async {
+Future<CopilotUsageMetrics28DayReport> copilotCopilotOrganizationUsersUsageMetrics(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<CopilotUsageMetrics28DayReport>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/copilot/metrics/reports/users-28-day/latest',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotCopilotOrganizationUsersUsageMetrics',
-          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotUsageMetrics28DayReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Gets the GitHub Copilot seat details for a member of an organization who currently has access to GitHub Copilot. The seat object contains information about the user's most recent Copilot activity. Users must have telemetry enabled in their IDE for Copilot in the IDE activity to be reflected in `last_activity_at`. For more information about activity data, see [Metrics data properties for GitHub Copilot](https://docs.github.com/copilot/reference/metrics-data). Only organization owners can view Copilot seat assignment details for members of their organization. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [username] The handle for the GitHub user account.
-Future<CopilotSeatDetails> copilotGetCopilotSeatDetailsForUser(
-    ClientConfig config,
-    {required String org,
-    required String username,
-    RequestOptions? requestOptions}) async {
+Future<CopilotSeatDetails>
+    copilotGetCopilotSeatDetailsForUser(ClientConfig config,
+        {required String org,
+        required String username,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CopilotSeatDetails>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/members/${Uri.encodeComponent(username.toString())}/copilot',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotGetCopilotSeatDetailsForUser',
-          fromJsonRaw: (value) =>
-              CopilotSeatDetails.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotSeatDetails.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Gets the Copilot cloud agent configuration for a repository, including MCP server configuration, enabled review tools, Actions workflow approval settings, and firewall configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -938,21 +718,13 @@ Future<CopilotGetCopilotCloudAgentConfigurationResponse>
         {required String owner,
         required String repo,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CopilotGetCopilotCloudAgentConfigurationResponse>(
-          'GET',
+  return (await sdkRequest<CopilotGetCopilotCloudAgentConfigurationResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/copilot/cloud-agent/configuration',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'copilotGetCopilotCloudAgentConfiguration',
-          fromJsonRaw: (value) =>
-              CopilotGetCopilotCloudAgentConfigurationResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CopilotGetCopilotCloudAgentConfigurationResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

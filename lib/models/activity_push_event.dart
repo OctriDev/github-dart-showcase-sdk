@@ -8,67 +8,42 @@ part of 'activity.dart';
 class PushEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `repository_id` wire field.
   final int repositoryId;
-
   /// Required `integer` value serialized in the `push_id` wire field.
   final int pushId;
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// Required `string` value serialized in the `head` wire field.
   final String head;
-
   /// Required `string` value serialized in the `before` wire field.
   final String before;
 
-  const PushEvent(
-      {required this.repositoryId,
-      required this.pushId,
-      required this.ref,
-      required this.head,
-      required this.before});
+  const PushEvent({required this.repositoryId, required this.pushId, required this.ref, required this.head, required this.before});
 
-  PushEvent Function(
-      {int repositoryId,
-      int pushId,
-      String ref,
-      String head,
-      String before}) get copyWith => _copyWith;
+  PushEvent Function({int repositoryId, int pushId, String ref, String head, String before}) get copyWith => _copyWith;
 
-  PushEvent _copyWith(
-          {Object? repositoryId = sdkOmittedValue,
-          Object? pushId = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? head = sdkOmittedValue,
-          Object? before = sdkOmittedValue}) =>
-      PushEvent(
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as int,
-        pushId:
-            identical(pushId, sdkOmittedValue) ? this.pushId : pushId as int,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        head: identical(head, sdkOmittedValue) ? this.head : head as String,
-        before:
-            identical(before, sdkOmittedValue) ? this.before : before as String,
-      );
+  PushEvent _copyWith({Object? repositoryId = sdkOmittedValue, Object? pushId = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? head = sdkOmittedValue, Object? before = sdkOmittedValue}) => PushEvent(
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as int,
+    pushId: identical(pushId, sdkOmittedValue) ? this.pushId : pushId as int,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    head: identical(head, sdkOmittedValue) ? this.head : head as String,
+    before: identical(before, sdkOmittedValue) ? this.before : before as String,
+  );
 
   factory PushEvent.fromJson(Map<String, dynamic> json) => PushEvent(
-        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
-        pushId: ((json['push_id'] as num?)?.toInt())!,
-        ref: (json['ref'] as String?)!,
-        head: (json['head'] as String?)!,
-        before: (json['before'] as String?)!,
-      );
+    repositoryId: ((json['repository_id'] as num?)?.toInt())!,
+    pushId: ((json['push_id'] as num?)?.toInt())!,
+    ref: (json['ref'] as String?)!,
+    head: (json['head'] as String?)!,
+    before: (json['before'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'repository_id': repositoryId,
-        'push_id': pushId,
-        'ref': ref,
-        'head': head,
-        'before': before,
-      };
+    'repository_id': repositoryId,
+    'push_id': pushId,
+    'ref': ref,
+    'head': head,
+    'before': before,
+  };
 }

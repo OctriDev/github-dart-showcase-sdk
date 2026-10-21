@@ -8,511 +8,227 @@ part of 'actions_workflow.dart';
 class WorkflowRun {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of the workflow run.
   final int id;
-
   /// The name of the workflow run.
   final SdkOptional<String?> name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// The ID of the associated check suite.
   final SdkOptional<int> checkSuiteId;
-
   /// The node ID of the associated check suite.
   final SdkOptional<String> checkSuiteNodeId;
-
   /// Required `string` value serialized in the `head_branch` wire field.
   final String? headBranch;
-
   /// The SHA of the head commit that points to the version of the workflow being run.
   final String headSha;
-
   /// The full path of the workflow
   final String path;
-
   /// The auto incrementing run number for the workflow run.
   final int runNumber;
-
   /// Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
   final SdkOptional<int> runAttempt;
-
   /// Optional array value serialized in the `referenced_workflows` wire field.
   final SdkOptional<List<ReferencedWorkflow>?> referencedWorkflows;
-
   /// Required `string` value serialized in the `event` wire field.
   final String event;
-
   /// Required `string` value serialized in the `status` wire field.
   final String? status;
-
   /// Required `string` value serialized in the `conclusion` wire field.
   final String? conclusion;
-
   /// The ID of the parent workflow.
   final int workflowId;
-
   /// The URL to the workflow run.
   final String url;
-
   /// Required `string` value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Pull requests that are open with a `head_sha` or `head_branch` that matches the workflow run. The returned pull requests do not necessarily indicate pull requests that triggered the run.
   final List<PullRequestMinimal>? pullRequests;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> actor;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> triggeringActor;
-
   /// The start time of the latest run. Resets on re-run.
   final SdkOptional<String> runStartedAt;
-
   /// The URL to the jobs for the workflow run.
   final String jobsUrl;
-
   /// The URL to download the logs for the workflow run.
   final String logsUrl;
-
   /// The URL to the associated check suite.
   final String checkSuiteUrl;
-
   /// The URL to the artifacts for the workflow run.
   final String artifactsUrl;
-
   /// The URL to cancel the workflow run.
   final String cancelUrl;
-
   /// The URL to rerun the workflow run.
   final String rerunUrl;
-
   /// The URL to the previous attempted run of this workflow, if one exists.
   final SdkOptional<String?> previousAttemptUrl;
-
   /// The URL to the workflow.
   final String workflowUrl;
-
   /// A commit.
   final NullableSimpleCommit? headCommit;
-
   /// Minimal Repository
   final MinimalRepository repository;
-
   /// Minimal Repository
   final MinimalRepository headRepository;
-
   /// Optional `integer` value serialized in the `head_repository_id` wire field.
   final SdkOptional<int> headRepositoryId;
-
   /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
   final String displayTitle;
 
-  const WorkflowRun(
-      {required this.id,
-      this.name = const SdkOmitted(),
-      required this.nodeId,
-      this.checkSuiteId = const SdkOmitted(),
-      this.checkSuiteNodeId = const SdkOmitted(),
-      required this.headBranch,
-      required this.headSha,
-      required this.path,
-      required this.runNumber,
-      this.runAttempt = const SdkOmitted(),
-      this.referencedWorkflows = const SdkOmitted(),
-      required this.event,
-      required this.status,
-      required this.conclusion,
-      required this.workflowId,
-      required this.url,
-      required this.htmlUrl,
-      required this.pullRequests,
-      required this.createdAt,
-      required this.updatedAt,
-      this.actor = const SdkOmitted(),
-      this.triggeringActor = const SdkOmitted(),
-      this.runStartedAt = const SdkOmitted(),
-      required this.jobsUrl,
-      required this.logsUrl,
-      required this.checkSuiteUrl,
-      required this.artifactsUrl,
-      required this.cancelUrl,
-      required this.rerunUrl,
-      this.previousAttemptUrl = const SdkOmitted(),
-      required this.workflowUrl,
-      required this.headCommit,
-      required this.repository,
-      required this.headRepository,
-      this.headRepositoryId = const SdkOmitted(),
-      required this.displayTitle});
+  const WorkflowRun({required this.id, this.name = const SdkOmitted(), required this.nodeId, this.checkSuiteId = const SdkOmitted(), this.checkSuiteNodeId = const SdkOmitted(), required this.headBranch, required this.headSha, required this.path, required this.runNumber, this.runAttempt = const SdkOmitted(), this.referencedWorkflows = const SdkOmitted(), required this.event, required this.status, required this.conclusion, required this.workflowId, required this.url, required this.htmlUrl, required this.pullRequests, required this.createdAt, required this.updatedAt, this.actor = const SdkOmitted(), this.triggeringActor = const SdkOmitted(), this.runStartedAt = const SdkOmitted(), required this.jobsUrl, required this.logsUrl, required this.checkSuiteUrl, required this.artifactsUrl, required this.cancelUrl, required this.rerunUrl, this.previousAttemptUrl = const SdkOmitted(), required this.workflowUrl, required this.headCommit, required this.repository, required this.headRepository, this.headRepositoryId = const SdkOmitted(), required this.displayTitle});
 
-  WorkflowRun Function(
-      {int id,
-      SdkOptional<String?> name,
-      String nodeId,
-      SdkOptional<int> checkSuiteId,
-      SdkOptional<String> checkSuiteNodeId,
-      String? headBranch,
-      String headSha,
-      String path,
-      int runNumber,
-      SdkOptional<int> runAttempt,
-      SdkOptional<List<ReferencedWorkflow>?> referencedWorkflows,
-      String event,
-      String? status,
-      String? conclusion,
-      int workflowId,
-      String url,
-      String htmlUrl,
-      List<PullRequestMinimal>? pullRequests,
-      String createdAt,
-      String updatedAt,
-      SdkOptional<SimpleUser> actor,
-      SdkOptional<SimpleUser> triggeringActor,
-      SdkOptional<String> runStartedAt,
-      String jobsUrl,
-      String logsUrl,
-      String checkSuiteUrl,
-      String artifactsUrl,
-      String cancelUrl,
-      String rerunUrl,
-      SdkOptional<String?> previousAttemptUrl,
-      String workflowUrl,
-      NullableSimpleCommit? headCommit,
-      MinimalRepository repository,
-      MinimalRepository headRepository,
-      SdkOptional<int> headRepositoryId,
-      String displayTitle}) get copyWith => _copyWith;
+  WorkflowRun Function({int id, SdkOptional<String?> name, String nodeId, SdkOptional<int> checkSuiteId, SdkOptional<String> checkSuiteNodeId, String? headBranch, String headSha, String path, int runNumber, SdkOptional<int> runAttempt, SdkOptional<List<ReferencedWorkflow>?> referencedWorkflows, String event, String? status, String? conclusion, int workflowId, String url, String htmlUrl, List<PullRequestMinimal>? pullRequests, String createdAt, String updatedAt, SdkOptional<SimpleUser> actor, SdkOptional<SimpleUser> triggeringActor, SdkOptional<String> runStartedAt, String jobsUrl, String logsUrl, String checkSuiteUrl, String artifactsUrl, String cancelUrl, String rerunUrl, SdkOptional<String?> previousAttemptUrl, String workflowUrl, NullableSimpleCommit? headCommit, MinimalRepository repository, MinimalRepository headRepository, SdkOptional<int> headRepositoryId, String displayTitle}) get copyWith => _copyWith;
 
-  WorkflowRun _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? checkSuiteId = sdkOmittedValue,
-          Object? checkSuiteNodeId = sdkOmittedValue,
-          Object? headBranch = sdkOmittedValue,
-          Object? headSha = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? runNumber = sdkOmittedValue,
-          Object? runAttempt = sdkOmittedValue,
-          Object? referencedWorkflows = sdkOmittedValue,
-          Object? event = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? conclusion = sdkOmittedValue,
-          Object? workflowId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? pullRequests = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? actor = sdkOmittedValue,
-          Object? triggeringActor = sdkOmittedValue,
-          Object? runStartedAt = sdkOmittedValue,
-          Object? jobsUrl = sdkOmittedValue,
-          Object? logsUrl = sdkOmittedValue,
-          Object? checkSuiteUrl = sdkOmittedValue,
-          Object? artifactsUrl = sdkOmittedValue,
-          Object? cancelUrl = sdkOmittedValue,
-          Object? rerunUrl = sdkOmittedValue,
-          Object? previousAttemptUrl = sdkOmittedValue,
-          Object? workflowUrl = sdkOmittedValue,
-          Object? headCommit = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? headRepository = sdkOmittedValue,
-          Object? headRepositoryId = sdkOmittedValue,
-          Object? displayTitle = sdkOmittedValue}) =>
-      WorkflowRun(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String?>,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        checkSuiteId: identical(checkSuiteId, sdkOmittedValue)
-            ? this.checkSuiteId
-            : checkSuiteId as SdkOptional<int>,
-        checkSuiteNodeId: identical(checkSuiteNodeId, sdkOmittedValue)
-            ? this.checkSuiteNodeId
-            : checkSuiteNodeId as SdkOptional<String>,
-        headBranch: identical(headBranch, sdkOmittedValue)
-            ? this.headBranch
-            : headBranch as String?,
-        headSha: identical(headSha, sdkOmittedValue)
-            ? this.headSha
-            : headSha as String,
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        runNumber: identical(runNumber, sdkOmittedValue)
-            ? this.runNumber
-            : runNumber as int,
-        runAttempt: identical(runAttempt, sdkOmittedValue)
-            ? this.runAttempt
-            : runAttempt as SdkOptional<int>,
-        referencedWorkflows: identical(referencedWorkflows, sdkOmittedValue)
-            ? this.referencedWorkflows
-            : referencedWorkflows as SdkOptional<List<ReferencedWorkflow>?>,
-        event: identical(event, sdkOmittedValue) ? this.event : event as String,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as String?,
-        conclusion: identical(conclusion, sdkOmittedValue)
-            ? this.conclusion
-            : conclusion as String?,
-        workflowId: identical(workflowId, sdkOmittedValue)
-            ? this.workflowId
-            : workflowId as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        pullRequests: identical(pullRequests, sdkOmittedValue)
-            ? this.pullRequests
-            : pullRequests as List<PullRequestMinimal>?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        actor: identical(actor, sdkOmittedValue)
-            ? this.actor
-            : actor as SdkOptional<SimpleUser>,
-        triggeringActor: identical(triggeringActor, sdkOmittedValue)
-            ? this.triggeringActor
-            : triggeringActor as SdkOptional<SimpleUser>,
-        runStartedAt: identical(runStartedAt, sdkOmittedValue)
-            ? this.runStartedAt
-            : runStartedAt as SdkOptional<String>,
-        jobsUrl: identical(jobsUrl, sdkOmittedValue)
-            ? this.jobsUrl
-            : jobsUrl as String,
-        logsUrl: identical(logsUrl, sdkOmittedValue)
-            ? this.logsUrl
-            : logsUrl as String,
-        checkSuiteUrl: identical(checkSuiteUrl, sdkOmittedValue)
-            ? this.checkSuiteUrl
-            : checkSuiteUrl as String,
-        artifactsUrl: identical(artifactsUrl, sdkOmittedValue)
-            ? this.artifactsUrl
-            : artifactsUrl as String,
-        cancelUrl: identical(cancelUrl, sdkOmittedValue)
-            ? this.cancelUrl
-            : cancelUrl as String,
-        rerunUrl: identical(rerunUrl, sdkOmittedValue)
-            ? this.rerunUrl
-            : rerunUrl as String,
-        previousAttemptUrl: identical(previousAttemptUrl, sdkOmittedValue)
-            ? this.previousAttemptUrl
-            : previousAttemptUrl as SdkOptional<String?>,
-        workflowUrl: identical(workflowUrl, sdkOmittedValue)
-            ? this.workflowUrl
-            : workflowUrl as String,
-        headCommit: identical(headCommit, sdkOmittedValue)
-            ? this.headCommit
-            : headCommit as NullableSimpleCommit?,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as MinimalRepository,
-        headRepository: identical(headRepository, sdkOmittedValue)
-            ? this.headRepository
-            : headRepository as MinimalRepository,
-        headRepositoryId: identical(headRepositoryId, sdkOmittedValue)
-            ? this.headRepositoryId
-            : headRepositoryId as SdkOptional<int>,
-        displayTitle: identical(displayTitle, sdkOmittedValue)
-            ? this.displayTitle
-            : displayTitle as String,
-      );
+  WorkflowRun _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? checkSuiteId = sdkOmittedValue, Object? checkSuiteNodeId = sdkOmittedValue, Object? headBranch = sdkOmittedValue, Object? headSha = sdkOmittedValue, Object? path = sdkOmittedValue, Object? runNumber = sdkOmittedValue, Object? runAttempt = sdkOmittedValue, Object? referencedWorkflows = sdkOmittedValue, Object? event = sdkOmittedValue, Object? status = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? workflowId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pullRequests = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? actor = sdkOmittedValue, Object? triggeringActor = sdkOmittedValue, Object? runStartedAt = sdkOmittedValue, Object? jobsUrl = sdkOmittedValue, Object? logsUrl = sdkOmittedValue, Object? checkSuiteUrl = sdkOmittedValue, Object? artifactsUrl = sdkOmittedValue, Object? cancelUrl = sdkOmittedValue, Object? rerunUrl = sdkOmittedValue, Object? previousAttemptUrl = sdkOmittedValue, Object? workflowUrl = sdkOmittedValue, Object? headCommit = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? headRepository = sdkOmittedValue, Object? headRepositoryId = sdkOmittedValue, Object? displayTitle = sdkOmittedValue}) => WorkflowRun(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    checkSuiteId: identical(checkSuiteId, sdkOmittedValue) ? this.checkSuiteId : checkSuiteId as SdkOptional<int>,
+    checkSuiteNodeId: identical(checkSuiteNodeId, sdkOmittedValue) ? this.checkSuiteNodeId : checkSuiteNodeId as SdkOptional<String>,
+    headBranch: identical(headBranch, sdkOmittedValue) ? this.headBranch : headBranch as String?,
+    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    runNumber: identical(runNumber, sdkOmittedValue) ? this.runNumber : runNumber as int,
+    runAttempt: identical(runAttempt, sdkOmittedValue) ? this.runAttempt : runAttempt as SdkOptional<int>,
+    referencedWorkflows: identical(referencedWorkflows, sdkOmittedValue) ? this.referencedWorkflows : referencedWorkflows as SdkOptional<List<ReferencedWorkflow>?>,
+    event: identical(event, sdkOmittedValue) ? this.event : event as String,
+    status: identical(status, sdkOmittedValue) ? this.status : status as String?,
+    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as String?,
+    workflowId: identical(workflowId, sdkOmittedValue) ? this.workflowId : workflowId as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestMinimal>?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as SdkOptional<SimpleUser>,
+    triggeringActor: identical(triggeringActor, sdkOmittedValue) ? this.triggeringActor : triggeringActor as SdkOptional<SimpleUser>,
+    runStartedAt: identical(runStartedAt, sdkOmittedValue) ? this.runStartedAt : runStartedAt as SdkOptional<String>,
+    jobsUrl: identical(jobsUrl, sdkOmittedValue) ? this.jobsUrl : jobsUrl as String,
+    logsUrl: identical(logsUrl, sdkOmittedValue) ? this.logsUrl : logsUrl as String,
+    checkSuiteUrl: identical(checkSuiteUrl, sdkOmittedValue) ? this.checkSuiteUrl : checkSuiteUrl as String,
+    artifactsUrl: identical(artifactsUrl, sdkOmittedValue) ? this.artifactsUrl : artifactsUrl as String,
+    cancelUrl: identical(cancelUrl, sdkOmittedValue) ? this.cancelUrl : cancelUrl as String,
+    rerunUrl: identical(rerunUrl, sdkOmittedValue) ? this.rerunUrl : rerunUrl as String,
+    previousAttemptUrl: identical(previousAttemptUrl, sdkOmittedValue) ? this.previousAttemptUrl : previousAttemptUrl as SdkOptional<String?>,
+    workflowUrl: identical(workflowUrl, sdkOmittedValue) ? this.workflowUrl : workflowUrl as String,
+    headCommit: identical(headCommit, sdkOmittedValue) ? this.headCommit : headCommit as NullableSimpleCommit?,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
+    headRepository: identical(headRepository, sdkOmittedValue) ? this.headRepository : headRepository as MinimalRepository,
+    headRepositoryId: identical(headRepositoryId, sdkOmittedValue) ? this.headRepositoryId : headRepositoryId as SdkOptional<int>,
+    displayTitle: identical(displayTitle, sdkOmittedValue) ? this.displayTitle : displayTitle as String,
+  );
 
   factory WorkflowRun.fromJson(Map<String, dynamic> json) => WorkflowRun(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: json.containsKey('name')
-            ? SdkPresent(json['name'] as String?)
-            : const SdkOmitted(),
-        nodeId: (json['node_id'] as String?)!,
-        checkSuiteId: json['check_suite_id'] != null
-            ? SdkPresent(((json['check_suite_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        checkSuiteNodeId: json['check_suite_node_id'] != null
-            ? SdkPresent((json['check_suite_node_id'] as String?)!)
-            : const SdkOmitted(),
-        headBranch: json.containsKey('head_branch')
-            ? json['head_branch'] as String?
-            : throw ArgumentError.value(
-                null, 'head_branch', 'Required property is missing'),
-        headSha: (json['head_sha'] as String?)!,
-        path: (json['path'] as String?)!,
-        runNumber: ((json['run_number'] as num?)?.toInt())!,
-        runAttempt: json['run_attempt'] != null
-            ? SdkPresent(((json['run_attempt'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        referencedWorkflows: json.containsKey('referenced_workflows')
-            ? SdkPresent((json['referenced_workflows'] as List?)
-                ?.map((e) =>
-                    ReferencedWorkflow.fromJson(e as Map<String, dynamic>))
-                .toList())
-            : const SdkOmitted(),
-        event: (json['event'] as String?)!,
-        status: json.containsKey('status')
-            ? json['status'] as String?
-            : throw ArgumentError.value(
-                null, 'status', 'Required property is missing'),
-        conclusion: json.containsKey('conclusion')
-            ? json['conclusion'] as String?
-            : throw ArgumentError.value(
-                null, 'conclusion', 'Required property is missing'),
-        workflowId: ((json['workflow_id'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        pullRequests: json.containsKey('pull_requests')
-            ? (json['pull_requests'] as List?)
-                ?.map((e) =>
-                    PullRequestMinimal.fromJson(e as Map<String, dynamic>))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'pull_requests', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        actor: json['actor'] != null
-            ? SdkPresent((json['actor'] != null
-                ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        triggeringActor: json['triggering_actor'] != null
-            ? SdkPresent((json['triggering_actor'] != null
-                ? SimpleUser.fromJson(
-                    json['triggering_actor'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        runStartedAt: json['run_started_at'] != null
-            ? SdkPresent((json['run_started_at'] as String?)!)
-            : const SdkOmitted(),
-        jobsUrl: (json['jobs_url'] as String?)!,
-        logsUrl: (json['logs_url'] as String?)!,
-        checkSuiteUrl: (json['check_suite_url'] as String?)!,
-        artifactsUrl: (json['artifacts_url'] as String?)!,
-        cancelUrl: (json['cancel_url'] as String?)!,
-        rerunUrl: (json['rerun_url'] as String?)!,
-        previousAttemptUrl: json.containsKey('previous_attempt_url')
-            ? SdkPresent(json['previous_attempt_url'] as String?)
-            : const SdkOmitted(),
-        workflowUrl: (json['workflow_url'] as String?)!,
-        headCommit: json.containsKey('head_commit')
-            ? json['head_commit'] != null
-                ? NullableSimpleCommit.fromJson(
-                    json['head_commit'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'head_commit', 'Required property is missing'),
-        repository: (json['repository'] != null
-            ? MinimalRepository.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        headRepository: (json['head_repository'] != null
-            ? MinimalRepository.fromJson(
-                json['head_repository'] as Map<String, dynamic>)
-            : null)!,
-        headRepositoryId: json['head_repository_id'] != null
-            ? SdkPresent(((json['head_repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        displayTitle: (json['display_title'] as String?)!,
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
+    nodeId: (json['node_id'] as String?)!,
+    checkSuiteId: json['check_suite_id'] != null ? SdkPresent(((json['check_suite_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    checkSuiteNodeId: json['check_suite_node_id'] != null ? SdkPresent((json['check_suite_node_id'] as String?)!) : const SdkOmitted(),
+    headBranch: json.containsKey('head_branch') ? json['head_branch'] as String? : throw ArgumentError.value(null, 'head_branch', 'Required property is missing'),
+    headSha: (json['head_sha'] as String?)!,
+    path: (json['path'] as String?)!,
+    runNumber: ((json['run_number'] as num?)?.toInt())!,
+    runAttempt: json['run_attempt'] != null ? SdkPresent(((json['run_attempt'] as num?)?.toInt())!) : const SdkOmitted(),
+    referencedWorkflows: json.containsKey('referenced_workflows') ? SdkPresent((json['referenced_workflows'] as List?)?.map((e) => ReferencedWorkflow.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
+    event: (json['event'] as String?)!,
+    status: json.containsKey('status') ? json['status'] as String? : throw ArgumentError.value(null, 'status', 'Required property is missing'),
+    conclusion: json.containsKey('conclusion') ? json['conclusion'] as String? : throw ArgumentError.value(null, 'conclusion', 'Required property is missing'),
+    workflowId: ((json['workflow_id'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    pullRequests: json.containsKey('pull_requests') ? (json['pull_requests'] as List?)?.map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'pull_requests', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    actor: json['actor'] != null ? SdkPresent((json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    triggeringActor: json['triggering_actor'] != null ? SdkPresent((json['triggering_actor'] != null ? SimpleUser.fromJson(json['triggering_actor'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    runStartedAt: json['run_started_at'] != null ? SdkPresent((json['run_started_at'] as String?)!) : const SdkOmitted(),
+    jobsUrl: (json['jobs_url'] as String?)!,
+    logsUrl: (json['logs_url'] as String?)!,
+    checkSuiteUrl: (json['check_suite_url'] as String?)!,
+    artifactsUrl: (json['artifacts_url'] as String?)!,
+    cancelUrl: (json['cancel_url'] as String?)!,
+    rerunUrl: (json['rerun_url'] as String?)!,
+    previousAttemptUrl: json.containsKey('previous_attempt_url') ? SdkPresent(json['previous_attempt_url'] as String?) : const SdkOmitted(),
+    workflowUrl: (json['workflow_url'] as String?)!,
+    headCommit: json.containsKey('head_commit') ? json['head_commit'] != null ? NullableSimpleCommit.fromJson(json['head_commit'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'head_commit', 'Required property is missing'),
+    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    headRepository: (json['head_repository'] != null ? MinimalRepository.fromJson(json['head_repository'] as Map<String, dynamic>) : null)!,
+    headRepositoryId: json['head_repository_id'] != null ? SdkPresent(((json['head_repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    displayTitle: (json['display_title'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (name) {
-          SdkPresent<String?>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'node_id': nodeId,
-        ...switch (checkSuiteId) {
-          SdkPresent<int>(value: final value) => {
-              'check_suite_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (checkSuiteNodeId) {
-          SdkPresent<String>(value: final value) => {
-              'check_suite_node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'head_branch': headBranch,
-        'head_sha': headSha,
-        'path': path,
-        'run_number': runNumber,
-        ...switch (runAttempt) {
-          SdkPresent<int>(value: final value) => {
-              'run_attempt': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (referencedWorkflows) {
-          SdkPresent<List<ReferencedWorkflow>?>(value: final value) => {
-              'referenced_workflows':
-                  value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'event': event,
-        'status': status,
-        'conclusion': conclusion,
-        'workflow_id': workflowId,
-        'url': url,
-        'html_url': htmlUrl,
-        'pull_requests': pullRequests?.map((item) => item.toJson()).toList(),
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        ...switch (actor) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'actor': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (triggeringActor) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'triggering_actor': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (runStartedAt) {
-          SdkPresent<String>(value: final value) => {
-              'run_started_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'jobs_url': jobsUrl,
-        'logs_url': logsUrl,
-        'check_suite_url': checkSuiteUrl,
-        'artifacts_url': artifactsUrl,
-        'cancel_url': cancelUrl,
-        'rerun_url': rerunUrl,
-        ...switch (previousAttemptUrl) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_attempt_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'workflow_url': workflowUrl,
-        'head_commit': headCommit?.toJson(),
-        'repository': repository.toJson(),
-        'head_repository': headRepository.toJson(),
-        ...switch (headRepositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'head_repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'display_title': displayTitle,
-      };
+    'id': id,
+    ...switch (name) {
+      SdkPresent<String?>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    'node_id': nodeId,
+    ...switch (checkSuiteId) {
+      SdkPresent<int>(value: final value) => {'check_suite_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (checkSuiteNodeId) {
+      SdkPresent<String>(value: final value) => {'check_suite_node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    'head_branch': headBranch,
+    'head_sha': headSha,
+    'path': path,
+    'run_number': runNumber,
+    ...switch (runAttempt) {
+      SdkPresent<int>(value: final value) => {'run_attempt': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (referencedWorkflows) {
+      SdkPresent<List<ReferencedWorkflow>?>(value: final value) => {'referenced_workflows': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'event': event,
+    'status': status,
+    'conclusion': conclusion,
+    'workflow_id': workflowId,
+    'url': url,
+    'html_url': htmlUrl,
+    'pull_requests': pullRequests?.map((item) => item.toJson()).toList(),
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    ...switch (actor) {
+      SdkPresent<SimpleUser>(value: final value) => {'actor': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (triggeringActor) {
+      SdkPresent<SimpleUser>(value: final value) => {'triggering_actor': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (runStartedAt) {
+      SdkPresent<String>(value: final value) => {'run_started_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    'jobs_url': jobsUrl,
+    'logs_url': logsUrl,
+    'check_suite_url': checkSuiteUrl,
+    'artifacts_url': artifactsUrl,
+    'cancel_url': cancelUrl,
+    'rerun_url': rerunUrl,
+    ...switch (previousAttemptUrl) {
+      SdkPresent<String?>(value: final value) => {'previous_attempt_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'workflow_url': workflowUrl,
+    'head_commit': headCommit?.toJson(),
+    'repository': repository.toJson(),
+    'head_repository': headRepository.toJson(),
+    ...switch (headRepositoryId) {
+      SdkPresent<int>(value: final value) => {'head_repository_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    'display_title': displayTitle,
+  };
 }

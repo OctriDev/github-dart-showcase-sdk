@@ -8,88 +8,50 @@ part of 'checks.dart';
 class CheckRunOutput {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `title` wire field.
   final String? title;
-
   /// Required `string` value serialized in the `summary` wire field.
   final String? summary;
-
   /// Required `string` value serialized in the `text` wire field.
   final String? text;
-
   /// Required `integer` value serialized in the `annotations_count` wire field.
   final int annotationsCount;
-
   /// Required `uri`-formatted value serialized in the `annotations_url` wire field.
   final String annotationsUrl;
 
-  const CheckRunOutput(
-      {required this.title,
-      required this.summary,
-      required this.text,
-      required this.annotationsCount,
-      required this.annotationsUrl});
+  const CheckRunOutput({required this.title, required this.summary, required this.text, required this.annotationsCount, required this.annotationsUrl});
 
-  CheckRunOutput Function(
-      {String? title,
-      String? summary,
-      String? text,
-      int annotationsCount,
-      String annotationsUrl}) get copyWith => _copyWith;
+  CheckRunOutput Function({String? title, String? summary, String? text, int annotationsCount, String annotationsUrl}) get copyWith => _copyWith;
 
-  CheckRunOutput _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? summary = sdkOmittedValue,
-          Object? text = sdkOmittedValue,
-          Object? annotationsCount = sdkOmittedValue,
-          Object? annotationsUrl = sdkOmittedValue}) =>
-      CheckRunOutput(
-        title:
-            identical(title, sdkOmittedValue) ? this.title : title as String?,
-        summary: identical(summary, sdkOmittedValue)
-            ? this.summary
-            : summary as String?,
-        text: identical(text, sdkOmittedValue) ? this.text : text as String?,
-        annotationsCount: identical(annotationsCount, sdkOmittedValue)
-            ? this.annotationsCount
-            : annotationsCount as int,
-        annotationsUrl: identical(annotationsUrl, sdkOmittedValue)
-            ? this.annotationsUrl
-            : annotationsUrl as String,
-      );
+  CheckRunOutput _copyWith({Object? title = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? text = sdkOmittedValue, Object? annotationsCount = sdkOmittedValue, Object? annotationsUrl = sdkOmittedValue}) => CheckRunOutput(
+    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
+    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String?,
+    text: identical(text, sdkOmittedValue) ? this.text : text as String?,
+    annotationsCount: identical(annotationsCount, sdkOmittedValue) ? this.annotationsCount : annotationsCount as int,
+    annotationsUrl: identical(annotationsUrl, sdkOmittedValue) ? this.annotationsUrl : annotationsUrl as String,
+  );
 
   factory CheckRunOutput.fromJson(Map<String, dynamic> json) => CheckRunOutput(
-        title: json.containsKey('title')
-            ? json['title'] as String?
-            : throw ArgumentError.value(
-                null, 'title', 'Required property is missing'),
-        summary: json.containsKey('summary')
-            ? json['summary'] as String?
-            : throw ArgumentError.value(
-                null, 'summary', 'Required property is missing'),
-        text: json.containsKey('text')
-            ? json['text'] as String?
-            : throw ArgumentError.value(
-                null, 'text', 'Required property is missing'),
-        annotationsCount: ((json['annotations_count'] as num?)?.toInt())!,
-        annotationsUrl: (json['annotations_url'] as String?)!,
-      );
+    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
+    summary: json.containsKey('summary') ? json['summary'] as String? : throw ArgumentError.value(null, 'summary', 'Required property is missing'),
+    text: json.containsKey('text') ? json['text'] as String? : throw ArgumentError.value(null, 'text', 'Required property is missing'),
+    annotationsCount: ((json['annotations_count'] as num?)?.toInt())!,
+    annotationsUrl: (json['annotations_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        'summary': summary,
-        'text': text,
-        'annotations_count': annotationsCount,
-        'annotations_url': annotationsUrl,
-      };
+    'title': title,
+    'summary': summary,
+    'text': text,
+    'annotations_count': annotationsCount,
+    'annotations_url': annotationsUrl,
+  };
 }
 
 /// Required object value serialized in the `check_suite` wire field.
 class CheckRunCheckSuite {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
 
@@ -97,265 +59,122 @@ class CheckRunCheckSuite {
 
   CheckRunCheckSuite Function({int id}) get copyWith => _copyWith;
 
-  CheckRunCheckSuite _copyWith({Object? id = sdkOmittedValue}) =>
-      CheckRunCheckSuite(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-      );
+  CheckRunCheckSuite _copyWith({Object? id = sdkOmittedValue}) => CheckRunCheckSuite(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+  );
 
-  factory CheckRunCheckSuite.fromJson(Map<String, dynamic> json) =>
-      CheckRunCheckSuite(
-        id: ((json['id'] as num?)?.toInt())!,
-      );
+  factory CheckRunCheckSuite.fromJson(Map<String, dynamic> json) => CheckRunCheckSuite(
+    id: ((json['id'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-      };
+    'id': id,
+  };
 }
 
 /// A check performed on the code of a given code change
 class CheckRun {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The id of the check.
   final int id;
-
   /// The SHA of the commit that is being checked.
   final String headSha;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `external_id` wire field.
   final String? externalId;
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `html_url` wire field.
   final String? htmlUrl;
-
   /// Required `string` value serialized in the `details_url` wire field.
   final String? detailsUrl;
-
   /// The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
   final CheckRunStatus status;
-
   /// Required enumerated value serialized in the `conclusion` wire field.
   final CheckRunConclusion? conclusion;
-
   /// Required `date-time`-formatted value serialized in the `started_at` wire field.
   final String? startedAt;
-
   /// Required `date-time`-formatted value serialized in the `completed_at` wire field.
   final String? completedAt;
-
   /// Required object value serialized in the `output` wire field.
   final CheckRunOutput output;
-
   /// The name of the check.
   final String name;
-
   /// Required object value serialized in the `check_suite` wire field.
   final CheckRunCheckSuite? checkSuite;
-
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final NullableIntegration? app;
-
   /// Pull requests that are open with a `head_sha` or `head_branch` that matches the check. The returned pull requests do not necessarily indicate pull requests that triggered the check.
   final List<PullRequestMinimal> pullRequests;
-
   /// A deployment created as the result of an Actions check run from a workflow that references an environment
   final SdkOptional<DeploymentSimple> deployment;
 
-  const CheckRun(
-      {required this.id,
-      required this.headSha,
-      required this.nodeId,
-      required this.externalId,
-      required this.url,
-      required this.htmlUrl,
-      required this.detailsUrl,
-      required this.status,
-      required this.conclusion,
-      required this.startedAt,
-      required this.completedAt,
-      required this.output,
-      required this.name,
-      required this.checkSuite,
-      required this.app,
-      required this.pullRequests,
-      this.deployment = const SdkOmitted()});
+  const CheckRun({required this.id, required this.headSha, required this.nodeId, required this.externalId, required this.url, required this.htmlUrl, required this.detailsUrl, required this.status, required this.conclusion, required this.startedAt, required this.completedAt, required this.output, required this.name, required this.checkSuite, required this.app, required this.pullRequests, this.deployment = const SdkOmitted()});
 
-  CheckRun Function(
-      {int id,
-      String headSha,
-      String nodeId,
-      String? externalId,
-      String url,
-      String? htmlUrl,
-      String? detailsUrl,
-      CheckRunStatus status,
-      CheckRunConclusion? conclusion,
-      String? startedAt,
-      String? completedAt,
-      CheckRunOutput output,
-      String name,
-      CheckRunCheckSuite? checkSuite,
-      NullableIntegration? app,
-      List<PullRequestMinimal> pullRequests,
-      SdkOptional<DeploymentSimple> deployment}) get copyWith => _copyWith;
+  CheckRun Function({int id, String headSha, String nodeId, String? externalId, String url, String? htmlUrl, String? detailsUrl, CheckRunStatus status, CheckRunConclusion? conclusion, String? startedAt, String? completedAt, CheckRunOutput output, String name, CheckRunCheckSuite? checkSuite, NullableIntegration? app, List<PullRequestMinimal> pullRequests, SdkOptional<DeploymentSimple> deployment}) get copyWith => _copyWith;
 
-  CheckRun _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? headSha = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? externalId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? detailsUrl = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? conclusion = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue,
-          Object? completedAt = sdkOmittedValue,
-          Object? output = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? checkSuite = sdkOmittedValue,
-          Object? app = sdkOmittedValue,
-          Object? pullRequests = sdkOmittedValue,
-          Object? deployment = sdkOmittedValue}) =>
-      CheckRun(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        headSha: identical(headSha, sdkOmittedValue)
-            ? this.headSha
-            : headSha as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        externalId: identical(externalId, sdkOmittedValue)
-            ? this.externalId
-            : externalId as String?,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String?,
-        detailsUrl: identical(detailsUrl, sdkOmittedValue)
-            ? this.detailsUrl
-            : detailsUrl as String?,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as CheckRunStatus,
-        conclusion: identical(conclusion, sdkOmittedValue)
-            ? this.conclusion
-            : conclusion as CheckRunConclusion?,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as String?,
-        completedAt: identical(completedAt, sdkOmittedValue)
-            ? this.completedAt
-            : completedAt as String?,
-        output: identical(output, sdkOmittedValue)
-            ? this.output
-            : output as CheckRunOutput,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        checkSuite: identical(checkSuite, sdkOmittedValue)
-            ? this.checkSuite
-            : checkSuite as CheckRunCheckSuite?,
-        app: identical(app, sdkOmittedValue)
-            ? this.app
-            : app as NullableIntegration?,
-        pullRequests: identical(pullRequests, sdkOmittedValue)
-            ? this.pullRequests
-            : pullRequests as List<PullRequestMinimal>,
-        deployment: identical(deployment, sdkOmittedValue)
-            ? this.deployment
-            : deployment as SdkOptional<DeploymentSimple>,
-      );
+  CheckRun _copyWith({Object? id = sdkOmittedValue, Object? headSha = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? externalId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? detailsUrl = sdkOmittedValue, Object? status = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? startedAt = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? output = sdkOmittedValue, Object? name = sdkOmittedValue, Object? checkSuite = sdkOmittedValue, Object? app = sdkOmittedValue, Object? pullRequests = sdkOmittedValue, Object? deployment = sdkOmittedValue}) => CheckRun(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    externalId: identical(externalId, sdkOmittedValue) ? this.externalId : externalId as String?,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String?,
+    detailsUrl: identical(detailsUrl, sdkOmittedValue) ? this.detailsUrl : detailsUrl as String?,
+    status: identical(status, sdkOmittedValue) ? this.status : status as CheckRunStatus,
+    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as CheckRunConclusion?,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as String?,
+    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as String?,
+    output: identical(output, sdkOmittedValue) ? this.output : output as CheckRunOutput,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    checkSuite: identical(checkSuite, sdkOmittedValue) ? this.checkSuite : checkSuite as CheckRunCheckSuite?,
+    app: identical(app, sdkOmittedValue) ? this.app : app as NullableIntegration?,
+    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestMinimal>,
+    deployment: identical(deployment, sdkOmittedValue) ? this.deployment : deployment as SdkOptional<DeploymentSimple>,
+  );
 
   factory CheckRun.fromJson(Map<String, dynamic> json) => CheckRun(
-        id: ((json['id'] as num?)?.toInt())!,
-        headSha: (json['head_sha'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        externalId: json.containsKey('external_id')
-            ? json['external_id'] as String?
-            : throw ArgumentError.value(
-                null, 'external_id', 'Required property is missing'),
-        url: (json['url'] as String?)!,
-        htmlUrl: json.containsKey('html_url')
-            ? json['html_url'] as String?
-            : throw ArgumentError.value(
-                null, 'html_url', 'Required property is missing'),
-        detailsUrl: json.containsKey('details_url')
-            ? json['details_url'] as String?
-            : throw ArgumentError.value(
-                null, 'details_url', 'Required property is missing'),
-        status: (json['status'] != null
-            ? CheckRunStatus.fromJson(json['status'] as String)
-            : null)!,
-        conclusion: json.containsKey('conclusion')
-            ? json['conclusion'] != null
-                ? CheckRunConclusion.fromJson(json['conclusion'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'conclusion', 'Required property is missing'),
-        startedAt: json.containsKey('started_at')
-            ? json['started_at'] as String?
-            : throw ArgumentError.value(
-                null, 'started_at', 'Required property is missing'),
-        completedAt: json.containsKey('completed_at')
-            ? json['completed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'completed_at', 'Required property is missing'),
-        output: (json['output'] != null
-            ? CheckRunOutput.fromJson(json['output'] as Map<String, dynamic>)
-            : null)!,
-        name: (json['name'] as String?)!,
-        checkSuite: json.containsKey('check_suite')
-            ? json['check_suite'] != null
-                ? CheckRunCheckSuite.fromJson(
-                    json['check_suite'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'check_suite', 'Required property is missing'),
-        app: json.containsKey('app')
-            ? json['app'] != null
-                ? NullableIntegration.fromJson(
-                    json['app'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'app', 'Required property is missing'),
-        pullRequests: ((json['pull_requests'] as List?)
-            ?.map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        deployment: json['deployment'] != null
-            ? SdkPresent((json['deployment'] != null
-                ? DeploymentSimple.fromJson(
-                    json['deployment'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    headSha: (json['head_sha'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    externalId: json.containsKey('external_id') ? json['external_id'] as String? : throw ArgumentError.value(null, 'external_id', 'Required property is missing'),
+    url: (json['url'] as String?)!,
+    htmlUrl: json.containsKey('html_url') ? json['html_url'] as String? : throw ArgumentError.value(null, 'html_url', 'Required property is missing'),
+    detailsUrl: json.containsKey('details_url') ? json['details_url'] as String? : throw ArgumentError.value(null, 'details_url', 'Required property is missing'),
+    status: (json['status'] != null ? CheckRunStatus.fromJson(json['status'] as String) : null)!,
+    conclusion: json.containsKey('conclusion') ? json['conclusion'] != null ? CheckRunConclusion.fromJson(json['conclusion'] as String) : null : throw ArgumentError.value(null, 'conclusion', 'Required property is missing'),
+    startedAt: json.containsKey('started_at') ? json['started_at'] as String? : throw ArgumentError.value(null, 'started_at', 'Required property is missing'),
+    completedAt: json.containsKey('completed_at') ? json['completed_at'] as String? : throw ArgumentError.value(null, 'completed_at', 'Required property is missing'),
+    output: (json['output'] != null ? CheckRunOutput.fromJson(json['output'] as Map<String, dynamic>) : null)!,
+    name: (json['name'] as String?)!,
+    checkSuite: json.containsKey('check_suite') ? json['check_suite'] != null ? CheckRunCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'check_suite', 'Required property is missing'),
+    app: json.containsKey('app') ? json['app'] != null ? NullableIntegration.fromJson(json['app'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'app', 'Required property is missing'),
+    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList())!,
+    deployment: json['deployment'] != null ? SdkPresent((json['deployment'] != null ? DeploymentSimple.fromJson(json['deployment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'head_sha': headSha,
-        'node_id': nodeId,
-        'external_id': externalId,
-        'url': url,
-        'html_url': htmlUrl,
-        'details_url': detailsUrl,
-        'status': status.toJson(),
-        'conclusion': conclusion?.toJson(),
-        'started_at': startedAt,
-        'completed_at': completedAt,
-        'output': output.toJson(),
-        'name': name,
-        'check_suite': checkSuite?.toJson(),
-        'app': app?.toJson(),
-        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-        ...switch (deployment) {
-          SdkPresent<DeploymentSimple>(value: final value) => {
-              'deployment': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'head_sha': headSha,
+    'node_id': nodeId,
+    'external_id': externalId,
+    'url': url,
+    'html_url': htmlUrl,
+    'details_url': detailsUrl,
+    'status': status.toJson(),
+    'conclusion': conclusion?.toJson(),
+    'started_at': startedAt,
+    'completed_at': completedAt,
+    'output': output.toJson(),
+    'name': name,
+    'check_suite': checkSuite?.toJson(),
+    'app': app?.toJson(),
+    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+    ...switch (deployment) {
+      SdkPresent<DeploymentSimple>(value: final value) => {'deployment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

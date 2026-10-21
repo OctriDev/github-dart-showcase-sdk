@@ -8,223 +8,90 @@ part of 'webhook_deployment_status_created.dart';
 class WebhookDeploymentStatusCreated {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookDeploymentStatusCreatedAction action;
-
   /// Optional object value serialized in the `check_run` wire field.
   final SdkOptional<WebhookDeploymentStatusCreatedCheckRun?> checkRun;
-
   /// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
   final WebhookDeploymentStatusCreatedDeployment deployment;
-
   /// The [deployment status](https://docs.github.com/rest/deployments/statuses#list-deployment-statuses).
   final WebhookDeploymentStatusCreatedDeploymentStatus deploymentStatus;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
-
   /// Optional object value serialized in the `workflow` wire field.
   final SdkOptional<WebhooksWorkflow?> workflow;
-
   /// Optional object value serialized in the `workflow_run` wire field.
   final SdkOptional<WebhookDeploymentStatusCreatedWorkflowRun?> workflowRun;
 
-  const WebhookDeploymentStatusCreated(
-      {required this.action,
-      this.checkRun = const SdkOmitted(),
-      required this.deployment,
-      required this.deploymentStatus,
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      this.organization = const SdkOmitted(),
-      required this.repository,
-      required this.sender,
-      this.workflow = const SdkOmitted(),
-      this.workflowRun = const SdkOmitted()});
+  const WebhookDeploymentStatusCreated({required this.action, this.checkRun = const SdkOmitted(), required this.deployment, required this.deploymentStatus, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.repository, required this.sender, this.workflow = const SdkOmitted(), this.workflowRun = const SdkOmitted()});
 
-  WebhookDeploymentStatusCreated Function(
-          {WebhookDeploymentStatusCreatedAction action,
-          SdkOptional<WebhookDeploymentStatusCreatedCheckRun?> checkRun,
-          WebhookDeploymentStatusCreatedDeployment deployment,
-          WebhookDeploymentStatusCreatedDeploymentStatus deploymentStatus,
-          SdkOptional<EnterpriseWebhooks> enterprise,
-          SdkOptional<SimpleInstallation> installation,
-          SdkOptional<OrganizationSimpleWebhooks> organization,
-          RepositoryWebhooks repository,
-          SimpleUser sender,
-          SdkOptional<WebhooksWorkflow?> workflow,
-          SdkOptional<WebhookDeploymentStatusCreatedWorkflowRun?> workflowRun})
-      get copyWith => _copyWith;
+  WebhookDeploymentStatusCreated Function({WebhookDeploymentStatusCreatedAction action, SdkOptional<WebhookDeploymentStatusCreatedCheckRun?> checkRun, WebhookDeploymentStatusCreatedDeployment deployment, WebhookDeploymentStatusCreatedDeploymentStatus deploymentStatus, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender, SdkOptional<WebhooksWorkflow?> workflow, SdkOptional<WebhookDeploymentStatusCreatedWorkflowRun?> workflowRun}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreated _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? checkRun = sdkOmittedValue,
-          Object? deployment = sdkOmittedValue,
-          Object? deploymentStatus = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue,
-          Object? workflow = sdkOmittedValue,
-          Object? workflowRun = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreated(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookDeploymentStatusCreatedAction,
-        checkRun: identical(checkRun, sdkOmittedValue)
-            ? this.checkRun
-            : checkRun as SdkOptional<WebhookDeploymentStatusCreatedCheckRun?>,
-        deployment: identical(deployment, sdkOmittedValue)
-            ? this.deployment
-            : deployment as WebhookDeploymentStatusCreatedDeployment,
-        deploymentStatus: identical(deploymentStatus, sdkOmittedValue)
-            ? this.deploymentStatus
-            : deploymentStatus
-                as WebhookDeploymentStatusCreatedDeploymentStatus,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-        workflow: identical(workflow, sdkOmittedValue)
-            ? this.workflow
-            : workflow as SdkOptional<WebhooksWorkflow?>,
-        workflowRun: identical(workflowRun, sdkOmittedValue)
-            ? this.workflowRun
-            : workflowRun
-                as SdkOptional<WebhookDeploymentStatusCreatedWorkflowRun?>,
-      );
+  WebhookDeploymentStatusCreated _copyWith({Object? action = sdkOmittedValue, Object? checkRun = sdkOmittedValue, Object? deployment = sdkOmittedValue, Object? deploymentStatus = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue, Object? workflow = sdkOmittedValue, Object? workflowRun = sdkOmittedValue}) => WebhookDeploymentStatusCreated(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookDeploymentStatusCreatedAction,
+    checkRun: identical(checkRun, sdkOmittedValue) ? this.checkRun : checkRun as SdkOptional<WebhookDeploymentStatusCreatedCheckRun?>,
+    deployment: identical(deployment, sdkOmittedValue) ? this.deployment : deployment as WebhookDeploymentStatusCreatedDeployment,
+    deploymentStatus: identical(deploymentStatus, sdkOmittedValue) ? this.deploymentStatus : deploymentStatus as WebhookDeploymentStatusCreatedDeploymentStatus,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+    workflow: identical(workflow, sdkOmittedValue) ? this.workflow : workflow as SdkOptional<WebhooksWorkflow?>,
+    workflowRun: identical(workflowRun, sdkOmittedValue) ? this.workflowRun : workflowRun as SdkOptional<WebhookDeploymentStatusCreatedWorkflowRun?>,
+  );
 
-  factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreated(
-        action: (json['action'] != null
-            ? WebhookDeploymentStatusCreatedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        checkRun: json.containsKey('check_run')
-            ? SdkPresent(json['check_run'] != null
-                ? WebhookDeploymentStatusCreatedCheckRun.fromJson(
-                    json['check_run'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        deployment: (json['deployment'] != null
-            ? WebhookDeploymentStatusCreatedDeployment.fromJson(
-                json['deployment'] as Map<String, dynamic>)
-            : null)!,
-        deploymentStatus: (json['deployment_status'] != null
-            ? WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(
-                json['deployment_status'] as Map<String, dynamic>)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-        workflow: json.containsKey('workflow')
-            ? SdkPresent(json['workflow'] != null
-                ? WebhooksWorkflow.fromJson(
-                    json['workflow'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        workflowRun: json.containsKey('workflow_run')
-            ? SdkPresent(json['workflow_run'] != null
-                ? WebhookDeploymentStatusCreatedWorkflowRun.fromJson(
-                    json['workflow_run'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) => WebhookDeploymentStatusCreated(
+    action: (json['action'] != null ? WebhookDeploymentStatusCreatedAction.fromJson(json['action'] as String) : null)!,
+    checkRun: json.containsKey('check_run') ? SdkPresent(json['check_run'] != null ? WebhookDeploymentStatusCreatedCheckRun.fromJson(json['check_run'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    deployment: (json['deployment'] != null ? WebhookDeploymentStatusCreatedDeployment.fromJson(json['deployment'] as Map<String, dynamic>) : null)!,
+    deploymentStatus: (json['deployment_status'] != null ? WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(json['deployment_status'] as Map<String, dynamic>) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+    workflow: json.containsKey('workflow') ? SdkPresent(json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    workflowRun: json.containsKey('workflow_run') ? SdkPresent(json['workflow_run'] != null ? WebhookDeploymentStatusCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (checkRun) {
-          SdkPresent<WebhookDeploymentStatusCreatedCheckRun?>(
-            value: final value
-          ) =>
-            {
-              'check_run': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'deployment': deployment.toJson(),
-        'deployment_status': deploymentStatus.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-        ...switch (workflow) {
-          SdkPresent<WebhooksWorkflow?>(value: final value) => {
-              'workflow': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workflowRun) {
-          SdkPresent<WebhookDeploymentStatusCreatedWorkflowRun?>(
-            value: final value
-          ) =>
-            {
-              'workflow_run': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'action': action.toJson(),
+    ...switch (checkRun) {
+      SdkPresent<WebhookDeploymentStatusCreatedCheckRun?>(value: final value) => {'check_run': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'deployment': deployment.toJson(),
+    'deployment_status': deploymentStatus.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+    ...switch (workflow) {
+      SdkPresent<WebhooksWorkflow?>(value: final value) => {'workflow': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (workflowRun) {
+      SdkPresent<WebhookDeploymentStatusCreatedWorkflowRun?>(value: final value) => {'workflow_run': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

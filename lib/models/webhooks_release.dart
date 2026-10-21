@@ -8,297 +8,133 @@ part of 'webhooks.dart';
 class WebhooksRelease {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `assets` wire field.
   final List<WebhooksReleaseAssetsItem> assets;
-
   /// Required `uri`-formatted value serialized in the `assets_url` wire field.
   final String assetsUrl;
-
   /// Required object value serialized in the `author` wire field.
   final WebhooksReleaseAuthor? author;
-
   /// Required `string` value serialized in the `body` wire field.
   final String? body;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String? createdAt;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String? updatedAt;
-
   /// Optional `uri`-formatted value serialized in the `discussion_url` wire field.
   final SdkOptional<String> discussionUrl;
-
   /// Whether the release is a draft or published
   final bool draft;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Whether or not the release is immutable.
   final bool immutable;
-
   /// Required `string` value serialized in the `name` wire field.
   final String? name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Whether the release is identified as a prerelease or a full release.
   final bool prerelease;
-
   /// Required `date-time`-formatted value serialized in the `published_at` wire field.
   final String? publishedAt;
-
   /// Optional object value serialized in the `reactions` wire field.
   final SdkOptional<WebhooksReleaseReactions> reactions;
-
   /// The name of the tag.
   final String tagName;
-
   /// Required `uri`-formatted value serialized in the `tarball_url` wire field.
   final String? tarballUrl;
-
   /// Specifies the commitish value that determines where the Git tag is created from.
   final String targetCommitish;
-
   /// Required `uri-template`-formatted value serialized in the `upload_url` wire field.
   final String uploadUrl;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `uri`-formatted value serialized in the `zipball_url` wire field.
   final String? zipballUrl;
 
-  const WebhooksRelease(
-      {required this.assets,
-      required this.assetsUrl,
-      required this.author,
-      required this.body,
-      required this.createdAt,
-      required this.updatedAt,
-      this.discussionUrl = const SdkOmitted(),
-      required this.draft,
-      required this.htmlUrl,
-      required this.id,
-      required this.immutable,
-      required this.name,
-      required this.nodeId,
-      required this.prerelease,
-      required this.publishedAt,
-      this.reactions = const SdkOmitted(),
-      required this.tagName,
-      required this.tarballUrl,
-      required this.targetCommitish,
-      required this.uploadUrl,
-      required this.url,
-      required this.zipballUrl});
+  const WebhooksRelease({required this.assets, required this.assetsUrl, required this.author, required this.body, required this.createdAt, required this.updatedAt, this.discussionUrl = const SdkOmitted(), required this.draft, required this.htmlUrl, required this.id, required this.immutable, required this.name, required this.nodeId, required this.prerelease, required this.publishedAt, this.reactions = const SdkOmitted(), required this.tagName, required this.tarballUrl, required this.targetCommitish, required this.uploadUrl, required this.url, required this.zipballUrl});
 
-  WebhooksRelease Function(
-      {List<WebhooksReleaseAssetsItem> assets,
-      String assetsUrl,
-      WebhooksReleaseAuthor? author,
-      String? body,
-      String? createdAt,
-      String? updatedAt,
-      SdkOptional<String> discussionUrl,
-      bool draft,
-      String htmlUrl,
-      int id,
-      bool immutable,
-      String? name,
-      String nodeId,
-      bool prerelease,
-      String? publishedAt,
-      SdkOptional<WebhooksReleaseReactions> reactions,
-      String tagName,
-      String? tarballUrl,
-      String targetCommitish,
-      String uploadUrl,
-      String url,
-      String? zipballUrl}) get copyWith => _copyWith;
+  WebhooksRelease Function({List<WebhooksReleaseAssetsItem> assets, String assetsUrl, WebhooksReleaseAuthor? author, String? body, String? createdAt, String? updatedAt, SdkOptional<String> discussionUrl, bool draft, String htmlUrl, int id, bool immutable, String? name, String nodeId, bool prerelease, String? publishedAt, SdkOptional<WebhooksReleaseReactions> reactions, String tagName, String? tarballUrl, String targetCommitish, String uploadUrl, String url, String? zipballUrl}) get copyWith => _copyWith;
 
-  WebhooksRelease _copyWith(
-          {Object? assets = sdkOmittedValue,
-          Object? assetsUrl = sdkOmittedValue,
-          Object? author = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? discussionUrl = sdkOmittedValue,
-          Object? draft = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? immutable = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? prerelease = sdkOmittedValue,
-          Object? publishedAt = sdkOmittedValue,
-          Object? reactions = sdkOmittedValue,
-          Object? tagName = sdkOmittedValue,
-          Object? tarballUrl = sdkOmittedValue,
-          Object? targetCommitish = sdkOmittedValue,
-          Object? uploadUrl = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? zipballUrl = sdkOmittedValue}) =>
-      WebhooksRelease(
-        assets: identical(assets, sdkOmittedValue)
-            ? this.assets
-            : assets as List<WebhooksReleaseAssetsItem>,
-        assetsUrl: identical(assetsUrl, sdkOmittedValue)
-            ? this.assetsUrl
-            : assetsUrl as String,
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as WebhooksReleaseAuthor?,
-        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String?,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
-        discussionUrl: identical(discussionUrl, sdkOmittedValue)
-            ? this.discussionUrl
-            : discussionUrl as SdkOptional<String>,
-        draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        immutable: identical(immutable, sdkOmittedValue)
-            ? this.immutable
-            : immutable as bool,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        prerelease: identical(prerelease, sdkOmittedValue)
-            ? this.prerelease
-            : prerelease as bool,
-        publishedAt: identical(publishedAt, sdkOmittedValue)
-            ? this.publishedAt
-            : publishedAt as String?,
-        reactions: identical(reactions, sdkOmittedValue)
-            ? this.reactions
-            : reactions as SdkOptional<WebhooksReleaseReactions>,
-        tagName: identical(tagName, sdkOmittedValue)
-            ? this.tagName
-            : tagName as String,
-        tarballUrl: identical(tarballUrl, sdkOmittedValue)
-            ? this.tarballUrl
-            : tarballUrl as String?,
-        targetCommitish: identical(targetCommitish, sdkOmittedValue)
-            ? this.targetCommitish
-            : targetCommitish as String,
-        uploadUrl: identical(uploadUrl, sdkOmittedValue)
-            ? this.uploadUrl
-            : uploadUrl as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        zipballUrl: identical(zipballUrl, sdkOmittedValue)
-            ? this.zipballUrl
-            : zipballUrl as String?,
-      );
+  WebhooksRelease _copyWith({Object? assets = sdkOmittedValue, Object? assetsUrl = sdkOmittedValue, Object? author = sdkOmittedValue, Object? body = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? discussionUrl = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? immutable = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? prerelease = sdkOmittedValue, Object? publishedAt = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? tagName = sdkOmittedValue, Object? tarballUrl = sdkOmittedValue, Object? targetCommitish = sdkOmittedValue, Object? uploadUrl = sdkOmittedValue, Object? url = sdkOmittedValue, Object? zipballUrl = sdkOmittedValue}) => WebhooksRelease(
+    assets: identical(assets, sdkOmittedValue) ? this.assets : assets as List<WebhooksReleaseAssetsItem>,
+    assetsUrl: identical(assetsUrl, sdkOmittedValue) ? this.assetsUrl : assetsUrl as String,
+    author: identical(author, sdkOmittedValue) ? this.author : author as WebhooksReleaseAuthor?,
+    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String?,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String?,
+    discussionUrl: identical(discussionUrl, sdkOmittedValue) ? this.discussionUrl : discussionUrl as SdkOptional<String>,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    immutable: identical(immutable, sdkOmittedValue) ? this.immutable : immutable as bool,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String?,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    prerelease: identical(prerelease, sdkOmittedValue) ? this.prerelease : prerelease as bool,
+    publishedAt: identical(publishedAt, sdkOmittedValue) ? this.publishedAt : publishedAt as String?,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as SdkOptional<WebhooksReleaseReactions>,
+    tagName: identical(tagName, sdkOmittedValue) ? this.tagName : tagName as String,
+    tarballUrl: identical(tarballUrl, sdkOmittedValue) ? this.tarballUrl : tarballUrl as String?,
+    targetCommitish: identical(targetCommitish, sdkOmittedValue) ? this.targetCommitish : targetCommitish as String,
+    uploadUrl: identical(uploadUrl, sdkOmittedValue) ? this.uploadUrl : uploadUrl as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    zipballUrl: identical(zipballUrl, sdkOmittedValue) ? this.zipballUrl : zipballUrl as String?,
+  );
 
-  factory WebhooksRelease.fromJson(Map<String, dynamic> json) =>
-      WebhooksRelease(
-        assets: ((json['assets'] as List?)
-            ?.map((e) =>
-                WebhooksReleaseAssetsItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        assetsUrl: (json['assets_url'] as String?)!,
-        author: json.containsKey('author')
-            ? json['author'] != null
-                ? WebhooksReleaseAuthor.fromJson(
-                    json['author'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'author', 'Required property is missing'),
-        body: json.containsKey('body')
-            ? json['body'] as String?
-            : throw ArgumentError.value(
-                null, 'body', 'Required property is missing'),
-        createdAt: json.containsKey('created_at')
-            ? json['created_at'] as String?
-            : throw ArgumentError.value(
-                null, 'created_at', 'Required property is missing'),
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
-        discussionUrl: json['discussion_url'] != null
-            ? SdkPresent((json['discussion_url'] as String?)!)
-            : const SdkOmitted(),
-        draft: (json['draft'] as bool?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        immutable: (json['immutable'] as bool?)!,
-        name: json.containsKey('name')
-            ? json['name'] as String?
-            : throw ArgumentError.value(
-                null, 'name', 'Required property is missing'),
-        nodeId: (json['node_id'] as String?)!,
-        prerelease: (json['prerelease'] as bool?)!,
-        publishedAt: json.containsKey('published_at')
-            ? json['published_at'] as String?
-            : throw ArgumentError.value(
-                null, 'published_at', 'Required property is missing'),
-        reactions: json['reactions'] != null
-            ? SdkPresent((json['reactions'] != null
-                ? WebhooksReleaseReactions.fromJson(
-                    json['reactions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        tagName: (json['tag_name'] as String?)!,
-        tarballUrl: json.containsKey('tarball_url')
-            ? json['tarball_url'] as String?
-            : throw ArgumentError.value(
-                null, 'tarball_url', 'Required property is missing'),
-        targetCommitish: (json['target_commitish'] as String?)!,
-        uploadUrl: (json['upload_url'] as String?)!,
-        url: (json['url'] as String?)!,
-        zipballUrl: json.containsKey('zipball_url')
-            ? json['zipball_url'] as String?
-            : throw ArgumentError.value(
-                null, 'zipball_url', 'Required property is missing'),
-      );
+  factory WebhooksRelease.fromJson(Map<String, dynamic> json) => WebhooksRelease(
+    assets: ((json['assets'] as List?)?.map((e) => WebhooksReleaseAssetsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    assetsUrl: (json['assets_url'] as String?)!,
+    author: json.containsKey('author') ? json['author'] != null ? WebhooksReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'author', 'Required property is missing'),
+    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
+    createdAt: json.containsKey('created_at') ? json['created_at'] as String? : throw ArgumentError.value(null, 'created_at', 'Required property is missing'),
+    updatedAt: json.containsKey('updated_at') ? json['updated_at'] as String? : throw ArgumentError.value(null, 'updated_at', 'Required property is missing'),
+    discussionUrl: json['discussion_url'] != null ? SdkPresent((json['discussion_url'] as String?)!) : const SdkOmitted(),
+    draft: (json['draft'] as bool?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    immutable: (json['immutable'] as bool?)!,
+    name: json.containsKey('name') ? json['name'] as String? : throw ArgumentError.value(null, 'name', 'Required property is missing'),
+    nodeId: (json['node_id'] as String?)!,
+    prerelease: (json['prerelease'] as bool?)!,
+    publishedAt: json.containsKey('published_at') ? json['published_at'] as String? : throw ArgumentError.value(null, 'published_at', 'Required property is missing'),
+    reactions: json['reactions'] != null ? SdkPresent((json['reactions'] != null ? WebhooksReleaseReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    tagName: (json['tag_name'] as String?)!,
+    tarballUrl: json.containsKey('tarball_url') ? json['tarball_url'] as String? : throw ArgumentError.value(null, 'tarball_url', 'Required property is missing'),
+    targetCommitish: (json['target_commitish'] as String?)!,
+    uploadUrl: (json['upload_url'] as String?)!,
+    url: (json['url'] as String?)!,
+    zipballUrl: json.containsKey('zipball_url') ? json['zipball_url'] as String? : throw ArgumentError.value(null, 'zipball_url', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'assets': assets.map((item) => item.toJson()).toList(),
-        'assets_url': assetsUrl,
-        'author': author?.toJson(),
-        'body': body,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        ...switch (discussionUrl) {
-          SdkPresent<String>(value: final value) => {
-              'discussion_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'draft': draft,
-        'html_url': htmlUrl,
-        'id': id,
-        'immutable': immutable,
-        'name': name,
-        'node_id': nodeId,
-        'prerelease': prerelease,
-        'published_at': publishedAt,
-        ...switch (reactions) {
-          SdkPresent<WebhooksReleaseReactions>(value: final value) => {
-              'reactions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'tag_name': tagName,
-        'tarball_url': tarballUrl,
-        'target_commitish': targetCommitish,
-        'upload_url': uploadUrl,
-        'url': url,
-        'zipball_url': zipballUrl,
-      };
+    'assets': assets.map((item) => item.toJson()).toList(),
+    'assets_url': assetsUrl,
+    'author': author?.toJson(),
+    'body': body,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    ...switch (discussionUrl) {
+      SdkPresent<String>(value: final value) => {'discussion_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'draft': draft,
+    'html_url': htmlUrl,
+    'id': id,
+    'immutable': immutable,
+    'name': name,
+    'node_id': nodeId,
+    'prerelease': prerelease,
+    'published_at': publishedAt,
+    ...switch (reactions) {
+      SdkPresent<WebhooksReleaseReactions>(value: final value) => {'reactions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'tag_name': tagName,
+    'tarball_url': tarballUrl,
+    'target_commitish': targetCommitish,
+    'upload_url': uploadUrl,
+    'url': url,
+    'zipball_url': zipballUrl,
+  };
 }

@@ -12,53 +12,30 @@ class DependencyGraphDiffItemVulnerabilitiesItem {
   final String advisorySummary;
   final String advisoryUrl;
 
-  const DependencyGraphDiffItemVulnerabilitiesItem(
-      {required this.severity,
-      required this.advisoryGhsaId,
-      required this.advisorySummary,
-      required this.advisoryUrl});
+  const DependencyGraphDiffItemVulnerabilitiesItem({required this.severity, required this.advisoryGhsaId, required this.advisorySummary, required this.advisoryUrl});
 
-  DependencyGraphDiffItemVulnerabilitiesItem Function(
-      {String severity,
-      String advisoryGhsaId,
-      String advisorySummary,
-      String advisoryUrl}) get copyWith => _copyWith;
+  DependencyGraphDiffItemVulnerabilitiesItem Function({String severity, String advisoryGhsaId, String advisorySummary, String advisoryUrl}) get copyWith => _copyWith;
 
-  DependencyGraphDiffItemVulnerabilitiesItem _copyWith(
-          {Object? severity = sdkOmittedValue,
-          Object? advisoryGhsaId = sdkOmittedValue,
-          Object? advisorySummary = sdkOmittedValue,
-          Object? advisoryUrl = sdkOmittedValue}) =>
-      DependencyGraphDiffItemVulnerabilitiesItem(
-        severity: identical(severity, sdkOmittedValue)
-            ? this.severity
-            : severity as String,
-        advisoryGhsaId: identical(advisoryGhsaId, sdkOmittedValue)
-            ? this.advisoryGhsaId
-            : advisoryGhsaId as String,
-        advisorySummary: identical(advisorySummary, sdkOmittedValue)
-            ? this.advisorySummary
-            : advisorySummary as String,
-        advisoryUrl: identical(advisoryUrl, sdkOmittedValue)
-            ? this.advisoryUrl
-            : advisoryUrl as String,
-      );
+  DependencyGraphDiffItemVulnerabilitiesItem _copyWith({Object? severity = sdkOmittedValue, Object? advisoryGhsaId = sdkOmittedValue, Object? advisorySummary = sdkOmittedValue, Object? advisoryUrl = sdkOmittedValue}) => DependencyGraphDiffItemVulnerabilitiesItem(
+    severity: identical(severity, sdkOmittedValue) ? this.severity : severity as String,
+    advisoryGhsaId: identical(advisoryGhsaId, sdkOmittedValue) ? this.advisoryGhsaId : advisoryGhsaId as String,
+    advisorySummary: identical(advisorySummary, sdkOmittedValue) ? this.advisorySummary : advisorySummary as String,
+    advisoryUrl: identical(advisoryUrl, sdkOmittedValue) ? this.advisoryUrl : advisoryUrl as String,
+  );
 
-  factory DependencyGraphDiffItemVulnerabilitiesItem.fromJson(
-          Map<String, dynamic> json) =>
-      DependencyGraphDiffItemVulnerabilitiesItem(
-        severity: (json['severity'] as String?)!,
-        advisoryGhsaId: (json['advisory_ghsa_id'] as String?)!,
-        advisorySummary: (json['advisory_summary'] as String?)!,
-        advisoryUrl: (json['advisory_url'] as String?)!,
-      );
+  factory DependencyGraphDiffItemVulnerabilitiesItem.fromJson(Map<String, dynamic> json) => DependencyGraphDiffItemVulnerabilitiesItem(
+    severity: (json['severity'] as String?)!,
+    advisoryGhsaId: (json['advisory_ghsa_id'] as String?)!,
+    advisorySummary: (json['advisory_summary'] as String?)!,
+    advisoryUrl: (json['advisory_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'severity': severity,
-        'advisory_ghsa_id': advisoryGhsaId,
-        'advisory_summary': advisorySummary,
-        'advisory_url': advisoryUrl,
-      };
+    'severity': severity,
+    'advisory_ghsa_id': advisoryGhsaId,
+    'advisory_summary': advisorySummary,
+    'advisory_url': advisoryUrl,
+  };
 }
 
 class DependencyGraphDiffItem {
@@ -73,121 +50,51 @@ class DependencyGraphDiffItem {
   final String? license;
   final String? sourceRepositoryUrl;
   final List<DependencyGraphDiffItemVulnerabilitiesItem> vulnerabilities;
-
   /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
   final DependencyGraphDiffItemScope scope;
 
-  const DependencyGraphDiffItem(
-      {required this.changeType,
-      required this.manifest,
-      required this.ecosystem,
-      required this.name,
-      required this.version,
-      required this.packageUrl,
-      required this.license,
-      required this.sourceRepositoryUrl,
-      required this.vulnerabilities,
-      required this.scope});
+  const DependencyGraphDiffItem({required this.changeType, required this.manifest, required this.ecosystem, required this.name, required this.version, required this.packageUrl, required this.license, required this.sourceRepositoryUrl, required this.vulnerabilities, required this.scope});
 
-  DependencyGraphDiffItem Function(
-      {DependencyGraphDiffItemChangeType changeType,
-      String manifest,
-      String ecosystem,
-      String name,
-      String version,
-      String? packageUrl,
-      String? license,
-      String? sourceRepositoryUrl,
-      List<DependencyGraphDiffItemVulnerabilitiesItem> vulnerabilities,
-      DependencyGraphDiffItemScope scope}) get copyWith => _copyWith;
+  DependencyGraphDiffItem Function({DependencyGraphDiffItemChangeType changeType, String manifest, String ecosystem, String name, String version, String? packageUrl, String? license, String? sourceRepositoryUrl, List<DependencyGraphDiffItemVulnerabilitiesItem> vulnerabilities, DependencyGraphDiffItemScope scope}) get copyWith => _copyWith;
 
-  DependencyGraphDiffItem _copyWith(
-          {Object? changeType = sdkOmittedValue,
-          Object? manifest = sdkOmittedValue,
-          Object? ecosystem = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? packageUrl = sdkOmittedValue,
-          Object? license = sdkOmittedValue,
-          Object? sourceRepositoryUrl = sdkOmittedValue,
-          Object? vulnerabilities = sdkOmittedValue,
-          Object? scope = sdkOmittedValue}) =>
-      DependencyGraphDiffItem(
-        changeType: identical(changeType, sdkOmittedValue)
-            ? this.changeType
-            : changeType as DependencyGraphDiffItemChangeType,
-        manifest: identical(manifest, sdkOmittedValue)
-            ? this.manifest
-            : manifest as String,
-        ecosystem: identical(ecosystem, sdkOmittedValue)
-            ? this.ecosystem
-            : ecosystem as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as String,
-        packageUrl: identical(packageUrl, sdkOmittedValue)
-            ? this.packageUrl
-            : packageUrl as String?,
-        license: identical(license, sdkOmittedValue)
-            ? this.license
-            : license as String?,
-        sourceRepositoryUrl: identical(sourceRepositoryUrl, sdkOmittedValue)
-            ? this.sourceRepositoryUrl
-            : sourceRepositoryUrl as String?,
-        vulnerabilities: identical(vulnerabilities, sdkOmittedValue)
-            ? this.vulnerabilities
-            : vulnerabilities
-                as List<DependencyGraphDiffItemVulnerabilitiesItem>,
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as DependencyGraphDiffItemScope,
-      );
+  DependencyGraphDiffItem _copyWith({Object? changeType = sdkOmittedValue, Object? manifest = sdkOmittedValue, Object? ecosystem = sdkOmittedValue, Object? name = sdkOmittedValue, Object? version = sdkOmittedValue, Object? packageUrl = sdkOmittedValue, Object? license = sdkOmittedValue, Object? sourceRepositoryUrl = sdkOmittedValue, Object? vulnerabilities = sdkOmittedValue, Object? scope = sdkOmittedValue}) => DependencyGraphDiffItem(
+    changeType: identical(changeType, sdkOmittedValue) ? this.changeType : changeType as DependencyGraphDiffItemChangeType,
+    manifest: identical(manifest, sdkOmittedValue) ? this.manifest : manifest as String,
+    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    version: identical(version, sdkOmittedValue) ? this.version : version as String,
+    packageUrl: identical(packageUrl, sdkOmittedValue) ? this.packageUrl : packageUrl as String?,
+    license: identical(license, sdkOmittedValue) ? this.license : license as String?,
+    sourceRepositoryUrl: identical(sourceRepositoryUrl, sdkOmittedValue) ? this.sourceRepositoryUrl : sourceRepositoryUrl as String?,
+    vulnerabilities: identical(vulnerabilities, sdkOmittedValue) ? this.vulnerabilities : vulnerabilities as List<DependencyGraphDiffItemVulnerabilitiesItem>,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as DependencyGraphDiffItemScope,
+  );
 
-  factory DependencyGraphDiffItem.fromJson(Map<String, dynamic> json) =>
-      DependencyGraphDiffItem(
-        changeType: (json['change_type'] != null
-            ? DependencyGraphDiffItemChangeType.fromJson(
-                json['change_type'] as String)
-            : null)!,
-        manifest: (json['manifest'] as String?)!,
-        ecosystem: (json['ecosystem'] as String?)!,
-        name: (json['name'] as String?)!,
-        version: (json['version'] as String?)!,
-        packageUrl: json.containsKey('package_url')
-            ? json['package_url'] as String?
-            : throw ArgumentError.value(
-                null, 'package_url', 'Required property is missing'),
-        license: json.containsKey('license')
-            ? json['license'] as String?
-            : throw ArgumentError.value(
-                null, 'license', 'Required property is missing'),
-        sourceRepositoryUrl: json.containsKey('source_repository_url')
-            ? json['source_repository_url'] as String?
-            : throw ArgumentError.value(
-                null, 'source_repository_url', 'Required property is missing'),
-        vulnerabilities: ((json['vulnerabilities'] as List?)
-            ?.map((e) => DependencyGraphDiffItemVulnerabilitiesItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        scope: (json['scope'] != null
-            ? DependencyGraphDiffItemScope.fromJson(json['scope'] as String)
-            : null)!,
-      );
+  factory DependencyGraphDiffItem.fromJson(Map<String, dynamic> json) => DependencyGraphDiffItem(
+    changeType: (json['change_type'] != null ? DependencyGraphDiffItemChangeType.fromJson(json['change_type'] as String) : null)!,
+    manifest: (json['manifest'] as String?)!,
+    ecosystem: (json['ecosystem'] as String?)!,
+    name: (json['name'] as String?)!,
+    version: (json['version'] as String?)!,
+    packageUrl: json.containsKey('package_url') ? json['package_url'] as String? : throw ArgumentError.value(null, 'package_url', 'Required property is missing'),
+    license: json.containsKey('license') ? json['license'] as String? : throw ArgumentError.value(null, 'license', 'Required property is missing'),
+    sourceRepositoryUrl: json.containsKey('source_repository_url') ? json['source_repository_url'] as String? : throw ArgumentError.value(null, 'source_repository_url', 'Required property is missing'),
+    vulnerabilities: ((json['vulnerabilities'] as List?)?.map((e) => DependencyGraphDiffItemVulnerabilitiesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    scope: (json['scope'] != null ? DependencyGraphDiffItemScope.fromJson(json['scope'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'change_type': changeType.toJson(),
-        'manifest': manifest,
-        'ecosystem': ecosystem,
-        'name': name,
-        'version': version,
-        'package_url': packageUrl,
-        'license': license,
-        'source_repository_url': sourceRepositoryUrl,
-        'vulnerabilities':
-            vulnerabilities.map((item) => item.toJson()).toList(),
-        'scope': scope.toJson(),
-      };
+    'change_type': changeType.toJson(),
+    'manifest': manifest,
+    'ecosystem': ecosystem,
+    'name': name,
+    'version': version,
+    'package_url': packageUrl,
+    'license': license,
+    'source_repository_url': sourceRepositoryUrl,
+    'vulnerabilities': vulnerabilities.map((item) => item.toJson()).toList(),
+    'scope': scope.toJson(),
+  };
 }
 
 // DependencyGraphDiff = List<DependencyGraphDiffItem>

@@ -8,272 +8,117 @@ part of 'code_scanning_code_scanning_alert.dart';
 class CodeScanningAlertItems {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The security alert number.
   final int number;
-
   /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String createdAt;
-
   /// The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String> updatedAt;
-
   /// The REST API URL of the alert resource.
   final String url;
-
   /// The GitHub URL of the alert resource.
   final String htmlUrl;
-
   /// The REST API URL for fetching the list of instances for an alert.
   final String instancesUrl;
-
   /// State of a code scanning alert.
   final CodeScanningAlertState? state;
-
   /// The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String?> fixedAt;
-
   /// A GitHub user.
   final NullableSimpleUser? dismissedBy;
-
   /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final String? dismissedAt;
-
   /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
   final CodeScanningAlertDismissedReason? dismissedReason;
-
   /// The dismissal comment associated with the dismissal of the alert.
   final SdkOptional<String?> dismissedComment;
-
   /// Required object value serialized in the `rule` wire field.
   final CodeScanningAlertRuleSummary rule;
-
   /// Required object value serialized in the `tool` wire field.
   final CodeScanningAnalysisTool tool;
-
   /// Required object value serialized in the `most_recent_instance` wire field.
   final CodeScanningAlertInstance mostRecentInstance;
-
   /// A GitHub user.
   final SdkOptional<NullableSimpleUser?> dismissalApprovedBy;
-
   /// Optional array value serialized in the `assignees` wire field.
   final SdkOptional<List<SimpleUser>> assignees;
 
-  const CodeScanningAlertItems(
-      {required this.number,
-      required this.createdAt,
-      this.updatedAt = const SdkOmitted(),
-      required this.url,
-      required this.htmlUrl,
-      required this.instancesUrl,
-      required this.state,
-      this.fixedAt = const SdkOmitted(),
-      required this.dismissedBy,
-      required this.dismissedAt,
-      required this.dismissedReason,
-      this.dismissedComment = const SdkOmitted(),
-      required this.rule,
-      required this.tool,
-      required this.mostRecentInstance,
-      this.dismissalApprovedBy = const SdkOmitted(),
-      this.assignees = const SdkOmitted()});
+  const CodeScanningAlertItems({required this.number, required this.createdAt, this.updatedAt = const SdkOmitted(), required this.url, required this.htmlUrl, required this.instancesUrl, required this.state, this.fixedAt = const SdkOmitted(), required this.dismissedBy, required this.dismissedAt, required this.dismissedReason, this.dismissedComment = const SdkOmitted(), required this.rule, required this.tool, required this.mostRecentInstance, this.dismissalApprovedBy = const SdkOmitted(), this.assignees = const SdkOmitted()});
 
-  CodeScanningAlertItems Function(
-      {int number,
-      String createdAt,
-      SdkOptional<String> updatedAt,
-      String url,
-      String htmlUrl,
-      String instancesUrl,
-      CodeScanningAlertState? state,
-      SdkOptional<String?> fixedAt,
-      NullableSimpleUser? dismissedBy,
-      String? dismissedAt,
-      CodeScanningAlertDismissedReason? dismissedReason,
-      SdkOptional<String?> dismissedComment,
-      CodeScanningAlertRuleSummary rule,
-      CodeScanningAnalysisTool tool,
-      CodeScanningAlertInstance mostRecentInstance,
-      SdkOptional<NullableSimpleUser?> dismissalApprovedBy,
-      SdkOptional<List<SimpleUser>> assignees}) get copyWith => _copyWith;
+  CodeScanningAlertItems Function({int number, String createdAt, SdkOptional<String> updatedAt, String url, String htmlUrl, String instancesUrl, CodeScanningAlertState? state, SdkOptional<String?> fixedAt, NullableSimpleUser? dismissedBy, String? dismissedAt, CodeScanningAlertDismissedReason? dismissedReason, SdkOptional<String?> dismissedComment, CodeScanningAlertRuleSummary rule, CodeScanningAnalysisTool tool, CodeScanningAlertInstance mostRecentInstance, SdkOptional<NullableSimpleUser?> dismissalApprovedBy, SdkOptional<List<SimpleUser>> assignees}) get copyWith => _copyWith;
 
-  CodeScanningAlertItems _copyWith(
-          {Object? number = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? instancesUrl = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? fixedAt = sdkOmittedValue,
-          Object? dismissedBy = sdkOmittedValue,
-          Object? dismissedAt = sdkOmittedValue,
-          Object? dismissedReason = sdkOmittedValue,
-          Object? dismissedComment = sdkOmittedValue,
-          Object? rule = sdkOmittedValue,
-          Object? tool = sdkOmittedValue,
-          Object? mostRecentInstance = sdkOmittedValue,
-          Object? dismissalApprovedBy = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue}) =>
-      CodeScanningAlertItems(
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        instancesUrl: identical(instancesUrl, sdkOmittedValue)
-            ? this.instancesUrl
-            : instancesUrl as String,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as CodeScanningAlertState?,
-        fixedAt: identical(fixedAt, sdkOmittedValue)
-            ? this.fixedAt
-            : fixedAt as SdkOptional<String?>,
-        dismissedBy: identical(dismissedBy, sdkOmittedValue)
-            ? this.dismissedBy
-            : dismissedBy as NullableSimpleUser?,
-        dismissedAt: identical(dismissedAt, sdkOmittedValue)
-            ? this.dismissedAt
-            : dismissedAt as String?,
-        dismissedReason: identical(dismissedReason, sdkOmittedValue)
-            ? this.dismissedReason
-            : dismissedReason as CodeScanningAlertDismissedReason?,
-        dismissedComment: identical(dismissedComment, sdkOmittedValue)
-            ? this.dismissedComment
-            : dismissedComment as SdkOptional<String?>,
-        rule: identical(rule, sdkOmittedValue)
-            ? this.rule
-            : rule as CodeScanningAlertRuleSummary,
-        tool: identical(tool, sdkOmittedValue)
-            ? this.tool
-            : tool as CodeScanningAnalysisTool,
-        mostRecentInstance: identical(mostRecentInstance, sdkOmittedValue)
-            ? this.mostRecentInstance
-            : mostRecentInstance as CodeScanningAlertInstance,
-        dismissalApprovedBy: identical(dismissalApprovedBy, sdkOmittedValue)
-            ? this.dismissalApprovedBy
-            : dismissalApprovedBy as SdkOptional<NullableSimpleUser?>,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as SdkOptional<List<SimpleUser>>,
-      );
+  CodeScanningAlertItems _copyWith({Object? number = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? instancesUrl = sdkOmittedValue, Object? state = sdkOmittedValue, Object? fixedAt = sdkOmittedValue, Object? dismissedBy = sdkOmittedValue, Object? dismissedAt = sdkOmittedValue, Object? dismissedReason = sdkOmittedValue, Object? dismissedComment = sdkOmittedValue, Object? rule = sdkOmittedValue, Object? tool = sdkOmittedValue, Object? mostRecentInstance = sdkOmittedValue, Object? dismissalApprovedBy = sdkOmittedValue, Object? assignees = sdkOmittedValue}) => CodeScanningAlertItems(
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    instancesUrl: identical(instancesUrl, sdkOmittedValue) ? this.instancesUrl : instancesUrl as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as CodeScanningAlertState?,
+    fixedAt: identical(fixedAt, sdkOmittedValue) ? this.fixedAt : fixedAt as SdkOptional<String?>,
+    dismissedBy: identical(dismissedBy, sdkOmittedValue) ? this.dismissedBy : dismissedBy as NullableSimpleUser?,
+    dismissedAt: identical(dismissedAt, sdkOmittedValue) ? this.dismissedAt : dismissedAt as String?,
+    dismissedReason: identical(dismissedReason, sdkOmittedValue) ? this.dismissedReason : dismissedReason as CodeScanningAlertDismissedReason?,
+    dismissedComment: identical(dismissedComment, sdkOmittedValue) ? this.dismissedComment : dismissedComment as SdkOptional<String?>,
+    rule: identical(rule, sdkOmittedValue) ? this.rule : rule as CodeScanningAlertRuleSummary,
+    tool: identical(tool, sdkOmittedValue) ? this.tool : tool as CodeScanningAnalysisTool,
+    mostRecentInstance: identical(mostRecentInstance, sdkOmittedValue) ? this.mostRecentInstance : mostRecentInstance as CodeScanningAlertInstance,
+    dismissalApprovedBy: identical(dismissalApprovedBy, sdkOmittedValue) ? this.dismissalApprovedBy : dismissalApprovedBy as SdkOptional<NullableSimpleUser?>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<SimpleUser>>,
+  );
 
-  factory CodeScanningAlertItems.fromJson(Map<String, dynamic> json) =>
-      CodeScanningAlertItems(
-        number: ((json['number'] as num?)?.toInt())!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-        url: (json['url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        instancesUrl: (json['instances_url'] as String?)!,
-        state: json.containsKey('state')
-            ? json['state'] != null
-                ? CodeScanningAlertState.fromJson(json['state'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'state', 'Required property is missing'),
-        fixedAt: json.containsKey('fixed_at')
-            ? SdkPresent(json['fixed_at'] as String?)
-            : const SdkOmitted(),
-        dismissedBy: json.containsKey('dismissed_by')
-            ? json['dismissed_by'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['dismissed_by'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'dismissed_by', 'Required property is missing'),
-        dismissedAt: json.containsKey('dismissed_at')
-            ? json['dismissed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'dismissed_at', 'Required property is missing'),
-        dismissedReason: json.containsKey('dismissed_reason')
-            ? json['dismissed_reason'] != null
-                ? CodeScanningAlertDismissedReason.fromJson(
-                    json['dismissed_reason'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'dismissed_reason', 'Required property is missing'),
-        dismissedComment: json.containsKey('dismissed_comment')
-            ? SdkPresent(json['dismissed_comment'] as String?)
-            : const SdkOmitted(),
-        rule: (json['rule'] != null
-            ? CodeScanningAlertRuleSummary.fromJson(
-                json['rule'] as Map<String, dynamic>)
-            : null)!,
-        tool: (json['tool'] != null
-            ? CodeScanningAnalysisTool.fromJson(
-                json['tool'] as Map<String, dynamic>)
-            : null)!,
-        mostRecentInstance: (json['most_recent_instance'] != null
-            ? CodeScanningAlertInstance.fromJson(
-                json['most_recent_instance'] as Map<String, dynamic>)
-            : null)!,
-        dismissalApprovedBy: json.containsKey('dismissal_approved_by')
-            ? SdkPresent(json['dismissal_approved_by'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['dismissal_approved_by'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory CodeScanningAlertItems.fromJson(Map<String, dynamic> json) => CodeScanningAlertItems(
+    number: ((json['number'] as num?)?.toInt())!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+    url: (json['url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    instancesUrl: (json['instances_url'] as String?)!,
+    state: json.containsKey('state') ? json['state'] != null ? CodeScanningAlertState.fromJson(json['state'] as String) : null : throw ArgumentError.value(null, 'state', 'Required property is missing'),
+    fixedAt: json.containsKey('fixed_at') ? SdkPresent(json['fixed_at'] as String?) : const SdkOmitted(),
+    dismissedBy: json.containsKey('dismissed_by') ? json['dismissed_by'] != null ? NullableSimpleUser.fromJson(json['dismissed_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'dismissed_by', 'Required property is missing'),
+    dismissedAt: json.containsKey('dismissed_at') ? json['dismissed_at'] as String? : throw ArgumentError.value(null, 'dismissed_at', 'Required property is missing'),
+    dismissedReason: json.containsKey('dismissed_reason') ? json['dismissed_reason'] != null ? CodeScanningAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null : throw ArgumentError.value(null, 'dismissed_reason', 'Required property is missing'),
+    dismissedComment: json.containsKey('dismissed_comment') ? SdkPresent(json['dismissed_comment'] as String?) : const SdkOmitted(),
+    rule: (json['rule'] != null ? CodeScanningAlertRuleSummary.fromJson(json['rule'] as Map<String, dynamic>) : null)!,
+    tool: (json['tool'] != null ? CodeScanningAnalysisTool.fromJson(json['tool'] as Map<String, dynamic>) : null)!,
+    mostRecentInstance: (json['most_recent_instance'] != null ? CodeScanningAlertInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null)!,
+    dismissalApprovedBy: json.containsKey('dismissal_approved_by') ? SdkPresent(json['dismissal_approved_by'] != null ? NullableSimpleUser.fromJson(json['dismissal_approved_by'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'number': number,
-        'created_at': createdAt,
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'url': url,
-        'html_url': htmlUrl,
-        'instances_url': instancesUrl,
-        'state': state?.toJson(),
-        ...switch (fixedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'fixed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'dismissed_by': dismissedBy?.toJson(),
-        'dismissed_at': dismissedAt,
-        'dismissed_reason': dismissedReason?.toJson(),
-        ...switch (dismissedComment) {
-          SdkPresent<String?>(value: final value) => {
-              'dismissed_comment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'rule': rule.toJson(),
-        'tool': tool.toJson(),
-        'most_recent_instance': mostRecentInstance.toJson(),
-        ...switch (dismissalApprovedBy) {
-          SdkPresent<NullableSimpleUser?>(value: final value) => {
-              'dismissal_approved_by': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<SimpleUser>>(value: final value) => {
-              'assignees': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'number': number,
+    'created_at': createdAt,
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    'url': url,
+    'html_url': htmlUrl,
+    'instances_url': instancesUrl,
+    'state': state?.toJson(),
+    ...switch (fixedAt) {
+      SdkPresent<String?>(value: final value) => {'fixed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    'dismissed_by': dismissedBy?.toJson(),
+    'dismissed_at': dismissedAt,
+    'dismissed_reason': dismissedReason?.toJson(),
+    ...switch (dismissedComment) {
+      SdkPresent<String?>(value: final value) => {'dismissed_comment': value,},
+      _ => const <String, dynamic>{},
+    },
+    'rule': rule.toJson(),
+    'tool': tool.toJson(),
+    'most_recent_instance': mostRecentInstance.toJson(),
+    ...switch (dismissalApprovedBy) {
+      SdkPresent<NullableSimpleUser?>(value: final value) => {'dismissal_approved_by': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<SimpleUser>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

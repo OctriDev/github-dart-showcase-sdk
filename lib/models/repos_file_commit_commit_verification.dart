@@ -8,448 +8,228 @@ part of 'repos.dart';
 class FileCommitCommitVerification {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `verified` wire field.
   final SdkOptional<bool> verified;
-
   /// Optional `string` value serialized in the `reason` wire field.
   final SdkOptional<String> reason;
-
   /// Optional `string` value serialized in the `signature` wire field.
   final SdkOptional<String?> signature;
-
   /// Optional `string` value serialized in the `payload` wire field.
   final SdkOptional<String?> payload;
-
   /// Optional `string` value serialized in the `verified_at` wire field.
   final SdkOptional<String?> verifiedAt;
 
-  const FileCommitCommitVerification(
-      {this.verified = const SdkOmitted(),
-      this.reason = const SdkOmitted(),
-      this.signature = const SdkOmitted(),
-      this.payload = const SdkOmitted(),
-      this.verifiedAt = const SdkOmitted()});
+  const FileCommitCommitVerification({this.verified = const SdkOmitted(), this.reason = const SdkOmitted(), this.signature = const SdkOmitted(), this.payload = const SdkOmitted(), this.verifiedAt = const SdkOmitted()});
 
-  FileCommitCommitVerification Function(
-      {SdkOptional<bool> verified,
-      SdkOptional<String> reason,
-      SdkOptional<String?> signature,
-      SdkOptional<String?> payload,
-      SdkOptional<String?> verifiedAt}) get copyWith => _copyWith;
+  FileCommitCommitVerification Function({SdkOptional<bool> verified, SdkOptional<String> reason, SdkOptional<String?> signature, SdkOptional<String?> payload, SdkOptional<String?> verifiedAt}) get copyWith => _copyWith;
 
-  FileCommitCommitVerification _copyWith(
-          {Object? verified = sdkOmittedValue,
-          Object? reason = sdkOmittedValue,
-          Object? signature = sdkOmittedValue,
-          Object? payload = sdkOmittedValue,
-          Object? verifiedAt = sdkOmittedValue}) =>
-      FileCommitCommitVerification(
-        verified: identical(verified, sdkOmittedValue)
-            ? this.verified
-            : verified as SdkOptional<bool>,
-        reason: identical(reason, sdkOmittedValue)
-            ? this.reason
-            : reason as SdkOptional<String>,
-        signature: identical(signature, sdkOmittedValue)
-            ? this.signature
-            : signature as SdkOptional<String?>,
-        payload: identical(payload, sdkOmittedValue)
-            ? this.payload
-            : payload as SdkOptional<String?>,
-        verifiedAt: identical(verifiedAt, sdkOmittedValue)
-            ? this.verifiedAt
-            : verifiedAt as SdkOptional<String?>,
-      );
+  FileCommitCommitVerification _copyWith({Object? verified = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? signature = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? verifiedAt = sdkOmittedValue}) => FileCommitCommitVerification(
+    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as SdkOptional<bool>,
+    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<String>,
+    signature: identical(signature, sdkOmittedValue) ? this.signature : signature as SdkOptional<String?>,
+    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as SdkOptional<String?>,
+    verifiedAt: identical(verifiedAt, sdkOmittedValue) ? this.verifiedAt : verifiedAt as SdkOptional<String?>,
+  );
 
-  factory FileCommitCommitVerification.fromJson(Map<String, dynamic> json) =>
-      FileCommitCommitVerification(
-        verified: json['verified'] != null
-            ? SdkPresent((json['verified'] as bool?)!)
-            : const SdkOmitted(),
-        reason: json['reason'] != null
-            ? SdkPresent((json['reason'] as String?)!)
-            : const SdkOmitted(),
-        signature: json.containsKey('signature')
-            ? SdkPresent(json['signature'] as String?)
-            : const SdkOmitted(),
-        payload: json.containsKey('payload')
-            ? SdkPresent(json['payload'] as String?)
-            : const SdkOmitted(),
-        verifiedAt: json.containsKey('verified_at')
-            ? SdkPresent(json['verified_at'] as String?)
-            : const SdkOmitted(),
-      );
+  factory FileCommitCommitVerification.fromJson(Map<String, dynamic> json) => FileCommitCommitVerification(
+    verified: json['verified'] != null ? SdkPresent((json['verified'] as bool?)!) : const SdkOmitted(),
+    reason: json['reason'] != null ? SdkPresent((json['reason'] as String?)!) : const SdkOmitted(),
+    signature: json.containsKey('signature') ? SdkPresent(json['signature'] as String?) : const SdkOmitted(),
+    payload: json.containsKey('payload') ? SdkPresent(json['payload'] as String?) : const SdkOmitted(),
+    verifiedAt: json.containsKey('verified_at') ? SdkPresent(json['verified_at'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (verified) {
-          SdkPresent<bool>(value: final value) => {
-              'verified': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reason) {
-          SdkPresent<String>(value: final value) => {
-              'reason': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (signature) {
-          SdkPresent<String?>(value: final value) => {
-              'signature': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (payload) {
-          SdkPresent<String?>(value: final value) => {
-              'payload': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verifiedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'verified_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (verified) {
+      SdkPresent<bool>(value: final value) => {'verified': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reason) {
+      SdkPresent<String>(value: final value) => {'reason': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (signature) {
+      SdkPresent<String?>(value: final value) => {'signature': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (payload) {
+      SdkPresent<String?>(value: final value) => {'payload': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (verifiedAt) {
+      SdkPresent<String?>(value: final value) => {'verified_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `parents[]` wire field.
 class FileCommitCommitParentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Optional `string` value serialized in the `sha` wire field.
   final SdkOptional<String> sha;
 
-  const FileCommitCommitParentsItem(
-      {this.url = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.sha = const SdkOmitted()});
+  const FileCommitCommitParentsItem({this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.sha = const SdkOmitted()});
 
-  FileCommitCommitParentsItem Function(
-      {SdkOptional<String> url,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String> sha}) get copyWith => _copyWith;
+  FileCommitCommitParentsItem Function({SdkOptional<String> url, SdkOptional<String> htmlUrl, SdkOptional<String> sha}) get copyWith => _copyWith;
 
-  FileCommitCommitParentsItem _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      FileCommitCommitParentsItem(
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        sha: identical(sha, sdkOmittedValue)
-            ? this.sha
-            : sha as SdkOptional<String>,
-      );
+  FileCommitCommitParentsItem _copyWith({Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? sha = sdkOmittedValue}) => FileCommitCommitParentsItem(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
+  );
 
-  factory FileCommitCommitParentsItem.fromJson(Map<String, dynamic> json) =>
-      FileCommitCommitParentsItem(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        sha: json['sha'] != null
-            ? SdkPresent((json['sha'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory FileCommitCommitParentsItem.fromJson(Map<String, dynamic> json) => FileCommitCommitParentsItem(
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sha) {
-          SdkPresent<String>(value: final value) => {
-              'sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sha) {
+      SdkPresent<String>(value: final value) => {'sha': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `commit` wire field.
 class FileCommitCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `sha` wire field.
   final SdkOptional<String> sha;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Optional object value serialized in the `author` wire field.
   final SdkOptional<FileCommitCommitAuthor> author;
-
   /// Optional object value serialized in the `committer` wire field.
   final SdkOptional<FileCommitCommitCommitter> committer;
-
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
-
   /// Optional object value serialized in the `tree` wire field.
   final SdkOptional<FileCommitCommitTree> tree;
-
   /// Optional array value serialized in the `parents` wire field.
   final SdkOptional<List<FileCommitCommitParentsItem>> parents;
-
   /// Optional object value serialized in the `verification` wire field.
   final SdkOptional<FileCommitCommitVerification> verification;
 
-  const FileCommitCommit(
-      {this.sha = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.url = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.author = const SdkOmitted(),
-      this.committer = const SdkOmitted(),
-      this.message = const SdkOmitted(),
-      this.tree = const SdkOmitted(),
-      this.parents = const SdkOmitted(),
-      this.verification = const SdkOmitted()});
+  const FileCommitCommit({this.sha = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.author = const SdkOmitted(), this.committer = const SdkOmitted(), this.message = const SdkOmitted(), this.tree = const SdkOmitted(), this.parents = const SdkOmitted(), this.verification = const SdkOmitted()});
 
-  FileCommitCommit Function(
-          {SdkOptional<String> sha,
-          SdkOptional<String> nodeId,
-          SdkOptional<String> url,
-          SdkOptional<String> htmlUrl,
-          SdkOptional<FileCommitCommitAuthor> author,
-          SdkOptional<FileCommitCommitCommitter> committer,
-          SdkOptional<String> message,
-          SdkOptional<FileCommitCommitTree> tree,
-          SdkOptional<List<FileCommitCommitParentsItem>> parents,
-          SdkOptional<FileCommitCommitVerification> verification})
-      get copyWith => _copyWith;
+  FileCommitCommit Function({SdkOptional<String> sha, SdkOptional<String> nodeId, SdkOptional<String> url, SdkOptional<String> htmlUrl, SdkOptional<FileCommitCommitAuthor> author, SdkOptional<FileCommitCommitCommitter> committer, SdkOptional<String> message, SdkOptional<FileCommitCommitTree> tree, SdkOptional<List<FileCommitCommitParentsItem>> parents, SdkOptional<FileCommitCommitVerification> verification}) get copyWith => _copyWith;
 
-  FileCommitCommit _copyWith(
-          {Object? sha = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? author = sdkOmittedValue,
-          Object? committer = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? tree = sdkOmittedValue,
-          Object? parents = sdkOmittedValue,
-          Object? verification = sdkOmittedValue}) =>
-      FileCommitCommit(
-        sha: identical(sha, sdkOmittedValue)
-            ? this.sha
-            : sha as SdkOptional<String>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as SdkOptional<FileCommitCommitAuthor>,
-        committer: identical(committer, sdkOmittedValue)
-            ? this.committer
-            : committer as SdkOptional<FileCommitCommitCommitter>,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-        tree: identical(tree, sdkOmittedValue)
-            ? this.tree
-            : tree as SdkOptional<FileCommitCommitTree>,
-        parents: identical(parents, sdkOmittedValue)
-            ? this.parents
-            : parents as SdkOptional<List<FileCommitCommitParentsItem>>,
-        verification: identical(verification, sdkOmittedValue)
-            ? this.verification
-            : verification as SdkOptional<FileCommitCommitVerification>,
-      );
+  FileCommitCommit _copyWith({Object? sha = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? message = sdkOmittedValue, Object? tree = sdkOmittedValue, Object? parents = sdkOmittedValue, Object? verification = sdkOmittedValue}) => FileCommitCommit(
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<FileCommitCommitAuthor>,
+    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as SdkOptional<FileCommitCommitCommitter>,
+    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
+    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as SdkOptional<FileCommitCommitTree>,
+    parents: identical(parents, sdkOmittedValue) ? this.parents : parents as SdkOptional<List<FileCommitCommitParentsItem>>,
+    verification: identical(verification, sdkOmittedValue) ? this.verification : verification as SdkOptional<FileCommitCommitVerification>,
+  );
 
-  factory FileCommitCommit.fromJson(Map<String, dynamic> json) =>
-      FileCommitCommit(
-        sha: json['sha'] != null
-            ? SdkPresent((json['sha'] as String?)!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        author: json['author'] != null
-            ? SdkPresent((json['author'] != null
-                ? FileCommitCommitAuthor.fromJson(
-                    json['author'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        committer: json['committer'] != null
-            ? SdkPresent((json['committer'] != null
-                ? FileCommitCommitCommitter.fromJson(
-                    json['committer'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-        tree: json['tree'] != null
-            ? SdkPresent((json['tree'] != null
-                ? FileCommitCommitTree.fromJson(
-                    json['tree'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        parents: json['parents'] != null
-            ? SdkPresent(((json['parents'] as List?)
-                ?.map((e) => FileCommitCommitParentsItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        verification: json['verification'] != null
-            ? SdkPresent((json['verification'] != null
-                ? FileCommitCommitVerification.fromJson(
-                    json['verification'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory FileCommitCommit.fromJson(Map<String, dynamic> json) => FileCommitCommit(
+    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    author: json['author'] != null ? SdkPresent((json['author'] != null ? FileCommitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    committer: json['committer'] != null ? SdkPresent((json['committer'] != null ? FileCommitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
+    tree: json['tree'] != null ? SdkPresent((json['tree'] != null ? FileCommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    parents: json['parents'] != null ? SdkPresent(((json['parents'] as List?)?.map((e) => FileCommitCommitParentsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    verification: json['verification'] != null ? SdkPresent((json['verification'] != null ? FileCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (sha) {
-          SdkPresent<String>(value: final value) => {
-              'sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (author) {
-          SdkPresent<FileCommitCommitAuthor>(value: final value) => {
-              'author': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (committer) {
-          SdkPresent<FileCommitCommitCommitter>(value: final value) => {
-              'committer': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tree) {
-          SdkPresent<FileCommitCommitTree>(value: final value) => {
-              'tree': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (parents) {
-          SdkPresent<List<FileCommitCommitParentsItem>>(value: final value) => {
-              'parents': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verification) {
-          SdkPresent<FileCommitCommitVerification>(value: final value) => {
-              'verification': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (sha) {
+      SdkPresent<String>(value: final value) => {'sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (author) {
+      SdkPresent<FileCommitCommitAuthor>(value: final value) => {'author': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (committer) {
+      SdkPresent<FileCommitCommitCommitter>(value: final value) => {'committer': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (message) {
+      SdkPresent<String>(value: final value) => {'message': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (tree) {
+      SdkPresent<FileCommitCommitTree>(value: final value) => {'tree': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (parents) {
+      SdkPresent<List<FileCommitCommitParentsItem>>(value: final value) => {'parents': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (verification) {
+      SdkPresent<FileCommitCommitVerification>(value: final value) => {'verification': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// File Commit
 class FileCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `content` wire field.
   final FileCommitContent? content;
-
   /// Required object value serialized in the `commit` wire field.
   final FileCommitCommit commit;
 
   const FileCommit({required this.content, required this.commit});
 
-  FileCommit Function({FileCommitContent? content, FileCommitCommit commit})
-      get copyWith => _copyWith;
+  FileCommit Function({FileCommitContent? content, FileCommitCommit commit}) get copyWith => _copyWith;
 
-  FileCommit _copyWith(
-          {Object? content = sdkOmittedValue,
-          Object? commit = sdkOmittedValue}) =>
-      FileCommit(
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as FileCommitContent?,
-        commit: identical(commit, sdkOmittedValue)
-            ? this.commit
-            : commit as FileCommitCommit,
-      );
+  FileCommit _copyWith({Object? content = sdkOmittedValue, Object? commit = sdkOmittedValue}) => FileCommit(
+    content: identical(content, sdkOmittedValue) ? this.content : content as FileCommitContent?,
+    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as FileCommitCommit,
+  );
 
   factory FileCommit.fromJson(Map<String, dynamic> json) => FileCommit(
-        content: json.containsKey('content')
-            ? json['content'] != null
-                ? FileCommitContent.fromJson(
-                    json['content'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'content', 'Required property is missing'),
-        commit: (json['commit'] != null
-            ? FileCommitCommit.fromJson(json['commit'] as Map<String, dynamic>)
-            : null)!,
-      );
+    content: json.containsKey('content') ? json['content'] != null ? FileCommitContent.fromJson(json['content'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'content', 'Required property is missing'),
+    commit: (json['commit'] != null ? FileCommitCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'content': content?.toJson(),
-        'commit': commit.toJson(),
-      };
+    'content': content?.toJson(),
+    'commit': commit.toJson(),
+  };
 }

@@ -8,99 +8,71 @@ part of 'git.dart';
 class GitRefObject {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
-
   /// SHA for the reference
   final String sha;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const GitRefObject(
-      {required this.type_, required this.sha, required this.url});
+  const GitRefObject({required this.type_, required this.sha, required this.url});
 
-  GitRefObject Function({String type_, String sha, String url}) get copyWith =>
-      _copyWith;
+  GitRefObject Function({String type_, String sha, String url}) get copyWith => _copyWith;
 
-  GitRefObject _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      GitRefObject(
-        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  GitRefObject _copyWith({Object? type_ = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => GitRefObject(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
   factory GitRefObject.fromJson(Map<String, dynamic> json) => GitRefObject(
-        type_: (json['type'] as String?)!,
-        sha: (json['sha'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+    type_: (json['type'] as String?)!,
+    sha: (json['sha'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_,
-        'sha': sha,
-        'url': url,
-      };
+    'type': type_,
+    'sha': sha,
+    'url': url,
+  };
 }
 
 /// Git references within a repository
 class GitRef {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required object value serialized in the `object` wire field.
   final GitRefObject object;
 
-  const GitRef(
-      {required this.ref,
-      required this.nodeId,
-      required this.url,
-      required this.object});
+  const GitRef({required this.ref, required this.nodeId, required this.url, required this.object});
 
-  GitRef Function({String ref, String nodeId, String url, GitRefObject object})
-      get copyWith => _copyWith;
+  GitRef Function({String ref, String nodeId, String url, GitRefObject object}) get copyWith => _copyWith;
 
-  GitRef _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? object = sdkOmittedValue}) =>
-      GitRef(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        object: identical(object, sdkOmittedValue)
-            ? this.object
-            : object as GitRefObject,
-      );
+  GitRef _copyWith({Object? ref = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? object = sdkOmittedValue}) => GitRef(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    object: identical(object, sdkOmittedValue) ? this.object : object as GitRefObject,
+  );
 
   factory GitRef.fromJson(Map<String, dynamic> json) => GitRef(
-        ref: (json['ref'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-        object: (json['object'] != null
-            ? GitRefObject.fromJson(json['object'] as Map<String, dynamic>)
-            : null)!,
-      );
+    ref: (json['ref'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    url: (json['url'] as String?)!,
+    object: (json['object'] != null ? GitRefObject.fromJson(json['object'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'node_id': nodeId,
-        'url': url,
-        'object': object.toJson(),
-      };
+    'ref': ref,
+    'node_id': nodeId,
+    'url': url,
+    'object': object.toJson(),
+  };
 }

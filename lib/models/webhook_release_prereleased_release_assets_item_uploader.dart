@@ -8,578 +8,271 @@ part of 'webhook_release_prereleased.dart';
 class WebhookReleasePrereleasedReleaseAssetsItemUploader {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
   final SdkOptional<String> avatarUrl;
-
   /// Optional `boolean` value serialized in the `deleted` wire field.
   final SdkOptional<bool> deleted;
-
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
-
   /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
-
   /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
   final SdkOptional<String> followersUrl;
-
   /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
   final SdkOptional<String> followingUrl;
-
   /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
   final SdkOptional<String> gistsUrl;
-
   /// Optional `string` value serialized in the `gravatar_id` wire field.
   final SdkOptional<String> gravatarId;
-
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `login` wire field.
   final String login;
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
   final SdkOptional<String> organizationsUrl;
-
   /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
   final SdkOptional<String> receivedEventsUrl;
-
   /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
   final SdkOptional<String> reposUrl;
-
   /// Optional `boolean` value serialized in the `site_admin` wire field.
   final SdkOptional<bool> siteAdmin;
-
   /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
   final SdkOptional<String> starredUrl;
-
   /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
   final SdkOptional<String> subscriptionsUrl;
-
   /// Optional enumerated value serialized in the `type` wire field.
-  final SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploaderType>
-      type_;
-
+  final SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploaderType> type_;
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
 
-  const WebhookReleasePrereleasedReleaseAssetsItemUploader(
-      {this.avatarUrl = const SdkOmitted(),
-      this.deleted = const SdkOmitted(),
-      this.email = const SdkOmitted(),
-      this.eventsUrl = const SdkOmitted(),
-      this.followersUrl = const SdkOmitted(),
-      this.followingUrl = const SdkOmitted(),
-      this.gistsUrl = const SdkOmitted(),
-      this.gravatarId = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      required this.id,
-      required this.login,
-      this.name = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.organizationsUrl = const SdkOmitted(),
-      this.receivedEventsUrl = const SdkOmitted(),
-      this.reposUrl = const SdkOmitted(),
-      this.siteAdmin = const SdkOmitted(),
-      this.starredUrl = const SdkOmitted(),
-      this.subscriptionsUrl = const SdkOmitted(),
-      this.type_ = const SdkOmitted(),
-      this.url = const SdkOmitted()});
+  const WebhookReleasePrereleasedReleaseAssetsItemUploader({this.avatarUrl = const SdkOmitted(), this.deleted = const SdkOmitted(), this.email = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), required this.id, required this.login, this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted()});
 
-  WebhookReleasePrereleasedReleaseAssetsItemUploader Function(
-      {SdkOptional<String> avatarUrl,
-      SdkOptional<bool> deleted,
-      SdkOptional<String?> email,
-      SdkOptional<String> eventsUrl,
-      SdkOptional<String> followersUrl,
-      SdkOptional<String> followingUrl,
-      SdkOptional<String> gistsUrl,
-      SdkOptional<String> gravatarId,
-      SdkOptional<String> htmlUrl,
-      int id,
-      String login,
-      SdkOptional<String> name,
-      SdkOptional<String> nodeId,
-      SdkOptional<String> organizationsUrl,
-      SdkOptional<String> receivedEventsUrl,
-      SdkOptional<String> reposUrl,
-      SdkOptional<bool> siteAdmin,
-      SdkOptional<String> starredUrl,
-      SdkOptional<String> subscriptionsUrl,
-      SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploaderType> type_,
-      SdkOptional<String> url}) get copyWith => _copyWith;
+  WebhookReleasePrereleasedReleaseAssetsItemUploader Function({SdkOptional<String> avatarUrl, SdkOptional<bool> deleted, SdkOptional<String?> email, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, int id, String login, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploaderType> type_, SdkOptional<String> url}) get copyWith => _copyWith;
 
-  WebhookReleasePrereleasedReleaseAssetsItemUploader _copyWith(
-          {Object? avatarUrl = sdkOmittedValue,
-          Object? deleted = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? followersUrl = sdkOmittedValue,
-          Object? followingUrl = sdkOmittedValue,
-          Object? gistsUrl = sdkOmittedValue,
-          Object? gravatarId = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? login = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? organizationsUrl = sdkOmittedValue,
-          Object? receivedEventsUrl = sdkOmittedValue,
-          Object? reposUrl = sdkOmittedValue,
-          Object? siteAdmin = sdkOmittedValue,
-          Object? starredUrl = sdkOmittedValue,
-          Object? subscriptionsUrl = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookReleasePrereleasedReleaseAssetsItemUploader(
-        avatarUrl: identical(avatarUrl, sdkOmittedValue)
-            ? this.avatarUrl
-            : avatarUrl as SdkOptional<String>,
-        deleted: identical(deleted, sdkOmittedValue)
-            ? this.deleted
-            : deleted as SdkOptional<bool>,
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String?>,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as SdkOptional<String>,
-        followersUrl: identical(followersUrl, sdkOmittedValue)
-            ? this.followersUrl
-            : followersUrl as SdkOptional<String>,
-        followingUrl: identical(followingUrl, sdkOmittedValue)
-            ? this.followingUrl
-            : followingUrl as SdkOptional<String>,
-        gistsUrl: identical(gistsUrl, sdkOmittedValue)
-            ? this.gistsUrl
-            : gistsUrl as SdkOptional<String>,
-        gravatarId: identical(gravatarId, sdkOmittedValue)
-            ? this.gravatarId
-            : gravatarId as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        login: identical(login, sdkOmittedValue) ? this.login : login as String,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
-            ? this.organizationsUrl
-            : organizationsUrl as SdkOptional<String>,
-        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
-            ? this.receivedEventsUrl
-            : receivedEventsUrl as SdkOptional<String>,
-        reposUrl: identical(reposUrl, sdkOmittedValue)
-            ? this.reposUrl
-            : reposUrl as SdkOptional<String>,
-        siteAdmin: identical(siteAdmin, sdkOmittedValue)
-            ? this.siteAdmin
-            : siteAdmin as SdkOptional<bool>,
-        starredUrl: identical(starredUrl, sdkOmittedValue)
-            ? this.starredUrl
-            : starredUrl as SdkOptional<String>,
-        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
-            ? this.subscriptionsUrl
-            : subscriptionsUrl as SdkOptional<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<
-                WebhookReleasePrereleasedReleaseAssetsItemUploaderType>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-      );
+  WebhookReleasePrereleasedReleaseAssetsItemUploader _copyWith({Object? avatarUrl = sdkOmittedValue, Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookReleasePrereleasedReleaseAssetsItemUploader(
+    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String>,
+    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
+    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
+    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as SdkOptional<String>,
+    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as SdkOptional<String>,
+    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as SdkOptional<String>,
+    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    login: identical(login, sdkOmittedValue) ? this.login : login as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as SdkOptional<String>,
+    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as SdkOptional<String>,
+    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as SdkOptional<String>,
+    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as SdkOptional<bool>,
+    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as SdkOptional<String>,
+    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as SdkOptional<String>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploaderType>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+  );
 
-  factory WebhookReleasePrereleasedReleaseAssetsItemUploader.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookReleasePrereleasedReleaseAssetsItemUploader(
-        avatarUrl: json['avatar_url'] != null
-            ? SdkPresent((json['avatar_url'] as String?)!)
-            : const SdkOmitted(),
-        deleted: json['deleted'] != null
-            ? SdkPresent((json['deleted'] as bool?)!)
-            : const SdkOmitted(),
-        email: json.containsKey('email')
-            ? SdkPresent(json['email'] as String?)
-            : const SdkOmitted(),
-        eventsUrl: json['events_url'] != null
-            ? SdkPresent((json['events_url'] as String?)!)
-            : const SdkOmitted(),
-        followersUrl: json['followers_url'] != null
-            ? SdkPresent((json['followers_url'] as String?)!)
-            : const SdkOmitted(),
-        followingUrl: json['following_url'] != null
-            ? SdkPresent((json['following_url'] as String?)!)
-            : const SdkOmitted(),
-        gistsUrl: json['gists_url'] != null
-            ? SdkPresent((json['gists_url'] as String?)!)
-            : const SdkOmitted(),
-        gravatarId: json['gravatar_id'] != null
-            ? SdkPresent((json['gravatar_id'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        id: ((json['id'] as num?)?.toInt())!,
-        login: (json['login'] as String?)!,
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        organizationsUrl: json['organizations_url'] != null
-            ? SdkPresent((json['organizations_url'] as String?)!)
-            : const SdkOmitted(),
-        receivedEventsUrl: json['received_events_url'] != null
-            ? SdkPresent((json['received_events_url'] as String?)!)
-            : const SdkOmitted(),
-        reposUrl: json['repos_url'] != null
-            ? SdkPresent((json['repos_url'] as String?)!)
-            : const SdkOmitted(),
-        siteAdmin: json['site_admin'] != null
-            ? SdkPresent((json['site_admin'] as bool?)!)
-            : const SdkOmitted(),
-        starredUrl: json['starred_url'] != null
-            ? SdkPresent((json['starred_url'] as String?)!)
-            : const SdkOmitted(),
-        subscriptionsUrl: json['subscriptions_url'] != null
-            ? SdkPresent((json['subscriptions_url'] as String?)!)
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? WebhookReleasePrereleasedReleaseAssetsItemUploaderType
-                    .fromJson(json['type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookReleasePrereleasedReleaseAssetsItemUploader.fromJson(Map<String, dynamic> json) => WebhookReleasePrereleasedReleaseAssetsItemUploader(
+    avatarUrl: json['avatar_url'] != null ? SdkPresent((json['avatar_url'] as String?)!) : const SdkOmitted(),
+    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
+    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
+    eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
+    followersUrl: json['followers_url'] != null ? SdkPresent((json['followers_url'] as String?)!) : const SdkOmitted(),
+    followingUrl: json['following_url'] != null ? SdkPresent((json['following_url'] as String?)!) : const SdkOmitted(),
+    gistsUrl: json['gists_url'] != null ? SdkPresent((json['gists_url'] as String?)!) : const SdkOmitted(),
+    gravatarId: json['gravatar_id'] != null ? SdkPresent((json['gravatar_id'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    id: ((json['id'] as num?)?.toInt())!,
+    login: (json['login'] as String?)!,
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    organizationsUrl: json['organizations_url'] != null ? SdkPresent((json['organizations_url'] as String?)!) : const SdkOmitted(),
+    receivedEventsUrl: json['received_events_url'] != null ? SdkPresent((json['received_events_url'] as String?)!) : const SdkOmitted(),
+    reposUrl: json['repos_url'] != null ? SdkPresent((json['repos_url'] as String?)!) : const SdkOmitted(),
+    siteAdmin: json['site_admin'] != null ? SdkPresent((json['site_admin'] as bool?)!) : const SdkOmitted(),
+    starredUrl: json['starred_url'] != null ? SdkPresent((json['starred_url'] as String?)!) : const SdkOmitted(),
+    subscriptionsUrl: json['subscriptions_url'] != null ? SdkPresent((json['subscriptions_url'] as String?)!) : const SdkOmitted(),
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhookReleasePrereleasedReleaseAssetsItemUploaderType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (avatarUrl) {
-          SdkPresent<String>(value: final value) => {
-              'avatar_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deleted) {
-          SdkPresent<bool>(value: final value) => {
-              'deleted': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (email) {
-          SdkPresent<String?>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (eventsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'events_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (followersUrl) {
-          SdkPresent<String>(value: final value) => {
-              'followers_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (followingUrl) {
-          SdkPresent<String>(value: final value) => {
-              'following_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (gistsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'gists_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (gravatarId) {
-          SdkPresent<String>(value: final value) => {
-              'gravatar_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'id': id,
-        'login': login,
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'organizations_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (receivedEventsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'received_events_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reposUrl) {
-          SdkPresent<String>(value: final value) => {
-              'repos_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (siteAdmin) {
-          SdkPresent<bool>(value: final value) => {
-              'site_admin': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (starredUrl) {
-          SdkPresent<String>(value: final value) => {
-              'starred_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subscriptionsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'subscriptions_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<WebhookReleasePrereleasedReleaseAssetsItemUploaderType>(
-            value: final value
-          ) =>
-            {
-              'type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (avatarUrl) {
+      SdkPresent<String>(value: final value) => {'avatar_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deleted) {
+      SdkPresent<bool>(value: final value) => {'deleted': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (email) {
+      SdkPresent<String?>(value: final value) => {'email': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (eventsUrl) {
+      SdkPresent<String>(value: final value) => {'events_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (followersUrl) {
+      SdkPresent<String>(value: final value) => {'followers_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (followingUrl) {
+      SdkPresent<String>(value: final value) => {'following_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (gistsUrl) {
+      SdkPresent<String>(value: final value) => {'gists_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (gravatarId) {
+      SdkPresent<String>(value: final value) => {'gravatar_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'id': id,
+    'login': login,
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organizationsUrl) {
+      SdkPresent<String>(value: final value) => {'organizations_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (receivedEventsUrl) {
+      SdkPresent<String>(value: final value) => {'received_events_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reposUrl) {
+      SdkPresent<String>(value: final value) => {'repos_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (siteAdmin) {
+      SdkPresent<bool>(value: final value) => {'site_admin': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (starredUrl) {
+      SdkPresent<String>(value: final value) => {'starred_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subscriptionsUrl) {
+      SdkPresent<String>(value: final value) => {'subscriptions_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (type_) {
+      SdkPresent<WebhookReleasePrereleasedReleaseAssetsItemUploaderType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Data related to a release.
 class WebhookReleasePrereleasedReleaseAssetsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `browser_download_url` wire field.
   final String browserDownloadUrl;
-
   /// Required `string` value serialized in the `content_type` wire field.
   final String contentType;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `integer` value serialized in the `download_count` wire field.
   final int downloadCount;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `label` wire field.
   final String? label;
-
   /// The file name of the asset.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `integer` value serialized in the `size` wire field.
   final int size;
-
   /// Required `string` value serialized in the `digest` wire field.
   final String? digest;
-
   /// State of the release asset.
   final WebhookReleasePrereleasedReleaseAssetsItemState state;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// Optional object value serialized in the `uploader` wire field.
-  final SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploader?>
-      uploader;
-
+  final SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploader?> uploader;
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookReleasePrereleasedReleaseAssetsItem(
-      {required this.browserDownloadUrl,
-      required this.contentType,
-      required this.createdAt,
-      required this.downloadCount,
-      required this.id,
-      required this.label,
-      required this.name,
-      required this.nodeId,
-      required this.size,
-      required this.digest,
-      required this.state,
-      required this.updatedAt,
-      this.uploader = const SdkOmitted(),
-      required this.url});
+  const WebhookReleasePrereleasedReleaseAssetsItem({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, this.uploader = const SdkOmitted(), required this.url});
 
-  WebhookReleasePrereleasedReleaseAssetsItem Function(
-      {String browserDownloadUrl,
-      String contentType,
-      String createdAt,
-      int downloadCount,
-      int id,
-      String? label,
-      String name,
-      String nodeId,
-      int size,
-      String? digest,
-      WebhookReleasePrereleasedReleaseAssetsItemState state,
-      String updatedAt,
-      SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploader?> uploader,
-      String url}) get copyWith => _copyWith;
+  WebhookReleasePrereleasedReleaseAssetsItem Function({String browserDownloadUrl, String contentType, String createdAt, int downloadCount, int id, String? label, String name, String nodeId, int size, String? digest, WebhookReleasePrereleasedReleaseAssetsItemState state, String updatedAt, SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploader?> uploader, String url}) get copyWith => _copyWith;
 
-  WebhookReleasePrereleasedReleaseAssetsItem _copyWith(
-          {Object? browserDownloadUrl = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? downloadCount = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? label = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? size = sdkOmittedValue,
-          Object? digest = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? uploader = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookReleasePrereleasedReleaseAssetsItem(
-        browserDownloadUrl: identical(browserDownloadUrl, sdkOmittedValue)
-            ? this.browserDownloadUrl
-            : browserDownloadUrl as String,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        downloadCount: identical(downloadCount, sdkOmittedValue)
-            ? this.downloadCount
-            : downloadCount as int,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        label:
-            identical(label, sdkOmittedValue) ? this.label : label as String?,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        size: identical(size, sdkOmittedValue) ? this.size : size as int,
-        digest: identical(digest, sdkOmittedValue)
-            ? this.digest
-            : digest as String?,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as WebhookReleasePrereleasedReleaseAssetsItemState,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        uploader: identical(uploader, sdkOmittedValue)
-            ? this.uploader
-            : uploader as SdkOptional<
-                WebhookReleasePrereleasedReleaseAssetsItemUploader?>,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookReleasePrereleasedReleaseAssetsItem _copyWith({Object? browserDownloadUrl = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? downloadCount = sdkOmittedValue, Object? id = sdkOmittedValue, Object? label = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? size = sdkOmittedValue, Object? digest = sdkOmittedValue, Object? state = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? uploader = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookReleasePrereleasedReleaseAssetsItem(
+    browserDownloadUrl: identical(browserDownloadUrl, sdkOmittedValue) ? this.browserDownloadUrl : browserDownloadUrl as String,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    downloadCount: identical(downloadCount, sdkOmittedValue) ? this.downloadCount : downloadCount as int,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    label: identical(label, sdkOmittedValue) ? this.label : label as String?,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    size: identical(size, sdkOmittedValue) ? this.size : size as int,
+    digest: identical(digest, sdkOmittedValue) ? this.digest : digest as String?,
+    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookReleasePrereleasedReleaseAssetsItemState,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    uploader: identical(uploader, sdkOmittedValue) ? this.uploader : uploader as SdkOptional<WebhookReleasePrereleasedReleaseAssetsItemUploader?>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookReleasePrereleasedReleaseAssetsItem.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookReleasePrereleasedReleaseAssetsItem(
-        browserDownloadUrl: (json['browser_download_url'] as String?)!,
-        contentType: (json['content_type'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        downloadCount: ((json['download_count'] as num?)?.toInt())!,
-        id: ((json['id'] as num?)?.toInt())!,
-        label: json.containsKey('label')
-            ? json['label'] as String?
-            : throw ArgumentError.value(
-                null, 'label', 'Required property is missing'),
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        size: ((json['size'] as num?)?.toInt())!,
-        digest: json.containsKey('digest')
-            ? json['digest'] as String?
-            : throw ArgumentError.value(
-                null, 'digest', 'Required property is missing'),
-        state: (json['state'] != null
-            ? WebhookReleasePrereleasedReleaseAssetsItemState.fromJson(
-                json['state'] as String)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        uploader: json.containsKey('uploader')
-            ? SdkPresent(json['uploader'] != null
-                ? WebhookReleasePrereleasedReleaseAssetsItemUploader.fromJson(
-                    json['uploader'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookReleasePrereleasedReleaseAssetsItem.fromJson(Map<String, dynamic> json) => WebhookReleasePrereleasedReleaseAssetsItem(
+    browserDownloadUrl: (json['browser_download_url'] as String?)!,
+    contentType: (json['content_type'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    downloadCount: ((json['download_count'] as num?)?.toInt())!,
+    id: ((json['id'] as num?)?.toInt())!,
+    label: json.containsKey('label') ? json['label'] as String? : throw ArgumentError.value(null, 'label', 'Required property is missing'),
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    size: ((json['size'] as num?)?.toInt())!,
+    digest: json.containsKey('digest') ? json['digest'] as String? : throw ArgumentError.value(null, 'digest', 'Required property is missing'),
+    state: (json['state'] != null ? WebhookReleasePrereleasedReleaseAssetsItemState.fromJson(json['state'] as String) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    uploader: json.containsKey('uploader') ? SdkPresent(json['uploader'] != null ? WebhookReleasePrereleasedReleaseAssetsItemUploader.fromJson(json['uploader'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'browser_download_url': browserDownloadUrl,
-        'content_type': contentType,
-        'created_at': createdAt,
-        'download_count': downloadCount,
-        'id': id,
-        'label': label,
-        'name': name,
-        'node_id': nodeId,
-        'size': size,
-        'digest': digest,
-        'state': state.toJson(),
-        'updated_at': updatedAt,
-        ...switch (uploader) {
-          SdkPresent<WebhookReleasePrereleasedReleaseAssetsItemUploader?>(
-            value: final value
-          ) =>
-            {
-              'uploader': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'url': url,
-      };
+    'browser_download_url': browserDownloadUrl,
+    'content_type': contentType,
+    'created_at': createdAt,
+    'download_count': downloadCount,
+    'id': id,
+    'label': label,
+    'name': name,
+    'node_id': nodeId,
+    'size': size,
+    'digest': digest,
+    'state': state.toJson(),
+    'updated_at': updatedAt,
+    ...switch (uploader) {
+      SdkPresent<WebhookReleasePrereleasedReleaseAssetsItemUploader?>(value: final value) => {'uploader': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'url': url,
+  };
 }

@@ -9,93 +9,55 @@ class AppsListInstallationReposForAuthenticatedUserResponse {
   static const String constructionSurface = 'named';
   final int totalCount;
   final SdkOptional<String> repositorySelection;
-  final List<
-          AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>
-      repositories;
+  final List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem> repositories;
 
-  const AppsListInstallationReposForAuthenticatedUserResponse(
-      {required this.totalCount,
-      this.repositorySelection = const SdkOmitted(),
-      required this.repositories});
+  const AppsListInstallationReposForAuthenticatedUserResponse({required this.totalCount, this.repositorySelection = const SdkOmitted(), required this.repositories});
 
-  AppsListInstallationReposForAuthenticatedUserResponse Function(
-      {int totalCount,
-      SdkOptional<String> repositorySelection,
-      List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>
-          repositories}) get copyWith => _copyWith;
+  AppsListInstallationReposForAuthenticatedUserResponse Function({int totalCount, SdkOptional<String> repositorySelection, List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem> repositories}) get copyWith => _copyWith;
 
-  AppsListInstallationReposForAuthenticatedUserResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? repositorySelection = sdkOmittedValue,
-          Object? repositories = sdkOmittedValue}) =>
-      AppsListInstallationReposForAuthenticatedUserResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        repositorySelection: identical(repositorySelection, sdkOmittedValue)
-            ? this.repositorySelection
-            : repositorySelection as SdkOptional<String>,
-        repositories: identical(repositories, sdkOmittedValue)
-            ? this.repositories
-            : repositories as List<
-                AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>,
-      );
+  AppsListInstallationReposForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => AppsListInstallationReposForAuthenticatedUserResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as SdkOptional<String>,
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>,
+  );
 
-  factory AppsListInstallationReposForAuthenticatedUserResponse.fromJson(
-          Map<String, dynamic> json) =>
-      AppsListInstallationReposForAuthenticatedUserResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        repositorySelection: json['repository_selection'] != null
-            ? SdkPresent((json['repository_selection'] as String?)!)
-            : const SdkOmitted(),
-        repositories: ((json['repositories'] as List?)
-            ?.map((e) =>
-                AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem
-                    .fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory AppsListInstallationReposForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => AppsListInstallationReposForAuthenticatedUserResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    repositorySelection: json['repository_selection'] != null ? SdkPresent((json['repository_selection'] as String?)!) : const SdkOmitted(),
+    repositories: ((json['repositories'] as List?)?.map((e) => AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        ...switch (repositorySelection) {
-          SdkPresent<String>(value: final value) => {
-              'repository_selection': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'repositories': repositories.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    ...switch (repositorySelection) {
+      SdkPresent<String>(value: final value) => {'repository_selection': value,},
+      _ => const <String, dynamic>{},
+    },
+    'repositories': repositories.map((item) => item.toJson()).toList(),
+  };
 }
 
 class CredentialsRevokeRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A list of credentials to be revoked, up to 1000 per request.
   final List<String> credentials;
 
   const CredentialsRevokeRequestBody({required this.credentials});
 
-  CredentialsRevokeRequestBody Function({List<String> credentials})
-      get copyWith => _copyWith;
+  CredentialsRevokeRequestBody Function({List<String> credentials}) get copyWith => _copyWith;
 
-  CredentialsRevokeRequestBody _copyWith(
-          {Object? credentials = sdkOmittedValue}) =>
-      CredentialsRevokeRequestBody(
-        credentials: identical(credentials, sdkOmittedValue)
-            ? this.credentials
-            : credentials as List<String>,
-      );
+  CredentialsRevokeRequestBody _copyWith({Object? credentials = sdkOmittedValue}) => CredentialsRevokeRequestBody(
+    credentials: identical(credentials, sdkOmittedValue) ? this.credentials : credentials as List<String>,
+  );
 
-  factory CredentialsRevokeRequestBody.fromJson(Map<String, dynamic> json) =>
-      CredentialsRevokeRequestBody(
-        credentials:
-            ((json['credentials'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory CredentialsRevokeRequestBody.fromJson(Map<String, dynamic> json) => CredentialsRevokeRequestBody(
+    credentials: ((json['credentials'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'credentials': credentials,
-      };
+    'credentials': credentials,
+  };
 }
 
 class ActionsGetActionsCacheUsageByRepoForOrgResponse {
@@ -104,41 +66,24 @@ class ActionsGetActionsCacheUsageByRepoForOrgResponse {
   final int totalCount;
   final List<ActionsCacheUsageByRepository> repositoryCacheUsages;
 
-  const ActionsGetActionsCacheUsageByRepoForOrgResponse(
-      {required this.totalCount, required this.repositoryCacheUsages});
+  const ActionsGetActionsCacheUsageByRepoForOrgResponse({required this.totalCount, required this.repositoryCacheUsages});
 
-  ActionsGetActionsCacheUsageByRepoForOrgResponse Function(
-          {int totalCount,
-          List<ActionsCacheUsageByRepository> repositoryCacheUsages})
-      get copyWith => _copyWith;
+  ActionsGetActionsCacheUsageByRepoForOrgResponse Function({int totalCount, List<ActionsCacheUsageByRepository> repositoryCacheUsages}) get copyWith => _copyWith;
 
-  ActionsGetActionsCacheUsageByRepoForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? repositoryCacheUsages = sdkOmittedValue}) =>
-      ActionsGetActionsCacheUsageByRepoForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        repositoryCacheUsages: identical(repositoryCacheUsages, sdkOmittedValue)
-            ? this.repositoryCacheUsages
-            : repositoryCacheUsages as List<ActionsCacheUsageByRepository>,
-      );
+  ActionsGetActionsCacheUsageByRepoForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositoryCacheUsages = sdkOmittedValue}) => ActionsGetActionsCacheUsageByRepoForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    repositoryCacheUsages: identical(repositoryCacheUsages, sdkOmittedValue) ? this.repositoryCacheUsages : repositoryCacheUsages as List<ActionsCacheUsageByRepository>,
+  );
 
-  factory ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsGetActionsCacheUsageByRepoForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        repositoryCacheUsages: ((json['repository_cache_usages'] as List?)
-            ?.map((e) => ActionsCacheUsageByRepository.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsGetActionsCacheUsageByRepoForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    repositoryCacheUsages: ((json['repository_cache_usages'] as List?)?.map((e) => ActionsCacheUsageByRepository.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'repository_cache_usages':
-            repositoryCacheUsages.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'repository_cache_usages': repositoryCacheUsages.map((item) => item.toJson()).toList(),
+  };
 }
 
 class ActionsListHostedRunnersForOrgResponse {
@@ -147,241 +92,129 @@ class ActionsListHostedRunnersForOrgResponse {
   final int totalCount;
   final List<ActionsHostedRunner> runners;
 
-  const ActionsListHostedRunnersForOrgResponse(
-      {required this.totalCount, required this.runners});
+  const ActionsListHostedRunnersForOrgResponse({required this.totalCount, required this.runners});
 
-  ActionsListHostedRunnersForOrgResponse Function(
-      {int totalCount,
-      List<ActionsHostedRunner> runners}) get copyWith => _copyWith;
+  ActionsListHostedRunnersForOrgResponse Function({int totalCount, List<ActionsHostedRunner> runners}) get copyWith => _copyWith;
 
-  ActionsListHostedRunnersForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? runners = sdkOmittedValue}) =>
-      ActionsListHostedRunnersForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        runners: identical(runners, sdkOmittedValue)
-            ? this.runners
-            : runners as List<ActionsHostedRunner>,
-      );
+  ActionsListHostedRunnersForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListHostedRunnersForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<ActionsHostedRunner>,
+  );
 
-  factory ActionsListHostedRunnersForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListHostedRunnersForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        runners: ((json['runners'] as List?)
-            ?.map(
-                (e) => ActionsHostedRunner.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory ActionsListHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListHostedRunnersForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    runners: ((json['runners'] as List?)?.map((e) => ActionsHostedRunner.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'runners': runners.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'runners': runners.map((item) => item.toJson()).toList(),
+  };
 }
 
 /// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
 class ActionsCreateHostedRunnerForOrgRequestBodyImage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the runner image.
   final SdkOptional<String> id;
-
   /// The source of the runner image.
-  final SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>
-      source;
-
+  final SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource> source;
   /// The version of the runner image to deploy. This is relevant only for runners using custom images.
   final SdkOptional<String?> version;
 
-  const ActionsCreateHostedRunnerForOrgRequestBodyImage(
-      {this.id = const SdkOmitted(),
-      this.source = const SdkOmitted(),
-      this.version = const SdkOmitted()});
+  const ActionsCreateHostedRunnerForOrgRequestBodyImage({this.id = const SdkOmitted(), this.source = const SdkOmitted(), this.version = const SdkOmitted()});
 
-  ActionsCreateHostedRunnerForOrgRequestBodyImage Function(
-      {SdkOptional<String> id,
-      SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource> source,
-      SdkOptional<String?> version}) get copyWith => _copyWith;
+  ActionsCreateHostedRunnerForOrgRequestBodyImage Function({SdkOptional<String> id, SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource> source, SdkOptional<String?> version}) get copyWith => _copyWith;
 
-  ActionsCreateHostedRunnerForOrgRequestBodyImage _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? version = sdkOmittedValue}) =>
-      ActionsCreateHostedRunnerForOrgRequestBodyImage(
-        id: identical(id, sdkOmittedValue)
-            ? this.id
-            : id as SdkOptional<String>,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as SdkOptional<
-                ActionsCreateHostedRunnerForOrgRequestBodyImageSource>,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String?>,
-      );
+  ActionsCreateHostedRunnerForOrgRequestBodyImage _copyWith({Object? id = sdkOmittedValue, Object? source = sdkOmittedValue, Object? version = sdkOmittedValue}) => ActionsCreateHostedRunnerForOrgRequestBodyImage(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
+    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>,
+    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String?>,
+  );
 
-  factory ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCreateHostedRunnerForOrgRequestBodyImage(
-        id: json['id'] != null
-            ? SdkPresent((json['id'] as String?)!)
-            : const SdkOmitted(),
-        source: json['source'] != null
-            ? SdkPresent((json['source'] != null
-                ? ActionsCreateHostedRunnerForOrgRequestBodyImageSource
-                    .fromJson(json['source'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        version: json.containsKey('version')
-            ? SdkPresent(json['version'] as String?)
-            : const SdkOmitted(),
-      );
+  factory ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(Map<String, dynamic> json) => ActionsCreateHostedRunnerForOrgRequestBodyImage(
+    id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
+    source: json['source'] != null ? SdkPresent((json['source'] != null ? ActionsCreateHostedRunnerForOrgRequestBodyImageSource.fromJson(json['source'] as String) : null)!) : const SdkOmitted(),
+    version: json.containsKey('version') ? SdkPresent(json['version'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<String>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (source) {
-          SdkPresent<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>(
-            value: final value
-          ) =>
-            {
-              'source': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (version) {
-          SdkPresent<String?>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<String>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (source) {
+      SdkPresent<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>(value: final value) => {'source': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (version) {
+      SdkPresent<String?>(value: final value) => {'version': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ActionsCreateHostedRunnerForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
   final String name;
-
   /// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
   final ActionsCreateHostedRunnerForOrgRequestBodyImage image;
-
   /// The machine size of the runner. To list available sizes, use `GET actions/hosted-runners/machine-sizes`
   final String size;
-
   /// The existing runner group to add this runner to.
   final int runnerGroupId;
-
   /// The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
   final SdkOptional<int> maximumRunners;
-
   /// Whether this runner should be created with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
   final SdkOptional<bool> enableStaticIp;
-
   /// Whether this runner should be used to generate custom images.
   final SdkOptional<bool> imageGen;
 
-  const ActionsCreateHostedRunnerForOrgRequestBody(
-      {required this.name,
-      required this.image,
-      required this.size,
-      required this.runnerGroupId,
-      this.maximumRunners = const SdkOmitted(),
-      this.enableStaticIp = const SdkOmitted(),
-      this.imageGen = const SdkOmitted()});
+  const ActionsCreateHostedRunnerForOrgRequestBody({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners = const SdkOmitted(), this.enableStaticIp = const SdkOmitted(), this.imageGen = const SdkOmitted()});
 
-  ActionsCreateHostedRunnerForOrgRequestBody Function(
-      {String name,
-      ActionsCreateHostedRunnerForOrgRequestBodyImage image,
-      String size,
-      int runnerGroupId,
-      SdkOptional<int> maximumRunners,
-      SdkOptional<bool> enableStaticIp,
-      SdkOptional<bool> imageGen}) get copyWith => _copyWith;
+  ActionsCreateHostedRunnerForOrgRequestBody Function({String name, ActionsCreateHostedRunnerForOrgRequestBodyImage image, String size, int runnerGroupId, SdkOptional<int> maximumRunners, SdkOptional<bool> enableStaticIp, SdkOptional<bool> imageGen}) get copyWith => _copyWith;
 
-  ActionsCreateHostedRunnerForOrgRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? image = sdkOmittedValue,
-          Object? size = sdkOmittedValue,
-          Object? runnerGroupId = sdkOmittedValue,
-          Object? maximumRunners = sdkOmittedValue,
-          Object? enableStaticIp = sdkOmittedValue,
-          Object? imageGen = sdkOmittedValue}) =>
-      ActionsCreateHostedRunnerForOrgRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        image: identical(image, sdkOmittedValue)
-            ? this.image
-            : image as ActionsCreateHostedRunnerForOrgRequestBodyImage,
-        size: identical(size, sdkOmittedValue) ? this.size : size as String,
-        runnerGroupId: identical(runnerGroupId, sdkOmittedValue)
-            ? this.runnerGroupId
-            : runnerGroupId as int,
-        maximumRunners: identical(maximumRunners, sdkOmittedValue)
-            ? this.maximumRunners
-            : maximumRunners as SdkOptional<int>,
-        enableStaticIp: identical(enableStaticIp, sdkOmittedValue)
-            ? this.enableStaticIp
-            : enableStaticIp as SdkOptional<bool>,
-        imageGen: identical(imageGen, sdkOmittedValue)
-            ? this.imageGen
-            : imageGen as SdkOptional<bool>,
-      );
+  ActionsCreateHostedRunnerForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? image = sdkOmittedValue, Object? size = sdkOmittedValue, Object? runnerGroupId = sdkOmittedValue, Object? maximumRunners = sdkOmittedValue, Object? enableStaticIp = sdkOmittedValue, Object? imageGen = sdkOmittedValue}) => ActionsCreateHostedRunnerForOrgRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    image: identical(image, sdkOmittedValue) ? this.image : image as ActionsCreateHostedRunnerForOrgRequestBodyImage,
+    size: identical(size, sdkOmittedValue) ? this.size : size as String,
+    runnerGroupId: identical(runnerGroupId, sdkOmittedValue) ? this.runnerGroupId : runnerGroupId as int,
+    maximumRunners: identical(maximumRunners, sdkOmittedValue) ? this.maximumRunners : maximumRunners as SdkOptional<int>,
+    enableStaticIp: identical(enableStaticIp, sdkOmittedValue) ? this.enableStaticIp : enableStaticIp as SdkOptional<bool>,
+    imageGen: identical(imageGen, sdkOmittedValue) ? this.imageGen : imageGen as SdkOptional<bool>,
+  );
 
-  factory ActionsCreateHostedRunnerForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCreateHostedRunnerForOrgRequestBody(
-        name: (json['name'] as String?)!,
-        image: (json['image'] != null
-            ? ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(
-                json['image'] as Map<String, dynamic>)
-            : null)!,
-        size: (json['size'] as String?)!,
-        runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
-        maximumRunners: json['maximum_runners'] != null
-            ? SdkPresent(((json['maximum_runners'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        enableStaticIp: json['enable_static_ip'] != null
-            ? SdkPresent((json['enable_static_ip'] as bool?)!)
-            : const SdkOmitted(),
-        imageGen: json['image_gen'] != null
-            ? SdkPresent((json['image_gen'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory ActionsCreateHostedRunnerForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateHostedRunnerForOrgRequestBody(
+    name: (json['name'] as String?)!,
+    image: (json['image'] != null ? ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(json['image'] as Map<String, dynamic>) : null)!,
+    size: (json['size'] as String?)!,
+    runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
+    maximumRunners: json['maximum_runners'] != null ? SdkPresent(((json['maximum_runners'] as num?)?.toInt())!) : const SdkOmitted(),
+    enableStaticIp: json['enable_static_ip'] != null ? SdkPresent((json['enable_static_ip'] as bool?)!) : const SdkOmitted(),
+    imageGen: json['image_gen'] != null ? SdkPresent((json['image_gen'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'image': image.toJson(),
-        'size': size,
-        'runner_group_id': runnerGroupId,
-        ...switch (maximumRunners) {
-          SdkPresent<int>(value: final value) => {
-              'maximum_runners': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enableStaticIp) {
-          SdkPresent<bool>(value: final value) => {
-              'enable_static_ip': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (imageGen) {
-          SdkPresent<bool>(value: final value) => {
-              'image_gen': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    'image': image.toJson(),
+    'size': size,
+    'runner_group_id': runnerGroupId,
+    ...switch (maximumRunners) {
+      SdkPresent<int>(value: final value) => {'maximum_runners': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enableStaticIp) {
+      SdkPresent<bool>(value: final value) => {'enable_static_ip': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (imageGen) {
+      SdkPresent<bool>(value: final value) => {'image_gen': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ActionsListCustomImagesForOrgResponse {
@@ -390,39 +223,24 @@ class ActionsListCustomImagesForOrgResponse {
   final int totalCount;
   final List<ActionsHostedRunnerCustomImage> images;
 
-  const ActionsListCustomImagesForOrgResponse(
-      {required this.totalCount, required this.images});
+  const ActionsListCustomImagesForOrgResponse({required this.totalCount, required this.images});
 
-  ActionsListCustomImagesForOrgResponse Function(
-      {int totalCount,
-      List<ActionsHostedRunnerCustomImage> images}) get copyWith => _copyWith;
+  ActionsListCustomImagesForOrgResponse Function({int totalCount, List<ActionsHostedRunnerCustomImage> images}) get copyWith => _copyWith;
 
-  ActionsListCustomImagesForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? images = sdkOmittedValue}) =>
-      ActionsListCustomImagesForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        images: identical(images, sdkOmittedValue)
-            ? this.images
-            : images as List<ActionsHostedRunnerCustomImage>,
-      );
+  ActionsListCustomImagesForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? images = sdkOmittedValue}) => ActionsListCustomImagesForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    images: identical(images, sdkOmittedValue) ? this.images : images as List<ActionsHostedRunnerCustomImage>,
+  );
 
-  factory ActionsListCustomImagesForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListCustomImagesForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        images: ((json['images'] as List?)
-            ?.map((e) => ActionsHostedRunnerCustomImage.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory ActionsListCustomImagesForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListCustomImagesForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    images: ((json['images'] as List?)?.map((e) => ActionsHostedRunnerCustomImage.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'images': images.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'images': images.map((item) => item.toJson()).toList(),
+  };
 }
 
 class ActionsListCustomImageVersionsForOrgResponse {
@@ -431,40 +249,24 @@ class ActionsListCustomImageVersionsForOrgResponse {
   final int totalCount;
   final List<ActionsHostedRunnerCustomImageVersion> imageVersions;
 
-  const ActionsListCustomImageVersionsForOrgResponse(
-      {required this.totalCount, required this.imageVersions});
+  const ActionsListCustomImageVersionsForOrgResponse({required this.totalCount, required this.imageVersions});
 
-  ActionsListCustomImageVersionsForOrgResponse Function(
-          {int totalCount,
-          List<ActionsHostedRunnerCustomImageVersion> imageVersions})
-      get copyWith => _copyWith;
+  ActionsListCustomImageVersionsForOrgResponse Function({int totalCount, List<ActionsHostedRunnerCustomImageVersion> imageVersions}) get copyWith => _copyWith;
 
-  ActionsListCustomImageVersionsForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? imageVersions = sdkOmittedValue}) =>
-      ActionsListCustomImageVersionsForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        imageVersions: identical(imageVersions, sdkOmittedValue)
-            ? this.imageVersions
-            : imageVersions as List<ActionsHostedRunnerCustomImageVersion>,
-      );
+  ActionsListCustomImageVersionsForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? imageVersions = sdkOmittedValue}) => ActionsListCustomImageVersionsForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    imageVersions: identical(imageVersions, sdkOmittedValue) ? this.imageVersions : imageVersions as List<ActionsHostedRunnerCustomImageVersion>,
+  );
 
-  factory ActionsListCustomImageVersionsForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListCustomImageVersionsForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        imageVersions: ((json['image_versions'] as List?)
-            ?.map((e) => ActionsHostedRunnerCustomImageVersion.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory ActionsListCustomImageVersionsForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListCustomImageVersionsForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    imageVersions: ((json['image_versions'] as List?)?.map((e) => ActionsHostedRunnerCustomImageVersion.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'image_versions': imageVersions.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'image_versions': imageVersions.map((item) => item.toJson()).toList(),
+  };
 }
 
 class ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse {
@@ -473,37 +275,22 @@ class ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse {
   final int totalCount;
   final List<ActionsHostedRunnerCuratedImage> images;
 
-  const ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
-      {required this.totalCount, required this.images});
+  const ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse({required this.totalCount, required this.images});
 
-  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse Function(
-      {int totalCount,
-      List<ActionsHostedRunnerCuratedImage> images}) get copyWith => _copyWith;
+  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse Function({int totalCount, List<ActionsHostedRunnerCuratedImage> images}) get copyWith => _copyWith;
 
-  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? images = sdkOmittedValue}) =>
-      ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        images: identical(images, sdkOmittedValue)
-            ? this.images
-            : images as List<ActionsHostedRunnerCuratedImage>,
-      );
+  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? images = sdkOmittedValue}) => ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    images: identical(images, sdkOmittedValue) ? this.images : images as List<ActionsHostedRunnerCuratedImage>,
+  );
 
-  factory ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        images: ((json['images'] as List?)
-            ?.map((e) => ActionsHostedRunnerCuratedImage.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    images: ((json['images'] as List?)?.map((e) => ActionsHostedRunnerCuratedImage.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'images': images.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'images': images.map((item) => item.toJson()).toList(),
+  };
 }

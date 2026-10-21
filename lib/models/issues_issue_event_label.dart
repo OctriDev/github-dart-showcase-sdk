@@ -8,40 +8,27 @@ part of 'issues_issue.dart';
 class IssueEventLabel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `name` wire field.
   final String? name;
-
   /// Required `string` value serialized in the `color` wire field.
   final String? color;
 
   const IssueEventLabel({required this.name, required this.color});
 
-  IssueEventLabel Function({String? name, String? color}) get copyWith =>
-      _copyWith;
+  IssueEventLabel Function({String? name, String? color}) get copyWith => _copyWith;
 
-  IssueEventLabel _copyWith(
-          {Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) =>
-      IssueEventLabel(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
-        color:
-            identical(color, sdkOmittedValue) ? this.color : color as String?,
-      );
+  IssueEventLabel _copyWith({Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) => IssueEventLabel(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String?,
+    color: identical(color, sdkOmittedValue) ? this.color : color as String?,
+  );
 
-  factory IssueEventLabel.fromJson(Map<String, dynamic> json) =>
-      IssueEventLabel(
-        name: json.containsKey('name')
-            ? json['name'] as String?
-            : throw ArgumentError.value(
-                null, 'name', 'Required property is missing'),
-        color: json.containsKey('color')
-            ? json['color'] as String?
-            : throw ArgumentError.value(
-                null, 'color', 'Required property is missing'),
-      );
+  factory IssueEventLabel.fromJson(Map<String, dynamic> json) => IssueEventLabel(
+    name: json.containsKey('name') ? json['name'] as String? : throw ArgumentError.value(null, 'name', 'Required property is missing'),
+    color: json.containsKey('color') ? json['color'] as String? : throw ArgumentError.value(null, 'color', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'color': color,
-      };
+    'name': name,
+    'color': color,
+  };
 }

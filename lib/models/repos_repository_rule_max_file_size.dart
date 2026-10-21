@@ -8,86 +8,54 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleMaxFileSizeParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
   final int maxFileSize;
 
   const RepositoryRuleMaxFileSizeParameters({required this.maxFileSize});
 
-  RepositoryRuleMaxFileSizeParameters Function({int maxFileSize})
-      get copyWith => _copyWith;
+  RepositoryRuleMaxFileSizeParameters Function({int maxFileSize}) get copyWith => _copyWith;
 
-  RepositoryRuleMaxFileSizeParameters _copyWith(
-          {Object? maxFileSize = sdkOmittedValue}) =>
-      RepositoryRuleMaxFileSizeParameters(
-        maxFileSize: identical(maxFileSize, sdkOmittedValue)
-            ? this.maxFileSize
-            : maxFileSize as int,
-      );
+  RepositoryRuleMaxFileSizeParameters _copyWith({Object? maxFileSize = sdkOmittedValue}) => RepositoryRuleMaxFileSizeParameters(
+    maxFileSize: identical(maxFileSize, sdkOmittedValue) ? this.maxFileSize : maxFileSize as int,
+  );
 
-  factory RepositoryRuleMaxFileSizeParameters.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleMaxFileSizeParameters(
-        maxFileSize: ((json['max_file_size'] as num?)?.toInt())!,
-      );
+  factory RepositoryRuleMaxFileSizeParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFileSizeParameters(
+    maxFileSize: ((json['max_file_size'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'max_file_size': maxFileSize,
-      };
+    'max_file_size': maxFileSize,
+  };
 }
 
 /// Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph.
 class RepositoryRuleMaxFileSize {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleMaxFileSizeType type_;
-
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleMaxFileSizeParameters> parameters;
 
-  const RepositoryRuleMaxFileSize(
-      {required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleMaxFileSize({required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleMaxFileSize Function(
-          {RepositoryRuleMaxFileSizeType type_,
-          SdkOptional<RepositoryRuleMaxFileSizeParameters> parameters})
-      get copyWith => _copyWith;
+  RepositoryRuleMaxFileSize Function({RepositoryRuleMaxFileSizeType type_, SdkOptional<RepositoryRuleMaxFileSizeParameters> parameters}) get copyWith => _copyWith;
 
-  RepositoryRuleMaxFileSize _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? parameters = sdkOmittedValue}) =>
-      RepositoryRuleMaxFileSize(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleMaxFileSizeType,
-        parameters: identical(parameters, sdkOmittedValue)
-            ? this.parameters
-            : parameters as SdkOptional<RepositoryRuleMaxFileSizeParameters>,
-      );
+  RepositoryRuleMaxFileSize _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleMaxFileSize(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleMaxFileSizeType,
+    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleMaxFileSizeParameters>,
+  );
 
-  factory RepositoryRuleMaxFileSize.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleMaxFileSize(
-        type_: (json['type'] != null
-            ? RepositoryRuleMaxFileSizeType.fromJson(json['type'] as String)
-            : null)!,
-        parameters: json['parameters'] != null
-            ? SdkPresent((json['parameters'] != null
-                ? RepositoryRuleMaxFileSizeParameters.fromJson(
-                    json['parameters'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRuleMaxFileSize.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFileSize(
+    type_: (json['type'] != null ? RepositoryRuleMaxFileSizeType.fromJson(json['type'] as String) : null)!,
+    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleMaxFileSizeParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (parameters) {
-          SdkPresent<RepositoryRuleMaxFileSizeParameters>(value: final value) =>
-            {
-              'parameters': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    ...switch (parameters) {
+      SdkPresent<RepositoryRuleMaxFileSizeParameters>(value: final value) => {'parameters': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

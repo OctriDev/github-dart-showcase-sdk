@@ -7,343 +7,255 @@ part of 'inline.dart';
 class ReposSetAppAccessRestrictionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
   final List<String> apps;
 
   const ReposSetAppAccessRestrictionsRequestBody({required this.apps});
 
-  ReposSetAppAccessRestrictionsRequestBody Function({List<String> apps})
-      get copyWith => _copyWith;
+  ReposSetAppAccessRestrictionsRequestBody Function({List<String> apps}) get copyWith => _copyWith;
 
-  ReposSetAppAccessRestrictionsRequestBody _copyWith(
-          {Object? apps = sdkOmittedValue}) =>
-      ReposSetAppAccessRestrictionsRequestBody(
-        apps:
-            identical(apps, sdkOmittedValue) ? this.apps : apps as List<String>,
-      );
+  ReposSetAppAccessRestrictionsRequestBody _copyWith({Object? apps = sdkOmittedValue}) => ReposSetAppAccessRestrictionsRequestBody(
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as List<String>,
+  );
 
-  factory ReposSetAppAccessRestrictionsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposSetAppAccessRestrictionsRequestBody(
-        apps: ((json['apps'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposSetAppAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposSetAppAccessRestrictionsRequestBody(
+    apps: ((json['apps'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'apps': apps,
-      };
+    'apps': apps,
+  };
 }
 
 class ReposRemoveAppAccessRestrictionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
   final List<String> apps;
 
   const ReposRemoveAppAccessRestrictionsRequestBody({required this.apps});
 
-  ReposRemoveAppAccessRestrictionsRequestBody Function({List<String> apps})
-      get copyWith => _copyWith;
+  ReposRemoveAppAccessRestrictionsRequestBody Function({List<String> apps}) get copyWith => _copyWith;
 
-  ReposRemoveAppAccessRestrictionsRequestBody _copyWith(
-          {Object? apps = sdkOmittedValue}) =>
-      ReposRemoveAppAccessRestrictionsRequestBody(
-        apps:
-            identical(apps, sdkOmittedValue) ? this.apps : apps as List<String>,
-      );
+  ReposRemoveAppAccessRestrictionsRequestBody _copyWith({Object? apps = sdkOmittedValue}) => ReposRemoveAppAccessRestrictionsRequestBody(
+    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as List<String>,
+  );
 
-  factory ReposRemoveAppAccessRestrictionsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposRemoveAppAccessRestrictionsRequestBody(
-        apps: ((json['apps'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposRemoveAppAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposRemoveAppAccessRestrictionsRequestBody(
+    apps: ((json['apps'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'apps': apps,
-      };
+    'apps': apps,
+  };
 }
 
 class ReposAddTeamAccessRestrictionsRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The slug values for teams
   final List<String> teams;
 
-  const ReposAddTeamAccessRestrictionsRequestBodyVariant0(
-      {required this.teams});
+  const ReposAddTeamAccessRestrictionsRequestBodyVariant0({required this.teams});
 
-  ReposAddTeamAccessRestrictionsRequestBodyVariant0 Function(
-      {List<String> teams}) get copyWith => _copyWith;
+  ReposAddTeamAccessRestrictionsRequestBodyVariant0 Function({List<String> teams}) get copyWith => _copyWith;
 
-  ReposAddTeamAccessRestrictionsRequestBodyVariant0 _copyWith(
-          {Object? teams = sdkOmittedValue}) =>
-      ReposAddTeamAccessRestrictionsRequestBodyVariant0(
-        teams: identical(teams, sdkOmittedValue)
-            ? this.teams
-            : teams as List<String>,
-      );
+  ReposAddTeamAccessRestrictionsRequestBodyVariant0 _copyWith({Object? teams = sdkOmittedValue}) => ReposAddTeamAccessRestrictionsRequestBodyVariant0(
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<String>,
+  );
 
-  factory ReposAddTeamAccessRestrictionsRequestBodyVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      ReposAddTeamAccessRestrictionsRequestBodyVariant0(
-        teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposAddTeamAccessRestrictionsRequestBodyVariant0.fromJson(Map<String, dynamic> json) => ReposAddTeamAccessRestrictionsRequestBodyVariant0(
+    teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'teams': teams,
-      };
+    'teams': teams,
+  };
 }
 
 class ReposSetTeamAccessRestrictionsRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The slug values for teams
   final List<String> teams;
 
-  const ReposSetTeamAccessRestrictionsRequestBodyVariant0(
-      {required this.teams});
+  const ReposSetTeamAccessRestrictionsRequestBodyVariant0({required this.teams});
 
-  ReposSetTeamAccessRestrictionsRequestBodyVariant0 Function(
-      {List<String> teams}) get copyWith => _copyWith;
+  ReposSetTeamAccessRestrictionsRequestBodyVariant0 Function({List<String> teams}) get copyWith => _copyWith;
 
-  ReposSetTeamAccessRestrictionsRequestBodyVariant0 _copyWith(
-          {Object? teams = sdkOmittedValue}) =>
-      ReposSetTeamAccessRestrictionsRequestBodyVariant0(
-        teams: identical(teams, sdkOmittedValue)
-            ? this.teams
-            : teams as List<String>,
-      );
+  ReposSetTeamAccessRestrictionsRequestBodyVariant0 _copyWith({Object? teams = sdkOmittedValue}) => ReposSetTeamAccessRestrictionsRequestBodyVariant0(
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<String>,
+  );
 
-  factory ReposSetTeamAccessRestrictionsRequestBodyVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      ReposSetTeamAccessRestrictionsRequestBodyVariant0(
-        teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposSetTeamAccessRestrictionsRequestBodyVariant0.fromJson(Map<String, dynamic> json) => ReposSetTeamAccessRestrictionsRequestBodyVariant0(
+    teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'teams': teams,
-      };
+    'teams': teams,
+  };
 }
 
 class ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The slug values for teams
   final List<String> teams;
 
-  const ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
-      {required this.teams});
+  const ReposRemoveTeamAccessRestrictionsRequestBodyVariant0({required this.teams});
 
-  ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 Function(
-      {List<String> teams}) get copyWith => _copyWith;
+  ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 Function({List<String> teams}) get copyWith => _copyWith;
 
-  ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 _copyWith(
-          {Object? teams = sdkOmittedValue}) =>
-      ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
-        teams: identical(teams, sdkOmittedValue)
-            ? this.teams
-            : teams as List<String>,
-      );
+  ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 _copyWith({Object? teams = sdkOmittedValue}) => ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
+    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<String>,
+  );
 
-  factory ReposRemoveTeamAccessRestrictionsRequestBodyVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
-        teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposRemoveTeamAccessRestrictionsRequestBodyVariant0.fromJson(Map<String, dynamic> json) => ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
+    teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'teams': teams,
-      };
+    'teams': teams,
+  };
 }
 
 class ReposAddUserAccessRestrictionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The username for users
   final List<String> users;
 
   const ReposAddUserAccessRestrictionsRequestBody({required this.users});
 
-  ReposAddUserAccessRestrictionsRequestBody Function({List<String> users})
-      get copyWith => _copyWith;
+  ReposAddUserAccessRestrictionsRequestBody Function({List<String> users}) get copyWith => _copyWith;
 
-  ReposAddUserAccessRestrictionsRequestBody _copyWith(
-          {Object? users = sdkOmittedValue}) =>
-      ReposAddUserAccessRestrictionsRequestBody(
-        users: identical(users, sdkOmittedValue)
-            ? this.users
-            : users as List<String>,
-      );
+  ReposAddUserAccessRestrictionsRequestBody _copyWith({Object? users = sdkOmittedValue}) => ReposAddUserAccessRestrictionsRequestBody(
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
+  );
 
-  factory ReposAddUserAccessRestrictionsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposAddUserAccessRestrictionsRequestBody(
-        users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposAddUserAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposAddUserAccessRestrictionsRequestBody(
+    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'users': users,
-      };
+    'users': users,
+  };
 }
 
 class ReposSetUserAccessRestrictionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The username for users
   final List<String> users;
 
   const ReposSetUserAccessRestrictionsRequestBody({required this.users});
 
-  ReposSetUserAccessRestrictionsRequestBody Function({List<String> users})
-      get copyWith => _copyWith;
+  ReposSetUserAccessRestrictionsRequestBody Function({List<String> users}) get copyWith => _copyWith;
 
-  ReposSetUserAccessRestrictionsRequestBody _copyWith(
-          {Object? users = sdkOmittedValue}) =>
-      ReposSetUserAccessRestrictionsRequestBody(
-        users: identical(users, sdkOmittedValue)
-            ? this.users
-            : users as List<String>,
-      );
+  ReposSetUserAccessRestrictionsRequestBody _copyWith({Object? users = sdkOmittedValue}) => ReposSetUserAccessRestrictionsRequestBody(
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
+  );
 
-  factory ReposSetUserAccessRestrictionsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposSetUserAccessRestrictionsRequestBody(
-        users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposSetUserAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposSetUserAccessRestrictionsRequestBody(
+    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'users': users,
-      };
+    'users': users,
+  };
 }
 
 class ReposRemoveUserAccessRestrictionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The username for users
   final List<String> users;
 
   const ReposRemoveUserAccessRestrictionsRequestBody({required this.users});
 
-  ReposRemoveUserAccessRestrictionsRequestBody Function({List<String> users})
-      get copyWith => _copyWith;
+  ReposRemoveUserAccessRestrictionsRequestBody Function({List<String> users}) get copyWith => _copyWith;
 
-  ReposRemoveUserAccessRestrictionsRequestBody _copyWith(
-          {Object? users = sdkOmittedValue}) =>
-      ReposRemoveUserAccessRestrictionsRequestBody(
-        users: identical(users, sdkOmittedValue)
-            ? this.users
-            : users as List<String>,
-      );
+  ReposRemoveUserAccessRestrictionsRequestBody _copyWith({Object? users = sdkOmittedValue}) => ReposRemoveUserAccessRestrictionsRequestBody(
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
+  );
 
-  factory ReposRemoveUserAccessRestrictionsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposRemoveUserAccessRestrictionsRequestBody(
-        users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory ReposRemoveUserAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposRemoveUserAccessRestrictionsRequestBody(
+    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'users': users,
-      };
+    'users': users,
+  };
 }
 
 class ReposRenameBranchRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The new name of the branch.
   final String newName;
 
   const ReposRenameBranchRequestBody({required this.newName});
 
-  ReposRenameBranchRequestBody Function({String newName}) get copyWith =>
-      _copyWith;
+  ReposRenameBranchRequestBody Function({String newName}) get copyWith => _copyWith;
 
-  ReposRenameBranchRequestBody _copyWith({Object? newName = sdkOmittedValue}) =>
-      ReposRenameBranchRequestBody(
-        newName: identical(newName, sdkOmittedValue)
-            ? this.newName
-            : newName as String,
-      );
+  ReposRenameBranchRequestBody _copyWith({Object? newName = sdkOmittedValue}) => ReposRenameBranchRequestBody(
+    newName: identical(newName, sdkOmittedValue) ? this.newName : newName as String,
+  );
 
-  factory ReposRenameBranchRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposRenameBranchRequestBody(
-        newName: (json['new_name'] as String?)!,
-      );
+  factory ReposRenameBranchRequestBody.fromJson(Map<String, dynamic> json) => ReposRenameBranchRequestBody(
+    newName: (json['new_name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'new_name': newName,
-      };
+    'new_name': newName,
+  };
 }
 
 class ReposAddCollaboratorRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The permission to grant the collaborator. **Only valid on organization-owned repositories.** We accept the following permissions to be set: `pull`, `triage`, `triage_plus`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any.
   final SdkOptional<String> permission;
 
   const ReposAddCollaboratorRequestBody({this.permission = const SdkOmitted()});
 
-  ReposAddCollaboratorRequestBody Function({SdkOptional<String> permission})
-      get copyWith => _copyWith;
+  ReposAddCollaboratorRequestBody Function({SdkOptional<String> permission}) get copyWith => _copyWith;
 
-  ReposAddCollaboratorRequestBody _copyWith(
-          {Object? permission = sdkOmittedValue}) =>
-      ReposAddCollaboratorRequestBody(
-        permission: identical(permission, sdkOmittedValue)
-            ? this.permission
-            : permission as SdkOptional<String>,
-      );
+  ReposAddCollaboratorRequestBody _copyWith({Object? permission = sdkOmittedValue}) => ReposAddCollaboratorRequestBody(
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<String>,
+  );
 
-  factory ReposAddCollaboratorRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposAddCollaboratorRequestBody(
-        permission: json['permission'] != null
-            ? SdkPresent((json['permission'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposAddCollaboratorRequestBody.fromJson(Map<String, dynamic> json) => ReposAddCollaboratorRequestBody(
+    permission: json['permission'] != null ? SdkPresent((json['permission'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (permission) {
-          SdkPresent<String>(value: final value) => {
-              'permission': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (permission) {
+      SdkPresent<String>(value: final value) => {'permission': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdateCommitCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The contents of the comment
   final String body;
 
   const ReposUpdateCommitCommentRequestBody({required this.body});
 
-  ReposUpdateCommitCommentRequestBody Function({String body}) get copyWith =>
-      _copyWith;
+  ReposUpdateCommitCommentRequestBody Function({String body}) get copyWith => _copyWith;
 
-  ReposUpdateCommitCommentRequestBody _copyWith(
-          {Object? body = sdkOmittedValue}) =>
-      ReposUpdateCommitCommentRequestBody(
-        body: identical(body, sdkOmittedValue) ? this.body : body as String,
-      );
+  ReposUpdateCommitCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => ReposUpdateCommitCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+  );
 
-  factory ReposUpdateCommitCommentRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateCommitCommentRequestBody(
-        body: (json['body'] as String?)!,
-      );
+  factory ReposUpdateCommitCommentRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateCommitCommentRequestBody(
+    body: (json['body'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'body': body,
-      };
+    'body': body,
+  };
 }

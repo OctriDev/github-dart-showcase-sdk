@@ -8,39 +8,27 @@ part of 'activity.dart';
 class DiscussionEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `action` wire field.
   final String action;
-
   /// A Discussion in a repository.
   final Discussion discussion;
 
   const DiscussionEvent({required this.action, required this.discussion});
 
-  DiscussionEvent Function({String action, Discussion discussion})
-      get copyWith => _copyWith;
+  DiscussionEvent Function({String action, Discussion discussion}) get copyWith => _copyWith;
 
-  DiscussionEvent _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? discussion = sdkOmittedValue}) =>
-      DiscussionEvent(
-        action:
-            identical(action, sdkOmittedValue) ? this.action : action as String,
-        discussion: identical(discussion, sdkOmittedValue)
-            ? this.discussion
-            : discussion as Discussion,
-      );
+  DiscussionEvent _copyWith({Object? action = sdkOmittedValue, Object? discussion = sdkOmittedValue}) => DiscussionEvent(
+    action: identical(action, sdkOmittedValue) ? this.action : action as String,
+    discussion: identical(discussion, sdkOmittedValue) ? this.discussion : discussion as Discussion,
+  );
 
-  factory DiscussionEvent.fromJson(Map<String, dynamic> json) =>
-      DiscussionEvent(
-        action: (json['action'] as String?)!,
-        discussion: (json['discussion'] != null
-            ? Discussion.fromJson(json['discussion'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory DiscussionEvent.fromJson(Map<String, dynamic> json) => DiscussionEvent(
+    action: (json['action'] as String?)!,
+    discussion: (json['discussion'] != null ? Discussion.fromJson(json['discussion'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action,
-        'discussion': discussion.toJson(),
-      };
+    'action': action,
+    'discussion': discussion.toJson(),
+  };
 }

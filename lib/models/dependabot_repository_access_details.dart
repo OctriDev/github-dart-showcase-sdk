@@ -8,73 +8,33 @@ part of 'dependabot.dart';
 class DependabotRepositoryAccessDetails {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The default repository access level for Dependabot updates.
-  final SdkOptional<DependabotRepositoryAccessDetailsDefaultLevel?>
-      defaultLevel;
-
+  final SdkOptional<DependabotRepositoryAccessDetailsDefaultLevel?> defaultLevel;
   /// Optional array value serialized in the `accessible_repositories` wire field.
   final SdkOptional<List<NullableSimpleRepository?>> accessibleRepositories;
 
-  const DependabotRepositoryAccessDetails(
-      {this.defaultLevel = const SdkOmitted(),
-      this.accessibleRepositories = const SdkOmitted()});
+  const DependabotRepositoryAccessDetails({this.defaultLevel = const SdkOmitted(), this.accessibleRepositories = const SdkOmitted()});
 
-  DependabotRepositoryAccessDetails Function(
-      {SdkOptional<DependabotRepositoryAccessDetailsDefaultLevel?> defaultLevel,
-      SdkOptional<List<NullableSimpleRepository?>>
-          accessibleRepositories}) get copyWith => _copyWith;
+  DependabotRepositoryAccessDetails Function({SdkOptional<DependabotRepositoryAccessDetailsDefaultLevel?> defaultLevel, SdkOptional<List<NullableSimpleRepository?>> accessibleRepositories}) get copyWith => _copyWith;
 
-  DependabotRepositoryAccessDetails _copyWith(
-          {Object? defaultLevel = sdkOmittedValue,
-          Object? accessibleRepositories = sdkOmittedValue}) =>
-      DependabotRepositoryAccessDetails(
-        defaultLevel: identical(defaultLevel, sdkOmittedValue)
-            ? this.defaultLevel
-            : defaultLevel
-                as SdkOptional<DependabotRepositoryAccessDetailsDefaultLevel?>,
-        accessibleRepositories:
-            identical(accessibleRepositories, sdkOmittedValue)
-                ? this.accessibleRepositories
-                : accessibleRepositories
-                    as SdkOptional<List<NullableSimpleRepository?>>,
-      );
+  DependabotRepositoryAccessDetails _copyWith({Object? defaultLevel = sdkOmittedValue, Object? accessibleRepositories = sdkOmittedValue}) => DependabotRepositoryAccessDetails(
+    defaultLevel: identical(defaultLevel, sdkOmittedValue) ? this.defaultLevel : defaultLevel as SdkOptional<DependabotRepositoryAccessDetailsDefaultLevel?>,
+    accessibleRepositories: identical(accessibleRepositories, sdkOmittedValue) ? this.accessibleRepositories : accessibleRepositories as SdkOptional<List<NullableSimpleRepository?>>,
+  );
 
-  factory DependabotRepositoryAccessDetails.fromJson(
-          Map<String, dynamic> json) =>
-      DependabotRepositoryAccessDetails(
-        defaultLevel: json.containsKey('default_level')
-            ? SdkPresent(json['default_level'] != null
-                ? DependabotRepositoryAccessDetailsDefaultLevel.fromJson(
-                    json['default_level'] as String)
-                : null)
-            : const SdkOmitted(),
-        accessibleRepositories: json['accessible_repositories'] != null
-            ? SdkPresent(((json['accessible_repositories'] as List?)
-                ?.map((e) => e == null
-                    ? null
-                    : NullableSimpleRepository.fromJson(
-                        e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory DependabotRepositoryAccessDetails.fromJson(Map<String, dynamic> json) => DependabotRepositoryAccessDetails(
+    defaultLevel: json.containsKey('default_level') ? SdkPresent(json['default_level'] != null ? DependabotRepositoryAccessDetailsDefaultLevel.fromJson(json['default_level'] as String) : null) : const SdkOmitted(),
+    accessibleRepositories: json['accessible_repositories'] != null ? SdkPresent(((json['accessible_repositories'] as List?)?.map((e) => e == null ? null : NullableSimpleRepository.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (defaultLevel) {
-          SdkPresent<DependabotRepositoryAccessDetailsDefaultLevel?>(
-            value: final value
-          ) =>
-            {
-              'default_level': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (accessibleRepositories) {
-          SdkPresent<List<NullableSimpleRepository?>>(value: final value) => {
-              'accessible_repositories':
-                  value.map((item) => item?.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (defaultLevel) {
+      SdkPresent<DependabotRepositoryAccessDetailsDefaultLevel?>(value: final value) => {'default_level': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (accessibleRepositories) {
+      SdkPresent<List<NullableSimpleRepository?>>(value: final value) => {'accessible_repositories': value.map((item) => item?.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

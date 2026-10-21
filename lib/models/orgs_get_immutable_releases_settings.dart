@@ -8,56 +8,30 @@ part of 'orgs.dart';
 class ImmutableReleasesOrganizationSettings {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The policy that controls how immutable releases are enforced in the organization.
-  final ImmutableReleasesOrganizationSettingsEnforcedRepositories
-      enforcedRepositories;
-
+  final ImmutableReleasesOrganizationSettingsEnforcedRepositories enforcedRepositories;
   /// The API URL to use to get or set the selected repositories for immutable releases enforcement, when `enforced_repositories` is set to `selected`.
   final SdkOptional<String> selectedRepositoriesUrl;
 
-  const ImmutableReleasesOrganizationSettings(
-      {required this.enforcedRepositories,
-      this.selectedRepositoriesUrl = const SdkOmitted()});
+  const ImmutableReleasesOrganizationSettings({required this.enforcedRepositories, this.selectedRepositoriesUrl = const SdkOmitted()});
 
-  ImmutableReleasesOrganizationSettings Function(
-      {ImmutableReleasesOrganizationSettingsEnforcedRepositories
-          enforcedRepositories,
-      SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
+  ImmutableReleasesOrganizationSettings Function({ImmutableReleasesOrganizationSettingsEnforcedRepositories enforcedRepositories, SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
 
-  ImmutableReleasesOrganizationSettings _copyWith(
-          {Object? enforcedRepositories = sdkOmittedValue,
-          Object? selectedRepositoriesUrl = sdkOmittedValue}) =>
-      ImmutableReleasesOrganizationSettings(
-        enforcedRepositories: identical(enforcedRepositories, sdkOmittedValue)
-            ? this.enforcedRepositories
-            : enforcedRepositories
-                as ImmutableReleasesOrganizationSettingsEnforcedRepositories,
-        selectedRepositoriesUrl:
-            identical(selectedRepositoriesUrl, sdkOmittedValue)
-                ? this.selectedRepositoriesUrl
-                : selectedRepositoriesUrl as SdkOptional<String>,
-      );
+  ImmutableReleasesOrganizationSettings _copyWith({Object? enforcedRepositories = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue}) => ImmutableReleasesOrganizationSettings(
+    enforcedRepositories: identical(enforcedRepositories, sdkOmittedValue) ? this.enforcedRepositories : enforcedRepositories as ImmutableReleasesOrganizationSettingsEnforcedRepositories,
+    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as SdkOptional<String>,
+  );
 
-  factory ImmutableReleasesOrganizationSettings.fromJson(
-          Map<String, dynamic> json) =>
-      ImmutableReleasesOrganizationSettings(
-        enforcedRepositories: (json['enforced_repositories'] != null
-            ? ImmutableReleasesOrganizationSettingsEnforcedRepositories
-                .fromJson(json['enforced_repositories'] as String)
-            : null)!,
-        selectedRepositoriesUrl: json['selected_repositories_url'] != null
-            ? SdkPresent((json['selected_repositories_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ImmutableReleasesOrganizationSettings.fromJson(Map<String, dynamic> json) => ImmutableReleasesOrganizationSettings(
+    enforcedRepositories: (json['enforced_repositories'] != null ? ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(json['enforced_repositories'] as String) : null)!,
+    selectedRepositoriesUrl: json['selected_repositories_url'] != null ? SdkPresent((json['selected_repositories_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'enforced_repositories': enforcedRepositories.toJson(),
-        ...switch (selectedRepositoriesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'selected_repositories_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'enforced_repositories': enforcedRepositories.toJson(),
+    ...switch (selectedRepositoriesUrl) {
+      SdkPresent<String>(value: final value) => {'selected_repositories_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

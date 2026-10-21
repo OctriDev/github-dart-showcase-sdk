@@ -4,18 +4,14 @@
 part of 'webhook_pull_request_dequeued.dart';
 
 // webhook_pull_request_dequeued domain models
-final class WebhookPullRequestDequeuedPullRequestHeadRepoPushedAtInt
-    extends WebhookPullRequestDequeuedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestDequeuedPullRequestHeadRepoPushedAtInt extends WebhookPullRequestDequeuedPullRequestHeadRepoPushedAt {
   final int value;
   const WebhookPullRequestDequeuedPullRequestHeadRepoPushedAtInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class WebhookPullRequestDequeuedPullRequestHeadRepoPushedAtString
-    extends WebhookPullRequestDequeuedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestDequeuedPullRequestHeadRepoPushedAtString extends WebhookPullRequestDequeuedPullRequestHeadRepoPushedAt {
   final String value;
   const WebhookPullRequestDequeuedPullRequestHeadRepoPushedAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }

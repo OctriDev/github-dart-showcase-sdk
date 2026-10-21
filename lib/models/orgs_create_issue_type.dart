@@ -8,79 +8,43 @@ part of 'orgs.dart';
 class OrganizationCreateIssueType {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Name of the issue type.
   final String name;
-
   /// Whether or not the issue type is enabled at the organization level.
   final bool isEnabled;
-
   /// Description of the issue type.
   final SdkOptional<String?> description;
-
   /// Color for the issue type.
   final SdkOptional<OrganizationCreateIssueTypeColor?> color;
 
-  const OrganizationCreateIssueType(
-      {required this.name,
-      required this.isEnabled,
-      this.description = const SdkOmitted(),
-      this.color = const SdkOmitted()});
+  const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description = const SdkOmitted(), this.color = const SdkOmitted()});
 
-  OrganizationCreateIssueType Function(
-          {String name,
-          bool isEnabled,
-          SdkOptional<String?> description,
-          SdkOptional<OrganizationCreateIssueTypeColor?> color})
-      get copyWith => _copyWith;
+  OrganizationCreateIssueType Function({String name, bool isEnabled, SdkOptional<String?> description, SdkOptional<OrganizationCreateIssueTypeColor?> color}) get copyWith => _copyWith;
 
-  OrganizationCreateIssueType _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? isEnabled = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? color = sdkOmittedValue}) =>
-      OrganizationCreateIssueType(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        isEnabled: identical(isEnabled, sdkOmittedValue)
-            ? this.isEnabled
-            : isEnabled as bool,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<OrganizationCreateIssueTypeColor?>,
-      );
+  OrganizationCreateIssueType _copyWith({Object? name = sdkOmittedValue, Object? isEnabled = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue}) => OrganizationCreateIssueType(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    isEnabled: identical(isEnabled, sdkOmittedValue) ? this.isEnabled : isEnabled as bool,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<OrganizationCreateIssueTypeColor?>,
+  );
 
-  factory OrganizationCreateIssueType.fromJson(Map<String, dynamic> json) =>
-      OrganizationCreateIssueType(
-        name: (json['name'] as String?)!,
-        isEnabled: (json['is_enabled'] as bool?)!,
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        color: json.containsKey('color')
-            ? SdkPresent(json['color'] != null
-                ? OrganizationCreateIssueTypeColor.fromJson(
-                    json['color'] as String)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory OrganizationCreateIssueType.fromJson(Map<String, dynamic> json) => OrganizationCreateIssueType(
+    name: (json['name'] as String?)!,
+    isEnabled: (json['is_enabled'] as bool?)!,
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    color: json.containsKey('color') ? SdkPresent(json['color'] != null ? OrganizationCreateIssueTypeColor.fromJson(json['color'] as String) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'is_enabled': isEnabled,
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (color) {
-          SdkPresent<OrganizationCreateIssueTypeColor?>(value: final value) => {
-              'color': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    'is_enabled': isEnabled,
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (color) {
+      SdkPresent<OrganizationCreateIssueTypeColor?>(value: final value) => {'color': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

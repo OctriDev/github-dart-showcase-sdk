@@ -8,176 +8,92 @@ part of 'dependabot.dart';
 class DependabotAlertDismissalRequestSimpleRequester {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the user.
   final SdkOptional<int> id;
-
   /// The login name of the user.
   final SdkOptional<String> login;
 
-  const DependabotAlertDismissalRequestSimpleRequester(
-      {this.id = const SdkOmitted(), this.login = const SdkOmitted()});
+  const DependabotAlertDismissalRequestSimpleRequester({this.id = const SdkOmitted(), this.login = const SdkOmitted()});
 
-  DependabotAlertDismissalRequestSimpleRequester Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> login}) get copyWith => _copyWith;
+  DependabotAlertDismissalRequestSimpleRequester Function({SdkOptional<int> id, SdkOptional<String> login}) get copyWith => _copyWith;
 
-  DependabotAlertDismissalRequestSimpleRequester _copyWith(
-          {Object? id = sdkOmittedValue, Object? login = sdkOmittedValue}) =>
-      DependabotAlertDismissalRequestSimpleRequester(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        login: identical(login, sdkOmittedValue)
-            ? this.login
-            : login as SdkOptional<String>,
-      );
+  DependabotAlertDismissalRequestSimpleRequester _copyWith({Object? id = sdkOmittedValue, Object? login = sdkOmittedValue}) => DependabotAlertDismissalRequestSimpleRequester(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
+  );
 
-  factory DependabotAlertDismissalRequestSimpleRequester.fromJson(
-          Map<String, dynamic> json) =>
-      DependabotAlertDismissalRequestSimpleRequester(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        login: json['login'] != null
-            ? SdkPresent((json['login'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory DependabotAlertDismissalRequestSimpleRequester.fromJson(Map<String, dynamic> json) => DependabotAlertDismissalRequestSimpleRequester(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (login) {
-          SdkPresent<String>(value: final value) => {
-              'login': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (login) {
+      SdkPresent<String>(value: final value) => {'login': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Information about an active dismissal request for this Dependabot alert.
 class DependabotAlertDismissalRequestSimple {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the dismissal request.
   final SdkOptional<int> id;
-
   /// The current status of the dismissal request.
   final SdkOptional<DependabotAlertDismissalRequestSimpleStatus> status;
-
   /// The user who requested the dismissal.
   final SdkOptional<DependabotAlertDismissalRequestSimpleRequester> requester;
-
   /// The date and time when the dismissal request was created.
   final SdkOptional<String> createdAt;
-
   /// The API URL to get more information about this dismissal request.
   final SdkOptional<String> url;
 
-  const DependabotAlertDismissalRequestSimple(
-      {this.id = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      this.requester = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.url = const SdkOmitted()});
+  const DependabotAlertDismissalRequestSimple({this.id = const SdkOmitted(), this.status = const SdkOmitted(), this.requester = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.url = const SdkOmitted()});
 
-  DependabotAlertDismissalRequestSimple Function(
-      {SdkOptional<int> id,
-      SdkOptional<DependabotAlertDismissalRequestSimpleStatus> status,
-      SdkOptional<DependabotAlertDismissalRequestSimpleRequester> requester,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> url}) get copyWith => _copyWith;
+  DependabotAlertDismissalRequestSimple Function({SdkOptional<int> id, SdkOptional<DependabotAlertDismissalRequestSimpleStatus> status, SdkOptional<DependabotAlertDismissalRequestSimpleRequester> requester, SdkOptional<String> createdAt, SdkOptional<String> url}) get copyWith => _copyWith;
 
-  DependabotAlertDismissalRequestSimple _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? requester = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      DependabotAlertDismissalRequestSimple(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status
-                as SdkOptional<DependabotAlertDismissalRequestSimpleStatus>,
-        requester: identical(requester, sdkOmittedValue)
-            ? this.requester
-            : requester
-                as SdkOptional<DependabotAlertDismissalRequestSimpleRequester>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-      );
+  DependabotAlertDismissalRequestSimple _copyWith({Object? id = sdkOmittedValue, Object? status = sdkOmittedValue, Object? requester = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => DependabotAlertDismissalRequestSimple(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<DependabotAlertDismissalRequestSimpleStatus>,
+    requester: identical(requester, sdkOmittedValue) ? this.requester : requester as SdkOptional<DependabotAlertDismissalRequestSimpleRequester>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+  );
 
-  factory DependabotAlertDismissalRequestSimple.fromJson(
-          Map<String, dynamic> json) =>
-      DependabotAlertDismissalRequestSimple(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] != null
-                ? DependabotAlertDismissalRequestSimpleStatus.fromJson(
-                    json['status'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        requester: json['requester'] != null
-            ? SdkPresent((json['requester'] != null
-                ? DependabotAlertDismissalRequestSimpleRequester.fromJson(
-                    json['requester'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory DependabotAlertDismissalRequestSimple.fromJson(Map<String, dynamic> json) => DependabotAlertDismissalRequestSimple(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] != null ? DependabotAlertDismissalRequestSimpleStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
+    requester: json['requester'] != null ? SdkPresent((json['requester'] != null ? DependabotAlertDismissalRequestSimpleRequester.fromJson(json['requester'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<DependabotAlertDismissalRequestSimpleStatus>(
-            value: final value
-          ) =>
-            {
-              'status': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requester) {
-          SdkPresent<DependabotAlertDismissalRequestSimpleRequester>(
-            value: final value
-          ) =>
-            {
-              'requester': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<DependabotAlertDismissalRequestSimpleStatus>(value: final value) => {'status': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requester) {
+      SdkPresent<DependabotAlertDismissalRequestSimpleRequester>(value: final value) => {'requester': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

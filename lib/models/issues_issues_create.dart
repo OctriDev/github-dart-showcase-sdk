@@ -12,79 +12,42 @@ class IssuesCreateRequestLabelsItemVariant1 {
   final SdkOptional<String?> description;
   final SdkOptional<String?> color;
 
-  const IssuesCreateRequestLabelsItemVariant1(
-      {this.id = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.color = const SdkOmitted()});
+  const IssuesCreateRequestLabelsItemVariant1({this.id = const SdkOmitted(), this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.color = const SdkOmitted()});
 
-  IssuesCreateRequestLabelsItemVariant1 Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> name,
-      SdkOptional<String?> description,
-      SdkOptional<String?> color}) get copyWith => _copyWith;
+  IssuesCreateRequestLabelsItemVariant1 Function({SdkOptional<int> id, SdkOptional<String> name, SdkOptional<String?> description, SdkOptional<String?> color}) get copyWith => _copyWith;
 
-  IssuesCreateRequestLabelsItemVariant1 _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? color = sdkOmittedValue}) =>
-      IssuesCreateRequestLabelsItemVariant1(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<String?>,
-      );
+  IssuesCreateRequestLabelsItemVariant1 _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue}) => IssuesCreateRequestLabelsItemVariant1(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String?>,
+  );
 
-  factory IssuesCreateRequestLabelsItemVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      IssuesCreateRequestLabelsItemVariant1(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        color: json.containsKey('color')
-            ? SdkPresent(json['color'] as String?)
-            : const SdkOmitted(),
-      );
+  factory IssuesCreateRequestLabelsItemVariant1.fromJson(Map<String, dynamic> json) => IssuesCreateRequestLabelsItemVariant1(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    color: json.containsKey('color') ? SdkPresent(json['color'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (color) {
-          SdkPresent<String?>(value: final value) => {
-              'color': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (color) {
+      SdkPresent<String?>(value: final value) => {'color': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class IssuesCreateRequestLabelsItem {
@@ -92,33 +55,21 @@ sealed class IssuesCreateRequestLabelsItem {
   static const String constructionSurface = 'named';
   const IssuesCreateRequestLabelsItem();
   factory IssuesCreateRequestLabelsItem.fromJson(Object? json) {
-    if (json is String) {
-      return IssuesCreateRequestLabelsItemString(json);
-    }
-    try {
-      return IssuesCreateRequestLabelsItemIssuesCreateRequestLabelsItemVariant1(
-          IssuesCreateRequestLabelsItemVariant1.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for IssuesCreateRequestLabelsItem");
+    if (json is String) { return IssuesCreateRequestLabelsItemString(json); }
+    try { return IssuesCreateRequestLabelsItemIssuesCreateRequestLabelsItemVariant1(IssuesCreateRequestLabelsItemVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for IssuesCreateRequestLabelsItem");
   }
   Object? toJson();
 }
 
-final class IssuesCreateRequestLabelsItemString
-    extends IssuesCreateRequestLabelsItem {
+final class IssuesCreateRequestLabelsItemString extends IssuesCreateRequestLabelsItem {
   final String value;
   const IssuesCreateRequestLabelsItemString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class IssuesCreateRequestLabelsItemIssuesCreateRequestLabelsItemVariant1
-    extends IssuesCreateRequestLabelsItem {
+final class IssuesCreateRequestLabelsItemIssuesCreateRequestLabelsItemVariant1 extends IssuesCreateRequestLabelsItem {
   final IssuesCreateRequestLabelsItemVariant1 value;
-  const IssuesCreateRequestLabelsItemIssuesCreateRequestLabelsItemVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const IssuesCreateRequestLabelsItemIssuesCreateRequestLabelsItemVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }

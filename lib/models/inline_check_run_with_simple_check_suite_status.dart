@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models
 /// The phase of the lifecycle that the check is currently in.
 final class CheckRunWithSimpleCheckSuiteStatus {
+
   final String value;
 
   const CheckRunWithSimpleCheckSuiteStatus._(this.value);
 
-  factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String value) =>
-      CheckRunWithSimpleCheckSuiteStatus._(value);
+  factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String value) => CheckRunWithSimpleCheckSuiteStatus._(value);
 
   static const queued = CheckRunWithSimpleCheckSuiteStatus._('queued');
   static const inProgress = CheckRunWithSimpleCheckSuiteStatus._('in_progress');
@@ -20,25 +20,22 @@ final class CheckRunWithSimpleCheckSuiteStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CheckRunWithSimpleCheckSuiteStatus && other.value == value;
+  @override bool operator ==(Object other) => other is CheckRunWithSimpleCheckSuiteStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `conclusion` wire field.
 final class CheckSuiteConclusion {
+
   final String value;
 
   const CheckSuiteConclusion._(this.value);
 
-  factory CheckSuiteConclusion.fromJson(String value) =>
-      CheckSuiteConclusion._(value);
+  factory CheckSuiteConclusion.fromJson(String value) => CheckSuiteConclusion._(value);
 
   static const success = CheckSuiteConclusion._('success');
   static const failure = CheckSuiteConclusion._('failure');
@@ -52,19 +49,17 @@ final class CheckSuiteConclusion {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CheckSuiteConclusion && other.value == value;
+  @override bool operator ==(Object other) => other is CheckSuiteConclusion && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
 final class CheckSuiteStatus {
+
   final String value;
 
   const CheckSuiteStatus._(this.value);
@@ -80,77 +75,67 @@ final class CheckSuiteStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CheckSuiteStatus && other.value == value;
+  @override bool operator ==(Object other) => other is CheckSuiteStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// State of the code quality finding.
 final class CodeQualityFindingState {
+
   final String value;
 
   const CodeQualityFindingState._(this.value);
 
-  factory CodeQualityFindingState.fromJson(String value) =>
-      CodeQualityFindingState._(value);
+  factory CodeQualityFindingState.fromJson(String value) => CodeQualityFindingState._(value);
 
   static const open = CodeQualityFindingState._('open');
   static const dismissed = CodeQualityFindingState._('dismissed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualityFindingState && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualityFindingState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The category of the rule used to detect the finding.
 final class CodeQualityFindingRuleCategory {
+
   final String value;
 
   const CodeQualityFindingRuleCategory._(this.value);
 
-  factory CodeQualityFindingRuleCategory.fromJson(String value) =>
-      CodeQualityFindingRuleCategory._(value);
+  factory CodeQualityFindingRuleCategory.fromJson(String value) => CodeQualityFindingRuleCategory._(value);
 
   static const none = CodeQualityFindingRuleCategory._('none');
-  static const maintainability =
-      CodeQualityFindingRuleCategory._('maintainability');
+  static const maintainability = CodeQualityFindingRuleCategory._('maintainability');
   static const reliability = CodeQualityFindingRuleCategory._('reliability');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualityFindingRuleCategory && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualityFindingRuleCategory && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The severity of the rule used to detect the finding.
 final class CodeQualityFindingRuleSeverity {
+
   final String value;
 
   const CodeQualityFindingRuleSeverity._(this.value);
 
-  factory CodeQualityFindingRuleSeverity.fromJson(String value) =>
-      CodeQualityFindingRuleSeverity._(value);
+  factory CodeQualityFindingRuleSeverity.fromJson(String value) => CodeQualityFindingRuleSeverity._(value);
 
   static const error = CodeQualityFindingRuleSeverity._('error');
   static const warning = CodeQualityFindingRuleSeverity._('warning');
@@ -159,168 +144,146 @@ final class CodeQualityFindingRuleSeverity {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualityFindingRuleSeverity && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualityFindingRuleSeverity && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The AI findings configuration for the repository.
 final class CodeQualitySetupAiFindingsOption {
+
   final String value;
 
   const CodeQualitySetupAiFindingsOption._(this.value);
 
-  factory CodeQualitySetupAiFindingsOption.fromJson(String value) =>
-      CodeQualitySetupAiFindingsOption._(value);
+  factory CodeQualitySetupAiFindingsOption.fromJson(String value) => CodeQualitySetupAiFindingsOption._(value);
 
   static const disabled = CodeQualitySetupAiFindingsOption._('disabled');
   static const onPush = CodeQualitySetupAiFindingsOption._('on_push');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupAiFindingsOption && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualitySetupAiFindingsOption && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `languages[]` wire field.
 final class CodeQualitySetupLanguagesItem {
+
   final String value;
 
   const CodeQualitySetupLanguagesItem._(this.value);
 
-  factory CodeQualitySetupLanguagesItem.fromJson(String value) =>
-      CodeQualitySetupLanguagesItem._(value);
+  factory CodeQualitySetupLanguagesItem.fromJson(String value) => CodeQualitySetupLanguagesItem._(value);
 
   static const csharp = CodeQualitySetupLanguagesItem._('csharp');
   static const go = CodeQualitySetupLanguagesItem._('go');
   static const javaKotlin = CodeQualitySetupLanguagesItem._('java-kotlin');
-  static const javascriptTypescript =
-      CodeQualitySetupLanguagesItem._('javascript-typescript');
+  static const javascriptTypescript = CodeQualitySetupLanguagesItem._('javascript-typescript');
   static const python = CodeQualitySetupLanguagesItem._('python');
   static const ruby = CodeQualitySetupLanguagesItem._('ruby');
   static const rust = CodeQualitySetupLanguagesItem._('rust');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupLanguagesItem && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualitySetupLanguagesItem && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Runner type to be used.
 final class CodeQualitySetupRunnerType {
+
   final String value;
 
   const CodeQualitySetupRunnerType._(this.value);
 
-  factory CodeQualitySetupRunnerType.fromJson(String value) =>
-      CodeQualitySetupRunnerType._(value);
+  factory CodeQualitySetupRunnerType.fromJson(String value) => CodeQualitySetupRunnerType._(value);
 
   static const standard = CodeQualitySetupRunnerType._('standard');
   static const labeled = CodeQualitySetupRunnerType._('labeled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupRunnerType && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualitySetupRunnerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The frequency of the periodic analysis.
 final class CodeQualitySetupSchedule {
+
   final String value;
 
   const CodeQualitySetupSchedule._(this.value);
 
-  factory CodeQualitySetupSchedule.fromJson(String value) =>
-      CodeQualitySetupSchedule._(value);
+  factory CodeQualitySetupSchedule.fromJson(String value) => CodeQualitySetupSchedule._(value);
 
   static const weekly = CodeQualitySetupSchedule._('weekly');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupSchedule && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualitySetupSchedule && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Code quality setup has been configured or not.
 final class CodeQualitySetupState {
+
   final String value;
 
   const CodeQualitySetupState._(this.value);
 
-  factory CodeQualitySetupState.fromJson(String value) =>
-      CodeQualitySetupState._(value);
+  factory CodeQualitySetupState.fromJson(String value) => CodeQualitySetupState._(value);
 
   static const configured = CodeQualitySetupState._('configured');
   static const notConfigured = CodeQualitySetupState._('not-configured');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupState && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualitySetupState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Whether AI findings run for Code Quality on this repository.
 final class CodeQualitySetupUpdateAiFindingsOption {
+
   final String value;
 
   const CodeQualitySetupUpdateAiFindingsOption._(this.value);
 
-  factory CodeQualitySetupUpdateAiFindingsOption.fromJson(String value) =>
-      CodeQualitySetupUpdateAiFindingsOption._(value);
+  factory CodeQualitySetupUpdateAiFindingsOption.fromJson(String value) => CodeQualitySetupUpdateAiFindingsOption._(value);
 
   static const disabled = CodeQualitySetupUpdateAiFindingsOption._('disabled');
   static const onPush = CodeQualitySetupUpdateAiFindingsOption._('on_push');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupUpdateAiFindingsOption && other.value == value;
+  @override bool operator ==(Object other) => other is CodeQualitySetupUpdateAiFindingsOption && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

@@ -8,93 +8,49 @@ part of 'issues_timeline.dart';
 class TimelineCommitCommentedEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `event` wire field.
   final SdkOptional<String> event;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional `string` value serialized in the `commit_id` wire field.
   final SdkOptional<String> commitId;
-
   /// Optional array value serialized in the `comments` wire field.
   final SdkOptional<List<CommitComment>> comments;
 
-  const TimelineCommitCommentedEvent(
-      {this.event = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.commitId = const SdkOmitted(),
-      this.comments = const SdkOmitted()});
+  const TimelineCommitCommentedEvent({this.event = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.commitId = const SdkOmitted(), this.comments = const SdkOmitted()});
 
-  TimelineCommitCommentedEvent Function(
-      {SdkOptional<String> event,
-      SdkOptional<String> nodeId,
-      SdkOptional<String> commitId,
-      SdkOptional<List<CommitComment>> comments}) get copyWith => _copyWith;
+  TimelineCommitCommentedEvent Function({SdkOptional<String> event, SdkOptional<String> nodeId, SdkOptional<String> commitId, SdkOptional<List<CommitComment>> comments}) get copyWith => _copyWith;
 
-  TimelineCommitCommentedEvent _copyWith(
-          {Object? event = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? commitId = sdkOmittedValue,
-          Object? comments = sdkOmittedValue}) =>
-      TimelineCommitCommentedEvent(
-        event: identical(event, sdkOmittedValue)
-            ? this.event
-            : event as SdkOptional<String>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        commitId: identical(commitId, sdkOmittedValue)
-            ? this.commitId
-            : commitId as SdkOptional<String>,
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments as SdkOptional<List<CommitComment>>,
-      );
+  TimelineCommitCommentedEvent _copyWith({Object? event = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? comments = sdkOmittedValue}) => TimelineCommitCommentedEvent(
+    event: identical(event, sdkOmittedValue) ? this.event : event as SdkOptional<String>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as SdkOptional<String>,
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as SdkOptional<List<CommitComment>>,
+  );
 
-  factory TimelineCommitCommentedEvent.fromJson(Map<String, dynamic> json) =>
-      TimelineCommitCommentedEvent(
-        event: json['event'] != null
-            ? SdkPresent((json['event'] as String?)!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        commitId: json['commit_id'] != null
-            ? SdkPresent((json['commit_id'] as String?)!)
-            : const SdkOmitted(),
-        comments: json['comments'] != null
-            ? SdkPresent(((json['comments'] as List?)
-                ?.map((e) => CommitComment.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory TimelineCommitCommentedEvent.fromJson(Map<String, dynamic> json) => TimelineCommitCommentedEvent(
+    event: json['event'] != null ? SdkPresent((json['event'] as String?)!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    commitId: json['commit_id'] != null ? SdkPresent((json['commit_id'] as String?)!) : const SdkOmitted(),
+    comments: json['comments'] != null ? SdkPresent(((json['comments'] as List?)?.map((e) => CommitComment.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (event) {
-          SdkPresent<String>(value: final value) => {
-              'event': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (commitId) {
-          SdkPresent<String>(value: final value) => {
-              'commit_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (comments) {
-          SdkPresent<List<CommitComment>>(value: final value) => {
-              'comments': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (event) {
+      SdkPresent<String>(value: final value) => {'event': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (commitId) {
+      SdkPresent<String>(value: final value) => {'commit_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (comments) {
+      SdkPresent<List<CommitComment>>(value: final value) => {'comments': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

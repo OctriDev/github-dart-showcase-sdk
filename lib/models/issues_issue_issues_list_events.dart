@@ -10,270 +10,59 @@ sealed class IssueEventForIssue {
   const IssueEventForIssue();
   factory IssueEventForIssue.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = LabeledIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueLabeledIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = UnlabeledIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueUnlabeledIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = AssignedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueAssignedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = UnassignedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueUnassignedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = MilestonedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueMilestonedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = DemilestonedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueDemilestonedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RenamedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueRenamedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ReviewRequestedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueReviewRequestedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ReviewRequestRemovedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueReviewRequestRemovedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ReviewDismissedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueReviewDismissedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = LockedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueLockedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = AddedToProjectIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueAddedToProjectIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = MovedColumnInProjectIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueMovedColumnInProjectIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RemovedFromProjectIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueRemovedFromProjectIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ConvertedNoteToIssueIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueConvertedNoteToIssueIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = IssueTypeAddedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueIssueTypeAddedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = IssueTypeRemovedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueIssueTypeRemovedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = IssueTypeChangedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueIssueTypeChangedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = SubIssueAddedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueSubIssueAddedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = SubIssueRemovedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueSubIssueRemovedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ParentIssueAddedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueParentIssueAddedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ParentIssueRemovedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueParentIssueRemovedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BlockedByAddedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueBlockedByAddedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BlockedByRemovedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueBlockedByRemovedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BlockingAddedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueBlockingAddedIssueEvent(value);
-        }
-      } catch (_) {}
-      try {
-        final value = BlockingRemovedIssueEvent.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return IssueEventForIssueBlockingRemovedIssueEvent(value);
-        }
-      } catch (_) {}
+      try { final value = LabeledIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueLabeledIssueEvent(value); } } catch (_) {}
+      try { final value = UnlabeledIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueUnlabeledIssueEvent(value); } } catch (_) {}
+      try { final value = AssignedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueAssignedIssueEvent(value); } } catch (_) {}
+      try { final value = UnassignedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueUnassignedIssueEvent(value); } } catch (_) {}
+      try { final value = MilestonedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueMilestonedIssueEvent(value); } } catch (_) {}
+      try { final value = DemilestonedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueDemilestonedIssueEvent(value); } } catch (_) {}
+      try { final value = RenamedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueRenamedIssueEvent(value); } } catch (_) {}
+      try { final value = ReviewRequestedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueReviewRequestedIssueEvent(value); } } catch (_) {}
+      try { final value = ReviewRequestRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueReviewRequestRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = ReviewDismissedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueReviewDismissedIssueEvent(value); } } catch (_) {}
+      try { final value = LockedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueLockedIssueEvent(value); } } catch (_) {}
+      try { final value = AddedToProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueAddedToProjectIssueEvent(value); } } catch (_) {}
+      try { final value = MovedColumnInProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueMovedColumnInProjectIssueEvent(value); } } catch (_) {}
+      try { final value = RemovedFromProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueRemovedFromProjectIssueEvent(value); } } catch (_) {}
+      try { final value = ConvertedNoteToIssueIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueConvertedNoteToIssueIssueEvent(value); } } catch (_) {}
+      try { final value = IssueTypeAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueIssueTypeAddedIssueEvent(value); } } catch (_) {}
+      try { final value = IssueTypeRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueIssueTypeRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = IssueTypeChangedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueIssueTypeChangedIssueEvent(value); } } catch (_) {}
+      try { final value = SubIssueAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueSubIssueAddedIssueEvent(value); } } catch (_) {}
+      try { final value = SubIssueRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueSubIssueRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = ParentIssueAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueParentIssueAddedIssueEvent(value); } } catch (_) {}
+      try { final value = ParentIssueRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueParentIssueRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockedByAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockedByAddedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockedByRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockedByRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockingAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockingAddedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockingRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockingRemovedIssueEvent(value); } } catch (_) {}
     }
-    try {
-      return IssueEventForIssueLabeledIssueEvent(
-          LabeledIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueUnlabeledIssueEvent(
-          UnlabeledIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueAssignedIssueEvent(
-          AssignedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueUnassignedIssueEvent(
-          UnassignedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueMilestonedIssueEvent(
-          MilestonedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueDemilestonedIssueEvent(
-          DemilestonedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueRenamedIssueEvent(
-          RenamedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueReviewRequestedIssueEvent(
-          ReviewRequestedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueReviewRequestRemovedIssueEvent(
-          ReviewRequestRemovedIssueEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueReviewDismissedIssueEvent(
-          ReviewDismissedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueLockedIssueEvent(
-          LockedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueAddedToProjectIssueEvent(
-          AddedToProjectIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueMovedColumnInProjectIssueEvent(
-          MovedColumnInProjectIssueEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueRemovedFromProjectIssueEvent(
-          RemovedFromProjectIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueConvertedNoteToIssueIssueEvent(
-          ConvertedNoteToIssueIssueEvent.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueIssueTypeAddedIssueEvent(
-          IssueTypeAddedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueIssueTypeRemovedIssueEvent(
-          IssueTypeRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueIssueTypeChangedIssueEvent(
-          IssueTypeChangedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueSubIssueAddedIssueEvent(
-          SubIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueSubIssueRemovedIssueEvent(
-          SubIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueParentIssueAddedIssueEvent(
-          ParentIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueParentIssueRemovedIssueEvent(
-          ParentIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueBlockedByAddedIssueEvent(
-          BlockedByAddedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueBlockedByRemovedIssueEvent(
-          BlockedByRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueBlockingAddedIssueEvent(
-          BlockingAddedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return IssueEventForIssueBlockingRemovedIssueEvent(
-          BlockingRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
+    try { return IssueEventForIssueLabeledIssueEvent(LabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueUnlabeledIssueEvent(UnlabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueAssignedIssueEvent(AssignedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueUnassignedIssueEvent(UnassignedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueMilestonedIssueEvent(MilestonedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueDemilestonedIssueEvent(DemilestonedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueRenamedIssueEvent(RenamedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueReviewRequestedIssueEvent(ReviewRequestedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueReviewRequestRemovedIssueEvent(ReviewRequestRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueReviewDismissedIssueEvent(ReviewDismissedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueLockedIssueEvent(LockedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueAddedToProjectIssueEvent(AddedToProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueMovedColumnInProjectIssueEvent(MovedColumnInProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueRemovedFromProjectIssueEvent(RemovedFromProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueConvertedNoteToIssueIssueEvent(ConvertedNoteToIssueIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueIssueTypeAddedIssueEvent(IssueTypeAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueIssueTypeRemovedIssueEvent(IssueTypeRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueIssueTypeChangedIssueEvent(IssueTypeChangedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueSubIssueAddedIssueEvent(SubIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueSubIssueRemovedIssueEvent(SubIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueParentIssueAddedIssueEvent(ParentIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueParentIssueRemovedIssueEvent(ParentIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueBlockedByAddedIssueEvent(BlockedByAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueBlockedByRemovedIssueEvent(BlockedByRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueBlockingAddedIssueEvent(BlockingAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return IssueEventForIssueBlockingRemovedIssueEvent(BlockingRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for IssueEventForIssue");
   }
   Object? toJson();
@@ -282,200 +71,155 @@ sealed class IssueEventForIssue {
 final class IssueEventForIssueLabeledIssueEvent extends IssueEventForIssue {
   final LabeledIssueEvent value;
   const IssueEventForIssueLabeledIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueUnlabeledIssueEvent extends IssueEventForIssue {
   final UnlabeledIssueEvent value;
   const IssueEventForIssueUnlabeledIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueAssignedIssueEvent extends IssueEventForIssue {
   final AssignedIssueEvent value;
   const IssueEventForIssueAssignedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueUnassignedIssueEvent extends IssueEventForIssue {
   final UnassignedIssueEvent value;
   const IssueEventForIssueUnassignedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueMilestonedIssueEvent extends IssueEventForIssue {
   final MilestonedIssueEvent value;
   const IssueEventForIssueMilestonedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueDemilestonedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueDemilestonedIssueEvent extends IssueEventForIssue {
   final DemilestonedIssueEvent value;
   const IssueEventForIssueDemilestonedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueRenamedIssueEvent extends IssueEventForIssue {
   final RenamedIssueEvent value;
   const IssueEventForIssueRenamedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueReviewRequestedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueReviewRequestedIssueEvent extends IssueEventForIssue {
   final ReviewRequestedIssueEvent value;
   const IssueEventForIssueReviewRequestedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueReviewRequestRemovedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueReviewRequestRemovedIssueEvent extends IssueEventForIssue {
   final ReviewRequestRemovedIssueEvent value;
   const IssueEventForIssueReviewRequestRemovedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueReviewDismissedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueReviewDismissedIssueEvent extends IssueEventForIssue {
   final ReviewDismissedIssueEvent value;
   const IssueEventForIssueReviewDismissedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueLockedIssueEvent extends IssueEventForIssue {
   final LockedIssueEvent value;
   const IssueEventForIssueLockedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueAddedToProjectIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueAddedToProjectIssueEvent extends IssueEventForIssue {
   final AddedToProjectIssueEvent value;
   const IssueEventForIssueAddedToProjectIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueMovedColumnInProjectIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueMovedColumnInProjectIssueEvent extends IssueEventForIssue {
   final MovedColumnInProjectIssueEvent value;
   const IssueEventForIssueMovedColumnInProjectIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueRemovedFromProjectIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueRemovedFromProjectIssueEvent extends IssueEventForIssue {
   final RemovedFromProjectIssueEvent value;
   const IssueEventForIssueRemovedFromProjectIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueConvertedNoteToIssueIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueConvertedNoteToIssueIssueEvent extends IssueEventForIssue {
   final ConvertedNoteToIssueIssueEvent value;
   const IssueEventForIssueConvertedNoteToIssueIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueIssueTypeAddedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueIssueTypeAddedIssueEvent extends IssueEventForIssue {
   final IssueTypeAddedIssueEvent value;
   const IssueEventForIssueIssueTypeAddedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueIssueTypeRemovedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueIssueTypeRemovedIssueEvent extends IssueEventForIssue {
   final IssueTypeRemovedIssueEvent value;
   const IssueEventForIssueIssueTypeRemovedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueIssueTypeChangedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueIssueTypeChangedIssueEvent extends IssueEventForIssue {
   final IssueTypeChangedIssueEvent value;
   const IssueEventForIssueIssueTypeChangedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueSubIssueAddedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueSubIssueAddedIssueEvent extends IssueEventForIssue {
   final SubIssueAddedIssueEvent value;
   const IssueEventForIssueSubIssueAddedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueSubIssueRemovedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueSubIssueRemovedIssueEvent extends IssueEventForIssue {
   final SubIssueRemovedIssueEvent value;
   const IssueEventForIssueSubIssueRemovedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueParentIssueAddedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueParentIssueAddedIssueEvent extends IssueEventForIssue {
   final ParentIssueAddedIssueEvent value;
   const IssueEventForIssueParentIssueAddedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueParentIssueRemovedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueParentIssueRemovedIssueEvent extends IssueEventForIssue {
   final ParentIssueRemovedIssueEvent value;
   const IssueEventForIssueParentIssueRemovedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockedByAddedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueBlockedByAddedIssueEvent extends IssueEventForIssue {
   final BlockedByAddedIssueEvent value;
   const IssueEventForIssueBlockedByAddedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockedByRemovedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueBlockedByRemovedIssueEvent extends IssueEventForIssue {
   final BlockedByRemovedIssueEvent value;
   const IssueEventForIssueBlockedByRemovedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockingAddedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueBlockingAddedIssueEvent extends IssueEventForIssue {
   final BlockingAddedIssueEvent value;
   const IssueEventForIssueBlockingAddedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockingRemovedIssueEvent
-    extends IssueEventForIssue {
+final class IssueEventForIssueBlockingRemovedIssueEvent extends IssueEventForIssue {
   final BlockingRemovedIssueEvent value;
   const IssueEventForIssueBlockingRemovedIssueEvent(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

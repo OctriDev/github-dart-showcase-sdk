@@ -13,107 +13,56 @@ class PullRequestStackPullRequestVariant1 {
   final String? mergedAt;
   final bool draft;
   final String htmlUrl;
-
   /// A GitHub user.
   final NullableSimpleUser? user;
 
-  const PullRequestStackPullRequestVariant1(
-      {required this.nodeId,
-      required this.title,
-      required this.state,
-      required this.mergedAt,
-      required this.draft,
-      required this.htmlUrl,
-      required this.user});
+  const PullRequestStackPullRequestVariant1({required this.nodeId, required this.title, required this.state, required this.mergedAt, required this.draft, required this.htmlUrl, required this.user});
 
-  PullRequestStackPullRequestVariant1 Function(
-      {String nodeId,
-      String title,
-      PullRequestStackPullRequestVariant1State state,
-      String? mergedAt,
-      bool draft,
-      String htmlUrl,
-      NullableSimpleUser? user}) get copyWith => _copyWith;
+  PullRequestStackPullRequestVariant1 Function({String nodeId, String title, PullRequestStackPullRequestVariant1State state, String? mergedAt, bool draft, String htmlUrl, NullableSimpleUser? user}) get copyWith => _copyWith;
 
-  PullRequestStackPullRequestVariant1 _copyWith(
-          {Object? nodeId = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? mergedAt = sdkOmittedValue,
-          Object? draft = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      PullRequestStackPullRequestVariant1(
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as PullRequestStackPullRequestVariant1State,
-        mergedAt: identical(mergedAt, sdkOmittedValue)
-            ? this.mergedAt
-            : mergedAt as String?,
-        draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as NullableSimpleUser?,
-      );
+  PullRequestStackPullRequestVariant1 _copyWith({Object? nodeId = sdkOmittedValue, Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? user = sdkOmittedValue}) => PullRequestStackPullRequestVariant1(
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as PullRequestStackPullRequestVariant1State,
+    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as String?,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
+  );
 
-  factory PullRequestStackPullRequestVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestStackPullRequestVariant1(
-        nodeId: (json['node_id'] as String?)!,
-        title: (json['title'] as String?)!,
-        state: (json['state'] != null
-            ? PullRequestStackPullRequestVariant1State.fromJson(
-                json['state'] as String)
-            : null)!,
-        mergedAt: json.containsKey('merged_at')
-            ? json['merged_at'] as String?
-            : throw ArgumentError.value(
-                null, 'merged_at', 'Required property is missing'),
-        draft: (json['draft'] as bool?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory PullRequestStackPullRequestVariant1.fromJson(Map<String, dynamic> json) => PullRequestStackPullRequestVariant1(
+    nodeId: (json['node_id'] as String?)!,
+    title: (json['title'] as String?)!,
+    state: (json['state'] != null ? PullRequestStackPullRequestVariant1State.fromJson(json['state'] as String) : null)!,
+    mergedAt: json.containsKey('merged_at') ? json['merged_at'] as String? : throw ArgumentError.value(null, 'merged_at', 'Required property is missing'),
+    draft: (json['draft'] as bool?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'node_id': nodeId,
-        'title': title,
-        'state': state.toJson(),
-        'merged_at': mergedAt,
-        'draft': draft,
-        'html_url': htmlUrl,
-        'user': user?.toJson(),
-      };
+    'node_id': nodeId,
+    'title': title,
+    'state': state.toJson(),
+    'merged_at': mergedAt,
+    'draft': draft,
+    'html_url': htmlUrl,
+    'user': user?.toJson(),
+  };
 }
 
 /// Typed representation of the `PullRequestStackPullRequest` API schema.
 class PullRequestStackPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
-
   /// Required object value serialized in the `head` wire field.
   final PullRequestMinimalHead head;
-
   /// Required object value serialized in the `base` wire field.
   final PullRequestMinimalBase base_;
   final String nodeId;
@@ -122,126 +71,55 @@ class PullRequestStackPullRequest {
   final String? mergedAt;
   final bool draft;
   final String htmlUrl;
-
   /// A GitHub user.
   final NullableSimpleUser? user;
 
-  const PullRequestStackPullRequest(
-      {required this.id,
-      required this.number,
-      required this.url,
-      required this.head,
-      required this.base_,
-      required this.nodeId,
-      required this.title,
-      required this.state,
-      required this.mergedAt,
-      required this.draft,
-      required this.htmlUrl,
-      required this.user});
+  const PullRequestStackPullRequest({required this.id, required this.number, required this.url, required this.head, required this.base_, required this.nodeId, required this.title, required this.state, required this.mergedAt, required this.draft, required this.htmlUrl, required this.user});
 
-  PullRequestStackPullRequest Function(
-      {int id,
-      int number,
-      String url,
-      PullRequestMinimalHead head,
-      PullRequestMinimalBase base_,
-      String nodeId,
-      String title,
-      PullRequestStackPullRequestVariant1State state,
-      String? mergedAt,
-      bool draft,
-      String htmlUrl,
-      NullableSimpleUser? user}) get copyWith => _copyWith;
+  PullRequestStackPullRequest Function({int id, int number, String url, PullRequestMinimalHead head, PullRequestMinimalBase base_, String nodeId, String title, PullRequestStackPullRequestVariant1State state, String? mergedAt, bool draft, String htmlUrl, NullableSimpleUser? user}) get copyWith => _copyWith;
 
-  PullRequestStackPullRequest _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? head = sdkOmittedValue,
-          Object? base_ = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? mergedAt = sdkOmittedValue,
-          Object? draft = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      PullRequestStackPullRequest(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        head: identical(head, sdkOmittedValue)
-            ? this.head
-            : head as PullRequestMinimalHead,
-        base_: identical(base_, sdkOmittedValue)
-            ? this.base_
-            : base_ as PullRequestMinimalBase,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as PullRequestStackPullRequestVariant1State,
-        mergedAt: identical(mergedAt, sdkOmittedValue)
-            ? this.mergedAt
-            : mergedAt as String?,
-        draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as NullableSimpleUser?,
-      );
+  PullRequestStackPullRequest _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? url = sdkOmittedValue, Object? head = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? user = sdkOmittedValue}) => PullRequestStackPullRequest(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    head: identical(head, sdkOmittedValue) ? this.head : head as PullRequestMinimalHead,
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestMinimalBase,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as PullRequestStackPullRequestVariant1State,
+    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as String?,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
+  );
 
-  factory PullRequestStackPullRequest.fromJson(Map<String, dynamic> json) =>
-      PullRequestStackPullRequest(
-        id: ((json['id'] as num?)?.toInt())!,
-        number: ((json['number'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-        head: (json['head'] != null
-            ? PullRequestMinimalHead.fromJson(
-                json['head'] as Map<String, dynamic>)
-            : null)!,
-        base_: (json['base'] != null
-            ? PullRequestMinimalBase.fromJson(
-                json['base'] as Map<String, dynamic>)
-            : null)!,
-        nodeId: (json['node_id'] as String?)!,
-        title: (json['title'] as String?)!,
-        state: (json['state'] != null
-            ? PullRequestStackPullRequestVariant1State.fromJson(
-                json['state'] as String)
-            : null)!,
-        mergedAt: json.containsKey('merged_at')
-            ? json['merged_at'] as String?
-            : throw ArgumentError.value(
-                null, 'merged_at', 'Required property is missing'),
-        draft: (json['draft'] as bool?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory PullRequestStackPullRequest.fromJson(Map<String, dynamic> json) => PullRequestStackPullRequest(
+    id: ((json['id'] as num?)?.toInt())!,
+    number: ((json['number'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+    head: (json['head'] != null ? PullRequestMinimalHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
+    base_: (json['base'] != null ? PullRequestMinimalBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
+    nodeId: (json['node_id'] as String?)!,
+    title: (json['title'] as String?)!,
+    state: (json['state'] != null ? PullRequestStackPullRequestVariant1State.fromJson(json['state'] as String) : null)!,
+    mergedAt: json.containsKey('merged_at') ? json['merged_at'] as String? : throw ArgumentError.value(null, 'merged_at', 'Required property is missing'),
+    draft: (json['draft'] as bool?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'number': number,
-        'url': url,
-        'head': head.toJson(),
-        'base': base_.toJson(),
-        'node_id': nodeId,
-        'title': title,
-        'state': state.toJson(),
-        'merged_at': mergedAt,
-        'draft': draft,
-        'html_url': htmlUrl,
-        'user': user?.toJson(),
-      };
+    'id': id,
+    'number': number,
+    'url': url,
+    'head': head.toJson(),
+    'base': base_.toJson(),
+    'node_id': nodeId,
+    'title': title,
+    'state': state.toJson(),
+    'merged_at': mergedAt,
+    'draft': draft,
+    'html_url': htmlUrl,
+    'user': user?.toJson(),
+  };
 }

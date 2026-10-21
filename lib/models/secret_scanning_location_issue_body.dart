@@ -8,47 +8,30 @@ part of 'secret_scanning.dart';
 class SecretScanningLocationIssueBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The API URL to get the issue where the secret was detected.
   final String issueBodyUrl;
-
   /// The GitHub URL for the issue where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationIssueBody(
-      {required this.issueBodyUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationIssueBody({required this.issueBodyUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationIssueBody Function(
-      {String issueBodyUrl,
-      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationIssueBody Function({String issueBodyUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationIssueBody _copyWith(
-          {Object? issueBodyUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue}) =>
-      SecretScanningLocationIssueBody(
-        issueBodyUrl: identical(issueBodyUrl, sdkOmittedValue)
-            ? this.issueBodyUrl
-            : issueBodyUrl as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-      );
+  SecretScanningLocationIssueBody _copyWith({Object? issueBodyUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationIssueBody(
+    issueBodyUrl: identical(issueBodyUrl, sdkOmittedValue) ? this.issueBodyUrl : issueBodyUrl as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+  );
 
-  factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) =>
-      SecretScanningLocationIssueBody(
-        issueBodyUrl: (json['issue_body_url'] as String?)!,
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) => SecretScanningLocationIssueBody(
+    issueBodyUrl: (json['issue_body_url'] as String?)!,
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'issue_body_url': issueBodyUrl,
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'issue_body_url': issueBodyUrl,
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

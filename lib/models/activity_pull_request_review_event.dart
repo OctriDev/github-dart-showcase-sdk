@@ -8,388 +8,216 @@ part of 'activity.dart';
 class PullRequestReviewEventReviewLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const PullRequestReviewEventReviewLinksHtml({required this.href});
 
-  PullRequestReviewEventReviewLinksHtml Function({String href}) get copyWith =>
-      _copyWith;
+  PullRequestReviewEventReviewLinksHtml Function({String href}) get copyWith => _copyWith;
 
-  PullRequestReviewEventReviewLinksHtml _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      PullRequestReviewEventReviewLinksHtml(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  PullRequestReviewEventReviewLinksHtml _copyWith({Object? href = sdkOmittedValue}) => PullRequestReviewEventReviewLinksHtml(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory PullRequestReviewEventReviewLinksHtml.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestReviewEventReviewLinksHtml(
-        href: (json['href'] as String?)!,
-      );
+  factory PullRequestReviewEventReviewLinksHtml.fromJson(Map<String, dynamic> json) => PullRequestReviewEventReviewLinksHtml(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `pull_request` wire field.
 class PullRequestReviewEventReviewLinksPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const PullRequestReviewEventReviewLinksPullRequest({required this.href});
 
-  PullRequestReviewEventReviewLinksPullRequest Function({String href})
-      get copyWith => _copyWith;
+  PullRequestReviewEventReviewLinksPullRequest Function({String href}) get copyWith => _copyWith;
 
-  PullRequestReviewEventReviewLinksPullRequest _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      PullRequestReviewEventReviewLinksPullRequest(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  PullRequestReviewEventReviewLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) => PullRequestReviewEventReviewLinksPullRequest(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory PullRequestReviewEventReviewLinksPullRequest.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestReviewEventReviewLinksPullRequest(
-        href: (json['href'] as String?)!,
-      );
+  factory PullRequestReviewEventReviewLinksPullRequest.fromJson(Map<String, dynamic> json) => PullRequestReviewEventReviewLinksPullRequest(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Optional object value serialized in the `_links` wire field.
 class PullRequestReviewEventReviewLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `html` wire field.
   final PullRequestReviewEventReviewLinksHtml html;
-
   /// Required object value serialized in the `pull_request` wire field.
   final PullRequestReviewEventReviewLinksPullRequest pullRequest;
 
-  const PullRequestReviewEventReviewLinks(
-      {required this.html, required this.pullRequest});
+  const PullRequestReviewEventReviewLinks({required this.html, required this.pullRequest});
 
-  PullRequestReviewEventReviewLinks Function(
-          {PullRequestReviewEventReviewLinksHtml html,
-          PullRequestReviewEventReviewLinksPullRequest pullRequest})
-      get copyWith => _copyWith;
+  PullRequestReviewEventReviewLinks Function({PullRequestReviewEventReviewLinksHtml html, PullRequestReviewEventReviewLinksPullRequest pullRequest}) get copyWith => _copyWith;
 
-  PullRequestReviewEventReviewLinks _copyWith(
-          {Object? html = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue}) =>
-      PullRequestReviewEventReviewLinks(
-        html: identical(html, sdkOmittedValue)
-            ? this.html
-            : html as PullRequestReviewEventReviewLinksHtml,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as PullRequestReviewEventReviewLinksPullRequest,
-      );
+  PullRequestReviewEventReviewLinks _copyWith({Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => PullRequestReviewEventReviewLinks(
+    html: identical(html, sdkOmittedValue) ? this.html : html as PullRequestReviewEventReviewLinksHtml,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as PullRequestReviewEventReviewLinksPullRequest,
+  );
 
-  factory PullRequestReviewEventReviewLinks.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestReviewEventReviewLinks(
-        html: (json['html'] != null
-            ? PullRequestReviewEventReviewLinksHtml.fromJson(
-                json['html'] as Map<String, dynamic>)
-            : null)!,
-        pullRequest: (json['pull_request'] != null
-            ? PullRequestReviewEventReviewLinksPullRequest.fromJson(
-                json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory PullRequestReviewEventReviewLinks.fromJson(Map<String, dynamic> json) => PullRequestReviewEventReviewLinks(
+    html: (json['html'] != null ? PullRequestReviewEventReviewLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
+    pullRequest: (json['pull_request'] != null ? PullRequestReviewEventReviewLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'html': html.toJson(),
-        'pull_request': pullRequest.toJson(),
-      };
+    'html': html.toJson(),
+    'pull_request': pullRequest.toJson(),
+  };
 }
 
 /// Required object value serialized in the `review` wire field.
 class PullRequestReviewEventReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// A GitHub user.
   final SdkOptional<NullableSimpleUser?> user;
-
   /// Optional `string` value serialized in the `body` wire field.
   final SdkOptional<String> body;
-
   /// Optional `string` value serialized in the `commit_id` wire field.
   final SdkOptional<String> commitId;
-
   /// Optional `string` value serialized in the `submitted_at` wire field.
   final SdkOptional<String?> submittedAt;
-
   /// Optional `string` value serialized in the `state` wire field.
   final SdkOptional<String> state;
-
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Optional `uri`-formatted value serialized in the `pull_request_url` wire field.
   final SdkOptional<String> pullRequestUrl;
-
   /// Optional object value serialized in the `_links` wire field.
   final SdkOptional<PullRequestReviewEventReviewLinks> links;
-
   /// Optional `string` value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
 
-  const PullRequestReviewEventReview(
-      {this.id = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.user = const SdkOmitted(),
-      this.body = const SdkOmitted(),
-      this.commitId = const SdkOmitted(),
-      this.submittedAt = const SdkOmitted(),
-      this.state = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.pullRequestUrl = const SdkOmitted(),
-      this.links = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted()});
+  const PullRequestReviewEventReview({this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.user = const SdkOmitted(), this.body = const SdkOmitted(), this.commitId = const SdkOmitted(), this.submittedAt = const SdkOmitted(), this.state = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.pullRequestUrl = const SdkOmitted(), this.links = const SdkOmitted(), this.updatedAt = const SdkOmitted()});
 
-  PullRequestReviewEventReview Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> nodeId,
-      SdkOptional<NullableSimpleUser?> user,
-      SdkOptional<String> body,
-      SdkOptional<String> commitId,
-      SdkOptional<String?> submittedAt,
-      SdkOptional<String> state,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String> pullRequestUrl,
-      SdkOptional<PullRequestReviewEventReviewLinks> links,
-      SdkOptional<String> updatedAt}) get copyWith => _copyWith;
+  PullRequestReviewEventReview Function({SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<NullableSimpleUser?> user, SdkOptional<String> body, SdkOptional<String> commitId, SdkOptional<String?> submittedAt, SdkOptional<String> state, SdkOptional<String> htmlUrl, SdkOptional<String> pullRequestUrl, SdkOptional<PullRequestReviewEventReviewLinks> links, SdkOptional<String> updatedAt}) get copyWith => _copyWith;
 
-  PullRequestReviewEventReview _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? commitId = sdkOmittedValue,
-          Object? submittedAt = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? pullRequestUrl = sdkOmittedValue,
-          Object? links = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      PullRequestReviewEventReview(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as SdkOptional<NullableSimpleUser?>,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String>,
-        commitId: identical(commitId, sdkOmittedValue)
-            ? this.commitId
-            : commitId as SdkOptional<String>,
-        submittedAt: identical(submittedAt, sdkOmittedValue)
-            ? this.submittedAt
-            : submittedAt as SdkOptional<String?>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
-            ? this.pullRequestUrl
-            : pullRequestUrl as SdkOptional<String>,
-        links: identical(links, sdkOmittedValue)
-            ? this.links
-            : links as SdkOptional<PullRequestReviewEventReviewLinks>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-      );
+  PullRequestReviewEventReview _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? user = sdkOmittedValue, Object? body = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? submittedAt = sdkOmittedValue, Object? state = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? links = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => PullRequestReviewEventReview(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<NullableSimpleUser?>,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
+    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as SdkOptional<String>,
+    submittedAt: identical(submittedAt, sdkOmittedValue) ? this.submittedAt : submittedAt as SdkOptional<String?>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as SdkOptional<String>,
+    links: identical(links, sdkOmittedValue) ? this.links : links as SdkOptional<PullRequestReviewEventReviewLinks>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+  );
 
-  factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) =>
-      PullRequestReviewEventReview(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        user: json.containsKey('user')
-            ? SdkPresent(json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as String?)!)
-            : const SdkOmitted(),
-        commitId: json['commit_id'] != null
-            ? SdkPresent((json['commit_id'] as String?)!)
-            : const SdkOmitted(),
-        submittedAt: json.containsKey('submitted_at')
-            ? SdkPresent(json['submitted_at'] as String?)
-            : const SdkOmitted(),
-        state: json['state'] != null
-            ? SdkPresent((json['state'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        pullRequestUrl: json['pull_request_url'] != null
-            ? SdkPresent((json['pull_request_url'] as String?)!)
-            : const SdkOmitted(),
-        links: json['_links'] != null
-            ? SdkPresent((json['_links'] != null
-                ? PullRequestReviewEventReviewLinks.fromJson(
-                    json['_links'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) => PullRequestReviewEventReview(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    user: json.containsKey('user') ? SdkPresent(json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
+    commitId: json['commit_id'] != null ? SdkPresent((json['commit_id'] as String?)!) : const SdkOmitted(),
+    submittedAt: json.containsKey('submitted_at') ? SdkPresent(json['submitted_at'] as String?) : const SdkOmitted(),
+    state: json['state'] != null ? SdkPresent((json['state'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    pullRequestUrl: json['pull_request_url'] != null ? SdkPresent((json['pull_request_url'] as String?)!) : const SdkOmitted(),
+    links: json['_links'] != null ? SdkPresent((json['_links'] != null ? PullRequestReviewEventReviewLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (user) {
-          SdkPresent<NullableSimpleUser?>(value: final value) => {
-              'user': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (body) {
-          SdkPresent<String>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (commitId) {
-          SdkPresent<String>(value: final value) => {
-              'commit_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (submittedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'submitted_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (state) {
-          SdkPresent<String>(value: final value) => {
-              'state': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestUrl) {
-          SdkPresent<String>(value: final value) => {
-              'pull_request_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (links) {
-          SdkPresent<PullRequestReviewEventReviewLinks>(value: final value) => {
-              '_links': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (user) {
+      SdkPresent<NullableSimpleUser?>(value: final value) => {'user': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (body) {
+      SdkPresent<String>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (commitId) {
+      SdkPresent<String>(value: final value) => {'commit_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (submittedAt) {
+      SdkPresent<String?>(value: final value) => {'submitted_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (state) {
+      SdkPresent<String>(value: final value) => {'state': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestUrl) {
+      SdkPresent<String>(value: final value) => {'pull_request_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (links) {
+      SdkPresent<PullRequestReviewEventReviewLinks>(value: final value) => {'_links': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `PullRequestReviewEvent` API schema.
 class PullRequestReviewEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `action` wire field.
   final String action;
-
   /// Required object value serialized in the `review` wire field.
   final PullRequestReviewEventReview review;
-
   /// Required object value serialized in the `pull_request` wire field.
   final PullRequestMinimal pullRequest;
 
-  const PullRequestReviewEvent(
-      {required this.action, required this.review, required this.pullRequest});
+  const PullRequestReviewEvent({required this.action, required this.review, required this.pullRequest});
 
-  PullRequestReviewEvent Function(
-      {String action,
-      PullRequestReviewEventReview review,
-      PullRequestMinimal pullRequest}) get copyWith => _copyWith;
+  PullRequestReviewEvent Function({String action, PullRequestReviewEventReview review, PullRequestMinimal pullRequest}) get copyWith => _copyWith;
 
-  PullRequestReviewEvent _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? review = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue}) =>
-      PullRequestReviewEvent(
-        action:
-            identical(action, sdkOmittedValue) ? this.action : action as String,
-        review: identical(review, sdkOmittedValue)
-            ? this.review
-            : review as PullRequestReviewEventReview,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as PullRequestMinimal,
-      );
+  PullRequestReviewEvent _copyWith({Object? action = sdkOmittedValue, Object? review = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => PullRequestReviewEvent(
+    action: identical(action, sdkOmittedValue) ? this.action : action as String,
+    review: identical(review, sdkOmittedValue) ? this.review : review as PullRequestReviewEventReview,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as PullRequestMinimal,
+  );
 
-  factory PullRequestReviewEvent.fromJson(Map<String, dynamic> json) =>
-      PullRequestReviewEvent(
-        action: (json['action'] as String?)!,
-        review: (json['review'] != null
-            ? PullRequestReviewEventReview.fromJson(
-                json['review'] as Map<String, dynamic>)
-            : null)!,
-        pullRequest: (json['pull_request'] != null
-            ? PullRequestMinimal.fromJson(
-                json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory PullRequestReviewEvent.fromJson(Map<String, dynamic> json) => PullRequestReviewEvent(
+    action: (json['action'] as String?)!,
+    review: (json['review'] != null ? PullRequestReviewEventReview.fromJson(json['review'] as Map<String, dynamic>) : null)!,
+    pullRequest: (json['pull_request'] != null ? PullRequestMinimal.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action,
-        'review': review.toJson(),
-        'pull_request': pullRequest.toJson(),
-      };
+    'action': action,
+    'review': review.toJson(),
+    'pull_request': pullRequest.toJson(),
+  };
 }

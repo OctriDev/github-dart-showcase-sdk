@@ -38,28 +38,19 @@ Future<List<ProjectsV2>> projectsListForOrg(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/projectsV2',
           config: config,
           query: {
-            'q': SdkQueryValue(SdkUtils.unwrapOptional(q),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'q': SdkQueryValue(SdkUtils.unwrapOptional(q), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListForOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => ProjectsV2.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a specific project owned by an organization. Use `org` and `project_number` to identify the organization and project. The response includes project details such as its title, owner, visibility, and state.
 ///
@@ -76,15 +67,12 @@ Future<ProjectsV2> projectsGetForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsGetForOrg',
-          fromJsonRaw: (value) =>
-              ProjectsV2.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create draft issue item for the specified organization owned project.
 ///
@@ -104,16 +92,12 @@ Future<ProjectsV2ItemSimple> projectsCreateDraftItemForOrg(ClientConfig config,
           body: {'title': title, 'body': SdkUtils.unwrapOptional(body)},
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsCreateDraftItemForOrg',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all fields for a specific organization-owned project.
 ///
@@ -146,27 +130,18 @@ Future<List<ProjectsV2Field>> projectsListFieldsForOrg(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListFieldsForOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  ProjectsV2Field.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2Field.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a field in an organization-owned project. Supply a request body matching a supported field configuration, such as an issue field reference or a named field with its data type. A single-select field configuration includes its available options.
 ///
@@ -185,17 +160,12 @@ Future<ProjectsV2Field> projectsAddFieldForOrg(ClientConfig config,
           body: body,
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsAddFieldForOrg',
-          fromJsonRaw: (value) =>
-              ProjectsV2Field.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2Field.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get a specific field for an organization-owned project.
 ///
@@ -212,15 +182,12 @@ Future<ProjectsV2Field> projectsGetFieldForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsGetFieldForOrg',
-          fromJsonRaw: (value) =>
-              ProjectsV2Field.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2Field.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all items for a specific organization-owned project accessible by the authenticated user.
 ///
@@ -248,45 +215,34 @@ Future<ProjectsV2Field> projectsGetFieldForOrg(ClientConfig config,
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<ProjectsV2ItemWithContent>> projectsListItemsForOrg(
-    ClientConfig config,
-    {required int projectNumber,
-    required String org,
-    SdkOptional<String> q = const SdkOmitted(),
-    SdkOptional<dynamic> fields = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<ProjectsV2ItemWithContent>>
+    projectsListItemsForOrg(ClientConfig config,
+        {required int projectNumber,
+        required String org,
+        SdkOptional<String> q = const SdkOmitted(),
+        SdkOptional<dynamic> fields = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ProjectsV2ItemWithContent>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items',
           config: config,
           query: {
-            'q': SdkQueryValue(SdkUtils.unwrapOptional(q),
-                style: 'form', explode: true),
-            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'q': SdkQueryValue(SdkUtils.unwrapOptional(q), style: 'form', explode: true),
+            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListItemsForOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => ProjectsV2ItemWithContent.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2ItemWithContent.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Add an issue or pull request item to the specified organization owned project.
 ///
@@ -320,16 +276,12 @@ Future<ProjectsV2ItemSimple> projectsAddItemForOrg(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsAddItemForOrg',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get a specific item from an organization-owned project.
 ///
@@ -349,21 +301,16 @@ Future<ProjectsV2ItemWithContent> projectsGetOrgItem(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
           config: config,
           query: {
-            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields),
-                style: 'form', explode: true)
+            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsGetOrgItem',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Update a specific item in an organization-owned project.
 ///
@@ -383,21 +330,12 @@ Future<ProjectsV2ItemWithContent> projectsUpdateItemForOrg(ClientConfig config,
           body: {'fields': fields},
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsUpdateItemForOrg',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Delete a specific item from an organization-owned project.
 ///
@@ -415,12 +353,10 @@ Future<void> projectsDeleteItemForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'projectsDeleteItemForOrg',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create a new view in an organization-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
@@ -478,22 +414,12 @@ Future<ProjectsV2View> projectsCreateViewForOrg(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsCreateViewForOrg',
-          fromJsonRaw: (value) =>
-              ProjectsV2View.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2View.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List items in an organization project with the saved view's filter applied.
 ///
@@ -519,45 +445,33 @@ Future<ProjectsV2View> projectsCreateViewForOrg(ClientConfig config,
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<ProjectsV2ItemWithContent>> projectsListViewItemsForOrg(
-    ClientConfig config,
-    {required int projectNumber,
-    required String org,
-    required int viewNumber,
-    SdkOptional<dynamic> fields = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<ProjectsV2ItemWithContent>>
+    projectsListViewItemsForOrg(ClientConfig config,
+        {required int projectNumber,
+        required String org,
+        required int viewNumber,
+        SdkOptional<dynamic> fields = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ProjectsV2ItemWithContent>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/views/${Uri.encodeComponent(viewNumber.toString())}/items',
           config: config,
           query: {
-            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListViewItemsForOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => ProjectsV2ItemWithContent.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2ItemWithContent.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create draft issue item for the specified user owned project.
 ///
@@ -565,29 +479,25 @@ Future<List<ProjectsV2ItemWithContent>> projectsListViewItemsForOrg(
 /// [projectNumber] The project's number.
 /// [title] The title of the draft issue item to create in the project.
 /// [body] The body content of the draft issue item to create in the project.
-Future<ProjectsV2ItemSimple> projectsCreateDraftItemForAuthenticatedUser(
-    ClientConfig config,
-    {required String userId,
-    required int projectNumber,
-    required String title,
-    SdkOptional<String> body = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ProjectsV2ItemSimple>
+    projectsCreateDraftItemForAuthenticatedUser(ClientConfig config,
+        {required String userId,
+        required int projectNumber,
+        required String title,
+        SdkOptional<String> body = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ProjectsV2ItemSimple>('POST',
           '/user/${Uri.encodeComponent(userId.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/drafts',
           config: config,
           body: {'title': title, 'body': SdkUtils.unwrapOptional(body)},
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsCreateDraftItemForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create a new view in a user-owned project. Views allow you to customize how items in a project are displayed and filtered.
 ///
@@ -645,22 +555,12 @@ Future<ProjectsV2View> projectsCreateViewForUser(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsCreateViewForUser',
-          fromJsonRaw: (value) =>
-              ProjectsV2View.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2View.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all projects owned by a specific user accessible by the authenticated user.
 ///
@@ -693,28 +593,19 @@ Future<List<ProjectsV2>> projectsListForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/projectsV2',
           config: config,
           query: {
-            'q': SdkQueryValue(SdkUtils.unwrapOptional(q),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'q': SdkQueryValue(SdkUtils.unwrapOptional(q), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => ProjectsV2.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a Projects v2 project owned by a specified GitHub user. Use `username` and `project_number` to identify the user and project; the response includes project metadata and ownership details.
 ///
@@ -731,15 +622,12 @@ Future<ProjectsV2> projectsGetForUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsGetForUser',
-          fromJsonRaw: (value) =>
-              ProjectsV2.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all fields for a specific user-owned project.
 ///
@@ -772,27 +660,18 @@ Future<List<ProjectsV2Field>> projectsListFieldsForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/fields',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListFieldsForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  ProjectsV2Field.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2Field.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a field in a project owned by the specified user. Choose a `data_type` of text, number, date, single_select, or iteration and provide the configuration required for that type. A 201 response returns the created field, including its identifier and project URL.
 ///
@@ -811,17 +690,12 @@ Future<ProjectsV2Field> projectsAddFieldForUser(ClientConfig config,
           body: body,
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsAddFieldForUser',
-          fromJsonRaw: (value) =>
-              ProjectsV2Field.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2Field.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a specific field from a project owned by the specified user. Use the project number and field identifier to select the field to inspect. The response includes the field's name, data type, project URL, and any field configuration.
 ///
@@ -840,15 +714,12 @@ Future<ProjectsV2Field> projectsGetFieldForUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsGetFieldForUser',
-          fromJsonRaw: (value) =>
-              ProjectsV2Field.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2Field.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all items for a specific user-owned project accessible by the authenticated user.
 ///
@@ -876,45 +747,34 @@ Future<ProjectsV2Field> projectsGetFieldForUser(ClientConfig config,
 /// [fields] Limit results to specific fields, by their IDs. If not specified,
 ///   the title field will be returned. Example:
 ///   `fields[]=123&fields[]=456&fields[]=789` or `fields=123,456,789`
-Future<List<ProjectsV2ItemWithContent>> projectsListItemsForUser(
-    ClientConfig config,
-    {required int projectNumber,
-    required String username,
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<String> q = const SdkOmitted(),
-    SdkOptional<dynamic> fields = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<ProjectsV2ItemWithContent>>
+    projectsListItemsForUser(ClientConfig config,
+        {required int projectNumber,
+        required String username,
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<String> q = const SdkOmitted(),
+        SdkOptional<dynamic> fields = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ProjectsV2ItemWithContent>>('GET',
           '/users/${Uri.encodeComponent(username.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items',
           config: config,
           query: {
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'q': SdkQueryValue(SdkUtils.unwrapOptional(q),
-                style: 'form', explode: true),
-            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields),
-                style: 'form', explode: true)
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'q': SdkQueryValue(SdkUtils.unwrapOptional(q), style: 'form', explode: true),
+            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListItemsForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => ProjectsV2ItemWithContent.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2ItemWithContent.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Add an issue or pull request item to the specified user owned project.
 ///
@@ -948,16 +808,12 @@ Future<ProjectsV2ItemSimple> projectsAddItemForUser(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsAddItemForUser',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a specific item from a project owned by the specified user. Use `fields` to limit the returned field values; when omitted, the response includes the title field. The item response also identifies its content type and includes item and project details.
 ///
@@ -979,21 +835,16 @@ Future<ProjectsV2ItemWithContent> projectsGetUserItem(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
           config: config,
           query: {
-            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields),
-                style: 'form', explode: true)
+            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsGetUserItem',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates field values on a specific item in a project owned by the specified user. Supply the field IDs and new values in `fields`; only text, number, date, single-select, and iteration fields are supported. A 200 response returns the updated project item.
 ///
@@ -1015,21 +866,12 @@ Future<ProjectsV2ItemWithContent> projectsUpdateItemForUser(ClientConfig config,
           body: {'fields': fields},
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsUpdateItemForUser',
-          fromJsonRaw: (value) =>
-              ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProjectsV2ItemWithContent.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a specific item from a project owned by the specified user. Provide the project number, user handle, and item identifier to select the item to remove. A 204 response confirms the deletion and contains no response body.
 ///
@@ -1049,12 +891,10 @@ Future<void> projectsDeleteItemForUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'projectsDeleteItemForUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List items in a user project with the saved view's filter applied.
 ///
@@ -1080,42 +920,29 @@ Future<void> projectsDeleteItemForUser(ClientConfig config,
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<ProjectsV2ItemWithContent>> projectsListViewItemsForUser(
-    ClientConfig config,
-    {required int projectNumber,
-    required String username,
-    required int viewNumber,
-    SdkOptional<dynamic> fields = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<ProjectsV2ItemWithContent>>
+    projectsListViewItemsForUser(ClientConfig config,
+        {required int projectNumber,
+        required String username,
+        required int viewNumber,
+        SdkOptional<dynamic> fields = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ProjectsV2ItemWithContent>>('GET',
           '/users/${Uri.encodeComponent(username.toString())}/projectsV2/${Uri.encodeComponent(projectNumber.toString())}/views/${Uri.encodeComponent(viewNumber.toString())}/items',
           config: config,
           query: {
-            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'fields': SdkQueryValue(SdkUtils.unwrapOptional(fields), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'projectsListViewItemsForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => ProjectsV2ItemWithContent.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ProjectsV2ItemWithContent.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

@@ -24,25 +24,17 @@ Future<List<Event>> activityListPublicEvents(ClientConfig config,
   return (await sdkRequest<List<Event>>('GET', '/events',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListPublicEvents',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the feeds available to the authenticated user. The response provides a URL for each feed. You can then get a specific feed by sending a request to one of the feed URLs. * **Timeline**: The GitHub global public timeline * **User**: The public timeline for any user, using `uri_template`. For more information, see "[Hypermedia](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)." * **Current user public**: The public timeline for the authenticated user * **Current user**: The private timeline for the authenticated user * **Current user actor**: The private timeline for activity created by the authenticated user * **Current user organizations**: The private timeline for the organizations the authenticated user is a member of. * **Security advisories**: A collection of public announcements that provide information about security-related vulnerabilities in software on GitHub. By default, timeline resources are returned in JSON. You can specify the `application/atom+xml` type in the `Accept` header to return timeline resources in Atom format. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." &gt; [!NOTE] &gt; Private feeds are only returned when [authenticating via Basic Auth](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) since current feed URIs use the older, non revocable auth tokens.
 Future<Feed> activityGetFeeds(ClientConfig config,
@@ -55,6 +47,7 @@ Future<Feed> activityGetFeeds(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -79,26 +72,17 @@ Future<List<Event>> activityListPublicEventsForRepoNetwork(ClientConfig config,
           '/networks/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/events',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListPublicEventsForRepoNetwork',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '301': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'301': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all notifications for the current user, sorted by most recently updated.
 ///
@@ -119,15 +103,15 @@ Future<List<Event>> activityListPublicEventsForRepoNetwork(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Thread>> activityListNotificationsForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<bool> all = const SdkOmitted(),
-    SdkOptional<bool> participating = const SdkOmitted(),
-    SdkOptional<String> since = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<Thread>>
+    activityListNotificationsForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<bool> all = const SdkOmitted(),
+        SdkOptional<bool> participating = const SdkOmitted(),
+        SdkOptional<String> since = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (since is SdkPresent<String>) {
     sdkValidateDateTime('since', since.value);
   }
@@ -138,37 +122,21 @@ Future<List<Thread>> activityListNotificationsForAuthenticatedUser(
   return (await sdkRequest<List<Thread>>('GET', '/notifications',
           config: config,
           query: {
-            'all': SdkQueryValue(SdkUtils.unwrapOptional(all),
-                style: 'form', explode: true),
-            'participating': SdkQueryValue(
-                SdkUtils.unwrapOptional(participating),
-                style: 'form',
-                explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'all': SdkQueryValue(SdkUtils.unwrapOptional(all), style: 'form', explode: true),
+            'participating': SdkQueryValue(SdkUtils.unwrapOptional(participating), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListNotificationsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Thread.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Thread.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Marks all notifications as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
@@ -178,11 +146,11 @@ Future<List<Thread>> activityListNotificationsForAuthenticatedUser(
 ///   [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
 /// [read] Whether the notification has been read.
-Future<ActivityMarkNotificationsAsReadResponse> activityMarkNotificationsAsRead(
-    ClientConfig config,
-    {SdkOptional<String> lastReadAt = const SdkOmitted(),
-    SdkOptional<bool> read = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ActivityMarkNotificationsAsReadResponse>
+    activityMarkNotificationsAsRead(ClientConfig config,
+        {SdkOptional<String> lastReadAt = const SdkOmitted(),
+        SdkOptional<bool> read = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (lastReadAt is SdkPresent<String>) {
     sdkValidateDateTime('last_read_at', lastReadAt.value);
   }
@@ -196,17 +164,12 @@ Future<ActivityMarkNotificationsAsReadResponse> activityMarkNotificationsAsRead(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityMarkNotificationsAsRead',
-          fromJsonRaw: (value) =>
-              ActivityMarkNotificationsAsReadResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActivityMarkNotificationsAsReadResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a notification thread by its unique identifier. Use the `thread_id` value returned in a notification's `id` field to inspect the thread's repository, subject, unread state, and subscription URL.
 ///
@@ -224,15 +187,12 @@ Future<Thread> activityGetThread(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'activityGetThread',
-          fromJsonRaw: (value) =>
-              Thread.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Thread.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Marks a thread as "read." Marking a thread as "read" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.
 ///
@@ -249,11 +209,10 @@ Future<void> activityMarkThreadAsRead(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'activityMarkThreadAsRead',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Marks a thread as "done." Marking a thread as "done" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.
 ///
@@ -273,6 +232,7 @@ Future<void> activityMarkThreadAsDone(ClientConfig config,
       .data;
 }
 
+
 /// This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/rest/activity/watching#get-a-repository-subscription). Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
 ///
 /// [threadId] The unique identifier of the notification thread. This
@@ -280,24 +240,19 @@ Future<void> activityMarkThreadAsDone(ClientConfig config,
 ///   notifications (for example with the [`GET /notifications`
 ///   operation](https://docs.github.com/rest/activity/notifications#list-notifica
 ///   tions-for-the-authenticated-user)).
-Future<ThreadSubscription> activityGetThreadSubscriptionForAuthenticatedUser(
-    ClientConfig config,
-    {required int threadId,
-    RequestOptions? requestOptions}) async {
+Future<ThreadSubscription> activityGetThreadSubscriptionForAuthenticatedUser(ClientConfig config,
+    {required int threadId, RequestOptions? requestOptions}) async {
   return (await sdkRequest<ThreadSubscription>('GET',
           '/notifications/threads/${Uri.encodeComponent(threadId.toString())}/subscription',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'activityGetThreadSubscriptionForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              ThreadSubscription.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ThreadSubscription.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// If you are watching a repository, you receive notifications for all threads by default. Use this endpoint to ignore future notifications for threads until you comment on the thread or get an **@mention**. You can also use this endpoint to subscribe to threads that you are currently not receiving notifications for or to subscribed to threads that you have previously ignored. Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/rest/activity/notifications#delete-a-thread-subscription) endpoint.
 ///
@@ -317,16 +272,12 @@ Future<ThreadSubscription> activitySetThreadSubscription(ClientConfig config,
           body: {'ignored': SdkUtils.unwrapOptional(ignored)},
           decoder: SdkResponseDecoder.json,
           operationId: 'activitySetThreadSubscription',
-          fromJsonRaw: (value) =>
-              ThreadSubscription.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ThreadSubscription.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://docs.github.com/rest/activity/notifications#set-a-thread-subscription) endpoint and set `ignore` to `true`.
 ///
@@ -343,12 +294,10 @@ Future<void> activityDeleteThreadSubscription(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'activityDeleteThreadSubscription',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -370,19 +319,16 @@ Future<List<Event>> activityListPublicOrgEvents(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/events',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListPublicOrgEvents',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -407,19 +353,16 @@ Future<List<Event>> activityListRepoEvents(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/events',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListRepoEvents',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists all notifications for the current user in the specified repository.
 ///
@@ -443,17 +386,17 @@ Future<List<Event>> activityListRepoEvents(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Thread>> activityListRepoNotificationsForAuthenticatedUser(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<bool> all = const SdkOmitted(),
-    SdkOptional<bool> participating = const SdkOmitted(),
-    SdkOptional<String> since = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<Thread>>
+    activityListRepoNotificationsForAuthenticatedUser(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<bool> all = const SdkOmitted(),
+        SdkOptional<bool> participating = const SdkOmitted(),
+        SdkOptional<String> since = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (since is SdkPresent<String>) {
     sdkValidateDateTime('since', since.value);
   }
@@ -465,29 +408,20 @@ Future<List<Thread>> activityListRepoNotificationsForAuthenticatedUser(
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/notifications',
           config: config,
           query: {
-            'all': SdkQueryValue(SdkUtils.unwrapOptional(all),
-                style: 'form', explode: true),
-            'participating': SdkQueryValue(
-                SdkUtils.unwrapOptional(participating),
-                style: 'form',
-                explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'all': SdkQueryValue(SdkUtils.unwrapOptional(all), style: 'form', explode: true),
+            'participating': SdkQueryValue(SdkUtils.unwrapOptional(participating), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListRepoNotificationsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Thread.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Thread.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Marks all notifications in a repository as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
@@ -515,12 +449,11 @@ Future<ActivityMarkRepoNotificationsAsReadResponse>
           body: {'last_read_at': SdkUtils.unwrapOptional(lastReadAt)},
           decoder: SdkResponseDecoder.json,
           operationId: 'activityMarkRepoNotificationsAsRead',
-          fromJsonRaw: (value) =>
-              ActivityMarkRepoNotificationsAsReadResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActivityMarkRepoNotificationsAsReadResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the people that have starred the repository. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
@@ -545,21 +478,17 @@ Future<dynamic> activityListStargazersForRepo(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/stargazers',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListStargazersForRepo',
           fromJsonRaw: (value) => value,
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the current number of users who have starred the repository. Users who previously starred the repository but later removed their star are not included.
 ///
@@ -578,11 +507,10 @@ Future<ActivityGetStargazerCountForRepoResponse>
           operationId: 'activityGetStargazerCountForRepo',
           fromJsonRaw: (value) => ActivityGetStargazerCountForRepoResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns repository stars grouped by calendar weeks, most recent first. Pages move backward toward the repository's creation week, and weeks within a page are ordered newest to oldest, so concatenating pages produces one continuous series. Weeks without stars contain zero counts. Week and day boundaries are not guaranteed to align with UTC. The `days` array contains the number of stars created on each day of the week, starting on Sunday.
 ///
@@ -597,13 +525,13 @@ Future<ActivityGetStargazerCountForRepoResponse>
 ///   information, see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<StargazerHistory>> activityGetStargazerHistoryForRepo(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<StargazerHistory>>
+    activityGetStargazerHistoryForRepo(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (perPage is SdkPresent<int>) {
     validateRange('per_page', perPage.value, min: 1, max: 30);
   }
@@ -615,24 +543,17 @@ Future<List<StargazerHistory>> activityGetStargazerHistoryForRepo(
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/stargazers/history',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityGetStargazerHistoryForRepo',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  StargazerHistory.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => StargazerHistory.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the people watching the specified repository.
 ///
@@ -657,19 +578,16 @@ Future<List<SimpleUser>> activityListWatchersForRepo(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/subscribers',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListWatchersForRepo',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets information about whether the authenticated user is subscribed to the repository.
 ///
@@ -687,11 +605,10 @@ Future<RepositorySubscription> activityGetRepoSubscription(ClientConfig config,
           operationId: 'activityGetRepoSubscription',
           fromJsonRaw: (value) => RepositorySubscription.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://docs.github.com/rest/activity/watching#delete-a-repository-subscription) completely.
 ///
@@ -717,11 +634,11 @@ Future<RepositorySubscription> activitySetRepoSubscription(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activitySetRepoSubscription',
-          fromJsonRaw: (value) =>
-              RepositorySubscription.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositorySubscription.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://docs.github.com/rest/activity/watching#set-a-repository-subscription).
 ///
@@ -741,6 +658,7 @@ Future<void> activityDeleteRepoSubscription(ClientConfig config,
       .data;
 }
 
+
 /// Lists repositories the authenticated user has starred. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// [sort] The property to sort the results by. `created` means when the
@@ -755,38 +673,29 @@ Future<void> activityDeleteRepoSubscription(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Repository>> activityListReposStarredByAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<SchemaSchema00c9f324> sort = const SdkOmitted(),
-    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<Repository>>
+    activityListReposStarredByAuthenticatedUser(ClientConfig config,
+        {SdkOptional<SchemaSchema00c9f324> sort = const SdkOmitted(),
+        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Repository>>('GET', '/user/starred',
           config: config,
           query: {
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListReposStarredByAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Repository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Repository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Whether the authenticated user has starred the repository.
 ///
@@ -803,13 +712,10 @@ Future<void> activityCheckRepoIsStarredByAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'activityCheckRepoIsStarredByAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
@@ -826,13 +732,10 @@ Future<void> activityStarRepoForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'activityStarRepoForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Unstar a repository that the authenticated user has previously starred.
 ///
@@ -849,13 +752,10 @@ Future<void> activityUnstarRepoForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'activityUnstarRepoForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists repositories the authenticated user is watching.
 ///
@@ -867,34 +767,26 @@ Future<void> activityUnstarRepoForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<MinimalRepository>> activityListWatchedReposForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<MinimalRepository>>
+    activityListWatchedReposForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<MinimalRepository>>(
           'GET', '/user/subscriptions',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListWatchedReposForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: "Events" user permissions (read). &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -916,19 +808,16 @@ Future<List<Event>> activityListEventsForAuthenticatedUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/events',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListEventsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// This is the user's organization dashboard. You must be authenticated as the user to view this. &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -942,30 +831,27 @@ Future<List<Event>> activityListEventsForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Event>> activityListOrgEventsForAuthenticatedUser(
-    ClientConfig config,
-    {required String username,
-    required String org,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<Event>>
+    activityListOrgEventsForAuthenticatedUser(ClientConfig config,
+        {required String username,
+        required String org,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Event>>('GET',
           '/users/${Uri.encodeComponent(username.toString())}/events/orgs/${Uri.encodeComponent(org.toString())}',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListOrgEventsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -987,19 +873,16 @@ Future<List<Event>> activityListPublicEventsForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/events/public',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListPublicEventsForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// These are events that you've received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events. &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -1021,19 +904,16 @@ Future<List<Event>> activityListReceivedEventsForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/received_events',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListReceivedEventsForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
@@ -1055,19 +935,16 @@ Future<List<Event>> activityListReceivedPublicEventsForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/received_events/public',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListReceivedPublicEventsForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Event.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists repositories a user has starred. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns starred repositories visible to the token even if the token has no OAuth scopes. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
@@ -1095,14 +972,10 @@ Future<dynamic> activityListReposStarredByUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/starred',
           config: config,
           query: {
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListReposStarredByUser',
@@ -1110,6 +983,7 @@ Future<dynamic> activityListReposStarredByUser(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists repositories that a specified GitHub user is watching. Use `page` and `per_page` to paginate the results.
 ///
@@ -1124,27 +998,22 @@ Future<dynamic> activityListReposStarredByUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<MinimalRepository>> activityListReposWatchedByUser(
-    ClientConfig config,
-    {required String username,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<MinimalRepository>>
+    activityListReposWatchedByUser(ClientConfig config,
+        {required String username,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<MinimalRepository>>('GET',
           '/users/${Uri.encodeComponent(username.toString())}/subscriptions',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'activityListReposWatchedByUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }

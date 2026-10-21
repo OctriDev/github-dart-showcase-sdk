@@ -8,255 +8,120 @@ part of 'orgs.dart';
 class OrganizationProgrammaticAccessGrantRequestPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `organization` wire field.
   final SdkOptional<Map<String, String>> organization;
-
   /// Optional object value serialized in the `repository` wire field.
   final SdkOptional<Map<String, String>> repository;
-
   /// Optional object value serialized in the `other` wire field.
   final SdkOptional<Map<String, String>> other;
 
-  const OrganizationProgrammaticAccessGrantRequestPermissions(
-      {this.organization = const SdkOmitted(),
-      this.repository = const SdkOmitted(),
-      this.other = const SdkOmitted()});
+  const OrganizationProgrammaticAccessGrantRequestPermissions({this.organization = const SdkOmitted(), this.repository = const SdkOmitted(), this.other = const SdkOmitted()});
 
-  OrganizationProgrammaticAccessGrantRequestPermissions Function(
-      {SdkOptional<Map<String, String>> organization,
-      SdkOptional<Map<String, String>> repository,
-      SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
+  OrganizationProgrammaticAccessGrantRequestPermissions Function({SdkOptional<Map<String, String>> organization, SdkOptional<Map<String, String>> repository, SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
 
-  OrganizationProgrammaticAccessGrantRequestPermissions _copyWith(
-          {Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? other = sdkOmittedValue}) =>
-      OrganizationProgrammaticAccessGrantRequestPermissions(
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<Map<String, String>>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<Map<String, String>>,
-        other: identical(other, sdkOmittedValue)
-            ? this.other
-            : other as SdkOptional<Map<String, String>>,
-      );
+  OrganizationProgrammaticAccessGrantRequestPermissions _copyWith({Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? other = sdkOmittedValue}) => OrganizationProgrammaticAccessGrantRequestPermissions(
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<Map<String, String>>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<Map<String, String>>,
+    other: identical(other, sdkOmittedValue) ? this.other : other as SdkOptional<Map<String, String>>,
+  );
 
-  factory OrganizationProgrammaticAccessGrantRequestPermissions.fromJson(
-          Map<String, dynamic> json) =>
-      OrganizationProgrammaticAccessGrantRequestPermissions(
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] == null
-                ? null
-                : Map<String, dynamic>.from(json['organization'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] == null
-                ? null
-                : Map<String, dynamic>.from(json['repository'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-        other: json['other'] != null
-            ? SdkPresent((json['other'] == null
-                ? null
-                : Map<String, dynamic>.from(json['other'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-      );
+  factory OrganizationProgrammaticAccessGrantRequestPermissions.fromJson(Map<String, dynamic> json) => OrganizationProgrammaticAccessGrantRequestPermissions(
+    organization: json['organization'] != null ? SdkPresent((json['organization'] == null ? null : Map<String, dynamic>.from(json['organization'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
+    repository: json['repository'] != null ? SdkPresent((json['repository'] == null ? null : Map<String, dynamic>.from(json['repository'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
+    other: json['other'] != null ? SdkPresent((json['other'] == null ? null : Map<String, dynamic>.from(json['other'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (organization) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'organization': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repository) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'repository': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (other) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'other': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (organization) {
+      SdkPresent<Map<String, String>>(value: final value) => {'organization': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repository) {
+      SdkPresent<Map<String, String>>(value: final value) => {'repository': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (other) {
+      SdkPresent<Map<String, String>>(value: final value) => {'other': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Minimal representation of an organization programmatic access grant request for enumerations
 class OrganizationProgrammaticAccessGrantRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Unique identifier of the request for access via fine-grained personal access token. The `pat_request_id` used to review PAT requests.
   final int id;
-
   /// Reason for requesting access.
   final String? reason;
-
   /// A GitHub user.
   final SimpleUser owner;
-
   /// Type of repository selection requested.
-  final OrganizationProgrammaticAccessGrantRequestRepositorySelection
-      repositorySelection;
-
+  final OrganizationProgrammaticAccessGrantRequestRepositorySelection repositorySelection;
   /// URL to the list of repositories requested to be accessed via fine-grained personal access token. Should only be followed when `repository_selection` is `subset`.
   final String repositoriesUrl;
-
   /// Permissions requested, categorized by type of permission.
   final OrganizationProgrammaticAccessGrantRequestPermissions permissions;
-
   /// Date and time when the request for access was created.
   final String createdAt;
-
   /// Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
   final int tokenId;
-
   /// The name given to the user's token. This field can also be found in an organization's settings page for Active Tokens.
   final String tokenName;
-
   /// Whether the associated fine-grained personal access token has expired.
   final bool tokenExpired;
-
   /// Date and time when the associated fine-grained personal access token expires.
   final String? tokenExpiresAt;
-
   /// Date and time when the associated fine-grained personal access token was last used for authentication.
   final String? tokenLastUsedAt;
 
-  const OrganizationProgrammaticAccessGrantRequest(
-      {required this.id,
-      required this.reason,
-      required this.owner,
-      required this.repositorySelection,
-      required this.repositoriesUrl,
-      required this.permissions,
-      required this.createdAt,
-      required this.tokenId,
-      required this.tokenName,
-      required this.tokenExpired,
-      required this.tokenExpiresAt,
-      required this.tokenLastUsedAt});
+  const OrganizationProgrammaticAccessGrantRequest({required this.id, required this.reason, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt});
 
-  OrganizationProgrammaticAccessGrantRequest Function(
-      {int id,
-      String? reason,
-      SimpleUser owner,
-      OrganizationProgrammaticAccessGrantRequestRepositorySelection
-          repositorySelection,
-      String repositoriesUrl,
-      OrganizationProgrammaticAccessGrantRequestPermissions permissions,
-      String createdAt,
-      int tokenId,
-      String tokenName,
-      bool tokenExpired,
-      String? tokenExpiresAt,
-      String? tokenLastUsedAt}) get copyWith => _copyWith;
+  OrganizationProgrammaticAccessGrantRequest Function({int id, String? reason, SimpleUser owner, OrganizationProgrammaticAccessGrantRequestRepositorySelection repositorySelection, String repositoriesUrl, OrganizationProgrammaticAccessGrantRequestPermissions permissions, String createdAt, int tokenId, String tokenName, bool tokenExpired, String? tokenExpiresAt, String? tokenLastUsedAt}) get copyWith => _copyWith;
 
-  OrganizationProgrammaticAccessGrantRequest _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? reason = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? repositorySelection = sdkOmittedValue,
-          Object? repositoriesUrl = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? tokenId = sdkOmittedValue,
-          Object? tokenName = sdkOmittedValue,
-          Object? tokenExpired = sdkOmittedValue,
-          Object? tokenExpiresAt = sdkOmittedValue,
-          Object? tokenLastUsedAt = sdkOmittedValue}) =>
-      OrganizationProgrammaticAccessGrantRequest(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        reason: identical(reason, sdkOmittedValue)
-            ? this.reason
-            : reason as String?,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SimpleUser,
-        repositorySelection: identical(repositorySelection, sdkOmittedValue)
-            ? this.repositorySelection
-            : repositorySelection
-                as OrganizationProgrammaticAccessGrantRequestRepositorySelection,
-        repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
-            ? this.repositoriesUrl
-            : repositoriesUrl as String,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions
-                as OrganizationProgrammaticAccessGrantRequestPermissions,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        tokenId:
-            identical(tokenId, sdkOmittedValue) ? this.tokenId : tokenId as int,
-        tokenName: identical(tokenName, sdkOmittedValue)
-            ? this.tokenName
-            : tokenName as String,
-        tokenExpired: identical(tokenExpired, sdkOmittedValue)
-            ? this.tokenExpired
-            : tokenExpired as bool,
-        tokenExpiresAt: identical(tokenExpiresAt, sdkOmittedValue)
-            ? this.tokenExpiresAt
-            : tokenExpiresAt as String?,
-        tokenLastUsedAt: identical(tokenLastUsedAt, sdkOmittedValue)
-            ? this.tokenLastUsedAt
-            : tokenLastUsedAt as String?,
-      );
+  OrganizationProgrammaticAccessGrantRequest _copyWith({Object? id = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? tokenId = sdkOmittedValue, Object? tokenName = sdkOmittedValue, Object? tokenExpired = sdkOmittedValue, Object? tokenExpiresAt = sdkOmittedValue, Object? tokenLastUsedAt = sdkOmittedValue}) => OrganizationProgrammaticAccessGrantRequest(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as String?,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SimpleUser,
+    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as OrganizationProgrammaticAccessGrantRequestRepositorySelection,
+    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
+    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as OrganizationProgrammaticAccessGrantRequestPermissions,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    tokenId: identical(tokenId, sdkOmittedValue) ? this.tokenId : tokenId as int,
+    tokenName: identical(tokenName, sdkOmittedValue) ? this.tokenName : tokenName as String,
+    tokenExpired: identical(tokenExpired, sdkOmittedValue) ? this.tokenExpired : tokenExpired as bool,
+    tokenExpiresAt: identical(tokenExpiresAt, sdkOmittedValue) ? this.tokenExpiresAt : tokenExpiresAt as String?,
+    tokenLastUsedAt: identical(tokenLastUsedAt, sdkOmittedValue) ? this.tokenLastUsedAt : tokenLastUsedAt as String?,
+  );
 
-  factory OrganizationProgrammaticAccessGrantRequest.fromJson(
-          Map<String, dynamic> json) =>
-      OrganizationProgrammaticAccessGrantRequest(
-        id: ((json['id'] as num?)?.toInt())!,
-        reason: json.containsKey('reason')
-            ? json['reason'] as String?
-            : throw ArgumentError.value(
-                null, 'reason', 'Required property is missing'),
-        owner: (json['owner'] != null
-            ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
-            : null)!,
-        repositorySelection: (json['repository_selection'] != null
-            ? OrganizationProgrammaticAccessGrantRequestRepositorySelection
-                .fromJson(json['repository_selection'] as String)
-            : null)!,
-        repositoriesUrl: (json['repositories_url'] as String?)!,
-        permissions: (json['permissions'] != null
-            ? OrganizationProgrammaticAccessGrantRequestPermissions.fromJson(
-                json['permissions'] as Map<String, dynamic>)
-            : null)!,
-        createdAt: (json['created_at'] as String?)!,
-        tokenId: ((json['token_id'] as num?)?.toInt())!,
-        tokenName: (json['token_name'] as String?)!,
-        tokenExpired: (json['token_expired'] as bool?)!,
-        tokenExpiresAt: json.containsKey('token_expires_at')
-            ? json['token_expires_at'] as String?
-            : throw ArgumentError.value(
-                null, 'token_expires_at', 'Required property is missing'),
-        tokenLastUsedAt: json.containsKey('token_last_used_at')
-            ? json['token_last_used_at'] as String?
-            : throw ArgumentError.value(
-                null, 'token_last_used_at', 'Required property is missing'),
-      );
+  factory OrganizationProgrammaticAccessGrantRequest.fromJson(Map<String, dynamic> json) => OrganizationProgrammaticAccessGrantRequest(
+    id: ((json['id'] as num?)?.toInt())!,
+    reason: json.containsKey('reason') ? json['reason'] as String? : throw ArgumentError.value(null, 'reason', 'Required property is missing'),
+    owner: (json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null)!,
+    repositorySelection: (json['repository_selection'] != null ? OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(json['repository_selection'] as String) : null)!,
+    repositoriesUrl: (json['repositories_url'] as String?)!,
+    permissions: (json['permissions'] != null ? OrganizationProgrammaticAccessGrantRequestPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!,
+    createdAt: (json['created_at'] as String?)!,
+    tokenId: ((json['token_id'] as num?)?.toInt())!,
+    tokenName: (json['token_name'] as String?)!,
+    tokenExpired: (json['token_expired'] as bool?)!,
+    tokenExpiresAt: json.containsKey('token_expires_at') ? json['token_expires_at'] as String? : throw ArgumentError.value(null, 'token_expires_at', 'Required property is missing'),
+    tokenLastUsedAt: json.containsKey('token_last_used_at') ? json['token_last_used_at'] as String? : throw ArgumentError.value(null, 'token_last_used_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'reason': reason,
-        'owner': owner.toJson(),
-        'repository_selection': repositorySelection.toJson(),
-        'repositories_url': repositoriesUrl,
-        'permissions': permissions.toJson(),
-        'created_at': createdAt,
-        'token_id': tokenId,
-        'token_name': tokenName,
-        'token_expired': tokenExpired,
-        'token_expires_at': tokenExpiresAt,
-        'token_last_used_at': tokenLastUsedAt,
-      };
+    'id': id,
+    'reason': reason,
+    'owner': owner.toJson(),
+    'repository_selection': repositorySelection.toJson(),
+    'repositories_url': repositoriesUrl,
+    'permissions': permissions.toJson(),
+    'created_at': createdAt,
+    'token_id': tokenId,
+    'token_name': tokenName,
+    'token_expired': tokenExpired,
+    'token_expires_at': tokenExpiresAt,
+    'token_last_used_at': tokenLastUsedAt,
+  };
 }

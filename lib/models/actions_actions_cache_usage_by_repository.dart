@@ -8,54 +8,32 @@ part of 'actions_actions_cache.dart';
 class ActionsCacheUsageByRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The repository owner and name for the cache usage being shown.
   final String fullName;
-
   /// The sum of the size in bytes of all the active cache items in the repository.
   final int activeCachesSizeInBytes;
-
   /// The number of active caches in the repository.
   final int activeCachesCount;
 
-  const ActionsCacheUsageByRepository(
-      {required this.fullName,
-      required this.activeCachesSizeInBytes,
-      required this.activeCachesCount});
+  const ActionsCacheUsageByRepository({required this.fullName, required this.activeCachesSizeInBytes, required this.activeCachesCount});
 
-  ActionsCacheUsageByRepository Function(
-      {String fullName,
-      int activeCachesSizeInBytes,
-      int activeCachesCount}) get copyWith => _copyWith;
+  ActionsCacheUsageByRepository Function({String fullName, int activeCachesSizeInBytes, int activeCachesCount}) get copyWith => _copyWith;
 
-  ActionsCacheUsageByRepository _copyWith(
-          {Object? fullName = sdkOmittedValue,
-          Object? activeCachesSizeInBytes = sdkOmittedValue,
-          Object? activeCachesCount = sdkOmittedValue}) =>
-      ActionsCacheUsageByRepository(
-        fullName: identical(fullName, sdkOmittedValue)
-            ? this.fullName
-            : fullName as String,
-        activeCachesSizeInBytes:
-            identical(activeCachesSizeInBytes, sdkOmittedValue)
-                ? this.activeCachesSizeInBytes
-                : activeCachesSizeInBytes as int,
-        activeCachesCount: identical(activeCachesCount, sdkOmittedValue)
-            ? this.activeCachesCount
-            : activeCachesCount as int,
-      );
+  ActionsCacheUsageByRepository _copyWith({Object? fullName = sdkOmittedValue, Object? activeCachesSizeInBytes = sdkOmittedValue, Object? activeCachesCount = sdkOmittedValue}) => ActionsCacheUsageByRepository(
+    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as String,
+    activeCachesSizeInBytes: identical(activeCachesSizeInBytes, sdkOmittedValue) ? this.activeCachesSizeInBytes : activeCachesSizeInBytes as int,
+    activeCachesCount: identical(activeCachesCount, sdkOmittedValue) ? this.activeCachesCount : activeCachesCount as int,
+  );
 
-  factory ActionsCacheUsageByRepository.fromJson(Map<String, dynamic> json) =>
-      ActionsCacheUsageByRepository(
-        fullName: (json['full_name'] as String?)!,
-        activeCachesSizeInBytes:
-            ((json['active_caches_size_in_bytes'] as num?)?.toInt())!,
-        activeCachesCount: ((json['active_caches_count'] as num?)?.toInt())!,
-      );
+  factory ActionsCacheUsageByRepository.fromJson(Map<String, dynamic> json) => ActionsCacheUsageByRepository(
+    fullName: (json['full_name'] as String?)!,
+    activeCachesSizeInBytes: ((json['active_caches_size_in_bytes'] as num?)?.toInt())!,
+    activeCachesCount: ((json['active_caches_count'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'full_name': fullName,
-        'active_caches_size_in_bytes': activeCachesSizeInBytes,
-        'active_caches_count': activeCachesCount,
-      };
+    'full_name': fullName,
+    'active_caches_size_in_bytes': activeCachesSizeInBytes,
+    'active_caches_count': activeCachesCount,
+  };
 }

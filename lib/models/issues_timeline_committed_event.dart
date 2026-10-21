@@ -8,412 +8,250 @@ part of 'issues_timeline.dart';
 class TimelineCommittedEventAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Timestamp of the commit
   final String date;
-
   /// Git email address of the user
   final String email;
-
   /// Name of the git user
   final String name;
 
-  const TimelineCommittedEventAuthor(
-      {required this.date, required this.email, required this.name});
+  const TimelineCommittedEventAuthor({required this.date, required this.email, required this.name});
 
-  TimelineCommittedEventAuthor Function(
-      {String date, String email, String name}) get copyWith => _copyWith;
+  TimelineCommittedEventAuthor Function({String date, String email, String name}) get copyWith => _copyWith;
 
-  TimelineCommittedEventAuthor _copyWith(
-          {Object? date = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      TimelineCommittedEventAuthor(
-        date: identical(date, sdkOmittedValue) ? this.date : date as String,
-        email: identical(email, sdkOmittedValue) ? this.email : email as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-      );
+  TimelineCommittedEventAuthor _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => TimelineCommittedEventAuthor(
+    date: identical(date, sdkOmittedValue) ? this.date : date as String,
+    email: identical(email, sdkOmittedValue) ? this.email : email as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+  );
 
-  factory TimelineCommittedEventAuthor.fromJson(Map<String, dynamic> json) =>
-      TimelineCommittedEventAuthor(
-        date: (json['date'] as String?)!,
-        email: (json['email'] as String?)!,
-        name: (json['name'] as String?)!,
-      );
+  factory TimelineCommittedEventAuthor.fromJson(Map<String, dynamic> json) => TimelineCommittedEventAuthor(
+    date: (json['date'] as String?)!,
+    email: (json['email'] as String?)!,
+    name: (json['name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'date': date,
-        'email': email,
-        'name': name,
-      };
+    'date': date,
+    'email': email,
+    'name': name,
+  };
 }
 
 /// Identifying information for the git-user
 class TimelineCommittedEventCommitter {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Timestamp of the commit
   final String date;
-
   /// Git email address of the user
   final String email;
-
   /// Name of the git user
   final String name;
 
-  const TimelineCommittedEventCommitter(
-      {required this.date, required this.email, required this.name});
+  const TimelineCommittedEventCommitter({required this.date, required this.email, required this.name});
 
-  TimelineCommittedEventCommitter Function(
-      {String date, String email, String name}) get copyWith => _copyWith;
+  TimelineCommittedEventCommitter Function({String date, String email, String name}) get copyWith => _copyWith;
 
-  TimelineCommittedEventCommitter _copyWith(
-          {Object? date = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      TimelineCommittedEventCommitter(
-        date: identical(date, sdkOmittedValue) ? this.date : date as String,
-        email: identical(email, sdkOmittedValue) ? this.email : email as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-      );
+  TimelineCommittedEventCommitter _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => TimelineCommittedEventCommitter(
+    date: identical(date, sdkOmittedValue) ? this.date : date as String,
+    email: identical(email, sdkOmittedValue) ? this.email : email as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+  );
 
-  factory TimelineCommittedEventCommitter.fromJson(Map<String, dynamic> json) =>
-      TimelineCommittedEventCommitter(
-        date: (json['date'] as String?)!,
-        email: (json['email'] as String?)!,
-        name: (json['name'] as String?)!,
-      );
+  factory TimelineCommittedEventCommitter.fromJson(Map<String, dynamic> json) => TimelineCommittedEventCommitter(
+    date: (json['date'] as String?)!,
+    email: (json['email'] as String?)!,
+    name: (json['name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'date': date,
-        'email': email,
-        'name': name,
-      };
+    'date': date,
+    'email': email,
+    'name': name,
+  };
 }
 
 /// Required object value serialized in the `tree` wire field.
 class TimelineCommittedEventTree {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// SHA for the commit
   final String sha;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
   const TimelineCommittedEventTree({required this.sha, required this.url});
 
-  TimelineCommittedEventTree Function({String sha, String url}) get copyWith =>
-      _copyWith;
+  TimelineCommittedEventTree Function({String sha, String url}) get copyWith => _copyWith;
 
-  TimelineCommittedEventTree _copyWith(
-          {Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
-      TimelineCommittedEventTree(
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  TimelineCommittedEventTree _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => TimelineCommittedEventTree(
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory TimelineCommittedEventTree.fromJson(Map<String, dynamic> json) =>
-      TimelineCommittedEventTree(
-        sha: (json['sha'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory TimelineCommittedEventTree.fromJson(Map<String, dynamic> json) => TimelineCommittedEventTree(
+    sha: (json['sha'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'sha': sha,
-        'url': url,
-      };
+    'sha': sha,
+    'url': url,
+  };
 }
 
 /// Required object value serialized in the `verification` wire field.
 class TimelineCommittedEventVerification {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `boolean` value serialized in the `verified` wire field.
   final bool verified;
-
   /// Required `string` value serialized in the `reason` wire field.
   final String reason;
-
   /// Required `string` value serialized in the `signature` wire field.
   final String? signature;
-
   /// Required `string` value serialized in the `payload` wire field.
   final String? payload;
-
   /// Required `string` value serialized in the `verified_at` wire field.
   final String? verifiedAt;
 
-  const TimelineCommittedEventVerification(
-      {required this.verified,
-      required this.reason,
-      required this.signature,
-      required this.payload,
-      required this.verifiedAt});
+  const TimelineCommittedEventVerification({required this.verified, required this.reason, required this.signature, required this.payload, required this.verifiedAt});
 
-  TimelineCommittedEventVerification Function(
-      {bool verified,
-      String reason,
-      String? signature,
-      String? payload,
-      String? verifiedAt}) get copyWith => _copyWith;
+  TimelineCommittedEventVerification Function({bool verified, String reason, String? signature, String? payload, String? verifiedAt}) get copyWith => _copyWith;
 
-  TimelineCommittedEventVerification _copyWith(
-          {Object? verified = sdkOmittedValue,
-          Object? reason = sdkOmittedValue,
-          Object? signature = sdkOmittedValue,
-          Object? payload = sdkOmittedValue,
-          Object? verifiedAt = sdkOmittedValue}) =>
-      TimelineCommittedEventVerification(
-        verified: identical(verified, sdkOmittedValue)
-            ? this.verified
-            : verified as bool,
-        reason:
-            identical(reason, sdkOmittedValue) ? this.reason : reason as String,
-        signature: identical(signature, sdkOmittedValue)
-            ? this.signature
-            : signature as String?,
-        payload: identical(payload, sdkOmittedValue)
-            ? this.payload
-            : payload as String?,
-        verifiedAt: identical(verifiedAt, sdkOmittedValue)
-            ? this.verifiedAt
-            : verifiedAt as String?,
-      );
+  TimelineCommittedEventVerification _copyWith({Object? verified = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? signature = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? verifiedAt = sdkOmittedValue}) => TimelineCommittedEventVerification(
+    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
+    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as String,
+    signature: identical(signature, sdkOmittedValue) ? this.signature : signature as String?,
+    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String?,
+    verifiedAt: identical(verifiedAt, sdkOmittedValue) ? this.verifiedAt : verifiedAt as String?,
+  );
 
-  factory TimelineCommittedEventVerification.fromJson(
-          Map<String, dynamic> json) =>
-      TimelineCommittedEventVerification(
-        verified: (json['verified'] as bool?)!,
-        reason: (json['reason'] as String?)!,
-        signature: json.containsKey('signature')
-            ? json['signature'] as String?
-            : throw ArgumentError.value(
-                null, 'signature', 'Required property is missing'),
-        payload: json.containsKey('payload')
-            ? json['payload'] as String?
-            : throw ArgumentError.value(
-                null, 'payload', 'Required property is missing'),
-        verifiedAt: json.containsKey('verified_at')
-            ? json['verified_at'] as String?
-            : throw ArgumentError.value(
-                null, 'verified_at', 'Required property is missing'),
-      );
+  factory TimelineCommittedEventVerification.fromJson(Map<String, dynamic> json) => TimelineCommittedEventVerification(
+    verified: (json['verified'] as bool?)!,
+    reason: (json['reason'] as String?)!,
+    signature: json.containsKey('signature') ? json['signature'] as String? : throw ArgumentError.value(null, 'signature', 'Required property is missing'),
+    payload: json.containsKey('payload') ? json['payload'] as String? : throw ArgumentError.value(null, 'payload', 'Required property is missing'),
+    verifiedAt: json.containsKey('verified_at') ? json['verified_at'] as String? : throw ArgumentError.value(null, 'verified_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'verified': verified,
-        'reason': reason,
-        'signature': signature,
-        'payload': payload,
-        'verified_at': verifiedAt,
-      };
+    'verified': verified,
+    'reason': reason,
+    'signature': signature,
+    'payload': payload,
+    'verified_at': verifiedAt,
+  };
 }
 
 /// Required object value serialized in the `parents[]` wire field.
 class TimelineCommittedEventParentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// SHA for the commit
   final String sha;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
 
-  const TimelineCommittedEventParentsItem(
-      {required this.sha, required this.url, required this.htmlUrl});
+  const TimelineCommittedEventParentsItem({required this.sha, required this.url, required this.htmlUrl});
 
-  TimelineCommittedEventParentsItem Function(
-      {String sha, String url, String htmlUrl}) get copyWith => _copyWith;
+  TimelineCommittedEventParentsItem Function({String sha, String url, String htmlUrl}) get copyWith => _copyWith;
 
-  TimelineCommittedEventParentsItem _copyWith(
-          {Object? sha = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue}) =>
-      TimelineCommittedEventParentsItem(
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-      );
+  TimelineCommittedEventParentsItem _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => TimelineCommittedEventParentsItem(
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+  );
 
-  factory TimelineCommittedEventParentsItem.fromJson(
-          Map<String, dynamic> json) =>
-      TimelineCommittedEventParentsItem(
-        sha: (json['sha'] as String?)!,
-        url: (json['url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-      );
+  factory TimelineCommittedEventParentsItem.fromJson(Map<String, dynamic> json) => TimelineCommittedEventParentsItem(
+    sha: (json['sha'] as String?)!,
+    url: (json['url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'sha': sha,
-        'url': url,
-        'html_url': htmlUrl,
-      };
+    'sha': sha,
+    'url': url,
+    'html_url': htmlUrl,
+  };
 }
 
 /// Timeline Committed Event
 class TimelineCommittedEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `event` wire field.
   final SdkOptional<String> event;
-
   /// SHA for the commit
   final String sha;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Identifying information for the git-user
   final TimelineCommittedEventAuthor author;
-
   /// Identifying information for the git-user
   final TimelineCommittedEventCommitter committer;
-
   /// Message describing the purpose of the commit
   final String message;
-
   /// Required object value serialized in the `tree` wire field.
   final TimelineCommittedEventTree tree;
-
   /// Required array value serialized in the `parents` wire field.
   final List<TimelineCommittedEventParentsItem> parents;
-
   /// Required object value serialized in the `verification` wire field.
   final TimelineCommittedEventVerification verification;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
 
-  const TimelineCommittedEvent(
-      {this.event = const SdkOmitted(),
-      required this.sha,
-      required this.nodeId,
-      required this.url,
-      required this.author,
-      required this.committer,
-      required this.message,
-      required this.tree,
-      required this.parents,
-      required this.verification,
-      required this.htmlUrl});
+  const TimelineCommittedEvent({this.event = const SdkOmitted(), required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl});
 
-  TimelineCommittedEvent Function(
-      {SdkOptional<String> event,
-      String sha,
-      String nodeId,
-      String url,
-      TimelineCommittedEventAuthor author,
-      TimelineCommittedEventCommitter committer,
-      String message,
-      TimelineCommittedEventTree tree,
-      List<TimelineCommittedEventParentsItem> parents,
-      TimelineCommittedEventVerification verification,
-      String htmlUrl}) get copyWith => _copyWith;
+  TimelineCommittedEvent Function({SdkOptional<String> event, String sha, String nodeId, String url, TimelineCommittedEventAuthor author, TimelineCommittedEventCommitter committer, String message, TimelineCommittedEventTree tree, List<TimelineCommittedEventParentsItem> parents, TimelineCommittedEventVerification verification, String htmlUrl}) get copyWith => _copyWith;
 
-  TimelineCommittedEvent _copyWith(
-          {Object? event = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? author = sdkOmittedValue,
-          Object? committer = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? tree = sdkOmittedValue,
-          Object? parents = sdkOmittedValue,
-          Object? verification = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue}) =>
-      TimelineCommittedEvent(
-        event: identical(event, sdkOmittedValue)
-            ? this.event
-            : event as SdkOptional<String>,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as TimelineCommittedEventAuthor,
-        committer: identical(committer, sdkOmittedValue)
-            ? this.committer
-            : committer as TimelineCommittedEventCommitter,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        tree: identical(tree, sdkOmittedValue)
-            ? this.tree
-            : tree as TimelineCommittedEventTree,
-        parents: identical(parents, sdkOmittedValue)
-            ? this.parents
-            : parents as List<TimelineCommittedEventParentsItem>,
-        verification: identical(verification, sdkOmittedValue)
-            ? this.verification
-            : verification as TimelineCommittedEventVerification,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-      );
+  TimelineCommittedEvent _copyWith({Object? event = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? message = sdkOmittedValue, Object? tree = sdkOmittedValue, Object? parents = sdkOmittedValue, Object? verification = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => TimelineCommittedEvent(
+    event: identical(event, sdkOmittedValue) ? this.event : event as SdkOptional<String>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    author: identical(author, sdkOmittedValue) ? this.author : author as TimelineCommittedEventAuthor,
+    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as TimelineCommittedEventCommitter,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as TimelineCommittedEventTree,
+    parents: identical(parents, sdkOmittedValue) ? this.parents : parents as List<TimelineCommittedEventParentsItem>,
+    verification: identical(verification, sdkOmittedValue) ? this.verification : verification as TimelineCommittedEventVerification,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+  );
 
-  factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) =>
-      TimelineCommittedEvent(
-        event: json['event'] != null
-            ? SdkPresent((json['event'] as String?)!)
-            : const SdkOmitted(),
-        sha: (json['sha'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-        author: (json['author'] != null
-            ? TimelineCommittedEventAuthor.fromJson(
-                json['author'] as Map<String, dynamic>)
-            : null)!,
-        committer: (json['committer'] != null
-            ? TimelineCommittedEventCommitter.fromJson(
-                json['committer'] as Map<String, dynamic>)
-            : null)!,
-        message: (json['message'] as String?)!,
-        tree: (json['tree'] != null
-            ? TimelineCommittedEventTree.fromJson(
-                json['tree'] as Map<String, dynamic>)
-            : null)!,
-        parents: ((json['parents'] as List?)
-            ?.map((e) => TimelineCommittedEventParentsItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        verification: (json['verification'] != null
-            ? TimelineCommittedEventVerification.fromJson(
-                json['verification'] as Map<String, dynamic>)
-            : null)!,
-        htmlUrl: (json['html_url'] as String?)!,
-      );
+  factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) => TimelineCommittedEvent(
+    event: json['event'] != null ? SdkPresent((json['event'] as String?)!) : const SdkOmitted(),
+    sha: (json['sha'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    url: (json['url'] as String?)!,
+    author: (json['author'] != null ? TimelineCommittedEventAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!,
+    committer: (json['committer'] != null ? TimelineCommittedEventCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!,
+    message: (json['message'] as String?)!,
+    tree: (json['tree'] != null ? TimelineCommittedEventTree.fromJson(json['tree'] as Map<String, dynamic>) : null)!,
+    parents: ((json['parents'] as List?)?.map((e) => TimelineCommittedEventParentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    verification: (json['verification'] != null ? TimelineCommittedEventVerification.fromJson(json['verification'] as Map<String, dynamic>) : null)!,
+    htmlUrl: (json['html_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (event) {
-          SdkPresent<String>(value: final value) => {
-              'event': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'sha': sha,
-        'node_id': nodeId,
-        'url': url,
-        'author': author.toJson(),
-        'committer': committer.toJson(),
-        'message': message,
-        'tree': tree.toJson(),
-        'parents': parents.map((item) => item.toJson()).toList(),
-        'verification': verification.toJson(),
-        'html_url': htmlUrl,
-      };
+    ...switch (event) {
+      SdkPresent<String>(value: final value) => {'event': value,},
+      _ => const <String, dynamic>{},
+    },
+    'sha': sha,
+    'node_id': nodeId,
+    'url': url,
+    'author': author.toJson(),
+    'committer': committer.toJson(),
+    'message': message,
+    'tree': tree.toJson(),
+    'parents': parents.map((item) => item.toJson()).toList(),
+    'verification': verification.toJson(),
+    'html_url': htmlUrl,
+  };
 }

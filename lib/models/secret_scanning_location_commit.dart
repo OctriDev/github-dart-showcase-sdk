@@ -8,134 +8,70 @@ part of 'secret_scanning.dart';
 class SecretScanningLocationCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The file path in the repository
   final String path;
-
   /// Line number at which the secret starts in the file
   final double startLine;
-
   /// Line number at which the secret ends in the file
   final double endLine;
-
   /// The column at which the secret starts within the start line when the file is interpreted as 8BIT ASCII
   final double startColumn;
-
   /// The column at which the secret ends within the end line when the file is interpreted as 8BIT ASCII
   final double endColumn;
-
   /// SHA-1 hash ID of the associated blob
   final String blobSha;
-
   /// The API URL to get the associated blob resource
   final String blobUrl;
-
   /// SHA-1 hash ID of the associated commit
   final String commitSha;
-
   /// The API URL to get the associated commit resource
   final String commitUrl;
-
   /// The GitHub URL to get the associated commit resource.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationCommit(
-      {required this.path,
-      required this.startLine,
-      required this.endLine,
-      required this.startColumn,
-      required this.endColumn,
-      required this.blobSha,
-      required this.blobUrl,
-      required this.commitSha,
-      required this.commitUrl,
-      this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationCommit({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.blobSha, required this.blobUrl, required this.commitSha, required this.commitUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationCommit Function(
-      {String path,
-      double startLine,
-      double endLine,
-      double startColumn,
-      double endColumn,
-      String blobSha,
-      String blobUrl,
-      String commitSha,
-      String commitUrl,
-      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationCommit Function({String path, double startLine, double endLine, double startColumn, double endColumn, String blobSha, String blobUrl, String commitSha, String commitUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationCommit _copyWith(
-          {Object? path = sdkOmittedValue,
-          Object? startLine = sdkOmittedValue,
-          Object? endLine = sdkOmittedValue,
-          Object? startColumn = sdkOmittedValue,
-          Object? endColumn = sdkOmittedValue,
-          Object? blobSha = sdkOmittedValue,
-          Object? blobUrl = sdkOmittedValue,
-          Object? commitSha = sdkOmittedValue,
-          Object? commitUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue}) =>
-      SecretScanningLocationCommit(
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        startLine: identical(startLine, sdkOmittedValue)
-            ? this.startLine
-            : startLine as double,
-        endLine: identical(endLine, sdkOmittedValue)
-            ? this.endLine
-            : endLine as double,
-        startColumn: identical(startColumn, sdkOmittedValue)
-            ? this.startColumn
-            : startColumn as double,
-        endColumn: identical(endColumn, sdkOmittedValue)
-            ? this.endColumn
-            : endColumn as double,
-        blobSha: identical(blobSha, sdkOmittedValue)
-            ? this.blobSha
-            : blobSha as String,
-        blobUrl: identical(blobUrl, sdkOmittedValue)
-            ? this.blobUrl
-            : blobUrl as String,
-        commitSha: identical(commitSha, sdkOmittedValue)
-            ? this.commitSha
-            : commitSha as String,
-        commitUrl: identical(commitUrl, sdkOmittedValue)
-            ? this.commitUrl
-            : commitUrl as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-      );
+  SecretScanningLocationCommit _copyWith({Object? path = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? endLine = sdkOmittedValue, Object? startColumn = sdkOmittedValue, Object? endColumn = sdkOmittedValue, Object? blobSha = sdkOmittedValue, Object? blobUrl = sdkOmittedValue, Object? commitSha = sdkOmittedValue, Object? commitUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationCommit(
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as double,
+    endLine: identical(endLine, sdkOmittedValue) ? this.endLine : endLine as double,
+    startColumn: identical(startColumn, sdkOmittedValue) ? this.startColumn : startColumn as double,
+    endColumn: identical(endColumn, sdkOmittedValue) ? this.endColumn : endColumn as double,
+    blobSha: identical(blobSha, sdkOmittedValue) ? this.blobSha : blobSha as String,
+    blobUrl: identical(blobUrl, sdkOmittedValue) ? this.blobUrl : blobUrl as String,
+    commitSha: identical(commitSha, sdkOmittedValue) ? this.commitSha : commitSha as String,
+    commitUrl: identical(commitUrl, sdkOmittedValue) ? this.commitUrl : commitUrl as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+  );
 
-  factory SecretScanningLocationCommit.fromJson(Map<String, dynamic> json) =>
-      SecretScanningLocationCommit(
-        path: (json['path'] as String?)!,
-        startLine: ((json['start_line'] as num?)?.toDouble())!,
-        endLine: ((json['end_line'] as num?)?.toDouble())!,
-        startColumn: ((json['start_column'] as num?)?.toDouble())!,
-        endColumn: ((json['end_column'] as num?)?.toDouble())!,
-        blobSha: (json['blob_sha'] as String?)!,
-        blobUrl: (json['blob_url'] as String?)!,
-        commitSha: (json['commit_sha'] as String?)!,
-        commitUrl: (json['commit_url'] as String?)!,
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory SecretScanningLocationCommit.fromJson(Map<String, dynamic> json) => SecretScanningLocationCommit(
+    path: (json['path'] as String?)!,
+    startLine: ((json['start_line'] as num?)?.toDouble())!,
+    endLine: ((json['end_line'] as num?)?.toDouble())!,
+    startColumn: ((json['start_column'] as num?)?.toDouble())!,
+    endColumn: ((json['end_column'] as num?)?.toDouble())!,
+    blobSha: (json['blob_sha'] as String?)!,
+    blobUrl: (json['blob_url'] as String?)!,
+    commitSha: (json['commit_sha'] as String?)!,
+    commitUrl: (json['commit_url'] as String?)!,
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'path': path,
-        'start_line': startLine,
-        'end_line': endLine,
-        'start_column': startColumn,
-        'end_column': endColumn,
-        'blob_sha': blobSha,
-        'blob_url': blobUrl,
-        'commit_sha': commitSha,
-        'commit_url': commitUrl,
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'path': path,
+    'start_line': startLine,
+    'end_line': endLine,
+    'start_column': startColumn,
+    'end_column': endColumn,
+    'blob_sha': blobSha,
+    'blob_url': blobUrl,
+    'commit_sha': commitSha,
+    'commit_url': commitUrl,
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

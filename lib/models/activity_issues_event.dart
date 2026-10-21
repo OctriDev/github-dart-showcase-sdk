@@ -8,119 +8,59 @@ part of 'activity.dart';
 class IssuesEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `action` wire field.
   final String action;
-
   /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
   final Issue issue;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> assignee;
-
   /// Optional array value serialized in the `assignees` wire field.
   final SdkOptional<List<SimpleUser>> assignees;
-
   /// Color-coded labels help you categorize and filter your issues (just like labels in Gmail).
   final SdkOptional<Label> label;
-
   /// Optional array value serialized in the `labels` wire field.
   final SdkOptional<List<Label>> labels;
 
-  const IssuesEvent(
-      {required this.action,
-      required this.issue,
-      this.assignee = const SdkOmitted(),
-      this.assignees = const SdkOmitted(),
-      this.label = const SdkOmitted(),
-      this.labels = const SdkOmitted()});
+  const IssuesEvent({required this.action, required this.issue, this.assignee = const SdkOmitted(), this.assignees = const SdkOmitted(), this.label = const SdkOmitted(), this.labels = const SdkOmitted()});
 
-  IssuesEvent Function(
-      {String action,
-      Issue issue,
-      SdkOptional<SimpleUser> assignee,
-      SdkOptional<List<SimpleUser>> assignees,
-      SdkOptional<Label> label,
-      SdkOptional<List<Label>> labels}) get copyWith => _copyWith;
+  IssuesEvent Function({String action, Issue issue, SdkOptional<SimpleUser> assignee, SdkOptional<List<SimpleUser>> assignees, SdkOptional<Label> label, SdkOptional<List<Label>> labels}) get copyWith => _copyWith;
 
-  IssuesEvent _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? issue = sdkOmittedValue,
-          Object? assignee = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue,
-          Object? label = sdkOmittedValue,
-          Object? labels = sdkOmittedValue}) =>
-      IssuesEvent(
-        action:
-            identical(action, sdkOmittedValue) ? this.action : action as String,
-        issue: identical(issue, sdkOmittedValue) ? this.issue : issue as Issue,
-        assignee: identical(assignee, sdkOmittedValue)
-            ? this.assignee
-            : assignee as SdkOptional<SimpleUser>,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as SdkOptional<List<SimpleUser>>,
-        label: identical(label, sdkOmittedValue)
-            ? this.label
-            : label as SdkOptional<Label>,
-        labels: identical(labels, sdkOmittedValue)
-            ? this.labels
-            : labels as SdkOptional<List<Label>>,
-      );
+  IssuesEvent _copyWith({Object? action = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? label = sdkOmittedValue, Object? labels = sdkOmittedValue}) => IssuesEvent(
+    action: identical(action, sdkOmittedValue) ? this.action : action as String,
+    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as Issue,
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<SimpleUser>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<SimpleUser>>,
+    label: identical(label, sdkOmittedValue) ? this.label : label as SdkOptional<Label>,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<Label>>,
+  );
 
   factory IssuesEvent.fromJson(Map<String, dynamic> json) => IssuesEvent(
-        action: (json['action'] as String?)!,
-        issue: (json['issue'] != null
-            ? Issue.fromJson(json['issue'] as Map<String, dynamic>)
-            : null)!,
-        assignee: json['assignee'] != null
-            ? SdkPresent((json['assignee'] != null
-                ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        label: json['label'] != null
-            ? SdkPresent((json['label'] != null
-                ? Label.fromJson(json['label'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        labels: json['labels'] != null
-            ? SdkPresent(((json['labels'] as List?)
-                ?.map((e) => Label.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+    action: (json['action'] as String?)!,
+    issue: (json['issue'] != null ? Issue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
+    assignee: json['assignee'] != null ? SdkPresent((json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    label: json['label'] != null ? SdkPresent((json['label'] != null ? Label.fromJson(json['label'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action,
-        'issue': issue.toJson(),
-        ...switch (assignee) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'assignee': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<SimpleUser>>(value: final value) => {
-              'assignees': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (label) {
-          SdkPresent<Label>(value: final value) => {
-              'label': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (labels) {
-          SdkPresent<List<Label>>(value: final value) => {
-              'labels': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'action': action,
+    'issue': issue.toJson(),
+    ...switch (assignee) {
+      SdkPresent<SimpleUser>(value: final value) => {'assignee': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<SimpleUser>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (label) {
+      SdkPresent<Label>(value: final value) => {'label': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (labels) {
+      SdkPresent<List<Label>>(value: final value) => {'labels': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

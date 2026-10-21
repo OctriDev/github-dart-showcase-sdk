@@ -8,150 +8,67 @@ part of 'webhook_merge_group_destroyed.dart';
 class WebhookMergeGroupDestroyed {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookMergeGroupDestroyedAction action;
-
   /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).
   final SdkOptional<WebhookMergeGroupDestroyedReason> reason;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A group of pull requests that the merge queue has grouped together to be merged.
   final MergeGroup mergeGroup;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final SdkOptional<RepositoryWebhooks> repository;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> sender;
 
-  const WebhookMergeGroupDestroyed(
-      {required this.action,
-      this.reason = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      required this.mergeGroup,
-      this.organization = const SdkOmitted(),
-      this.repository = const SdkOmitted(),
-      this.sender = const SdkOmitted()});
+  const WebhookMergeGroupDestroyed({required this.action, this.reason = const SdkOmitted(), this.installation = const SdkOmitted(), required this.mergeGroup, this.organization = const SdkOmitted(), this.repository = const SdkOmitted(), this.sender = const SdkOmitted()});
 
-  WebhookMergeGroupDestroyed Function(
-      {WebhookMergeGroupDestroyedAction action,
-      SdkOptional<WebhookMergeGroupDestroyedReason> reason,
-      SdkOptional<SimpleInstallation> installation,
-      MergeGroup mergeGroup,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      SdkOptional<RepositoryWebhooks> repository,
-      SdkOptional<SimpleUser> sender}) get copyWith => _copyWith;
+  WebhookMergeGroupDestroyed Function({WebhookMergeGroupDestroyedAction action, SdkOptional<WebhookMergeGroupDestroyedReason> reason, SdkOptional<SimpleInstallation> installation, MergeGroup mergeGroup, SdkOptional<OrganizationSimpleWebhooks> organization, SdkOptional<RepositoryWebhooks> repository, SdkOptional<SimpleUser> sender}) get copyWith => _copyWith;
 
-  WebhookMergeGroupDestroyed _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? reason = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? mergeGroup = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookMergeGroupDestroyed(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookMergeGroupDestroyedAction,
-        reason: identical(reason, sdkOmittedValue)
-            ? this.reason
-            : reason as SdkOptional<WebhookMergeGroupDestroyedReason>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        mergeGroup: identical(mergeGroup, sdkOmittedValue)
-            ? this.mergeGroup
-            : mergeGroup as MergeGroup,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<RepositoryWebhooks>,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SdkOptional<SimpleUser>,
-      );
+  WebhookMergeGroupDestroyed _copyWith({Object? action = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? mergeGroup = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookMergeGroupDestroyed(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookMergeGroupDestroyedAction,
+    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<WebhookMergeGroupDestroyedReason>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    mergeGroup: identical(mergeGroup, sdkOmittedValue) ? this.mergeGroup : mergeGroup as MergeGroup,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<RepositoryWebhooks>,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SdkOptional<SimpleUser>,
+  );
 
-  factory WebhookMergeGroupDestroyed.fromJson(Map<String, dynamic> json) =>
-      WebhookMergeGroupDestroyed(
-        action: (json['action'] != null
-            ? WebhookMergeGroupDestroyedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        reason: json['reason'] != null
-            ? SdkPresent((json['reason'] != null
-                ? WebhookMergeGroupDestroyedReason.fromJson(
-                    json['reason'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        mergeGroup: (json['merge_group'] != null
-            ? MergeGroup.fromJson(json['merge_group'] as Map<String, dynamic>)
-            : null)!,
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] != null
-                ? RepositoryWebhooks.fromJson(
-                    json['repository'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        sender: json['sender'] != null
-            ? SdkPresent((json['sender'] != null
-                ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookMergeGroupDestroyed.fromJson(Map<String, dynamic> json) => WebhookMergeGroupDestroyed(
+    action: (json['action'] != null ? WebhookMergeGroupDestroyedAction.fromJson(json['action'] as String) : null)!,
+    reason: json['reason'] != null ? SdkPresent((json['reason'] != null ? WebhookMergeGroupDestroyedReason.fromJson(json['reason'] as String) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    mergeGroup: (json['merge_group'] != null ? MergeGroup.fromJson(json['merge_group'] as Map<String, dynamic>) : null)!,
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    sender: json['sender'] != null ? SdkPresent((json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (reason) {
-          SdkPresent<WebhookMergeGroupDestroyedReason>(value: final value) => {
-              'reason': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'merge_group': mergeGroup.toJson(),
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repository) {
-          SdkPresent<RepositoryWebhooks>(value: final value) => {
-              'repository': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sender) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'sender': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'action': action.toJson(),
+    ...switch (reason) {
+      SdkPresent<WebhookMergeGroupDestroyedReason>(value: final value) => {'reason': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'merge_group': mergeGroup.toJson(),
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repository) {
+      SdkPresent<RepositoryWebhooks>(value: final value) => {'repository': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sender) {
+      SdkPresent<SimpleUser>(value: final value) => {'sender': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

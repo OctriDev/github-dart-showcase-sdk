@@ -8,76 +8,38 @@ part of 'repos_repository_ruleset.dart';
 class RepositoryRulesetBypassActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, `Team`, and `User` actor types. If `actor_type` is `OrganizationAdmin`, `actor_id` is ignored. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
   final SdkOptional<int?> actorId;
-
   /// The type of actor that can bypass a ruleset.
   final RepositoryRulesetBypassActorActorType actorType;
-
   /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
   final SdkOptional<RepositoryRulesetBypassActorBypassMode> bypassMode;
 
-  const RepositoryRulesetBypassActor(
-      {this.actorId = const SdkOmitted(),
-      required this.actorType,
-      this.bypassMode = const SdkOmitted()});
+  const RepositoryRulesetBypassActor({this.actorId = const SdkOmitted(), required this.actorType, this.bypassMode = const SdkOmitted()});
 
-  RepositoryRulesetBypassActor Function(
-          {SdkOptional<int?> actorId,
-          RepositoryRulesetBypassActorActorType actorType,
-          SdkOptional<RepositoryRulesetBypassActorBypassMode> bypassMode})
-      get copyWith => _copyWith;
+  RepositoryRulesetBypassActor Function({SdkOptional<int?> actorId, RepositoryRulesetBypassActorActorType actorType, SdkOptional<RepositoryRulesetBypassActorBypassMode> bypassMode}) get copyWith => _copyWith;
 
-  RepositoryRulesetBypassActor _copyWith(
-          {Object? actorId = sdkOmittedValue,
-          Object? actorType = sdkOmittedValue,
-          Object? bypassMode = sdkOmittedValue}) =>
-      RepositoryRulesetBypassActor(
-        actorId: identical(actorId, sdkOmittedValue)
-            ? this.actorId
-            : actorId as SdkOptional<int?>,
-        actorType: identical(actorType, sdkOmittedValue)
-            ? this.actorType
-            : actorType as RepositoryRulesetBypassActorActorType,
-        bypassMode: identical(bypassMode, sdkOmittedValue)
-            ? this.bypassMode
-            : bypassMode as SdkOptional<RepositoryRulesetBypassActorBypassMode>,
-      );
+  RepositoryRulesetBypassActor _copyWith({Object? actorId = sdkOmittedValue, Object? actorType = sdkOmittedValue, Object? bypassMode = sdkOmittedValue}) => RepositoryRulesetBypassActor(
+    actorId: identical(actorId, sdkOmittedValue) ? this.actorId : actorId as SdkOptional<int?>,
+    actorType: identical(actorType, sdkOmittedValue) ? this.actorType : actorType as RepositoryRulesetBypassActorActorType,
+    bypassMode: identical(bypassMode, sdkOmittedValue) ? this.bypassMode : bypassMode as SdkOptional<RepositoryRulesetBypassActorBypassMode>,
+  );
 
-  factory RepositoryRulesetBypassActor.fromJson(Map<String, dynamic> json) =>
-      RepositoryRulesetBypassActor(
-        actorId: json.containsKey('actor_id')
-            ? SdkPresent((json['actor_id'] as num?)?.toInt())
-            : const SdkOmitted(),
-        actorType: (json['actor_type'] != null
-            ? RepositoryRulesetBypassActorActorType.fromJson(
-                json['actor_type'] as String)
-            : null)!,
-        bypassMode: json['bypass_mode'] != null
-            ? SdkPresent((json['bypass_mode'] != null
-                ? RepositoryRulesetBypassActorBypassMode.fromJson(
-                    json['bypass_mode'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRulesetBypassActor.fromJson(Map<String, dynamic> json) => RepositoryRulesetBypassActor(
+    actorId: json.containsKey('actor_id') ? SdkPresent((json['actor_id'] as num?)?.toInt()) : const SdkOmitted(),
+    actorType: (json['actor_type'] != null ? RepositoryRulesetBypassActorActorType.fromJson(json['actor_type'] as String) : null)!,
+    bypassMode: json['bypass_mode'] != null ? SdkPresent((json['bypass_mode'] != null ? RepositoryRulesetBypassActorBypassMode.fromJson(json['bypass_mode'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (actorId) {
-          SdkPresent<int?>(value: final value) => {
-              'actor_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'actor_type': actorType.toJson(),
-        ...switch (bypassMode) {
-          SdkPresent<RepositoryRulesetBypassActorBypassMode>(
-            value: final value
-          ) =>
-            {
-              'bypass_mode': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (actorId) {
+      SdkPresent<int?>(value: final value) => {'actor_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    'actor_type': actorType.toJson(),
+    ...switch (bypassMode) {
+      SdkPresent<RepositoryRulesetBypassActorBypassMode>(value: final value) => {'bypass_mode': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

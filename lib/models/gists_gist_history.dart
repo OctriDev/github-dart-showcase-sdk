@@ -8,189 +8,100 @@ part of 'gists.dart';
 class GistHistoryChangeStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `total` wire field.
   final SdkOptional<int> total;
-
   /// Optional `integer` value serialized in the `additions` wire field.
   final SdkOptional<int> additions;
-
   /// Optional `integer` value serialized in the `deletions` wire field.
   final SdkOptional<int> deletions;
 
-  const GistHistoryChangeStatus(
-      {this.total = const SdkOmitted(),
-      this.additions = const SdkOmitted(),
-      this.deletions = const SdkOmitted()});
+  const GistHistoryChangeStatus({this.total = const SdkOmitted(), this.additions = const SdkOmitted(), this.deletions = const SdkOmitted()});
 
-  GistHistoryChangeStatus Function(
-      {SdkOptional<int> total,
-      SdkOptional<int> additions,
-      SdkOptional<int> deletions}) get copyWith => _copyWith;
+  GistHistoryChangeStatus Function({SdkOptional<int> total, SdkOptional<int> additions, SdkOptional<int> deletions}) get copyWith => _copyWith;
 
-  GistHistoryChangeStatus _copyWith(
-          {Object? total = sdkOmittedValue,
-          Object? additions = sdkOmittedValue,
-          Object? deletions = sdkOmittedValue}) =>
-      GistHistoryChangeStatus(
-        total: identical(total, sdkOmittedValue)
-            ? this.total
-            : total as SdkOptional<int>,
-        additions: identical(additions, sdkOmittedValue)
-            ? this.additions
-            : additions as SdkOptional<int>,
-        deletions: identical(deletions, sdkOmittedValue)
-            ? this.deletions
-            : deletions as SdkOptional<int>,
-      );
+  GistHistoryChangeStatus _copyWith({Object? total = sdkOmittedValue, Object? additions = sdkOmittedValue, Object? deletions = sdkOmittedValue}) => GistHistoryChangeStatus(
+    total: identical(total, sdkOmittedValue) ? this.total : total as SdkOptional<int>,
+    additions: identical(additions, sdkOmittedValue) ? this.additions : additions as SdkOptional<int>,
+    deletions: identical(deletions, sdkOmittedValue) ? this.deletions : deletions as SdkOptional<int>,
+  );
 
-  factory GistHistoryChangeStatus.fromJson(Map<String, dynamic> json) =>
-      GistHistoryChangeStatus(
-        total: json['total'] != null
-            ? SdkPresent(((json['total'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        additions: json['additions'] != null
-            ? SdkPresent(((json['additions'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        deletions: json['deletions'] != null
-            ? SdkPresent(((json['deletions'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory GistHistoryChangeStatus.fromJson(Map<String, dynamic> json) => GistHistoryChangeStatus(
+    total: json['total'] != null ? SdkPresent(((json['total'] as num?)?.toInt())!) : const SdkOmitted(),
+    additions: json['additions'] != null ? SdkPresent(((json['additions'] as num?)?.toInt())!) : const SdkOmitted(),
+    deletions: json['deletions'] != null ? SdkPresent(((json['deletions'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (total) {
-          SdkPresent<int>(value: final value) => {
-              'total': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (additions) {
-          SdkPresent<int>(value: final value) => {
-              'additions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deletions) {
-          SdkPresent<int>(value: final value) => {
-              'deletions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (total) {
+      SdkPresent<int>(value: final value) => {'total': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (additions) {
+      SdkPresent<int>(value: final value) => {'additions': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deletions) {
+      SdkPresent<int>(value: final value) => {'deletions': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Gist History
 class GistHistory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A GitHub user.
   final SdkOptional<NullableSimpleUser?> user;
-
   /// Optional `string` value serialized in the `version` wire field.
   final SdkOptional<String> version;
-
   /// Optional `date-time`-formatted value serialized in the `committed_at` wire field.
   final SdkOptional<String> committedAt;
-
   /// Optional object value serialized in the `change_status` wire field.
   final SdkOptional<GistHistoryChangeStatus> changeStatus;
-
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
 
-  const GistHistory(
-      {this.user = const SdkOmitted(),
-      this.version = const SdkOmitted(),
-      this.committedAt = const SdkOmitted(),
-      this.changeStatus = const SdkOmitted(),
-      this.url = const SdkOmitted()});
+  const GistHistory({this.user = const SdkOmitted(), this.version = const SdkOmitted(), this.committedAt = const SdkOmitted(), this.changeStatus = const SdkOmitted(), this.url = const SdkOmitted()});
 
-  GistHistory Function(
-      {SdkOptional<NullableSimpleUser?> user,
-      SdkOptional<String> version,
-      SdkOptional<String> committedAt,
-      SdkOptional<GistHistoryChangeStatus> changeStatus,
-      SdkOptional<String> url}) get copyWith => _copyWith;
+  GistHistory Function({SdkOptional<NullableSimpleUser?> user, SdkOptional<String> version, SdkOptional<String> committedAt, SdkOptional<GistHistoryChangeStatus> changeStatus, SdkOptional<String> url}) get copyWith => _copyWith;
 
-  GistHistory _copyWith(
-          {Object? user = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? committedAt = sdkOmittedValue,
-          Object? changeStatus = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      GistHistory(
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as SdkOptional<NullableSimpleUser?>,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String>,
-        committedAt: identical(committedAt, sdkOmittedValue)
-            ? this.committedAt
-            : committedAt as SdkOptional<String>,
-        changeStatus: identical(changeStatus, sdkOmittedValue)
-            ? this.changeStatus
-            : changeStatus as SdkOptional<GistHistoryChangeStatus>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-      );
+  GistHistory _copyWith({Object? user = sdkOmittedValue, Object? version = sdkOmittedValue, Object? committedAt = sdkOmittedValue, Object? changeStatus = sdkOmittedValue, Object? url = sdkOmittedValue}) => GistHistory(
+    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<NullableSimpleUser?>,
+    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
+    committedAt: identical(committedAt, sdkOmittedValue) ? this.committedAt : committedAt as SdkOptional<String>,
+    changeStatus: identical(changeStatus, sdkOmittedValue) ? this.changeStatus : changeStatus as SdkOptional<GistHistoryChangeStatus>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+  );
 
   factory GistHistory.fromJson(Map<String, dynamic> json) => GistHistory(
-        user: json.containsKey('user')
-            ? SdkPresent(json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        version: json['version'] != null
-            ? SdkPresent((json['version'] as String?)!)
-            : const SdkOmitted(),
-        committedAt: json['committed_at'] != null
-            ? SdkPresent((json['committed_at'] as String?)!)
-            : const SdkOmitted(),
-        changeStatus: json['change_status'] != null
-            ? SdkPresent((json['change_status'] != null
-                ? GistHistoryChangeStatus.fromJson(
-                    json['change_status'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-      );
+    user: json.containsKey('user') ? SdkPresent(json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
+    committedAt: json['committed_at'] != null ? SdkPresent((json['committed_at'] as String?)!) : const SdkOmitted(),
+    changeStatus: json['change_status'] != null ? SdkPresent((json['change_status'] != null ? GistHistoryChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (user) {
-          SdkPresent<NullableSimpleUser?>(value: final value) => {
-              'user': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (version) {
-          SdkPresent<String>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (committedAt) {
-          SdkPresent<String>(value: final value) => {
-              'committed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (changeStatus) {
-          SdkPresent<GistHistoryChangeStatus>(value: final value) => {
-              'change_status': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (user) {
+      SdkPresent<NullableSimpleUser?>(value: final value) => {'user': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (version) {
+      SdkPresent<String>(value: final value) => {'version': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (committedAt) {
+      SdkPresent<String>(value: final value) => {'committed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (changeStatus) {
+      SdkPresent<GistHistoryChangeStatus>(value: final value) => {'change_status': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

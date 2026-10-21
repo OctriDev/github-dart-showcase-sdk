@@ -8,30 +8,22 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleCreation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleCreationType type_;
 
   const RepositoryRuleCreation({required this.type_});
 
-  RepositoryRuleCreation Function({RepositoryRuleCreationType type_})
-      get copyWith => _copyWith;
+  RepositoryRuleCreation Function({RepositoryRuleCreationType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleCreation _copyWith({Object? type_ = sdkOmittedValue}) =>
-      RepositoryRuleCreation(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleCreationType,
-      );
+  RepositoryRuleCreation _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleCreation(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleCreationType,
+  );
 
-  factory RepositoryRuleCreation.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleCreation(
-        type_: (json['type'] != null
-            ? RepositoryRuleCreationType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory RepositoryRuleCreation.fromJson(Map<String, dynamic> json) => RepositoryRuleCreation(
+    type_: (json['type'] != null ? RepositoryRuleCreationType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

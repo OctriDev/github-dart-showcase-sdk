@@ -8,45 +8,27 @@ part of 'pulls.dart';
 class PullRequestMergeAsyncResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `status` wire field.
   final PullRequestMergeAsyncResultStatus status;
-
   /// Required API value serialized in the `details` wire field.
   final PullRequestMergeAsyncResultDetails details;
 
-  const PullRequestMergeAsyncResult(
-      {required this.status, required this.details});
+  const PullRequestMergeAsyncResult({required this.status, required this.details});
 
-  PullRequestMergeAsyncResult Function(
-      {PullRequestMergeAsyncResultStatus status,
-      PullRequestMergeAsyncResultDetails details}) get copyWith => _copyWith;
+  PullRequestMergeAsyncResult Function({PullRequestMergeAsyncResultStatus status, PullRequestMergeAsyncResultDetails details}) get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResult _copyWith(
-          {Object? status = sdkOmittedValue,
-          Object? details = sdkOmittedValue}) =>
-      PullRequestMergeAsyncResult(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as PullRequestMergeAsyncResultStatus,
-        details: identical(details, sdkOmittedValue)
-            ? this.details
-            : details as PullRequestMergeAsyncResultDetails,
-      );
+  PullRequestMergeAsyncResult _copyWith({Object? status = sdkOmittedValue, Object? details = sdkOmittedValue}) => PullRequestMergeAsyncResult(
+    status: identical(status, sdkOmittedValue) ? this.status : status as PullRequestMergeAsyncResultStatus,
+    details: identical(details, sdkOmittedValue) ? this.details : details as PullRequestMergeAsyncResultDetails,
+  );
 
-  factory PullRequestMergeAsyncResult.fromJson(Map<String, dynamic> json) =>
-      PullRequestMergeAsyncResult(
-        status: (json['status'] != null
-            ? PullRequestMergeAsyncResultStatus.fromJson(
-                json['status'] as String)
-            : null)!,
-        details: (json['details'] != null
-            ? PullRequestMergeAsyncResultDetails.fromJson(json['details'])
-            : null)!,
-      );
+  factory PullRequestMergeAsyncResult.fromJson(Map<String, dynamic> json) => PullRequestMergeAsyncResult(
+    status: (json['status'] != null ? PullRequestMergeAsyncResultStatus.fromJson(json['status'] as String) : null)!,
+    details: (json['details'] != null ? PullRequestMergeAsyncResultDetails.fromJson(json['details']) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'status': status.toJson(),
-        'details': details.toJson(),
-      };
+    'status': status.toJson(),
+    'details': details.toJson(),
+  };
 }

@@ -8,31 +8,22 @@ part of 'secret_scanning.dart';
 class SecretScanningLocationDiscussionTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URL to the discussion where the secret was detected.
   final String discussionTitleUrl;
 
-  const SecretScanningLocationDiscussionTitle(
-      {required this.discussionTitleUrl});
+  const SecretScanningLocationDiscussionTitle({required this.discussionTitleUrl});
 
-  SecretScanningLocationDiscussionTitle Function({String discussionTitleUrl})
-      get copyWith => _copyWith;
+  SecretScanningLocationDiscussionTitle Function({String discussionTitleUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationDiscussionTitle _copyWith(
-          {Object? discussionTitleUrl = sdkOmittedValue}) =>
-      SecretScanningLocationDiscussionTitle(
-        discussionTitleUrl: identical(discussionTitleUrl, sdkOmittedValue)
-            ? this.discussionTitleUrl
-            : discussionTitleUrl as String,
-      );
+  SecretScanningLocationDiscussionTitle _copyWith({Object? discussionTitleUrl = sdkOmittedValue}) => SecretScanningLocationDiscussionTitle(
+    discussionTitleUrl: identical(discussionTitleUrl, sdkOmittedValue) ? this.discussionTitleUrl : discussionTitleUrl as String,
+  );
 
-  factory SecretScanningLocationDiscussionTitle.fromJson(
-          Map<String, dynamic> json) =>
-      SecretScanningLocationDiscussionTitle(
-        discussionTitleUrl: (json['discussion_title_url'] as String?)!,
-      );
+  factory SecretScanningLocationDiscussionTitle.fromJson(Map<String, dynamic> json) => SecretScanningLocationDiscussionTitle(
+    discussionTitleUrl: (json['discussion_title_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'discussion_title_url': discussionTitleUrl,
-      };
+    'discussion_title_url': discussionTitleUrl,
+  };
 }

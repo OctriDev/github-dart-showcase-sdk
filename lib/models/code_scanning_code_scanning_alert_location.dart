@@ -8,109 +8,57 @@ part of 'code_scanning_code_scanning_alert.dart';
 class CodeScanningAlertLocation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `path` wire field.
   final SdkOptional<String> path;
-
   /// Optional `integer` value serialized in the `start_line` wire field.
   final SdkOptional<int> startLine;
-
   /// Optional `integer` value serialized in the `end_line` wire field.
   final SdkOptional<int> endLine;
-
   /// Optional `integer` value serialized in the `start_column` wire field.
   final SdkOptional<int> startColumn;
-
   /// Optional `integer` value serialized in the `end_column` wire field.
   final SdkOptional<int> endColumn;
 
-  const CodeScanningAlertLocation(
-      {this.path = const SdkOmitted(),
-      this.startLine = const SdkOmitted(),
-      this.endLine = const SdkOmitted(),
-      this.startColumn = const SdkOmitted(),
-      this.endColumn = const SdkOmitted()});
+  const CodeScanningAlertLocation({this.path = const SdkOmitted(), this.startLine = const SdkOmitted(), this.endLine = const SdkOmitted(), this.startColumn = const SdkOmitted(), this.endColumn = const SdkOmitted()});
 
-  CodeScanningAlertLocation Function(
-      {SdkOptional<String> path,
-      SdkOptional<int> startLine,
-      SdkOptional<int> endLine,
-      SdkOptional<int> startColumn,
-      SdkOptional<int> endColumn}) get copyWith => _copyWith;
+  CodeScanningAlertLocation Function({SdkOptional<String> path, SdkOptional<int> startLine, SdkOptional<int> endLine, SdkOptional<int> startColumn, SdkOptional<int> endColumn}) get copyWith => _copyWith;
 
-  CodeScanningAlertLocation _copyWith(
-          {Object? path = sdkOmittedValue,
-          Object? startLine = sdkOmittedValue,
-          Object? endLine = sdkOmittedValue,
-          Object? startColumn = sdkOmittedValue,
-          Object? endColumn = sdkOmittedValue}) =>
-      CodeScanningAlertLocation(
-        path: identical(path, sdkOmittedValue)
-            ? this.path
-            : path as SdkOptional<String>,
-        startLine: identical(startLine, sdkOmittedValue)
-            ? this.startLine
-            : startLine as SdkOptional<int>,
-        endLine: identical(endLine, sdkOmittedValue)
-            ? this.endLine
-            : endLine as SdkOptional<int>,
-        startColumn: identical(startColumn, sdkOmittedValue)
-            ? this.startColumn
-            : startColumn as SdkOptional<int>,
-        endColumn: identical(endColumn, sdkOmittedValue)
-            ? this.endColumn
-            : endColumn as SdkOptional<int>,
-      );
+  CodeScanningAlertLocation _copyWith({Object? path = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? endLine = sdkOmittedValue, Object? startColumn = sdkOmittedValue, Object? endColumn = sdkOmittedValue}) => CodeScanningAlertLocation(
+    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String>,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int>,
+    endLine: identical(endLine, sdkOmittedValue) ? this.endLine : endLine as SdkOptional<int>,
+    startColumn: identical(startColumn, sdkOmittedValue) ? this.startColumn : startColumn as SdkOptional<int>,
+    endColumn: identical(endColumn, sdkOmittedValue) ? this.endColumn : endColumn as SdkOptional<int>,
+  );
 
-  factory CodeScanningAlertLocation.fromJson(Map<String, dynamic> json) =>
-      CodeScanningAlertLocation(
-        path: json['path'] != null
-            ? SdkPresent((json['path'] as String?)!)
-            : const SdkOmitted(),
-        startLine: json['start_line'] != null
-            ? SdkPresent(((json['start_line'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        endLine: json['end_line'] != null
-            ? SdkPresent(((json['end_line'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        startColumn: json['start_column'] != null
-            ? SdkPresent(((json['start_column'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        endColumn: json['end_column'] != null
-            ? SdkPresent(((json['end_column'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory CodeScanningAlertLocation.fromJson(Map<String, dynamic> json) => CodeScanningAlertLocation(
+    path: json['path'] != null ? SdkPresent((json['path'] as String?)!) : const SdkOmitted(),
+    startLine: json['start_line'] != null ? SdkPresent(((json['start_line'] as num?)?.toInt())!) : const SdkOmitted(),
+    endLine: json['end_line'] != null ? SdkPresent(((json['end_line'] as num?)?.toInt())!) : const SdkOmitted(),
+    startColumn: json['start_column'] != null ? SdkPresent(((json['start_column'] as num?)?.toInt())!) : const SdkOmitted(),
+    endColumn: json['end_column'] != null ? SdkPresent(((json['end_column'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (path) {
-          SdkPresent<String>(value: final value) => {
-              'path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startLine) {
-          SdkPresent<int>(value: final value) => {
-              'start_line': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (endLine) {
-          SdkPresent<int>(value: final value) => {
-              'end_line': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startColumn) {
-          SdkPresent<int>(value: final value) => {
-              'start_column': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (endColumn) {
-          SdkPresent<int>(value: final value) => {
-              'end_column': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (path) {
+      SdkPresent<String>(value: final value) => {'path': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startLine) {
+      SdkPresent<int>(value: final value) => {'start_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endLine) {
+      SdkPresent<int>(value: final value) => {'end_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startColumn) {
+      SdkPresent<int>(value: final value) => {'start_column': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endColumn) {
+      SdkPresent<int>(value: final value) => {'end_column': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

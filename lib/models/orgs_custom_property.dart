@@ -9,226 +9,114 @@ sealed class CustomPropertyDefaultValue {
   static const String constructionSurface = 'named';
   const CustomPropertyDefaultValue();
   factory CustomPropertyDefaultValue.fromJson(Object? json) {
-    if (json is String) {
-      return CustomPropertyDefaultValueString(json);
-    }
-    if (json is List) {
-      return CustomPropertyDefaultValueListString(
-          json.map((e) => e as String).toList().cast<String>());
-    }
+    if (json is String) { return CustomPropertyDefaultValueString(json); }
+    if (json is List) { return CustomPropertyDefaultValueListString(json.map((e) => e as String).toList().cast<String>()); }
     throw FormatException("No variant matched for CustomPropertyDefaultValue");
   }
   Object? toJson();
 }
 
-final class CustomPropertyDefaultValueString
-    extends CustomPropertyDefaultValue {
+final class CustomPropertyDefaultValueString extends CustomPropertyDefaultValue {
   final String value;
   const CustomPropertyDefaultValueString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class CustomPropertyDefaultValueListString
-    extends CustomPropertyDefaultValue {
+final class CustomPropertyDefaultValueListString extends CustomPropertyDefaultValue {
   final List<String> value;
   const CustomPropertyDefaultValueListString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Custom property defined on an organization
 class CustomProperty {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the property
   final String propertyName;
-
   /// The URL that can be used to fetch, update, or delete info about this property via the API.
   final SdkOptional<String> url;
-
   /// The source type of the property
   final SdkOptional<CustomPropertySourceType> sourceType;
-
   /// The type of the value for the property
   final CustomPropertyValueType valueType;
-
   /// Whether the property is required.
   final SdkOptional<bool> required_;
-
   /// Default value of the property
   final SdkOptional<dynamic> defaultValue;
-
   /// Short description of the property
   final SdkOptional<String?> description;
-
   /// An ordered list of the allowed values of the property. The property can have up to 200 allowed values.
   final SdkOptional<List<String>?> allowedValues;
-
   /// Who can edit the values of the property
   final SdkOptional<CustomPropertyValuesEditableBy?> valuesEditableBy;
-
   /// Whether setting properties values is mandatory
   final SdkOptional<bool> requireExplicitValues;
 
-  const CustomProperty(
-      {required this.propertyName,
-      this.url = const SdkOmitted(),
-      this.sourceType = const SdkOmitted(),
-      required this.valueType,
-      this.required_ = const SdkOmitted(),
-      this.defaultValue = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.allowedValues = const SdkOmitted(),
-      this.valuesEditableBy = const SdkOmitted(),
-      this.requireExplicitValues = const SdkOmitted()});
+  const CustomProperty({required this.propertyName, this.url = const SdkOmitted(), this.sourceType = const SdkOmitted(), required this.valueType, this.required_ = const SdkOmitted(), this.defaultValue = const SdkOmitted(), this.description = const SdkOmitted(), this.allowedValues = const SdkOmitted(), this.valuesEditableBy = const SdkOmitted(), this.requireExplicitValues = const SdkOmitted()});
 
-  CustomProperty Function(
-      {String propertyName,
-      SdkOptional<String> url,
-      SdkOptional<CustomPropertySourceType> sourceType,
-      CustomPropertyValueType valueType,
-      SdkOptional<bool> required_,
-      SdkOptional<dynamic> defaultValue,
-      SdkOptional<String?> description,
-      SdkOptional<List<String>?> allowedValues,
-      SdkOptional<CustomPropertyValuesEditableBy?> valuesEditableBy,
-      SdkOptional<bool> requireExplicitValues}) get copyWith => _copyWith;
+  CustomProperty Function({String propertyName, SdkOptional<String> url, SdkOptional<CustomPropertySourceType> sourceType, CustomPropertyValueType valueType, SdkOptional<bool> required_, SdkOptional<dynamic> defaultValue, SdkOptional<String?> description, SdkOptional<List<String>?> allowedValues, SdkOptional<CustomPropertyValuesEditableBy?> valuesEditableBy, SdkOptional<bool> requireExplicitValues}) get copyWith => _copyWith;
 
-  CustomProperty _copyWith(
-          {Object? propertyName = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? sourceType = sdkOmittedValue,
-          Object? valueType = sdkOmittedValue,
-          Object? required_ = sdkOmittedValue,
-          Object? defaultValue = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? allowedValues = sdkOmittedValue,
-          Object? valuesEditableBy = sdkOmittedValue,
-          Object? requireExplicitValues = sdkOmittedValue}) =>
-      CustomProperty(
-        propertyName: identical(propertyName, sdkOmittedValue)
-            ? this.propertyName
-            : propertyName as String,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        sourceType: identical(sourceType, sdkOmittedValue)
-            ? this.sourceType
-            : sourceType as SdkOptional<CustomPropertySourceType>,
-        valueType: identical(valueType, sdkOmittedValue)
-            ? this.valueType
-            : valueType as CustomPropertyValueType,
-        required_: identical(required_, sdkOmittedValue)
-            ? this.required_
-            : required_ as SdkOptional<bool>,
-        defaultValue: identical(defaultValue, sdkOmittedValue)
-            ? this.defaultValue
-            : defaultValue as SdkOptional<dynamic>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        allowedValues: identical(allowedValues, sdkOmittedValue)
-            ? this.allowedValues
-            : allowedValues as SdkOptional<List<String>?>,
-        valuesEditableBy: identical(valuesEditableBy, sdkOmittedValue)
-            ? this.valuesEditableBy
-            : valuesEditableBy as SdkOptional<CustomPropertyValuesEditableBy?>,
-        requireExplicitValues: identical(requireExplicitValues, sdkOmittedValue)
-            ? this.requireExplicitValues
-            : requireExplicitValues as SdkOptional<bool>,
-      );
+  CustomProperty _copyWith({Object? propertyName = sdkOmittedValue, Object? url = sdkOmittedValue, Object? sourceType = sdkOmittedValue, Object? valueType = sdkOmittedValue, Object? required_ = sdkOmittedValue, Object? defaultValue = sdkOmittedValue, Object? description = sdkOmittedValue, Object? allowedValues = sdkOmittedValue, Object? valuesEditableBy = sdkOmittedValue, Object? requireExplicitValues = sdkOmittedValue}) => CustomProperty(
+    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    sourceType: identical(sourceType, sdkOmittedValue) ? this.sourceType : sourceType as SdkOptional<CustomPropertySourceType>,
+    valueType: identical(valueType, sdkOmittedValue) ? this.valueType : valueType as CustomPropertyValueType,
+    required_: identical(required_, sdkOmittedValue) ? this.required_ : required_ as SdkOptional<bool>,
+    defaultValue: identical(defaultValue, sdkOmittedValue) ? this.defaultValue : defaultValue as SdkOptional<dynamic>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    allowedValues: identical(allowedValues, sdkOmittedValue) ? this.allowedValues : allowedValues as SdkOptional<List<String>?>,
+    valuesEditableBy: identical(valuesEditableBy, sdkOmittedValue) ? this.valuesEditableBy : valuesEditableBy as SdkOptional<CustomPropertyValuesEditableBy?>,
+    requireExplicitValues: identical(requireExplicitValues, sdkOmittedValue) ? this.requireExplicitValues : requireExplicitValues as SdkOptional<bool>,
+  );
 
   factory CustomProperty.fromJson(Map<String, dynamic> json) => CustomProperty(
-        propertyName: (json['property_name'] as String?)!,
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        sourceType: json['source_type'] != null
-            ? SdkPresent((json['source_type'] != null
-                ? CustomPropertySourceType.fromJson(
-                    json['source_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        valueType: (json['value_type'] != null
-            ? CustomPropertyValueType.fromJson(json['value_type'] as String)
-            : null)!,
-        required_: json['required'] != null
-            ? SdkPresent((json['required'] as bool?)!)
-            : const SdkOmitted(),
-        defaultValue: json.containsKey('default_value')
-            ? SdkPresent(json['default_value'])
-            : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        allowedValues: json.containsKey('allowed_values')
-            ? SdkPresent((json['allowed_values'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        valuesEditableBy: json.containsKey('values_editable_by')
-            ? SdkPresent(json['values_editable_by'] != null
-                ? CustomPropertyValuesEditableBy.fromJson(
-                    json['values_editable_by'] as String)
-                : null)
-            : const SdkOmitted(),
-        requireExplicitValues: json['require_explicit_values'] != null
-            ? SdkPresent((json['require_explicit_values'] as bool?)!)
-            : const SdkOmitted(),
-      );
+    propertyName: (json['property_name'] as String?)!,
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    sourceType: json['source_type'] != null ? SdkPresent((json['source_type'] != null ? CustomPropertySourceType.fromJson(json['source_type'] as String) : null)!) : const SdkOmitted(),
+    valueType: (json['value_type'] != null ? CustomPropertyValueType.fromJson(json['value_type'] as String) : null)!,
+    required_: json['required'] != null ? SdkPresent((json['required'] as bool?)!) : const SdkOmitted(),
+    defaultValue: json.containsKey('default_value') ? SdkPresent(json['default_value']) : const SdkOmitted(),
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    allowedValues: json.containsKey('allowed_values') ? SdkPresent((json['allowed_values'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    valuesEditableBy: json.containsKey('values_editable_by') ? SdkPresent(json['values_editable_by'] != null ? CustomPropertyValuesEditableBy.fromJson(json['values_editable_by'] as String) : null) : const SdkOmitted(),
+    requireExplicitValues: json['require_explicit_values'] != null ? SdkPresent((json['require_explicit_values'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'property_name': propertyName,
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sourceType) {
-          SdkPresent<CustomPropertySourceType>(value: final value) => {
-              'source_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'value_type': valueType.toJson(),
-        ...switch (required_) {
-          SdkPresent<bool>(value: final value) => {
-              'required': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (defaultValue) {
-          SdkPresent<dynamic>(value: final value) => {
-              'default_value': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedValues) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'allowed_values': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (valuesEditableBy) {
-          SdkPresent<CustomPropertyValuesEditableBy?>(value: final value) => {
-              'values_editable_by': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireExplicitValues) {
-          SdkPresent<bool>(value: final value) => {
-              'require_explicit_values': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'property_name': propertyName,
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sourceType) {
+      SdkPresent<CustomPropertySourceType>(value: final value) => {'source_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'value_type': valueType.toJson(),
+    ...switch (required_) {
+      SdkPresent<bool>(value: final value) => {'required': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (defaultValue) {
+      SdkPresent<dynamic>(value: final value) => {'default_value': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowedValues) {
+      SdkPresent<List<String>?>(value: final value) => {'allowed_values': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (valuesEditableBy) {
+      SdkPresent<CustomPropertyValuesEditableBy?>(value: final value) => {'values_editable_by': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requireExplicitValues) {
+      SdkPresent<bool>(value: final value) => {'require_explicit_values': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

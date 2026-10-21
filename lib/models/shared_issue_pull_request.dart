@@ -8,91 +8,45 @@ part of 'shared_issue.dart';
 class IssuePullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `date-time`-formatted value serialized in the `merged_at` wire field.
   final SdkOptional<String?> mergedAt;
-
   /// Required `uri`-formatted value serialized in the `diff_url` wire field.
   final String? diffUrl;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String? htmlUrl;
-
   /// Required `uri`-formatted value serialized in the `patch_url` wire field.
   final String? patchUrl;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const IssuePullRequest(
-      {this.mergedAt = const SdkOmitted(),
-      required this.diffUrl,
-      required this.htmlUrl,
-      required this.patchUrl,
-      required this.url});
+  const IssuePullRequest({this.mergedAt = const SdkOmitted(), required this.diffUrl, required this.htmlUrl, required this.patchUrl, required this.url});
 
-  IssuePullRequest Function(
-      {SdkOptional<String?> mergedAt,
-      String? diffUrl,
-      String? htmlUrl,
-      String? patchUrl,
-      String? url}) get copyWith => _copyWith;
+  IssuePullRequest Function({SdkOptional<String?> mergedAt, String? diffUrl, String? htmlUrl, String? patchUrl, String? url}) get copyWith => _copyWith;
 
-  IssuePullRequest _copyWith(
-          {Object? mergedAt = sdkOmittedValue,
-          Object? diffUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? patchUrl = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      IssuePullRequest(
-        mergedAt: identical(mergedAt, sdkOmittedValue)
-            ? this.mergedAt
-            : mergedAt as SdkOptional<String?>,
-        diffUrl: identical(diffUrl, sdkOmittedValue)
-            ? this.diffUrl
-            : diffUrl as String?,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String?,
-        patchUrl: identical(patchUrl, sdkOmittedValue)
-            ? this.patchUrl
-            : patchUrl as String?,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-      );
+  IssuePullRequest _copyWith({Object? mergedAt = sdkOmittedValue, Object? diffUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? patchUrl = sdkOmittedValue, Object? url = sdkOmittedValue}) => IssuePullRequest(
+    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as SdkOptional<String?>,
+    diffUrl: identical(diffUrl, sdkOmittedValue) ? this.diffUrl : diffUrl as String?,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String?,
+    patchUrl: identical(patchUrl, sdkOmittedValue) ? this.patchUrl : patchUrl as String?,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+  );
 
-  factory IssuePullRequest.fromJson(Map<String, dynamic> json) =>
-      IssuePullRequest(
-        mergedAt: json.containsKey('merged_at')
-            ? SdkPresent(json['merged_at'] as String?)
-            : const SdkOmitted(),
-        diffUrl: json.containsKey('diff_url')
-            ? json['diff_url'] as String?
-            : throw ArgumentError.value(
-                null, 'diff_url', 'Required property is missing'),
-        htmlUrl: json.containsKey('html_url')
-            ? json['html_url'] as String?
-            : throw ArgumentError.value(
-                null, 'html_url', 'Required property is missing'),
-        patchUrl: json.containsKey('patch_url')
-            ? json['patch_url'] as String?
-            : throw ArgumentError.value(
-                null, 'patch_url', 'Required property is missing'),
-        url: json.containsKey('url')
-            ? json['url'] as String?
-            : throw ArgumentError.value(
-                null, 'url', 'Required property is missing'),
-      );
+  factory IssuePullRequest.fromJson(Map<String, dynamic> json) => IssuePullRequest(
+    mergedAt: json.containsKey('merged_at') ? SdkPresent(json['merged_at'] as String?) : const SdkOmitted(),
+    diffUrl: json.containsKey('diff_url') ? json['diff_url'] as String? : throw ArgumentError.value(null, 'diff_url', 'Required property is missing'),
+    htmlUrl: json.containsKey('html_url') ? json['html_url'] as String? : throw ArgumentError.value(null, 'html_url', 'Required property is missing'),
+    patchUrl: json.containsKey('patch_url') ? json['patch_url'] as String? : throw ArgumentError.value(null, 'patch_url', 'Required property is missing'),
+    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (mergedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'merged_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'diff_url': diffUrl,
-        'html_url': htmlUrl,
-        'patch_url': patchUrl,
-        'url': url,
-      };
+    ...switch (mergedAt) {
+      SdkPresent<String?>(value: final value) => {'merged_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    'diff_url': diffUrl,
+    'html_url': htmlUrl,
+    'patch_url': patchUrl,
+    'url': url,
+  };
 }

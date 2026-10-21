@@ -8,49 +8,30 @@ part of 'secret_scanning.dart';
 class SecretScanningCustomPatternToDelete {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of the custom pattern to delete.
   final int patternId;
-
   /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
   final SdkOptional<String?> customPatternVersion;
 
-  const SecretScanningCustomPatternToDelete(
-      {required this.patternId,
-      this.customPatternVersion = const SdkOmitted()});
+  const SecretScanningCustomPatternToDelete({required this.patternId, this.customPatternVersion = const SdkOmitted()});
 
-  SecretScanningCustomPatternToDelete Function(
-      {int patternId,
-      SdkOptional<String?> customPatternVersion}) get copyWith => _copyWith;
+  SecretScanningCustomPatternToDelete Function({int patternId, SdkOptional<String?> customPatternVersion}) get copyWith => _copyWith;
 
-  SecretScanningCustomPatternToDelete _copyWith(
-          {Object? patternId = sdkOmittedValue,
-          Object? customPatternVersion = sdkOmittedValue}) =>
-      SecretScanningCustomPatternToDelete(
-        patternId: identical(patternId, sdkOmittedValue)
-            ? this.patternId
-            : patternId as int,
-        customPatternVersion: identical(customPatternVersion, sdkOmittedValue)
-            ? this.customPatternVersion
-            : customPatternVersion as SdkOptional<String?>,
-      );
+  SecretScanningCustomPatternToDelete _copyWith({Object? patternId = sdkOmittedValue, Object? customPatternVersion = sdkOmittedValue}) => SecretScanningCustomPatternToDelete(
+    patternId: identical(patternId, sdkOmittedValue) ? this.patternId : patternId as int,
+    customPatternVersion: identical(customPatternVersion, sdkOmittedValue) ? this.customPatternVersion : customPatternVersion as SdkOptional<String?>,
+  );
 
-  factory SecretScanningCustomPatternToDelete.fromJson(
-          Map<String, dynamic> json) =>
-      SecretScanningCustomPatternToDelete(
-        patternId: ((json['pattern_id'] as num?)?.toInt())!,
-        customPatternVersion: json.containsKey('custom_pattern_version')
-            ? SdkPresent(json['custom_pattern_version'] as String?)
-            : const SdkOmitted(),
-      );
+  factory SecretScanningCustomPatternToDelete.fromJson(Map<String, dynamic> json) => SecretScanningCustomPatternToDelete(
+    patternId: ((json['pattern_id'] as num?)?.toInt())!,
+    customPatternVersion: json.containsKey('custom_pattern_version') ? SdkPresent(json['custom_pattern_version'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'pattern_id': patternId,
-        ...switch (customPatternVersion) {
-          SdkPresent<String?>(value: final value) => {
-              'custom_pattern_version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'pattern_id': patternId,
+    ...switch (customPatternVersion) {
+      SdkPresent<String?>(value: final value) => {'custom_pattern_version': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

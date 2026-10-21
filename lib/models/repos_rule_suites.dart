@@ -7,220 +7,106 @@ part of 'repos_rule.dart';
 class RuleSuitesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the rule insight.
   final SdkOptional<int> id;
-
   /// The number that identifies the user.
   final SdkOptional<int> actorId;
-
   /// The handle for the GitHub user account.
   final SdkOptional<String> actorName;
-
   /// The first commit sha before the push evaluation.
   final SdkOptional<String> beforeSha;
-
   /// The last commit sha in the push evaluation.
   final SdkOptional<String> afterSha;
-
   /// The ref name that the evaluation ran on.
   final SdkOptional<String> ref;
-
   /// The ID of the repository associated with the rule evaluation.
   final SdkOptional<int> repositoryId;
-
   /// The name of the repository without the `.git` extension.
   final SdkOptional<String> repositoryName;
   final SdkOptional<String> pushedAt;
-
   /// The result of the rule evaluations for rules with the `active` enforcement status.
   final SdkOptional<RuleSuitesItemResult> result;
-
   /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
   final SdkOptional<RuleSuitesItemEvaluationResult> evaluationResult;
 
-  const RuleSuitesItem(
-      {this.id = const SdkOmitted(),
-      this.actorId = const SdkOmitted(),
-      this.actorName = const SdkOmitted(),
-      this.beforeSha = const SdkOmitted(),
-      this.afterSha = const SdkOmitted(),
-      this.ref = const SdkOmitted(),
-      this.repositoryId = const SdkOmitted(),
-      this.repositoryName = const SdkOmitted(),
-      this.pushedAt = const SdkOmitted(),
-      this.result = const SdkOmitted(),
-      this.evaluationResult = const SdkOmitted()});
+  const RuleSuitesItem({this.id = const SdkOmitted(), this.actorId = const SdkOmitted(), this.actorName = const SdkOmitted(), this.beforeSha = const SdkOmitted(), this.afterSha = const SdkOmitted(), this.ref = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.repositoryName = const SdkOmitted(), this.pushedAt = const SdkOmitted(), this.result = const SdkOmitted(), this.evaluationResult = const SdkOmitted()});
 
-  RuleSuitesItem Function(
-          {SdkOptional<int> id,
-          SdkOptional<int> actorId,
-          SdkOptional<String> actorName,
-          SdkOptional<String> beforeSha,
-          SdkOptional<String> afterSha,
-          SdkOptional<String> ref,
-          SdkOptional<int> repositoryId,
-          SdkOptional<String> repositoryName,
-          SdkOptional<String> pushedAt,
-          SdkOptional<RuleSuitesItemResult> result,
-          SdkOptional<RuleSuitesItemEvaluationResult> evaluationResult})
-      get copyWith => _copyWith;
+  RuleSuitesItem Function({SdkOptional<int> id, SdkOptional<int> actorId, SdkOptional<String> actorName, SdkOptional<String> beforeSha, SdkOptional<String> afterSha, SdkOptional<String> ref, SdkOptional<int> repositoryId, SdkOptional<String> repositoryName, SdkOptional<String> pushedAt, SdkOptional<RuleSuitesItemResult> result, SdkOptional<RuleSuitesItemEvaluationResult> evaluationResult}) get copyWith => _copyWith;
 
-  RuleSuitesItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? actorId = sdkOmittedValue,
-          Object? actorName = sdkOmittedValue,
-          Object? beforeSha = sdkOmittedValue,
-          Object? afterSha = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repositoryId = sdkOmittedValue,
-          Object? repositoryName = sdkOmittedValue,
-          Object? pushedAt = sdkOmittedValue,
-          Object? result = sdkOmittedValue,
-          Object? evaluationResult = sdkOmittedValue}) =>
-      RuleSuitesItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        actorId: identical(actorId, sdkOmittedValue)
-            ? this.actorId
-            : actorId as SdkOptional<int>,
-        actorName: identical(actorName, sdkOmittedValue)
-            ? this.actorName
-            : actorName as SdkOptional<String>,
-        beforeSha: identical(beforeSha, sdkOmittedValue)
-            ? this.beforeSha
-            : beforeSha as SdkOptional<String>,
-        afterSha: identical(afterSha, sdkOmittedValue)
-            ? this.afterSha
-            : afterSha as SdkOptional<String>,
-        ref: identical(ref, sdkOmittedValue)
-            ? this.ref
-            : ref as SdkOptional<String>,
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as SdkOptional<int>,
-        repositoryName: identical(repositoryName, sdkOmittedValue)
-            ? this.repositoryName
-            : repositoryName as SdkOptional<String>,
-        pushedAt: identical(pushedAt, sdkOmittedValue)
-            ? this.pushedAt
-            : pushedAt as SdkOptional<String>,
-        result: identical(result, sdkOmittedValue)
-            ? this.result
-            : result as SdkOptional<RuleSuitesItemResult>,
-        evaluationResult: identical(evaluationResult, sdkOmittedValue)
-            ? this.evaluationResult
-            : evaluationResult as SdkOptional<RuleSuitesItemEvaluationResult>,
-      );
+  RuleSuitesItem _copyWith({Object? id = sdkOmittedValue, Object? actorId = sdkOmittedValue, Object? actorName = sdkOmittedValue, Object? beforeSha = sdkOmittedValue, Object? afterSha = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? repositoryName = sdkOmittedValue, Object? pushedAt = sdkOmittedValue, Object? result = sdkOmittedValue, Object? evaluationResult = sdkOmittedValue}) => RuleSuitesItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    actorId: identical(actorId, sdkOmittedValue) ? this.actorId : actorId as SdkOptional<int>,
+    actorName: identical(actorName, sdkOmittedValue) ? this.actorName : actorName as SdkOptional<String>,
+    beforeSha: identical(beforeSha, sdkOmittedValue) ? this.beforeSha : beforeSha as SdkOptional<String>,
+    afterSha: identical(afterSha, sdkOmittedValue) ? this.afterSha : afterSha as SdkOptional<String>,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
+    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as SdkOptional<String>,
+    pushedAt: identical(pushedAt, sdkOmittedValue) ? this.pushedAt : pushedAt as SdkOptional<String>,
+    result: identical(result, sdkOmittedValue) ? this.result : result as SdkOptional<RuleSuitesItemResult>,
+    evaluationResult: identical(evaluationResult, sdkOmittedValue) ? this.evaluationResult : evaluationResult as SdkOptional<RuleSuitesItemEvaluationResult>,
+  );
 
   factory RuleSuitesItem.fromJson(Map<String, dynamic> json) => RuleSuitesItem(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        actorId: json['actor_id'] != null
-            ? SdkPresent(((json['actor_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        actorName: json['actor_name'] != null
-            ? SdkPresent((json['actor_name'] as String?)!)
-            : const SdkOmitted(),
-        beforeSha: json['before_sha'] != null
-            ? SdkPresent((json['before_sha'] as String?)!)
-            : const SdkOmitted(),
-        afterSha: json['after_sha'] != null
-            ? SdkPresent((json['after_sha'] as String?)!)
-            : const SdkOmitted(),
-        ref: json['ref'] != null
-            ? SdkPresent((json['ref'] as String?)!)
-            : const SdkOmitted(),
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        repositoryName: json['repository_name'] != null
-            ? SdkPresent((json['repository_name'] as String?)!)
-            : const SdkOmitted(),
-        pushedAt: json['pushed_at'] != null
-            ? SdkPresent((json['pushed_at'] as String?)!)
-            : const SdkOmitted(),
-        result: json['result'] != null
-            ? SdkPresent((json['result'] != null
-                ? RuleSuitesItemResult.fromJson(json['result'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        evaluationResult: json['evaluation_result'] != null
-            ? SdkPresent((json['evaluation_result'] != null
-                ? RuleSuitesItemEvaluationResult.fromJson(
-                    json['evaluation_result'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    actorId: json['actor_id'] != null ? SdkPresent(((json['actor_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    actorName: json['actor_name'] != null ? SdkPresent((json['actor_name'] as String?)!) : const SdkOmitted(),
+    beforeSha: json['before_sha'] != null ? SdkPresent((json['before_sha'] as String?)!) : const SdkOmitted(),
+    afterSha: json['after_sha'] != null ? SdkPresent((json['after_sha'] as String?)!) : const SdkOmitted(),
+    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
+    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    repositoryName: json['repository_name'] != null ? SdkPresent((json['repository_name'] as String?)!) : const SdkOmitted(),
+    pushedAt: json['pushed_at'] != null ? SdkPresent((json['pushed_at'] as String?)!) : const SdkOmitted(),
+    result: json['result'] != null ? SdkPresent((json['result'] != null ? RuleSuitesItemResult.fromJson(json['result'] as String) : null)!) : const SdkOmitted(),
+    evaluationResult: json['evaluation_result'] != null ? SdkPresent((json['evaluation_result'] != null ? RuleSuitesItemEvaluationResult.fromJson(json['evaluation_result'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (actorId) {
-          SdkPresent<int>(value: final value) => {
-              'actor_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (actorName) {
-          SdkPresent<String>(value: final value) => {
-              'actor_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (beforeSha) {
-          SdkPresent<String>(value: final value) => {
-              'before_sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (afterSha) {
-          SdkPresent<String>(value: final value) => {
-              'after_sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ref) {
-          SdkPresent<String>(value: final value) => {
-              'ref': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryName) {
-          SdkPresent<String>(value: final value) => {
-              'repository_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pushedAt) {
-          SdkPresent<String>(value: final value) => {
-              'pushed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (result) {
-          SdkPresent<RuleSuitesItemResult>(value: final value) => {
-              'result': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (evaluationResult) {
-          SdkPresent<RuleSuitesItemEvaluationResult>(value: final value) => {
-              'evaluation_result': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (actorId) {
+      SdkPresent<int>(value: final value) => {'actor_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (actorName) {
+      SdkPresent<String>(value: final value) => {'actor_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (beforeSha) {
+      SdkPresent<String>(value: final value) => {'before_sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (afterSha) {
+      SdkPresent<String>(value: final value) => {'after_sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ref) {
+      SdkPresent<String>(value: final value) => {'ref': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryId) {
+      SdkPresent<int>(value: final value) => {'repository_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryName) {
+      SdkPresent<String>(value: final value) => {'repository_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pushedAt) {
+      SdkPresent<String>(value: final value) => {'pushed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (result) {
+      SdkPresent<RuleSuitesItemResult>(value: final value) => {'result': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (evaluationResult) {
+      SdkPresent<RuleSuitesItemEvaluationResult>(value: final value) => {'evaluation_result': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 // RuleSuites = List<RuleSuitesItem>

@@ -10,19 +10,15 @@ class CopilotOrganizationContentExclusionDetails {
   static const String constructionSurface = 'named';
   final Map<String, List<String>> value;
 
-  const CopilotOrganizationContentExclusionDetails(
-      {this.value = const <String, List<String>>{}});
+  const CopilotOrganizationContentExclusionDetails({this.value = const <String, List<String>>{}});
 
-  factory CopilotOrganizationContentExclusionDetails.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotOrganizationContentExclusionDetails(
-        value: json.map((key, value) => MapEntry(
-            key, (value as List).map((item) => item as String).toList())),
-      );
+  factory CopilotOrganizationContentExclusionDetails.fromJson(Map<String, dynamic> json) => CopilotOrganizationContentExclusionDetails(
+    value: json.map((key, value) => MapEntry(key, (value as List).map((item) => item as String).toList())),
+  );
 
   Map<String, dynamic> toJson() => value.map(
-        (key, value) => MapEntry(key, value),
-      );
+    (key, value) => MapEntry(key, value),
+  );
 
   List<String>? operator [](String key) => value[key];
   Iterable<String> get keys => value.keys;

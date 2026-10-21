@@ -8,541 +8,293 @@ part of 'inline.dart';
 class ReposCreateWebhookRequestBodyConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URL to which the payloads will be delivered.
   final SdkOptional<String> url;
-
   /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
   final SdkOptional<String> contentType;
-
   /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
   final SdkOptional<String> secret;
   final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
 
-  const ReposCreateWebhookRequestBodyConfig(
-      {this.url = const SdkOmitted(),
-      this.contentType = const SdkOmitted(),
-      this.secret = const SdkOmitted(),
-      this.insecureSsl = const SdkOmitted()});
+  const ReposCreateWebhookRequestBodyConfig({this.url = const SdkOmitted(), this.contentType = const SdkOmitted(), this.secret = const SdkOmitted(), this.insecureSsl = const SdkOmitted()});
 
-  ReposCreateWebhookRequestBodyConfig Function(
-          {SdkOptional<String> url,
-          SdkOptional<String> contentType,
-          SdkOptional<String> secret,
-          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
-      get copyWith => _copyWith;
+  ReposCreateWebhookRequestBodyConfig Function({SdkOptional<String> url, SdkOptional<String> contentType, SdkOptional<String> secret, SdkOptional<WebhookConfigInsecureSsl> insecureSsl}) get copyWith => _copyWith;
 
-  ReposCreateWebhookRequestBodyConfig _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? secret = sdkOmittedValue,
-          Object? insecureSsl = sdkOmittedValue}) =>
-      ReposCreateWebhookRequestBodyConfig(
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as SdkOptional<String>,
-        secret: identical(secret, sdkOmittedValue)
-            ? this.secret
-            : secret as SdkOptional<String>,
-        insecureSsl: identical(insecureSsl, sdkOmittedValue)
-            ? this.insecureSsl
-            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
-      );
+  ReposCreateWebhookRequestBodyConfig _copyWith({Object? url = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue}) => ReposCreateWebhookRequestBodyConfig(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
+    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+  );
 
-  factory ReposCreateWebhookRequestBodyConfig.fromJson(
-          Map<String, dynamic> json) =>
-      ReposCreateWebhookRequestBodyConfig(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        contentType: json['content_type'] != null
-            ? SdkPresent((json['content_type'] as String?)!)
-            : const SdkOmitted(),
-        secret: json['secret'] != null
-            ? SdkPresent((json['secret'] as String?)!)
-            : const SdkOmitted(),
-        insecureSsl: json['insecure_ssl'] != null
-            ? SdkPresent((json['insecure_ssl'] != null
-                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposCreateWebhookRequestBodyConfig.fromJson(Map<String, dynamic> json) => ReposCreateWebhookRequestBodyConfig(
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
+    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
+    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contentType) {
-          SdkPresent<String>(value: final value) => {
-              'content_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secret) {
-          SdkPresent<String>(value: final value) => {
-              'secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (insecureSsl) {
-          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
-              'insecure_ssl': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contentType) {
+      SdkPresent<String>(value: final value) => {'content_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secret) {
+      SdkPresent<String>(value: final value) => {'secret': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (insecureSsl) {
+      SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {'insecure_ssl': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposCreateWebhookRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
   final SdkOptional<String> name;
-
   /// Key/value pairs to provide settings for this webhook.
   final SdkOptional<ReposCreateWebhookRequestBodyConfig> config;
-
   /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
   final SdkOptional<List<String>> events;
-
   /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
   final SdkOptional<bool> active;
 
-  const ReposCreateWebhookRequestBody(
-      {this.name = const SdkOmitted(),
-      this.config = const SdkOmitted(),
-      this.events = const SdkOmitted(),
-      this.active = const SdkOmitted()});
+  const ReposCreateWebhookRequestBody({this.name = const SdkOmitted(), this.config = const SdkOmitted(), this.events = const SdkOmitted(), this.active = const SdkOmitted()});
 
-  ReposCreateWebhookRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<ReposCreateWebhookRequestBodyConfig> config,
-      SdkOptional<List<String>> events,
-      SdkOptional<bool> active}) get copyWith => _copyWith;
+  ReposCreateWebhookRequestBody Function({SdkOptional<String> name, SdkOptional<ReposCreateWebhookRequestBodyConfig> config, SdkOptional<List<String>> events, SdkOptional<bool> active}) get copyWith => _copyWith;
 
-  ReposCreateWebhookRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? config = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? active = sdkOmittedValue}) =>
-      ReposCreateWebhookRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        config: identical(config, sdkOmittedValue)
-            ? this.config
-            : config as SdkOptional<ReposCreateWebhookRequestBodyConfig>,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<List<String>>,
-        active: identical(active, sdkOmittedValue)
-            ? this.active
-            : active as SdkOptional<bool>,
-      );
+  ReposCreateWebhookRequestBody _copyWith({Object? name = sdkOmittedValue, Object? config = sdkOmittedValue, Object? events = sdkOmittedValue, Object? active = sdkOmittedValue}) => ReposCreateWebhookRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    config: identical(config, sdkOmittedValue) ? this.config : config as SdkOptional<ReposCreateWebhookRequestBodyConfig>,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<String>>,
+    active: identical(active, sdkOmittedValue) ? this.active : active as SdkOptional<bool>,
+  );
 
-  factory ReposCreateWebhookRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposCreateWebhookRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        config: json['config'] != null
-            ? SdkPresent((json['config'] != null
-                ? ReposCreateWebhookRequestBodyConfig.fromJson(
-                    json['config'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        events: json['events'] != null
-            ? SdkPresent(
-                ((json['events'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        active: json['active'] != null
-            ? SdkPresent((json['active'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposCreateWebhookRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateWebhookRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    config: json['config'] != null ? SdkPresent((json['config'] != null ? ReposCreateWebhookRequestBodyConfig.fromJson(json['config'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    active: json['active'] != null ? SdkPresent((json['active'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (config) {
-          SdkPresent<ReposCreateWebhookRequestBodyConfig>(value: final value) =>
-            {
-              'config': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (events) {
-          SdkPresent<List<String>>(value: final value) => {
-              'events': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (active) {
-          SdkPresent<bool>(value: final value) => {
-              'active': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (config) {
+      SdkPresent<ReposCreateWebhookRequestBodyConfig>(value: final value) => {'config': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (events) {
+      SdkPresent<List<String>>(value: final value) => {'events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (active) {
+      SdkPresent<bool>(value: final value) => {'active': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdateWebhookRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Configuration object of the webhook
   final SdkOptional<WebhookConfig> config;
-
   /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
   final SdkOptional<List<String>> events;
-
   /// Determines a list of events to be added to the list of events that the Hook triggers for.
   final SdkOptional<List<String>> addEvents;
-
   /// Determines a list of events to be removed from the list of events that the Hook triggers for.
   final SdkOptional<List<String>> removeEvents;
-
   /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
   final SdkOptional<bool> active;
 
-  const ReposUpdateWebhookRequestBody(
-      {this.config = const SdkOmitted(),
-      this.events = const SdkOmitted(),
-      this.addEvents = const SdkOmitted(),
-      this.removeEvents = const SdkOmitted(),
-      this.active = const SdkOmitted()});
+  const ReposUpdateWebhookRequestBody({this.config = const SdkOmitted(), this.events = const SdkOmitted(), this.addEvents = const SdkOmitted(), this.removeEvents = const SdkOmitted(), this.active = const SdkOmitted()});
 
-  ReposUpdateWebhookRequestBody Function(
-      {SdkOptional<WebhookConfig> config,
-      SdkOptional<List<String>> events,
-      SdkOptional<List<String>> addEvents,
-      SdkOptional<List<String>> removeEvents,
-      SdkOptional<bool> active}) get copyWith => _copyWith;
+  ReposUpdateWebhookRequestBody Function({SdkOptional<WebhookConfig> config, SdkOptional<List<String>> events, SdkOptional<List<String>> addEvents, SdkOptional<List<String>> removeEvents, SdkOptional<bool> active}) get copyWith => _copyWith;
 
-  ReposUpdateWebhookRequestBody _copyWith(
-          {Object? config = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? addEvents = sdkOmittedValue,
-          Object? removeEvents = sdkOmittedValue,
-          Object? active = sdkOmittedValue}) =>
-      ReposUpdateWebhookRequestBody(
-        config: identical(config, sdkOmittedValue)
-            ? this.config
-            : config as SdkOptional<WebhookConfig>,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<List<String>>,
-        addEvents: identical(addEvents, sdkOmittedValue)
-            ? this.addEvents
-            : addEvents as SdkOptional<List<String>>,
-        removeEvents: identical(removeEvents, sdkOmittedValue)
-            ? this.removeEvents
-            : removeEvents as SdkOptional<List<String>>,
-        active: identical(active, sdkOmittedValue)
-            ? this.active
-            : active as SdkOptional<bool>,
-      );
+  ReposUpdateWebhookRequestBody _copyWith({Object? config = sdkOmittedValue, Object? events = sdkOmittedValue, Object? addEvents = sdkOmittedValue, Object? removeEvents = sdkOmittedValue, Object? active = sdkOmittedValue}) => ReposUpdateWebhookRequestBody(
+    config: identical(config, sdkOmittedValue) ? this.config : config as SdkOptional<WebhookConfig>,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<String>>,
+    addEvents: identical(addEvents, sdkOmittedValue) ? this.addEvents : addEvents as SdkOptional<List<String>>,
+    removeEvents: identical(removeEvents, sdkOmittedValue) ? this.removeEvents : removeEvents as SdkOptional<List<String>>,
+    active: identical(active, sdkOmittedValue) ? this.active : active as SdkOptional<bool>,
+  );
 
-  factory ReposUpdateWebhookRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposUpdateWebhookRequestBody(
-        config: json['config'] != null
-            ? SdkPresent((json['config'] != null
-                ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        events: json['events'] != null
-            ? SdkPresent(
-                ((json['events'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        addEvents: json['add_events'] != null
-            ? SdkPresent(((json['add_events'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        removeEvents: json['remove_events'] != null
-            ? SdkPresent(((json['remove_events'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        active: json['active'] != null
-            ? SdkPresent((json['active'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateWebhookRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateWebhookRequestBody(
+    config: json['config'] != null ? SdkPresent((json['config'] != null ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    addEvents: json['add_events'] != null ? SdkPresent(((json['add_events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    removeEvents: json['remove_events'] != null ? SdkPresent(((json['remove_events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    active: json['active'] != null ? SdkPresent((json['active'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (config) {
-          SdkPresent<WebhookConfig>(value: final value) => {
-              'config': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (events) {
-          SdkPresent<List<String>>(value: final value) => {
-              'events': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (addEvents) {
-          SdkPresent<List<String>>(value: final value) => {
-              'add_events': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (removeEvents) {
-          SdkPresent<List<String>>(value: final value) => {
-              'remove_events': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (active) {
-          SdkPresent<bool>(value: final value) => {
-              'active': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (config) {
+      SdkPresent<WebhookConfig>(value: final value) => {'config': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (events) {
+      SdkPresent<List<String>>(value: final value) => {'events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (addEvents) {
+      SdkPresent<List<String>>(value: final value) => {'add_events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (removeEvents) {
+      SdkPresent<List<String>>(value: final value) => {'remove_events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (active) {
+      SdkPresent<bool>(value: final value) => {'active': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdateWebhookConfigForRepoRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URL to which the payloads will be delivered.
   final SdkOptional<String> url;
-
   /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
   final SdkOptional<String> contentType;
-
   /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
   final SdkOptional<String> secret;
   final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
 
-  const ReposUpdateWebhookConfigForRepoRequestBody(
-      {this.url = const SdkOmitted(),
-      this.contentType = const SdkOmitted(),
-      this.secret = const SdkOmitted(),
-      this.insecureSsl = const SdkOmitted()});
+  const ReposUpdateWebhookConfigForRepoRequestBody({this.url = const SdkOmitted(), this.contentType = const SdkOmitted(), this.secret = const SdkOmitted(), this.insecureSsl = const SdkOmitted()});
 
-  ReposUpdateWebhookConfigForRepoRequestBody Function(
-          {SdkOptional<String> url,
-          SdkOptional<String> contentType,
-          SdkOptional<String> secret,
-          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
-      get copyWith => _copyWith;
+  ReposUpdateWebhookConfigForRepoRequestBody Function({SdkOptional<String> url, SdkOptional<String> contentType, SdkOptional<String> secret, SdkOptional<WebhookConfigInsecureSsl> insecureSsl}) get copyWith => _copyWith;
 
-  ReposUpdateWebhookConfigForRepoRequestBody _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? secret = sdkOmittedValue,
-          Object? insecureSsl = sdkOmittedValue}) =>
-      ReposUpdateWebhookConfigForRepoRequestBody(
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as SdkOptional<String>,
-        secret: identical(secret, sdkOmittedValue)
-            ? this.secret
-            : secret as SdkOptional<String>,
-        insecureSsl: identical(insecureSsl, sdkOmittedValue)
-            ? this.insecureSsl
-            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
-      );
+  ReposUpdateWebhookConfigForRepoRequestBody _copyWith({Object? url = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue}) => ReposUpdateWebhookConfigForRepoRequestBody(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
+    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+  );
 
-  factory ReposUpdateWebhookConfigForRepoRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateWebhookConfigForRepoRequestBody(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        contentType: json['content_type'] != null
-            ? SdkPresent((json['content_type'] as String?)!)
-            : const SdkOmitted(),
-        secret: json['secret'] != null
-            ? SdkPresent((json['secret'] as String?)!)
-            : const SdkOmitted(),
-        insecureSsl: json['insecure_ssl'] != null
-            ? SdkPresent((json['insecure_ssl'] != null
-                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateWebhookConfigForRepoRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateWebhookConfigForRepoRequestBody(
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
+    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
+    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contentType) {
-          SdkPresent<String>(value: final value) => {
-              'content_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secret) {
-          SdkPresent<String>(value: final value) => {
-              'secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (insecureSsl) {
-          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
-              'insecure_ssl': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contentType) {
+      SdkPresent<String>(value: final value) => {'content_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secret) {
+      SdkPresent<String>(value: final value) => {'secret': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (insecureSsl) {
+      SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {'insecure_ssl': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdateInvitationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
   final SdkOptional<ReposUpdateInvitationRequestBodyPermissions> permissions;
 
-  const ReposUpdateInvitationRequestBody(
-      {this.permissions = const SdkOmitted()});
+  const ReposUpdateInvitationRequestBody({this.permissions = const SdkOmitted()});
 
-  ReposUpdateInvitationRequestBody Function(
-      {SdkOptional<ReposUpdateInvitationRequestBodyPermissions>
-          permissions}) get copyWith => _copyWith;
+  ReposUpdateInvitationRequestBody Function({SdkOptional<ReposUpdateInvitationRequestBodyPermissions> permissions}) get copyWith => _copyWith;
 
-  ReposUpdateInvitationRequestBody _copyWith(
-          {Object? permissions = sdkOmittedValue}) =>
-      ReposUpdateInvitationRequestBody(
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions
-                as SdkOptional<ReposUpdateInvitationRequestBodyPermissions>,
-      );
+  ReposUpdateInvitationRequestBody _copyWith({Object? permissions = sdkOmittedValue}) => ReposUpdateInvitationRequestBody(
+    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<ReposUpdateInvitationRequestBodyPermissions>,
+  );
 
-  factory ReposUpdateInvitationRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateInvitationRequestBody(
-        permissions: json['permissions'] != null
-            ? SdkPresent((json['permissions'] != null
-                ? ReposUpdateInvitationRequestBodyPermissions.fromJson(
-                    json['permissions'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateInvitationRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateInvitationRequestBody(
+    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] != null ? ReposUpdateInvitationRequestBodyPermissions.fromJson(json['permissions'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (permissions) {
-          SdkPresent<ReposUpdateInvitationRequestBodyPermissions>(
-            value: final value
-          ) =>
-            {
-              'permissions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (permissions) {
+      SdkPresent<ReposUpdateInvitationRequestBodyPermissions>(value: final value) => {'permissions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposCreateDeployKeyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A name for the key.
   final SdkOptional<String> title;
-
   /// The contents of the key.
   final String key;
-
   /// If `true`, the key will only be able to read repository contents. Otherwise, the key will be able to read and write. Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "[Repository permission levels for an organization](https://docs.github.com/articles/repository-permission-levels-for-an-organization/)" and "[Permission levels for a user account repository](https://docs.github.com/articles/permission-levels-for-a-user-account-repository/)."
   final SdkOptional<bool> readOnly;
 
-  const ReposCreateDeployKeyRequestBody(
-      {this.title = const SdkOmitted(),
-      required this.key,
-      this.readOnly = const SdkOmitted()});
+  const ReposCreateDeployKeyRequestBody({this.title = const SdkOmitted(), required this.key, this.readOnly = const SdkOmitted()});
 
-  ReposCreateDeployKeyRequestBody Function(
-      {SdkOptional<String> title,
-      String key,
-      SdkOptional<bool> readOnly}) get copyWith => _copyWith;
+  ReposCreateDeployKeyRequestBody Function({SdkOptional<String> title, String key, SdkOptional<bool> readOnly}) get copyWith => _copyWith;
 
-  ReposCreateDeployKeyRequestBody _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? key = sdkOmittedValue,
-          Object? readOnly = sdkOmittedValue}) =>
-      ReposCreateDeployKeyRequestBody(
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String>,
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        readOnly: identical(readOnly, sdkOmittedValue)
-            ? this.readOnly
-            : readOnly as SdkOptional<bool>,
-      );
+  ReposCreateDeployKeyRequestBody _copyWith({Object? title = sdkOmittedValue, Object? key = sdkOmittedValue, Object? readOnly = sdkOmittedValue}) => ReposCreateDeployKeyRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    readOnly: identical(readOnly, sdkOmittedValue) ? this.readOnly : readOnly as SdkOptional<bool>,
+  );
 
-  factory ReposCreateDeployKeyRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposCreateDeployKeyRequestBody(
-        title: json['title'] != null
-            ? SdkPresent((json['title'] as String?)!)
-            : const SdkOmitted(),
-        key: (json['key'] as String?)!,
-        readOnly: json['read_only'] != null
-            ? SdkPresent((json['read_only'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposCreateDeployKeyRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateDeployKeyRequestBody(
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    key: (json['key'] as String?)!,
+    readOnly: json['read_only'] != null ? SdkPresent((json['read_only'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (title) {
-          SdkPresent<String>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'key': key,
-        ...switch (readOnly) {
-          SdkPresent<bool>(value: final value) => {
-              'read_only': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    'key': key,
+    ...switch (readOnly) {
+      SdkPresent<bool>(value: final value) => {'read_only': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposMergeUpstreamRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the branch which should be updated to match upstream.
   final String branch;
 
   const ReposMergeUpstreamRequestBody({required this.branch});
 
-  ReposMergeUpstreamRequestBody Function({String branch}) get copyWith =>
-      _copyWith;
+  ReposMergeUpstreamRequestBody Function({String branch}) get copyWith => _copyWith;
 
-  ReposMergeUpstreamRequestBody _copyWith({Object? branch = sdkOmittedValue}) =>
-      ReposMergeUpstreamRequestBody(
-        branch:
-            identical(branch, sdkOmittedValue) ? this.branch : branch as String,
-      );
+  ReposMergeUpstreamRequestBody _copyWith({Object? branch = sdkOmittedValue}) => ReposMergeUpstreamRequestBody(
+    branch: identical(branch, sdkOmittedValue) ? this.branch : branch as String,
+  );
 
-  factory ReposMergeUpstreamRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposMergeUpstreamRequestBody(
-        branch: (json['branch'] as String?)!,
-      );
+  factory ReposMergeUpstreamRequestBody.fromJson(Map<String, dynamic> json) => ReposMergeUpstreamRequestBody(
+    branch: (json['branch'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'branch': branch,
-      };
+    'branch': branch,
+  };
 }

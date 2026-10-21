@@ -8,76 +8,42 @@ part of 'codespaces.dart';
 class CodespacesSecret {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the secret
   final String name;
-
   /// The date and time at which the secret was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String createdAt;
-
   /// The date and time at which the secret was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String updatedAt;
-
   /// The type of repositories in the organization that the secret is visible to
   final CodespacesSecretVisibility visibility;
-
   /// The API URL at which the list of repositories this secret is visible to can be retrieved
   final String selectedRepositoriesUrl;
 
-  const CodespacesSecret(
-      {required this.name,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.visibility,
-      required this.selectedRepositoriesUrl});
+  const CodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, required this.selectedRepositoriesUrl});
 
-  CodespacesSecret Function(
-      {String name,
-      String createdAt,
-      String updatedAt,
-      CodespacesSecretVisibility visibility,
-      String selectedRepositoriesUrl}) get copyWith => _copyWith;
+  CodespacesSecret Function({String name, String createdAt, String updatedAt, CodespacesSecretVisibility visibility, String selectedRepositoriesUrl}) get copyWith => _copyWith;
 
-  CodespacesSecret _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? visibility = sdkOmittedValue,
-          Object? selectedRepositoriesUrl = sdkOmittedValue}) =>
-      CodespacesSecret(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        visibility: identical(visibility, sdkOmittedValue)
-            ? this.visibility
-            : visibility as CodespacesSecretVisibility,
-        selectedRepositoriesUrl:
-            identical(selectedRepositoriesUrl, sdkOmittedValue)
-                ? this.selectedRepositoriesUrl
-                : selectedRepositoriesUrl as String,
-      );
+  CodespacesSecret _copyWith({Object? name = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue}) => CodespacesSecret(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as CodespacesSecretVisibility,
+    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as String,
+  );
 
-  factory CodespacesSecret.fromJson(Map<String, dynamic> json) =>
-      CodespacesSecret(
-        name: (json['name'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        visibility: (json['visibility'] != null
-            ? CodespacesSecretVisibility.fromJson(json['visibility'] as String)
-            : null)!,
-        selectedRepositoriesUrl:
-            (json['selected_repositories_url'] as String?)!,
-      );
+  factory CodespacesSecret.fromJson(Map<String, dynamic> json) => CodespacesSecret(
+    name: (json['name'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    visibility: (json['visibility'] != null ? CodespacesSecretVisibility.fromJson(json['visibility'] as String) : null)!,
+    selectedRepositoriesUrl: (json['selected_repositories_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'visibility': visibility.toJson(),
-        'selected_repositories_url': selectedRepositoriesUrl,
-      };
+    'name': name,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'visibility': visibility.toJson(),
+    'selected_repositories_url': selectedRepositoriesUrl,
+  };
 }

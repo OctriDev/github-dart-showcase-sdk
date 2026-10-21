@@ -8,146 +8,71 @@ part of 'orgs.dart';
 class OrganizationRole {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the role.
   final int id;
-
   /// The name of the role.
   final String name;
-
   /// A short description about who this role is for or what permissions it grants.
   final SdkOptional<String?> description;
-
   /// The system role from which this role inherits permissions.
   final SdkOptional<OrganizationRoleBaseRole?> baseRole;
-
   /// Source answers the question, "where did this role come from?"
   final SdkOptional<OrganizationRoleSource?> source;
-
   /// A list of permissions included in this role.
   final List<String> permissions;
-
   /// A GitHub user.
   final NullableSimpleUser? organization;
-
   /// The date and time the role was created.
   final String createdAt;
-
   /// The date and time the role was last updated.
   final String updatedAt;
 
-  const OrganizationRole(
-      {required this.id,
-      required this.name,
-      this.description = const SdkOmitted(),
-      this.baseRole = const SdkOmitted(),
-      this.source = const SdkOmitted(),
-      required this.permissions,
-      required this.organization,
-      required this.createdAt,
-      required this.updatedAt});
+  const OrganizationRole({required this.id, required this.name, this.description = const SdkOmitted(), this.baseRole = const SdkOmitted(), this.source = const SdkOmitted(), required this.permissions, required this.organization, required this.createdAt, required this.updatedAt});
 
-  OrganizationRole Function(
-      {int id,
-      String name,
-      SdkOptional<String?> description,
-      SdkOptional<OrganizationRoleBaseRole?> baseRole,
-      SdkOptional<OrganizationRoleSource?> source,
-      List<String> permissions,
-      NullableSimpleUser? organization,
-      String createdAt,
-      String updatedAt}) get copyWith => _copyWith;
+  OrganizationRole Function({int id, String name, SdkOptional<String?> description, SdkOptional<OrganizationRoleBaseRole?> baseRole, SdkOptional<OrganizationRoleSource?> source, List<String> permissions, NullableSimpleUser? organization, String createdAt, String updatedAt}) get copyWith => _copyWith;
 
-  OrganizationRole _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? baseRole = sdkOmittedValue,
-          Object? source = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      OrganizationRole(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        baseRole: identical(baseRole, sdkOmittedValue)
-            ? this.baseRole
-            : baseRole as SdkOptional<OrganizationRoleBaseRole?>,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as SdkOptional<OrganizationRoleSource?>,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions as List<String>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as NullableSimpleUser?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  OrganizationRole _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? baseRole = sdkOmittedValue, Object? source = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => OrganizationRole(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    baseRole: identical(baseRole, sdkOmittedValue) ? this.baseRole : baseRole as SdkOptional<OrganizationRoleBaseRole?>,
+    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<OrganizationRoleSource?>,
+    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as List<String>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as NullableSimpleUser?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
-  factory OrganizationRole.fromJson(Map<String, dynamic> json) =>
-      OrganizationRole(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        baseRole: json.containsKey('base_role')
-            ? SdkPresent(json['base_role'] != null
-                ? OrganizationRoleBaseRole.fromJson(json['base_role'] as String)
-                : null)
-            : const SdkOmitted(),
-        source: json.containsKey('source')
-            ? SdkPresent(json['source'] != null
-                ? OrganizationRoleSource.fromJson(json['source'] as String)
-                : null)
-            : const SdkOmitted(),
-        permissions:
-            ((json['permissions'] as List?)?.map((e) => e as String).toList())!,
-        organization: json.containsKey('organization')
-            ? json['organization'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'organization', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+  factory OrganizationRole.fromJson(Map<String, dynamic> json) => OrganizationRole(
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    baseRole: json.containsKey('base_role') ? SdkPresent(json['base_role'] != null ? OrganizationRoleBaseRole.fromJson(json['base_role'] as String) : null) : const SdkOmitted(),
+    source: json.containsKey('source') ? SdkPresent(json['source'] != null ? OrganizationRoleSource.fromJson(json['source'] as String) : null) : const SdkOmitted(),
+    permissions: ((json['permissions'] as List?)?.map((e) => e as String).toList())!,
+    organization: json.containsKey('organization') ? json['organization'] != null ? NullableSimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'organization', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (baseRole) {
-          SdkPresent<OrganizationRoleBaseRole?>(value: final value) => {
-              'base_role': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (source) {
-          SdkPresent<OrganizationRoleSource?>(value: final value) => {
-              'source': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'permissions': permissions,
-        'organization': organization?.toJson(),
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-      };
+    'id': id,
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (baseRole) {
+      SdkPresent<OrganizationRoleBaseRole?>(value: final value) => {'base_role': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (source) {
+      SdkPresent<OrganizationRoleSource?>(value: final value) => {'source': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'permissions': permissions,
+    'organization': organization?.toJson(),
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+  };
 }

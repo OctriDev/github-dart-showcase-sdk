@@ -8,276 +8,128 @@ part of 'issues_timeline.dart';
 class TimelineCommentEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `event` wire field.
   final String event;
-
   /// A GitHub user.
   final SimpleUser actor;
-
   /// Unique identifier of the issue comment
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// URL for the issue comment
   final String url;
-
   /// Contents of the issue comment
   final SdkOptional<String> body;
-
   /// Optional `string` value serialized in the `body_text` wire field.
   final SdkOptional<String> bodyText;
-
   /// Optional `string` value serialized in the `body_html` wire field.
   final SdkOptional<String> bodyHtml;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// A GitHub user.
   final SimpleUser user;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// Required `uri`-formatted value serialized in the `issue_url` wire field.
   final String issueUrl;
-
   /// How the author is associated with the repository.
   final AuthorAssociation authorAssociation;
-
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final SdkOptional<NullableIntegration?> performedViaGithubApp;
-
   /// Optional object value serialized in the `reactions` wire field.
   final SdkOptional<ReactionRollup> reactions;
-
   /// Context around who pinned an issue comment and when it was pinned.
   final SdkOptional<NullablePinnedIssueComment?> pin;
-
   /// Details about why an issue comment was minimized.
   final SdkOptional<NullableIssueCommentMinimized?> minimized;
 
-  const TimelineCommentEvent(
-      {required this.event,
-      required this.actor,
-      required this.id,
-      required this.nodeId,
-      required this.url,
-      this.body = const SdkOmitted(),
-      this.bodyText = const SdkOmitted(),
-      this.bodyHtml = const SdkOmitted(),
-      required this.htmlUrl,
-      required this.user,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.issueUrl,
-      required this.authorAssociation,
-      this.performedViaGithubApp = const SdkOmitted(),
-      this.reactions = const SdkOmitted(),
-      this.pin = const SdkOmitted(),
-      this.minimized = const SdkOmitted()});
+  const TimelineCommentEvent({required this.event, required this.actor, required this.id, required this.nodeId, required this.url, this.body = const SdkOmitted(), this.bodyText = const SdkOmitted(), this.bodyHtml = const SdkOmitted(), required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, required this.authorAssociation, this.performedViaGithubApp = const SdkOmitted(), this.reactions = const SdkOmitted(), this.pin = const SdkOmitted(), this.minimized = const SdkOmitted()});
 
-  TimelineCommentEvent Function(
-          {String event,
-          SimpleUser actor,
-          int id,
-          String nodeId,
-          String url,
-          SdkOptional<String> body,
-          SdkOptional<String> bodyText,
-          SdkOptional<String> bodyHtml,
-          String htmlUrl,
-          SimpleUser user,
-          String createdAt,
-          String updatedAt,
-          String issueUrl,
-          AuthorAssociation authorAssociation,
-          SdkOptional<NullableIntegration?> performedViaGithubApp,
-          SdkOptional<ReactionRollup> reactions,
-          SdkOptional<NullablePinnedIssueComment?> pin,
-          SdkOptional<NullableIssueCommentMinimized?> minimized})
-      get copyWith => _copyWith;
+  TimelineCommentEvent Function({String event, SimpleUser actor, int id, String nodeId, String url, SdkOptional<String> body, SdkOptional<String> bodyText, SdkOptional<String> bodyHtml, String htmlUrl, SimpleUser user, String createdAt, String updatedAt, String issueUrl, AuthorAssociation authorAssociation, SdkOptional<NullableIntegration?> performedViaGithubApp, SdkOptional<ReactionRollup> reactions, SdkOptional<NullablePinnedIssueComment?> pin, SdkOptional<NullableIssueCommentMinimized?> minimized}) get copyWith => _copyWith;
 
-  TimelineCommentEvent _copyWith(
-          {Object? event = sdkOmittedValue,
-          Object? actor = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? bodyText = sdkOmittedValue,
-          Object? bodyHtml = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? issueUrl = sdkOmittedValue,
-          Object? authorAssociation = sdkOmittedValue,
-          Object? performedViaGithubApp = sdkOmittedValue,
-          Object? reactions = sdkOmittedValue,
-          Object? pin = sdkOmittedValue,
-          Object? minimized = sdkOmittedValue}) =>
-      TimelineCommentEvent(
-        event: identical(event, sdkOmittedValue) ? this.event : event as String,
-        actor: identical(actor, sdkOmittedValue)
-            ? this.actor
-            : actor as SimpleUser,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String>,
-        bodyText: identical(bodyText, sdkOmittedValue)
-            ? this.bodyText
-            : bodyText as SdkOptional<String>,
-        bodyHtml: identical(bodyHtml, sdkOmittedValue)
-            ? this.bodyHtml
-            : bodyHtml as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        issueUrl: identical(issueUrl, sdkOmittedValue)
-            ? this.issueUrl
-            : issueUrl as String,
-        authorAssociation: identical(authorAssociation, sdkOmittedValue)
-            ? this.authorAssociation
-            : authorAssociation as AuthorAssociation,
-        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
-            ? this.performedViaGithubApp
-            : performedViaGithubApp as SdkOptional<NullableIntegration?>,
-        reactions: identical(reactions, sdkOmittedValue)
-            ? this.reactions
-            : reactions as SdkOptional<ReactionRollup>,
-        pin: identical(pin, sdkOmittedValue)
-            ? this.pin
-            : pin as SdkOptional<NullablePinnedIssueComment?>,
-        minimized: identical(minimized, sdkOmittedValue)
-            ? this.minimized
-            : minimized as SdkOptional<NullableIssueCommentMinimized?>,
-      );
+  TimelineCommentEvent _copyWith({Object? event = sdkOmittedValue, Object? actor = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? body = sdkOmittedValue, Object? bodyText = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? user = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? issueUrl = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? pin = sdkOmittedValue, Object? minimized = sdkOmittedValue}) => TimelineCommentEvent(
+    event: identical(event, sdkOmittedValue) ? this.event : event as String,
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as SimpleUser,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
+    bodyText: identical(bodyText, sdkOmittedValue) ? this.bodyText : bodyText as SdkOptional<String>,
+    bodyHtml: identical(bodyHtml, sdkOmittedValue) ? this.bodyHtml : bodyHtml as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    issueUrl: identical(issueUrl, sdkOmittedValue) ? this.issueUrl : issueUrl as String,
+    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as AuthorAssociation,
+    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as SdkOptional<NullableIntegration?>,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as SdkOptional<ReactionRollup>,
+    pin: identical(pin, sdkOmittedValue) ? this.pin : pin as SdkOptional<NullablePinnedIssueComment?>,
+    minimized: identical(minimized, sdkOmittedValue) ? this.minimized : minimized as SdkOptional<NullableIssueCommentMinimized?>,
+  );
 
-  factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) =>
-      TimelineCommentEvent(
-        event: (json['event'] as String?)!,
-        actor: (json['actor'] != null
-            ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>)
-            : null)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as String?)!)
-            : const SdkOmitted(),
-        bodyText: json['body_text'] != null
-            ? SdkPresent((json['body_text'] as String?)!)
-            : const SdkOmitted(),
-        bodyHtml: json['body_html'] != null
-            ? SdkPresent((json['body_html'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: (json['html_url'] as String?)!,
-        user: (json['user'] != null
-            ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
-            : null)!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        issueUrl: (json['issue_url'] as String?)!,
-        authorAssociation: (json['author_association'] != null
-            ? AuthorAssociation.fromJson(json['author_association'] as String)
-            : null)!,
-        performedViaGithubApp: json.containsKey('performed_via_github_app')
-            ? SdkPresent(json['performed_via_github_app'] != null
-                ? NullableIntegration.fromJson(
-                    json['performed_via_github_app'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        reactions: json['reactions'] != null
-            ? SdkPresent((json['reactions'] != null
-                ? ReactionRollup.fromJson(
-                    json['reactions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pin: json.containsKey('pin')
-            ? SdkPresent(json['pin'] != null
-                ? NullablePinnedIssueComment.fromJson(
-                    json['pin'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        minimized: json.containsKey('minimized')
-            ? SdkPresent(json['minimized'] != null
-                ? NullableIssueCommentMinimized.fromJson(
-                    json['minimized'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) => TimelineCommentEvent(
+    event: (json['event'] as String?)!,
+    actor: (json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    url: (json['url'] as String?)!,
+    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
+    bodyText: json['body_text'] != null ? SdkPresent((json['body_text'] as String?)!) : const SdkOmitted(),
+    bodyHtml: json['body_html'] != null ? SdkPresent((json['body_html'] as String?)!) : const SdkOmitted(),
+    htmlUrl: (json['html_url'] as String?)!,
+    user: (json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    issueUrl: (json['issue_url'] as String?)!,
+    authorAssociation: (json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null)!,
+    performedViaGithubApp: json.containsKey('performed_via_github_app') ? SdkPresent(json['performed_via_github_app'] != null ? NullableIntegration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    reactions: json['reactions'] != null ? SdkPresent((json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pin: json.containsKey('pin') ? SdkPresent(json['pin'] != null ? NullablePinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    minimized: json.containsKey('minimized') ? SdkPresent(json['minimized'] != null ? NullableIssueCommentMinimized.fromJson(json['minimized'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'event': event,
-        'actor': actor.toJson(),
-        'id': id,
-        'node_id': nodeId,
-        'url': url,
-        ...switch (body) {
-          SdkPresent<String>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodyText) {
-          SdkPresent<String>(value: final value) => {
-              'body_text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodyHtml) {
-          SdkPresent<String>(value: final value) => {
-              'body_html': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'html_url': htmlUrl,
-        'user': user.toJson(),
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'issue_url': issueUrl,
-        'author_association': authorAssociation.toJson(),
-        ...switch (performedViaGithubApp) {
-          SdkPresent<NullableIntegration?>(value: final value) => {
-              'performed_via_github_app': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reactions) {
-          SdkPresent<ReactionRollup>(value: final value) => {
-              'reactions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pin) {
-          SdkPresent<NullablePinnedIssueComment?>(value: final value) => {
-              'pin': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (minimized) {
-          SdkPresent<NullableIssueCommentMinimized?>(value: final value) => {
-              'minimized': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'event': event,
+    'actor': actor.toJson(),
+    'id': id,
+    'node_id': nodeId,
+    'url': url,
+    ...switch (body) {
+      SdkPresent<String>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bodyText) {
+      SdkPresent<String>(value: final value) => {'body_text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bodyHtml) {
+      SdkPresent<String>(value: final value) => {'body_html': value,},
+      _ => const <String, dynamic>{},
+    },
+    'html_url': htmlUrl,
+    'user': user.toJson(),
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'issue_url': issueUrl,
+    'author_association': authorAssociation.toJson(),
+    ...switch (performedViaGithubApp) {
+      SdkPresent<NullableIntegration?>(value: final value) => {'performed_via_github_app': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reactions) {
+      SdkPresent<ReactionRollup>(value: final value) => {'reactions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pin) {
+      SdkPresent<NullablePinnedIssueComment?>(value: final value) => {'pin': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (minimized) {
+      SdkPresent<NullableIssueCommentMinimized?>(value: final value) => {'minimized': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

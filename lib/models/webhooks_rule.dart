@@ -8,444 +8,166 @@ part of 'webhooks.dart';
 class WebhooksRule {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `boolean` value serialized in the `admin_enforced` wire field.
   final bool adminEnforced;
-
   /// Required enumerated value serialized in the `allow_deletions_enforcement_level` wire field.
-  final WebhooksRuleAllowDeletionsEnforcementLevel
-      allowDeletionsEnforcementLevel;
-
+  final WebhooksRuleAllowDeletionsEnforcementLevel allowDeletionsEnforcementLevel;
   /// Required enumerated value serialized in the `allow_force_pushes_enforcement_level` wire field.
-  final WebhooksRuleAllowForcePushesEnforcementLevel
-      allowForcePushesEnforcementLevel;
-
+  final WebhooksRuleAllowForcePushesEnforcementLevel allowForcePushesEnforcementLevel;
   /// Required array value serialized in the `authorized_actor_names` wire field.
   final List<String> authorizedActorNames;
-
   /// Required `boolean` value serialized in the `authorized_actors_only` wire field.
   final bool authorizedActorsOnly;
-
   /// Required `boolean` value serialized in the `authorized_dismissal_actors_only` wire field.
   final bool authorizedDismissalActorsOnly;
-
   /// Optional `boolean` value serialized in the `create_protected` wire field.
   final SdkOptional<bool> createProtected;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `boolean` value serialized in the `dismiss_stale_reviews_on_push` wire field.
   final bool dismissStaleReviewsOnPush;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `boolean` value serialized in the `ignore_approvals_from_contributors` wire field.
   final bool ignoreApprovalsFromContributors;
-
   /// Required enumerated value serialized in the `linear_history_requirement_enforcement_level` wire field.
-  final WebhooksRuleLinearHistoryRequirementEnforcementLevel
-      linearHistoryRequirementEnforcementLevel;
-
+  final WebhooksRuleLinearHistoryRequirementEnforcementLevel linearHistoryRequirementEnforcementLevel;
   /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
   final WebhooksRuleLockBranchEnforcementLevel lockBranchEnforcementLevel;
-
   /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow users to pull changes from upstream when the branch is locked. This setting is only applicable for forks.
   final SdkOptional<bool> lockAllowsForkSync;
-
   /// Required enumerated value serialized in the `merge_queue_enforcement_level` wire field.
   final WebhooksRuleMergeQueueEnforcementLevel mergeQueueEnforcementLevel;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required enumerated value serialized in the `pull_request_reviews_enforcement_level` wire field.
-  final WebhooksRulePullRequestReviewsEnforcementLevel
-      pullRequestReviewsEnforcementLevel;
-
+  final WebhooksRulePullRequestReviewsEnforcementLevel pullRequestReviewsEnforcementLevel;
   /// Required `integer` value serialized in the `repository_id` wire field.
   final int repositoryId;
-
   /// Required `boolean` value serialized in the `require_code_owner_review` wire field.
   final bool requireCodeOwnerReview;
-
   /// Whether the most recent push must be approved by someone other than the person who pushed it
   final SdkOptional<bool> requireLastPushApproval;
-
   /// Required `integer` value serialized in the `required_approving_review_count` wire field.
   final int requiredApprovingReviewCount;
-
   /// Required enumerated value serialized in the `required_conversation_resolution_level` wire field.
-  final WebhooksRuleRequiredConversationResolutionLevel
-      requiredConversationResolutionLevel;
-
+  final WebhooksRuleRequiredConversationResolutionLevel requiredConversationResolutionLevel;
   /// Required enumerated value serialized in the `required_deployments_enforcement_level` wire field.
-  final WebhooksRuleRequiredDeploymentsEnforcementLevel
-      requiredDeploymentsEnforcementLevel;
-
+  final WebhooksRuleRequiredDeploymentsEnforcementLevel requiredDeploymentsEnforcementLevel;
   /// Required array value serialized in the `required_status_checks` wire field.
   final List<String> requiredStatusChecks;
-
   /// Required enumerated value serialized in the `required_status_checks_enforcement_level` wire field.
-  final WebhooksRuleRequiredStatusChecksEnforcementLevel
-      requiredStatusChecksEnforcementLevel;
-
+  final WebhooksRuleRequiredStatusChecksEnforcementLevel requiredStatusChecksEnforcementLevel;
   /// Required enumerated value serialized in the `signature_requirement_enforcement_level` wire field.
-  final WebhooksRuleSignatureRequirementEnforcementLevel
-      signatureRequirementEnforcementLevel;
-
+  final WebhooksRuleSignatureRequirementEnforcementLevel signatureRequirementEnforcementLevel;
   /// Required `boolean` value serialized in the `strict_required_status_checks_policy` wire field.
   final bool strictRequiredStatusChecksPolicy;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
 
-  const WebhooksRule(
-      {required this.adminEnforced,
-      required this.allowDeletionsEnforcementLevel,
-      required this.allowForcePushesEnforcementLevel,
-      required this.authorizedActorNames,
-      required this.authorizedActorsOnly,
-      required this.authorizedDismissalActorsOnly,
-      this.createProtected = const SdkOmitted(),
-      required this.createdAt,
-      required this.dismissStaleReviewsOnPush,
-      required this.id,
-      required this.ignoreApprovalsFromContributors,
-      required this.linearHistoryRequirementEnforcementLevel,
-      required this.lockBranchEnforcementLevel,
-      this.lockAllowsForkSync = const SdkOmitted(),
-      required this.mergeQueueEnforcementLevel,
-      required this.name,
-      required this.pullRequestReviewsEnforcementLevel,
-      required this.repositoryId,
-      required this.requireCodeOwnerReview,
-      this.requireLastPushApproval = const SdkOmitted(),
-      required this.requiredApprovingReviewCount,
-      required this.requiredConversationResolutionLevel,
-      required this.requiredDeploymentsEnforcementLevel,
-      required this.requiredStatusChecks,
-      required this.requiredStatusChecksEnforcementLevel,
-      required this.signatureRequirementEnforcementLevel,
-      required this.strictRequiredStatusChecksPolicy,
-      required this.updatedAt});
+  const WebhooksRule({required this.adminEnforced, required this.allowDeletionsEnforcementLevel, required this.allowForcePushesEnforcementLevel, required this.authorizedActorNames, required this.authorizedActorsOnly, required this.authorizedDismissalActorsOnly, this.createProtected = const SdkOmitted(), required this.createdAt, required this.dismissStaleReviewsOnPush, required this.id, required this.ignoreApprovalsFromContributors, required this.linearHistoryRequirementEnforcementLevel, required this.lockBranchEnforcementLevel, this.lockAllowsForkSync = const SdkOmitted(), required this.mergeQueueEnforcementLevel, required this.name, required this.pullRequestReviewsEnforcementLevel, required this.repositoryId, required this.requireCodeOwnerReview, this.requireLastPushApproval = const SdkOmitted(), required this.requiredApprovingReviewCount, required this.requiredConversationResolutionLevel, required this.requiredDeploymentsEnforcementLevel, required this.requiredStatusChecks, required this.requiredStatusChecksEnforcementLevel, required this.signatureRequirementEnforcementLevel, required this.strictRequiredStatusChecksPolicy, required this.updatedAt});
 
-  WebhooksRule Function(
-      {bool adminEnforced,
-      WebhooksRuleAllowDeletionsEnforcementLevel allowDeletionsEnforcementLevel,
-      WebhooksRuleAllowForcePushesEnforcementLevel
-          allowForcePushesEnforcementLevel,
-      List<String> authorizedActorNames,
-      bool authorizedActorsOnly,
-      bool authorizedDismissalActorsOnly,
-      SdkOptional<bool> createProtected,
-      String createdAt,
-      bool dismissStaleReviewsOnPush,
-      int id,
-      bool ignoreApprovalsFromContributors,
-      WebhooksRuleLinearHistoryRequirementEnforcementLevel
-          linearHistoryRequirementEnforcementLevel,
-      WebhooksRuleLockBranchEnforcementLevel lockBranchEnforcementLevel,
-      SdkOptional<bool> lockAllowsForkSync,
-      WebhooksRuleMergeQueueEnforcementLevel mergeQueueEnforcementLevel,
-      String name,
-      WebhooksRulePullRequestReviewsEnforcementLevel
-          pullRequestReviewsEnforcementLevel,
-      int repositoryId,
-      bool requireCodeOwnerReview,
-      SdkOptional<bool> requireLastPushApproval,
-      int requiredApprovingReviewCount,
-      WebhooksRuleRequiredConversationResolutionLevel
-          requiredConversationResolutionLevel,
-      WebhooksRuleRequiredDeploymentsEnforcementLevel
-          requiredDeploymentsEnforcementLevel,
-      List<String> requiredStatusChecks,
-      WebhooksRuleRequiredStatusChecksEnforcementLevel
-          requiredStatusChecksEnforcementLevel,
-      WebhooksRuleSignatureRequirementEnforcementLevel
-          signatureRequirementEnforcementLevel,
-      bool strictRequiredStatusChecksPolicy,
-      String updatedAt}) get copyWith => _copyWith;
+  WebhooksRule Function({bool adminEnforced, WebhooksRuleAllowDeletionsEnforcementLevel allowDeletionsEnforcementLevel, WebhooksRuleAllowForcePushesEnforcementLevel allowForcePushesEnforcementLevel, List<String> authorizedActorNames, bool authorizedActorsOnly, bool authorizedDismissalActorsOnly, SdkOptional<bool> createProtected, String createdAt, bool dismissStaleReviewsOnPush, int id, bool ignoreApprovalsFromContributors, WebhooksRuleLinearHistoryRequirementEnforcementLevel linearHistoryRequirementEnforcementLevel, WebhooksRuleLockBranchEnforcementLevel lockBranchEnforcementLevel, SdkOptional<bool> lockAllowsForkSync, WebhooksRuleMergeQueueEnforcementLevel mergeQueueEnforcementLevel, String name, WebhooksRulePullRequestReviewsEnforcementLevel pullRequestReviewsEnforcementLevel, int repositoryId, bool requireCodeOwnerReview, SdkOptional<bool> requireLastPushApproval, int requiredApprovingReviewCount, WebhooksRuleRequiredConversationResolutionLevel requiredConversationResolutionLevel, WebhooksRuleRequiredDeploymentsEnforcementLevel requiredDeploymentsEnforcementLevel, List<String> requiredStatusChecks, WebhooksRuleRequiredStatusChecksEnforcementLevel requiredStatusChecksEnforcementLevel, WebhooksRuleSignatureRequirementEnforcementLevel signatureRequirementEnforcementLevel, bool strictRequiredStatusChecksPolicy, String updatedAt}) get copyWith => _copyWith;
 
-  WebhooksRule _copyWith(
-          {Object? adminEnforced = sdkOmittedValue,
-          Object? allowDeletionsEnforcementLevel = sdkOmittedValue,
-          Object? allowForcePushesEnforcementLevel = sdkOmittedValue,
-          Object? authorizedActorNames = sdkOmittedValue,
-          Object? authorizedActorsOnly = sdkOmittedValue,
-          Object? authorizedDismissalActorsOnly = sdkOmittedValue,
-          Object? createProtected = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? dismissStaleReviewsOnPush = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? ignoreApprovalsFromContributors = sdkOmittedValue,
-          Object? linearHistoryRequirementEnforcementLevel = sdkOmittedValue,
-          Object? lockBranchEnforcementLevel = sdkOmittedValue,
-          Object? lockAllowsForkSync = sdkOmittedValue,
-          Object? mergeQueueEnforcementLevel = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? pullRequestReviewsEnforcementLevel = sdkOmittedValue,
-          Object? repositoryId = sdkOmittedValue,
-          Object? requireCodeOwnerReview = sdkOmittedValue,
-          Object? requireLastPushApproval = sdkOmittedValue,
-          Object? requiredApprovingReviewCount = sdkOmittedValue,
-          Object? requiredConversationResolutionLevel = sdkOmittedValue,
-          Object? requiredDeploymentsEnforcementLevel = sdkOmittedValue,
-          Object? requiredStatusChecks = sdkOmittedValue,
-          Object? requiredStatusChecksEnforcementLevel = sdkOmittedValue,
-          Object? signatureRequirementEnforcementLevel = sdkOmittedValue,
-          Object? strictRequiredStatusChecksPolicy = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      WebhooksRule(
-        adminEnforced: identical(adminEnforced, sdkOmittedValue)
-            ? this.adminEnforced
-            : adminEnforced as bool,
-        allowDeletionsEnforcementLevel:
-            identical(allowDeletionsEnforcementLevel, sdkOmittedValue)
-                ? this.allowDeletionsEnforcementLevel
-                : allowDeletionsEnforcementLevel
-                    as WebhooksRuleAllowDeletionsEnforcementLevel,
-        allowForcePushesEnforcementLevel:
-            identical(allowForcePushesEnforcementLevel, sdkOmittedValue)
-                ? this.allowForcePushesEnforcementLevel
-                : allowForcePushesEnforcementLevel
-                    as WebhooksRuleAllowForcePushesEnforcementLevel,
-        authorizedActorNames: identical(authorizedActorNames, sdkOmittedValue)
-            ? this.authorizedActorNames
-            : authorizedActorNames as List<String>,
-        authorizedActorsOnly: identical(authorizedActorsOnly, sdkOmittedValue)
-            ? this.authorizedActorsOnly
-            : authorizedActorsOnly as bool,
-        authorizedDismissalActorsOnly:
-            identical(authorizedDismissalActorsOnly, sdkOmittedValue)
-                ? this.authorizedDismissalActorsOnly
-                : authorizedDismissalActorsOnly as bool,
-        createProtected: identical(createProtected, sdkOmittedValue)
-            ? this.createProtected
-            : createProtected as SdkOptional<bool>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        dismissStaleReviewsOnPush:
-            identical(dismissStaleReviewsOnPush, sdkOmittedValue)
-                ? this.dismissStaleReviewsOnPush
-                : dismissStaleReviewsOnPush as bool,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        ignoreApprovalsFromContributors:
-            identical(ignoreApprovalsFromContributors, sdkOmittedValue)
-                ? this.ignoreApprovalsFromContributors
-                : ignoreApprovalsFromContributors as bool,
-        linearHistoryRequirementEnforcementLevel:
-            identical(linearHistoryRequirementEnforcementLevel, sdkOmittedValue)
-                ? this.linearHistoryRequirementEnforcementLevel
-                : linearHistoryRequirementEnforcementLevel
-                    as WebhooksRuleLinearHistoryRequirementEnforcementLevel,
-        lockBranchEnforcementLevel:
-            identical(lockBranchEnforcementLevel, sdkOmittedValue)
-                ? this.lockBranchEnforcementLevel
-                : lockBranchEnforcementLevel
-                    as WebhooksRuleLockBranchEnforcementLevel,
-        lockAllowsForkSync: identical(lockAllowsForkSync, sdkOmittedValue)
-            ? this.lockAllowsForkSync
-            : lockAllowsForkSync as SdkOptional<bool>,
-        mergeQueueEnforcementLevel:
-            identical(mergeQueueEnforcementLevel, sdkOmittedValue)
-                ? this.mergeQueueEnforcementLevel
-                : mergeQueueEnforcementLevel
-                    as WebhooksRuleMergeQueueEnforcementLevel,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        pullRequestReviewsEnforcementLevel:
-            identical(pullRequestReviewsEnforcementLevel, sdkOmittedValue)
-                ? this.pullRequestReviewsEnforcementLevel
-                : pullRequestReviewsEnforcementLevel
-                    as WebhooksRulePullRequestReviewsEnforcementLevel,
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as int,
-        requireCodeOwnerReview:
-            identical(requireCodeOwnerReview, sdkOmittedValue)
-                ? this.requireCodeOwnerReview
-                : requireCodeOwnerReview as bool,
-        requireLastPushApproval:
-            identical(requireLastPushApproval, sdkOmittedValue)
-                ? this.requireLastPushApproval
-                : requireLastPushApproval as SdkOptional<bool>,
-        requiredApprovingReviewCount:
-            identical(requiredApprovingReviewCount, sdkOmittedValue)
-                ? this.requiredApprovingReviewCount
-                : requiredApprovingReviewCount as int,
-        requiredConversationResolutionLevel:
-            identical(requiredConversationResolutionLevel, sdkOmittedValue)
-                ? this.requiredConversationResolutionLevel
-                : requiredConversationResolutionLevel
-                    as WebhooksRuleRequiredConversationResolutionLevel,
-        requiredDeploymentsEnforcementLevel:
-            identical(requiredDeploymentsEnforcementLevel, sdkOmittedValue)
-                ? this.requiredDeploymentsEnforcementLevel
-                : requiredDeploymentsEnforcementLevel
-                    as WebhooksRuleRequiredDeploymentsEnforcementLevel,
-        requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue)
-            ? this.requiredStatusChecks
-            : requiredStatusChecks as List<String>,
-        requiredStatusChecksEnforcementLevel:
-            identical(requiredStatusChecksEnforcementLevel, sdkOmittedValue)
-                ? this.requiredStatusChecksEnforcementLevel
-                : requiredStatusChecksEnforcementLevel
-                    as WebhooksRuleRequiredStatusChecksEnforcementLevel,
-        signatureRequirementEnforcementLevel:
-            identical(signatureRequirementEnforcementLevel, sdkOmittedValue)
-                ? this.signatureRequirementEnforcementLevel
-                : signatureRequirementEnforcementLevel
-                    as WebhooksRuleSignatureRequirementEnforcementLevel,
-        strictRequiredStatusChecksPolicy:
-            identical(strictRequiredStatusChecksPolicy, sdkOmittedValue)
-                ? this.strictRequiredStatusChecksPolicy
-                : strictRequiredStatusChecksPolicy as bool,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  WebhooksRule _copyWith({Object? adminEnforced = sdkOmittedValue, Object? allowDeletionsEnforcementLevel = sdkOmittedValue, Object? allowForcePushesEnforcementLevel = sdkOmittedValue, Object? authorizedActorNames = sdkOmittedValue, Object? authorizedActorsOnly = sdkOmittedValue, Object? authorizedDismissalActorsOnly = sdkOmittedValue, Object? createProtected = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? dismissStaleReviewsOnPush = sdkOmittedValue, Object? id = sdkOmittedValue, Object? ignoreApprovalsFromContributors = sdkOmittedValue, Object? linearHistoryRequirementEnforcementLevel = sdkOmittedValue, Object? lockBranchEnforcementLevel = sdkOmittedValue, Object? lockAllowsForkSync = sdkOmittedValue, Object? mergeQueueEnforcementLevel = sdkOmittedValue, Object? name = sdkOmittedValue, Object? pullRequestReviewsEnforcementLevel = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? requireCodeOwnerReview = sdkOmittedValue, Object? requireLastPushApproval = sdkOmittedValue, Object? requiredApprovingReviewCount = sdkOmittedValue, Object? requiredConversationResolutionLevel = sdkOmittedValue, Object? requiredDeploymentsEnforcementLevel = sdkOmittedValue, Object? requiredStatusChecks = sdkOmittedValue, Object? requiredStatusChecksEnforcementLevel = sdkOmittedValue, Object? signatureRequirementEnforcementLevel = sdkOmittedValue, Object? strictRequiredStatusChecksPolicy = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => WebhooksRule(
+    adminEnforced: identical(adminEnforced, sdkOmittedValue) ? this.adminEnforced : adminEnforced as bool,
+    allowDeletionsEnforcementLevel: identical(allowDeletionsEnforcementLevel, sdkOmittedValue) ? this.allowDeletionsEnforcementLevel : allowDeletionsEnforcementLevel as WebhooksRuleAllowDeletionsEnforcementLevel,
+    allowForcePushesEnforcementLevel: identical(allowForcePushesEnforcementLevel, sdkOmittedValue) ? this.allowForcePushesEnforcementLevel : allowForcePushesEnforcementLevel as WebhooksRuleAllowForcePushesEnforcementLevel,
+    authorizedActorNames: identical(authorizedActorNames, sdkOmittedValue) ? this.authorizedActorNames : authorizedActorNames as List<String>,
+    authorizedActorsOnly: identical(authorizedActorsOnly, sdkOmittedValue) ? this.authorizedActorsOnly : authorizedActorsOnly as bool,
+    authorizedDismissalActorsOnly: identical(authorizedDismissalActorsOnly, sdkOmittedValue) ? this.authorizedDismissalActorsOnly : authorizedDismissalActorsOnly as bool,
+    createProtected: identical(createProtected, sdkOmittedValue) ? this.createProtected : createProtected as SdkOptional<bool>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    dismissStaleReviewsOnPush: identical(dismissStaleReviewsOnPush, sdkOmittedValue) ? this.dismissStaleReviewsOnPush : dismissStaleReviewsOnPush as bool,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    ignoreApprovalsFromContributors: identical(ignoreApprovalsFromContributors, sdkOmittedValue) ? this.ignoreApprovalsFromContributors : ignoreApprovalsFromContributors as bool,
+    linearHistoryRequirementEnforcementLevel: identical(linearHistoryRequirementEnforcementLevel, sdkOmittedValue) ? this.linearHistoryRequirementEnforcementLevel : linearHistoryRequirementEnforcementLevel as WebhooksRuleLinearHistoryRequirementEnforcementLevel,
+    lockBranchEnforcementLevel: identical(lockBranchEnforcementLevel, sdkOmittedValue) ? this.lockBranchEnforcementLevel : lockBranchEnforcementLevel as WebhooksRuleLockBranchEnforcementLevel,
+    lockAllowsForkSync: identical(lockAllowsForkSync, sdkOmittedValue) ? this.lockAllowsForkSync : lockAllowsForkSync as SdkOptional<bool>,
+    mergeQueueEnforcementLevel: identical(mergeQueueEnforcementLevel, sdkOmittedValue) ? this.mergeQueueEnforcementLevel : mergeQueueEnforcementLevel as WebhooksRuleMergeQueueEnforcementLevel,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    pullRequestReviewsEnforcementLevel: identical(pullRequestReviewsEnforcementLevel, sdkOmittedValue) ? this.pullRequestReviewsEnforcementLevel : pullRequestReviewsEnforcementLevel as WebhooksRulePullRequestReviewsEnforcementLevel,
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as int,
+    requireCodeOwnerReview: identical(requireCodeOwnerReview, sdkOmittedValue) ? this.requireCodeOwnerReview : requireCodeOwnerReview as bool,
+    requireLastPushApproval: identical(requireLastPushApproval, sdkOmittedValue) ? this.requireLastPushApproval : requireLastPushApproval as SdkOptional<bool>,
+    requiredApprovingReviewCount: identical(requiredApprovingReviewCount, sdkOmittedValue) ? this.requiredApprovingReviewCount : requiredApprovingReviewCount as int,
+    requiredConversationResolutionLevel: identical(requiredConversationResolutionLevel, sdkOmittedValue) ? this.requiredConversationResolutionLevel : requiredConversationResolutionLevel as WebhooksRuleRequiredConversationResolutionLevel,
+    requiredDeploymentsEnforcementLevel: identical(requiredDeploymentsEnforcementLevel, sdkOmittedValue) ? this.requiredDeploymentsEnforcementLevel : requiredDeploymentsEnforcementLevel as WebhooksRuleRequiredDeploymentsEnforcementLevel,
+    requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue) ? this.requiredStatusChecks : requiredStatusChecks as List<String>,
+    requiredStatusChecksEnforcementLevel: identical(requiredStatusChecksEnforcementLevel, sdkOmittedValue) ? this.requiredStatusChecksEnforcementLevel : requiredStatusChecksEnforcementLevel as WebhooksRuleRequiredStatusChecksEnforcementLevel,
+    signatureRequirementEnforcementLevel: identical(signatureRequirementEnforcementLevel, sdkOmittedValue) ? this.signatureRequirementEnforcementLevel : signatureRequirementEnforcementLevel as WebhooksRuleSignatureRequirementEnforcementLevel,
+    strictRequiredStatusChecksPolicy: identical(strictRequiredStatusChecksPolicy, sdkOmittedValue) ? this.strictRequiredStatusChecksPolicy : strictRequiredStatusChecksPolicy as bool,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
   factory WebhooksRule.fromJson(Map<String, dynamic> json) => WebhooksRule(
-        adminEnforced: (json['admin_enforced'] as bool?)!,
-        allowDeletionsEnforcementLevel:
-            (json['allow_deletions_enforcement_level'] != null
-                ? WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(
-                    json['allow_deletions_enforcement_level'] as String)
-                : null)!,
-        allowForcePushesEnforcementLevel:
-            (json['allow_force_pushes_enforcement_level'] != null
-                ? WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(
-                    json['allow_force_pushes_enforcement_level'] as String)
-                : null)!,
-        authorizedActorNames: ((json['authorized_actor_names'] as List?)
-            ?.map((e) => e as String)
-            .toList())!,
-        authorizedActorsOnly: (json['authorized_actors_only'] as bool?)!,
-        authorizedDismissalActorsOnly:
-            (json['authorized_dismissal_actors_only'] as bool?)!,
-        createProtected: json['create_protected'] != null
-            ? SdkPresent((json['create_protected'] as bool?)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        dismissStaleReviewsOnPush:
-            (json['dismiss_stale_reviews_on_push'] as bool?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        ignoreApprovalsFromContributors:
-            (json['ignore_approvals_from_contributors'] as bool?)!,
-        linearHistoryRequirementEnforcementLevel:
-            (json['linear_history_requirement_enforcement_level'] != null
-                ? WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(
-                    json['linear_history_requirement_enforcement_level']
-                        as String)
-                : null)!,
-        lockBranchEnforcementLevel:
-            (json['lock_branch_enforcement_level'] != null
-                ? WebhooksRuleLockBranchEnforcementLevel.fromJson(
-                    json['lock_branch_enforcement_level'] as String)
-                : null)!,
-        lockAllowsForkSync: json['lock_allows_fork_sync'] != null
-            ? SdkPresent((json['lock_allows_fork_sync'] as bool?)!)
-            : const SdkOmitted(),
-        mergeQueueEnforcementLevel:
-            (json['merge_queue_enforcement_level'] != null
-                ? WebhooksRuleMergeQueueEnforcementLevel.fromJson(
-                    json['merge_queue_enforcement_level'] as String)
-                : null)!,
-        name: (json['name'] as String?)!,
-        pullRequestReviewsEnforcementLevel:
-            (json['pull_request_reviews_enforcement_level'] != null
-                ? WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(
-                    json['pull_request_reviews_enforcement_level'] as String)
-                : null)!,
-        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
-        requireCodeOwnerReview: (json['require_code_owner_review'] as bool?)!,
-        requireLastPushApproval: json['require_last_push_approval'] != null
-            ? SdkPresent((json['require_last_push_approval'] as bool?)!)
-            : const SdkOmitted(),
-        requiredApprovingReviewCount:
-            ((json['required_approving_review_count'] as num?)?.toInt())!,
-        requiredConversationResolutionLevel:
-            (json['required_conversation_resolution_level'] != null
-                ? WebhooksRuleRequiredConversationResolutionLevel.fromJson(
-                    json['required_conversation_resolution_level'] as String)
-                : null)!,
-        requiredDeploymentsEnforcementLevel:
-            (json['required_deployments_enforcement_level'] != null
-                ? WebhooksRuleRequiredDeploymentsEnforcementLevel.fromJson(
-                    json['required_deployments_enforcement_level'] as String)
-                : null)!,
-        requiredStatusChecks: ((json['required_status_checks'] as List?)
-            ?.map((e) => e as String)
-            .toList())!,
-        requiredStatusChecksEnforcementLevel:
-            (json['required_status_checks_enforcement_level'] != null
-                ? WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(
-                    json['required_status_checks_enforcement_level'] as String)
-                : null)!,
-        signatureRequirementEnforcementLevel:
-            (json['signature_requirement_enforcement_level'] != null
-                ? WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(
-                    json['signature_requirement_enforcement_level'] as String)
-                : null)!,
-        strictRequiredStatusChecksPolicy:
-            (json['strict_required_status_checks_policy'] as bool?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+    adminEnforced: (json['admin_enforced'] as bool?)!,
+    allowDeletionsEnforcementLevel: (json['allow_deletions_enforcement_level'] != null ? WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(json['allow_deletions_enforcement_level'] as String) : null)!,
+    allowForcePushesEnforcementLevel: (json['allow_force_pushes_enforcement_level'] != null ? WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(json['allow_force_pushes_enforcement_level'] as String) : null)!,
+    authorizedActorNames: ((json['authorized_actor_names'] as List?)?.map((e) => e as String).toList())!,
+    authorizedActorsOnly: (json['authorized_actors_only'] as bool?)!,
+    authorizedDismissalActorsOnly: (json['authorized_dismissal_actors_only'] as bool?)!,
+    createProtected: json['create_protected'] != null ? SdkPresent((json['create_protected'] as bool?)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    dismissStaleReviewsOnPush: (json['dismiss_stale_reviews_on_push'] as bool?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    ignoreApprovalsFromContributors: (json['ignore_approvals_from_contributors'] as bool?)!,
+    linearHistoryRequirementEnforcementLevel: (json['linear_history_requirement_enforcement_level'] != null ? WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(json['linear_history_requirement_enforcement_level'] as String) : null)!,
+    lockBranchEnforcementLevel: (json['lock_branch_enforcement_level'] != null ? WebhooksRuleLockBranchEnforcementLevel.fromJson(json['lock_branch_enforcement_level'] as String) : null)!,
+    lockAllowsForkSync: json['lock_allows_fork_sync'] != null ? SdkPresent((json['lock_allows_fork_sync'] as bool?)!) : const SdkOmitted(),
+    mergeQueueEnforcementLevel: (json['merge_queue_enforcement_level'] != null ? WebhooksRuleMergeQueueEnforcementLevel.fromJson(json['merge_queue_enforcement_level'] as String) : null)!,
+    name: (json['name'] as String?)!,
+    pullRequestReviewsEnforcementLevel: (json['pull_request_reviews_enforcement_level'] != null ? WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(json['pull_request_reviews_enforcement_level'] as String) : null)!,
+    repositoryId: ((json['repository_id'] as num?)?.toInt())!,
+    requireCodeOwnerReview: (json['require_code_owner_review'] as bool?)!,
+    requireLastPushApproval: json['require_last_push_approval'] != null ? SdkPresent((json['require_last_push_approval'] as bool?)!) : const SdkOmitted(),
+    requiredApprovingReviewCount: ((json['required_approving_review_count'] as num?)?.toInt())!,
+    requiredConversationResolutionLevel: (json['required_conversation_resolution_level'] != null ? WebhooksRuleRequiredConversationResolutionLevel.fromJson(json['required_conversation_resolution_level'] as String) : null)!,
+    requiredDeploymentsEnforcementLevel: (json['required_deployments_enforcement_level'] != null ? WebhooksRuleRequiredDeploymentsEnforcementLevel.fromJson(json['required_deployments_enforcement_level'] as String) : null)!,
+    requiredStatusChecks: ((json['required_status_checks'] as List?)?.map((e) => e as String).toList())!,
+    requiredStatusChecksEnforcementLevel: (json['required_status_checks_enforcement_level'] != null ? WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(json['required_status_checks_enforcement_level'] as String) : null)!,
+    signatureRequirementEnforcementLevel: (json['signature_requirement_enforcement_level'] != null ? WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(json['signature_requirement_enforcement_level'] as String) : null)!,
+    strictRequiredStatusChecksPolicy: (json['strict_required_status_checks_policy'] as bool?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'admin_enforced': adminEnforced,
-        'allow_deletions_enforcement_level':
-            allowDeletionsEnforcementLevel.toJson(),
-        'allow_force_pushes_enforcement_level':
-            allowForcePushesEnforcementLevel.toJson(),
-        'authorized_actor_names': authorizedActorNames,
-        'authorized_actors_only': authorizedActorsOnly,
-        'authorized_dismissal_actors_only': authorizedDismissalActorsOnly,
-        ...switch (createProtected) {
-          SdkPresent<bool>(value: final value) => {
-              'create_protected': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        'dismiss_stale_reviews_on_push': dismissStaleReviewsOnPush,
-        'id': id,
-        'ignore_approvals_from_contributors': ignoreApprovalsFromContributors,
-        'linear_history_requirement_enforcement_level':
-            linearHistoryRequirementEnforcementLevel.toJson(),
-        'lock_branch_enforcement_level': lockBranchEnforcementLevel.toJson(),
-        ...switch (lockAllowsForkSync) {
-          SdkPresent<bool>(value: final value) => {
-              'lock_allows_fork_sync': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'merge_queue_enforcement_level': mergeQueueEnforcementLevel.toJson(),
-        'name': name,
-        'pull_request_reviews_enforcement_level':
-            pullRequestReviewsEnforcementLevel.toJson(),
-        'repository_id': repositoryId,
-        'require_code_owner_review': requireCodeOwnerReview,
-        ...switch (requireLastPushApproval) {
-          SdkPresent<bool>(value: final value) => {
-              'require_last_push_approval': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'required_approving_review_count': requiredApprovingReviewCount,
-        'required_conversation_resolution_level':
-            requiredConversationResolutionLevel.toJson(),
-        'required_deployments_enforcement_level':
-            requiredDeploymentsEnforcementLevel.toJson(),
-        'required_status_checks': requiredStatusChecks,
-        'required_status_checks_enforcement_level':
-            requiredStatusChecksEnforcementLevel.toJson(),
-        'signature_requirement_enforcement_level':
-            signatureRequirementEnforcementLevel.toJson(),
-        'strict_required_status_checks_policy':
-            strictRequiredStatusChecksPolicy,
-        'updated_at': updatedAt,
-      };
+    'admin_enforced': adminEnforced,
+    'allow_deletions_enforcement_level': allowDeletionsEnforcementLevel.toJson(),
+    'allow_force_pushes_enforcement_level': allowForcePushesEnforcementLevel.toJson(),
+    'authorized_actor_names': authorizedActorNames,
+    'authorized_actors_only': authorizedActorsOnly,
+    'authorized_dismissal_actors_only': authorizedDismissalActorsOnly,
+    ...switch (createProtected) {
+      SdkPresent<bool>(value: final value) => {'create_protected': value,},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    'dismiss_stale_reviews_on_push': dismissStaleReviewsOnPush,
+    'id': id,
+    'ignore_approvals_from_contributors': ignoreApprovalsFromContributors,
+    'linear_history_requirement_enforcement_level': linearHistoryRequirementEnforcementLevel.toJson(),
+    'lock_branch_enforcement_level': lockBranchEnforcementLevel.toJson(),
+    ...switch (lockAllowsForkSync) {
+      SdkPresent<bool>(value: final value) => {'lock_allows_fork_sync': value,},
+      _ => const <String, dynamic>{},
+    },
+    'merge_queue_enforcement_level': mergeQueueEnforcementLevel.toJson(),
+    'name': name,
+    'pull_request_reviews_enforcement_level': pullRequestReviewsEnforcementLevel.toJson(),
+    'repository_id': repositoryId,
+    'require_code_owner_review': requireCodeOwnerReview,
+    ...switch (requireLastPushApproval) {
+      SdkPresent<bool>(value: final value) => {'require_last_push_approval': value,},
+      _ => const <String, dynamic>{},
+    },
+    'required_approving_review_count': requiredApprovingReviewCount,
+    'required_conversation_resolution_level': requiredConversationResolutionLevel.toJson(),
+    'required_deployments_enforcement_level': requiredDeploymentsEnforcementLevel.toJson(),
+    'required_status_checks': requiredStatusChecks,
+    'required_status_checks_enforcement_level': requiredStatusChecksEnforcementLevel.toJson(),
+    'signature_requirement_enforcement_level': signatureRequirementEnforcementLevel.toJson(),
+    'strict_required_status_checks_policy': strictRequiredStatusChecksPolicy,
+    'updated_at': updatedAt,
+  };
 }

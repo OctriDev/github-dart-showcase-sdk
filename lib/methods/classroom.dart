@@ -20,11 +20,10 @@ Future<void> classroomGetAnAssignment(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'classroomGetAnAssignment',
           options: requestOptions,
-          errors: {
-        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists accepted assignments for a classroom assignment. This operation is closing down and will be removed on August 28, 2026. Use the `assignment_id` path parameter to select the assignment whose accepted assignments you want to retrieve.
 ///
@@ -33,21 +32,18 @@ Future<void> classroomGetAnAssignment(ClientConfig config,
 /// [assignmentId] The unique identifier of the classroom assignment.
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<void> classroomListAcceptedAssignmentsForAnAssignment(
-    ClientConfig config,
-    {required int assignmentId,
-    RequestOptions? requestOptions}) async {
+Future<void> classroomListAcceptedAssignmentsForAnAssignment(ClientConfig config,
+    {required int assignmentId, RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('GET',
           '/assignments/${Uri.encodeComponent(assignmentId.toString())}/accepted_assignments',
           config: config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'classroomListAcceptedAssignmentsForAnAssignment',
           options: requestOptions,
-          errors: {
-        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves grades for a classroom assignment. Supply the `assignment_id` to identify the assignment whose grades you need. This operation is no longer available as of August 28, 2026.
 ///
@@ -64,11 +60,10 @@ Future<void> classroomGetAssignmentGrades(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'classroomGetAssignmentGrades',
           options: requestOptions,
-          errors: {
-        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists classrooms. This operation is no longer available as of August 28, 2026.
 ///
@@ -82,11 +77,10 @@ Future<void> classroomListClassrooms(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'classroomListClassrooms',
           options: requestOptions,
-          errors: {
-        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a classroom by its unique identifier. Supply `classroom_id` to identify the classroom you want to retrieve. This operation is no longer available as of August 28, 2026.
 ///
@@ -103,11 +97,10 @@ Future<void> classroomGetAClassroom(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'classroomGetAClassroom',
           options: requestOptions,
-          errors: {
-        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists assignments for a classroom. Supply `classroom_id` to identify the classroom whose assignments you want to retrieve. This operation is no longer available as of August 28, 2026.
 ///
@@ -124,8 +117,6 @@ Future<void> classroomListAssignmentsForAClassroom(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'classroomListAssignmentsForAClassroom',
           options: requestOptions,
-          errors: {
-        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

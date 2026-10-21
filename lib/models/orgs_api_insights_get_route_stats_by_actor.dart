@@ -7,129 +7,65 @@ part of 'orgs.dart';
 class ApiInsightsRouteStatsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The HTTP method
   final SdkOptional<String> httpMethod;
-
   /// The API path's route template
   final SdkOptional<String> apiRoute;
-
   /// The total number of requests within the queried time period
   final SdkOptional<int> totalRequestCount;
-
   /// The total number of requests that were rate limited within the queried time period
   final SdkOptional<int> rateLimitedRequestCount;
   final SdkOptional<String?> lastRateLimitedTimestamp;
   final SdkOptional<String> lastRequestTimestamp;
 
-  const ApiInsightsRouteStatsItem(
-      {this.httpMethod = const SdkOmitted(),
-      this.apiRoute = const SdkOmitted(),
-      this.totalRequestCount = const SdkOmitted(),
-      this.rateLimitedRequestCount = const SdkOmitted(),
-      this.lastRateLimitedTimestamp = const SdkOmitted(),
-      this.lastRequestTimestamp = const SdkOmitted()});
+  const ApiInsightsRouteStatsItem({this.httpMethod = const SdkOmitted(), this.apiRoute = const SdkOmitted(), this.totalRequestCount = const SdkOmitted(), this.rateLimitedRequestCount = const SdkOmitted(), this.lastRateLimitedTimestamp = const SdkOmitted(), this.lastRequestTimestamp = const SdkOmitted()});
 
-  ApiInsightsRouteStatsItem Function(
-      {SdkOptional<String> httpMethod,
-      SdkOptional<String> apiRoute,
-      SdkOptional<int> totalRequestCount,
-      SdkOptional<int> rateLimitedRequestCount,
-      SdkOptional<String?> lastRateLimitedTimestamp,
-      SdkOptional<String> lastRequestTimestamp}) get copyWith => _copyWith;
+  ApiInsightsRouteStatsItem Function({SdkOptional<String> httpMethod, SdkOptional<String> apiRoute, SdkOptional<int> totalRequestCount, SdkOptional<int> rateLimitedRequestCount, SdkOptional<String?> lastRateLimitedTimestamp, SdkOptional<String> lastRequestTimestamp}) get copyWith => _copyWith;
 
-  ApiInsightsRouteStatsItem _copyWith(
-          {Object? httpMethod = sdkOmittedValue,
-          Object? apiRoute = sdkOmittedValue,
-          Object? totalRequestCount = sdkOmittedValue,
-          Object? rateLimitedRequestCount = sdkOmittedValue,
-          Object? lastRateLimitedTimestamp = sdkOmittedValue,
-          Object? lastRequestTimestamp = sdkOmittedValue}) =>
-      ApiInsightsRouteStatsItem(
-        httpMethod: identical(httpMethod, sdkOmittedValue)
-            ? this.httpMethod
-            : httpMethod as SdkOptional<String>,
-        apiRoute: identical(apiRoute, sdkOmittedValue)
-            ? this.apiRoute
-            : apiRoute as SdkOptional<String>,
-        totalRequestCount: identical(totalRequestCount, sdkOmittedValue)
-            ? this.totalRequestCount
-            : totalRequestCount as SdkOptional<int>,
-        rateLimitedRequestCount:
-            identical(rateLimitedRequestCount, sdkOmittedValue)
-                ? this.rateLimitedRequestCount
-                : rateLimitedRequestCount as SdkOptional<int>,
-        lastRateLimitedTimestamp:
-            identical(lastRateLimitedTimestamp, sdkOmittedValue)
-                ? this.lastRateLimitedTimestamp
-                : lastRateLimitedTimestamp as SdkOptional<String?>,
-        lastRequestTimestamp: identical(lastRequestTimestamp, sdkOmittedValue)
-            ? this.lastRequestTimestamp
-            : lastRequestTimestamp as SdkOptional<String>,
-      );
+  ApiInsightsRouteStatsItem _copyWith({Object? httpMethod = sdkOmittedValue, Object? apiRoute = sdkOmittedValue, Object? totalRequestCount = sdkOmittedValue, Object? rateLimitedRequestCount = sdkOmittedValue, Object? lastRateLimitedTimestamp = sdkOmittedValue, Object? lastRequestTimestamp = sdkOmittedValue}) => ApiInsightsRouteStatsItem(
+    httpMethod: identical(httpMethod, sdkOmittedValue) ? this.httpMethod : httpMethod as SdkOptional<String>,
+    apiRoute: identical(apiRoute, sdkOmittedValue) ? this.apiRoute : apiRoute as SdkOptional<String>,
+    totalRequestCount: identical(totalRequestCount, sdkOmittedValue) ? this.totalRequestCount : totalRequestCount as SdkOptional<int>,
+    rateLimitedRequestCount: identical(rateLimitedRequestCount, sdkOmittedValue) ? this.rateLimitedRequestCount : rateLimitedRequestCount as SdkOptional<int>,
+    lastRateLimitedTimestamp: identical(lastRateLimitedTimestamp, sdkOmittedValue) ? this.lastRateLimitedTimestamp : lastRateLimitedTimestamp as SdkOptional<String?>,
+    lastRequestTimestamp: identical(lastRequestTimestamp, sdkOmittedValue) ? this.lastRequestTimestamp : lastRequestTimestamp as SdkOptional<String>,
+  );
 
-  factory ApiInsightsRouteStatsItem.fromJson(Map<String, dynamic> json) =>
-      ApiInsightsRouteStatsItem(
-        httpMethod: json['http_method'] != null
-            ? SdkPresent((json['http_method'] as String?)!)
-            : const SdkOmitted(),
-        apiRoute: json['api_route'] != null
-            ? SdkPresent((json['api_route'] as String?)!)
-            : const SdkOmitted(),
-        totalRequestCount: json['total_request_count'] != null
-            ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        rateLimitedRequestCount: json['rate_limited_request_count'] != null
-            ? SdkPresent(
-                ((json['rate_limited_request_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        lastRateLimitedTimestamp:
-            json.containsKey('last_rate_limited_timestamp')
-                ? SdkPresent(json['last_rate_limited_timestamp'] as String?)
-                : const SdkOmitted(),
-        lastRequestTimestamp: json['last_request_timestamp'] != null
-            ? SdkPresent((json['last_request_timestamp'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ApiInsightsRouteStatsItem.fromJson(Map<String, dynamic> json) => ApiInsightsRouteStatsItem(
+    httpMethod: json['http_method'] != null ? SdkPresent((json['http_method'] as String?)!) : const SdkOmitted(),
+    apiRoute: json['api_route'] != null ? SdkPresent((json['api_route'] as String?)!) : const SdkOmitted(),
+    totalRequestCount: json['total_request_count'] != null ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    rateLimitedRequestCount: json['rate_limited_request_count'] != null ? SdkPresent(((json['rate_limited_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    lastRateLimitedTimestamp: json.containsKey('last_rate_limited_timestamp') ? SdkPresent(json['last_rate_limited_timestamp'] as String?) : const SdkOmitted(),
+    lastRequestTimestamp: json['last_request_timestamp'] != null ? SdkPresent((json['last_request_timestamp'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (httpMethod) {
-          SdkPresent<String>(value: final value) => {
-              'http_method': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (apiRoute) {
-          SdkPresent<String>(value: final value) => {
-              'api_route': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (totalRequestCount) {
-          SdkPresent<int>(value: final value) => {
-              'total_request_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rateLimitedRequestCount) {
-          SdkPresent<int>(value: final value) => {
-              'rate_limited_request_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastRateLimitedTimestamp) {
-          SdkPresent<String?>(value: final value) => {
-              'last_rate_limited_timestamp': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastRequestTimestamp) {
-          SdkPresent<String>(value: final value) => {
-              'last_request_timestamp': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (httpMethod) {
+      SdkPresent<String>(value: final value) => {'http_method': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (apiRoute) {
+      SdkPresent<String>(value: final value) => {'api_route': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (totalRequestCount) {
+      SdkPresent<int>(value: final value) => {'total_request_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rateLimitedRequestCount) {
+      SdkPresent<int>(value: final value) => {'rate_limited_request_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lastRateLimitedTimestamp) {
+      SdkPresent<String?>(value: final value) => {'last_rate_limited_timestamp': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lastRequestTimestamp) {
+      SdkPresent<String>(value: final value) => {'last_request_timestamp': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 // ApiInsightsRouteStats = List<ApiInsightsRouteStatsItem>

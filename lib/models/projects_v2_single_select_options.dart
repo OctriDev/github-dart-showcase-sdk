@@ -8,139 +8,95 @@ part of 'projects.dart';
 class ProjectsV2SingleSelectOptionsName {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `raw` wire field.
   final String raw;
-
   /// Required `string` value serialized in the `html` wire field.
   final String html;
 
-  const ProjectsV2SingleSelectOptionsName(
-      {required this.raw, required this.html});
+  const ProjectsV2SingleSelectOptionsName({required this.raw, required this.html});
 
-  ProjectsV2SingleSelectOptionsName Function({String raw, String html})
-      get copyWith => _copyWith;
+  ProjectsV2SingleSelectOptionsName Function({String raw, String html}) get copyWith => _copyWith;
 
-  ProjectsV2SingleSelectOptionsName _copyWith(
-          {Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) =>
-      ProjectsV2SingleSelectOptionsName(
-        raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
-        html: identical(html, sdkOmittedValue) ? this.html : html as String,
-      );
+  ProjectsV2SingleSelectOptionsName _copyWith({Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) => ProjectsV2SingleSelectOptionsName(
+    raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
+    html: identical(html, sdkOmittedValue) ? this.html : html as String,
+  );
 
-  factory ProjectsV2SingleSelectOptionsName.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsV2SingleSelectOptionsName(
-        raw: (json['raw'] as String?)!,
-        html: (json['html'] as String?)!,
-      );
+  factory ProjectsV2SingleSelectOptionsName.fromJson(Map<String, dynamic> json) => ProjectsV2SingleSelectOptionsName(
+    raw: (json['raw'] as String?)!,
+    html: (json['html'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'raw': raw,
-        'html': html,
-      };
+    'raw': raw,
+    'html': html,
+  };
 }
 
 /// The description of the option, in raw text and HTML formats.
 class ProjectsV2SingleSelectOptionsDescription {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `raw` wire field.
   final String raw;
-
   /// Required `string` value serialized in the `html` wire field.
   final String html;
 
-  const ProjectsV2SingleSelectOptionsDescription(
-      {required this.raw, required this.html});
+  const ProjectsV2SingleSelectOptionsDescription({required this.raw, required this.html});
 
-  ProjectsV2SingleSelectOptionsDescription Function({String raw, String html})
-      get copyWith => _copyWith;
+  ProjectsV2SingleSelectOptionsDescription Function({String raw, String html}) get copyWith => _copyWith;
 
-  ProjectsV2SingleSelectOptionsDescription _copyWith(
-          {Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) =>
-      ProjectsV2SingleSelectOptionsDescription(
-        raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
-        html: identical(html, sdkOmittedValue) ? this.html : html as String,
-      );
+  ProjectsV2SingleSelectOptionsDescription _copyWith({Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) => ProjectsV2SingleSelectOptionsDescription(
+    raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
+    html: identical(html, sdkOmittedValue) ? this.html : html as String,
+  );
 
-  factory ProjectsV2SingleSelectOptionsDescription.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsV2SingleSelectOptionsDescription(
-        raw: (json['raw'] as String?)!,
-        html: (json['html'] as String?)!,
-      );
+  factory ProjectsV2SingleSelectOptionsDescription.fromJson(Map<String, dynamic> json) => ProjectsV2SingleSelectOptionsDescription(
+    raw: (json['raw'] as String?)!,
+    html: (json['html'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'raw': raw,
-        'html': html,
-      };
+    'raw': raw,
+    'html': html,
+  };
 }
 
 /// An option for a single select field
 class ProjectsV2SingleSelectOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the option.
   final String id;
-
   /// The display name of the option, in raw text and HTML formats.
   final ProjectsV2SingleSelectOptionsName name;
-
   /// The description of the option, in raw text and HTML formats.
   final ProjectsV2SingleSelectOptionsDescription description;
-
   /// The color associated with the option.
   final String color;
 
-  const ProjectsV2SingleSelectOptions(
-      {required this.id,
-      required this.name,
-      required this.description,
-      required this.color});
+  const ProjectsV2SingleSelectOptions({required this.id, required this.name, required this.description, required this.color});
 
-  ProjectsV2SingleSelectOptions Function(
-      {String id,
-      ProjectsV2SingleSelectOptionsName name,
-      ProjectsV2SingleSelectOptionsDescription description,
-      String color}) get copyWith => _copyWith;
+  ProjectsV2SingleSelectOptions Function({String id, ProjectsV2SingleSelectOptionsName name, ProjectsV2SingleSelectOptionsDescription description, String color}) get copyWith => _copyWith;
 
-  ProjectsV2SingleSelectOptions _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? color = sdkOmittedValue}) =>
-      ProjectsV2SingleSelectOptions(
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as ProjectsV2SingleSelectOptionsName,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as ProjectsV2SingleSelectOptionsDescription,
-        color: identical(color, sdkOmittedValue) ? this.color : color as String,
-      );
+  ProjectsV2SingleSelectOptions _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue}) => ProjectsV2SingleSelectOptions(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as ProjectsV2SingleSelectOptionsName,
+    description: identical(description, sdkOmittedValue) ? this.description : description as ProjectsV2SingleSelectOptionsDescription,
+    color: identical(color, sdkOmittedValue) ? this.color : color as String,
+  );
 
-  factory ProjectsV2SingleSelectOptions.fromJson(Map<String, dynamic> json) =>
-      ProjectsV2SingleSelectOptions(
-        id: (json['id'] as String?)!,
-        name: (json['name'] != null
-            ? ProjectsV2SingleSelectOptionsName.fromJson(
-                json['name'] as Map<String, dynamic>)
-            : null)!,
-        description: (json['description'] != null
-            ? ProjectsV2SingleSelectOptionsDescription.fromJson(
-                json['description'] as Map<String, dynamic>)
-            : null)!,
-        color: (json['color'] as String?)!,
-      );
+  factory ProjectsV2SingleSelectOptions.fromJson(Map<String, dynamic> json) => ProjectsV2SingleSelectOptions(
+    id: (json['id'] as String?)!,
+    name: (json['name'] != null ? ProjectsV2SingleSelectOptionsName.fromJson(json['name'] as Map<String, dynamic>) : null)!,
+    description: (json['description'] != null ? ProjectsV2SingleSelectOptionsDescription.fromJson(json['description'] as Map<String, dynamic>) : null)!,
+    color: (json['color'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name.toJson(),
-        'description': description.toJson(),
-        'color': color,
-      };
+    'id': id,
+    'name': name.toJson(),
+    'description': description.toJson(),
+    'color': color,
+  };
 }

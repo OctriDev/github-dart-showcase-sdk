@@ -23,20 +23,19 @@ import '../types.dart';
 ///   `false`.
 /// [since] Only show tasks updated at or after this time (ISO 8601 timestamp)
 /// [creatorId] Filter tasks by creator user ID. Accepts one or more user IDs.
-Future<AgentTasksListTasksForRepoResponse> agentTasksListTasksForRepo(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<AgentTasksListTasksForRepoSort> sort = const SdkOmitted(),
-    SdkOptional<AgentTasksListTasksForRepoDirection> direction =
-        const SdkOmitted(),
-    SdkOptional<String> state = const SdkOmitted(),
-    SdkOptional<bool> isArchived = const SdkOmitted(),
-    SdkOptional<String> since = const SdkOmitted(),
-    SdkOptional<List<int>> creatorId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<AgentTasksListTasksForRepoResponse>
+    agentTasksListTasksForRepo(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<AgentTasksListTasksForRepoSort> sort = const SdkOmitted(),
+        SdkOptional<AgentTasksListTasksForRepoDirection> direction = const SdkOmitted(),
+        SdkOptional<String> state = const SdkOmitted(),
+        SdkOptional<bool> isArchived = const SdkOmitted(),
+        SdkOptional<String> since = const SdkOmitted(),
+        SdkOptional<List<int>> creatorId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (perPage is SdkPresent<int>) {
     validateRange('per_page', perPage.value, min: 1, max: 100);
   }
@@ -51,30 +50,22 @@ Future<AgentTasksListTasksForRepoResponse> agentTasksListTasksForRepo(
           '/agents/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/tasks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true),
-            'is_archived': SdkQueryValue(SdkUtils.unwrapOptional(isArchived),
-                style: 'form', explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'creator_id': SdkQueryValue(SdkUtils.unwrapOptional(creatorId),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
+            'is_archived': SdkQueryValue(SdkUtils.unwrapOptional(isArchived), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'creator_id': SdkQueryValue(SdkUtils.unwrapOptional(creatorId), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentTasksListTasksForRepo',
-          fromJsonRaw: (value) => AgentTasksListTasksForRepoResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentTasksListTasksForRepoResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Starts a new Copilot cloud agent task for a repository. This endpoint is only available to users with a Copilot Business or Copilot Enterprise subscription. **Fine-grained access tokens for "Start a task"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have the following permission set: * "Agent tasks" repository permissions (read and write) GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -95,17 +86,17 @@ Future<AgentTasksListTasksForRepoResponse> agentTasksListTasksForRepo(
 /// [headRef] Head ref for existing branch/PR. If provided with `base_ref`, the
 ///   agent looks up open PR context for `head_ref` targeting `base_ref` and
 ///   commits to `head_ref` instead of creating a new branch.
-Future<AgentTasksCreateTaskInRepoResponse> agentTasksCreateTaskInRepo(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String prompt,
-    SdkOptional<String> model = const SdkOmitted(),
-    SdkOptional<String> customAgent = const SdkOmitted(),
-    SdkOptional<bool> createPullRequest = const SdkOmitted(),
-    SdkOptional<String> baseRef = const SdkOmitted(),
-    SdkOptional<String> headRef = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<AgentTasksCreateTaskInRepoResponse>
+    agentTasksCreateTaskInRepo(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String prompt,
+        SdkOptional<String> model = const SdkOmitted(),
+        SdkOptional<String> customAgent = const SdkOmitted(),
+        SdkOptional<bool> createPullRequest = const SdkOmitted(),
+        SdkOptional<String> baseRef = const SdkOmitted(),
+        SdkOptional<String> headRef = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<AgentTasksCreateTaskInRepoResponse>('POST',
           '/agents/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/tasks',
           config: config,
@@ -119,33 +110,33 @@ Future<AgentTasksCreateTaskInRepoResponse> agentTasksCreateTaskInRepo(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentTasksCreateTaskInRepo',
-          fromJsonRaw: (value) => AgentTasksCreateTaskInRepoResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentTasksCreateTaskInRepoResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Returns a task by ID scoped to an owner/repo path **Fine-grained access tokens for "Get a task by repo"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have the following permission set: * "Agent tasks" repository permissions (read) GitHub App installation access tokens are not supported for this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository. The name is not case sensitive.
 /// [taskId] The unique identifier of the task.
-Future<AgentTasksGetTaskByRepoAndIdResponse> agentTasksGetTaskByRepoAndId(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String taskId,
-    RequestOptions? requestOptions}) async {
+Future<AgentTasksGetTaskByRepoAndIdResponse>
+    agentTasksGetTaskByRepoAndId(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String taskId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<AgentTasksGetTaskByRepoAndIdResponse>('GET',
           '/agents/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/tasks/${Uri.encodeComponent(taskId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentTasksGetTaskByRepoAndId',
-          fromJsonRaw: (value) => AgentTasksGetTaskByRepoAndIdResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentTasksGetTaskByRepoAndIdResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Returns a list of tasks for the authenticated user **Fine-grained access tokens for "List tasks"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have the following permission set: * "Agent tasks" repository permissions (read) GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -182,28 +173,21 @@ Future<AgentTasksListTasksResponse> agentTasksListTasks(ClientConfig config,
   return (await sdkRequest<AgentTasksListTasksResponse>('GET', '/agents/tasks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true),
-            'is_archived': SdkQueryValue(SdkUtils.unwrapOptional(isArchived),
-                style: 'form', explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
+            'is_archived': SdkQueryValue(SdkUtils.unwrapOptional(isArchived), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentTasksListTasks',
-          fromJsonRaw: (value) => AgentTasksListTasksResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentTasksListTasksResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; This endpoint is in public preview and is subject to change. Returns a task by ID with its associated sessions **Fine-grained access tokens for "Get a task by ID"** This endpoint works with the following fine-grained token types: * [GitHub App user access tokens](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) * [Fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) The fine-grained token must have the following permission set: * "Agent tasks" repository permissions (read) GitHub App installation access tokens are not supported for this endpoint.
 ///
@@ -215,8 +199,7 @@ Future<AgentTasksGetTaskByIdResponse> agentTasksGetTaskById(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentTasksGetTaskById',
-          fromJsonRaw: (value) => AgentTasksGetTaskByIdResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentTasksGetTaskByIdResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

@@ -8,158 +8,89 @@ part of 'activity.dart';
 class GollumEventPagesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `page_name` wire field.
   final SdkOptional<String?> pageName;
-
   /// Optional `string` value serialized in the `title` wire field.
   final SdkOptional<String?> title;
-
   /// Optional `string` value serialized in the `summary` wire field.
   final SdkOptional<String?> summary;
-
   /// Optional `string` value serialized in the `action` wire field.
   final SdkOptional<String> action;
-
   /// Optional `string` value serialized in the `sha` wire field.
   final SdkOptional<String> sha;
-
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
 
-  const GollumEventPagesItem(
-      {this.pageName = const SdkOmitted(),
-      this.title = const SdkOmitted(),
-      this.summary = const SdkOmitted(),
-      this.action = const SdkOmitted(),
-      this.sha = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted()});
+  const GollumEventPagesItem({this.pageName = const SdkOmitted(), this.title = const SdkOmitted(), this.summary = const SdkOmitted(), this.action = const SdkOmitted(), this.sha = const SdkOmitted(), this.htmlUrl = const SdkOmitted()});
 
-  GollumEventPagesItem Function(
-      {SdkOptional<String?> pageName,
-      SdkOptional<String?> title,
-      SdkOptional<String?> summary,
-      SdkOptional<String> action,
-      SdkOptional<String> sha,
-      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  GollumEventPagesItem Function({SdkOptional<String?> pageName, SdkOptional<String?> title, SdkOptional<String?> summary, SdkOptional<String> action, SdkOptional<String> sha, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  GollumEventPagesItem _copyWith(
-          {Object? pageName = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? summary = sdkOmittedValue,
-          Object? action = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue}) =>
-      GollumEventPagesItem(
-        pageName: identical(pageName, sdkOmittedValue)
-            ? this.pageName
-            : pageName as SdkOptional<String?>,
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String?>,
-        summary: identical(summary, sdkOmittedValue)
-            ? this.summary
-            : summary as SdkOptional<String?>,
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as SdkOptional<String>,
-        sha: identical(sha, sdkOmittedValue)
-            ? this.sha
-            : sha as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-      );
+  GollumEventPagesItem _copyWith({Object? pageName = sdkOmittedValue, Object? title = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? action = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => GollumEventPagesItem(
+    pageName: identical(pageName, sdkOmittedValue) ? this.pageName : pageName as SdkOptional<String?>,
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String?>,
+    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as SdkOptional<String?>,
+    action: identical(action, sdkOmittedValue) ? this.action : action as SdkOptional<String>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+  );
 
-  factory GollumEventPagesItem.fromJson(Map<String, dynamic> json) =>
-      GollumEventPagesItem(
-        pageName: json.containsKey('page_name')
-            ? SdkPresent(json['page_name'] as String?)
-            : const SdkOmitted(),
-        title: json.containsKey('title')
-            ? SdkPresent(json['title'] as String?)
-            : const SdkOmitted(),
-        summary: json.containsKey('summary')
-            ? SdkPresent(json['summary'] as String?)
-            : const SdkOmitted(),
-        action: json['action'] != null
-            ? SdkPresent((json['action'] as String?)!)
-            : const SdkOmitted(),
-        sha: json['sha'] != null
-            ? SdkPresent((json['sha'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory GollumEventPagesItem.fromJson(Map<String, dynamic> json) => GollumEventPagesItem(
+    pageName: json.containsKey('page_name') ? SdkPresent(json['page_name'] as String?) : const SdkOmitted(),
+    title: json.containsKey('title') ? SdkPresent(json['title'] as String?) : const SdkOmitted(),
+    summary: json.containsKey('summary') ? SdkPresent(json['summary'] as String?) : const SdkOmitted(),
+    action: json['action'] != null ? SdkPresent((json['action'] as String?)!) : const SdkOmitted(),
+    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (pageName) {
-          SdkPresent<String?>(value: final value) => {
-              'page_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (title) {
-          SdkPresent<String?>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (summary) {
-          SdkPresent<String?>(value: final value) => {
-              'summary': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (action) {
-          SdkPresent<String>(value: final value) => {
-              'action': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sha) {
-          SdkPresent<String>(value: final value) => {
-              'sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (pageName) {
+      SdkPresent<String?>(value: final value) => {'page_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (title) {
+      SdkPresent<String?>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (summary) {
+      SdkPresent<String?>(value: final value) => {'summary': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (action) {
+      SdkPresent<String>(value: final value) => {'action': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sha) {
+      SdkPresent<String>(value: final value) => {'sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `GollumEvent` API schema.
 class GollumEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `pages` wire field.
   final List<GollumEventPagesItem> pages;
 
   const GollumEvent({required this.pages});
 
-  GollumEvent Function({List<GollumEventPagesItem> pages}) get copyWith =>
-      _copyWith;
+  GollumEvent Function({List<GollumEventPagesItem> pages}) get copyWith => _copyWith;
 
   GollumEvent _copyWith({Object? pages = sdkOmittedValue}) => GollumEvent(
-        pages: identical(pages, sdkOmittedValue)
-            ? this.pages
-            : pages as List<GollumEventPagesItem>,
-      );
+    pages: identical(pages, sdkOmittedValue) ? this.pages : pages as List<GollumEventPagesItem>,
+  );
 
   factory GollumEvent.fromJson(Map<String, dynamic> json) => GollumEvent(
-        pages: ((json['pages'] as List?)
-            ?.map(
-                (e) => GollumEventPagesItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+    pages: ((json['pages'] as List?)?.map((e) => GollumEventPagesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'pages': pages.map((item) => item.toJson()).toList(),
-      };
+    'pages': pages.map((item) => item.toJson()).toList(),
+  };
 }

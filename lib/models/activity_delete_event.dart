@@ -8,60 +8,37 @@ part of 'activity.dart';
 class DeleteEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// Required `string` value serialized in the `ref_type` wire field.
   final String refType;
-
   /// Required `string` value serialized in the `full_ref` wire field.
   final String fullRef;
-
   /// Required `string` value serialized in the `pusher_type` wire field.
   final String pusherType;
 
-  const DeleteEvent(
-      {required this.ref,
-      required this.refType,
-      required this.fullRef,
-      required this.pusherType});
+  const DeleteEvent({required this.ref, required this.refType, required this.fullRef, required this.pusherType});
 
-  DeleteEvent Function(
-      {String ref,
-      String refType,
-      String fullRef,
-      String pusherType}) get copyWith => _copyWith;
+  DeleteEvent Function({String ref, String refType, String fullRef, String pusherType}) get copyWith => _copyWith;
 
-  DeleteEvent _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? refType = sdkOmittedValue,
-          Object? fullRef = sdkOmittedValue,
-          Object? pusherType = sdkOmittedValue}) =>
-      DeleteEvent(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        refType: identical(refType, sdkOmittedValue)
-            ? this.refType
-            : refType as String,
-        fullRef: identical(fullRef, sdkOmittedValue)
-            ? this.fullRef
-            : fullRef as String,
-        pusherType: identical(pusherType, sdkOmittedValue)
-            ? this.pusherType
-            : pusherType as String,
-      );
+  DeleteEvent _copyWith({Object? ref = sdkOmittedValue, Object? refType = sdkOmittedValue, Object? fullRef = sdkOmittedValue, Object? pusherType = sdkOmittedValue}) => DeleteEvent(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    refType: identical(refType, sdkOmittedValue) ? this.refType : refType as String,
+    fullRef: identical(fullRef, sdkOmittedValue) ? this.fullRef : fullRef as String,
+    pusherType: identical(pusherType, sdkOmittedValue) ? this.pusherType : pusherType as String,
+  );
 
   factory DeleteEvent.fromJson(Map<String, dynamic> json) => DeleteEvent(
-        ref: (json['ref'] as String?)!,
-        refType: (json['ref_type'] as String?)!,
-        fullRef: (json['full_ref'] as String?)!,
-        pusherType: (json['pusher_type'] as String?)!,
-      );
+    ref: (json['ref'] as String?)!,
+    refType: (json['ref_type'] as String?)!,
+    fullRef: (json['full_ref'] as String?)!,
+    pusherType: (json['pusher_type'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'ref_type': refType,
-        'full_ref': fullRef,
-        'pusher_type': pusherType,
-      };
+    'ref': ref,
+    'ref_type': refType,
+    'full_ref': fullRef,
+    'pusher_type': pusherType,
+  };
 }

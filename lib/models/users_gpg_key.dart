@@ -8,585 +8,296 @@ part of 'users.dart';
 class GpgKeyEmailsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String> email;
-
   /// Optional `boolean` value serialized in the `verified` wire field.
   final SdkOptional<bool> verified;
 
-  const GpgKeyEmailsItem(
-      {this.email = const SdkOmitted(), this.verified = const SdkOmitted()});
+  const GpgKeyEmailsItem({this.email = const SdkOmitted(), this.verified = const SdkOmitted()});
 
-  GpgKeyEmailsItem Function(
-      {SdkOptional<String> email,
-      SdkOptional<bool> verified}) get copyWith => _copyWith;
+  GpgKeyEmailsItem Function({SdkOptional<String> email, SdkOptional<bool> verified}) get copyWith => _copyWith;
 
-  GpgKeyEmailsItem _copyWith(
-          {Object? email = sdkOmittedValue,
-          Object? verified = sdkOmittedValue}) =>
-      GpgKeyEmailsItem(
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String>,
-        verified: identical(verified, sdkOmittedValue)
-            ? this.verified
-            : verified as SdkOptional<bool>,
-      );
+  GpgKeyEmailsItem _copyWith({Object? email = sdkOmittedValue, Object? verified = sdkOmittedValue}) => GpgKeyEmailsItem(
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
+    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as SdkOptional<bool>,
+  );
 
-  factory GpgKeyEmailsItem.fromJson(Map<String, dynamic> json) =>
-      GpgKeyEmailsItem(
-        email: json['email'] != null
-            ? SdkPresent((json['email'] as String?)!)
-            : const SdkOmitted(),
-        verified: json['verified'] != null
-            ? SdkPresent((json['verified'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory GpgKeyEmailsItem.fromJson(Map<String, dynamic> json) => GpgKeyEmailsItem(
+    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
+    verified: json['verified'] != null ? SdkPresent((json['verified'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (email) {
-          SdkPresent<String>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verified) {
-          SdkPresent<bool>(value: final value) => {
-              'verified': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (email) {
+      SdkPresent<String>(value: final value) => {'email': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (verified) {
+      SdkPresent<bool>(value: final value) => {'verified': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `emails[]` wire field.
 class GpgKeySubkeysItemEmailsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String> email;
-
   /// Optional `boolean` value serialized in the `verified` wire field.
   final SdkOptional<bool> verified;
 
-  const GpgKeySubkeysItemEmailsItem(
-      {this.email = const SdkOmitted(), this.verified = const SdkOmitted()});
+  const GpgKeySubkeysItemEmailsItem({this.email = const SdkOmitted(), this.verified = const SdkOmitted()});
 
-  GpgKeySubkeysItemEmailsItem Function(
-      {SdkOptional<String> email,
-      SdkOptional<bool> verified}) get copyWith => _copyWith;
+  GpgKeySubkeysItemEmailsItem Function({SdkOptional<String> email, SdkOptional<bool> verified}) get copyWith => _copyWith;
 
-  GpgKeySubkeysItemEmailsItem _copyWith(
-          {Object? email = sdkOmittedValue,
-          Object? verified = sdkOmittedValue}) =>
-      GpgKeySubkeysItemEmailsItem(
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String>,
-        verified: identical(verified, sdkOmittedValue)
-            ? this.verified
-            : verified as SdkOptional<bool>,
-      );
+  GpgKeySubkeysItemEmailsItem _copyWith({Object? email = sdkOmittedValue, Object? verified = sdkOmittedValue}) => GpgKeySubkeysItemEmailsItem(
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
+    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as SdkOptional<bool>,
+  );
 
-  factory GpgKeySubkeysItemEmailsItem.fromJson(Map<String, dynamic> json) =>
-      GpgKeySubkeysItemEmailsItem(
-        email: json['email'] != null
-            ? SdkPresent((json['email'] as String?)!)
-            : const SdkOmitted(),
-        verified: json['verified'] != null
-            ? SdkPresent((json['verified'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory GpgKeySubkeysItemEmailsItem.fromJson(Map<String, dynamic> json) => GpgKeySubkeysItemEmailsItem(
+    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
+    verified: json['verified'] != null ? SdkPresent((json['verified'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (email) {
-          SdkPresent<String>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verified) {
-          SdkPresent<bool>(value: final value) => {
-              'verified': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (email) {
+      SdkPresent<String>(value: final value) => {'email': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (verified) {
+      SdkPresent<bool>(value: final value) => {'verified': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `subkeys[]` wire field.
 class GpgKeySubkeysItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `int64`-formatted value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `integer` value serialized in the `primary_key_id` wire field.
   final SdkOptional<int> primaryKeyId;
-
   /// Optional `string` value serialized in the `key_id` wire field.
   final SdkOptional<String> keyId;
-
   /// Optional `string` value serialized in the `public_key` wire field.
   final SdkOptional<String> publicKey;
-
   /// Optional array value serialized in the `emails` wire field.
   final SdkOptional<List<GpgKeySubkeysItemEmailsItem>> emails;
-
   /// Optional array value serialized in the `subkeys` wire field.
   final SdkOptional<List<dynamic>> subkeys;
-
   /// Optional `boolean` value serialized in the `can_sign` wire field.
   final SdkOptional<bool> canSign;
-
   /// Optional `boolean` value serialized in the `can_encrypt_comms` wire field.
   final SdkOptional<bool> canEncryptComms;
-
   /// Optional `boolean` value serialized in the `can_encrypt_storage` wire field.
   final SdkOptional<bool> canEncryptStorage;
-
   /// Optional `boolean` value serialized in the `can_certify` wire field.
   final SdkOptional<bool> canCertify;
-
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
-
   /// Optional `string` value serialized in the `expires_at` wire field.
   final SdkOptional<String?> expiresAt;
-
   /// Optional `string` value serialized in the `raw_key` wire field.
   final SdkOptional<String?> rawKey;
-
   /// Optional `boolean` value serialized in the `revoked` wire field.
   final SdkOptional<bool> revoked;
 
-  const GpgKeySubkeysItem(
-      {this.id = const SdkOmitted(),
-      this.primaryKeyId = const SdkOmitted(),
-      this.keyId = const SdkOmitted(),
-      this.publicKey = const SdkOmitted(),
-      this.emails = const SdkOmitted(),
-      this.subkeys = const SdkOmitted(),
-      this.canSign = const SdkOmitted(),
-      this.canEncryptComms = const SdkOmitted(),
-      this.canEncryptStorage = const SdkOmitted(),
-      this.canCertify = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.expiresAt = const SdkOmitted(),
-      this.rawKey = const SdkOmitted(),
-      this.revoked = const SdkOmitted()});
+  const GpgKeySubkeysItem({this.id = const SdkOmitted(), this.primaryKeyId = const SdkOmitted(), this.keyId = const SdkOmitted(), this.publicKey = const SdkOmitted(), this.emails = const SdkOmitted(), this.subkeys = const SdkOmitted(), this.canSign = const SdkOmitted(), this.canEncryptComms = const SdkOmitted(), this.canEncryptStorage = const SdkOmitted(), this.canCertify = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.expiresAt = const SdkOmitted(), this.rawKey = const SdkOmitted(), this.revoked = const SdkOmitted()});
 
-  GpgKeySubkeysItem Function(
-      {SdkOptional<int> id,
-      SdkOptional<int> primaryKeyId,
-      SdkOptional<String> keyId,
-      SdkOptional<String> publicKey,
-      SdkOptional<List<GpgKeySubkeysItemEmailsItem>> emails,
-      SdkOptional<List<dynamic>> subkeys,
-      SdkOptional<bool> canSign,
-      SdkOptional<bool> canEncryptComms,
-      SdkOptional<bool> canEncryptStorage,
-      SdkOptional<bool> canCertify,
-      SdkOptional<String> createdAt,
-      SdkOptional<String?> expiresAt,
-      SdkOptional<String?> rawKey,
-      SdkOptional<bool> revoked}) get copyWith => _copyWith;
+  GpgKeySubkeysItem Function({SdkOptional<int> id, SdkOptional<int> primaryKeyId, SdkOptional<String> keyId, SdkOptional<String> publicKey, SdkOptional<List<GpgKeySubkeysItemEmailsItem>> emails, SdkOptional<List<dynamic>> subkeys, SdkOptional<bool> canSign, SdkOptional<bool> canEncryptComms, SdkOptional<bool> canEncryptStorage, SdkOptional<bool> canCertify, SdkOptional<String> createdAt, SdkOptional<String?> expiresAt, SdkOptional<String?> rawKey, SdkOptional<bool> revoked}) get copyWith => _copyWith;
 
-  GpgKeySubkeysItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? primaryKeyId = sdkOmittedValue,
-          Object? keyId = sdkOmittedValue,
-          Object? publicKey = sdkOmittedValue,
-          Object? emails = sdkOmittedValue,
-          Object? subkeys = sdkOmittedValue,
-          Object? canSign = sdkOmittedValue,
-          Object? canEncryptComms = sdkOmittedValue,
-          Object? canEncryptStorage = sdkOmittedValue,
-          Object? canCertify = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? expiresAt = sdkOmittedValue,
-          Object? rawKey = sdkOmittedValue,
-          Object? revoked = sdkOmittedValue}) =>
-      GpgKeySubkeysItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        primaryKeyId: identical(primaryKeyId, sdkOmittedValue)
-            ? this.primaryKeyId
-            : primaryKeyId as SdkOptional<int>,
-        keyId: identical(keyId, sdkOmittedValue)
-            ? this.keyId
-            : keyId as SdkOptional<String>,
-        publicKey: identical(publicKey, sdkOmittedValue)
-            ? this.publicKey
-            : publicKey as SdkOptional<String>,
-        emails: identical(emails, sdkOmittedValue)
-            ? this.emails
-            : emails as SdkOptional<List<GpgKeySubkeysItemEmailsItem>>,
-        subkeys: identical(subkeys, sdkOmittedValue)
-            ? this.subkeys
-            : subkeys as SdkOptional<List<dynamic>>,
-        canSign: identical(canSign, sdkOmittedValue)
-            ? this.canSign
-            : canSign as SdkOptional<bool>,
-        canEncryptComms: identical(canEncryptComms, sdkOmittedValue)
-            ? this.canEncryptComms
-            : canEncryptComms as SdkOptional<bool>,
-        canEncryptStorage: identical(canEncryptStorage, sdkOmittedValue)
-            ? this.canEncryptStorage
-            : canEncryptStorage as SdkOptional<bool>,
-        canCertify: identical(canCertify, sdkOmittedValue)
-            ? this.canCertify
-            : canCertify as SdkOptional<bool>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        expiresAt: identical(expiresAt, sdkOmittedValue)
-            ? this.expiresAt
-            : expiresAt as SdkOptional<String?>,
-        rawKey: identical(rawKey, sdkOmittedValue)
-            ? this.rawKey
-            : rawKey as SdkOptional<String?>,
-        revoked: identical(revoked, sdkOmittedValue)
-            ? this.revoked
-            : revoked as SdkOptional<bool>,
-      );
+  GpgKeySubkeysItem _copyWith({Object? id = sdkOmittedValue, Object? primaryKeyId = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? publicKey = sdkOmittedValue, Object? emails = sdkOmittedValue, Object? subkeys = sdkOmittedValue, Object? canSign = sdkOmittedValue, Object? canEncryptComms = sdkOmittedValue, Object? canEncryptStorage = sdkOmittedValue, Object? canCertify = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? rawKey = sdkOmittedValue, Object? revoked = sdkOmittedValue}) => GpgKeySubkeysItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    primaryKeyId: identical(primaryKeyId, sdkOmittedValue) ? this.primaryKeyId : primaryKeyId as SdkOptional<int>,
+    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as SdkOptional<String>,
+    publicKey: identical(publicKey, sdkOmittedValue) ? this.publicKey : publicKey as SdkOptional<String>,
+    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as SdkOptional<List<GpgKeySubkeysItemEmailsItem>>,
+    subkeys: identical(subkeys, sdkOmittedValue) ? this.subkeys : subkeys as SdkOptional<List<dynamic>>,
+    canSign: identical(canSign, sdkOmittedValue) ? this.canSign : canSign as SdkOptional<bool>,
+    canEncryptComms: identical(canEncryptComms, sdkOmittedValue) ? this.canEncryptComms : canEncryptComms as SdkOptional<bool>,
+    canEncryptStorage: identical(canEncryptStorage, sdkOmittedValue) ? this.canEncryptStorage : canEncryptStorage as SdkOptional<bool>,
+    canCertify: identical(canCertify, sdkOmittedValue) ? this.canCertify : canCertify as SdkOptional<bool>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<String?>,
+    rawKey: identical(rawKey, sdkOmittedValue) ? this.rawKey : rawKey as SdkOptional<String?>,
+    revoked: identical(revoked, sdkOmittedValue) ? this.revoked : revoked as SdkOptional<bool>,
+  );
 
-  factory GpgKeySubkeysItem.fromJson(Map<String, dynamic> json) =>
-      GpgKeySubkeysItem(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        primaryKeyId: json['primary_key_id'] != null
-            ? SdkPresent(((json['primary_key_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        keyId: json['key_id'] != null
-            ? SdkPresent((json['key_id'] as String?)!)
-            : const SdkOmitted(),
-        publicKey: json['public_key'] != null
-            ? SdkPresent((json['public_key'] as String?)!)
-            : const SdkOmitted(),
-        emails: json['emails'] != null
-            ? SdkPresent(((json['emails'] as List?)
-                ?.map((e) => GpgKeySubkeysItemEmailsItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        subkeys: json['subkeys'] != null
-            ? SdkPresent(((json['subkeys'] as List?)?.map((e) => e).toList())!)
-            : const SdkOmitted(),
-        canSign: json['can_sign'] != null
-            ? SdkPresent((json['can_sign'] as bool?)!)
-            : const SdkOmitted(),
-        canEncryptComms: json['can_encrypt_comms'] != null
-            ? SdkPresent((json['can_encrypt_comms'] as bool?)!)
-            : const SdkOmitted(),
-        canEncryptStorage: json['can_encrypt_storage'] != null
-            ? SdkPresent((json['can_encrypt_storage'] as bool?)!)
-            : const SdkOmitted(),
-        canCertify: json['can_certify'] != null
-            ? SdkPresent((json['can_certify'] as bool?)!)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        expiresAt: json.containsKey('expires_at')
-            ? SdkPresent(json['expires_at'] as String?)
-            : const SdkOmitted(),
-        rawKey: json.containsKey('raw_key')
-            ? SdkPresent(json['raw_key'] as String?)
-            : const SdkOmitted(),
-        revoked: json['revoked'] != null
-            ? SdkPresent((json['revoked'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory GpgKeySubkeysItem.fromJson(Map<String, dynamic> json) => GpgKeySubkeysItem(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    primaryKeyId: json['primary_key_id'] != null ? SdkPresent(((json['primary_key_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    keyId: json['key_id'] != null ? SdkPresent((json['key_id'] as String?)!) : const SdkOmitted(),
+    publicKey: json['public_key'] != null ? SdkPresent((json['public_key'] as String?)!) : const SdkOmitted(),
+    emails: json['emails'] != null ? SdkPresent(((json['emails'] as List?)?.map((e) => GpgKeySubkeysItemEmailsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    subkeys: json['subkeys'] != null ? SdkPresent(((json['subkeys'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
+    canSign: json['can_sign'] != null ? SdkPresent((json['can_sign'] as bool?)!) : const SdkOmitted(),
+    canEncryptComms: json['can_encrypt_comms'] != null ? SdkPresent((json['can_encrypt_comms'] as bool?)!) : const SdkOmitted(),
+    canEncryptStorage: json['can_encrypt_storage'] != null ? SdkPresent((json['can_encrypt_storage'] as bool?)!) : const SdkOmitted(),
+    canCertify: json['can_certify'] != null ? SdkPresent((json['can_certify'] as bool?)!) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    expiresAt: json.containsKey('expires_at') ? SdkPresent(json['expires_at'] as String?) : const SdkOmitted(),
+    rawKey: json.containsKey('raw_key') ? SdkPresent(json['raw_key'] as String?) : const SdkOmitted(),
+    revoked: json['revoked'] != null ? SdkPresent((json['revoked'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (primaryKeyId) {
-          SdkPresent<int>(value: final value) => {
-              'primary_key_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (keyId) {
-          SdkPresent<String>(value: final value) => {
-              'key_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (publicKey) {
-          SdkPresent<String>(value: final value) => {
-              'public_key': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emails) {
-          SdkPresent<List<GpgKeySubkeysItemEmailsItem>>(value: final value) => {
-              'emails': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subkeys) {
-          SdkPresent<List<dynamic>>(value: final value) => {
-              'subkeys': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (canSign) {
-          SdkPresent<bool>(value: final value) => {
-              'can_sign': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (canEncryptComms) {
-          SdkPresent<bool>(value: final value) => {
-              'can_encrypt_comms': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (canEncryptStorage) {
-          SdkPresent<bool>(value: final value) => {
-              'can_encrypt_storage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (canCertify) {
-          SdkPresent<bool>(value: final value) => {
-              'can_certify': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (expiresAt) {
-          SdkPresent<String?>(value: final value) => {
-              'expires_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rawKey) {
-          SdkPresent<String?>(value: final value) => {
-              'raw_key': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (revoked) {
-          SdkPresent<bool>(value: final value) => {
-              'revoked': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (primaryKeyId) {
+      SdkPresent<int>(value: final value) => {'primary_key_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (keyId) {
+      SdkPresent<String>(value: final value) => {'key_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (publicKey) {
+      SdkPresent<String>(value: final value) => {'public_key': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emails) {
+      SdkPresent<List<GpgKeySubkeysItemEmailsItem>>(value: final value) => {'emails': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subkeys) {
+      SdkPresent<List<dynamic>>(value: final value) => {'subkeys': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (canSign) {
+      SdkPresent<bool>(value: final value) => {'can_sign': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (canEncryptComms) {
+      SdkPresent<bool>(value: final value) => {'can_encrypt_comms': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (canEncryptStorage) {
+      SdkPresent<bool>(value: final value) => {'can_encrypt_storage': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (canCertify) {
+      SdkPresent<bool>(value: final value) => {'can_certify': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (expiresAt) {
+      SdkPresent<String?>(value: final value) => {'expires_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rawKey) {
+      SdkPresent<String?>(value: final value) => {'raw_key': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (revoked) {
+      SdkPresent<bool>(value: final value) => {'revoked': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A unique encryption key
 class GpgKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String?> name;
-
   /// Required `integer` value serialized in the `primary_key_id` wire field.
   final int? primaryKeyId;
-
   /// Required `string` value serialized in the `key_id` wire field.
   final String keyId;
-
   /// Required `string` value serialized in the `public_key` wire field.
   final String publicKey;
-
   /// Required array value serialized in the `emails` wire field.
   final List<GpgKeyEmailsItem> emails;
-
   /// Required array value serialized in the `subkeys` wire field.
   final List<GpgKeySubkeysItem> subkeys;
-
   /// Required `boolean` value serialized in the `can_sign` wire field.
   final bool canSign;
-
   /// Required `boolean` value serialized in the `can_encrypt_comms` wire field.
   final bool canEncryptComms;
-
   /// Required `boolean` value serialized in the `can_encrypt_storage` wire field.
   final bool canEncryptStorage;
-
   /// Required `boolean` value serialized in the `can_certify` wire field.
   final bool canCertify;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `date-time`-formatted value serialized in the `expires_at` wire field.
   final String? expiresAt;
-
   /// Required `boolean` value serialized in the `revoked` wire field.
   final bool revoked;
-
   /// Required `string` value serialized in the `raw_key` wire field.
   final String? rawKey;
 
-  const GpgKey(
-      {required this.id,
-      this.name = const SdkOmitted(),
-      required this.primaryKeyId,
-      required this.keyId,
-      required this.publicKey,
-      required this.emails,
-      required this.subkeys,
-      required this.canSign,
-      required this.canEncryptComms,
-      required this.canEncryptStorage,
-      required this.canCertify,
-      required this.createdAt,
-      required this.expiresAt,
-      required this.revoked,
-      required this.rawKey});
+  const GpgKey({required this.id, this.name = const SdkOmitted(), required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey});
 
-  GpgKey Function(
-      {int id,
-      SdkOptional<String?> name,
-      int? primaryKeyId,
-      String keyId,
-      String publicKey,
-      List<GpgKeyEmailsItem> emails,
-      List<GpgKeySubkeysItem> subkeys,
-      bool canSign,
-      bool canEncryptComms,
-      bool canEncryptStorage,
-      bool canCertify,
-      String createdAt,
-      String? expiresAt,
-      bool revoked,
-      String? rawKey}) get copyWith => _copyWith;
+  GpgKey Function({int id, SdkOptional<String?> name, int? primaryKeyId, String keyId, String publicKey, List<GpgKeyEmailsItem> emails, List<GpgKeySubkeysItem> subkeys, bool canSign, bool canEncryptComms, bool canEncryptStorage, bool canCertify, String createdAt, String? expiresAt, bool revoked, String? rawKey}) get copyWith => _copyWith;
 
-  GpgKey _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? primaryKeyId = sdkOmittedValue,
-          Object? keyId = sdkOmittedValue,
-          Object? publicKey = sdkOmittedValue,
-          Object? emails = sdkOmittedValue,
-          Object? subkeys = sdkOmittedValue,
-          Object? canSign = sdkOmittedValue,
-          Object? canEncryptComms = sdkOmittedValue,
-          Object? canEncryptStorage = sdkOmittedValue,
-          Object? canCertify = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? expiresAt = sdkOmittedValue,
-          Object? revoked = sdkOmittedValue,
-          Object? rawKey = sdkOmittedValue}) =>
-      GpgKey(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String?>,
-        primaryKeyId: identical(primaryKeyId, sdkOmittedValue)
-            ? this.primaryKeyId
-            : primaryKeyId as int?,
-        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-        publicKey: identical(publicKey, sdkOmittedValue)
-            ? this.publicKey
-            : publicKey as String,
-        emails: identical(emails, sdkOmittedValue)
-            ? this.emails
-            : emails as List<GpgKeyEmailsItem>,
-        subkeys: identical(subkeys, sdkOmittedValue)
-            ? this.subkeys
-            : subkeys as List<GpgKeySubkeysItem>,
-        canSign: identical(canSign, sdkOmittedValue)
-            ? this.canSign
-            : canSign as bool,
-        canEncryptComms: identical(canEncryptComms, sdkOmittedValue)
-            ? this.canEncryptComms
-            : canEncryptComms as bool,
-        canEncryptStorage: identical(canEncryptStorage, sdkOmittedValue)
-            ? this.canEncryptStorage
-            : canEncryptStorage as bool,
-        canCertify: identical(canCertify, sdkOmittedValue)
-            ? this.canCertify
-            : canCertify as bool,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        expiresAt: identical(expiresAt, sdkOmittedValue)
-            ? this.expiresAt
-            : expiresAt as String?,
-        revoked: identical(revoked, sdkOmittedValue)
-            ? this.revoked
-            : revoked as bool,
-        rawKey: identical(rawKey, sdkOmittedValue)
-            ? this.rawKey
-            : rawKey as String?,
-      );
+  GpgKey _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? primaryKeyId = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? publicKey = sdkOmittedValue, Object? emails = sdkOmittedValue, Object? subkeys = sdkOmittedValue, Object? canSign = sdkOmittedValue, Object? canEncryptComms = sdkOmittedValue, Object? canEncryptStorage = sdkOmittedValue, Object? canCertify = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? revoked = sdkOmittedValue, Object? rawKey = sdkOmittedValue}) => GpgKey(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
+    primaryKeyId: identical(primaryKeyId, sdkOmittedValue) ? this.primaryKeyId : primaryKeyId as int?,
+    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+    publicKey: identical(publicKey, sdkOmittedValue) ? this.publicKey : publicKey as String,
+    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as List<GpgKeyEmailsItem>,
+    subkeys: identical(subkeys, sdkOmittedValue) ? this.subkeys : subkeys as List<GpgKeySubkeysItem>,
+    canSign: identical(canSign, sdkOmittedValue) ? this.canSign : canSign as bool,
+    canEncryptComms: identical(canEncryptComms, sdkOmittedValue) ? this.canEncryptComms : canEncryptComms as bool,
+    canEncryptStorage: identical(canEncryptStorage, sdkOmittedValue) ? this.canEncryptStorage : canEncryptStorage as bool,
+    canCertify: identical(canCertify, sdkOmittedValue) ? this.canCertify : canCertify as bool,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String?,
+    revoked: identical(revoked, sdkOmittedValue) ? this.revoked : revoked as bool,
+    rawKey: identical(rawKey, sdkOmittedValue) ? this.rawKey : rawKey as String?,
+  );
 
   factory GpgKey.fromJson(Map<String, dynamic> json) => GpgKey(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: json.containsKey('name')
-            ? SdkPresent(json['name'] as String?)
-            : const SdkOmitted(),
-        primaryKeyId: json.containsKey('primary_key_id')
-            ? (json['primary_key_id'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'primary_key_id', 'Required property is missing'),
-        keyId: (json['key_id'] as String?)!,
-        publicKey: (json['public_key'] as String?)!,
-        emails: ((json['emails'] as List?)
-            ?.map((e) => GpgKeyEmailsItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        subkeys: ((json['subkeys'] as List?)
-            ?.map((e) => GpgKeySubkeysItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        canSign: (json['can_sign'] as bool?)!,
-        canEncryptComms: (json['can_encrypt_comms'] as bool?)!,
-        canEncryptStorage: (json['can_encrypt_storage'] as bool?)!,
-        canCertify: (json['can_certify'] as bool?)!,
-        createdAt: (json['created_at'] as String?)!,
-        expiresAt: json.containsKey('expires_at')
-            ? json['expires_at'] as String?
-            : throw ArgumentError.value(
-                null, 'expires_at', 'Required property is missing'),
-        revoked: (json['revoked'] as bool?)!,
-        rawKey: json.containsKey('raw_key')
-            ? json['raw_key'] as String?
-            : throw ArgumentError.value(
-                null, 'raw_key', 'Required property is missing'),
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
+    primaryKeyId: json.containsKey('primary_key_id') ? (json['primary_key_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'primary_key_id', 'Required property is missing'),
+    keyId: (json['key_id'] as String?)!,
+    publicKey: (json['public_key'] as String?)!,
+    emails: ((json['emails'] as List?)?.map((e) => GpgKeyEmailsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    subkeys: ((json['subkeys'] as List?)?.map((e) => GpgKeySubkeysItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    canSign: (json['can_sign'] as bool?)!,
+    canEncryptComms: (json['can_encrypt_comms'] as bool?)!,
+    canEncryptStorage: (json['can_encrypt_storage'] as bool?)!,
+    canCertify: (json['can_certify'] as bool?)!,
+    createdAt: (json['created_at'] as String?)!,
+    expiresAt: json.containsKey('expires_at') ? json['expires_at'] as String? : throw ArgumentError.value(null, 'expires_at', 'Required property is missing'),
+    revoked: (json['revoked'] as bool?)!,
+    rawKey: json.containsKey('raw_key') ? json['raw_key'] as String? : throw ArgumentError.value(null, 'raw_key', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (name) {
-          SdkPresent<String?>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'primary_key_id': primaryKeyId,
-        'key_id': keyId,
-        'public_key': publicKey,
-        'emails': emails.map((item) => item.toJson()).toList(),
-        'subkeys': subkeys.map((item) => item.toJson()).toList(),
-        'can_sign': canSign,
-        'can_encrypt_comms': canEncryptComms,
-        'can_encrypt_storage': canEncryptStorage,
-        'can_certify': canCertify,
-        'created_at': createdAt,
-        'expires_at': expiresAt,
-        'revoked': revoked,
-        'raw_key': rawKey,
-      };
+    'id': id,
+    ...switch (name) {
+      SdkPresent<String?>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    'primary_key_id': primaryKeyId,
+    'key_id': keyId,
+    'public_key': publicKey,
+    'emails': emails.map((item) => item.toJson()).toList(),
+    'subkeys': subkeys.map((item) => item.toJson()).toList(),
+    'can_sign': canSign,
+    'can_encrypt_comms': canEncryptComms,
+    'can_encrypt_storage': canEncryptStorage,
+    'can_certify': canCertify,
+    'created_at': createdAt,
+    'expires_at': expiresAt,
+    'revoked': revoked,
+    'raw_key': rawKey,
+  };
 }

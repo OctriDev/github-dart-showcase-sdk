@@ -11,67 +11,36 @@ class ApiInsightsTimeStatsItem {
   final SdkOptional<int> totalRequestCount;
   final SdkOptional<int> rateLimitedRequestCount;
 
-  const ApiInsightsTimeStatsItem(
-      {this.timestamp = const SdkOmitted(),
-      this.totalRequestCount = const SdkOmitted(),
-      this.rateLimitedRequestCount = const SdkOmitted()});
+  const ApiInsightsTimeStatsItem({this.timestamp = const SdkOmitted(), this.totalRequestCount = const SdkOmitted(), this.rateLimitedRequestCount = const SdkOmitted()});
 
-  ApiInsightsTimeStatsItem Function(
-      {SdkOptional<String> timestamp,
-      SdkOptional<int> totalRequestCount,
-      SdkOptional<int> rateLimitedRequestCount}) get copyWith => _copyWith;
+  ApiInsightsTimeStatsItem Function({SdkOptional<String> timestamp, SdkOptional<int> totalRequestCount, SdkOptional<int> rateLimitedRequestCount}) get copyWith => _copyWith;
 
-  ApiInsightsTimeStatsItem _copyWith(
-          {Object? timestamp = sdkOmittedValue,
-          Object? totalRequestCount = sdkOmittedValue,
-          Object? rateLimitedRequestCount = sdkOmittedValue}) =>
-      ApiInsightsTimeStatsItem(
-        timestamp: identical(timestamp, sdkOmittedValue)
-            ? this.timestamp
-            : timestamp as SdkOptional<String>,
-        totalRequestCount: identical(totalRequestCount, sdkOmittedValue)
-            ? this.totalRequestCount
-            : totalRequestCount as SdkOptional<int>,
-        rateLimitedRequestCount:
-            identical(rateLimitedRequestCount, sdkOmittedValue)
-                ? this.rateLimitedRequestCount
-                : rateLimitedRequestCount as SdkOptional<int>,
-      );
+  ApiInsightsTimeStatsItem _copyWith({Object? timestamp = sdkOmittedValue, Object? totalRequestCount = sdkOmittedValue, Object? rateLimitedRequestCount = sdkOmittedValue}) => ApiInsightsTimeStatsItem(
+    timestamp: identical(timestamp, sdkOmittedValue) ? this.timestamp : timestamp as SdkOptional<String>,
+    totalRequestCount: identical(totalRequestCount, sdkOmittedValue) ? this.totalRequestCount : totalRequestCount as SdkOptional<int>,
+    rateLimitedRequestCount: identical(rateLimitedRequestCount, sdkOmittedValue) ? this.rateLimitedRequestCount : rateLimitedRequestCount as SdkOptional<int>,
+  );
 
-  factory ApiInsightsTimeStatsItem.fromJson(Map<String, dynamic> json) =>
-      ApiInsightsTimeStatsItem(
-        timestamp: json['timestamp'] != null
-            ? SdkPresent((json['timestamp'] as String?)!)
-            : const SdkOmitted(),
-        totalRequestCount: json['total_request_count'] != null
-            ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        rateLimitedRequestCount: json['rate_limited_request_count'] != null
-            ? SdkPresent(
-                ((json['rate_limited_request_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory ApiInsightsTimeStatsItem.fromJson(Map<String, dynamic> json) => ApiInsightsTimeStatsItem(
+    timestamp: json['timestamp'] != null ? SdkPresent((json['timestamp'] as String?)!) : const SdkOmitted(),
+    totalRequestCount: json['total_request_count'] != null ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    rateLimitedRequestCount: json['rate_limited_request_count'] != null ? SdkPresent(((json['rate_limited_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (timestamp) {
-          SdkPresent<String>(value: final value) => {
-              'timestamp': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (totalRequestCount) {
-          SdkPresent<int>(value: final value) => {
-              'total_request_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rateLimitedRequestCount) {
-          SdkPresent<int>(value: final value) => {
-              'rate_limited_request_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (timestamp) {
+      SdkPresent<String>(value: final value) => {'timestamp': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (totalRequestCount) {
+      SdkPresent<int>(value: final value) => {'total_request_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rateLimitedRequestCount) {
+      SdkPresent<int>(value: final value) => {'rate_limited_request_count': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 // ApiInsightsTimeStats = List<ApiInsightsTimeStatsItem>

@@ -8,99 +8,52 @@ part of 'codespaces.dart';
 class CodespaceMachine {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the machine.
   final String name;
-
   /// The display name of the machine includes cores, memory, and storage.
   final String displayName;
-
   /// The operating system of the machine.
   final String operatingSystem;
-
   /// How much storage is available to the codespace.
   final int storageInBytes;
-
   /// How much memory is available to the codespace.
   final int memoryInBytes;
-
   /// How many cores are available to the codespace.
   final int cpus;
-
   /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
   final CodespaceMachinePrebuildAvailability? prebuildAvailability;
 
-  const CodespaceMachine(
-      {required this.name,
-      required this.displayName,
-      required this.operatingSystem,
-      required this.storageInBytes,
-      required this.memoryInBytes,
-      required this.cpus,
-      required this.prebuildAvailability});
+  const CodespaceMachine({required this.name, required this.displayName, required this.operatingSystem, required this.storageInBytes, required this.memoryInBytes, required this.cpus, required this.prebuildAvailability});
 
-  CodespaceMachine Function(
-          {String name,
-          String displayName,
-          String operatingSystem,
-          int storageInBytes,
-          int memoryInBytes,
-          int cpus,
-          CodespaceMachinePrebuildAvailability? prebuildAvailability})
-      get copyWith => _copyWith;
+  CodespaceMachine Function({String name, String displayName, String operatingSystem, int storageInBytes, int memoryInBytes, int cpus, CodespaceMachinePrebuildAvailability? prebuildAvailability}) get copyWith => _copyWith;
 
-  CodespaceMachine _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? operatingSystem = sdkOmittedValue,
-          Object? storageInBytes = sdkOmittedValue,
-          Object? memoryInBytes = sdkOmittedValue,
-          Object? cpus = sdkOmittedValue,
-          Object? prebuildAvailability = sdkOmittedValue}) =>
-      CodespaceMachine(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as String,
-        operatingSystem: identical(operatingSystem, sdkOmittedValue)
-            ? this.operatingSystem
-            : operatingSystem as String,
-        storageInBytes: identical(storageInBytes, sdkOmittedValue)
-            ? this.storageInBytes
-            : storageInBytes as int,
-        memoryInBytes: identical(memoryInBytes, sdkOmittedValue)
-            ? this.memoryInBytes
-            : memoryInBytes as int,
-        cpus: identical(cpus, sdkOmittedValue) ? this.cpus : cpus as int,
-        prebuildAvailability: identical(prebuildAvailability, sdkOmittedValue)
-            ? this.prebuildAvailability
-            : prebuildAvailability as CodespaceMachinePrebuildAvailability?,
-      );
+  CodespaceMachine _copyWith({Object? name = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? operatingSystem = sdkOmittedValue, Object? storageInBytes = sdkOmittedValue, Object? memoryInBytes = sdkOmittedValue, Object? cpus = sdkOmittedValue, Object? prebuildAvailability = sdkOmittedValue}) => CodespaceMachine(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
+    operatingSystem: identical(operatingSystem, sdkOmittedValue) ? this.operatingSystem : operatingSystem as String,
+    storageInBytes: identical(storageInBytes, sdkOmittedValue) ? this.storageInBytes : storageInBytes as int,
+    memoryInBytes: identical(memoryInBytes, sdkOmittedValue) ? this.memoryInBytes : memoryInBytes as int,
+    cpus: identical(cpus, sdkOmittedValue) ? this.cpus : cpus as int,
+    prebuildAvailability: identical(prebuildAvailability, sdkOmittedValue) ? this.prebuildAvailability : prebuildAvailability as CodespaceMachinePrebuildAvailability?,
+  );
 
-  factory CodespaceMachine.fromJson(Map<String, dynamic> json) =>
-      CodespaceMachine(
-        name: (json['name'] as String?)!,
-        displayName: (json['display_name'] as String?)!,
-        operatingSystem: (json['operating_system'] as String?)!,
-        storageInBytes: ((json['storage_in_bytes'] as num?)?.toInt())!,
-        memoryInBytes: ((json['memory_in_bytes'] as num?)?.toInt())!,
-        cpus: ((json['cpus'] as num?)?.toInt())!,
-        prebuildAvailability: json.containsKey('prebuild_availability')
-            ? json['prebuild_availability'] != null
-                ? CodespaceMachinePrebuildAvailability.fromJson(
-                    json['prebuild_availability'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'prebuild_availability', 'Required property is missing'),
-      );
+  factory CodespaceMachine.fromJson(Map<String, dynamic> json) => CodespaceMachine(
+    name: (json['name'] as String?)!,
+    displayName: (json['display_name'] as String?)!,
+    operatingSystem: (json['operating_system'] as String?)!,
+    storageInBytes: ((json['storage_in_bytes'] as num?)?.toInt())!,
+    memoryInBytes: ((json['memory_in_bytes'] as num?)?.toInt())!,
+    cpus: ((json['cpus'] as num?)?.toInt())!,
+    prebuildAvailability: json.containsKey('prebuild_availability') ? json['prebuild_availability'] != null ? CodespaceMachinePrebuildAvailability.fromJson(json['prebuild_availability'] as String) : null : throw ArgumentError.value(null, 'prebuild_availability', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'display_name': displayName,
-        'operating_system': operatingSystem,
-        'storage_in_bytes': storageInBytes,
-        'memory_in_bytes': memoryInBytes,
-        'cpus': cpus,
-        'prebuild_availability': prebuildAvailability?.toJson(),
-      };
+    'name': name,
+    'display_name': displayName,
+    'operating_system': operatingSystem,
+    'storage_in_bytes': storageInBytes,
+    'memory_in_bytes': memoryInBytes,
+    'cpus': cpus,
+    'prebuild_availability': prebuildAvailability?.toJson(),
+  };
 }

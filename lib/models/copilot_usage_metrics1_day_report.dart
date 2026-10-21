@@ -8,41 +8,27 @@ part of 'copilot.dart';
 class CopilotUsageMetrics1DayReport {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URLs to download the Copilot usage metrics report for the enterprise/organization for the specified day.
   final List<String> downloadLinks;
-
   /// The day of the report in `YYYY-MM-DD` format.
   final String reportDay;
 
-  const CopilotUsageMetrics1DayReport(
-      {required this.downloadLinks, required this.reportDay});
+  const CopilotUsageMetrics1DayReport({required this.downloadLinks, required this.reportDay});
 
-  CopilotUsageMetrics1DayReport Function(
-      {List<String> downloadLinks, String reportDay}) get copyWith => _copyWith;
+  CopilotUsageMetrics1DayReport Function({List<String> downloadLinks, String reportDay}) get copyWith => _copyWith;
 
-  CopilotUsageMetrics1DayReport _copyWith(
-          {Object? downloadLinks = sdkOmittedValue,
-          Object? reportDay = sdkOmittedValue}) =>
-      CopilotUsageMetrics1DayReport(
-        downloadLinks: identical(downloadLinks, sdkOmittedValue)
-            ? this.downloadLinks
-            : downloadLinks as List<String>,
-        reportDay: identical(reportDay, sdkOmittedValue)
-            ? this.reportDay
-            : reportDay as String,
-      );
+  CopilotUsageMetrics1DayReport _copyWith({Object? downloadLinks = sdkOmittedValue, Object? reportDay = sdkOmittedValue}) => CopilotUsageMetrics1DayReport(
+    downloadLinks: identical(downloadLinks, sdkOmittedValue) ? this.downloadLinks : downloadLinks as List<String>,
+    reportDay: identical(reportDay, sdkOmittedValue) ? this.reportDay : reportDay as String,
+  );
 
-  factory CopilotUsageMetrics1DayReport.fromJson(Map<String, dynamic> json) =>
-      CopilotUsageMetrics1DayReport(
-        downloadLinks: ((json['download_links'] as List?)
-            ?.map((e) => e as String)
-            .toList())!,
-        reportDay: (json['report_day'] as String?)!,
-      );
+  factory CopilotUsageMetrics1DayReport.fromJson(Map<String, dynamic> json) => CopilotUsageMetrics1DayReport(
+    downloadLinks: ((json['download_links'] as List?)?.map((e) => e as String).toList())!,
+    reportDay: (json['report_day'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'download_links': downloadLinks,
-        'report_day': reportDay,
-      };
+    'download_links': downloadLinks,
+    'report_day': reportDay,
+  };
 }

@@ -4,20 +4,14 @@
 part of 'webhook_pull_request_review_edited.dart';
 
 // webhook_pull_request_review_edited domain models
-final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt
-    extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
   final int value;
-  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtInt(this.value);
+  @override Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString
-    extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString extends WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAt {
   final String value;
-  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookPullRequestReviewEditedPullRequestHeadRepoPushedAtString(this.value);
+  @override Object? toJson() => value;
 }

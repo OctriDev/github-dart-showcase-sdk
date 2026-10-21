@@ -6,6 +6,7 @@ part of 'inline.dart';
 // Inline operation models
 /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
 final class DependencyScope {
+
   final String value;
 
   const DependencyScope._(this.value);
@@ -17,49 +18,43 @@ final class DependencyScope {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DependencyScope && other.value == value;
+  @override bool operator ==(Object other) => other is DependencyScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class DependencyGraphDiffItemChangeType {
+
   final String value;
 
   const DependencyGraphDiffItemChangeType._(this.value);
 
-  factory DependencyGraphDiffItemChangeType.fromJson(String value) =>
-      DependencyGraphDiffItemChangeType._(value);
+  factory DependencyGraphDiffItemChangeType.fromJson(String value) => DependencyGraphDiffItemChangeType._(value);
 
   static const added = DependencyGraphDiffItemChangeType._('added');
   static const removed = DependencyGraphDiffItemChangeType._('removed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DependencyGraphDiffItemChangeType && other.value == value;
+  @override bool operator ==(Object other) => other is DependencyGraphDiffItemChangeType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
 final class DependencyGraphDiffItemScope {
+
   final String value;
 
   const DependencyGraphDiffItemScope._(this.value);
 
-  factory DependencyGraphDiffItemScope.fromJson(String value) =>
-      DependencyGraphDiffItemScope._(value);
+  factory DependencyGraphDiffItemScope.fromJson(String value) => DependencyGraphDiffItemScope._(value);
 
   static const unknown = DependencyGraphDiffItemScope._('unknown');
   static const runtime = DependencyGraphDiffItemScope._('runtime');
@@ -67,78 +62,66 @@ final class DependencyGraphDiffItemScope {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DependencyGraphDiffItemScope && other.value == value;
+  @override bool operator ==(Object other) => other is DependencyGraphDiffItemScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Whether this rule targets a branch or tag.
 final class DeploymentBranchPolicyType {
+
   final String value;
 
   const DeploymentBranchPolicyType._(this.value);
 
-  factory DeploymentBranchPolicyType.fromJson(String value) =>
-      DeploymentBranchPolicyType._(value);
+  factory DeploymentBranchPolicyType.fromJson(String value) => DeploymentBranchPolicyType._(value);
 
   static const branch = DeploymentBranchPolicyType._('branch');
   static const tag = DeploymentBranchPolicyType._('tag');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DeploymentBranchPolicyType && other.value == value;
+  @override bool operator ==(Object other) => other is DeploymentBranchPolicyType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Whether this rule targets a branch or tag
 final class DeploymentBranchPolicyNamePatternWithTypeType {
+
   final String value;
 
   const DeploymentBranchPolicyNamePatternWithTypeType._(this.value);
 
-  factory DeploymentBranchPolicyNamePatternWithTypeType.fromJson(
-          String value) =>
-      DeploymentBranchPolicyNamePatternWithTypeType._(value);
+  factory DeploymentBranchPolicyNamePatternWithTypeType.fromJson(String value) => DeploymentBranchPolicyNamePatternWithTypeType._(value);
 
-  static const branch =
-      DeploymentBranchPolicyNamePatternWithTypeType._('branch');
+  static const branch = DeploymentBranchPolicyNamePatternWithTypeType._('branch');
   static const tag = DeploymentBranchPolicyNamePatternWithTypeType._('tag');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DeploymentBranchPolicyNamePatternWithTypeType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is DeploymentBranchPolicyNamePatternWithTypeType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The state of the status.
 final class DeploymentStatusState {
+
   final String value;
 
   const DeploymentStatusState._(this.value);
 
-  factory DeploymentStatusState.fromJson(String value) =>
-      DeploymentStatusState._(value);
+  factory DeploymentStatusState.fromJson(String value) => DeploymentStatusState._(value);
 
   static const error = DeploymentStatusState._('error');
   static const failure = DeploymentStatusState._('failure');
@@ -150,19 +133,17 @@ final class DeploymentStatusState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DeploymentStatusState && other.value == value;
+  @override bool operator ==(Object other) => other is DeploymentStatusState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class DiffEntryStatus {
+
   final String value;
 
   const DiffEntryStatus._(this.value);
@@ -179,25 +160,22 @@ final class DiffEntryStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DiffEntryStatus && other.value == value;
+  @override bool operator ==(Object other) => other is DiffEntryStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class DiscussionAnswerChosenByType {
+
   final String value;
 
   const DiscussionAnswerChosenByType._(this.value);
 
-  factory DiscussionAnswerChosenByType.fromJson(String value) =>
-      DiscussionAnswerChosenByType._(value);
+  factory DiscussionAnswerChosenByType.fromJson(String value) => DiscussionAnswerChosenByType._(value);
 
   static const bot = DiscussionAnswerChosenByType._('Bot');
   static const user = DiscussionAnswerChosenByType._('User');
@@ -205,31 +183,27 @@ final class DiscussionAnswerChosenByType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DiscussionAnswerChosenByType && other.value == value;
+  @override bool operator ==(Object other) => other is DiscussionAnswerChosenByType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// How the author is associated with the repository.
 final class DiscussionAuthorAssociation {
+
   final String value;
 
   const DiscussionAuthorAssociation._(this.value);
 
-  factory DiscussionAuthorAssociation.fromJson(String value) =>
-      DiscussionAuthorAssociation._(value);
+  factory DiscussionAuthorAssociation.fromJson(String value) => DiscussionAuthorAssociation._(value);
 
   static const collaborator = DiscussionAuthorAssociation._('COLLABORATOR');
   static const contributor = DiscussionAuthorAssociation._('CONTRIBUTOR');
   static const firstTimer = DiscussionAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor =
-      DiscussionAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+  static const firstTimeContributor = DiscussionAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
   static const mannequin = DiscussionAuthorAssociation._('MANNEQUIN');
   static const member = DiscussionAuthorAssociation._('MEMBER');
   static const none = DiscussionAuthorAssociation._('NONE');
@@ -237,19 +211,17 @@ final class DiscussionAuthorAssociation {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DiscussionAuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is DiscussionAuthorAssociation && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The current state of the discussion. `converting` means that the discussion is being converted from an issue. `transferring` means that the discussion is being transferred from another repository.
 final class DiscussionState {
+
   final String value;
 
   const DiscussionState._(this.value);
@@ -264,25 +236,22 @@ final class DiscussionState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DiscussionState && other.value == value;
+  @override bool operator ==(Object other) => other is DiscussionState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The reason for the current state
 final class DiscussionStateReason {
+
   final String value;
 
   const DiscussionStateReason._(this.value);
 
-  factory DiscussionStateReason.fromJson(String value) =>
-      DiscussionStateReason._(value);
+  factory DiscussionStateReason.fromJson(String value) => DiscussionStateReason._(value);
 
   static const resolved = DiscussionStateReason._('resolved');
   static const outdated = DiscussionStateReason._('outdated');
@@ -291,25 +260,22 @@ final class DiscussionStateReason {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DiscussionStateReason && other.value == value;
+  @override bool operator ==(Object other) => other is DiscussionStateReason && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class DiscussionUserType {
+
   final String value;
 
   const DiscussionUserType._(this.value);
 
-  factory DiscussionUserType.fromJson(String value) =>
-      DiscussionUserType._(value);
+  factory DiscussionUserType.fromJson(String value) => DiscussionUserType._(value);
 
   static const bot = DiscussionUserType._('Bot');
   static const user = DiscussionUserType._('User');
@@ -317,13 +283,10 @@ final class DiscussionUserType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is DiscussionUserType && other.value == value;
+  @override bool operator ==(Object other) => other is DiscussionUserType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

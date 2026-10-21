@@ -8,74 +8,41 @@ part of 'repos.dart';
 class MergedUpstream {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
-
   /// Optional enumerated value serialized in the `merge_type` wire field.
   final SdkOptional<MergedUpstreamMergeType> mergeType;
-
   /// Optional `string` value serialized in the `base_branch` wire field.
   final SdkOptional<String> baseBranch;
 
-  const MergedUpstream(
-      {this.message = const SdkOmitted(),
-      this.mergeType = const SdkOmitted(),
-      this.baseBranch = const SdkOmitted()});
+  const MergedUpstream({this.message = const SdkOmitted(), this.mergeType = const SdkOmitted(), this.baseBranch = const SdkOmitted()});
 
-  MergedUpstream Function(
-      {SdkOptional<String> message,
-      SdkOptional<MergedUpstreamMergeType> mergeType,
-      SdkOptional<String> baseBranch}) get copyWith => _copyWith;
+  MergedUpstream Function({SdkOptional<String> message, SdkOptional<MergedUpstreamMergeType> mergeType, SdkOptional<String> baseBranch}) get copyWith => _copyWith;
 
-  MergedUpstream _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? mergeType = sdkOmittedValue,
-          Object? baseBranch = sdkOmittedValue}) =>
-      MergedUpstream(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-        mergeType: identical(mergeType, sdkOmittedValue)
-            ? this.mergeType
-            : mergeType as SdkOptional<MergedUpstreamMergeType>,
-        baseBranch: identical(baseBranch, sdkOmittedValue)
-            ? this.baseBranch
-            : baseBranch as SdkOptional<String>,
-      );
+  MergedUpstream _copyWith({Object? message = sdkOmittedValue, Object? mergeType = sdkOmittedValue, Object? baseBranch = sdkOmittedValue}) => MergedUpstream(
+    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
+    mergeType: identical(mergeType, sdkOmittedValue) ? this.mergeType : mergeType as SdkOptional<MergedUpstreamMergeType>,
+    baseBranch: identical(baseBranch, sdkOmittedValue) ? this.baseBranch : baseBranch as SdkOptional<String>,
+  );
 
   factory MergedUpstream.fromJson(Map<String, dynamic> json) => MergedUpstream(
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-        mergeType: json['merge_type'] != null
-            ? SdkPresent((json['merge_type'] != null
-                ? MergedUpstreamMergeType.fromJson(json['merge_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        baseBranch: json['base_branch'] != null
-            ? SdkPresent((json['base_branch'] as String?)!)
-            : const SdkOmitted(),
-      );
+    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
+    mergeType: json['merge_type'] != null ? SdkPresent((json['merge_type'] != null ? MergedUpstreamMergeType.fromJson(json['merge_type'] as String) : null)!) : const SdkOmitted(),
+    baseBranch: json['base_branch'] != null ? SdkPresent((json['base_branch'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mergeType) {
-          SdkPresent<MergedUpstreamMergeType>(value: final value) => {
-              'merge_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (baseBranch) {
-          SdkPresent<String>(value: final value) => {
-              'base_branch': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (message) {
+      SdkPresent<String>(value: final value) => {'message': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mergeType) {
+      SdkPresent<MergedUpstreamMergeType>(value: final value) => {'merge_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (baseBranch) {
+      SdkPresent<String>(value: final value) => {'base_branch': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

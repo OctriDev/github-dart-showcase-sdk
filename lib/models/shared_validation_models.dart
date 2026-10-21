@@ -9,289 +9,166 @@ sealed class ValidationErrorErrorsItemValue {
   static const String constructionSurface = 'named';
   const ValidationErrorErrorsItemValue();
   factory ValidationErrorErrorsItemValue.fromJson(Object? json) {
-    if (json is String) {
-      return ValidationErrorErrorsItemValueString(json);
-    }
-    if (json is num) {
-      return ValidationErrorErrorsItemValueInt(json.toInt());
-    }
-    if (json is List) {
-      return ValidationErrorErrorsItemValueListString(
-          json.map((e) => e as String).toList().cast<String>());
-    }
-    throw FormatException(
-        "No variant matched for ValidationErrorErrorsItemValue");
+    if (json is String) { return ValidationErrorErrorsItemValueString(json); }
+    if (json is num) { return ValidationErrorErrorsItemValueInt(json.toInt()); }
+    if (json is List) { return ValidationErrorErrorsItemValueListString(json.map((e) => e as String).toList().cast<String>()); }
+    throw FormatException("No variant matched for ValidationErrorErrorsItemValue");
   }
   Object? toJson();
 }
 
-final class ValidationErrorErrorsItemValueString
-    extends ValidationErrorErrorsItemValue {
+final class ValidationErrorErrorsItemValueString extends ValidationErrorErrorsItemValue {
   final String value;
   const ValidationErrorErrorsItemValueString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class ValidationErrorErrorsItemValueInt
-    extends ValidationErrorErrorsItemValue {
+final class ValidationErrorErrorsItemValueInt extends ValidationErrorErrorsItemValue {
   final int value;
   const ValidationErrorErrorsItemValueInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class ValidationErrorErrorsItemValueListString
-    extends ValidationErrorErrorsItemValue {
+final class ValidationErrorErrorsItemValueListString extends ValidationErrorErrorsItemValue {
   final List<String> value;
   const ValidationErrorErrorsItemValueListString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Required object value serialized in the `errors[]` wire field.
 class ValidationErrorErrorsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `resource` wire field.
   final SdkOptional<String> resource;
-
   /// Optional `string` value serialized in the `field` wire field.
   final SdkOptional<String> field;
-
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
-
   /// Required `string` value serialized in the `code` wire field.
   final String code;
-
   /// Optional `integer` value serialized in the `index` wire field.
   final SdkOptional<int> index;
-
   /// Optional API value serialized in the `value` wire field.
   final SdkOptional<dynamic> value;
 
-  const ValidationErrorErrorsItem(
-      {this.resource = const SdkOmitted(),
-      this.field = const SdkOmitted(),
-      this.message = const SdkOmitted(),
-      required this.code,
-      this.index = const SdkOmitted(),
-      this.value = const SdkOmitted()});
+  const ValidationErrorErrorsItem({this.resource = const SdkOmitted(), this.field = const SdkOmitted(), this.message = const SdkOmitted(), required this.code, this.index = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  ValidationErrorErrorsItem Function(
-      {SdkOptional<String> resource,
-      SdkOptional<String> field,
-      SdkOptional<String> message,
-      String code,
-      SdkOptional<int> index,
-      SdkOptional<dynamic> value}) get copyWith => _copyWith;
+  ValidationErrorErrorsItem Function({SdkOptional<String> resource, SdkOptional<String> field, SdkOptional<String> message, String code, SdkOptional<int> index, SdkOptional<dynamic> value}) get copyWith => _copyWith;
 
-  ValidationErrorErrorsItem _copyWith(
-          {Object? resource = sdkOmittedValue,
-          Object? field = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? code = sdkOmittedValue,
-          Object? index = sdkOmittedValue,
-          Object? value = sdkOmittedValue}) =>
-      ValidationErrorErrorsItem(
-        resource: identical(resource, sdkOmittedValue)
-            ? this.resource
-            : resource as SdkOptional<String>,
-        field: identical(field, sdkOmittedValue)
-            ? this.field
-            : field as SdkOptional<String>,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-        code: identical(code, sdkOmittedValue) ? this.code : code as String,
-        index: identical(index, sdkOmittedValue)
-            ? this.index
-            : index as SdkOptional<int>,
-        value: identical(value, sdkOmittedValue)
-            ? this.value
-            : value as SdkOptional<dynamic>,
-      );
+  ValidationErrorErrorsItem _copyWith({Object? resource = sdkOmittedValue, Object? field = sdkOmittedValue, Object? message = sdkOmittedValue, Object? code = sdkOmittedValue, Object? index = sdkOmittedValue, Object? value = sdkOmittedValue}) => ValidationErrorErrorsItem(
+    resource: identical(resource, sdkOmittedValue) ? this.resource : resource as SdkOptional<String>,
+    field: identical(field, sdkOmittedValue) ? this.field : field as SdkOptional<String>,
+    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
+    code: identical(code, sdkOmittedValue) ? this.code : code as String,
+    index: identical(index, sdkOmittedValue) ? this.index : index as SdkOptional<int>,
+    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<dynamic>,
+  );
 
-  factory ValidationErrorErrorsItem.fromJson(Map<String, dynamic> json) =>
-      ValidationErrorErrorsItem(
-        resource: json['resource'] != null
-            ? SdkPresent((json['resource'] as String?)!)
-            : const SdkOmitted(),
-        field: json['field'] != null
-            ? SdkPresent((json['field'] as String?)!)
-            : const SdkOmitted(),
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-        code: (json['code'] as String?)!,
-        index: json['index'] != null
-            ? SdkPresent(((json['index'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        value: json.containsKey('value')
-            ? SdkPresent(json['value'])
-            : const SdkOmitted(),
-      );
+  factory ValidationErrorErrorsItem.fromJson(Map<String, dynamic> json) => ValidationErrorErrorsItem(
+    resource: json['resource'] != null ? SdkPresent((json['resource'] as String?)!) : const SdkOmitted(),
+    field: json['field'] != null ? SdkPresent((json['field'] as String?)!) : const SdkOmitted(),
+    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
+    code: (json['code'] as String?)!,
+    index: json['index'] != null ? SdkPresent(((json['index'] as num?)?.toInt())!) : const SdkOmitted(),
+    value: json.containsKey('value') ? SdkPresent(json['value']) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (resource) {
-          SdkPresent<String>(value: final value) => {
-              'resource': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (field) {
-          SdkPresent<String>(value: final value) => {
-              'field': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'code': code,
-        ...switch (index) {
-          SdkPresent<int>(value: final value) => {
-              'index': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (value) {
-          SdkPresent<dynamic>(value: final value) => {
-              'value': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (resource) {
+      SdkPresent<String>(value: final value) => {'resource': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (field) {
+      SdkPresent<String>(value: final value) => {'field': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (message) {
+      SdkPresent<String>(value: final value) => {'message': value,},
+      _ => const <String, dynamic>{},
+    },
+    'code': code,
+    ...switch (index) {
+      SdkPresent<int>(value: final value) => {'index': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (value) {
+      SdkPresent<dynamic>(value: final value) => {'value': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Validation Error
 class ValidationError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `documentation_url` wire field.
   final String documentationUrl;
-
   /// Optional array value serialized in the `errors` wire field.
   final SdkOptional<List<ValidationErrorErrorsItem>> errors;
 
-  const ValidationError(
-      {required this.message,
-      required this.documentationUrl,
-      this.errors = const SdkOmitted()});
+  const ValidationError({required this.message, required this.documentationUrl, this.errors = const SdkOmitted()});
 
-  ValidationError Function(
-          {String message,
-          String documentationUrl,
-          SdkOptional<List<ValidationErrorErrorsItem>> errors})
-      get copyWith => _copyWith;
+  ValidationError Function({String message, String documentationUrl, SdkOptional<List<ValidationErrorErrorsItem>> errors}) get copyWith => _copyWith;
 
-  ValidationError _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? documentationUrl = sdkOmittedValue,
-          Object? errors = sdkOmittedValue}) =>
-      ValidationError(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        documentationUrl: identical(documentationUrl, sdkOmittedValue)
-            ? this.documentationUrl
-            : documentationUrl as String,
-        errors: identical(errors, sdkOmittedValue)
-            ? this.errors
-            : errors as SdkOptional<List<ValidationErrorErrorsItem>>,
-      );
+  ValidationError _copyWith({Object? message = sdkOmittedValue, Object? documentationUrl = sdkOmittedValue, Object? errors = sdkOmittedValue}) => ValidationError(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    documentationUrl: identical(documentationUrl, sdkOmittedValue) ? this.documentationUrl : documentationUrl as String,
+    errors: identical(errors, sdkOmittedValue) ? this.errors : errors as SdkOptional<List<ValidationErrorErrorsItem>>,
+  );
 
-  factory ValidationError.fromJson(Map<String, dynamic> json) =>
-      ValidationError(
-        message: (json['message'] as String?)!,
-        documentationUrl: (json['documentation_url'] as String?)!,
-        errors: json['errors'] != null
-            ? SdkPresent(((json['errors'] as List?)
-                ?.map((e) => ValidationErrorErrorsItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ValidationError.fromJson(Map<String, dynamic> json) => ValidationError(
+    message: (json['message'] as String?)!,
+    documentationUrl: (json['documentation_url'] as String?)!,
+    errors: json['errors'] != null ? SdkPresent(((json['errors'] as List?)?.map((e) => ValidationErrorErrorsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'documentation_url': documentationUrl,
-        ...switch (errors) {
-          SdkPresent<List<ValidationErrorErrorsItem>>(value: final value) => {
-              'errors': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'message': message,
+    'documentation_url': documentationUrl,
+    ...switch (errors) {
+      SdkPresent<List<ValidationErrorErrorsItem>>(value: final value) => {'errors': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Validation Error Simple
 class ValidationErrorSimple {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `documentation_url` wire field.
   final String documentationUrl;
-
   /// Optional array value serialized in the `errors` wire field.
   final SdkOptional<List<String>> errors;
 
-  const ValidationErrorSimple(
-      {required this.message,
-      required this.documentationUrl,
-      this.errors = const SdkOmitted()});
+  const ValidationErrorSimple({required this.message, required this.documentationUrl, this.errors = const SdkOmitted()});
 
-  ValidationErrorSimple Function(
-      {String message,
-      String documentationUrl,
-      SdkOptional<List<String>> errors}) get copyWith => _copyWith;
+  ValidationErrorSimple Function({String message, String documentationUrl, SdkOptional<List<String>> errors}) get copyWith => _copyWith;
 
-  ValidationErrorSimple _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? documentationUrl = sdkOmittedValue,
-          Object? errors = sdkOmittedValue}) =>
-      ValidationErrorSimple(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        documentationUrl: identical(documentationUrl, sdkOmittedValue)
-            ? this.documentationUrl
-            : documentationUrl as String,
-        errors: identical(errors, sdkOmittedValue)
-            ? this.errors
-            : errors as SdkOptional<List<String>>,
-      );
+  ValidationErrorSimple _copyWith({Object? message = sdkOmittedValue, Object? documentationUrl = sdkOmittedValue, Object? errors = sdkOmittedValue}) => ValidationErrorSimple(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    documentationUrl: identical(documentationUrl, sdkOmittedValue) ? this.documentationUrl : documentationUrl as String,
+    errors: identical(errors, sdkOmittedValue) ? this.errors : errors as SdkOptional<List<String>>,
+  );
 
-  factory ValidationErrorSimple.fromJson(Map<String, dynamic> json) =>
-      ValidationErrorSimple(
-        message: (json['message'] as String?)!,
-        documentationUrl: (json['documentation_url'] as String?)!,
-        errors: json['errors'] != null
-            ? SdkPresent(
-                ((json['errors'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory ValidationErrorSimple.fromJson(Map<String, dynamic> json) => ValidationErrorSimple(
+    message: (json['message'] as String?)!,
+    documentationUrl: (json['documentation_url'] as String?)!,
+    errors: json['errors'] != null ? SdkPresent(((json['errors'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'documentation_url': documentationUrl,
-        ...switch (errors) {
-          SdkPresent<List<String>>(value: final value) => {
-              'errors': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'message': message,
+    'documentation_url': documentationUrl,
+    ...switch (errors) {
+      SdkPresent<List<String>>(value: final value) => {'errors': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

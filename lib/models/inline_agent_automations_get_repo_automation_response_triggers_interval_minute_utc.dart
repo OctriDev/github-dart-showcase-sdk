@@ -6,443 +6,287 @@ part of 'inline.dart';
 // Inline operation models
 /// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc {
+
   final int value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc.fromJson(
-          int value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(
-          value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc.fromJson(int value) => AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(value);
 
-  static const v0 =
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(0);
-  static const v15 =
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(15);
-  static const v30 =
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(30);
-  static const v45 =
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(45);
+  static const v0 = AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(0);
+  static const v15 = AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(15);
+  static const v30 = AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(30);
+  static const v45 = AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(45);
 
   int toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
-          value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
-          'repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope
-          ._('repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
-          value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
-          'repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
-          value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
-          'repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
-          value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
-          'repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope
-          ._('repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(value);
 
-  static const timelineComment =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
-          ._('timeline_comment');
-  static const reviewComment =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
-          ._('review_comment');
+  static const timelineComment = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._('timeline_comment');
+  static const reviewComment = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._('review_comment');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope
-          ._('repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope
-          ._('repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
-          ._('repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope
-          ._('repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope {
+
   final String value;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(
-      this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(this.value);
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(String value) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(value);
 
-  static const trigger =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._('repository');
+  static const trigger = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope._('repository');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

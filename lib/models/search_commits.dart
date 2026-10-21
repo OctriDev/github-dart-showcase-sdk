@@ -8,452 +8,243 @@ part of 'search.dart';
 class CommitSearchResultItemCommitAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `email` wire field.
   final String email;
-
   /// Required `date-time`-formatted value serialized in the `date` wire field.
   final String date;
 
-  const CommitSearchResultItemCommitAuthor(
-      {required this.name, required this.email, required this.date});
+  const CommitSearchResultItemCommitAuthor({required this.name, required this.email, required this.date});
 
-  CommitSearchResultItemCommitAuthor Function(
-      {String name, String email, String date}) get copyWith => _copyWith;
+  CommitSearchResultItemCommitAuthor Function({String name, String email, String date}) get copyWith => _copyWith;
 
-  CommitSearchResultItemCommitAuthor _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? date = sdkOmittedValue}) =>
-      CommitSearchResultItemCommitAuthor(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        email: identical(email, sdkOmittedValue) ? this.email : email as String,
-        date: identical(date, sdkOmittedValue) ? this.date : date as String,
-      );
+  CommitSearchResultItemCommitAuthor _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => CommitSearchResultItemCommitAuthor(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    email: identical(email, sdkOmittedValue) ? this.email : email as String,
+    date: identical(date, sdkOmittedValue) ? this.date : date as String,
+  );
 
-  factory CommitSearchResultItemCommitAuthor.fromJson(
-          Map<String, dynamic> json) =>
-      CommitSearchResultItemCommitAuthor(
-        name: (json['name'] as String?)!,
-        email: (json['email'] as String?)!,
-        date: (json['date'] as String?)!,
-      );
+  factory CommitSearchResultItemCommitAuthor.fromJson(Map<String, dynamic> json) => CommitSearchResultItemCommitAuthor(
+    name: (json['name'] as String?)!,
+    email: (json['email'] as String?)!,
+    date: (json['date'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'email': email,
-        'date': date,
-      };
+    'name': name,
+    'email': email,
+    'date': date,
+  };
 }
 
 /// Required object value serialized in the `tree` wire field.
 class CommitSearchResultItemCommitTree {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const CommitSearchResultItemCommitTree(
-      {required this.sha, required this.url});
+  const CommitSearchResultItemCommitTree({required this.sha, required this.url});
 
-  CommitSearchResultItemCommitTree Function({String sha, String url})
-      get copyWith => _copyWith;
+  CommitSearchResultItemCommitTree Function({String sha, String url}) get copyWith => _copyWith;
 
-  CommitSearchResultItemCommitTree _copyWith(
-          {Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
-      CommitSearchResultItemCommitTree(
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  CommitSearchResultItemCommitTree _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => CommitSearchResultItemCommitTree(
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory CommitSearchResultItemCommitTree.fromJson(
-          Map<String, dynamic> json) =>
-      CommitSearchResultItemCommitTree(
-        sha: (json['sha'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory CommitSearchResultItemCommitTree.fromJson(Map<String, dynamic> json) => CommitSearchResultItemCommitTree(
+    sha: (json['sha'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'sha': sha,
-        'url': url,
-      };
+    'sha': sha,
+    'url': url,
+  };
 }
 
 /// Required object value serialized in the `commit` wire field.
 class CommitSearchResultItemCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `author` wire field.
   final CommitSearchResultItemCommitAuthor author;
-
   /// Metaproperties for Git author/committer information.
   final NullableGitUser? committer;
-
   /// Required `integer` value serialized in the `comment_count` wire field.
   final int commentCount;
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required object value serialized in the `tree` wire field.
   final CommitSearchResultItemCommitTree tree;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Optional object value serialized in the `verification` wire field.
   final SdkOptional<Verification> verification;
 
-  const CommitSearchResultItemCommit(
-      {required this.author,
-      required this.committer,
-      required this.commentCount,
-      required this.message,
-      required this.tree,
-      required this.url,
-      this.verification = const SdkOmitted()});
+  const CommitSearchResultItemCommit({required this.author, required this.committer, required this.commentCount, required this.message, required this.tree, required this.url, this.verification = const SdkOmitted()});
 
-  CommitSearchResultItemCommit Function(
-      {CommitSearchResultItemCommitAuthor author,
-      NullableGitUser? committer,
-      int commentCount,
-      String message,
-      CommitSearchResultItemCommitTree tree,
-      String url,
-      SdkOptional<Verification> verification}) get copyWith => _copyWith;
+  CommitSearchResultItemCommit Function({CommitSearchResultItemCommitAuthor author, NullableGitUser? committer, int commentCount, String message, CommitSearchResultItemCommitTree tree, String url, SdkOptional<Verification> verification}) get copyWith => _copyWith;
 
-  CommitSearchResultItemCommit _copyWith(
-          {Object? author = sdkOmittedValue,
-          Object? committer = sdkOmittedValue,
-          Object? commentCount = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? tree = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? verification = sdkOmittedValue}) =>
-      CommitSearchResultItemCommit(
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as CommitSearchResultItemCommitAuthor,
-        committer: identical(committer, sdkOmittedValue)
-            ? this.committer
-            : committer as NullableGitUser?,
-        commentCount: identical(commentCount, sdkOmittedValue)
-            ? this.commentCount
-            : commentCount as int,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        tree: identical(tree, sdkOmittedValue)
-            ? this.tree
-            : tree as CommitSearchResultItemCommitTree,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        verification: identical(verification, sdkOmittedValue)
-            ? this.verification
-            : verification as SdkOptional<Verification>,
-      );
+  CommitSearchResultItemCommit _copyWith({Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? commentCount = sdkOmittedValue, Object? message = sdkOmittedValue, Object? tree = sdkOmittedValue, Object? url = sdkOmittedValue, Object? verification = sdkOmittedValue}) => CommitSearchResultItemCommit(
+    author: identical(author, sdkOmittedValue) ? this.author : author as CommitSearchResultItemCommitAuthor,
+    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as NullableGitUser?,
+    commentCount: identical(commentCount, sdkOmittedValue) ? this.commentCount : commentCount as int,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as CommitSearchResultItemCommitTree,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    verification: identical(verification, sdkOmittedValue) ? this.verification : verification as SdkOptional<Verification>,
+  );
 
-  factory CommitSearchResultItemCommit.fromJson(Map<String, dynamic> json) =>
-      CommitSearchResultItemCommit(
-        author: (json['author'] != null
-            ? CommitSearchResultItemCommitAuthor.fromJson(
-                json['author'] as Map<String, dynamic>)
-            : null)!,
-        committer: json.containsKey('committer')
-            ? json['committer'] != null
-                ? NullableGitUser.fromJson(
-                    json['committer'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'committer', 'Required property is missing'),
-        commentCount: ((json['comment_count'] as num?)?.toInt())!,
-        message: (json['message'] as String?)!,
-        tree: (json['tree'] != null
-            ? CommitSearchResultItemCommitTree.fromJson(
-                json['tree'] as Map<String, dynamic>)
-            : null)!,
-        url: (json['url'] as String?)!,
-        verification: json['verification'] != null
-            ? SdkPresent((json['verification'] != null
-                ? Verification.fromJson(
-                    json['verification'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory CommitSearchResultItemCommit.fromJson(Map<String, dynamic> json) => CommitSearchResultItemCommit(
+    author: (json['author'] != null ? CommitSearchResultItemCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!,
+    committer: json.containsKey('committer') ? json['committer'] != null ? NullableGitUser.fromJson(json['committer'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'committer', 'Required property is missing'),
+    commentCount: ((json['comment_count'] as num?)?.toInt())!,
+    message: (json['message'] as String?)!,
+    tree: (json['tree'] != null ? CommitSearchResultItemCommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null)!,
+    url: (json['url'] as String?)!,
+    verification: json['verification'] != null ? SdkPresent((json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'author': author.toJson(),
-        'committer': committer?.toJson(),
-        'comment_count': commentCount,
-        'message': message,
-        'tree': tree.toJson(),
-        'url': url,
-        ...switch (verification) {
-          SdkPresent<Verification>(value: final value) => {
-              'verification': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'author': author.toJson(),
+    'committer': committer?.toJson(),
+    'comment_count': commentCount,
+    'message': message,
+    'tree': tree.toJson(),
+    'url': url,
+    ...switch (verification) {
+      SdkPresent<Verification>(value: final value) => {'verification': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `parents[]` wire field.
 class CommitSearchResultItemParentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Optional `string` value serialized in the `sha` wire field.
   final SdkOptional<String> sha;
 
-  const CommitSearchResultItemParentsItem(
-      {this.url = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.sha = const SdkOmitted()});
+  const CommitSearchResultItemParentsItem({this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.sha = const SdkOmitted()});
 
-  CommitSearchResultItemParentsItem Function(
-      {SdkOptional<String> url,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String> sha}) get copyWith => _copyWith;
+  CommitSearchResultItemParentsItem Function({SdkOptional<String> url, SdkOptional<String> htmlUrl, SdkOptional<String> sha}) get copyWith => _copyWith;
 
-  CommitSearchResultItemParentsItem _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      CommitSearchResultItemParentsItem(
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        sha: identical(sha, sdkOmittedValue)
-            ? this.sha
-            : sha as SdkOptional<String>,
-      );
+  CommitSearchResultItemParentsItem _copyWith({Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? sha = sdkOmittedValue}) => CommitSearchResultItemParentsItem(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
+  );
 
-  factory CommitSearchResultItemParentsItem.fromJson(
-          Map<String, dynamic> json) =>
-      CommitSearchResultItemParentsItem(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        sha: json['sha'] != null
-            ? SdkPresent((json['sha'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory CommitSearchResultItemParentsItem.fromJson(Map<String, dynamic> json) => CommitSearchResultItemParentsItem(
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sha) {
-          SdkPresent<String>(value: final value) => {
-              'sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sha) {
+      SdkPresent<String>(value: final value) => {'sha': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Commit Search Result Item
 class CommitSearchResultItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `uri`-formatted value serialized in the `comments_url` wire field.
   final String commentsUrl;
-
   /// Required object value serialized in the `commit` wire field.
   final CommitSearchResultItemCommit commit;
-
   /// A GitHub user.
   final NullableSimpleUser? author;
-
   /// Metaproperties for Git author/committer information.
   final NullableGitUser? committer;
-
   /// Required array value serialized in the `parents` wire field.
   final List<CommitSearchResultItemParentsItem> parents;
-
   /// Minimal Repository
   final MinimalRepository repository;
-
   /// Required `number` value serialized in the `score` wire field.
   final double score;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Optional array value serialized in the `text_matches` wire field.
   final SdkOptional<List<SearchResultTextMatchesItem>> textMatches;
 
-  const CommitSearchResultItem(
-      {required this.url,
-      required this.sha,
-      required this.htmlUrl,
-      required this.commentsUrl,
-      required this.commit,
-      required this.author,
-      required this.committer,
-      required this.parents,
-      required this.repository,
-      required this.score,
-      required this.nodeId,
-      this.textMatches = const SdkOmitted()});
+  const CommitSearchResultItem({required this.url, required this.sha, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, required this.repository, required this.score, required this.nodeId, this.textMatches = const SdkOmitted()});
 
-  CommitSearchResultItem Function(
-          {String url,
-          String sha,
-          String htmlUrl,
-          String commentsUrl,
-          CommitSearchResultItemCommit commit,
-          NullableSimpleUser? author,
-          NullableGitUser? committer,
-          List<CommitSearchResultItemParentsItem> parents,
-          MinimalRepository repository,
-          double score,
-          String nodeId,
-          SdkOptional<List<SearchResultTextMatchesItem>> textMatches})
-      get copyWith => _copyWith;
+  CommitSearchResultItem Function({String url, String sha, String htmlUrl, String commentsUrl, CommitSearchResultItemCommit commit, NullableSimpleUser? author, NullableGitUser? committer, List<CommitSearchResultItemParentsItem> parents, MinimalRepository repository, double score, String nodeId, SdkOptional<List<SearchResultTextMatchesItem>> textMatches}) get copyWith => _copyWith;
 
-  CommitSearchResultItem _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? commit = sdkOmittedValue,
-          Object? author = sdkOmittedValue,
-          Object? committer = sdkOmittedValue,
-          Object? parents = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? score = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? textMatches = sdkOmittedValue}) =>
-      CommitSearchResultItem(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as String,
-        commit: identical(commit, sdkOmittedValue)
-            ? this.commit
-            : commit as CommitSearchResultItemCommit,
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as NullableSimpleUser?,
-        committer: identical(committer, sdkOmittedValue)
-            ? this.committer
-            : committer as NullableGitUser?,
-        parents: identical(parents, sdkOmittedValue)
-            ? this.parents
-            : parents as List<CommitSearchResultItemParentsItem>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as MinimalRepository,
-        score: identical(score, sdkOmittedValue) ? this.score : score as double,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        textMatches: identical(textMatches, sdkOmittedValue)
-            ? this.textMatches
-            : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
-      );
+  CommitSearchResultItem _copyWith({Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? parents = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? score = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? textMatches = sdkOmittedValue}) => CommitSearchResultItem(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
+    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as CommitSearchResultItemCommit,
+    author: identical(author, sdkOmittedValue) ? this.author : author as NullableSimpleUser?,
+    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as NullableGitUser?,
+    parents: identical(parents, sdkOmittedValue) ? this.parents : parents as List<CommitSearchResultItemParentsItem>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
+    score: identical(score, sdkOmittedValue) ? this.score : score as double,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    textMatches: identical(textMatches, sdkOmittedValue) ? this.textMatches : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
+  );
 
-  factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) =>
-      CommitSearchResultItem(
-        url: (json['url'] as String?)!,
-        sha: (json['sha'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        commentsUrl: (json['comments_url'] as String?)!,
-        commit: (json['commit'] != null
-            ? CommitSearchResultItemCommit.fromJson(
-                json['commit'] as Map<String, dynamic>)
-            : null)!,
-        author: json.containsKey('author')
-            ? json['author'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['author'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'author', 'Required property is missing'),
-        committer: json.containsKey('committer')
-            ? json['committer'] != null
-                ? NullableGitUser.fromJson(
-                    json['committer'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'committer', 'Required property is missing'),
-        parents: ((json['parents'] as List?)
-            ?.map((e) => CommitSearchResultItemParentsItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        repository: (json['repository'] != null
-            ? MinimalRepository.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        score: ((json['score'] as num?)?.toDouble())!,
-        nodeId: (json['node_id'] as String?)!,
-        textMatches: json['text_matches'] != null
-            ? SdkPresent(((json['text_matches'] as List?)
-                ?.map((e) => SearchResultTextMatchesItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) => CommitSearchResultItem(
+    url: (json['url'] as String?)!,
+    sha: (json['sha'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    commentsUrl: (json['comments_url'] as String?)!,
+    commit: (json['commit'] != null ? CommitSearchResultItemCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
+    author: json.containsKey('author') ? json['author'] != null ? NullableSimpleUser.fromJson(json['author'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'author', 'Required property is missing'),
+    committer: json.containsKey('committer') ? json['committer'] != null ? NullableGitUser.fromJson(json['committer'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'committer', 'Required property is missing'),
+    parents: ((json['parents'] as List?)?.map((e) => CommitSearchResultItemParentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    score: ((json['score'] as num?)?.toDouble())!,
+    nodeId: (json['node_id'] as String?)!,
+    textMatches: json['text_matches'] != null ? SdkPresent(((json['text_matches'] as List?)?.map((e) => SearchResultTextMatchesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'sha': sha,
-        'html_url': htmlUrl,
-        'comments_url': commentsUrl,
-        'commit': commit.toJson(),
-        'author': author?.toJson(),
-        'committer': committer?.toJson(),
-        'parents': parents.map((item) => item.toJson()).toList(),
-        'repository': repository.toJson(),
-        'score': score,
-        'node_id': nodeId,
-        ...switch (textMatches) {
-          SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {
-              'text_matches': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'url': url,
+    'sha': sha,
+    'html_url': htmlUrl,
+    'comments_url': commentsUrl,
+    'commit': commit.toJson(),
+    'author': author?.toJson(),
+    'committer': committer?.toJson(),
+    'parents': parents.map((item) => item.toJson()).toList(),
+    'repository': repository.toJson(),
+    'score': score,
+    'node_id': nodeId,
+    ...switch (textMatches) {
+      SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {'text_matches': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

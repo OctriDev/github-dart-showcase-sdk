@@ -6,196 +6,145 @@ part of 'inline.dart';
 // Inline operation models
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle {
+
   final String value;
 
-  const NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(
-      this.value);
+  const NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(this.value);
 
-  factory NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle.fromJson(
-          String value) =>
-      NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(value);
+  factory NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle.fromJson(String value) => NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(value);
 
-  static const prTitle =
-      NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(
-          'PR_TITLE');
-  static const mergeMessage =
-      NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(
-          'MERGE_MESSAGE');
+  static const prTitle = NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage = NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage {
+
   final String value;
 
-  const NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
-      this.value);
+  const NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(this.value);
 
-  factory NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.fromJson(
-          String value) =>
-      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
-          value);
+  factory NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.fromJson(String value) => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(value);
 
-  static const prBody =
-      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
-          'PR_BODY');
-  static const commitMessages =
-      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
-          'COMMIT_MESSAGES');
-  static const blank =
-      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
-          'BLANK');
+  static const prBody = NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages = NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank = NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle {
+
   final String value;
 
-  const NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
-      this.value);
+  const NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(this.value);
 
-  factory NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.fromJson(
-          String value) =>
-      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
-          value);
+  factory NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.fromJson(String value) => NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(value);
 
-  static const prTitle =
-      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
-          'PR_TITLE');
-  static const commitOrPrTitle =
-      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
-          'COMMIT_OR_PR_TITLE');
+  static const prTitle = NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle = NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Describe whether all repositories have been selected or there's a selection involved
 final class NullableScopedInstallationRepositorySelection {
+
   final String value;
 
   const NullableScopedInstallationRepositorySelection._(this.value);
 
-  factory NullableScopedInstallationRepositorySelection.fromJson(
-          String value) =>
-      NullableScopedInstallationRepositorySelection._(value);
+  factory NullableScopedInstallationRepositorySelection.fromJson(String value) => NullableScopedInstallationRepositorySelection._(value);
 
   static const all = NullableScopedInstallationRepositorySelection._('all');
-  static const selected =
-      NullableScopedInstallationRepositorySelection._('selected');
+  static const selected = NullableScopedInstallationRepositorySelection._('selected');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is NullableScopedInstallationRepositorySelection &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is NullableScopedInstallationRepositorySelection && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The ownership type of the team
 final class NullableTeamSimpleType {
+
   final String value;
 
   const NullableTeamSimpleType._(this.value);
 
-  factory NullableTeamSimpleType.fromJson(String value) =>
-      NullableTeamSimpleType._(value);
+  factory NullableTeamSimpleType.fromJson(String value) => NullableTeamSimpleType._(value);
 
   static const enterprise = NullableTeamSimpleType._('enterprise');
   static const organization = NullableTeamSimpleType._('organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is NullableTeamSimpleType && other.value == value;
+  @override bool operator ==(Object other) => other is NullableTeamSimpleType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Whether the inclusion was defined at the organization or enterprise level
 final class OidcCustomPropertyInclusionInclusionSource {
+
   final String value;
 
   const OidcCustomPropertyInclusionInclusionSource._(this.value);
 
-  factory OidcCustomPropertyInclusionInclusionSource.fromJson(String value) =>
-      OidcCustomPropertyInclusionInclusionSource._(value);
+  factory OidcCustomPropertyInclusionInclusionSource.fromJson(String value) => OidcCustomPropertyInclusionInclusionSource._(value);
 
-  static const organization =
-      OidcCustomPropertyInclusionInclusionSource._('organization');
-  static const enterprise =
-      OidcCustomPropertyInclusionInclusionSource._('enterprise');
+  static const organization = OidcCustomPropertyInclusionInclusionSource._('organization');
+  static const enterprise = OidcCustomPropertyInclusionInclusionSource._('enterprise');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is OidcCustomPropertyInclusionInclusionSource &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is OidcCustomPropertyInclusionInclusionSource && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Visibility of a secret
 final class OrganizationActionsSecretVisibility {
+
   final String value;
 
   const OrganizationActionsSecretVisibility._(this.value);
 
-  factory OrganizationActionsSecretVisibility.fromJson(String value) =>
-      OrganizationActionsSecretVisibility._(value);
+  factory OrganizationActionsSecretVisibility.fromJson(String value) => OrganizationActionsSecretVisibility._(value);
 
   static const all = OrganizationActionsSecretVisibility._('all');
   static const private = OrganizationActionsSecretVisibility._('private');
@@ -203,25 +152,22 @@ final class OrganizationActionsSecretVisibility {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationActionsSecretVisibility && other.value == value;
+  @override bool operator ==(Object other) => other is OrganizationActionsSecretVisibility && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Visibility of a variable
 final class OrganizationActionsVariableVisibility {
+
   final String value;
 
   const OrganizationActionsVariableVisibility._(this.value);
 
-  factory OrganizationActionsVariableVisibility.fromJson(String value) =>
-      OrganizationActionsVariableVisibility._(value);
+  factory OrganizationActionsVariableVisibility.fromJson(String value) => OrganizationActionsVariableVisibility._(value);
 
   static const all = OrganizationActionsVariableVisibility._('all');
   static const private = OrganizationActionsVariableVisibility._('private');
@@ -229,116 +175,97 @@ final class OrganizationActionsVariableVisibility {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationActionsVariableVisibility && other.value == value;
+  @override bool operator ==(Object other) => other is OrganizationActionsVariableVisibility && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The data type of the issue field.
 final class OrganizationCreateIssueFieldDataType {
+
   final String value;
 
   const OrganizationCreateIssueFieldDataType._(this.value);
 
-  factory OrganizationCreateIssueFieldDataType.fromJson(String value) =>
-      OrganizationCreateIssueFieldDataType._(value);
+  factory OrganizationCreateIssueFieldDataType.fromJson(String value) => OrganizationCreateIssueFieldDataType._(value);
 
   static const text = OrganizationCreateIssueFieldDataType._('text');
   static const date = OrganizationCreateIssueFieldDataType._('date');
-  static const singleSelect =
-      OrganizationCreateIssueFieldDataType._('single_select');
-  static const multiSelect =
-      OrganizationCreateIssueFieldDataType._('multi_select');
+  static const singleSelect = OrganizationCreateIssueFieldDataType._('single_select');
+  static const multiSelect = OrganizationCreateIssueFieldDataType._('multi_select');
   static const number = OrganizationCreateIssueFieldDataType._('number');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationCreateIssueFieldDataType && other.value == value;
+  @override bool operator ==(Object other) => other is OrganizationCreateIssueFieldDataType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Color for the option.
 final class OrganizationCreateIssueFieldOptionsItemColor {
+
   final String value;
 
   const OrganizationCreateIssueFieldOptionsItemColor._(this.value);
 
-  factory OrganizationCreateIssueFieldOptionsItemColor.fromJson(String value) =>
-      OrganizationCreateIssueFieldOptionsItemColor._(value);
+  factory OrganizationCreateIssueFieldOptionsItemColor.fromJson(String value) => OrganizationCreateIssueFieldOptionsItemColor._(value);
 
   static const gray = OrganizationCreateIssueFieldOptionsItemColor._('gray');
   static const blue = OrganizationCreateIssueFieldOptionsItemColor._('blue');
   static const green = OrganizationCreateIssueFieldOptionsItemColor._('green');
-  static const yellow =
-      OrganizationCreateIssueFieldOptionsItemColor._('yellow');
-  static const orange =
-      OrganizationCreateIssueFieldOptionsItemColor._('orange');
+  static const yellow = OrganizationCreateIssueFieldOptionsItemColor._('yellow');
+  static const orange = OrganizationCreateIssueFieldOptionsItemColor._('orange');
   static const red = OrganizationCreateIssueFieldOptionsItemColor._('red');
   static const pink = OrganizationCreateIssueFieldOptionsItemColor._('pink');
-  static const purple =
-      OrganizationCreateIssueFieldOptionsItemColor._('purple');
+  static const purple = OrganizationCreateIssueFieldOptionsItemColor._('purple');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationCreateIssueFieldOptionsItemColor &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is OrganizationCreateIssueFieldOptionsItemColor && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues). Only used when the visibility settings feature is enabled. Defaults to `organization_members_only`.
 final class OrganizationCreateIssueFieldVisibility {
+
   final String value;
 
   const OrganizationCreateIssueFieldVisibility._(this.value);
 
-  factory OrganizationCreateIssueFieldVisibility.fromJson(String value) =>
-      OrganizationCreateIssueFieldVisibility._(value);
+  factory OrganizationCreateIssueFieldVisibility.fromJson(String value) => OrganizationCreateIssueFieldVisibility._(value);
 
-  static const organizationMembersOnly =
-      OrganizationCreateIssueFieldVisibility._('organization_members_only');
+  static const organizationMembersOnly = OrganizationCreateIssueFieldVisibility._('organization_members_only');
   static const all = OrganizationCreateIssueFieldVisibility._('all');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationCreateIssueFieldVisibility && other.value == value;
+  @override bool operator ==(Object other) => other is OrganizationCreateIssueFieldVisibility && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Color for the issue type.
 final class OrganizationCreateIssueTypeColor {
+
   final String value;
 
   const OrganizationCreateIssueTypeColor._(this.value);
 
-  factory OrganizationCreateIssueTypeColor.fromJson(String value) =>
-      OrganizationCreateIssueTypeColor._(value);
+  factory OrganizationCreateIssueTypeColor.fromJson(String value) => OrganizationCreateIssueTypeColor._(value);
 
   static const gray = OrganizationCreateIssueTypeColor._('gray');
   static const blue = OrganizationCreateIssueTypeColor._('blue');
@@ -351,13 +278,10 @@ final class OrganizationCreateIssueTypeColor {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationCreateIssueTypeColor && other.value == value;
+  @override bool operator ==(Object other) => other is OrganizationCreateIssueTypeColor && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

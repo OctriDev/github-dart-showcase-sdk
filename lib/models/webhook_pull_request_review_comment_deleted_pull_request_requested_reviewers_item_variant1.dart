@@ -8,323 +8,143 @@ part of 'webhook_pull_request_review_comment_deleted_pull_request_requested_revi
 class WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `deleted` wire field.
   final SdkOptional<bool> deleted;
-
   /// Description of the team
   final SdkOptional<String?> description;
-
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Unique identifier of the team
   final int id;
-
   /// Optional `uri-template`-formatted value serialized in the `members_url` wire field.
   final SdkOptional<String> membersUrl;
-
   /// Name of the team
   final String name;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional object value serialized in the `parent` wire field.
-  final SdkOptional<
-          WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?>
-      parent;
-
+  final SdkOptional<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?> parent;
   /// Permission that the team will have for its repositories
   final SdkOptional<String> permission;
-
   /// Optional enumerated value serialized in the `privacy` wire field.
-  final SdkOptional<
-          WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy>
-      privacy;
-
+  final SdkOptional<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy> privacy;
   /// Optional `uri`-formatted value serialized in the `repositories_url` wire field.
   final SdkOptional<String> repositoriesUrl;
-
   /// Optional `string` value serialized in the `slug` wire field.
   final SdkOptional<String> slug;
-
   /// URL for the team
   final SdkOptional<String> url;
 
-  const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
-      {this.deleted = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      required this.id,
-      this.membersUrl = const SdkOmitted(),
-      required this.name,
-      this.nodeId = const SdkOmitted(),
-      this.parent = const SdkOmitted(),
-      this.permission = const SdkOmitted(),
-      this.privacy = const SdkOmitted(),
-      this.repositoriesUrl = const SdkOmitted(),
-      this.slug = const SdkOmitted(),
-      this.url = const SdkOmitted()});
+  const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1({this.deleted = const SdkOmitted(), this.description = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), required this.id, this.membersUrl = const SdkOmitted(), required this.name, this.nodeId = const SdkOmitted(), this.parent = const SdkOmitted(), this.permission = const SdkOmitted(), this.privacy = const SdkOmitted(), this.repositoriesUrl = const SdkOmitted(), this.slug = const SdkOmitted(), this.url = const SdkOmitted()});
 
-  WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1 Function(
-      {SdkOptional<bool> deleted,
-      SdkOptional<String?> description,
-      SdkOptional<String> htmlUrl,
-      int id,
-      SdkOptional<String> membersUrl,
-      String name,
-      SdkOptional<String> nodeId,
-      SdkOptional<
-              WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?>
-          parent,
-      SdkOptional<String> permission,
-      SdkOptional<
-              WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy>
-          privacy,
-      SdkOptional<String> repositoriesUrl,
-      SdkOptional<String> slug,
-      SdkOptional<String> url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1 Function({SdkOptional<bool> deleted, SdkOptional<String?> description, SdkOptional<String> htmlUrl, int id, SdkOptional<String> membersUrl, String name, SdkOptional<String> nodeId, SdkOptional<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?> parent, SdkOptional<String> permission, SdkOptional<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy> privacy, SdkOptional<String> repositoriesUrl, SdkOptional<String> slug, SdkOptional<String> url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1
-      _copyWith(
-              {Object? deleted = sdkOmittedValue,
-              Object? description = sdkOmittedValue,
-              Object? htmlUrl = sdkOmittedValue,
-              Object? id = sdkOmittedValue,
-              Object? membersUrl = sdkOmittedValue,
-              Object? name = sdkOmittedValue,
-              Object? nodeId = sdkOmittedValue,
-              Object? parent = sdkOmittedValue,
-              Object? permission = sdkOmittedValue,
-              Object? privacy = sdkOmittedValue,
-              Object? repositoriesUrl = sdkOmittedValue,
-              Object? slug = sdkOmittedValue,
-              Object? url = sdkOmittedValue}) =>
-          WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
-            deleted: identical(deleted, sdkOmittedValue)
-                ? this.deleted
-                : deleted as SdkOptional<bool>,
-            description: identical(description, sdkOmittedValue)
-                ? this.description
-                : description as SdkOptional<String?>,
-            htmlUrl: identical(htmlUrl, sdkOmittedValue)
-                ? this.htmlUrl
-                : htmlUrl as SdkOptional<String>,
-            id: identical(id, sdkOmittedValue) ? this.id : id as int,
-            membersUrl: identical(membersUrl, sdkOmittedValue)
-                ? this.membersUrl
-                : membersUrl as SdkOptional<String>,
-            name: identical(name, sdkOmittedValue) ? this.name : name as String,
-            nodeId: identical(nodeId, sdkOmittedValue)
-                ? this.nodeId
-                : nodeId as SdkOptional<String>,
-            parent: identical(parent, sdkOmittedValue)
-                ? this.parent
-                : parent as SdkOptional<
-                    WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?>,
-            permission: identical(permission, sdkOmittedValue)
-                ? this.permission
-                : permission as SdkOptional<String>,
-            privacy: identical(privacy, sdkOmittedValue)
-                ? this.privacy
-                : privacy as SdkOptional<
-                    WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy>,
-            repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
-                ? this.repositoriesUrl
-                : repositoriesUrl as SdkOptional<String>,
-            slug: identical(slug, sdkOmittedValue)
-                ? this.slug
-                : slug as SdkOptional<String>,
-            url: identical(url, sdkOmittedValue)
-                ? this.url
-                : url as SdkOptional<String>,
-          );
+  WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1 _copyWith({Object? deleted = sdkOmittedValue, Object? description = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? parent = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
+    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    parent: identical(parent, sdkOmittedValue) ? this.parent : parent as SdkOptional<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?>,
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<String>,
+    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as SdkOptional<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy>,
+    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as SdkOptional<String>,
+    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+  );
 
-  factory WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
-        deleted: json['deleted'] != null
-            ? SdkPresent((json['deleted'] as bool?)!)
-            : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        id: ((json['id'] as num?)?.toInt())!,
-        membersUrl: json['members_url'] != null
-            ? SdkPresent((json['members_url'] as String?)!)
-            : const SdkOmitted(),
-        name: (json['name'] as String?)!,
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        parent: json.containsKey('parent')
-            ? SdkPresent(json['parent'] != null
-                ? WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent
-                    .fromJson(json['parent'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        permission: json['permission'] != null
-            ? SdkPresent((json['permission'] as String?)!)
-            : const SdkOmitted(),
-        privacy: json['privacy'] != null
-            ? SdkPresent((json['privacy'] != null
-                ? WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy
-                    .fromJson(json['privacy'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        repositoriesUrl: json['repositories_url'] != null
-            ? SdkPresent((json['repositories_url'] as String?)!)
-            : const SdkOmitted(),
-        slug: json['slug'] != null
-            ? SdkPresent((json['slug'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
+    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    id: ((json['id'] as num?)?.toInt())!,
+    membersUrl: json['members_url'] != null ? SdkPresent((json['members_url'] as String?)!) : const SdkOmitted(),
+    name: (json['name'] as String?)!,
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    parent: json.containsKey('parent') ? SdkPresent(json['parent'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    permission: json['permission'] != null ? SdkPresent((json['permission'] as String?)!) : const SdkOmitted(),
+    privacy: json['privacy'] != null ? SdkPresent((json['privacy'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy.fromJson(json['privacy'] as String) : null)!) : const SdkOmitted(),
+    repositoriesUrl: json['repositories_url'] != null ? SdkPresent((json['repositories_url'] as String?)!) : const SdkOmitted(),
+    slug: json['slug'] != null ? SdkPresent((json['slug'] as String?)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (deleted) {
-          SdkPresent<bool>(value: final value) => {
-              'deleted': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'id': id,
-        ...switch (membersUrl) {
-          SdkPresent<String>(value: final value) => {
-              'members_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name,
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (parent) {
-          SdkPresent<
-                WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?>(
-            value: final value
-          ) =>
-            {
-              'parent': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (permission) {
-          SdkPresent<String>(value: final value) => {
-              'permission': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (privacy) {
-          SdkPresent<
-                WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy>(
-            value: final value
-          ) =>
-            {
-              'privacy': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoriesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'repositories_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (slug) {
-          SdkPresent<String>(value: final value) => {
-              'slug': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (deleted) {
+      SdkPresent<bool>(value: final value) => {'deleted': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'id': id,
+    ...switch (membersUrl) {
+      SdkPresent<String>(value: final value) => {'members_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name,
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (parent) {
+      SdkPresent<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Parent?>(value: final value) => {'parent': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (permission) {
+      SdkPresent<String>(value: final value) => {'permission': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (privacy) {
+      SdkPresent<WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1Privacy>(value: final value) => {'privacy': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoriesUrl) {
+      SdkPresent<String>(value: final value) => {'repositories_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (slug) {
+      SdkPresent<String>(value: final value) => {'slug': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem();
-  factory WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem.fromJson(
-      Object? json) {
+  factory WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
-              value);
-        }
-      } catch (_) {}
+      try { final value = WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(value); } } catch (_) {}
+      try { final value = WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(value); } } catch (_) {}
     }
-    try {
-      return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(
-          WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
-          WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem");
+    try { return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0
-    extends WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem {
-  final WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0
-      value;
-  const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+final class WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0 extends WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem {
+  final WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0 value;
+  const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1
-    extends WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem {
-  final WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1
-      value;
-  const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+final class WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1 extends WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem {
+  final WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1 value;
+  const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }

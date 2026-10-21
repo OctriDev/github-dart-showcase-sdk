@@ -8,128 +8,62 @@ part of 'secret_scanning.dart';
 class SecretScanningCustomPatternToUpdate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The updated regular expression of the custom pattern.
   final SdkOptional<String> pattern;
-
   /// The updated start delimiter regex for the custom pattern.
   final SdkOptional<String> startDelimiter;
-
   /// The updated end delimiter regex for the custom pattern.
   final SdkOptional<String> endDelimiter;
-
   /// Updated list of regexes that the secret must match.
   final SdkOptional<List<String>> mustMatch;
-
   /// Updated list of regexes that the secret must not match.
   final SdkOptional<List<String>> mustNotMatch;
-
   /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
   final String? customPatternVersion;
 
-  const SecretScanningCustomPatternToUpdate(
-      {this.pattern = const SdkOmitted(),
-      this.startDelimiter = const SdkOmitted(),
-      this.endDelimiter = const SdkOmitted(),
-      this.mustMatch = const SdkOmitted(),
-      this.mustNotMatch = const SdkOmitted(),
-      required this.customPatternVersion});
+  const SecretScanningCustomPatternToUpdate({this.pattern = const SdkOmitted(), this.startDelimiter = const SdkOmitted(), this.endDelimiter = const SdkOmitted(), this.mustMatch = const SdkOmitted(), this.mustNotMatch = const SdkOmitted(), required this.customPatternVersion});
 
-  SecretScanningCustomPatternToUpdate Function(
-      {SdkOptional<String> pattern,
-      SdkOptional<String> startDelimiter,
-      SdkOptional<String> endDelimiter,
-      SdkOptional<List<String>> mustMatch,
-      SdkOptional<List<String>> mustNotMatch,
-      String? customPatternVersion}) get copyWith => _copyWith;
+  SecretScanningCustomPatternToUpdate Function({SdkOptional<String> pattern, SdkOptional<String> startDelimiter, SdkOptional<String> endDelimiter, SdkOptional<List<String>> mustMatch, SdkOptional<List<String>> mustNotMatch, String? customPatternVersion}) get copyWith => _copyWith;
 
-  SecretScanningCustomPatternToUpdate _copyWith(
-          {Object? pattern = sdkOmittedValue,
-          Object? startDelimiter = sdkOmittedValue,
-          Object? endDelimiter = sdkOmittedValue,
-          Object? mustMatch = sdkOmittedValue,
-          Object? mustNotMatch = sdkOmittedValue,
-          Object? customPatternVersion = sdkOmittedValue}) =>
-      SecretScanningCustomPatternToUpdate(
-        pattern: identical(pattern, sdkOmittedValue)
-            ? this.pattern
-            : pattern as SdkOptional<String>,
-        startDelimiter: identical(startDelimiter, sdkOmittedValue)
-            ? this.startDelimiter
-            : startDelimiter as SdkOptional<String>,
-        endDelimiter: identical(endDelimiter, sdkOmittedValue)
-            ? this.endDelimiter
-            : endDelimiter as SdkOptional<String>,
-        mustMatch: identical(mustMatch, sdkOmittedValue)
-            ? this.mustMatch
-            : mustMatch as SdkOptional<List<String>>,
-        mustNotMatch: identical(mustNotMatch, sdkOmittedValue)
-            ? this.mustNotMatch
-            : mustNotMatch as SdkOptional<List<String>>,
-        customPatternVersion: identical(customPatternVersion, sdkOmittedValue)
-            ? this.customPatternVersion
-            : customPatternVersion as String?,
-      );
+  SecretScanningCustomPatternToUpdate _copyWith({Object? pattern = sdkOmittedValue, Object? startDelimiter = sdkOmittedValue, Object? endDelimiter = sdkOmittedValue, Object? mustMatch = sdkOmittedValue, Object? mustNotMatch = sdkOmittedValue, Object? customPatternVersion = sdkOmittedValue}) => SecretScanningCustomPatternToUpdate(
+    pattern: identical(pattern, sdkOmittedValue) ? this.pattern : pattern as SdkOptional<String>,
+    startDelimiter: identical(startDelimiter, sdkOmittedValue) ? this.startDelimiter : startDelimiter as SdkOptional<String>,
+    endDelimiter: identical(endDelimiter, sdkOmittedValue) ? this.endDelimiter : endDelimiter as SdkOptional<String>,
+    mustMatch: identical(mustMatch, sdkOmittedValue) ? this.mustMatch : mustMatch as SdkOptional<List<String>>,
+    mustNotMatch: identical(mustNotMatch, sdkOmittedValue) ? this.mustNotMatch : mustNotMatch as SdkOptional<List<String>>,
+    customPatternVersion: identical(customPatternVersion, sdkOmittedValue) ? this.customPatternVersion : customPatternVersion as String?,
+  );
 
-  factory SecretScanningCustomPatternToUpdate.fromJson(
-          Map<String, dynamic> json) =>
-      SecretScanningCustomPatternToUpdate(
-        pattern: json['pattern'] != null
-            ? SdkPresent((json['pattern'] as String?)!)
-            : const SdkOmitted(),
-        startDelimiter: json['start_delimiter'] != null
-            ? SdkPresent((json['start_delimiter'] as String?)!)
-            : const SdkOmitted(),
-        endDelimiter: json['end_delimiter'] != null
-            ? SdkPresent((json['end_delimiter'] as String?)!)
-            : const SdkOmitted(),
-        mustMatch: json['must_match'] != null
-            ? SdkPresent(((json['must_match'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        mustNotMatch: json['must_not_match'] != null
-            ? SdkPresent(((json['must_not_match'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        customPatternVersion: json.containsKey('custom_pattern_version')
-            ? json['custom_pattern_version'] as String?
-            : throw ArgumentError.value(
-                null, 'custom_pattern_version', 'Required property is missing'),
-      );
+  factory SecretScanningCustomPatternToUpdate.fromJson(Map<String, dynamic> json) => SecretScanningCustomPatternToUpdate(
+    pattern: json['pattern'] != null ? SdkPresent((json['pattern'] as String?)!) : const SdkOmitted(),
+    startDelimiter: json['start_delimiter'] != null ? SdkPresent((json['start_delimiter'] as String?)!) : const SdkOmitted(),
+    endDelimiter: json['end_delimiter'] != null ? SdkPresent((json['end_delimiter'] as String?)!) : const SdkOmitted(),
+    mustMatch: json['must_match'] != null ? SdkPresent(((json['must_match'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    mustNotMatch: json['must_not_match'] != null ? SdkPresent(((json['must_not_match'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    customPatternVersion: json.containsKey('custom_pattern_version') ? json['custom_pattern_version'] as String? : throw ArgumentError.value(null, 'custom_pattern_version', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (pattern) {
-          SdkPresent<String>(value: final value) => {
-              'pattern': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startDelimiter) {
-          SdkPresent<String>(value: final value) => {
-              'start_delimiter': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (endDelimiter) {
-          SdkPresent<String>(value: final value) => {
-              'end_delimiter': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mustMatch) {
-          SdkPresent<List<String>>(value: final value) => {
-              'must_match': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mustNotMatch) {
-          SdkPresent<List<String>>(value: final value) => {
-              'must_not_match': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'custom_pattern_version': customPatternVersion,
-      };
+    ...switch (pattern) {
+      SdkPresent<String>(value: final value) => {'pattern': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startDelimiter) {
+      SdkPresent<String>(value: final value) => {'start_delimiter': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endDelimiter) {
+      SdkPresent<String>(value: final value) => {'end_delimiter': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mustMatch) {
+      SdkPresent<List<String>>(value: final value) => {'must_match': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mustNotMatch) {
+      SdkPresent<List<String>>(value: final value) => {'must_not_match': value,},
+      _ => const <String, dynamic>{},
+    },
+    'custom_pattern_version': customPatternVersion,
+  };
 }

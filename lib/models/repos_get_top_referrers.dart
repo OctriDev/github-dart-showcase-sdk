@@ -8,45 +8,32 @@ part of 'repos.dart';
 class ReferrerTraffic {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `referrer` wire field.
   final String referrer;
-
   /// Required `integer` value serialized in the `count` wire field.
   final int count;
-
   /// Required `integer` value serialized in the `uniques` wire field.
   final int uniques;
 
-  const ReferrerTraffic(
-      {required this.referrer, required this.count, required this.uniques});
+  const ReferrerTraffic({required this.referrer, required this.count, required this.uniques});
 
-  ReferrerTraffic Function({String referrer, int count, int uniques})
-      get copyWith => _copyWith;
+  ReferrerTraffic Function({String referrer, int count, int uniques}) get copyWith => _copyWith;
 
-  ReferrerTraffic _copyWith(
-          {Object? referrer = sdkOmittedValue,
-          Object? count = sdkOmittedValue,
-          Object? uniques = sdkOmittedValue}) =>
-      ReferrerTraffic(
-        referrer: identical(referrer, sdkOmittedValue)
-            ? this.referrer
-            : referrer as String,
-        count: identical(count, sdkOmittedValue) ? this.count : count as int,
-        uniques:
-            identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
-      );
+  ReferrerTraffic _copyWith({Object? referrer = sdkOmittedValue, Object? count = sdkOmittedValue, Object? uniques = sdkOmittedValue}) => ReferrerTraffic(
+    referrer: identical(referrer, sdkOmittedValue) ? this.referrer : referrer as String,
+    count: identical(count, sdkOmittedValue) ? this.count : count as int,
+    uniques: identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
+  );
 
-  factory ReferrerTraffic.fromJson(Map<String, dynamic> json) =>
-      ReferrerTraffic(
-        referrer: (json['referrer'] as String?)!,
-        count: ((json['count'] as num?)?.toInt())!,
-        uniques: ((json['uniques'] as num?)?.toInt())!,
-      );
+  factory ReferrerTraffic.fromJson(Map<String, dynamic> json) => ReferrerTraffic(
+    referrer: (json['referrer'] as String?)!,
+    count: ((json['count'] as num?)?.toInt())!,
+    uniques: ((json['uniques'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'referrer': referrer,
-        'count': count,
-        'uniques': uniques,
-      };
+    'referrer': referrer,
+    'count': count,
+    'uniques': uniques,
+  };
 }

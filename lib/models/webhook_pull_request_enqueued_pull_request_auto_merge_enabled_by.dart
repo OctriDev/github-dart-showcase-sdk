@@ -8,600 +8,294 @@ part of 'webhook_pull_request_enqueued.dart';
 class WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
   final SdkOptional<String> avatarUrl;
-
   /// Optional `boolean` value serialized in the `deleted` wire field.
   final SdkOptional<bool> deleted;
-
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
-
   /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
-
   /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
   final SdkOptional<String> followersUrl;
-
   /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
   final SdkOptional<String> followingUrl;
-
   /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
   final SdkOptional<String> gistsUrl;
-
   /// Optional `string` value serialized in the `gravatar_id` wire field.
   final SdkOptional<String> gravatarId;
-
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `login` wire field.
   final String login;
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
   final SdkOptional<String> organizationsUrl;
-
   /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
   final SdkOptional<String> receivedEventsUrl;
-
   /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
   final SdkOptional<String> reposUrl;
-
   /// Optional `boolean` value serialized in the `site_admin` wire field.
   final SdkOptional<bool> siteAdmin;
-
   /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
   final SdkOptional<String> starredUrl;
-
   /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
   final SdkOptional<String> subscriptionsUrl;
-
   /// Optional enumerated value serialized in the `type` wire field.
-  final SdkOptional<WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType>
-      type_;
-
+  final SdkOptional<WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType> type_;
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy(
-      {this.avatarUrl = const SdkOmitted(),
-      this.deleted = const SdkOmitted(),
-      this.email = const SdkOmitted(),
-      this.eventsUrl = const SdkOmitted(),
-      this.followersUrl = const SdkOmitted(),
-      this.followingUrl = const SdkOmitted(),
-      this.gistsUrl = const SdkOmitted(),
-      this.gravatarId = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      required this.id,
-      required this.login,
-      this.name = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.organizationsUrl = const SdkOmitted(),
-      this.receivedEventsUrl = const SdkOmitted(),
-      this.reposUrl = const SdkOmitted(),
-      this.siteAdmin = const SdkOmitted(),
-      this.starredUrl = const SdkOmitted(),
-      this.subscriptionsUrl = const SdkOmitted(),
-      this.type_ = const SdkOmitted(),
-      this.url = const SdkOmitted(),
-      this.userViewType = const SdkOmitted()});
+  const WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy({this.avatarUrl = const SdkOmitted(), this.deleted = const SdkOmitted(), this.email = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), required this.id, required this.login, this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted(), this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy Function(
-      {SdkOptional<String> avatarUrl,
-      SdkOptional<bool> deleted,
-      SdkOptional<String?> email,
-      SdkOptional<String> eventsUrl,
-      SdkOptional<String> followersUrl,
-      SdkOptional<String> followingUrl,
-      SdkOptional<String> gistsUrl,
-      SdkOptional<String> gravatarId,
-      SdkOptional<String> htmlUrl,
-      int id,
-      String login,
-      SdkOptional<String> name,
-      SdkOptional<String> nodeId,
-      SdkOptional<String> organizationsUrl,
-      SdkOptional<String> receivedEventsUrl,
-      SdkOptional<String> reposUrl,
-      SdkOptional<bool> siteAdmin,
-      SdkOptional<String> starredUrl,
-      SdkOptional<String> subscriptionsUrl,
-      SdkOptional<WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType>
-          type_,
-      SdkOptional<String> url,
-      SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy Function({SdkOptional<String> avatarUrl, SdkOptional<bool> deleted, SdkOptional<String?> email, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, int id, String login, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType> type_, SdkOptional<String> url, SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy _copyWith(
-          {Object? avatarUrl = sdkOmittedValue,
-          Object? deleted = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? followersUrl = sdkOmittedValue,
-          Object? followingUrl = sdkOmittedValue,
-          Object? gistsUrl = sdkOmittedValue,
-          Object? gravatarId = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? login = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? organizationsUrl = sdkOmittedValue,
-          Object? receivedEventsUrl = sdkOmittedValue,
-          Object? reposUrl = sdkOmittedValue,
-          Object? siteAdmin = sdkOmittedValue,
-          Object? starredUrl = sdkOmittedValue,
-          Object? subscriptionsUrl = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? userViewType = sdkOmittedValue}) =>
-      WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy(
-        avatarUrl: identical(avatarUrl, sdkOmittedValue)
-            ? this.avatarUrl
-            : avatarUrl as SdkOptional<String>,
-        deleted: identical(deleted, sdkOmittedValue)
-            ? this.deleted
-            : deleted as SdkOptional<bool>,
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String?>,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as SdkOptional<String>,
-        followersUrl: identical(followersUrl, sdkOmittedValue)
-            ? this.followersUrl
-            : followersUrl as SdkOptional<String>,
-        followingUrl: identical(followingUrl, sdkOmittedValue)
-            ? this.followingUrl
-            : followingUrl as SdkOptional<String>,
-        gistsUrl: identical(gistsUrl, sdkOmittedValue)
-            ? this.gistsUrl
-            : gistsUrl as SdkOptional<String>,
-        gravatarId: identical(gravatarId, sdkOmittedValue)
-            ? this.gravatarId
-            : gravatarId as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        login: identical(login, sdkOmittedValue) ? this.login : login as String,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
-            ? this.organizationsUrl
-            : organizationsUrl as SdkOptional<String>,
-        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
-            ? this.receivedEventsUrl
-            : receivedEventsUrl as SdkOptional<String>,
-        reposUrl: identical(reposUrl, sdkOmittedValue)
-            ? this.reposUrl
-            : reposUrl as SdkOptional<String>,
-        siteAdmin: identical(siteAdmin, sdkOmittedValue)
-            ? this.siteAdmin
-            : siteAdmin as SdkOptional<bool>,
-        starredUrl: identical(starredUrl, sdkOmittedValue)
-            ? this.starredUrl
-            : starredUrl as SdkOptional<String>,
-        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
-            ? this.subscriptionsUrl
-            : subscriptionsUrl as SdkOptional<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<
-                WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        userViewType: identical(userViewType, sdkOmittedValue)
-            ? this.userViewType
-            : userViewType as SdkOptional<String>,
-      );
+  WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy _copyWith({Object? avatarUrl = sdkOmittedValue, Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy(
+    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String>,
+    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
+    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
+    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as SdkOptional<String>,
+    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as SdkOptional<String>,
+    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as SdkOptional<String>,
+    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    login: identical(login, sdkOmittedValue) ? this.login : login as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as SdkOptional<String>,
+    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as SdkOptional<String>,
+    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as SdkOptional<String>,
+    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as SdkOptional<bool>,
+    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as SdkOptional<String>,
+    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as SdkOptional<String>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
+  );
 
-  factory WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy(
-        avatarUrl: json['avatar_url'] != null
-            ? SdkPresent((json['avatar_url'] as String?)!)
-            : const SdkOmitted(),
-        deleted: json['deleted'] != null
-            ? SdkPresent((json['deleted'] as bool?)!)
-            : const SdkOmitted(),
-        email: json.containsKey('email')
-            ? SdkPresent(json['email'] as String?)
-            : const SdkOmitted(),
-        eventsUrl: json['events_url'] != null
-            ? SdkPresent((json['events_url'] as String?)!)
-            : const SdkOmitted(),
-        followersUrl: json['followers_url'] != null
-            ? SdkPresent((json['followers_url'] as String?)!)
-            : const SdkOmitted(),
-        followingUrl: json['following_url'] != null
-            ? SdkPresent((json['following_url'] as String?)!)
-            : const SdkOmitted(),
-        gistsUrl: json['gists_url'] != null
-            ? SdkPresent((json['gists_url'] as String?)!)
-            : const SdkOmitted(),
-        gravatarId: json['gravatar_id'] != null
-            ? SdkPresent((json['gravatar_id'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        id: ((json['id'] as num?)?.toInt())!,
-        login: (json['login'] as String?)!,
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        organizationsUrl: json['organizations_url'] != null
-            ? SdkPresent((json['organizations_url'] as String?)!)
-            : const SdkOmitted(),
-        receivedEventsUrl: json['received_events_url'] != null
-            ? SdkPresent((json['received_events_url'] as String?)!)
-            : const SdkOmitted(),
-        reposUrl: json['repos_url'] != null
-            ? SdkPresent((json['repos_url'] as String?)!)
-            : const SdkOmitted(),
-        siteAdmin: json['site_admin'] != null
-            ? SdkPresent((json['site_admin'] as bool?)!)
-            : const SdkOmitted(),
-        starredUrl: json['starred_url'] != null
-            ? SdkPresent((json['starred_url'] as String?)!)
-            : const SdkOmitted(),
-        subscriptionsUrl: json['subscriptions_url'] != null
-            ? SdkPresent((json['subscriptions_url'] as String?)!)
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType
-                    .fromJson(json['type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        userViewType: json['user_view_type'] != null
-            ? SdkPresent((json['user_view_type'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy.fromJson(Map<String, dynamic> json) => WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy(
+    avatarUrl: json['avatar_url'] != null ? SdkPresent((json['avatar_url'] as String?)!) : const SdkOmitted(),
+    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
+    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
+    eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
+    followersUrl: json['followers_url'] != null ? SdkPresent((json['followers_url'] as String?)!) : const SdkOmitted(),
+    followingUrl: json['following_url'] != null ? SdkPresent((json['following_url'] as String?)!) : const SdkOmitted(),
+    gistsUrl: json['gists_url'] != null ? SdkPresent((json['gists_url'] as String?)!) : const SdkOmitted(),
+    gravatarId: json['gravatar_id'] != null ? SdkPresent((json['gravatar_id'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    id: ((json['id'] as num?)?.toInt())!,
+    login: (json['login'] as String?)!,
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    organizationsUrl: json['organizations_url'] != null ? SdkPresent((json['organizations_url'] as String?)!) : const SdkOmitted(),
+    receivedEventsUrl: json['received_events_url'] != null ? SdkPresent((json['received_events_url'] as String?)!) : const SdkOmitted(),
+    reposUrl: json['repos_url'] != null ? SdkPresent((json['repos_url'] as String?)!) : const SdkOmitted(),
+    siteAdmin: json['site_admin'] != null ? SdkPresent((json['site_admin'] as bool?)!) : const SdkOmitted(),
+    starredUrl: json['starred_url'] != null ? SdkPresent((json['starred_url'] as String?)!) : const SdkOmitted(),
+    subscriptionsUrl: json['subscriptions_url'] != null ? SdkPresent((json['subscriptions_url'] as String?)!) : const SdkOmitted(),
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (avatarUrl) {
-          SdkPresent<String>(value: final value) => {
-              'avatar_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deleted) {
-          SdkPresent<bool>(value: final value) => {
-              'deleted': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (email) {
-          SdkPresent<String?>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (eventsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'events_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (followersUrl) {
-          SdkPresent<String>(value: final value) => {
-              'followers_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (followingUrl) {
-          SdkPresent<String>(value: final value) => {
-              'following_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (gistsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'gists_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (gravatarId) {
-          SdkPresent<String>(value: final value) => {
-              'gravatar_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'id': id,
-        'login': login,
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'organizations_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (receivedEventsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'received_events_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reposUrl) {
-          SdkPresent<String>(value: final value) => {
-              'repos_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (siteAdmin) {
-          SdkPresent<bool>(value: final value) => {
-              'site_admin': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (starredUrl) {
-          SdkPresent<String>(value: final value) => {
-              'starred_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subscriptionsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'subscriptions_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<
-                WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType>(
-            value: final value
-          ) =>
-            {
-              'type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (userViewType) {
-          SdkPresent<String>(value: final value) => {
-              'user_view_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (avatarUrl) {
+      SdkPresent<String>(value: final value) => {'avatar_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deleted) {
+      SdkPresent<bool>(value: final value) => {'deleted': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (email) {
+      SdkPresent<String?>(value: final value) => {'email': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (eventsUrl) {
+      SdkPresent<String>(value: final value) => {'events_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (followersUrl) {
+      SdkPresent<String>(value: final value) => {'followers_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (followingUrl) {
+      SdkPresent<String>(value: final value) => {'following_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (gistsUrl) {
+      SdkPresent<String>(value: final value) => {'gists_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (gravatarId) {
+      SdkPresent<String>(value: final value) => {'gravatar_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'id': id,
+    'login': login,
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organizationsUrl) {
+      SdkPresent<String>(value: final value) => {'organizations_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (receivedEventsUrl) {
+      SdkPresent<String>(value: final value) => {'received_events_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reposUrl) {
+      SdkPresent<String>(value: final value) => {'repos_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (siteAdmin) {
+      SdkPresent<bool>(value: final value) => {'site_admin': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (starredUrl) {
+      SdkPresent<String>(value: final value) => {'starred_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subscriptionsUrl) {
+      SdkPresent<String>(value: final value) => {'subscriptions_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (type_) {
+      SdkPresent<WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledByType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (userViewType) {
+      SdkPresent<String>(value: final value) => {'user_view_type': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The status of auto merging a pull request.
 class WebhookPullRequestEnqueuedPullRequestAutoMerge {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Commit message for the merge commit.
   final String? commitMessage;
-
   /// Title for the merge commit message.
   final String? commitTitle;
-
   /// Required object value serialized in the `enabled_by` wire field.
   final WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy? enabledBy;
-
   /// The merge method to use.
   final WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod mergeMethod;
 
-  const WebhookPullRequestEnqueuedPullRequestAutoMerge(
-      {required this.commitMessage,
-      required this.commitTitle,
-      required this.enabledBy,
-      required this.mergeMethod});
+  const WebhookPullRequestEnqueuedPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod});
 
-  WebhookPullRequestEnqueuedPullRequestAutoMerge Function(
-      {String? commitMessage,
-      String? commitTitle,
-      WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy? enabledBy,
-      WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod
-          mergeMethod}) get copyWith => _copyWith;
+  WebhookPullRequestEnqueuedPullRequestAutoMerge Function({String? commitMessage, String? commitTitle, WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy? enabledBy, WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod mergeMethod}) get copyWith => _copyWith;
 
-  WebhookPullRequestEnqueuedPullRequestAutoMerge _copyWith(
-          {Object? commitMessage = sdkOmittedValue,
-          Object? commitTitle = sdkOmittedValue,
-          Object? enabledBy = sdkOmittedValue,
-          Object? mergeMethod = sdkOmittedValue}) =>
-      WebhookPullRequestEnqueuedPullRequestAutoMerge(
-        commitMessage: identical(commitMessage, sdkOmittedValue)
-            ? this.commitMessage
-            : commitMessage as String?,
-        commitTitle: identical(commitTitle, sdkOmittedValue)
-            ? this.commitTitle
-            : commitTitle as String?,
-        enabledBy: identical(enabledBy, sdkOmittedValue)
-            ? this.enabledBy
-            : enabledBy
-                as WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy?,
-        mergeMethod: identical(mergeMethod, sdkOmittedValue)
-            ? this.mergeMethod
-            : mergeMethod
-                as WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod,
-      );
+  WebhookPullRequestEnqueuedPullRequestAutoMerge _copyWith({Object? commitMessage = sdkOmittedValue, Object? commitTitle = sdkOmittedValue, Object? enabledBy = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue}) => WebhookPullRequestEnqueuedPullRequestAutoMerge(
+    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as String?,
+    commitTitle: identical(commitTitle, sdkOmittedValue) ? this.commitTitle : commitTitle as String?,
+    enabledBy: identical(enabledBy, sdkOmittedValue) ? this.enabledBy : enabledBy as WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy?,
+    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod,
+  );
 
-  factory WebhookPullRequestEnqueuedPullRequestAutoMerge.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEnqueuedPullRequestAutoMerge(
-        commitMessage: json.containsKey('commit_message')
-            ? json['commit_message'] as String?
-            : throw ArgumentError.value(
-                null, 'commit_message', 'Required property is missing'),
-        commitTitle: json.containsKey('commit_title')
-            ? json['commit_title'] as String?
-            : throw ArgumentError.value(
-                null, 'commit_title', 'Required property is missing'),
-        enabledBy: json.containsKey('enabled_by')
-            ? json['enabled_by'] != null
-                ? WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy
-                    .fromJson(json['enabled_by'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'enabled_by', 'Required property is missing'),
-        mergeMethod: (json['merge_method'] != null
-            ? WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod
-                .fromJson(json['merge_method'] as String)
-            : null)!,
-      );
+  factory WebhookPullRequestEnqueuedPullRequestAutoMerge.fromJson(Map<String, dynamic> json) => WebhookPullRequestEnqueuedPullRequestAutoMerge(
+    commitMessage: json.containsKey('commit_message') ? json['commit_message'] as String? : throw ArgumentError.value(null, 'commit_message', 'Required property is missing'),
+    commitTitle: json.containsKey('commit_title') ? json['commit_title'] as String? : throw ArgumentError.value(null, 'commit_title', 'Required property is missing'),
+    enabledBy: json.containsKey('enabled_by') ? json['enabled_by'] != null ? WebhookPullRequestEnqueuedPullRequestAutoMergeEnabledBy.fromJson(json['enabled_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'enabled_by', 'Required property is missing'),
+    mergeMethod: (json['merge_method'] != null ? WebhookPullRequestEnqueuedPullRequestAutoMergeMergeMethod.fromJson(json['merge_method'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'commit_message': commitMessage,
-        'commit_title': commitTitle,
-        'enabled_by': enabledBy?.toJson(),
-        'merge_method': mergeMethod.toJson(),
-      };
+    'commit_message': commitMessage,
+    'commit_title': commitTitle,
+    'enabled_by': enabledBy?.toJson(),
+    'merge_method': mergeMethod.toJson(),
+  };
 }
 
 sealed class WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt();
-  factory WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtString(json);
-    }
-    if (json is num) {
-      return WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtInt(
-          json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt");
+  factory WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt.fromJson(Object? json) {
+    if (json is String) { return WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtString(json); }
+    if (json is num) { return WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtInt(json.toInt()); }
+    throw FormatException("No variant matched for WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtInt
-    extends WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtInt extends WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt {
   final int value;
   const WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtString
-    extends WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtString extends WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAt {
   final String value;
-  const WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookPullRequestEnqueuedPullRequestBaseRepoCreatedAtString(this.value);
+  @override Object? toJson() => value;
 }
 
 /// Required object value serialized in the `license` wire field.
 class WebhookPullRequestEnqueuedPullRequestBaseRepoLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `key` wire field.
   final String key;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookPullRequestEnqueuedPullRequestBaseRepoLicense(
-      {required this.key,
-      required this.name,
-      required this.nodeId,
-      required this.spdxId,
-      required this.url});
+  const WebhookPullRequestEnqueuedPullRequestBaseRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
 
-  WebhookPullRequestEnqueuedPullRequestBaseRepoLicense Function(
-      {String key,
-      String name,
-      String nodeId,
-      String spdxId,
-      String? url}) get copyWith => _copyWith;
+  WebhookPullRequestEnqueuedPullRequestBaseRepoLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
 
-  WebhookPullRequestEnqueuedPullRequestBaseRepoLicense _copyWith(
-          {Object? key = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? spdxId = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookPullRequestEnqueuedPullRequestBaseRepoLicense(
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        spdxId:
-            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-      );
+  WebhookPullRequestEnqueuedPullRequestBaseRepoLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestEnqueuedPullRequestBaseRepoLicense(
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+  );
 
-  factory WebhookPullRequestEnqueuedPullRequestBaseRepoLicense.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestEnqueuedPullRequestBaseRepoLicense(
-        key: (json['key'] as String?)!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        spdxId: (json['spdx_id'] as String?)!,
-        url: json.containsKey('url')
-            ? json['url'] as String?
-            : throw ArgumentError.value(
-                null, 'url', 'Required property is missing'),
-      );
+  factory WebhookPullRequestEnqueuedPullRequestBaseRepoLicense.fromJson(Map<String, dynamic> json) => WebhookPullRequestEnqueuedPullRequestBaseRepoLicense(
+    key: (json['key'] as String?)!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    spdxId: (json['spdx_id'] as String?)!,
+    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'key': key,
-        'name': name,
-        'node_id': nodeId,
-        'spdx_id': spdxId,
-        'url': url,
-      };
+    'key': key,
+    'name': name,
+    'node_id': nodeId,
+    'spdx_id': spdxId,
+    'url': url,
+  };
 }

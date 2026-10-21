@@ -8,42 +8,27 @@ part of 'orgs.dart';
 class RepositoryExternalPropertyPayload {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the repository
   final String repositoryName;
-
   /// The value assigned to the repository. Set to `null` to unset the value for this repository.
   final String? value;
 
-  const RepositoryExternalPropertyPayload(
-      {required this.repositoryName, required this.value});
+  const RepositoryExternalPropertyPayload({required this.repositoryName, required this.value});
 
-  RepositoryExternalPropertyPayload Function(
-      {String repositoryName, String? value}) get copyWith => _copyWith;
+  RepositoryExternalPropertyPayload Function({String repositoryName, String? value}) get copyWith => _copyWith;
 
-  RepositoryExternalPropertyPayload _copyWith(
-          {Object? repositoryName = sdkOmittedValue,
-          Object? value = sdkOmittedValue}) =>
-      RepositoryExternalPropertyPayload(
-        repositoryName: identical(repositoryName, sdkOmittedValue)
-            ? this.repositoryName
-            : repositoryName as String,
-        value:
-            identical(value, sdkOmittedValue) ? this.value : value as String?,
-      );
+  RepositoryExternalPropertyPayload _copyWith({Object? repositoryName = sdkOmittedValue, Object? value = sdkOmittedValue}) => RepositoryExternalPropertyPayload(
+    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as String,
+    value: identical(value, sdkOmittedValue) ? this.value : value as String?,
+  );
 
-  factory RepositoryExternalPropertyPayload.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryExternalPropertyPayload(
-        repositoryName: (json['repository_name'] as String?)!,
-        value: json.containsKey('value')
-            ? json['value'] as String?
-            : throw ArgumentError.value(
-                null, 'value', 'Required property is missing'),
-      );
+  factory RepositoryExternalPropertyPayload.fromJson(Map<String, dynamic> json) => RepositoryExternalPropertyPayload(
+    repositoryName: (json['repository_name'] as String?)!,
+    value: json.containsKey('value') ? json['value'] as String? : throw ArgumentError.value(null, 'value', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'repository_name': repositoryName,
-        'value': value,
-      };
+    'repository_name': repositoryName,
+    'value': value,
+  };
 }

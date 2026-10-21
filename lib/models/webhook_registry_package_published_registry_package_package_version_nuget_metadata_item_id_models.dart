@@ -8,49 +8,29 @@ sealed class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMe
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId();
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString(
-          json);
-    }
-    if (json is num) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt(
-          json.toInt());
-    }
-    if (json is Map) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap(
-          Map<String, dynamic>.from(json));
-    }
-    throw FormatException(
-        "No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId");
+  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId.fromJson(Object? json) {
+    if (json is String) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString(json); }
+    if (json is num) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt(json.toInt()); }
+    if (json is Map) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap(Map<String, dynamic>.from(json)); }
+    throw FormatException("No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId");
   }
   Object? toJson();
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
   final String value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString(this.value);
+  @override Object? toJson() => value;
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
   final Map<String, dynamic> value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap(this.value);
+  @override Object? toJson() => value;
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
   final int value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt(this.value);
+  @override Object? toJson() => value;
 }

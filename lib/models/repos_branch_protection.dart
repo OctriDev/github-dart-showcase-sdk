@@ -8,367 +8,145 @@ part of 'repos_branch.dart';
 class BranchProtection {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
-
   /// Protected Branch Required Status Check
   final SdkOptional<ProtectedBranchRequiredStatusCheck> requiredStatusChecks;
-
   /// Protected Branch Admin Enforced
   final SdkOptional<ProtectedBranchAdminEnforced> enforceAdmins;
-
   /// Protected Branch Pull Request Review
-  final SdkOptional<ProtectedBranchPullRequestReview>
-      requiredPullRequestReviews;
-
+  final SdkOptional<ProtectedBranchPullRequestReview> requiredPullRequestReviews;
   /// Branch Restriction Policy
   final SdkOptional<BranchRestrictionPolicy> restrictions;
-
   /// Optional object value serialized in the `required_linear_history` wire field.
-  final SdkOptional<BranchProtectionRequiredLinearHistory>
-      requiredLinearHistory;
-
+  final SdkOptional<BranchProtectionRequiredLinearHistory> requiredLinearHistory;
   /// Optional object value serialized in the `allow_force_pushes` wire field.
   final SdkOptional<BranchProtectionAllowForcePushes> allowForcePushes;
-
   /// Optional object value serialized in the `allow_deletions` wire field.
   final SdkOptional<BranchProtectionAllowDeletions> allowDeletions;
-
   /// Optional object value serialized in the `block_creations` wire field.
   final SdkOptional<BranchProtectionBlockCreations> blockCreations;
-
   /// Optional object value serialized in the `required_conversation_resolution` wire field.
-  final SdkOptional<BranchProtectionRequiredConversationResolution>
-      requiredConversationResolution;
-
+  final SdkOptional<BranchProtectionRequiredConversationResolution> requiredConversationResolution;
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `protection_url` wire field.
   final SdkOptional<String> protectionUrl;
-
   /// Optional object value serialized in the `required_signatures` wire field.
   final SdkOptional<BranchProtectionRequiredSignatures> requiredSignatures;
-
   /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
   final SdkOptional<BranchProtectionLockBranch> lockBranch;
-
   /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
   final SdkOptional<BranchProtectionAllowForkSyncing> allowForkSyncing;
 
-  const BranchProtection(
-      {this.url = const SdkOmitted(),
-      this.enabled = const SdkOmitted(),
-      this.requiredStatusChecks = const SdkOmitted(),
-      this.enforceAdmins = const SdkOmitted(),
-      this.requiredPullRequestReviews = const SdkOmitted(),
-      this.restrictions = const SdkOmitted(),
-      this.requiredLinearHistory = const SdkOmitted(),
-      this.allowForcePushes = const SdkOmitted(),
-      this.allowDeletions = const SdkOmitted(),
-      this.blockCreations = const SdkOmitted(),
-      this.requiredConversationResolution = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.protectionUrl = const SdkOmitted(),
-      this.requiredSignatures = const SdkOmitted(),
-      this.lockBranch = const SdkOmitted(),
-      this.allowForkSyncing = const SdkOmitted()});
+  const BranchProtection({this.url = const SdkOmitted(), this.enabled = const SdkOmitted(), this.requiredStatusChecks = const SdkOmitted(), this.enforceAdmins = const SdkOmitted(), this.requiredPullRequestReviews = const SdkOmitted(), this.restrictions = const SdkOmitted(), this.requiredLinearHistory = const SdkOmitted(), this.allowForcePushes = const SdkOmitted(), this.allowDeletions = const SdkOmitted(), this.blockCreations = const SdkOmitted(), this.requiredConversationResolution = const SdkOmitted(), this.name = const SdkOmitted(), this.protectionUrl = const SdkOmitted(), this.requiredSignatures = const SdkOmitted(), this.lockBranch = const SdkOmitted(), this.allowForkSyncing = const SdkOmitted()});
 
-  BranchProtection Function(
-      {SdkOptional<String> url,
-      SdkOptional<bool> enabled,
-      SdkOptional<ProtectedBranchRequiredStatusCheck> requiredStatusChecks,
-      SdkOptional<ProtectedBranchAdminEnforced> enforceAdmins,
-      SdkOptional<ProtectedBranchPullRequestReview> requiredPullRequestReviews,
-      SdkOptional<BranchRestrictionPolicy> restrictions,
-      SdkOptional<BranchProtectionRequiredLinearHistory> requiredLinearHistory,
-      SdkOptional<BranchProtectionAllowForcePushes> allowForcePushes,
-      SdkOptional<BranchProtectionAllowDeletions> allowDeletions,
-      SdkOptional<BranchProtectionBlockCreations> blockCreations,
-      SdkOptional<BranchProtectionRequiredConversationResolution>
-          requiredConversationResolution,
-      SdkOptional<String> name,
-      SdkOptional<String> protectionUrl,
-      SdkOptional<BranchProtectionRequiredSignatures> requiredSignatures,
-      SdkOptional<BranchProtectionLockBranch> lockBranch,
-      SdkOptional<BranchProtectionAllowForkSyncing>
-          allowForkSyncing}) get copyWith => _copyWith;
+  BranchProtection Function({SdkOptional<String> url, SdkOptional<bool> enabled, SdkOptional<ProtectedBranchRequiredStatusCheck> requiredStatusChecks, SdkOptional<ProtectedBranchAdminEnforced> enforceAdmins, SdkOptional<ProtectedBranchPullRequestReview> requiredPullRequestReviews, SdkOptional<BranchRestrictionPolicy> restrictions, SdkOptional<BranchProtectionRequiredLinearHistory> requiredLinearHistory, SdkOptional<BranchProtectionAllowForcePushes> allowForcePushes, SdkOptional<BranchProtectionAllowDeletions> allowDeletions, SdkOptional<BranchProtectionBlockCreations> blockCreations, SdkOptional<BranchProtectionRequiredConversationResolution> requiredConversationResolution, SdkOptional<String> name, SdkOptional<String> protectionUrl, SdkOptional<BranchProtectionRequiredSignatures> requiredSignatures, SdkOptional<BranchProtectionLockBranch> lockBranch, SdkOptional<BranchProtectionAllowForkSyncing> allowForkSyncing}) get copyWith => _copyWith;
 
-  BranchProtection _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue,
-          Object? requiredStatusChecks = sdkOmittedValue,
-          Object? enforceAdmins = sdkOmittedValue,
-          Object? requiredPullRequestReviews = sdkOmittedValue,
-          Object? restrictions = sdkOmittedValue,
-          Object? requiredLinearHistory = sdkOmittedValue,
-          Object? allowForcePushes = sdkOmittedValue,
-          Object? allowDeletions = sdkOmittedValue,
-          Object? blockCreations = sdkOmittedValue,
-          Object? requiredConversationResolution = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? protectionUrl = sdkOmittedValue,
-          Object? requiredSignatures = sdkOmittedValue,
-          Object? lockBranch = sdkOmittedValue,
-          Object? allowForkSyncing = sdkOmittedValue}) =>
-      BranchProtection(
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool>,
-        requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue)
-            ? this.requiredStatusChecks
-            : requiredStatusChecks
-                as SdkOptional<ProtectedBranchRequiredStatusCheck>,
-        enforceAdmins: identical(enforceAdmins, sdkOmittedValue)
-            ? this.enforceAdmins
-            : enforceAdmins as SdkOptional<ProtectedBranchAdminEnforced>,
-        requiredPullRequestReviews:
-            identical(requiredPullRequestReviews, sdkOmittedValue)
-                ? this.requiredPullRequestReviews
-                : requiredPullRequestReviews
-                    as SdkOptional<ProtectedBranchPullRequestReview>,
-        restrictions: identical(restrictions, sdkOmittedValue)
-            ? this.restrictions
-            : restrictions as SdkOptional<BranchRestrictionPolicy>,
-        requiredLinearHistory: identical(requiredLinearHistory, sdkOmittedValue)
-            ? this.requiredLinearHistory
-            : requiredLinearHistory
-                as SdkOptional<BranchProtectionRequiredLinearHistory>,
-        allowForcePushes: identical(allowForcePushes, sdkOmittedValue)
-            ? this.allowForcePushes
-            : allowForcePushes as SdkOptional<BranchProtectionAllowForcePushes>,
-        allowDeletions: identical(allowDeletions, sdkOmittedValue)
-            ? this.allowDeletions
-            : allowDeletions as SdkOptional<BranchProtectionAllowDeletions>,
-        blockCreations: identical(blockCreations, sdkOmittedValue)
-            ? this.blockCreations
-            : blockCreations as SdkOptional<BranchProtectionBlockCreations>,
-        requiredConversationResolution: identical(
-                requiredConversationResolution, sdkOmittedValue)
-            ? this.requiredConversationResolution
-            : requiredConversationResolution
-                as SdkOptional<BranchProtectionRequiredConversationResolution>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        protectionUrl: identical(protectionUrl, sdkOmittedValue)
-            ? this.protectionUrl
-            : protectionUrl as SdkOptional<String>,
-        requiredSignatures: identical(requiredSignatures, sdkOmittedValue)
-            ? this.requiredSignatures
-            : requiredSignatures
-                as SdkOptional<BranchProtectionRequiredSignatures>,
-        lockBranch: identical(lockBranch, sdkOmittedValue)
-            ? this.lockBranch
-            : lockBranch as SdkOptional<BranchProtectionLockBranch>,
-        allowForkSyncing: identical(allowForkSyncing, sdkOmittedValue)
-            ? this.allowForkSyncing
-            : allowForkSyncing as SdkOptional<BranchProtectionAllowForkSyncing>,
-      );
+  BranchProtection _copyWith({Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? requiredStatusChecks = sdkOmittedValue, Object? enforceAdmins = sdkOmittedValue, Object? requiredPullRequestReviews = sdkOmittedValue, Object? restrictions = sdkOmittedValue, Object? requiredLinearHistory = sdkOmittedValue, Object? allowForcePushes = sdkOmittedValue, Object? allowDeletions = sdkOmittedValue, Object? blockCreations = sdkOmittedValue, Object? requiredConversationResolution = sdkOmittedValue, Object? name = sdkOmittedValue, Object? protectionUrl = sdkOmittedValue, Object? requiredSignatures = sdkOmittedValue, Object? lockBranch = sdkOmittedValue, Object? allowForkSyncing = sdkOmittedValue}) => BranchProtection(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
+    requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue) ? this.requiredStatusChecks : requiredStatusChecks as SdkOptional<ProtectedBranchRequiredStatusCheck>,
+    enforceAdmins: identical(enforceAdmins, sdkOmittedValue) ? this.enforceAdmins : enforceAdmins as SdkOptional<ProtectedBranchAdminEnforced>,
+    requiredPullRequestReviews: identical(requiredPullRequestReviews, sdkOmittedValue) ? this.requiredPullRequestReviews : requiredPullRequestReviews as SdkOptional<ProtectedBranchPullRequestReview>,
+    restrictions: identical(restrictions, sdkOmittedValue) ? this.restrictions : restrictions as SdkOptional<BranchRestrictionPolicy>,
+    requiredLinearHistory: identical(requiredLinearHistory, sdkOmittedValue) ? this.requiredLinearHistory : requiredLinearHistory as SdkOptional<BranchProtectionRequiredLinearHistory>,
+    allowForcePushes: identical(allowForcePushes, sdkOmittedValue) ? this.allowForcePushes : allowForcePushes as SdkOptional<BranchProtectionAllowForcePushes>,
+    allowDeletions: identical(allowDeletions, sdkOmittedValue) ? this.allowDeletions : allowDeletions as SdkOptional<BranchProtectionAllowDeletions>,
+    blockCreations: identical(blockCreations, sdkOmittedValue) ? this.blockCreations : blockCreations as SdkOptional<BranchProtectionBlockCreations>,
+    requiredConversationResolution: identical(requiredConversationResolution, sdkOmittedValue) ? this.requiredConversationResolution : requiredConversationResolution as SdkOptional<BranchProtectionRequiredConversationResolution>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    protectionUrl: identical(protectionUrl, sdkOmittedValue) ? this.protectionUrl : protectionUrl as SdkOptional<String>,
+    requiredSignatures: identical(requiredSignatures, sdkOmittedValue) ? this.requiredSignatures : requiredSignatures as SdkOptional<BranchProtectionRequiredSignatures>,
+    lockBranch: identical(lockBranch, sdkOmittedValue) ? this.lockBranch : lockBranch as SdkOptional<BranchProtectionLockBranch>,
+    allowForkSyncing: identical(allowForkSyncing, sdkOmittedValue) ? this.allowForkSyncing : allowForkSyncing as SdkOptional<BranchProtectionAllowForkSyncing>,
+  );
 
-  factory BranchProtection.fromJson(Map<String, dynamic> json) =>
-      BranchProtection(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        enabled: json['enabled'] != null
-            ? SdkPresent((json['enabled'] as bool?)!)
-            : const SdkOmitted(),
-        requiredStatusChecks: json['required_status_checks'] != null
-            ? SdkPresent((json['required_status_checks'] != null
-                ? ProtectedBranchRequiredStatusCheck.fromJson(
-                    json['required_status_checks'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        enforceAdmins: json['enforce_admins'] != null
-            ? SdkPresent((json['enforce_admins'] != null
-                ? ProtectedBranchAdminEnforced.fromJson(
-                    json['enforce_admins'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        requiredPullRequestReviews:
-            json['required_pull_request_reviews'] != null
-                ? SdkPresent((json['required_pull_request_reviews'] != null
-                    ? ProtectedBranchPullRequestReview.fromJson(
-                        json['required_pull_request_reviews']
-                            as Map<String, dynamic>)
-                    : null)!)
-                : const SdkOmitted(),
-        restrictions: json['restrictions'] != null
-            ? SdkPresent((json['restrictions'] != null
-                ? BranchRestrictionPolicy.fromJson(
-                    json['restrictions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        requiredLinearHistory: json['required_linear_history'] != null
-            ? SdkPresent((json['required_linear_history'] != null
-                ? BranchProtectionRequiredLinearHistory.fromJson(
-                    json['required_linear_history'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        allowForcePushes: json['allow_force_pushes'] != null
-            ? SdkPresent((json['allow_force_pushes'] != null
-                ? BranchProtectionAllowForcePushes.fromJson(
-                    json['allow_force_pushes'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        allowDeletions: json['allow_deletions'] != null
-            ? SdkPresent((json['allow_deletions'] != null
-                ? BranchProtectionAllowDeletions.fromJson(
-                    json['allow_deletions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        blockCreations: json['block_creations'] != null
-            ? SdkPresent((json['block_creations'] != null
-                ? BranchProtectionBlockCreations.fromJson(
-                    json['block_creations'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        requiredConversationResolution:
-            json['required_conversation_resolution'] != null
-                ? SdkPresent((json['required_conversation_resolution'] != null
-                    ? BranchProtectionRequiredConversationResolution.fromJson(
-                        json['required_conversation_resolution']
-                            as Map<String, dynamic>)
-                    : null)!)
-                : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        protectionUrl: json['protection_url'] != null
-            ? SdkPresent((json['protection_url'] as String?)!)
-            : const SdkOmitted(),
-        requiredSignatures: json['required_signatures'] != null
-            ? SdkPresent((json['required_signatures'] != null
-                ? BranchProtectionRequiredSignatures.fromJson(
-                    json['required_signatures'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        lockBranch: json['lock_branch'] != null
-            ? SdkPresent((json['lock_branch'] != null
-                ? BranchProtectionLockBranch.fromJson(
-                    json['lock_branch'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        allowForkSyncing: json['allow_fork_syncing'] != null
-            ? SdkPresent((json['allow_fork_syncing'] != null
-                ? BranchProtectionAllowForkSyncing.fromJson(
-                    json['allow_fork_syncing'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory BranchProtection.fromJson(Map<String, dynamic> json) => BranchProtection(
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
+    requiredStatusChecks: json['required_status_checks'] != null ? SdkPresent((json['required_status_checks'] != null ? ProtectedBranchRequiredStatusCheck.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    enforceAdmins: json['enforce_admins'] != null ? SdkPresent((json['enforce_admins'] != null ? ProtectedBranchAdminEnforced.fromJson(json['enforce_admins'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    requiredPullRequestReviews: json['required_pull_request_reviews'] != null ? SdkPresent((json['required_pull_request_reviews'] != null ? ProtectedBranchPullRequestReview.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    restrictions: json['restrictions'] != null ? SdkPresent((json['restrictions'] != null ? BranchRestrictionPolicy.fromJson(json['restrictions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    requiredLinearHistory: json['required_linear_history'] != null ? SdkPresent((json['required_linear_history'] != null ? BranchProtectionRequiredLinearHistory.fromJson(json['required_linear_history'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    allowForcePushes: json['allow_force_pushes'] != null ? SdkPresent((json['allow_force_pushes'] != null ? BranchProtectionAllowForcePushes.fromJson(json['allow_force_pushes'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    allowDeletions: json['allow_deletions'] != null ? SdkPresent((json['allow_deletions'] != null ? BranchProtectionAllowDeletions.fromJson(json['allow_deletions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    blockCreations: json['block_creations'] != null ? SdkPresent((json['block_creations'] != null ? BranchProtectionBlockCreations.fromJson(json['block_creations'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    requiredConversationResolution: json['required_conversation_resolution'] != null ? SdkPresent((json['required_conversation_resolution'] != null ? BranchProtectionRequiredConversationResolution.fromJson(json['required_conversation_resolution'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    protectionUrl: json['protection_url'] != null ? SdkPresent((json['protection_url'] as String?)!) : const SdkOmitted(),
+    requiredSignatures: json['required_signatures'] != null ? SdkPresent((json['required_signatures'] != null ? BranchProtectionRequiredSignatures.fromJson(json['required_signatures'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    lockBranch: json['lock_branch'] != null ? SdkPresent((json['lock_branch'] != null ? BranchProtectionLockBranch.fromJson(json['lock_branch'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    allowForkSyncing: json['allow_fork_syncing'] != null ? SdkPresent((json['allow_fork_syncing'] != null ? BranchProtectionAllowForkSyncing.fromJson(json['allow_fork_syncing'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enabled) {
-          SdkPresent<bool>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredStatusChecks) {
-          SdkPresent<ProtectedBranchRequiredStatusCheck>(value: final value) =>
-            {
-              'required_status_checks': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enforceAdmins) {
-          SdkPresent<ProtectedBranchAdminEnforced>(value: final value) => {
-              'enforce_admins': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredPullRequestReviews) {
-          SdkPresent<ProtectedBranchPullRequestReview>(value: final value) => {
-              'required_pull_request_reviews': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (restrictions) {
-          SdkPresent<BranchRestrictionPolicy>(value: final value) => {
-              'restrictions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredLinearHistory) {
-          SdkPresent<BranchProtectionRequiredLinearHistory>(
-            value: final value
-          ) =>
-            {
-              'required_linear_history': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowForcePushes) {
-          SdkPresent<BranchProtectionAllowForcePushes>(value: final value) => {
-              'allow_force_pushes': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowDeletions) {
-          SdkPresent<BranchProtectionAllowDeletions>(value: final value) => {
-              'allow_deletions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blockCreations) {
-          SdkPresent<BranchProtectionBlockCreations>(value: final value) => {
-              'block_creations': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredConversationResolution) {
-          SdkPresent<BranchProtectionRequiredConversationResolution>(
-            value: final value
-          ) =>
-            {
-              'required_conversation_resolution': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (protectionUrl) {
-          SdkPresent<String>(value: final value) => {
-              'protection_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredSignatures) {
-          SdkPresent<BranchProtectionRequiredSignatures>(value: final value) =>
-            {
-              'required_signatures': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lockBranch) {
-          SdkPresent<BranchProtectionLockBranch>(value: final value) => {
-              'lock_branch': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowForkSyncing) {
-          SdkPresent<BranchProtectionAllowForkSyncing>(value: final value) => {
-              'allow_fork_syncing': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enabled) {
+      SdkPresent<bool>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredStatusChecks) {
+      SdkPresent<ProtectedBranchRequiredStatusCheck>(value: final value) => {'required_status_checks': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enforceAdmins) {
+      SdkPresent<ProtectedBranchAdminEnforced>(value: final value) => {'enforce_admins': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredPullRequestReviews) {
+      SdkPresent<ProtectedBranchPullRequestReview>(value: final value) => {'required_pull_request_reviews': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (restrictions) {
+      SdkPresent<BranchRestrictionPolicy>(value: final value) => {'restrictions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredLinearHistory) {
+      SdkPresent<BranchProtectionRequiredLinearHistory>(value: final value) => {'required_linear_history': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowForcePushes) {
+      SdkPresent<BranchProtectionAllowForcePushes>(value: final value) => {'allow_force_pushes': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowDeletions) {
+      SdkPresent<BranchProtectionAllowDeletions>(value: final value) => {'allow_deletions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blockCreations) {
+      SdkPresent<BranchProtectionBlockCreations>(value: final value) => {'block_creations': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredConversationResolution) {
+      SdkPresent<BranchProtectionRequiredConversationResolution>(value: final value) => {'required_conversation_resolution': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (protectionUrl) {
+      SdkPresent<String>(value: final value) => {'protection_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requiredSignatures) {
+      SdkPresent<BranchProtectionRequiredSignatures>(value: final value) => {'required_signatures': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lockBranch) {
+      SdkPresent<BranchProtectionLockBranch>(value: final value) => {'lock_branch': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowForkSyncing) {
+      SdkPresent<BranchProtectionAllowForkSyncing>(value: final value) => {'allow_fork_syncing': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

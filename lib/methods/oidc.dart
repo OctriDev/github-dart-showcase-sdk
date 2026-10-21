@@ -9,25 +9,19 @@ import '../types.dart';
 /// Lists the repository custom properties that are included in the OIDC token for repository actions in an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
 /// [enterprise] The slug version of the enterprise name.
-Future<List<OidcCustomPropertyInclusion>>
-    oidcListOidcCustomPropertyInclusionsForEnterprise(ClientConfig config,
-        {required String enterprise, RequestOptions? requestOptions}) async {
+Future<List<OidcCustomPropertyInclusion>> oidcListOidcCustomPropertyInclusionsForEnterprise(ClientConfig config,
+    {required String enterprise, RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OidcCustomPropertyInclusion>>('GET',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/actions/oidc/customization/properties/repo',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'oidcListOidcCustomPropertyInclusionsForEnterprise',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => OidcCustomPropertyInclusion.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => OidcCustomPropertyInclusion.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Adds a repository custom property to be included in the OIDC token for repository actions in an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
@@ -45,84 +39,73 @@ Future<OidcCustomPropertyInclusion>
           body: {'custom_property_name': customPropertyName},
           decoder: SdkResponseDecoder.json,
           operationId: 'oidcCreateOidcCustomPropertyInclusionForEnterprise',
-          fromJsonRaw: (value) => OidcCustomPropertyInclusion.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OidcCustomPropertyInclusion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a repository custom property from being included in the OIDC token for repository actions in an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
 /// [enterprise] The slug version of the enterprise name.
 /// [customPropertyName] The name of the custom property to remove from OIDC
 ///   token inclusion
-Future<void> oidcDeleteOidcCustomPropertyInclusionForEnterprise(
-    ClientConfig config,
-    {required String enterprise,
-    required String customPropertyName,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    oidcDeleteOidcCustomPropertyInclusionForEnterprise(ClientConfig config,
+        {required String enterprise,
+        required String customPropertyName,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/actions/oidc/customization/properties/repo/${Uri.encodeComponent(customPropertyName.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'oidcDeleteOidcCustomPropertyInclusionForEnterprise',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the repository custom properties that are included in the OIDC token for repository actions in an organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<List<OidcCustomPropertyInclusion>>
-    oidcListOidcCustomPropertyInclusionsForOrg(ClientConfig config,
-        {required String org, RequestOptions? requestOptions}) async {
+Future<List<OidcCustomPropertyInclusion>> oidcListOidcCustomPropertyInclusionsForOrg(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OidcCustomPropertyInclusion>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/oidc/customization/properties/repo',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'oidcListOidcCustomPropertyInclusionsForOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => OidcCustomPropertyInclusion.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => OidcCustomPropertyInclusion.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Adds a repository custom property to be included in the OIDC token for repository actions in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [customPropertyName] The name of the custom property to include in the OIDC
 ///   token
-Future<OidcCustomPropertyInclusion> oidcCreateOidcCustomPropertyInclusionForOrg(
-    ClientConfig config,
-    {required String org,
-    required String customPropertyName,
-    RequestOptions? requestOptions}) async {
+Future<OidcCustomPropertyInclusion>
+    oidcCreateOidcCustomPropertyInclusionForOrg(ClientConfig config,
+        {required String org,
+        required String customPropertyName,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<OidcCustomPropertyInclusion>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/oidc/customization/properties/repo',
           config: config,
           body: {'custom_property_name': customPropertyName},
           decoder: SdkResponseDecoder.json,
           operationId: 'oidcCreateOidcCustomPropertyInclusionForOrg',
-          fromJsonRaw: (value) => OidcCustomPropertyInclusion.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OidcCustomPropertyInclusion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a repository custom property from being included in the OIDC token for repository actions in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -139,11 +122,10 @@ Future<void> oidcDeleteOidcCustomPropertyInclusionForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'oidcDeleteOidcCustomPropertyInclusionForOrg',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the customization template for an OpenID Connect (OIDC) subject claim. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
@@ -155,11 +137,11 @@ Future<OidcCustomSub> oidcGetOidcCustomSubTemplateForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'oidcGetOidcCustomSubTemplateForOrg',
-          fromJsonRaw: (value) =>
-              OidcCustomSub.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OidcCustomSub.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates or updates the customization template for an OpenID Connect (OIDC) subject claim. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -169,28 +151,23 @@ Future<OidcCustomSub> oidcGetOidcCustomSubTemplateForOrg(ClientConfig config,
 /// [useImmutableSubject] Whether to opt in to the immutable OIDC subject claim
 ///   format for the organization. When `true`, new OIDC tokens will use a stable,
 ///   repository-ID-based `sub` claim instead of the name-based format.
-Future<Map<String, dynamic>> oidcUpdateOidcCustomSubTemplateForOrg(
-    ClientConfig config,
-    {required String org,
-    SdkOptional<List<String>> includeClaimKeys = const SdkOmitted(),
-    SdkOptional<bool> useImmutableSubject = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>>
+    oidcUpdateOidcCustomSubTemplateForOrg(ClientConfig config,
+        {required String org,
+        SdkOptional<List<String>> includeClaimKeys = const SdkOmitted(),
+        SdkOptional<bool> useImmutableSubject = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/oidc/customization/sub',
           config: config,
           body: {
             'include_claim_keys': SdkUtils.unwrapOptional(includeClaimKeys),
-            'use_immutable_subject':
-                SdkUtils.unwrapOptional(useImmutableSubject)
+            'use_immutable_subject': SdkUtils.unwrapOptional(useImmutableSubject)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'oidcUpdateOidcCustomSubTemplateForOrg',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

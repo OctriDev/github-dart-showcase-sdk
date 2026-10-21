@@ -8,265 +8,178 @@ part of 'shared_pull.dart';
 class PullRequestMinimalHeadRepo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
 
-  const PullRequestMinimalHeadRepo(
-      {required this.id, required this.url, required this.name});
+  const PullRequestMinimalHeadRepo({required this.id, required this.url, required this.name});
 
-  PullRequestMinimalHeadRepo Function({int id, String url, String name})
-      get copyWith => _copyWith;
+  PullRequestMinimalHeadRepo Function({int id, String url, String name}) get copyWith => _copyWith;
 
-  PullRequestMinimalHeadRepo _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      PullRequestMinimalHeadRepo(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-      );
+  PullRequestMinimalHeadRepo _copyWith({Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? name = sdkOmittedValue}) => PullRequestMinimalHeadRepo(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+  );
 
-  factory PullRequestMinimalHeadRepo.fromJson(Map<String, dynamic> json) =>
-      PullRequestMinimalHeadRepo(
-        id: ((json['id'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-        name: (json['name'] as String?)!,
-      );
+  factory PullRequestMinimalHeadRepo.fromJson(Map<String, dynamic> json) => PullRequestMinimalHeadRepo(
+    id: ((json['id'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+    name: (json['name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'url': url,
-        'name': name,
-      };
+    'id': id,
+    'url': url,
+    'name': name,
+  };
 }
 
 /// Required object value serialized in the `head` wire field.
 class PullRequestMinimalHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required object value serialized in the `repo` wire field.
   final PullRequestMinimalHeadRepo repo;
 
-  const PullRequestMinimalHead(
-      {required this.ref, required this.sha, required this.repo});
+  const PullRequestMinimalHead({required this.ref, required this.sha, required this.repo});
 
-  PullRequestMinimalHead Function(
-      {String ref,
-      String sha,
-      PullRequestMinimalHeadRepo repo}) get copyWith => _copyWith;
+  PullRequestMinimalHead Function({String ref, String sha, PullRequestMinimalHeadRepo repo}) get copyWith => _copyWith;
 
-  PullRequestMinimalHead _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? repo = sdkOmittedValue}) =>
-      PullRequestMinimalHead(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo as PullRequestMinimalHeadRepo,
-      );
+  PullRequestMinimalHead _copyWith({Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? repo = sdkOmittedValue}) => PullRequestMinimalHead(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as PullRequestMinimalHeadRepo,
+  );
 
-  factory PullRequestMinimalHead.fromJson(Map<String, dynamic> json) =>
-      PullRequestMinimalHead(
-        ref: (json['ref'] as String?)!,
-        sha: (json['sha'] as String?)!,
-        repo: (json['repo'] != null
-            ? PullRequestMinimalHeadRepo.fromJson(
-                json['repo'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory PullRequestMinimalHead.fromJson(Map<String, dynamic> json) => PullRequestMinimalHead(
+    ref: (json['ref'] as String?)!,
+    sha: (json['sha'] as String?)!,
+    repo: (json['repo'] != null ? PullRequestMinimalHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'sha': sha,
-        'repo': repo.toJson(),
-      };
+    'ref': ref,
+    'sha': sha,
+    'repo': repo.toJson(),
+  };
 }
 
 /// Required object value serialized in the `repo` wire field.
 class PullRequestMinimalBaseRepo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
 
-  const PullRequestMinimalBaseRepo(
-      {required this.id, required this.url, required this.name});
+  const PullRequestMinimalBaseRepo({required this.id, required this.url, required this.name});
 
-  PullRequestMinimalBaseRepo Function({int id, String url, String name})
-      get copyWith => _copyWith;
+  PullRequestMinimalBaseRepo Function({int id, String url, String name}) get copyWith => _copyWith;
 
-  PullRequestMinimalBaseRepo _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      PullRequestMinimalBaseRepo(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-      );
+  PullRequestMinimalBaseRepo _copyWith({Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? name = sdkOmittedValue}) => PullRequestMinimalBaseRepo(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+  );
 
-  factory PullRequestMinimalBaseRepo.fromJson(Map<String, dynamic> json) =>
-      PullRequestMinimalBaseRepo(
-        id: ((json['id'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-        name: (json['name'] as String?)!,
-      );
+  factory PullRequestMinimalBaseRepo.fromJson(Map<String, dynamic> json) => PullRequestMinimalBaseRepo(
+    id: ((json['id'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+    name: (json['name'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'url': url,
-        'name': name,
-      };
+    'id': id,
+    'url': url,
+    'name': name,
+  };
 }
 
 /// Required object value serialized in the `base` wire field.
 class PullRequestMinimalBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required object value serialized in the `repo` wire field.
   final PullRequestMinimalBaseRepo repo;
 
-  const PullRequestMinimalBase(
-      {required this.ref, required this.sha, required this.repo});
+  const PullRequestMinimalBase({required this.ref, required this.sha, required this.repo});
 
-  PullRequestMinimalBase Function(
-      {String ref,
-      String sha,
-      PullRequestMinimalBaseRepo repo}) get copyWith => _copyWith;
+  PullRequestMinimalBase Function({String ref, String sha, PullRequestMinimalBaseRepo repo}) get copyWith => _copyWith;
 
-  PullRequestMinimalBase _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? repo = sdkOmittedValue}) =>
-      PullRequestMinimalBase(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo as PullRequestMinimalBaseRepo,
-      );
+  PullRequestMinimalBase _copyWith({Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? repo = sdkOmittedValue}) => PullRequestMinimalBase(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as PullRequestMinimalBaseRepo,
+  );
 
-  factory PullRequestMinimalBase.fromJson(Map<String, dynamic> json) =>
-      PullRequestMinimalBase(
-        ref: (json['ref'] as String?)!,
-        sha: (json['sha'] as String?)!,
-        repo: (json['repo'] != null
-            ? PullRequestMinimalBaseRepo.fromJson(
-                json['repo'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory PullRequestMinimalBase.fromJson(Map<String, dynamic> json) => PullRequestMinimalBase(
+    ref: (json['ref'] as String?)!,
+    sha: (json['sha'] as String?)!,
+    repo: (json['repo'] != null ? PullRequestMinimalBaseRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'sha': sha,
-        'repo': repo.toJson(),
-      };
+    'ref': ref,
+    'sha': sha,
+    'repo': repo.toJson(),
+  };
 }
 
 /// Typed representation of the `PullRequestMinimal` API schema.
 class PullRequestMinimal {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
-
   /// Required object value serialized in the `head` wire field.
   final PullRequestMinimalHead head;
-
   /// Required object value serialized in the `base` wire field.
   final PullRequestMinimalBase base_;
 
-  const PullRequestMinimal(
-      {required this.id,
-      required this.number,
-      required this.url,
-      required this.head,
-      required this.base_});
+  const PullRequestMinimal({required this.id, required this.number, required this.url, required this.head, required this.base_});
 
-  PullRequestMinimal Function(
-      {int id,
-      int number,
-      String url,
-      PullRequestMinimalHead head,
-      PullRequestMinimalBase base_}) get copyWith => _copyWith;
+  PullRequestMinimal Function({int id, int number, String url, PullRequestMinimalHead head, PullRequestMinimalBase base_}) get copyWith => _copyWith;
 
-  PullRequestMinimal _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? head = sdkOmittedValue,
-          Object? base_ = sdkOmittedValue}) =>
-      PullRequestMinimal(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        head: identical(head, sdkOmittedValue)
-            ? this.head
-            : head as PullRequestMinimalHead,
-        base_: identical(base_, sdkOmittedValue)
-            ? this.base_
-            : base_ as PullRequestMinimalBase,
-      );
+  PullRequestMinimal _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? url = sdkOmittedValue, Object? head = sdkOmittedValue, Object? base_ = sdkOmittedValue}) => PullRequestMinimal(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    head: identical(head, sdkOmittedValue) ? this.head : head as PullRequestMinimalHead,
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestMinimalBase,
+  );
 
-  factory PullRequestMinimal.fromJson(Map<String, dynamic> json) =>
-      PullRequestMinimal(
-        id: ((json['id'] as num?)?.toInt())!,
-        number: ((json['number'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-        head: (json['head'] != null
-            ? PullRequestMinimalHead.fromJson(
-                json['head'] as Map<String, dynamic>)
-            : null)!,
-        base_: (json['base'] != null
-            ? PullRequestMinimalBase.fromJson(
-                json['base'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory PullRequestMinimal.fromJson(Map<String, dynamic> json) => PullRequestMinimal(
+    id: ((json['id'] as num?)?.toInt())!,
+    number: ((json['number'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+    head: (json['head'] != null ? PullRequestMinimalHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
+    base_: (json['base'] != null ? PullRequestMinimalBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'number': number,
-        'url': url,
-        'head': head.toJson(),
-        'base': base_.toJson(),
-      };
+    'id': id,
+    'number': number,
+    'url': url,
+    'head': head.toJson(),
+    'base': base_.toJson(),
+  };
 }

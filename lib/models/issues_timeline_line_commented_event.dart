@@ -8,77 +8,41 @@ part of 'issues_timeline.dart';
 class TimelineLineCommentedEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `event` wire field.
   final SdkOptional<String> event;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional array value serialized in the `comments` wire field.
   final SdkOptional<List<PullRequestReviewComment>> comments;
 
-  const TimelineLineCommentedEvent(
-      {this.event = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.comments = const SdkOmitted()});
+  const TimelineLineCommentedEvent({this.event = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.comments = const SdkOmitted()});
 
-  TimelineLineCommentedEvent Function(
-          {SdkOptional<String> event,
-          SdkOptional<String> nodeId,
-          SdkOptional<List<PullRequestReviewComment>> comments})
-      get copyWith => _copyWith;
+  TimelineLineCommentedEvent Function({SdkOptional<String> event, SdkOptional<String> nodeId, SdkOptional<List<PullRequestReviewComment>> comments}) get copyWith => _copyWith;
 
-  TimelineLineCommentedEvent _copyWith(
-          {Object? event = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? comments = sdkOmittedValue}) =>
-      TimelineLineCommentedEvent(
-        event: identical(event, sdkOmittedValue)
-            ? this.event
-            : event as SdkOptional<String>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments as SdkOptional<List<PullRequestReviewComment>>,
-      );
+  TimelineLineCommentedEvent _copyWith({Object? event = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? comments = sdkOmittedValue}) => TimelineLineCommentedEvent(
+    event: identical(event, sdkOmittedValue) ? this.event : event as SdkOptional<String>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as SdkOptional<List<PullRequestReviewComment>>,
+  );
 
-  factory TimelineLineCommentedEvent.fromJson(Map<String, dynamic> json) =>
-      TimelineLineCommentedEvent(
-        event: json['event'] != null
-            ? SdkPresent((json['event'] as String?)!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        comments: json['comments'] != null
-            ? SdkPresent(((json['comments'] as List?)
-                ?.map((e) => PullRequestReviewComment.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory TimelineLineCommentedEvent.fromJson(Map<String, dynamic> json) => TimelineLineCommentedEvent(
+    event: json['event'] != null ? SdkPresent((json['event'] as String?)!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    comments: json['comments'] != null ? SdkPresent(((json['comments'] as List?)?.map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (event) {
-          SdkPresent<String>(value: final value) => {
-              'event': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (comments) {
-          SdkPresent<List<PullRequestReviewComment>>(value: final value) => {
-              'comments': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (event) {
+      SdkPresent<String>(value: final value) => {'event': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (comments) {
+      SdkPresent<List<PullRequestReviewComment>>(value: final value) => {'comments': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

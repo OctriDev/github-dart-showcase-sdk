@@ -8,51 +8,30 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleParamsDismissalRestriction {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Specify people, teams, or apps allowed to dismiss pull request reviews.
   final SdkOptional<List<RepositoryRuleParamsActor>> allowedActors;
-
   /// Whether to restrict review dismissal to specific actors.
   final bool enabled;
 
-  const RepositoryRuleParamsDismissalRestriction(
-      {this.allowedActors = const SdkOmitted(), required this.enabled});
+  const RepositoryRuleParamsDismissalRestriction({this.allowedActors = const SdkOmitted(), required this.enabled});
 
-  RepositoryRuleParamsDismissalRestriction Function(
-      {SdkOptional<List<RepositoryRuleParamsActor>> allowedActors,
-      bool enabled}) get copyWith => _copyWith;
+  RepositoryRuleParamsDismissalRestriction Function({SdkOptional<List<RepositoryRuleParamsActor>> allowedActors, bool enabled}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsDismissalRestriction _copyWith(
-          {Object? allowedActors = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue}) =>
-      RepositoryRuleParamsDismissalRestriction(
-        allowedActors: identical(allowedActors, sdkOmittedValue)
-            ? this.allowedActors
-            : allowedActors as SdkOptional<List<RepositoryRuleParamsActor>>,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as bool,
-      );
+  RepositoryRuleParamsDismissalRestriction _copyWith({Object? allowedActors = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => RepositoryRuleParamsDismissalRestriction(
+    allowedActors: identical(allowedActors, sdkOmittedValue) ? this.allowedActors : allowedActors as SdkOptional<List<RepositoryRuleParamsActor>>,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+  );
 
-  factory RepositoryRuleParamsDismissalRestriction.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleParamsDismissalRestriction(
-        allowedActors: json['allowed_actors'] != null
-            ? SdkPresent(((json['allowed_actors'] as List?)
-                ?.map((e) => RepositoryRuleParamsActor.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        enabled: (json['enabled'] as bool?)!,
-      );
+  factory RepositoryRuleParamsDismissalRestriction.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsDismissalRestriction(
+    allowedActors: json['allowed_actors'] != null ? SdkPresent(((json['allowed_actors'] as List?)?.map((e) => RepositoryRuleParamsActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    enabled: (json['enabled'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedActors) {
-          SdkPresent<List<RepositoryRuleParamsActor>>(value: final value) => {
-              'allowed_actors': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'enabled': enabled,
-      };
+    ...switch (allowedActors) {
+      SdkPresent<List<RepositoryRuleParamsActor>>(value: final value) => {'allowed_actors': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'enabled': enabled,
+  };
 }

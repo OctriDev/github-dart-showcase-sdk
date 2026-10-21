@@ -8,197 +8,116 @@ part of 'webhooks.dart';
 class WebhooksChanges8TierFrom {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `string` value serialized in the `description` wire field.
   final String description;
-
   /// Optional `boolean` value serialized in the `is_custom_ammount` wire field.
   final SdkOptional<bool> isCustomAmmount;
-
   /// Optional `boolean` value serialized in the `is_custom_amount` wire field.
   final SdkOptional<bool> isCustomAmount;
-
   /// Required `boolean` value serialized in the `is_one_time` wire field.
   final bool isOneTime;
-
   /// Required `integer` value serialized in the `monthly_price_in_cents` wire field.
   final int monthlyPriceInCents;
-
   /// Required `integer` value serialized in the `monthly_price_in_dollars` wire field.
   final int monthlyPriceInDollars;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
 
-  const WebhooksChanges8TierFrom(
-      {required this.createdAt,
-      required this.description,
-      this.isCustomAmmount = const SdkOmitted(),
-      this.isCustomAmount = const SdkOmitted(),
-      required this.isOneTime,
-      required this.monthlyPriceInCents,
-      required this.monthlyPriceInDollars,
-      required this.name,
-      required this.nodeId});
+  const WebhooksChanges8TierFrom({required this.createdAt, required this.description, this.isCustomAmmount = const SdkOmitted(), this.isCustomAmount = const SdkOmitted(), required this.isOneTime, required this.monthlyPriceInCents, required this.monthlyPriceInDollars, required this.name, required this.nodeId});
 
-  WebhooksChanges8TierFrom Function(
-      {String createdAt,
-      String description,
-      SdkOptional<bool> isCustomAmmount,
-      SdkOptional<bool> isCustomAmount,
-      bool isOneTime,
-      int monthlyPriceInCents,
-      int monthlyPriceInDollars,
-      String name,
-      String nodeId}) get copyWith => _copyWith;
+  WebhooksChanges8TierFrom Function({String createdAt, String description, SdkOptional<bool> isCustomAmmount, SdkOptional<bool> isCustomAmount, bool isOneTime, int monthlyPriceInCents, int monthlyPriceInDollars, String name, String nodeId}) get copyWith => _copyWith;
 
-  WebhooksChanges8TierFrom _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? isCustomAmmount = sdkOmittedValue,
-          Object? isCustomAmount = sdkOmittedValue,
-          Object? isOneTime = sdkOmittedValue,
-          Object? monthlyPriceInCents = sdkOmittedValue,
-          Object? monthlyPriceInDollars = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue}) =>
-      WebhooksChanges8TierFrom(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        isCustomAmmount: identical(isCustomAmmount, sdkOmittedValue)
-            ? this.isCustomAmmount
-            : isCustomAmmount as SdkOptional<bool>,
-        isCustomAmount: identical(isCustomAmount, sdkOmittedValue)
-            ? this.isCustomAmount
-            : isCustomAmount as SdkOptional<bool>,
-        isOneTime: identical(isOneTime, sdkOmittedValue)
-            ? this.isOneTime
-            : isOneTime as bool,
-        monthlyPriceInCents: identical(monthlyPriceInCents, sdkOmittedValue)
-            ? this.monthlyPriceInCents
-            : monthlyPriceInCents as int,
-        monthlyPriceInDollars: identical(monthlyPriceInDollars, sdkOmittedValue)
-            ? this.monthlyPriceInDollars
-            : monthlyPriceInDollars as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-      );
+  WebhooksChanges8TierFrom _copyWith({Object? createdAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? isCustomAmmount = sdkOmittedValue, Object? isCustomAmount = sdkOmittedValue, Object? isOneTime = sdkOmittedValue, Object? monthlyPriceInCents = sdkOmittedValue, Object? monthlyPriceInDollars = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue}) => WebhooksChanges8TierFrom(
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    isCustomAmmount: identical(isCustomAmmount, sdkOmittedValue) ? this.isCustomAmmount : isCustomAmmount as SdkOptional<bool>,
+    isCustomAmount: identical(isCustomAmount, sdkOmittedValue) ? this.isCustomAmount : isCustomAmount as SdkOptional<bool>,
+    isOneTime: identical(isOneTime, sdkOmittedValue) ? this.isOneTime : isOneTime as bool,
+    monthlyPriceInCents: identical(monthlyPriceInCents, sdkOmittedValue) ? this.monthlyPriceInCents : monthlyPriceInCents as int,
+    monthlyPriceInDollars: identical(monthlyPriceInDollars, sdkOmittedValue) ? this.monthlyPriceInDollars : monthlyPriceInDollars as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+  );
 
-  factory WebhooksChanges8TierFrom.fromJson(Map<String, dynamic> json) =>
-      WebhooksChanges8TierFrom(
-        createdAt: (json['created_at'] as String?)!,
-        description: (json['description'] as String?)!,
-        isCustomAmmount: json['is_custom_ammount'] != null
-            ? SdkPresent((json['is_custom_ammount'] as bool?)!)
-            : const SdkOmitted(),
-        isCustomAmount: json['is_custom_amount'] != null
-            ? SdkPresent((json['is_custom_amount'] as bool?)!)
-            : const SdkOmitted(),
-        isOneTime: (json['is_one_time'] as bool?)!,
-        monthlyPriceInCents:
-            ((json['monthly_price_in_cents'] as num?)?.toInt())!,
-        monthlyPriceInDollars:
-            ((json['monthly_price_in_dollars'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-      );
+  factory WebhooksChanges8TierFrom.fromJson(Map<String, dynamic> json) => WebhooksChanges8TierFrom(
+    createdAt: (json['created_at'] as String?)!,
+    description: (json['description'] as String?)!,
+    isCustomAmmount: json['is_custom_ammount'] != null ? SdkPresent((json['is_custom_ammount'] as bool?)!) : const SdkOmitted(),
+    isCustomAmount: json['is_custom_amount'] != null ? SdkPresent((json['is_custom_amount'] as bool?)!) : const SdkOmitted(),
+    isOneTime: (json['is_one_time'] as bool?)!,
+    monthlyPriceInCents: ((json['monthly_price_in_cents'] as num?)?.toInt())!,
+    monthlyPriceInDollars: ((json['monthly_price_in_dollars'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'description': description,
-        ...switch (isCustomAmmount) {
-          SdkPresent<bool>(value: final value) => {
-              'is_custom_ammount': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (isCustomAmount) {
-          SdkPresent<bool>(value: final value) => {
-              'is_custom_amount': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'is_one_time': isOneTime,
-        'monthly_price_in_cents': monthlyPriceInCents,
-        'monthly_price_in_dollars': monthlyPriceInDollars,
-        'name': name,
-        'node_id': nodeId,
-      };
+    'created_at': createdAt,
+    'description': description,
+    ...switch (isCustomAmmount) {
+      SdkPresent<bool>(value: final value) => {'is_custom_ammount': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (isCustomAmount) {
+      SdkPresent<bool>(value: final value) => {'is_custom_amount': value,},
+      _ => const <String, dynamic>{},
+    },
+    'is_one_time': isOneTime,
+    'monthly_price_in_cents': monthlyPriceInCents,
+    'monthly_price_in_dollars': monthlyPriceInDollars,
+    'name': name,
+    'node_id': nodeId,
+  };
 }
 
 /// Required object value serialized in the `tier` wire field.
 class WebhooksChanges8Tier {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
   final WebhooksChanges8TierFrom from;
 
   const WebhooksChanges8Tier({required this.from});
 
-  WebhooksChanges8Tier Function({WebhooksChanges8TierFrom from}) get copyWith =>
-      _copyWith;
+  WebhooksChanges8Tier Function({WebhooksChanges8TierFrom from}) get copyWith => _copyWith;
 
-  WebhooksChanges8Tier _copyWith({Object? from = sdkOmittedValue}) =>
-      WebhooksChanges8Tier(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as WebhooksChanges8TierFrom,
-      );
+  WebhooksChanges8Tier _copyWith({Object? from = sdkOmittedValue}) => WebhooksChanges8Tier(
+    from: identical(from, sdkOmittedValue) ? this.from : from as WebhooksChanges8TierFrom,
+  );
 
-  factory WebhooksChanges8Tier.fromJson(Map<String, dynamic> json) =>
-      WebhooksChanges8Tier(
-        from: (json['from'] != null
-            ? WebhooksChanges8TierFrom.fromJson(
-                json['from'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhooksChanges8Tier.fromJson(Map<String, dynamic> json) => WebhooksChanges8Tier(
+    from: (json['from'] != null ? WebhooksChanges8TierFrom.fromJson(json['from'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from.toJson(),
-      };
+    'from': from.toJson(),
+  };
 }
 
 /// Typed representation of the `WebhooksChanges8` API schema.
 class WebhooksChanges8 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `tier` wire field.
   final WebhooksChanges8Tier tier;
 
   const WebhooksChanges8({required this.tier});
 
-  WebhooksChanges8 Function({WebhooksChanges8Tier tier}) get copyWith =>
-      _copyWith;
+  WebhooksChanges8 Function({WebhooksChanges8Tier tier}) get copyWith => _copyWith;
 
-  WebhooksChanges8 _copyWith({Object? tier = sdkOmittedValue}) =>
-      WebhooksChanges8(
-        tier: identical(tier, sdkOmittedValue)
-            ? this.tier
-            : tier as WebhooksChanges8Tier,
-      );
+  WebhooksChanges8 _copyWith({Object? tier = sdkOmittedValue}) => WebhooksChanges8(
+    tier: identical(tier, sdkOmittedValue) ? this.tier : tier as WebhooksChanges8Tier,
+  );
 
-  factory WebhooksChanges8.fromJson(Map<String, dynamic> json) =>
-      WebhooksChanges8(
-        tier: (json['tier'] != null
-            ? WebhooksChanges8Tier.fromJson(
-                json['tier'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhooksChanges8.fromJson(Map<String, dynamic> json) => WebhooksChanges8(
+    tier: (json['tier'] != null ? WebhooksChanges8Tier.fromJson(json['tier'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'tier': tier.toJson(),
-      };
+    'tier': tier.toJson(),
+  };
 }

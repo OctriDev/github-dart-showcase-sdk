@@ -8,88 +8,50 @@ part of 'issues_issue.dart';
 class IssueEventProjectCard {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `uri`-formatted value serialized in the `project_url` wire field.
   final String projectUrl;
-
   /// Required `integer` value serialized in the `project_id` wire field.
   final int projectId;
-
   /// Required `string` value serialized in the `column_name` wire field.
   final String columnName;
-
   /// Optional `string` value serialized in the `previous_column_name` wire field.
   final SdkOptional<String> previousColumnName;
 
-  const IssueEventProjectCard(
-      {required this.url,
-      required this.id,
-      required this.projectUrl,
-      required this.projectId,
-      required this.columnName,
-      this.previousColumnName = const SdkOmitted()});
+  const IssueEventProjectCard({required this.url, required this.id, required this.projectUrl, required this.projectId, required this.columnName, this.previousColumnName = const SdkOmitted()});
 
-  IssueEventProjectCard Function(
-      {String url,
-      int id,
-      String projectUrl,
-      int projectId,
-      String columnName,
-      SdkOptional<String> previousColumnName}) get copyWith => _copyWith;
+  IssueEventProjectCard Function({String url, int id, String projectUrl, int projectId, String columnName, SdkOptional<String> previousColumnName}) get copyWith => _copyWith;
 
-  IssueEventProjectCard _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? projectUrl = sdkOmittedValue,
-          Object? projectId = sdkOmittedValue,
-          Object? columnName = sdkOmittedValue,
-          Object? previousColumnName = sdkOmittedValue}) =>
-      IssueEventProjectCard(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        projectUrl: identical(projectUrl, sdkOmittedValue)
-            ? this.projectUrl
-            : projectUrl as String,
-        projectId: identical(projectId, sdkOmittedValue)
-            ? this.projectId
-            : projectId as int,
-        columnName: identical(columnName, sdkOmittedValue)
-            ? this.columnName
-            : columnName as String,
-        previousColumnName: identical(previousColumnName, sdkOmittedValue)
-            ? this.previousColumnName
-            : previousColumnName as SdkOptional<String>,
-      );
+  IssueEventProjectCard _copyWith({Object? url = sdkOmittedValue, Object? id = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? projectId = sdkOmittedValue, Object? columnName = sdkOmittedValue, Object? previousColumnName = sdkOmittedValue}) => IssueEventProjectCard(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
+    projectId: identical(projectId, sdkOmittedValue) ? this.projectId : projectId as int,
+    columnName: identical(columnName, sdkOmittedValue) ? this.columnName : columnName as String,
+    previousColumnName: identical(previousColumnName, sdkOmittedValue) ? this.previousColumnName : previousColumnName as SdkOptional<String>,
+  );
 
-  factory IssueEventProjectCard.fromJson(Map<String, dynamic> json) =>
-      IssueEventProjectCard(
-        url: (json['url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        projectUrl: (json['project_url'] as String?)!,
-        projectId: ((json['project_id'] as num?)?.toInt())!,
-        columnName: (json['column_name'] as String?)!,
-        previousColumnName: json['previous_column_name'] != null
-            ? SdkPresent((json['previous_column_name'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory IssueEventProjectCard.fromJson(Map<String, dynamic> json) => IssueEventProjectCard(
+    url: (json['url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    projectUrl: (json['project_url'] as String?)!,
+    projectId: ((json['project_id'] as num?)?.toInt())!,
+    columnName: (json['column_name'] as String?)!,
+    previousColumnName: json['previous_column_name'] != null ? SdkPresent((json['previous_column_name'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'id': id,
-        'project_url': projectUrl,
-        'project_id': projectId,
-        'column_name': columnName,
-        ...switch (previousColumnName) {
-          SdkPresent<String>(value: final value) => {
-              'previous_column_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'url': url,
+    'id': id,
+    'project_url': projectUrl,
+    'project_id': projectId,
+    'column_name': columnName,
+    ...switch (previousColumnName) {
+      SdkPresent<String>(value: final value) => {'previous_column_name': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

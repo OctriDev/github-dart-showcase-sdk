@@ -8,106 +8,57 @@ part of 'repos.dart';
 class Activity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// The SHA of the commit before the activity.
   final String before;
-
   /// The SHA of the commit after the activity.
   final String after;
-
   /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`.
   final String ref;
-
   /// The time when the activity occurred.
   final String timestamp;
-
   /// The type of the activity that was performed.
   final ActivityActivityType activityType;
-
   /// A GitHub user.
   final NullableSimpleUser? actor;
 
-  const Activity(
-      {required this.id,
-      required this.nodeId,
-      required this.before,
-      required this.after,
-      required this.ref,
-      required this.timestamp,
-      required this.activityType,
-      required this.actor});
+  const Activity({required this.id, required this.nodeId, required this.before, required this.after, required this.ref, required this.timestamp, required this.activityType, required this.actor});
 
-  Activity Function(
-      {int id,
-      String nodeId,
-      String before,
-      String after,
-      String ref,
-      String timestamp,
-      ActivityActivityType activityType,
-      NullableSimpleUser? actor}) get copyWith => _copyWith;
+  Activity Function({int id, String nodeId, String before, String after, String ref, String timestamp, ActivityActivityType activityType, NullableSimpleUser? actor}) get copyWith => _copyWith;
 
-  Activity _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? before = sdkOmittedValue,
-          Object? after = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? timestamp = sdkOmittedValue,
-          Object? activityType = sdkOmittedValue,
-          Object? actor = sdkOmittedValue}) =>
-      Activity(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        before:
-            identical(before, sdkOmittedValue) ? this.before : before as String,
-        after: identical(after, sdkOmittedValue) ? this.after : after as String,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        timestamp: identical(timestamp, sdkOmittedValue)
-            ? this.timestamp
-            : timestamp as String,
-        activityType: identical(activityType, sdkOmittedValue)
-            ? this.activityType
-            : activityType as ActivityActivityType,
-        actor: identical(actor, sdkOmittedValue)
-            ? this.actor
-            : actor as NullableSimpleUser?,
-      );
+  Activity _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? before = sdkOmittedValue, Object? after = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? timestamp = sdkOmittedValue, Object? activityType = sdkOmittedValue, Object? actor = sdkOmittedValue}) => Activity(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    before: identical(before, sdkOmittedValue) ? this.before : before as String,
+    after: identical(after, sdkOmittedValue) ? this.after : after as String,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    timestamp: identical(timestamp, sdkOmittedValue) ? this.timestamp : timestamp as String,
+    activityType: identical(activityType, sdkOmittedValue) ? this.activityType : activityType as ActivityActivityType,
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as NullableSimpleUser?,
+  );
 
   factory Activity.fromJson(Map<String, dynamic> json) => Activity(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        before: (json['before'] as String?)!,
-        after: (json['after'] as String?)!,
-        ref: (json['ref'] as String?)!,
-        timestamp: (json['timestamp'] as String?)!,
-        activityType: (json['activity_type'] != null
-            ? ActivityActivityType.fromJson(json['activity_type'] as String)
-            : null)!,
-        actor: json.containsKey('actor')
-            ? json['actor'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['actor'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'actor', 'Required property is missing'),
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    before: (json['before'] as String?)!,
+    after: (json['after'] as String?)!,
+    ref: (json['ref'] as String?)!,
+    timestamp: (json['timestamp'] as String?)!,
+    activityType: (json['activity_type'] != null ? ActivityActivityType.fromJson(json['activity_type'] as String) : null)!,
+    actor: json.containsKey('actor') ? json['actor'] != null ? NullableSimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'actor', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'before': before,
-        'after': after,
-        'ref': ref,
-        'timestamp': timestamp,
-        'activity_type': activityType.toJson(),
-        'actor': actor?.toJson(),
-      };
+    'id': id,
+    'node_id': nodeId,
+    'before': before,
+    'after': after,
+    'ref': ref,
+    'timestamp': timestamp,
+    'activity_type': activityType.toJson(),
+    'actor': actor?.toJson(),
+  };
 }

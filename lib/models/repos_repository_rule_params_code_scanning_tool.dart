@@ -8,62 +8,32 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleParamsCodeScanningTool {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
   final RepositoryRuleParamsCodeScanningToolAlertsThreshold alertsThreshold;
-
   /// The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
-  final RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold
-      securityAlertsThreshold;
-
+  final RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold securityAlertsThreshold;
   /// The name of a code scanning tool
   final String tool;
 
-  const RepositoryRuleParamsCodeScanningTool(
-      {required this.alertsThreshold,
-      required this.securityAlertsThreshold,
-      required this.tool});
+  const RepositoryRuleParamsCodeScanningTool({required this.alertsThreshold, required this.securityAlertsThreshold, required this.tool});
 
-  RepositoryRuleParamsCodeScanningTool Function(
-      {RepositoryRuleParamsCodeScanningToolAlertsThreshold alertsThreshold,
-      RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold
-          securityAlertsThreshold,
-      String tool}) get copyWith => _copyWith;
+  RepositoryRuleParamsCodeScanningTool Function({RepositoryRuleParamsCodeScanningToolAlertsThreshold alertsThreshold, RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold securityAlertsThreshold, String tool}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsCodeScanningTool _copyWith(
-          {Object? alertsThreshold = sdkOmittedValue,
-          Object? securityAlertsThreshold = sdkOmittedValue,
-          Object? tool = sdkOmittedValue}) =>
-      RepositoryRuleParamsCodeScanningTool(
-        alertsThreshold: identical(alertsThreshold, sdkOmittedValue)
-            ? this.alertsThreshold
-            : alertsThreshold
-                as RepositoryRuleParamsCodeScanningToolAlertsThreshold,
-        securityAlertsThreshold: identical(
-                securityAlertsThreshold, sdkOmittedValue)
-            ? this.securityAlertsThreshold
-            : securityAlertsThreshold
-                as RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold,
-        tool: identical(tool, sdkOmittedValue) ? this.tool : tool as String,
-      );
+  RepositoryRuleParamsCodeScanningTool _copyWith({Object? alertsThreshold = sdkOmittedValue, Object? securityAlertsThreshold = sdkOmittedValue, Object? tool = sdkOmittedValue}) => RepositoryRuleParamsCodeScanningTool(
+    alertsThreshold: identical(alertsThreshold, sdkOmittedValue) ? this.alertsThreshold : alertsThreshold as RepositoryRuleParamsCodeScanningToolAlertsThreshold,
+    securityAlertsThreshold: identical(securityAlertsThreshold, sdkOmittedValue) ? this.securityAlertsThreshold : securityAlertsThreshold as RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold,
+    tool: identical(tool, sdkOmittedValue) ? this.tool : tool as String,
+  );
 
-  factory RepositoryRuleParamsCodeScanningTool.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleParamsCodeScanningTool(
-        alertsThreshold: (json['alerts_threshold'] != null
-            ? RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(
-                json['alerts_threshold'] as String)
-            : null)!,
-        securityAlertsThreshold: (json['security_alerts_threshold'] != null
-            ? RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold
-                .fromJson(json['security_alerts_threshold'] as String)
-            : null)!,
-        tool: (json['tool'] as String?)!,
-      );
+  factory RepositoryRuleParamsCodeScanningTool.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsCodeScanningTool(
+    alertsThreshold: (json['alerts_threshold'] != null ? RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(json['alerts_threshold'] as String) : null)!,
+    securityAlertsThreshold: (json['security_alerts_threshold'] != null ? RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.fromJson(json['security_alerts_threshold'] as String) : null)!,
+    tool: (json['tool'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'alerts_threshold': alertsThreshold.toJson(),
-        'security_alerts_threshold': securityAlertsThreshold.toJson(),
-        'tool': tool,
-      };
+    'alerts_threshold': alertsThreshold.toJson(),
+    'security_alerts_threshold': securityAlertsThreshold.toJson(),
+    'tool': tool,
+  };
 }

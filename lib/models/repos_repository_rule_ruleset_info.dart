@@ -8,82 +8,41 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleRulesetInfo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The type of source for the ruleset that includes this rule.
-  final SdkOptional<RepositoryRuleRulesetInfoRulesetSourceType>
-      rulesetSourceType;
-
+  final SdkOptional<RepositoryRuleRulesetInfoRulesetSourceType> rulesetSourceType;
   /// The name of the source of the ruleset that includes this rule.
   final SdkOptional<String> rulesetSource;
-
   /// The ID of the ruleset that includes this rule.
   final SdkOptional<int> rulesetId;
 
-  const RepositoryRuleRulesetInfo(
-      {this.rulesetSourceType = const SdkOmitted(),
-      this.rulesetSource = const SdkOmitted(),
-      this.rulesetId = const SdkOmitted()});
+  const RepositoryRuleRulesetInfo({this.rulesetSourceType = const SdkOmitted(), this.rulesetSource = const SdkOmitted(), this.rulesetId = const SdkOmitted()});
 
-  RepositoryRuleRulesetInfo Function(
-      {SdkOptional<RepositoryRuleRulesetInfoRulesetSourceType>
-          rulesetSourceType,
-      SdkOptional<String> rulesetSource,
-      SdkOptional<int> rulesetId}) get copyWith => _copyWith;
+  RepositoryRuleRulesetInfo Function({SdkOptional<RepositoryRuleRulesetInfoRulesetSourceType> rulesetSourceType, SdkOptional<String> rulesetSource, SdkOptional<int> rulesetId}) get copyWith => _copyWith;
 
-  RepositoryRuleRulesetInfo _copyWith(
-          {Object? rulesetSourceType = sdkOmittedValue,
-          Object? rulesetSource = sdkOmittedValue,
-          Object? rulesetId = sdkOmittedValue}) =>
-      RepositoryRuleRulesetInfo(
-        rulesetSourceType: identical(rulesetSourceType, sdkOmittedValue)
-            ? this.rulesetSourceType
-            : rulesetSourceType
-                as SdkOptional<RepositoryRuleRulesetInfoRulesetSourceType>,
-        rulesetSource: identical(rulesetSource, sdkOmittedValue)
-            ? this.rulesetSource
-            : rulesetSource as SdkOptional<String>,
-        rulesetId: identical(rulesetId, sdkOmittedValue)
-            ? this.rulesetId
-            : rulesetId as SdkOptional<int>,
-      );
+  RepositoryRuleRulesetInfo _copyWith({Object? rulesetSourceType = sdkOmittedValue, Object? rulesetSource = sdkOmittedValue, Object? rulesetId = sdkOmittedValue}) => RepositoryRuleRulesetInfo(
+    rulesetSourceType: identical(rulesetSourceType, sdkOmittedValue) ? this.rulesetSourceType : rulesetSourceType as SdkOptional<RepositoryRuleRulesetInfoRulesetSourceType>,
+    rulesetSource: identical(rulesetSource, sdkOmittedValue) ? this.rulesetSource : rulesetSource as SdkOptional<String>,
+    rulesetId: identical(rulesetId, sdkOmittedValue) ? this.rulesetId : rulesetId as SdkOptional<int>,
+  );
 
-  factory RepositoryRuleRulesetInfo.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleRulesetInfo(
-        rulesetSourceType: json['ruleset_source_type'] != null
-            ? SdkPresent((json['ruleset_source_type'] != null
-                ? RepositoryRuleRulesetInfoRulesetSourceType.fromJson(
-                    json['ruleset_source_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        rulesetSource: json['ruleset_source'] != null
-            ? SdkPresent((json['ruleset_source'] as String?)!)
-            : const SdkOmitted(),
-        rulesetId: json['ruleset_id'] != null
-            ? SdkPresent(((json['ruleset_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRuleRulesetInfo.fromJson(Map<String, dynamic> json) => RepositoryRuleRulesetInfo(
+    rulesetSourceType: json['ruleset_source_type'] != null ? SdkPresent((json['ruleset_source_type'] != null ? RepositoryRuleRulesetInfoRulesetSourceType.fromJson(json['ruleset_source_type'] as String) : null)!) : const SdkOmitted(),
+    rulesetSource: json['ruleset_source'] != null ? SdkPresent((json['ruleset_source'] as String?)!) : const SdkOmitted(),
+    rulesetId: json['ruleset_id'] != null ? SdkPresent(((json['ruleset_id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (rulesetSourceType) {
-          SdkPresent<RepositoryRuleRulesetInfoRulesetSourceType>(
-            value: final value
-          ) =>
-            {
-              'ruleset_source_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rulesetSource) {
-          SdkPresent<String>(value: final value) => {
-              'ruleset_source': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rulesetId) {
-          SdkPresent<int>(value: final value) => {
-              'ruleset_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (rulesetSourceType) {
+      SdkPresent<RepositoryRuleRulesetInfoRulesetSourceType>(value: final value) => {'ruleset_source_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rulesetSource) {
+      SdkPresent<String>(value: final value) => {'ruleset_source': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rulesetId) {
+      SdkPresent<int>(value: final value) => {'ruleset_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

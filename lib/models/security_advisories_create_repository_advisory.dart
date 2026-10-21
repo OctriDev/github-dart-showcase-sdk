@@ -8,364 +8,189 @@ part of 'security_advisories.dart';
 class RepositoryAdvisoryCreateVulnerabilitiesItemPackage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The package's language or package management ecosystem.
   final SecurityAdvisoryEcosystems ecosystem;
-
   /// The unique package name within its ecosystem.
   final SdkOptional<String?> name;
 
-  const RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
-      {required this.ecosystem, this.name = const SdkOmitted()});
+  const RepositoryAdvisoryCreateVulnerabilitiesItemPackage({required this.ecosystem, this.name = const SdkOmitted()});
 
-  RepositoryAdvisoryCreateVulnerabilitiesItemPackage Function(
-      {SecurityAdvisoryEcosystems ecosystem,
-      SdkOptional<String?> name}) get copyWith => _copyWith;
+  RepositoryAdvisoryCreateVulnerabilitiesItemPackage Function({SecurityAdvisoryEcosystems ecosystem, SdkOptional<String?> name}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryCreateVulnerabilitiesItemPackage _copyWith(
-          {Object? ecosystem = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
-        ecosystem: identical(ecosystem, sdkOmittedValue)
-            ? this.ecosystem
-            : ecosystem as SecurityAdvisoryEcosystems,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String?>,
-      );
+  RepositoryAdvisoryCreateVulnerabilitiesItemPackage _copyWith({Object? ecosystem = sdkOmittedValue, Object? name = sdkOmittedValue}) => RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
+    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as SecurityAdvisoryEcosystems,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
+  );
 
-  factory RepositoryAdvisoryCreateVulnerabilitiesItemPackage.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
-        ecosystem: (json['ecosystem'] != null
-            ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String)
-            : null)!,
-        name: json.containsKey('name')
-            ? SdkPresent(json['name'] as String?)
-            : const SdkOmitted(),
-      );
+  factory RepositoryAdvisoryCreateVulnerabilitiesItemPackage.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
+    ecosystem: (json['ecosystem'] != null ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String) : null)!,
+    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'ecosystem': ecosystem.toJson(),
-        ...switch (name) {
-          SdkPresent<String?>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'ecosystem': ecosystem.toJson(),
+    ...switch (name) {
+      SdkPresent<String?>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `vulnerabilities[]` wire field.
 class RepositoryAdvisoryCreateVulnerabilitiesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the package affected by the vulnerability.
   final RepositoryAdvisoryCreateVulnerabilitiesItemPackage package;
-
   /// The range of the package versions affected by the vulnerability.
   final SdkOptional<String?> vulnerableVersionRange;
-
   /// The package version(s) that resolve the vulnerability.
   final SdkOptional<String?> patchedVersions;
-
   /// The functions in the package that are affected.
   final SdkOptional<List<String>?> vulnerableFunctions;
 
-  const RepositoryAdvisoryCreateVulnerabilitiesItem(
-      {required this.package,
-      this.vulnerableVersionRange = const SdkOmitted(),
-      this.patchedVersions = const SdkOmitted(),
-      this.vulnerableFunctions = const SdkOmitted()});
+  const RepositoryAdvisoryCreateVulnerabilitiesItem({required this.package, this.vulnerableVersionRange = const SdkOmitted(), this.patchedVersions = const SdkOmitted(), this.vulnerableFunctions = const SdkOmitted()});
 
-  RepositoryAdvisoryCreateVulnerabilitiesItem Function(
-          {RepositoryAdvisoryCreateVulnerabilitiesItemPackage package,
-          SdkOptional<String?> vulnerableVersionRange,
-          SdkOptional<String?> patchedVersions,
-          SdkOptional<List<String>?> vulnerableFunctions})
-      get copyWith => _copyWith;
+  RepositoryAdvisoryCreateVulnerabilitiesItem Function({RepositoryAdvisoryCreateVulnerabilitiesItemPackage package, SdkOptional<String?> vulnerableVersionRange, SdkOptional<String?> patchedVersions, SdkOptional<List<String>?> vulnerableFunctions}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryCreateVulnerabilitiesItem _copyWith(
-          {Object? package = sdkOmittedValue,
-          Object? vulnerableVersionRange = sdkOmittedValue,
-          Object? patchedVersions = sdkOmittedValue,
-          Object? vulnerableFunctions = sdkOmittedValue}) =>
-      RepositoryAdvisoryCreateVulnerabilitiesItem(
-        package: identical(package, sdkOmittedValue)
-            ? this.package
-            : package as RepositoryAdvisoryCreateVulnerabilitiesItemPackage,
-        vulnerableVersionRange:
-            identical(vulnerableVersionRange, sdkOmittedValue)
-                ? this.vulnerableVersionRange
-                : vulnerableVersionRange as SdkOptional<String?>,
-        patchedVersions: identical(patchedVersions, sdkOmittedValue)
-            ? this.patchedVersions
-            : patchedVersions as SdkOptional<String?>,
-        vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue)
-            ? this.vulnerableFunctions
-            : vulnerableFunctions as SdkOptional<List<String>?>,
-      );
+  RepositoryAdvisoryCreateVulnerabilitiesItem _copyWith({Object? package = sdkOmittedValue, Object? vulnerableVersionRange = sdkOmittedValue, Object? patchedVersions = sdkOmittedValue, Object? vulnerableFunctions = sdkOmittedValue}) => RepositoryAdvisoryCreateVulnerabilitiesItem(
+    package: identical(package, sdkOmittedValue) ? this.package : package as RepositoryAdvisoryCreateVulnerabilitiesItemPackage,
+    vulnerableVersionRange: identical(vulnerableVersionRange, sdkOmittedValue) ? this.vulnerableVersionRange : vulnerableVersionRange as SdkOptional<String?>,
+    patchedVersions: identical(patchedVersions, sdkOmittedValue) ? this.patchedVersions : patchedVersions as SdkOptional<String?>,
+    vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue) ? this.vulnerableFunctions : vulnerableFunctions as SdkOptional<List<String>?>,
+  );
 
-  factory RepositoryAdvisoryCreateVulnerabilitiesItem.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryAdvisoryCreateVulnerabilitiesItem(
-        package: (json['package'] != null
-            ? RepositoryAdvisoryCreateVulnerabilitiesItemPackage.fromJson(
-                json['package'] as Map<String, dynamic>)
-            : null)!,
-        vulnerableVersionRange: json.containsKey('vulnerable_version_range')
-            ? SdkPresent(json['vulnerable_version_range'] as String?)
-            : const SdkOmitted(),
-        patchedVersions: json.containsKey('patched_versions')
-            ? SdkPresent(json['patched_versions'] as String?)
-            : const SdkOmitted(),
-        vulnerableFunctions: json.containsKey('vulnerable_functions')
-            ? SdkPresent((json['vulnerable_functions'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-      );
+  factory RepositoryAdvisoryCreateVulnerabilitiesItem.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryCreateVulnerabilitiesItem(
+    package: (json['package'] != null ? RepositoryAdvisoryCreateVulnerabilitiesItemPackage.fromJson(json['package'] as Map<String, dynamic>) : null)!,
+    vulnerableVersionRange: json.containsKey('vulnerable_version_range') ? SdkPresent(json['vulnerable_version_range'] as String?) : const SdkOmitted(),
+    patchedVersions: json.containsKey('patched_versions') ? SdkPresent(json['patched_versions'] as String?) : const SdkOmitted(),
+    vulnerableFunctions: json.containsKey('vulnerable_functions') ? SdkPresent((json['vulnerable_functions'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'package': package.toJson(),
-        ...switch (vulnerableVersionRange) {
-          SdkPresent<String?>(value: final value) => {
-              'vulnerable_version_range': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (patchedVersions) {
-          SdkPresent<String?>(value: final value) => {
-              'patched_versions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (vulnerableFunctions) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'vulnerable_functions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'package': package.toJson(),
+    ...switch (vulnerableVersionRange) {
+      SdkPresent<String?>(value: final value) => {'vulnerable_version_range': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (patchedVersions) {
+      SdkPresent<String?>(value: final value) => {'patched_versions': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (vulnerableFunctions) {
+      SdkPresent<List<String>?>(value: final value) => {'vulnerable_functions': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `credits[]` wire field.
 class RepositoryAdvisoryCreateCreditsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The username of the user credited.
   final String login;
-
   /// The type of credit the user is receiving.
   final SecurityAdvisoryCreditTypes type_;
 
-  const RepositoryAdvisoryCreateCreditsItem(
-      {required this.login, required this.type_});
+  const RepositoryAdvisoryCreateCreditsItem({required this.login, required this.type_});
 
-  RepositoryAdvisoryCreateCreditsItem Function(
-      {String login,
-      SecurityAdvisoryCreditTypes type_}) get copyWith => _copyWith;
+  RepositoryAdvisoryCreateCreditsItem Function({String login, SecurityAdvisoryCreditTypes type_}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryCreateCreditsItem _copyWith(
-          {Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      RepositoryAdvisoryCreateCreditsItem(
-        login: identical(login, sdkOmittedValue) ? this.login : login as String,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SecurityAdvisoryCreditTypes,
-      );
+  RepositoryAdvisoryCreateCreditsItem _copyWith({Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RepositoryAdvisoryCreateCreditsItem(
+    login: identical(login, sdkOmittedValue) ? this.login : login as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SecurityAdvisoryCreditTypes,
+  );
 
-  factory RepositoryAdvisoryCreateCreditsItem.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryAdvisoryCreateCreditsItem(
-        login: (json['login'] as String?)!,
-        type_: (json['type'] != null
-            ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory RepositoryAdvisoryCreateCreditsItem.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryCreateCreditsItem(
+    login: (json['login'] as String?)!,
+    type_: (json['type'] != null ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'login': login,
-        'type': type_.toJson(),
-      };
+    'login': login,
+    'type': type_.toJson(),
+  };
 }
 
 /// Typed representation of the `RepositoryAdvisoryCreate` API schema.
 class RepositoryAdvisoryCreate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A short summary of the advisory.
   final String summary;
-
   /// A detailed description of what the advisory impacts.
   final String description;
-
   /// The Common Vulnerabilities and Exposures (CVE) ID.
   final SdkOptional<String?> cveId;
-
   /// A product affected by the vulnerability detailed in a repository security advisory.
   final List<RepositoryAdvisoryCreateVulnerabilitiesItem> vulnerabilities;
-
   /// A list of Common Weakness Enumeration (CWE) IDs.
   final SdkOptional<List<String>?> cweIds;
-
   /// A list of users receiving credit for their participation in the security advisory.
   final SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?> credits;
-
   /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
   final SdkOptional<RepositoryAdvisoryCreateSeverity?> severity;
-
   /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
   final SdkOptional<String?> cvssVectorString;
-
   /// Whether to create a temporary private fork of the repository to collaborate on a fix.
   final SdkOptional<bool> startPrivateFork;
 
-  const RepositoryAdvisoryCreate(
-      {required this.summary,
-      required this.description,
-      this.cveId = const SdkOmitted(),
-      required this.vulnerabilities,
-      this.cweIds = const SdkOmitted(),
-      this.credits = const SdkOmitted(),
-      this.severity = const SdkOmitted(),
-      this.cvssVectorString = const SdkOmitted(),
-      this.startPrivateFork = const SdkOmitted()});
+  const RepositoryAdvisoryCreate({required this.summary, required this.description, this.cveId = const SdkOmitted(), required this.vulnerabilities, this.cweIds = const SdkOmitted(), this.credits = const SdkOmitted(), this.severity = const SdkOmitted(), this.cvssVectorString = const SdkOmitted(), this.startPrivateFork = const SdkOmitted()});
 
-  RepositoryAdvisoryCreate Function(
-      {String summary,
-      String description,
-      SdkOptional<String?> cveId,
-      List<RepositoryAdvisoryCreateVulnerabilitiesItem> vulnerabilities,
-      SdkOptional<List<String>?> cweIds,
-      SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?> credits,
-      SdkOptional<RepositoryAdvisoryCreateSeverity?> severity,
-      SdkOptional<String?> cvssVectorString,
-      SdkOptional<bool> startPrivateFork}) get copyWith => _copyWith;
+  RepositoryAdvisoryCreate Function({String summary, String description, SdkOptional<String?> cveId, List<RepositoryAdvisoryCreateVulnerabilitiesItem> vulnerabilities, SdkOptional<List<String>?> cweIds, SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?> credits, SdkOptional<RepositoryAdvisoryCreateSeverity?> severity, SdkOptional<String?> cvssVectorString, SdkOptional<bool> startPrivateFork}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryCreate _copyWith(
-          {Object? summary = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? cveId = sdkOmittedValue,
-          Object? vulnerabilities = sdkOmittedValue,
-          Object? cweIds = sdkOmittedValue,
-          Object? credits = sdkOmittedValue,
-          Object? severity = sdkOmittedValue,
-          Object? cvssVectorString = sdkOmittedValue,
-          Object? startPrivateFork = sdkOmittedValue}) =>
-      RepositoryAdvisoryCreate(
-        summary: identical(summary, sdkOmittedValue)
-            ? this.summary
-            : summary as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        cveId: identical(cveId, sdkOmittedValue)
-            ? this.cveId
-            : cveId as SdkOptional<String?>,
-        vulnerabilities: identical(vulnerabilities, sdkOmittedValue)
-            ? this.vulnerabilities
-            : vulnerabilities
-                as List<RepositoryAdvisoryCreateVulnerabilitiesItem>,
-        cweIds: identical(cweIds, sdkOmittedValue)
-            ? this.cweIds
-            : cweIds as SdkOptional<List<String>?>,
-        credits: identical(credits, sdkOmittedValue)
-            ? this.credits
-            : credits
-                as SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?>,
-        severity: identical(severity, sdkOmittedValue)
-            ? this.severity
-            : severity as SdkOptional<RepositoryAdvisoryCreateSeverity?>,
-        cvssVectorString: identical(cvssVectorString, sdkOmittedValue)
-            ? this.cvssVectorString
-            : cvssVectorString as SdkOptional<String?>,
-        startPrivateFork: identical(startPrivateFork, sdkOmittedValue)
-            ? this.startPrivateFork
-            : startPrivateFork as SdkOptional<bool>,
-      );
+  RepositoryAdvisoryCreate _copyWith({Object? summary = sdkOmittedValue, Object? description = sdkOmittedValue, Object? cveId = sdkOmittedValue, Object? vulnerabilities = sdkOmittedValue, Object? cweIds = sdkOmittedValue, Object? credits = sdkOmittedValue, Object? severity = sdkOmittedValue, Object? cvssVectorString = sdkOmittedValue, Object? startPrivateFork = sdkOmittedValue}) => RepositoryAdvisoryCreate(
+    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    cveId: identical(cveId, sdkOmittedValue) ? this.cveId : cveId as SdkOptional<String?>,
+    vulnerabilities: identical(vulnerabilities, sdkOmittedValue) ? this.vulnerabilities : vulnerabilities as List<RepositoryAdvisoryCreateVulnerabilitiesItem>,
+    cweIds: identical(cweIds, sdkOmittedValue) ? this.cweIds : cweIds as SdkOptional<List<String>?>,
+    credits: identical(credits, sdkOmittedValue) ? this.credits : credits as SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?>,
+    severity: identical(severity, sdkOmittedValue) ? this.severity : severity as SdkOptional<RepositoryAdvisoryCreateSeverity?>,
+    cvssVectorString: identical(cvssVectorString, sdkOmittedValue) ? this.cvssVectorString : cvssVectorString as SdkOptional<String?>,
+    startPrivateFork: identical(startPrivateFork, sdkOmittedValue) ? this.startPrivateFork : startPrivateFork as SdkOptional<bool>,
+  );
 
-  factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) =>
-      RepositoryAdvisoryCreate(
-        summary: (json['summary'] as String?)!,
-        description: (json['description'] as String?)!,
-        cveId: json.containsKey('cve_id')
-            ? SdkPresent(json['cve_id'] as String?)
-            : const SdkOmitted(),
-        vulnerabilities: ((json['vulnerabilities'] as List?)
-            ?.map((e) => RepositoryAdvisoryCreateVulnerabilitiesItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        cweIds: json.containsKey('cwe_ids')
-            ? SdkPresent(
-                (json['cwe_ids'] as List?)?.map((e) => e as String).toList())
-            : const SdkOmitted(),
-        credits: json.containsKey('credits')
-            ? SdkPresent((json['credits'] as List?)
-                ?.map((e) => RepositoryAdvisoryCreateCreditsItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())
-            : const SdkOmitted(),
-        severity: json.containsKey('severity')
-            ? SdkPresent(json['severity'] != null
-                ? RepositoryAdvisoryCreateSeverity.fromJson(
-                    json['severity'] as String)
-                : null)
-            : const SdkOmitted(),
-        cvssVectorString: json.containsKey('cvss_vector_string')
-            ? SdkPresent(json['cvss_vector_string'] as String?)
-            : const SdkOmitted(),
-        startPrivateFork: json['start_private_fork'] != null
-            ? SdkPresent((json['start_private_fork'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryCreate(
+    summary: (json['summary'] as String?)!,
+    description: (json['description'] as String?)!,
+    cveId: json.containsKey('cve_id') ? SdkPresent(json['cve_id'] as String?) : const SdkOmitted(),
+    vulnerabilities: ((json['vulnerabilities'] as List?)?.map((e) => RepositoryAdvisoryCreateVulnerabilitiesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    cweIds: json.containsKey('cwe_ids') ? SdkPresent((json['cwe_ids'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    credits: json.containsKey('credits') ? SdkPresent((json['credits'] as List?)?.map((e) => RepositoryAdvisoryCreateCreditsItem.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
+    severity: json.containsKey('severity') ? SdkPresent(json['severity'] != null ? RepositoryAdvisoryCreateSeverity.fromJson(json['severity'] as String) : null) : const SdkOmitted(),
+    cvssVectorString: json.containsKey('cvss_vector_string') ? SdkPresent(json['cvss_vector_string'] as String?) : const SdkOmitted(),
+    startPrivateFork: json['start_private_fork'] != null ? SdkPresent((json['start_private_fork'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'summary': summary,
-        'description': description,
-        ...switch (cveId) {
-          SdkPresent<String?>(value: final value) => {
-              'cve_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'vulnerabilities':
-            vulnerabilities.map((item) => item.toJson()).toList(),
-        ...switch (cweIds) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'cwe_ids': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (credits) {
-          SdkPresent<List<RepositoryAdvisoryCreateCreditsItem>?>(
-            value: final value
-          ) =>
-            {
-              'credits': value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (severity) {
-          SdkPresent<RepositoryAdvisoryCreateSeverity?>(value: final value) => {
-              'severity': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cvssVectorString) {
-          SdkPresent<String?>(value: final value) => {
-              'cvss_vector_string': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startPrivateFork) {
-          SdkPresent<bool>(value: final value) => {
-              'start_private_fork': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'summary': summary,
+    'description': description,
+    ...switch (cveId) {
+      SdkPresent<String?>(value: final value) => {'cve_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    'vulnerabilities': vulnerabilities.map((item) => item.toJson()).toList(),
+    ...switch (cweIds) {
+      SdkPresent<List<String>?>(value: final value) => {'cwe_ids': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (credits) {
+      SdkPresent<List<RepositoryAdvisoryCreateCreditsItem>?>(value: final value) => {'credits': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (severity) {
+      SdkPresent<RepositoryAdvisoryCreateSeverity?>(value: final value) => {'severity': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cvssVectorString) {
+      SdkPresent<String?>(value: final value) => {'cvss_vector_string': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startPrivateFork) {
+      SdkPresent<bool>(value: final value) => {'start_private_fork': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

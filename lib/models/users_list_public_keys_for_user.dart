@@ -8,72 +8,43 @@ part of 'users.dart';
 class KeySimple {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `key` wire field.
   final String key;
-
   /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
-
   /// Optional `date-time`-formatted value serialized in the `last_used` wire field.
   final SdkOptional<String?> lastUsed;
 
-  const KeySimple(
-      {required this.id,
-      required this.key,
-      this.createdAt = const SdkOmitted(),
-      this.lastUsed = const SdkOmitted()});
+  const KeySimple({required this.id, required this.key, this.createdAt = const SdkOmitted(), this.lastUsed = const SdkOmitted()});
 
-  KeySimple Function(
-      {int id,
-      String key,
-      SdkOptional<String> createdAt,
-      SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
+  KeySimple Function({int id, String key, SdkOptional<String> createdAt, SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
 
-  KeySimple _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? key = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? lastUsed = sdkOmittedValue}) =>
-      KeySimple(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        lastUsed: identical(lastUsed, sdkOmittedValue)
-            ? this.lastUsed
-            : lastUsed as SdkOptional<String?>,
-      );
+  KeySimple _copyWith({Object? id = sdkOmittedValue, Object? key = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? lastUsed = sdkOmittedValue}) => KeySimple(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    lastUsed: identical(lastUsed, sdkOmittedValue) ? this.lastUsed : lastUsed as SdkOptional<String?>,
+  );
 
   factory KeySimple.fromJson(Map<String, dynamic> json) => KeySimple(
-        id: ((json['id'] as num?)?.toInt())!,
-        key: (json['key'] as String?)!,
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        lastUsed: json.containsKey('last_used')
-            ? SdkPresent(json['last_used'] as String?)
-            : const SdkOmitted(),
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    key: (json['key'] as String?)!,
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    lastUsed: json.containsKey('last_used') ? SdkPresent(json['last_used'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'key': key,
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastUsed) {
-          SdkPresent<String?>(value: final value) => {
-              'last_used': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'key': key,
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lastUsed) {
+      SdkPresent<String?>(value: final value) => {'last_used': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

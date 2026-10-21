@@ -6,12 +6,12 @@ part of 'security_advisories.dart';
 // security_advisories domain models
 /// The package's language or package management ecosystem.
 final class SecurityAdvisoryEcosystems {
+
   final String value;
 
   const SecurityAdvisoryEcosystems._(this.value);
 
-  factory SecurityAdvisoryEcosystems.fromJson(String value) =>
-      SecurityAdvisoryEcosystems._(value);
+  factory SecurityAdvisoryEcosystems.fromJson(String value) => SecurityAdvisoryEcosystems._(value);
 
   static const rubygems = SecurityAdvisoryEcosystems._('rubygems');
   static const npm = SecurityAdvisoryEcosystems._('npm');
@@ -29,13 +29,10 @@ final class SecurityAdvisoryEcosystems {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SecurityAdvisoryEcosystems && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoryEcosystems && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

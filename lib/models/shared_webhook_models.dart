@@ -8,95 +8,51 @@ part of 'shared_webhook.dart';
 class WebhookConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URL to which the payloads will be delivered.
   final SdkOptional<String> url;
-
   /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
   final SdkOptional<String> contentType;
-
   /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
   final SdkOptional<String> secret;
-
   /// Optional API value serialized in the `insecure_ssl` wire field.
   final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
 
-  const WebhookConfig(
-      {this.url = const SdkOmitted(),
-      this.contentType = const SdkOmitted(),
-      this.secret = const SdkOmitted(),
-      this.insecureSsl = const SdkOmitted()});
+  const WebhookConfig({this.url = const SdkOmitted(), this.contentType = const SdkOmitted(), this.secret = const SdkOmitted(), this.insecureSsl = const SdkOmitted()});
 
-  WebhookConfig Function(
-          {SdkOptional<String> url,
-          SdkOptional<String> contentType,
-          SdkOptional<String> secret,
-          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
-      get copyWith => _copyWith;
+  WebhookConfig Function({SdkOptional<String> url, SdkOptional<String> contentType, SdkOptional<String> secret, SdkOptional<WebhookConfigInsecureSsl> insecureSsl}) get copyWith => _copyWith;
 
-  WebhookConfig _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? secret = sdkOmittedValue,
-          Object? insecureSsl = sdkOmittedValue}) =>
-      WebhookConfig(
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as SdkOptional<String>,
-        secret: identical(secret, sdkOmittedValue)
-            ? this.secret
-            : secret as SdkOptional<String>,
-        insecureSsl: identical(insecureSsl, sdkOmittedValue)
-            ? this.insecureSsl
-            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
-      );
+  WebhookConfig _copyWith({Object? url = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue}) => WebhookConfig(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
+    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+  );
 
   factory WebhookConfig.fromJson(Map<String, dynamic> json) => WebhookConfig(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        contentType: json['content_type'] != null
-            ? SdkPresent((json['content_type'] as String?)!)
-            : const SdkOmitted(),
-        secret: json['secret'] != null
-            ? SdkPresent((json['secret'] as String?)!)
-            : const SdkOmitted(),
-        insecureSsl: json['insecure_ssl'] != null
-            ? SdkPresent((json['insecure_ssl'] != null
-                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
+    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
+    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contentType) {
-          SdkPresent<String>(value: final value) => {
-              'content_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secret) {
-          SdkPresent<String>(value: final value) => {
-              'secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (insecureSsl) {
-          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
-              'insecure_ssl': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contentType) {
+      SdkPresent<String>(value: final value) => {'content_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secret) {
+      SdkPresent<String>(value: final value) => {'secret': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (insecureSsl) {
+      SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {'insecure_ssl': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 // WebhookConfigContentType = String
@@ -106,12 +62,8 @@ sealed class WebhookConfigInsecureSsl {
   static const String constructionSurface = 'named';
   const WebhookConfigInsecureSsl();
   factory WebhookConfigInsecureSsl.fromJson(Object? json) {
-    if (json is String) {
-      return WebhookConfigInsecureSslString(json);
-    }
-    if (json is num) {
-      return WebhookConfigInsecureSslDouble(json.toDouble());
-    }
+    if (json is String) { return WebhookConfigInsecureSslString(json); }
+    if (json is num) { return WebhookConfigInsecureSslDouble(json.toDouble()); }
     throw FormatException("No variant matched for WebhookConfigInsecureSsl");
   }
   Object? toJson();
@@ -120,15 +72,13 @@ sealed class WebhookConfigInsecureSsl {
 final class WebhookConfigInsecureSslString extends WebhookConfigInsecureSsl {
   final String value;
   const WebhookConfigInsecureSslString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 final class WebhookConfigInsecureSslDouble extends WebhookConfigInsecureSsl {
   final double value;
   const WebhookConfigInsecureSslDouble(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 // WebhookConfigSecret = String

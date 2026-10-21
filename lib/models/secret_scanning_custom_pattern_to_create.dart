@@ -8,116 +8,59 @@ part of 'secret_scanning.dart';
 class SecretScanningCustomPatternToCreate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the custom pattern.
   final String name;
-
   /// The regular expression of the custom pattern.
   final String pattern;
-
   /// The start delimiter regex for the custom pattern. Defaults to `\A|[^0-9A-Za-z]` when not specified.
   final SdkOptional<String> startDelimiter;
-
   /// The end delimiter regex for the custom pattern. Defaults to `\z|[^0-9A-Za-z]` when not specified.
   final SdkOptional<String> endDelimiter;
-
   /// List of regexes that the secret must match.
   final SdkOptional<List<String>> mustMatch;
-
   /// List of regexes that the secret must not match.
   final SdkOptional<List<String>> mustNotMatch;
 
-  const SecretScanningCustomPatternToCreate(
-      {required this.name,
-      required this.pattern,
-      this.startDelimiter = const SdkOmitted(),
-      this.endDelimiter = const SdkOmitted(),
-      this.mustMatch = const SdkOmitted(),
-      this.mustNotMatch = const SdkOmitted()});
+  const SecretScanningCustomPatternToCreate({required this.name, required this.pattern, this.startDelimiter = const SdkOmitted(), this.endDelimiter = const SdkOmitted(), this.mustMatch = const SdkOmitted(), this.mustNotMatch = const SdkOmitted()});
 
-  SecretScanningCustomPatternToCreate Function(
-      {String name,
-      String pattern,
-      SdkOptional<String> startDelimiter,
-      SdkOptional<String> endDelimiter,
-      SdkOptional<List<String>> mustMatch,
-      SdkOptional<List<String>> mustNotMatch}) get copyWith => _copyWith;
+  SecretScanningCustomPatternToCreate Function({String name, String pattern, SdkOptional<String> startDelimiter, SdkOptional<String> endDelimiter, SdkOptional<List<String>> mustMatch, SdkOptional<List<String>> mustNotMatch}) get copyWith => _copyWith;
 
-  SecretScanningCustomPatternToCreate _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? pattern = sdkOmittedValue,
-          Object? startDelimiter = sdkOmittedValue,
-          Object? endDelimiter = sdkOmittedValue,
-          Object? mustMatch = sdkOmittedValue,
-          Object? mustNotMatch = sdkOmittedValue}) =>
-      SecretScanningCustomPatternToCreate(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        pattern: identical(pattern, sdkOmittedValue)
-            ? this.pattern
-            : pattern as String,
-        startDelimiter: identical(startDelimiter, sdkOmittedValue)
-            ? this.startDelimiter
-            : startDelimiter as SdkOptional<String>,
-        endDelimiter: identical(endDelimiter, sdkOmittedValue)
-            ? this.endDelimiter
-            : endDelimiter as SdkOptional<String>,
-        mustMatch: identical(mustMatch, sdkOmittedValue)
-            ? this.mustMatch
-            : mustMatch as SdkOptional<List<String>>,
-        mustNotMatch: identical(mustNotMatch, sdkOmittedValue)
-            ? this.mustNotMatch
-            : mustNotMatch as SdkOptional<List<String>>,
-      );
+  SecretScanningCustomPatternToCreate _copyWith({Object? name = sdkOmittedValue, Object? pattern = sdkOmittedValue, Object? startDelimiter = sdkOmittedValue, Object? endDelimiter = sdkOmittedValue, Object? mustMatch = sdkOmittedValue, Object? mustNotMatch = sdkOmittedValue}) => SecretScanningCustomPatternToCreate(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    pattern: identical(pattern, sdkOmittedValue) ? this.pattern : pattern as String,
+    startDelimiter: identical(startDelimiter, sdkOmittedValue) ? this.startDelimiter : startDelimiter as SdkOptional<String>,
+    endDelimiter: identical(endDelimiter, sdkOmittedValue) ? this.endDelimiter : endDelimiter as SdkOptional<String>,
+    mustMatch: identical(mustMatch, sdkOmittedValue) ? this.mustMatch : mustMatch as SdkOptional<List<String>>,
+    mustNotMatch: identical(mustNotMatch, sdkOmittedValue) ? this.mustNotMatch : mustNotMatch as SdkOptional<List<String>>,
+  );
 
-  factory SecretScanningCustomPatternToCreate.fromJson(
-          Map<String, dynamic> json) =>
-      SecretScanningCustomPatternToCreate(
-        name: (json['name'] as String?)!,
-        pattern: (json['pattern'] as String?)!,
-        startDelimiter: json['start_delimiter'] != null
-            ? SdkPresent((json['start_delimiter'] as String?)!)
-            : const SdkOmitted(),
-        endDelimiter: json['end_delimiter'] != null
-            ? SdkPresent((json['end_delimiter'] as String?)!)
-            : const SdkOmitted(),
-        mustMatch: json['must_match'] != null
-            ? SdkPresent(((json['must_match'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        mustNotMatch: json['must_not_match'] != null
-            ? SdkPresent(((json['must_not_match'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory SecretScanningCustomPatternToCreate.fromJson(Map<String, dynamic> json) => SecretScanningCustomPatternToCreate(
+    name: (json['name'] as String?)!,
+    pattern: (json['pattern'] as String?)!,
+    startDelimiter: json['start_delimiter'] != null ? SdkPresent((json['start_delimiter'] as String?)!) : const SdkOmitted(),
+    endDelimiter: json['end_delimiter'] != null ? SdkPresent((json['end_delimiter'] as String?)!) : const SdkOmitted(),
+    mustMatch: json['must_match'] != null ? SdkPresent(((json['must_match'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    mustNotMatch: json['must_not_match'] != null ? SdkPresent(((json['must_not_match'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'pattern': pattern,
-        ...switch (startDelimiter) {
-          SdkPresent<String>(value: final value) => {
-              'start_delimiter': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (endDelimiter) {
-          SdkPresent<String>(value: final value) => {
-              'end_delimiter': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mustMatch) {
-          SdkPresent<List<String>>(value: final value) => {
-              'must_match': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mustNotMatch) {
-          SdkPresent<List<String>>(value: final value) => {
-              'must_not_match': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    'pattern': pattern,
+    ...switch (startDelimiter) {
+      SdkPresent<String>(value: final value) => {'start_delimiter': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endDelimiter) {
+      SdkPresent<String>(value: final value) => {'end_delimiter': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mustMatch) {
+      SdkPresent<List<String>>(value: final value) => {'must_match': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mustNotMatch) {
+      SdkPresent<List<String>>(value: final value) => {'must_not_match': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

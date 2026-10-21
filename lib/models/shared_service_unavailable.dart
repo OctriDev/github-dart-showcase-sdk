@@ -8,73 +8,41 @@ part of 'shared.dart';
 class ServiceUnavailable {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `code` wire field.
   final SdkOptional<String> code;
-
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
-
   /// Optional `string` value serialized in the `documentation_url` wire field.
   final SdkOptional<String> documentationUrl;
 
-  const ServiceUnavailable(
-      {this.code = const SdkOmitted(),
-      this.message = const SdkOmitted(),
-      this.documentationUrl = const SdkOmitted()});
+  const ServiceUnavailable({this.code = const SdkOmitted(), this.message = const SdkOmitted(), this.documentationUrl = const SdkOmitted()});
 
-  ServiceUnavailable Function(
-      {SdkOptional<String> code,
-      SdkOptional<String> message,
-      SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
+  ServiceUnavailable Function({SdkOptional<String> code, SdkOptional<String> message, SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
 
-  ServiceUnavailable _copyWith(
-          {Object? code = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? documentationUrl = sdkOmittedValue}) =>
-      ServiceUnavailable(
-        code: identical(code, sdkOmittedValue)
-            ? this.code
-            : code as SdkOptional<String>,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-        documentationUrl: identical(documentationUrl, sdkOmittedValue)
-            ? this.documentationUrl
-            : documentationUrl as SdkOptional<String>,
-      );
+  ServiceUnavailable _copyWith({Object? code = sdkOmittedValue, Object? message = sdkOmittedValue, Object? documentationUrl = sdkOmittedValue}) => ServiceUnavailable(
+    code: identical(code, sdkOmittedValue) ? this.code : code as SdkOptional<String>,
+    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
+    documentationUrl: identical(documentationUrl, sdkOmittedValue) ? this.documentationUrl : documentationUrl as SdkOptional<String>,
+  );
 
-  factory ServiceUnavailable.fromJson(Map<String, dynamic> json) =>
-      ServiceUnavailable(
-        code: json['code'] != null
-            ? SdkPresent((json['code'] as String?)!)
-            : const SdkOmitted(),
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-        documentationUrl: json['documentation_url'] != null
-            ? SdkPresent((json['documentation_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ServiceUnavailable.fromJson(Map<String, dynamic> json) => ServiceUnavailable(
+    code: json['code'] != null ? SdkPresent((json['code'] as String?)!) : const SdkOmitted(),
+    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
+    documentationUrl: json['documentation_url'] != null ? SdkPresent((json['documentation_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (code) {
-          SdkPresent<String>(value: final value) => {
-              'code': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (documentationUrl) {
-          SdkPresent<String>(value: final value) => {
-              'documentation_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (code) {
+      SdkPresent<String>(value: final value) => {'code': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (message) {
+      SdkPresent<String>(value: final value) => {'message': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (documentationUrl) {
+      SdkPresent<String>(value: final value) => {'documentation_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

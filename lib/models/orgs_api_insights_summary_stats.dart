@@ -8,57 +8,33 @@ part of 'orgs.dart';
 class ApiInsightsSummaryStats {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The total number of requests within the queried time period
   final SdkOptional<int> totalRequestCount;
-
   /// The total number of requests that were rate limited within the queried time period
   final SdkOptional<int> rateLimitedRequestCount;
 
-  const ApiInsightsSummaryStats(
-      {this.totalRequestCount = const SdkOmitted(),
-      this.rateLimitedRequestCount = const SdkOmitted()});
+  const ApiInsightsSummaryStats({this.totalRequestCount = const SdkOmitted(), this.rateLimitedRequestCount = const SdkOmitted()});
 
-  ApiInsightsSummaryStats Function(
-      {SdkOptional<int> totalRequestCount,
-      SdkOptional<int> rateLimitedRequestCount}) get copyWith => _copyWith;
+  ApiInsightsSummaryStats Function({SdkOptional<int> totalRequestCount, SdkOptional<int> rateLimitedRequestCount}) get copyWith => _copyWith;
 
-  ApiInsightsSummaryStats _copyWith(
-          {Object? totalRequestCount = sdkOmittedValue,
-          Object? rateLimitedRequestCount = sdkOmittedValue}) =>
-      ApiInsightsSummaryStats(
-        totalRequestCount: identical(totalRequestCount, sdkOmittedValue)
-            ? this.totalRequestCount
-            : totalRequestCount as SdkOptional<int>,
-        rateLimitedRequestCount:
-            identical(rateLimitedRequestCount, sdkOmittedValue)
-                ? this.rateLimitedRequestCount
-                : rateLimitedRequestCount as SdkOptional<int>,
-      );
+  ApiInsightsSummaryStats _copyWith({Object? totalRequestCount = sdkOmittedValue, Object? rateLimitedRequestCount = sdkOmittedValue}) => ApiInsightsSummaryStats(
+    totalRequestCount: identical(totalRequestCount, sdkOmittedValue) ? this.totalRequestCount : totalRequestCount as SdkOptional<int>,
+    rateLimitedRequestCount: identical(rateLimitedRequestCount, sdkOmittedValue) ? this.rateLimitedRequestCount : rateLimitedRequestCount as SdkOptional<int>,
+  );
 
-  factory ApiInsightsSummaryStats.fromJson(Map<String, dynamic> json) =>
-      ApiInsightsSummaryStats(
-        totalRequestCount: json['total_request_count'] != null
-            ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        rateLimitedRequestCount: json['rate_limited_request_count'] != null
-            ? SdkPresent(
-                ((json['rate_limited_request_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory ApiInsightsSummaryStats.fromJson(Map<String, dynamic> json) => ApiInsightsSummaryStats(
+    totalRequestCount: json['total_request_count'] != null ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    rateLimitedRequestCount: json['rate_limited_request_count'] != null ? SdkPresent(((json['rate_limited_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (totalRequestCount) {
-          SdkPresent<int>(value: final value) => {
-              'total_request_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rateLimitedRequestCount) {
-          SdkPresent<int>(value: final value) => {
-              'rate_limited_request_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (totalRequestCount) {
+      SdkPresent<int>(value: final value) => {'total_request_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rateLimitedRequestCount) {
+      SdkPresent<int>(value: final value) => {'rate_limited_request_count': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

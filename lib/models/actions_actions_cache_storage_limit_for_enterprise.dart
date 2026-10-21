@@ -8,38 +8,25 @@ part of 'actions_actions_cache.dart';
 class ActionsCacheStorageLimitForEnterprise {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// For repositories & organizations in an enterprise, the maximum size limit for the sum of all caches in a repository, in gigabytes.
   final SdkOptional<int> maxCacheSizeGb;
 
-  const ActionsCacheStorageLimitForEnterprise(
-      {this.maxCacheSizeGb = const SdkOmitted()});
+  const ActionsCacheStorageLimitForEnterprise({this.maxCacheSizeGb = const SdkOmitted()});
 
-  ActionsCacheStorageLimitForEnterprise Function(
-      {SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
+  ActionsCacheStorageLimitForEnterprise Function({SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
 
-  ActionsCacheStorageLimitForEnterprise _copyWith(
-          {Object? maxCacheSizeGb = sdkOmittedValue}) =>
-      ActionsCacheStorageLimitForEnterprise(
-        maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue)
-            ? this.maxCacheSizeGb
-            : maxCacheSizeGb as SdkOptional<int>,
-      );
+  ActionsCacheStorageLimitForEnterprise _copyWith({Object? maxCacheSizeGb = sdkOmittedValue}) => ActionsCacheStorageLimitForEnterprise(
+    maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue) ? this.maxCacheSizeGb : maxCacheSizeGb as SdkOptional<int>,
+  );
 
-  factory ActionsCacheStorageLimitForEnterprise.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCacheStorageLimitForEnterprise(
-        maxCacheSizeGb: json['max_cache_size_gb'] != null
-            ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory ActionsCacheStorageLimitForEnterprise.fromJson(Map<String, dynamic> json) => ActionsCacheStorageLimitForEnterprise(
+    maxCacheSizeGb: json['max_cache_size_gb'] != null ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (maxCacheSizeGb) {
-          SdkPresent<int>(value: final value) => {
-              'max_cache_size_gb': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (maxCacheSizeGb) {
+      SdkPresent<int>(value: final value) => {'max_cache_size_gb': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 final class RepositoryAdvisoryCreateSeverity {
+
   final String value;
 
   const RepositoryAdvisoryCreateSeverity._(this.value);
 
-  factory RepositoryAdvisoryCreateSeverity.fromJson(String value) =>
-      RepositoryAdvisoryCreateSeverity._(value);
+  factory RepositoryAdvisoryCreateSeverity.fromJson(String value) => RepositoryAdvisoryCreateSeverity._(value);
 
   static const critical = RepositoryAdvisoryCreateSeverity._('critical');
   static const high = RepositoryAdvisoryCreateSeverity._('high');
@@ -20,25 +20,22 @@ final class RepositoryAdvisoryCreateSeverity {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryAdvisoryCreateSeverity && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryAdvisoryCreateSeverity && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The state of the user's acceptance of the credit.
 final class RepositoryAdvisoryCreditState {
+
   final String value;
 
   const RepositoryAdvisoryCreditState._(this.value);
 
-  factory RepositoryAdvisoryCreditState.fromJson(String value) =>
-      RepositoryAdvisoryCreditState._(value);
+  factory RepositoryAdvisoryCreditState.fromJson(String value) => RepositoryAdvisoryCreditState._(value);
 
   static const accepted = RepositoryAdvisoryCreditState._('accepted');
   static const declined = RepositoryAdvisoryCreditState._('declined');
@@ -46,25 +43,22 @@ final class RepositoryAdvisoryCreditState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryAdvisoryCreditState && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryAdvisoryCreditState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 final class RepositoryAdvisoryUpdateSeverity {
+
   final String value;
 
   const RepositoryAdvisoryUpdateSeverity._(this.value);
 
-  factory RepositoryAdvisoryUpdateSeverity.fromJson(String value) =>
-      RepositoryAdvisoryUpdateSeverity._(value);
+  factory RepositoryAdvisoryUpdateSeverity.fromJson(String value) => RepositoryAdvisoryUpdateSeverity._(value);
 
   static const critical = RepositoryAdvisoryUpdateSeverity._('critical');
   static const high = RepositoryAdvisoryUpdateSeverity._('high');
@@ -73,25 +67,22 @@ final class RepositoryAdvisoryUpdateSeverity {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryAdvisoryUpdateSeverity && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryAdvisoryUpdateSeverity && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The state of the advisory.
 final class RepositoryAdvisoryUpdateState {
+
   final String value;
 
   const RepositoryAdvisoryUpdateState._(this.value);
 
-  factory RepositoryAdvisoryUpdateState.fromJson(String value) =>
-      RepositoryAdvisoryUpdateState._(value);
+  factory RepositoryAdvisoryUpdateState.fromJson(String value) => RepositoryAdvisoryUpdateState._(value);
 
   static const published = RepositoryAdvisoryUpdateState._('published');
   static const closed = RepositoryAdvisoryUpdateState._('closed');
@@ -99,50 +90,44 @@ final class RepositoryAdvisoryUpdateState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryAdvisoryUpdateState && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryAdvisoryUpdateState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The Git hash algorithm used by this repository.
 final class RepositoryHashAlgorithmHashAlgorithm {
+
   final String value;
 
   const RepositoryHashAlgorithmHashAlgorithm._(this.value);
 
-  factory RepositoryHashAlgorithmHashAlgorithm.fromJson(String value) =>
-      RepositoryHashAlgorithmHashAlgorithm._(value);
+  factory RepositoryHashAlgorithmHashAlgorithm.fromJson(String value) => RepositoryHashAlgorithmHashAlgorithm._(value);
 
   static const sha1 = RepositoryHashAlgorithmHashAlgorithm._('sha1');
   static const sha256 = RepositoryHashAlgorithmHashAlgorithm._('sha256');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryHashAlgorithmHashAlgorithm && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryHashAlgorithmHashAlgorithm && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The permission associated with the invitation.
 final class RepositoryInvitationPermissions {
+
   final String value;
 
   const RepositoryInvitationPermissions._(this.value);
 
-  factory RepositoryInvitationPermissions.fromJson(String value) =>
-      RepositoryInvitationPermissions._(value);
+  factory RepositoryInvitationPermissions.fromJson(String value) => RepositoryInvitationPermissions._(value);
 
   static const read = RepositoryInvitationPermissions._('read');
   static const write = RepositoryInvitationPermissions._('write');
@@ -153,48 +138,36 @@ final class RepositoryInvitationPermissions {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryInvitationPermissions && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryInvitationPermissions && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The operator to use for matching.
 final class RepositoryRuleBranchNamePatternParametersOperator {
+
   final String value;
 
   const RepositoryRuleBranchNamePatternParametersOperator._(this.value);
 
-  factory RepositoryRuleBranchNamePatternParametersOperator.fromJson(
-          String value) =>
-      RepositoryRuleBranchNamePatternParametersOperator._(value);
+  factory RepositoryRuleBranchNamePatternParametersOperator.fromJson(String value) => RepositoryRuleBranchNamePatternParametersOperator._(value);
 
-  static const startsWith =
-      RepositoryRuleBranchNamePatternParametersOperator._('starts_with');
-  static const endsWith =
-      RepositoryRuleBranchNamePatternParametersOperator._('ends_with');
-  static const contains =
-      RepositoryRuleBranchNamePatternParametersOperator._('contains');
-  static const regex =
-      RepositoryRuleBranchNamePatternParametersOperator._('regex');
+  static const startsWith = RepositoryRuleBranchNamePatternParametersOperator._('starts_with');
+  static const endsWith = RepositoryRuleBranchNamePatternParametersOperator._('ends_with');
+  static const contains = RepositoryRuleBranchNamePatternParametersOperator._('contains');
+  static const regex = RepositoryRuleBranchNamePatternParametersOperator._('regex');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleBranchNamePatternParametersOperator &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleBranchNamePatternParametersOperator && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -203,18 +176,14 @@ enum RepositoryRuleBranchNamePatternType {
 
   static RepositoryRuleBranchNamePatternType fromJson(String value) {
     switch (value) {
-      case 'branch_name_pattern':
-        return RepositoryRuleBranchNamePatternType.branchNamePattern;
-      default:
-        throw ArgumentError(
-            'Unknown RepositoryRuleBranchNamePatternType: $value');
+      case 'branch_name_pattern': return RepositoryRuleBranchNamePatternType.branchNamePattern;
+      default: throw ArgumentError('Unknown RepositoryRuleBranchNamePatternType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleBranchNamePatternType.branchNamePattern:
-        return 'branch_name_pattern';
+      case RepositoryRuleBranchNamePatternType.branchNamePattern: return 'branch_name_pattern';
     }
   }
 
@@ -228,17 +197,14 @@ enum RepositoryRuleCodeCoverageType {
 
   static RepositoryRuleCodeCoverageType fromJson(String value) {
     switch (value) {
-      case 'code_coverage':
-        return RepositoryRuleCodeCoverageType.codeCoverage;
-      default:
-        throw ArgumentError('Unknown RepositoryRuleCodeCoverageType: $value');
+      case 'code_coverage': return RepositoryRuleCodeCoverageType.codeCoverage;
+      default: throw ArgumentError('Unknown RepositoryRuleCodeCoverageType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCodeCoverageType.codeCoverage:
-        return 'code_coverage';
+      case RepositoryRuleCodeCoverageType.codeCoverage: return 'code_coverage';
     }
   }
 
@@ -248,31 +214,26 @@ enum RepositoryRuleCodeCoverageType {
 
 /// The lowest severity level at which code quality reviews need to be resolved before commits can be merged.
 final class RepositoryRuleCodeQualityParametersSeverity {
+
   final String value;
 
   const RepositoryRuleCodeQualityParametersSeverity._(this.value);
 
-  factory RepositoryRuleCodeQualityParametersSeverity.fromJson(String value) =>
-      RepositoryRuleCodeQualityParametersSeverity._(value);
+  factory RepositoryRuleCodeQualityParametersSeverity.fromJson(String value) => RepositoryRuleCodeQualityParametersSeverity._(value);
 
   static const errors = RepositoryRuleCodeQualityParametersSeverity._('errors');
-  static const warnings =
-      RepositoryRuleCodeQualityParametersSeverity._('warnings');
+  static const warnings = RepositoryRuleCodeQualityParametersSeverity._('warnings');
   static const notes = RepositoryRuleCodeQualityParametersSeverity._('notes');
   static const all = RepositoryRuleCodeQualityParametersSeverity._('all');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleCodeQualityParametersSeverity &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryRuleCodeQualityParametersSeverity && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -281,17 +242,14 @@ enum RepositoryRuleCodeQualityType {
 
   static RepositoryRuleCodeQualityType fromJson(String value) {
     switch (value) {
-      case 'code_quality':
-        return RepositoryRuleCodeQualityType.codeQuality;
-      default:
-        throw ArgumentError('Unknown RepositoryRuleCodeQualityType: $value');
+      case 'code_quality': return RepositoryRuleCodeQualityType.codeQuality;
+      default: throw ArgumentError('Unknown RepositoryRuleCodeQualityType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCodeQualityType.codeQuality:
-        return 'code_quality';
+      case RepositoryRuleCodeQualityType.codeQuality: return 'code_quality';
     }
   }
 
@@ -305,17 +263,14 @@ enum RepositoryRuleCodeScanningType {
 
   static RepositoryRuleCodeScanningType fromJson(String value) {
     switch (value) {
-      case 'code_scanning':
-        return RepositoryRuleCodeScanningType.codeScanning;
-      default:
-        throw ArgumentError('Unknown RepositoryRuleCodeScanningType: $value');
+      case 'code_scanning': return RepositoryRuleCodeScanningType.codeScanning;
+      default: throw ArgumentError('Unknown RepositoryRuleCodeScanningType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCodeScanningType.codeScanning:
-        return 'code_scanning';
+      case RepositoryRuleCodeScanningType.codeScanning: return 'code_scanning';
     }
   }
 

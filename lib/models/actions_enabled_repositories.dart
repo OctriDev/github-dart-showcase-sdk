@@ -6,12 +6,12 @@ part of 'actions.dart';
 // actions domain models
 /// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
 final class EnabledRepositories {
+
   final String value;
 
   const EnabledRepositories._(this.value);
 
-  factory EnabledRepositories.fromJson(String value) =>
-      EnabledRepositories._(value);
+  factory EnabledRepositories.fromJson(String value) => EnabledRepositories._(value);
 
   static const all = EnabledRepositories._('all');
   static const none = EnabledRepositories._('none');
@@ -19,13 +19,10 @@ final class EnabledRepositories {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is EnabledRepositories && other.value == value;
+  @override bool operator ==(Object other) => other is EnabledRepositories && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

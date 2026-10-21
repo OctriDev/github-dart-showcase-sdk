@@ -6,6 +6,7 @@ part of 'actions.dart';
 // actions domain models
 /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
 final class AllowedActions {
+
   final String value;
 
   const AllowedActions._(this.value);
@@ -18,13 +19,10 @@ final class AllowedActions {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is AllowedActions && other.value == value;
+  @override bool operator ==(Object other) => other is AllowedActions && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

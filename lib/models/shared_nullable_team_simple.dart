@@ -8,226 +8,112 @@ part of 'shared_nullable.dart';
 class NullableTeamSimple {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Unique identifier of the team
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// URL for the team
   final String url;
-
   /// Required `string` value serialized in the `members_url` wire field.
   final String membersUrl;
-
   /// Name of the team
   final String name;
-
   /// Description of the team
   final String? description;
-
   /// Permission that the team will have for its repositories
   final String permission;
-
   /// The level of privacy this team should have
   final SdkOptional<String> privacy;
-
   /// The notification setting the team has set
   final SdkOptional<String> notificationSetting;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `uri`-formatted value serialized in the `repositories_url` wire field.
   final String repositoriesUrl;
-
   /// Required `string` value serialized in the `slug` wire field.
   final String slug;
-
   /// Distinguished Name (DN) that team maps to within LDAP environment
   final SdkOptional<String> ldapDn;
-
   /// The ownership type of the team
   final NullableTeamSimpleType type_;
-
   /// Unique identifier of the organization to which this team belongs
   final SdkOptional<int> organizationId;
-
   /// Unique identifier of the enterprise to which this team belongs
   final SdkOptional<int> enterpriseId;
 
-  const NullableTeamSimple(
-      {required this.id,
-      required this.nodeId,
-      required this.url,
-      required this.membersUrl,
-      required this.name,
-      required this.description,
-      required this.permission,
-      this.privacy = const SdkOmitted(),
-      this.notificationSetting = const SdkOmitted(),
-      required this.htmlUrl,
-      required this.repositoriesUrl,
-      required this.slug,
-      this.ldapDn = const SdkOmitted(),
-      required this.type_,
-      this.organizationId = const SdkOmitted(),
-      this.enterpriseId = const SdkOmitted()});
+  const NullableTeamSimple({required this.id, required this.nodeId, required this.url, required this.membersUrl, required this.name, required this.description, required this.permission, this.privacy = const SdkOmitted(), this.notificationSetting = const SdkOmitted(), required this.htmlUrl, required this.repositoriesUrl, required this.slug, this.ldapDn = const SdkOmitted(), required this.type_, this.organizationId = const SdkOmitted(), this.enterpriseId = const SdkOmitted()});
 
-  NullableTeamSimple Function(
-      {int id,
-      String nodeId,
-      String url,
-      String membersUrl,
-      String name,
-      String? description,
-      String permission,
-      SdkOptional<String> privacy,
-      SdkOptional<String> notificationSetting,
-      String htmlUrl,
-      String repositoriesUrl,
-      String slug,
-      SdkOptional<String> ldapDn,
-      NullableTeamSimpleType type_,
-      SdkOptional<int> organizationId,
-      SdkOptional<int> enterpriseId}) get copyWith => _copyWith;
+  NullableTeamSimple Function({int id, String nodeId, String url, String membersUrl, String name, String? description, String permission, SdkOptional<String> privacy, SdkOptional<String> notificationSetting, String htmlUrl, String repositoriesUrl, String slug, SdkOptional<String> ldapDn, NullableTeamSimpleType type_, SdkOptional<int> organizationId, SdkOptional<int> enterpriseId}) get copyWith => _copyWith;
 
-  NullableTeamSimple _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? membersUrl = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? permission = sdkOmittedValue,
-          Object? privacy = sdkOmittedValue,
-          Object? notificationSetting = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? repositoriesUrl = sdkOmittedValue,
-          Object? slug = sdkOmittedValue,
-          Object? ldapDn = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? organizationId = sdkOmittedValue,
-          Object? enterpriseId = sdkOmittedValue}) =>
-      NullableTeamSimple(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        membersUrl: identical(membersUrl, sdkOmittedValue)
-            ? this.membersUrl
-            : membersUrl as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        permission: identical(permission, sdkOmittedValue)
-            ? this.permission
-            : permission as String,
-        privacy: identical(privacy, sdkOmittedValue)
-            ? this.privacy
-            : privacy as SdkOptional<String>,
-        notificationSetting: identical(notificationSetting, sdkOmittedValue)
-            ? this.notificationSetting
-            : notificationSetting as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
-            ? this.repositoriesUrl
-            : repositoriesUrl as String,
-        slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-        ldapDn: identical(ldapDn, sdkOmittedValue)
-            ? this.ldapDn
-            : ldapDn as SdkOptional<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as NullableTeamSimpleType,
-        organizationId: identical(organizationId, sdkOmittedValue)
-            ? this.organizationId
-            : organizationId as SdkOptional<int>,
-        enterpriseId: identical(enterpriseId, sdkOmittedValue)
-            ? this.enterpriseId
-            : enterpriseId as SdkOptional<int>,
-      );
+  NullableTeamSimple _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? notificationSetting = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? ldapDn = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? organizationId = sdkOmittedValue, Object? enterpriseId = sdkOmittedValue}) => NullableTeamSimple(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as String,
+    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as SdkOptional<String>,
+    notificationSetting: identical(notificationSetting, sdkOmittedValue) ? this.notificationSetting : notificationSetting as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
+    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+    ldapDn: identical(ldapDn, sdkOmittedValue) ? this.ldapDn : ldapDn as SdkOptional<String>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as NullableTeamSimpleType,
+    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as SdkOptional<int>,
+    enterpriseId: identical(enterpriseId, sdkOmittedValue) ? this.enterpriseId : enterpriseId as SdkOptional<int>,
+  );
 
-  factory NullableTeamSimple.fromJson(Map<String, dynamic> json) =>
-      NullableTeamSimple(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-        membersUrl: (json['members_url'] as String?)!,
-        name: (json['name'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        permission: (json['permission'] as String?)!,
-        privacy: json['privacy'] != null
-            ? SdkPresent((json['privacy'] as String?)!)
-            : const SdkOmitted(),
-        notificationSetting: json['notification_setting'] != null
-            ? SdkPresent((json['notification_setting'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: (json['html_url'] as String?)!,
-        repositoriesUrl: (json['repositories_url'] as String?)!,
-        slug: (json['slug'] as String?)!,
-        ldapDn: json['ldap_dn'] != null
-            ? SdkPresent((json['ldap_dn'] as String?)!)
-            : const SdkOmitted(),
-        type_: (json['type'] != null
-            ? NullableTeamSimpleType.fromJson(json['type'] as String)
-            : null)!,
-        organizationId: json['organization_id'] != null
-            ? SdkPresent(((json['organization_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        enterpriseId: json['enterprise_id'] != null
-            ? SdkPresent(((json['enterprise_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory NullableTeamSimple.fromJson(Map<String, dynamic> json) => NullableTeamSimple(
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    url: (json['url'] as String?)!,
+    membersUrl: (json['members_url'] as String?)!,
+    name: (json['name'] as String?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    permission: (json['permission'] as String?)!,
+    privacy: json['privacy'] != null ? SdkPresent((json['privacy'] as String?)!) : const SdkOmitted(),
+    notificationSetting: json['notification_setting'] != null ? SdkPresent((json['notification_setting'] as String?)!) : const SdkOmitted(),
+    htmlUrl: (json['html_url'] as String?)!,
+    repositoriesUrl: (json['repositories_url'] as String?)!,
+    slug: (json['slug'] as String?)!,
+    ldapDn: json['ldap_dn'] != null ? SdkPresent((json['ldap_dn'] as String?)!) : const SdkOmitted(),
+    type_: (json['type'] != null ? NullableTeamSimpleType.fromJson(json['type'] as String) : null)!,
+    organizationId: json['organization_id'] != null ? SdkPresent(((json['organization_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    enterpriseId: json['enterprise_id'] != null ? SdkPresent(((json['enterprise_id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'url': url,
-        'members_url': membersUrl,
-        'name': name,
-        'description': description,
-        'permission': permission,
-        ...switch (privacy) {
-          SdkPresent<String>(value: final value) => {
-              'privacy': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (notificationSetting) {
-          SdkPresent<String>(value: final value) => {
-              'notification_setting': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'html_url': htmlUrl,
-        'repositories_url': repositoriesUrl,
-        'slug': slug,
-        ...switch (ldapDn) {
-          SdkPresent<String>(value: final value) => {
-              'ldap_dn': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'type': type_.toJson(),
-        ...switch (organizationId) {
-          SdkPresent<int>(value: final value) => {
-              'organization_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enterpriseId) {
-          SdkPresent<int>(value: final value) => {
-              'enterprise_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'node_id': nodeId,
+    'url': url,
+    'members_url': membersUrl,
+    'name': name,
+    'description': description,
+    'permission': permission,
+    ...switch (privacy) {
+      SdkPresent<String>(value: final value) => {'privacy': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (notificationSetting) {
+      SdkPresent<String>(value: final value) => {'notification_setting': value,},
+      _ => const <String, dynamic>{},
+    },
+    'html_url': htmlUrl,
+    'repositories_url': repositoriesUrl,
+    'slug': slug,
+    ...switch (ldapDn) {
+      SdkPresent<String>(value: final value) => {'ldap_dn': value,},
+      _ => const <String, dynamic>{},
+    },
+    'type': type_.toJson(),
+    ...switch (organizationId) {
+      SdkPresent<int>(value: final value) => {'organization_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enterpriseId) {
+      SdkPresent<int>(value: final value) => {'enterprise_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -8,194 +8,90 @@ part of 'projects.dart';
 class ProjectsV2ItemWithContent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the project item.
   final double id;
-
   /// The node ID of the project item.
   final SdkOptional<String> nodeId;
-
   /// The API URL of the project that contains this item.
   final SdkOptional<String> projectUrl;
-
   /// The type of content tracked in a project item
   final ProjectsV2ItemContentType contentType;
-
   /// The content of the item, which varies by content type.
   final SdkOptional<Map<String, Object?>?> content;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> creator;
-
   /// The time when the item was created.
   final String createdAt;
-
   /// The time when the item was last updated.
   final String updatedAt;
-
   /// The time when the item was archived.
   final String? archivedAt;
-
   /// The API URL of this item.
   final SdkOptional<String?> itemUrl;
-
   /// The fields and values associated with this item.
   final SdkOptional<List<Map<String, Object?>>> fields;
 
-  const ProjectsV2ItemWithContent(
-      {required this.id,
-      this.nodeId = const SdkOmitted(),
-      this.projectUrl = const SdkOmitted(),
-      required this.contentType,
-      this.content = const SdkOmitted(),
-      this.creator = const SdkOmitted(),
-      required this.createdAt,
-      required this.updatedAt,
-      required this.archivedAt,
-      this.itemUrl = const SdkOmitted(),
-      this.fields = const SdkOmitted()});
+  const ProjectsV2ItemWithContent({required this.id, this.nodeId = const SdkOmitted(), this.projectUrl = const SdkOmitted(), required this.contentType, this.content = const SdkOmitted(), this.creator = const SdkOmitted(), required this.createdAt, required this.updatedAt, required this.archivedAt, this.itemUrl = const SdkOmitted(), this.fields = const SdkOmitted()});
 
-  ProjectsV2ItemWithContent Function(
-          {double id,
-          SdkOptional<String> nodeId,
-          SdkOptional<String> projectUrl,
-          ProjectsV2ItemContentType contentType,
-          SdkOptional<Map<String, Object?>?> content,
-          SdkOptional<SimpleUser> creator,
-          String createdAt,
-          String updatedAt,
-          String? archivedAt,
-          SdkOptional<String?> itemUrl,
-          SdkOptional<List<Map<String, Object?>>> fields})
-      get copyWith => _copyWith;
+  ProjectsV2ItemWithContent Function({double id, SdkOptional<String> nodeId, SdkOptional<String> projectUrl, ProjectsV2ItemContentType contentType, SdkOptional<Map<String, Object?>?> content, SdkOptional<SimpleUser> creator, String createdAt, String updatedAt, String? archivedAt, SdkOptional<String?> itemUrl, SdkOptional<List<Map<String, Object?>>> fields}) get copyWith => _copyWith;
 
-  ProjectsV2ItemWithContent _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? projectUrl = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue,
-          Object? itemUrl = sdkOmittedValue,
-          Object? fields = sdkOmittedValue}) =>
-      ProjectsV2ItemWithContent(
-        id: identical(id, sdkOmittedValue) ? this.id : id as double,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        projectUrl: identical(projectUrl, sdkOmittedValue)
-            ? this.projectUrl
-            : projectUrl as SdkOptional<String>,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as ProjectsV2ItemContentType,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as SdkOptional<Map<String, Object?>?>,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as SdkOptional<SimpleUser>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as String?,
-        itemUrl: identical(itemUrl, sdkOmittedValue)
-            ? this.itemUrl
-            : itemUrl as SdkOptional<String?>,
-        fields: identical(fields, sdkOmittedValue)
-            ? this.fields
-            : fields as SdkOptional<List<Map<String, Object?>>>,
-      );
+  ProjectsV2ItemWithContent _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? content = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? itemUrl = sdkOmittedValue, Object? fields = sdkOmittedValue}) => ProjectsV2ItemWithContent(
+    id: identical(id, sdkOmittedValue) ? this.id : id as double,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as SdkOptional<String>,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as ProjectsV2ItemContentType,
+    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<Map<String, Object?>?>,
+    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SdkOptional<SimpleUser>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
+    itemUrl: identical(itemUrl, sdkOmittedValue) ? this.itemUrl : itemUrl as SdkOptional<String?>,
+    fields: identical(fields, sdkOmittedValue) ? this.fields : fields as SdkOptional<List<Map<String, Object?>>>,
+  );
 
-  factory ProjectsV2ItemWithContent.fromJson(Map<String, dynamic> json) =>
-      ProjectsV2ItemWithContent(
-        id: ((json['id'] as num?)?.toDouble())!,
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        projectUrl: json['project_url'] != null
-            ? SdkPresent((json['project_url'] as String?)!)
-            : const SdkOmitted(),
-        contentType: (json['content_type'] != null
-            ? ProjectsV2ItemContentType.fromJson(json['content_type'] as String)
-            : null)!,
-        content: json.containsKey('content')
-            ? SdkPresent(json['content'] == null
-                ? null
-                : Map<String, dynamic>.from(json['content'] as Map)
-                    .map((key, value) => MapEntry(key, value)))
-            : const SdkOmitted(),
-        creator: json['creator'] != null
-            ? SdkPresent((json['creator'] != null
-                ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        archivedAt: json.containsKey('archived_at')
-            ? json['archived_at'] as String?
-            : throw ArgumentError.value(
-                null, 'archived_at', 'Required property is missing'),
-        itemUrl: json.containsKey('item_url')
-            ? SdkPresent(json['item_url'] as String?)
-            : const SdkOmitted(),
-        fields: json['fields'] != null
-            ? SdkPresent(((json['fields'] as List?)
-                ?.map((e) => Map<String, dynamic>.from(e as Map)
-                    .map((key, value) => MapEntry(key, value)))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ProjectsV2ItemWithContent.fromJson(Map<String, dynamic> json) => ProjectsV2ItemWithContent(
+    id: ((json['id'] as num?)?.toDouble())!,
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    projectUrl: json['project_url'] != null ? SdkPresent((json['project_url'] as String?)!) : const SdkOmitted(),
+    contentType: (json['content_type'] != null ? ProjectsV2ItemContentType.fromJson(json['content_type'] as String) : null)!,
+    content: json.containsKey('content') ? SdkPresent(json['content'] == null ? null : Map<String, dynamic>.from(json['content'] as Map).map((key, value) => MapEntry(key, value))) : const SdkOmitted(),
+    creator: json['creator'] != null ? SdkPresent((json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
+    itemUrl: json.containsKey('item_url') ? SdkPresent(json['item_url'] as String?) : const SdkOmitted(),
+    fields: json['fields'] != null ? SdkPresent(((json['fields'] as List?)?.map((e) => Map<String, dynamic>.from(e as Map).map((key, value) => MapEntry(key, value))).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (projectUrl) {
-          SdkPresent<String>(value: final value) => {
-              'project_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content_type': contentType.toJson(),
-        ...switch (content) {
-          SdkPresent<Map<String, Object?>?>(value: final value) => {
-              'content': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (creator) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'creator': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'archived_at': archivedAt,
-        ...switch (itemUrl) {
-          SdkPresent<String?>(value: final value) => {
-              'item_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (fields) {
-          SdkPresent<List<Map<String, Object?>>>(value: final value) => {
-              'fields': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (projectUrl) {
+      SdkPresent<String>(value: final value) => {'project_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'content_type': contentType.toJson(),
+    ...switch (content) {
+      SdkPresent<Map<String, Object?>?>(value: final value) => {'content': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (creator) {
+      SdkPresent<SimpleUser>(value: final value) => {'creator': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'archived_at': archivedAt,
+    ...switch (itemUrl) {
+      SdkPresent<String?>(value: final value) => {'item_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (fields) {
+      SdkPresent<List<Map<String, Object?>>>(value: final value) => {'fields': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

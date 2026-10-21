@@ -8,91 +8,54 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleMaxFilePathLengthParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The maximum amount of characters allowed in file paths.
   final int maxFilePathLength;
 
-  const RepositoryRuleMaxFilePathLengthParameters(
-      {required this.maxFilePathLength});
+  const RepositoryRuleMaxFilePathLengthParameters({required this.maxFilePathLength});
 
-  RepositoryRuleMaxFilePathLengthParameters Function({int maxFilePathLength})
-      get copyWith => _copyWith;
+  RepositoryRuleMaxFilePathLengthParameters Function({int maxFilePathLength}) get copyWith => _copyWith;
 
-  RepositoryRuleMaxFilePathLengthParameters _copyWith(
-          {Object? maxFilePathLength = sdkOmittedValue}) =>
-      RepositoryRuleMaxFilePathLengthParameters(
-        maxFilePathLength: identical(maxFilePathLength, sdkOmittedValue)
-            ? this.maxFilePathLength
-            : maxFilePathLength as int,
-      );
+  RepositoryRuleMaxFilePathLengthParameters _copyWith({Object? maxFilePathLength = sdkOmittedValue}) => RepositoryRuleMaxFilePathLengthParameters(
+    maxFilePathLength: identical(maxFilePathLength, sdkOmittedValue) ? this.maxFilePathLength : maxFilePathLength as int,
+  );
 
-  factory RepositoryRuleMaxFilePathLengthParameters.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleMaxFilePathLengthParameters(
-        maxFilePathLength: ((json['max_file_path_length'] as num?)?.toInt())!,
-      );
+  factory RepositoryRuleMaxFilePathLengthParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFilePathLengthParameters(
+    maxFilePathLength: ((json['max_file_path_length'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'max_file_path_length': maxFilePathLength,
-      };
+    'max_file_path_length': maxFilePathLength,
+  };
 }
 
 /// Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph.
 class RepositoryRuleMaxFilePathLength {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleMaxFilePathLengthType type_;
-
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleMaxFilePathLengthParameters> parameters;
 
-  const RepositoryRuleMaxFilePathLength(
-      {required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleMaxFilePathLength({required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleMaxFilePathLength Function(
-          {RepositoryRuleMaxFilePathLengthType type_,
-          SdkOptional<RepositoryRuleMaxFilePathLengthParameters> parameters})
-      get copyWith => _copyWith;
+  RepositoryRuleMaxFilePathLength Function({RepositoryRuleMaxFilePathLengthType type_, SdkOptional<RepositoryRuleMaxFilePathLengthParameters> parameters}) get copyWith => _copyWith;
 
-  RepositoryRuleMaxFilePathLength _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? parameters = sdkOmittedValue}) =>
-      RepositoryRuleMaxFilePathLength(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleMaxFilePathLengthType,
-        parameters: identical(parameters, sdkOmittedValue)
-            ? this.parameters
-            : parameters
-                as SdkOptional<RepositoryRuleMaxFilePathLengthParameters>,
-      );
+  RepositoryRuleMaxFilePathLength _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleMaxFilePathLength(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleMaxFilePathLengthType,
+    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleMaxFilePathLengthParameters>,
+  );
 
-  factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleMaxFilePathLength(
-        type_: (json['type'] != null
-            ? RepositoryRuleMaxFilePathLengthType.fromJson(
-                json['type'] as String)
-            : null)!,
-        parameters: json['parameters'] != null
-            ? SdkPresent((json['parameters'] != null
-                ? RepositoryRuleMaxFilePathLengthParameters.fromJson(
-                    json['parameters'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFilePathLength(
+    type_: (json['type'] != null ? RepositoryRuleMaxFilePathLengthType.fromJson(json['type'] as String) : null)!,
+    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleMaxFilePathLengthParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (parameters) {
-          SdkPresent<RepositoryRuleMaxFilePathLengthParameters>(
-            value: final value
-          ) =>
-            {
-              'parameters': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    ...switch (parameters) {
+      SdkPresent<RepositoryRuleMaxFilePathLengthParameters>(value: final value) => {'parameters': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

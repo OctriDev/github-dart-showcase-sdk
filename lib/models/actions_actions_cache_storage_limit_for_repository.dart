@@ -8,38 +8,25 @@ part of 'actions_actions_cache.dart';
 class ActionsCacheStorageLimitForRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The maximum total cache size for this repository, in gigabytes.
   final SdkOptional<int> maxCacheSizeGb;
 
-  const ActionsCacheStorageLimitForRepository(
-      {this.maxCacheSizeGb = const SdkOmitted()});
+  const ActionsCacheStorageLimitForRepository({this.maxCacheSizeGb = const SdkOmitted()});
 
-  ActionsCacheStorageLimitForRepository Function(
-      {SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
+  ActionsCacheStorageLimitForRepository Function({SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
 
-  ActionsCacheStorageLimitForRepository _copyWith(
-          {Object? maxCacheSizeGb = sdkOmittedValue}) =>
-      ActionsCacheStorageLimitForRepository(
-        maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue)
-            ? this.maxCacheSizeGb
-            : maxCacheSizeGb as SdkOptional<int>,
-      );
+  ActionsCacheStorageLimitForRepository _copyWith({Object? maxCacheSizeGb = sdkOmittedValue}) => ActionsCacheStorageLimitForRepository(
+    maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue) ? this.maxCacheSizeGb : maxCacheSizeGb as SdkOptional<int>,
+  );
 
-  factory ActionsCacheStorageLimitForRepository.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCacheStorageLimitForRepository(
-        maxCacheSizeGb: json['max_cache_size_gb'] != null
-            ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory ActionsCacheStorageLimitForRepository.fromJson(Map<String, dynamic> json) => ActionsCacheStorageLimitForRepository(
+    maxCacheSizeGb: json['max_cache_size_gb'] != null ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (maxCacheSizeGb) {
-          SdkPresent<int>(value: final value) => {
-              'max_cache_size_gb': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (maxCacheSizeGb) {
+      SdkPresent<int>(value: final value) => {'max_cache_size_gb': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

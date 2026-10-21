@@ -8,206 +8,94 @@ part of 'copilot.dart';
 class CopilotSeatDetails {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A GitHub user.
   final SdkOptional<NullableSimpleUser?> assignee;
-
   /// A GitHub organization.
   final SdkOptional<NullableOrganizationSimple?> organization;
-
   /// The team through which the assignee is granted access to GitHub Copilot, if applicable.
   final SdkOptional<CopilotSeatDetailsAssigningTeam?> assigningTeam;
-
   /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
   final SdkOptional<String?> pendingCancellationDate;
-
   /// Timestamp of user's last GitHub Copilot activity, in ISO 8601 format.
   final SdkOptional<String?> lastActivityAt;
-
   /// Last editor that was used by the user for a GitHub Copilot completion.
   final SdkOptional<String?> lastActivityEditor;
-
   /// Timestamp of the last time the user authenticated with GitHub Copilot, in ISO 8601 format.
   final SdkOptional<String?> lastAuthenticatedAt;
-
   /// Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
   final String createdAt;
-
   /// **Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
   final SdkOptional<String> updatedAt;
-
   /// The Copilot plan of the organization, or the parent enterprise, when applicable.
   final SdkOptional<CopilotSeatDetailsPlanType> planType;
 
-  const CopilotSeatDetails(
-      {this.assignee = const SdkOmitted(),
-      this.organization = const SdkOmitted(),
-      this.assigningTeam = const SdkOmitted(),
-      this.pendingCancellationDate = const SdkOmitted(),
-      this.lastActivityAt = const SdkOmitted(),
-      this.lastActivityEditor = const SdkOmitted(),
-      this.lastAuthenticatedAt = const SdkOmitted(),
-      required this.createdAt,
-      this.updatedAt = const SdkOmitted(),
-      this.planType = const SdkOmitted()});
+  const CopilotSeatDetails({this.assignee = const SdkOmitted(), this.organization = const SdkOmitted(), this.assigningTeam = const SdkOmitted(), this.pendingCancellationDate = const SdkOmitted(), this.lastActivityAt = const SdkOmitted(), this.lastActivityEditor = const SdkOmitted(), this.lastAuthenticatedAt = const SdkOmitted(), required this.createdAt, this.updatedAt = const SdkOmitted(), this.planType = const SdkOmitted()});
 
-  CopilotSeatDetails Function(
-          {SdkOptional<NullableSimpleUser?> assignee,
-          SdkOptional<NullableOrganizationSimple?> organization,
-          SdkOptional<CopilotSeatDetailsAssigningTeam?> assigningTeam,
-          SdkOptional<String?> pendingCancellationDate,
-          SdkOptional<String?> lastActivityAt,
-          SdkOptional<String?> lastActivityEditor,
-          SdkOptional<String?> lastAuthenticatedAt,
-          String createdAt,
-          SdkOptional<String> updatedAt,
-          SdkOptional<CopilotSeatDetailsPlanType> planType})
-      get copyWith => _copyWith;
+  CopilotSeatDetails Function({SdkOptional<NullableSimpleUser?> assignee, SdkOptional<NullableOrganizationSimple?> organization, SdkOptional<CopilotSeatDetailsAssigningTeam?> assigningTeam, SdkOptional<String?> pendingCancellationDate, SdkOptional<String?> lastActivityAt, SdkOptional<String?> lastActivityEditor, SdkOptional<String?> lastAuthenticatedAt, String createdAt, SdkOptional<String> updatedAt, SdkOptional<CopilotSeatDetailsPlanType> planType}) get copyWith => _copyWith;
 
-  CopilotSeatDetails _copyWith(
-          {Object? assignee = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? assigningTeam = sdkOmittedValue,
-          Object? pendingCancellationDate = sdkOmittedValue,
-          Object? lastActivityAt = sdkOmittedValue,
-          Object? lastActivityEditor = sdkOmittedValue,
-          Object? lastAuthenticatedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? planType = sdkOmittedValue}) =>
-      CopilotSeatDetails(
-        assignee: identical(assignee, sdkOmittedValue)
-            ? this.assignee
-            : assignee as SdkOptional<NullableSimpleUser?>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<NullableOrganizationSimple?>,
-        assigningTeam: identical(assigningTeam, sdkOmittedValue)
-            ? this.assigningTeam
-            : assigningTeam as SdkOptional<CopilotSeatDetailsAssigningTeam?>,
-        pendingCancellationDate:
-            identical(pendingCancellationDate, sdkOmittedValue)
-                ? this.pendingCancellationDate
-                : pendingCancellationDate as SdkOptional<String?>,
-        lastActivityAt: identical(lastActivityAt, sdkOmittedValue)
-            ? this.lastActivityAt
-            : lastActivityAt as SdkOptional<String?>,
-        lastActivityEditor: identical(lastActivityEditor, sdkOmittedValue)
-            ? this.lastActivityEditor
-            : lastActivityEditor as SdkOptional<String?>,
-        lastAuthenticatedAt: identical(lastAuthenticatedAt, sdkOmittedValue)
-            ? this.lastAuthenticatedAt
-            : lastAuthenticatedAt as SdkOptional<String?>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-        planType: identical(planType, sdkOmittedValue)
-            ? this.planType
-            : planType as SdkOptional<CopilotSeatDetailsPlanType>,
-      );
+  CopilotSeatDetails _copyWith({Object? assignee = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? assigningTeam = sdkOmittedValue, Object? pendingCancellationDate = sdkOmittedValue, Object? lastActivityAt = sdkOmittedValue, Object? lastActivityEditor = sdkOmittedValue, Object? lastAuthenticatedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? planType = sdkOmittedValue}) => CopilotSeatDetails(
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<NullableSimpleUser?>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<NullableOrganizationSimple?>,
+    assigningTeam: identical(assigningTeam, sdkOmittedValue) ? this.assigningTeam : assigningTeam as SdkOptional<CopilotSeatDetailsAssigningTeam?>,
+    pendingCancellationDate: identical(pendingCancellationDate, sdkOmittedValue) ? this.pendingCancellationDate : pendingCancellationDate as SdkOptional<String?>,
+    lastActivityAt: identical(lastActivityAt, sdkOmittedValue) ? this.lastActivityAt : lastActivityAt as SdkOptional<String?>,
+    lastActivityEditor: identical(lastActivityEditor, sdkOmittedValue) ? this.lastActivityEditor : lastActivityEditor as SdkOptional<String?>,
+    lastAuthenticatedAt: identical(lastAuthenticatedAt, sdkOmittedValue) ? this.lastAuthenticatedAt : lastAuthenticatedAt as SdkOptional<String?>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+    planType: identical(planType, sdkOmittedValue) ? this.planType : planType as SdkOptional<CopilotSeatDetailsPlanType>,
+  );
 
-  factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) =>
-      CopilotSeatDetails(
-        assignee: json.containsKey('assignee')
-            ? SdkPresent(json['assignee'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['assignee'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        organization: json.containsKey('organization')
-            ? SdkPresent(json['organization'] != null
-                ? NullableOrganizationSimple.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        assigningTeam: json.containsKey('assigning_team')
-            ? SdkPresent(json['assigning_team'] != null
-                ? CopilotSeatDetailsAssigningTeam.fromJson(
-                    json['assigning_team'])
-                : null)
-            : const SdkOmitted(),
-        pendingCancellationDate: json.containsKey('pending_cancellation_date')
-            ? SdkPresent(json['pending_cancellation_date'] as String?)
-            : const SdkOmitted(),
-        lastActivityAt: json.containsKey('last_activity_at')
-            ? SdkPresent(json['last_activity_at'] as String?)
-            : const SdkOmitted(),
-        lastActivityEditor: json.containsKey('last_activity_editor')
-            ? SdkPresent(json['last_activity_editor'] as String?)
-            : const SdkOmitted(),
-        lastAuthenticatedAt: json.containsKey('last_authenticated_at')
-            ? SdkPresent(json['last_authenticated_at'] as String?)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-        planType: json['plan_type'] != null
-            ? SdkPresent((json['plan_type'] != null
-                ? CopilotSeatDetailsPlanType.fromJson(
-                    json['plan_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) => CopilotSeatDetails(
+    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] != null ? NullableSimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    organization: json.containsKey('organization') ? SdkPresent(json['organization'] != null ? NullableOrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    assigningTeam: json.containsKey('assigning_team') ? SdkPresent(json['assigning_team'] != null ? CopilotSeatDetailsAssigningTeam.fromJson(json['assigning_team']) : null) : const SdkOmitted(),
+    pendingCancellationDate: json.containsKey('pending_cancellation_date') ? SdkPresent(json['pending_cancellation_date'] as String?) : const SdkOmitted(),
+    lastActivityAt: json.containsKey('last_activity_at') ? SdkPresent(json['last_activity_at'] as String?) : const SdkOmitted(),
+    lastActivityEditor: json.containsKey('last_activity_editor') ? SdkPresent(json['last_activity_editor'] as String?) : const SdkOmitted(),
+    lastAuthenticatedAt: json.containsKey('last_authenticated_at') ? SdkPresent(json['last_authenticated_at'] as String?) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+    planType: json['plan_type'] != null ? SdkPresent((json['plan_type'] != null ? CopilotSeatDetailsPlanType.fromJson(json['plan_type'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (assignee) {
-          SdkPresent<NullableSimpleUser?>(value: final value) => {
-              'assignee': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organization) {
-          SdkPresent<NullableOrganizationSimple?>(value: final value) => {
-              'organization': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assigningTeam) {
-          SdkPresent<CopilotSeatDetailsAssigningTeam?>(value: final value) => {
-              'assigning_team': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pendingCancellationDate) {
-          SdkPresent<String?>(value: final value) => {
-              'pending_cancellation_date': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastActivityAt) {
-          SdkPresent<String?>(value: final value) => {
-              'last_activity_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastActivityEditor) {
-          SdkPresent<String?>(value: final value) => {
-              'last_activity_editor': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastAuthenticatedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'last_authenticated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (planType) {
-          SdkPresent<CopilotSeatDetailsPlanType>(value: final value) => {
-              'plan_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (assignee) {
+      SdkPresent<NullableSimpleUser?>(value: final value) => {'assignee': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organization) {
+      SdkPresent<NullableOrganizationSimple?>(value: final value) => {'organization': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assigningTeam) {
+      SdkPresent<CopilotSeatDetailsAssigningTeam?>(value: final value) => {'assigning_team': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pendingCancellationDate) {
+      SdkPresent<String?>(value: final value) => {'pending_cancellation_date': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lastActivityAt) {
+      SdkPresent<String?>(value: final value) => {'last_activity_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lastActivityEditor) {
+      SdkPresent<String?>(value: final value) => {'last_activity_editor': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (lastAuthenticatedAt) {
+      SdkPresent<String?>(value: final value) => {'last_authenticated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (planType) {
+      SdkPresent<CopilotSeatDetailsPlanType>(value: final value) => {'plan_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -8,231 +8,126 @@ part of 'orgs.dart';
 class OrgHookConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `string` value serialized in the `insecure_ssl` wire field.
   final SdkOptional<String> insecureSsl;
-
   /// Optional `string` value serialized in the `content_type` wire field.
   final SdkOptional<String> contentType;
-
   /// Optional `string` value serialized in the `secret` wire field.
   final SdkOptional<String> secret;
 
-  const OrgHookConfig(
-      {this.url = const SdkOmitted(),
-      this.insecureSsl = const SdkOmitted(),
-      this.contentType = const SdkOmitted(),
-      this.secret = const SdkOmitted()});
+  const OrgHookConfig({this.url = const SdkOmitted(), this.insecureSsl = const SdkOmitted(), this.contentType = const SdkOmitted(), this.secret = const SdkOmitted()});
 
-  OrgHookConfig Function(
-      {SdkOptional<String> url,
-      SdkOptional<String> insecureSsl,
-      SdkOptional<String> contentType,
-      SdkOptional<String> secret}) get copyWith => _copyWith;
+  OrgHookConfig Function({SdkOptional<String> url, SdkOptional<String> insecureSsl, SdkOptional<String> contentType, SdkOptional<String> secret}) get copyWith => _copyWith;
 
-  OrgHookConfig _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? insecureSsl = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? secret = sdkOmittedValue}) =>
-      OrgHookConfig(
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        insecureSsl: identical(insecureSsl, sdkOmittedValue)
-            ? this.insecureSsl
-            : insecureSsl as SdkOptional<String>,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as SdkOptional<String>,
-        secret: identical(secret, sdkOmittedValue)
-            ? this.secret
-            : secret as SdkOptional<String>,
-      );
+  OrgHookConfig _copyWith({Object? url = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue}) => OrgHookConfig(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<String>,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
+  );
 
   factory OrgHookConfig.fromJson(Map<String, dynamic> json) => OrgHookConfig(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        insecureSsl: json['insecure_ssl'] != null
-            ? SdkPresent((json['insecure_ssl'] as String?)!)
-            : const SdkOmitted(),
-        contentType: json['content_type'] != null
-            ? SdkPresent((json['content_type'] as String?)!)
-            : const SdkOmitted(),
-        secret: json['secret'] != null
-            ? SdkPresent((json['secret'] as String?)!)
-            : const SdkOmitted(),
-      );
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] as String?)!) : const SdkOmitted(),
+    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
+    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (insecureSsl) {
-          SdkPresent<String>(value: final value) => {
-              'insecure_ssl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contentType) {
-          SdkPresent<String>(value: final value) => {
-              'content_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secret) {
-          SdkPresent<String>(value: final value) => {
-              'secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (insecureSsl) {
+      SdkPresent<String>(value: final value) => {'insecure_ssl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contentType) {
+      SdkPresent<String>(value: final value) => {'content_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secret) {
+      SdkPresent<String>(value: final value) => {'secret': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Org Hook
 class OrgHook {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `uri`-formatted value serialized in the `ping_url` wire field.
   final String pingUrl;
-
   /// Optional `uri`-formatted value serialized in the `deliveries_url` wire field.
   final SdkOptional<String> deliveriesUrl;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required array value serialized in the `events` wire field.
   final List<String> events;
-
   /// Required `boolean` value serialized in the `active` wire field.
   final bool active;
-
   /// Required object value serialized in the `config` wire field.
   final OrgHookConfig config;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
 
-  const OrgHook(
-      {required this.id,
-      required this.url,
-      required this.pingUrl,
-      this.deliveriesUrl = const SdkOmitted(),
-      required this.name,
-      required this.events,
-      required this.active,
-      required this.config,
-      required this.updatedAt,
-      required this.createdAt,
-      required this.type_});
+  const OrgHook({required this.id, required this.url, required this.pingUrl, this.deliveriesUrl = const SdkOmitted(), required this.name, required this.events, required this.active, required this.config, required this.updatedAt, required this.createdAt, required this.type_});
 
-  OrgHook Function(
-      {int id,
-      String url,
-      String pingUrl,
-      SdkOptional<String> deliveriesUrl,
-      String name,
-      List<String> events,
-      bool active,
-      OrgHookConfig config,
-      String updatedAt,
-      String createdAt,
-      String type_}) get copyWith => _copyWith;
+  OrgHook Function({int id, String url, String pingUrl, SdkOptional<String> deliveriesUrl, String name, List<String> events, bool active, OrgHookConfig config, String updatedAt, String createdAt, String type_}) get copyWith => _copyWith;
 
-  OrgHook _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? pingUrl = sdkOmittedValue,
-          Object? deliveriesUrl = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? active = sdkOmittedValue,
-          Object? config = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue}) =>
-      OrgHook(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        pingUrl: identical(pingUrl, sdkOmittedValue)
-            ? this.pingUrl
-            : pingUrl as String,
-        deliveriesUrl: identical(deliveriesUrl, sdkOmittedValue)
-            ? this.deliveriesUrl
-            : deliveriesUrl as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as List<String>,
-        active:
-            identical(active, sdkOmittedValue) ? this.active : active as bool,
-        config: identical(config, sdkOmittedValue)
-            ? this.config
-            : config as OrgHookConfig,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-      );
+  OrgHook _copyWith({Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? pingUrl = sdkOmittedValue, Object? deliveriesUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? events = sdkOmittedValue, Object? active = sdkOmittedValue, Object? config = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => OrgHook(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    pingUrl: identical(pingUrl, sdkOmittedValue) ? this.pingUrl : pingUrl as String,
+    deliveriesUrl: identical(deliveriesUrl, sdkOmittedValue) ? this.deliveriesUrl : deliveriesUrl as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    events: identical(events, sdkOmittedValue) ? this.events : events as List<String>,
+    active: identical(active, sdkOmittedValue) ? this.active : active as bool,
+    config: identical(config, sdkOmittedValue) ? this.config : config as OrgHookConfig,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+  );
 
   factory OrgHook.fromJson(Map<String, dynamic> json) => OrgHook(
-        id: ((json['id'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-        pingUrl: (json['ping_url'] as String?)!,
-        deliveriesUrl: json['deliveries_url'] != null
-            ? SdkPresent((json['deliveries_url'] as String?)!)
-            : const SdkOmitted(),
-        name: (json['name'] as String?)!,
-        events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
-        active: (json['active'] as bool?)!,
-        config: (json['config'] != null
-            ? OrgHookConfig.fromJson(json['config'] as Map<String, dynamic>)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        type_: (json['type'] as String?)!,
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+    pingUrl: (json['ping_url'] as String?)!,
+    deliveriesUrl: json['deliveries_url'] != null ? SdkPresent((json['deliveries_url'] as String?)!) : const SdkOmitted(),
+    name: (json['name'] as String?)!,
+    events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
+    active: (json['active'] as bool?)!,
+    config: (json['config'] != null ? OrgHookConfig.fromJson(json['config'] as Map<String, dynamic>) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    type_: (json['type'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'url': url,
-        'ping_url': pingUrl,
-        ...switch (deliveriesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'deliveries_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'name': name,
-        'events': events,
-        'active': active,
-        'config': config.toJson(),
-        'updated_at': updatedAt,
-        'created_at': createdAt,
-        'type': type_,
-      };
+    'id': id,
+    'url': url,
+    'ping_url': pingUrl,
+    ...switch (deliveriesUrl) {
+      SdkPresent<String>(value: final value) => {'deliveries_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'name': name,
+    'events': events,
+    'active': active,
+    'config': config.toJson(),
+    'updated_at': updatedAt,
+    'created_at': createdAt,
+    'type': type_,
+  };
 }

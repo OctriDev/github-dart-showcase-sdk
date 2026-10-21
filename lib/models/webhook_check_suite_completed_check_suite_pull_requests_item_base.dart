@@ -8,488 +8,259 @@ part of 'webhook_check_suite_completed.dart';
 class WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// Required object value serialized in the `repo` wire field.
   final WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBaseRepo repo;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase(
-      {required this.ref, required this.repo, required this.sha});
+  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase({required this.ref, required this.repo, required this.sha});
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase Function(
-      {String ref,
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBaseRepo repo,
-      String sha}) get copyWith => _copyWith;
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase Function({String ref, WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBaseRepo repo, String sha}) get copyWith => _copyWith;
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo
-                as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBaseRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-      );
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase _copyWith({Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBaseRepo,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+  );
 
-  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase(
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBaseRepo
-                .fromJson(json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-      );
+  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase.fromJson(Map<String, dynamic> json) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase(
+    ref: (json['ref'] as String?)!,
+    repo: (json['repo'] != null ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBaseRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-      };
+    'ref': ref,
+    'repo': repo.toJson(),
+    'sha': sha,
+  };
 }
 
 /// Required object value serialized in the `repo` wire field.
 class WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo(
-      {required this.id, required this.name, required this.url});
+  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo({required this.id, required this.name, required this.url});
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo Function(
-      {int id, String name, String url}) get copyWith => _copyWith;
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo Function({int id, String name, String url}) get copyWith => _copyWith;
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo.fromJson(Map<String, dynamic> json) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo(
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'url': url,
-      };
+    'id': id,
+    'name': name,
+    'url': url,
+  };
 }
 
 /// Required object value serialized in the `head` wire field.
 class WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// Required object value serialized in the `repo` wire field.
   final WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo repo;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead(
-      {required this.ref, required this.repo, required this.sha});
+  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead({required this.ref, required this.repo, required this.sha});
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead Function(
-      {String ref,
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo repo,
-      String sha}) get copyWith => _copyWith;
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead Function({String ref, WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo repo, String sha}) get copyWith => _copyWith;
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo
-                as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-      );
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead _copyWith({Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+  );
 
-  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead(
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo
-                .fromJson(json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-      );
+  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead.fromJson(Map<String, dynamic> json) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead(
+    ref: (json['ref'] as String?)!,
+    repo: (json['repo'] != null ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-      };
+    'ref': ref,
+    'repo': repo.toJson(),
+    'sha': sha,
+  };
 }
 
 /// Required object value serialized in the `pull_requests[]` wire field.
 class WebhookCheckSuiteCompletedCheckSuitePullRequestsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `base` wire field.
   final WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase base_;
-
   /// Required object value serialized in the `head` wire field.
   final WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead head;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItem(
-      {required this.base_,
-      required this.head,
-      required this.id,
-      required this.number,
-      required this.url});
+  const WebhookCheckSuiteCompletedCheckSuitePullRequestsItem({required this.base_, required this.head, required this.id, required this.number, required this.url});
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItem Function(
-      {WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase base_,
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead head,
-      int id,
-      int number,
-      String url}) get copyWith => _copyWith;
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItem Function({WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase base_, WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead head, int id, int number, String url}) get copyWith => _copyWith;
 
-  WebhookCheckSuiteCompletedCheckSuitePullRequestsItem _copyWith(
-          {Object? base_ = sdkOmittedValue,
-          Object? head = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItem(
-        base_: identical(base_, sdkOmittedValue)
-            ? this.base_
-            : base_ as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase,
-        head: identical(head, sdkOmittedValue)
-            ? this.head
-            : head as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookCheckSuiteCompletedCheckSuitePullRequestsItem _copyWith({Object? base_ = sdkOmittedValue, Object? head = sdkOmittedValue, Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItem(
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase,
+    head: identical(head, sdkOmittedValue) ? this.head : head as WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItem.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookCheckSuiteCompletedCheckSuitePullRequestsItem(
-        base_: (json['base'] != null
-            ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase.fromJson(
-                json['base'] as Map<String, dynamic>)
-            : null)!,
-        head: (json['head'] != null
-            ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead.fromJson(
-                json['head'] as Map<String, dynamic>)
-            : null)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        number: ((json['number'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookCheckSuiteCompletedCheckSuitePullRequestsItem.fromJson(Map<String, dynamic> json) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItem(
+    base_: (json['base'] != null ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
+    head: (json['head'] != null ? WebhookCheckSuiteCompletedCheckSuitePullRequestsItemHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    number: ((json['number'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'base': base_.toJson(),
-        'head': head.toJson(),
-        'id': id,
-        'number': number,
-        'url': url,
-      };
+    'base': base_.toJson(),
+    'head': head.toJson(),
+    'id': id,
+    'number': number,
+    'url': url,
+  };
 }
 
 /// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
 class WebhookCheckSuiteCompletedCheckSuite {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `after` wire field.
   final String? after;
-
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final WebhookCheckSuiteCompletedCheckSuiteApp app;
-
   /// Required `string` value serialized in the `before` wire field.
   final String? before;
-
   /// Required `uri`-formatted value serialized in the `check_runs_url` wire field.
   final String checkRunsUrl;
-
   /// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has `completed`.
   final WebhookCheckSuiteCompletedCheckSuiteConclusion? conclusion;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// The head branch name the changes are on.
   final String? headBranch;
-
   /// Required object value serialized in the `head_commit` wire field.
   final WebhookCheckSuiteCompletedCheckSuiteHeadCommit headCommit;
-
   /// The SHA of the head commit that is being checked.
   final String headSha;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `integer` value serialized in the `latest_check_runs_count` wire field.
   final int latestCheckRunsCount;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// An array of pull requests that match this check suite. A pull request matches a check suite if they have the same `head_sha` and `head_branch`. When the check suite's `head_branch` is in a forked repository it will be `null` and the `pull_requests` array will be empty.
   final List<WebhookCheckSuiteCompletedCheckSuitePullRequestsItem> pullRequests;
-
   /// Optional `boolean` value serialized in the `rerequestable` wire field.
   final SdkOptional<bool> rerequestable;
-
   /// Optional `boolean` value serialized in the `runs_rerequestable` wire field.
   final SdkOptional<bool> runsRerequestable;
-
   /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
   final WebhookCheckSuiteCompletedCheckSuiteStatus? status;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// URL that points to the check suite API resource.
   final String url;
 
-  const WebhookCheckSuiteCompletedCheckSuite(
-      {required this.after,
-      required this.app,
-      required this.before,
-      required this.checkRunsUrl,
-      required this.conclusion,
-      required this.createdAt,
-      required this.headBranch,
-      required this.headCommit,
-      required this.headSha,
-      required this.id,
-      required this.latestCheckRunsCount,
-      required this.nodeId,
-      required this.pullRequests,
-      this.rerequestable = const SdkOmitted(),
-      this.runsRerequestable = const SdkOmitted(),
-      required this.status,
-      required this.updatedAt,
-      required this.url});
+  const WebhookCheckSuiteCompletedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, this.rerequestable = const SdkOmitted(), this.runsRerequestable = const SdkOmitted(), required this.status, required this.updatedAt, required this.url});
 
-  WebhookCheckSuiteCompletedCheckSuite Function(
-      {String? after,
-      WebhookCheckSuiteCompletedCheckSuiteApp app,
-      String? before,
-      String checkRunsUrl,
-      WebhookCheckSuiteCompletedCheckSuiteConclusion? conclusion,
-      String createdAt,
-      String? headBranch,
-      WebhookCheckSuiteCompletedCheckSuiteHeadCommit headCommit,
-      String headSha,
-      int id,
-      int latestCheckRunsCount,
-      String nodeId,
-      List<WebhookCheckSuiteCompletedCheckSuitePullRequestsItem> pullRequests,
-      SdkOptional<bool> rerequestable,
-      SdkOptional<bool> runsRerequestable,
-      WebhookCheckSuiteCompletedCheckSuiteStatus? status,
-      String updatedAt,
-      String url}) get copyWith => _copyWith;
+  WebhookCheckSuiteCompletedCheckSuite Function({String? after, WebhookCheckSuiteCompletedCheckSuiteApp app, String? before, String checkRunsUrl, WebhookCheckSuiteCompletedCheckSuiteConclusion? conclusion, String createdAt, String? headBranch, WebhookCheckSuiteCompletedCheckSuiteHeadCommit headCommit, String headSha, int id, int latestCheckRunsCount, String nodeId, List<WebhookCheckSuiteCompletedCheckSuitePullRequestsItem> pullRequests, SdkOptional<bool> rerequestable, SdkOptional<bool> runsRerequestable, WebhookCheckSuiteCompletedCheckSuiteStatus? status, String updatedAt, String url}) get copyWith => _copyWith;
 
-  WebhookCheckSuiteCompletedCheckSuite _copyWith(
-          {Object? after = sdkOmittedValue,
-          Object? app = sdkOmittedValue,
-          Object? before = sdkOmittedValue,
-          Object? checkRunsUrl = sdkOmittedValue,
-          Object? conclusion = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? headBranch = sdkOmittedValue,
-          Object? headCommit = sdkOmittedValue,
-          Object? headSha = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? latestCheckRunsCount = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? pullRequests = sdkOmittedValue,
-          Object? rerequestable = sdkOmittedValue,
-          Object? runsRerequestable = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookCheckSuiteCompletedCheckSuite(
-        after:
-            identical(after, sdkOmittedValue) ? this.after : after as String?,
-        app: identical(app, sdkOmittedValue)
-            ? this.app
-            : app as WebhookCheckSuiteCompletedCheckSuiteApp,
-        before: identical(before, sdkOmittedValue)
-            ? this.before
-            : before as String?,
-        checkRunsUrl: identical(checkRunsUrl, sdkOmittedValue)
-            ? this.checkRunsUrl
-            : checkRunsUrl as String,
-        conclusion: identical(conclusion, sdkOmittedValue)
-            ? this.conclusion
-            : conclusion as WebhookCheckSuiteCompletedCheckSuiteConclusion?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        headBranch: identical(headBranch, sdkOmittedValue)
-            ? this.headBranch
-            : headBranch as String?,
-        headCommit: identical(headCommit, sdkOmittedValue)
-            ? this.headCommit
-            : headCommit as WebhookCheckSuiteCompletedCheckSuiteHeadCommit,
-        headSha: identical(headSha, sdkOmittedValue)
-            ? this.headSha
-            : headSha as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        latestCheckRunsCount: identical(latestCheckRunsCount, sdkOmittedValue)
-            ? this.latestCheckRunsCount
-            : latestCheckRunsCount as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        pullRequests: identical(pullRequests, sdkOmittedValue)
-            ? this.pullRequests
-            : pullRequests
-                as List<WebhookCheckSuiteCompletedCheckSuitePullRequestsItem>,
-        rerequestable: identical(rerequestable, sdkOmittedValue)
-            ? this.rerequestable
-            : rerequestable as SdkOptional<bool>,
-        runsRerequestable: identical(runsRerequestable, sdkOmittedValue)
-            ? this.runsRerequestable
-            : runsRerequestable as SdkOptional<bool>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as WebhookCheckSuiteCompletedCheckSuiteStatus?,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookCheckSuiteCompletedCheckSuite _copyWith({Object? after = sdkOmittedValue, Object? app = sdkOmittedValue, Object? before = sdkOmittedValue, Object? checkRunsUrl = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? headBranch = sdkOmittedValue, Object? headCommit = sdkOmittedValue, Object? headSha = sdkOmittedValue, Object? id = sdkOmittedValue, Object? latestCheckRunsCount = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? pullRequests = sdkOmittedValue, Object? rerequestable = sdkOmittedValue, Object? runsRerequestable = sdkOmittedValue, Object? status = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookCheckSuiteCompletedCheckSuite(
+    after: identical(after, sdkOmittedValue) ? this.after : after as String?,
+    app: identical(app, sdkOmittedValue) ? this.app : app as WebhookCheckSuiteCompletedCheckSuiteApp,
+    before: identical(before, sdkOmittedValue) ? this.before : before as String?,
+    checkRunsUrl: identical(checkRunsUrl, sdkOmittedValue) ? this.checkRunsUrl : checkRunsUrl as String,
+    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as WebhookCheckSuiteCompletedCheckSuiteConclusion?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    headBranch: identical(headBranch, sdkOmittedValue) ? this.headBranch : headBranch as String?,
+    headCommit: identical(headCommit, sdkOmittedValue) ? this.headCommit : headCommit as WebhookCheckSuiteCompletedCheckSuiteHeadCommit,
+    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    latestCheckRunsCount: identical(latestCheckRunsCount, sdkOmittedValue) ? this.latestCheckRunsCount : latestCheckRunsCount as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<WebhookCheckSuiteCompletedCheckSuitePullRequestsItem>,
+    rerequestable: identical(rerequestable, sdkOmittedValue) ? this.rerequestable : rerequestable as SdkOptional<bool>,
+    runsRerequestable: identical(runsRerequestable, sdkOmittedValue) ? this.runsRerequestable : runsRerequestable as SdkOptional<bool>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as WebhookCheckSuiteCompletedCheckSuiteStatus?,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookCheckSuiteCompletedCheckSuite.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookCheckSuiteCompletedCheckSuite(
-        after: json.containsKey('after')
-            ? json['after'] as String?
-            : throw ArgumentError.value(
-                null, 'after', 'Required property is missing'),
-        app: (json['app'] != null
-            ? WebhookCheckSuiteCompletedCheckSuiteApp.fromJson(
-                json['app'] as Map<String, dynamic>)
-            : null)!,
-        before: json.containsKey('before')
-            ? json['before'] as String?
-            : throw ArgumentError.value(
-                null, 'before', 'Required property is missing'),
-        checkRunsUrl: (json['check_runs_url'] as String?)!,
-        conclusion: json.containsKey('conclusion')
-            ? json['conclusion'] != null
-                ? WebhookCheckSuiteCompletedCheckSuiteConclusion.fromJson(
-                    json['conclusion'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'conclusion', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        headBranch: json.containsKey('head_branch')
-            ? json['head_branch'] as String?
-            : throw ArgumentError.value(
-                null, 'head_branch', 'Required property is missing'),
-        headCommit: (json['head_commit'] != null
-            ? WebhookCheckSuiteCompletedCheckSuiteHeadCommit.fromJson(
-                json['head_commit'] as Map<String, dynamic>)
-            : null)!,
-        headSha: (json['head_sha'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        latestCheckRunsCount:
-            ((json['latest_check_runs_count'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        pullRequests: ((json['pull_requests'] as List?)
-            ?.map((e) =>
-                WebhookCheckSuiteCompletedCheckSuitePullRequestsItem.fromJson(
-                    e as Map<String, dynamic>))
-            .toList())!,
-        rerequestable: json['rerequestable'] != null
-            ? SdkPresent((json['rerequestable'] as bool?)!)
-            : const SdkOmitted(),
-        runsRerequestable: json['runs_rerequestable'] != null
-            ? SdkPresent((json['runs_rerequestable'] as bool?)!)
-            : const SdkOmitted(),
-        status: json.containsKey('status')
-            ? json['status'] != null
-                ? WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(
-                    json['status'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'status', 'Required property is missing'),
-        updatedAt: (json['updated_at'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookCheckSuiteCompletedCheckSuite.fromJson(Map<String, dynamic> json) => WebhookCheckSuiteCompletedCheckSuite(
+    after: json.containsKey('after') ? json['after'] as String? : throw ArgumentError.value(null, 'after', 'Required property is missing'),
+    app: (json['app'] != null ? WebhookCheckSuiteCompletedCheckSuiteApp.fromJson(json['app'] as Map<String, dynamic>) : null)!,
+    before: json.containsKey('before') ? json['before'] as String? : throw ArgumentError.value(null, 'before', 'Required property is missing'),
+    checkRunsUrl: (json['check_runs_url'] as String?)!,
+    conclusion: json.containsKey('conclusion') ? json['conclusion'] != null ? WebhookCheckSuiteCompletedCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null : throw ArgumentError.value(null, 'conclusion', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    headBranch: json.containsKey('head_branch') ? json['head_branch'] as String? : throw ArgumentError.value(null, 'head_branch', 'Required property is missing'),
+    headCommit: (json['head_commit'] != null ? WebhookCheckSuiteCompletedCheckSuiteHeadCommit.fromJson(json['head_commit'] as Map<String, dynamic>) : null)!,
+    headSha: (json['head_sha'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    latestCheckRunsCount: ((json['latest_check_runs_count'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    pullRequests: ((json['pull_requests'] as List?)?.map((e) => WebhookCheckSuiteCompletedCheckSuitePullRequestsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    rerequestable: json['rerequestable'] != null ? SdkPresent((json['rerequestable'] as bool?)!) : const SdkOmitted(),
+    runsRerequestable: json['runs_rerequestable'] != null ? SdkPresent((json['runs_rerequestable'] as bool?)!) : const SdkOmitted(),
+    status: json.containsKey('status') ? json['status'] != null ? WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(json['status'] as String) : null : throw ArgumentError.value(null, 'status', 'Required property is missing'),
+    updatedAt: (json['updated_at'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'after': after,
-        'app': app.toJson(),
-        'before': before,
-        'check_runs_url': checkRunsUrl,
-        'conclusion': conclusion?.toJson(),
-        'created_at': createdAt,
-        'head_branch': headBranch,
-        'head_commit': headCommit.toJson(),
-        'head_sha': headSha,
-        'id': id,
-        'latest_check_runs_count': latestCheckRunsCount,
-        'node_id': nodeId,
-        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-        ...switch (rerequestable) {
-          SdkPresent<bool>(value: final value) => {
-              'rerequestable': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (runsRerequestable) {
-          SdkPresent<bool>(value: final value) => {
-              'runs_rerequestable': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'status': status?.toJson(),
-        'updated_at': updatedAt,
-        'url': url,
-      };
+    'after': after,
+    'app': app.toJson(),
+    'before': before,
+    'check_runs_url': checkRunsUrl,
+    'conclusion': conclusion?.toJson(),
+    'created_at': createdAt,
+    'head_branch': headBranch,
+    'head_commit': headCommit.toJson(),
+    'head_sha': headSha,
+    'id': id,
+    'latest_check_runs_count': latestCheckRunsCount,
+    'node_id': nodeId,
+    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+    ...switch (rerequestable) {
+      SdkPresent<bool>(value: final value) => {'rerequestable': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (runsRerequestable) {
+      SdkPresent<bool>(value: final value) => {'runs_rerequestable': value,},
+      _ => const <String, dynamic>{},
+    },
+    'status': status?.toJson(),
+    'updated_at': updatedAt,
+    'url': url,
+  };
 }

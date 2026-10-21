@@ -8,10 +8,8 @@ part of 'git.dart';
 class ShortBlob {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
@@ -19,20 +17,18 @@ class ShortBlob {
 
   ShortBlob Function({String url, String sha}) get copyWith => _copyWith;
 
-  ShortBlob _copyWith(
-          {Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
-      ShortBlob(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-      );
+  ShortBlob _copyWith({Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue}) => ShortBlob(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+  );
 
   factory ShortBlob.fromJson(Map<String, dynamic> json) => ShortBlob(
-        url: (json['url'] as String?)!,
-        sha: (json['sha'] as String?)!,
-      );
+    url: (json['url'] as String?)!,
+    sha: (json['sha'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'sha': sha,
-      };
+    'url': url,
+    'sha': sha,
+  };
 }

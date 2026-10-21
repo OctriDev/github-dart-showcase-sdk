@@ -8,220 +8,116 @@ part of 'shared.dart';
 class MinimalRepositoryPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `admin` wire field.
   final SdkOptional<bool> admin;
-
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
-
   /// Optional `boolean` value serialized in the `push` wire field.
   final SdkOptional<bool> push;
-
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
-
   /// Optional `boolean` value serialized in the `pull` wire field.
   final SdkOptional<bool> pull;
 
-  const MinimalRepositoryPermissions(
-      {this.admin = const SdkOmitted(),
-      this.maintain = const SdkOmitted(),
-      this.push = const SdkOmitted(),
-      this.triage = const SdkOmitted(),
-      this.pull = const SdkOmitted()});
+  const MinimalRepositoryPermissions({this.admin = const SdkOmitted(), this.maintain = const SdkOmitted(), this.push = const SdkOmitted(), this.triage = const SdkOmitted(), this.pull = const SdkOmitted()});
 
-  MinimalRepositoryPermissions Function(
-      {SdkOptional<bool> admin,
-      SdkOptional<bool> maintain,
-      SdkOptional<bool> push,
-      SdkOptional<bool> triage,
-      SdkOptional<bool> pull}) get copyWith => _copyWith;
+  MinimalRepositoryPermissions Function({SdkOptional<bool> admin, SdkOptional<bool> maintain, SdkOptional<bool> push, SdkOptional<bool> triage, SdkOptional<bool> pull}) get copyWith => _copyWith;
 
-  MinimalRepositoryPermissions _copyWith(
-          {Object? admin = sdkOmittedValue,
-          Object? maintain = sdkOmittedValue,
-          Object? push = sdkOmittedValue,
-          Object? triage = sdkOmittedValue,
-          Object? pull = sdkOmittedValue}) =>
-      MinimalRepositoryPermissions(
-        admin: identical(admin, sdkOmittedValue)
-            ? this.admin
-            : admin as SdkOptional<bool>,
-        maintain: identical(maintain, sdkOmittedValue)
-            ? this.maintain
-            : maintain as SdkOptional<bool>,
-        push: identical(push, sdkOmittedValue)
-            ? this.push
-            : push as SdkOptional<bool>,
-        triage: identical(triage, sdkOmittedValue)
-            ? this.triage
-            : triage as SdkOptional<bool>,
-        pull: identical(pull, sdkOmittedValue)
-            ? this.pull
-            : pull as SdkOptional<bool>,
-      );
+  MinimalRepositoryPermissions _copyWith({Object? admin = sdkOmittedValue, Object? maintain = sdkOmittedValue, Object? push = sdkOmittedValue, Object? triage = sdkOmittedValue, Object? pull = sdkOmittedValue}) => MinimalRepositoryPermissions(
+    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as SdkOptional<bool>,
+    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
+    push: identical(push, sdkOmittedValue) ? this.push : push as SdkOptional<bool>,
+    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
+    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as SdkOptional<bool>,
+  );
 
-  factory MinimalRepositoryPermissions.fromJson(Map<String, dynamic> json) =>
-      MinimalRepositoryPermissions(
-        admin: json['admin'] != null
-            ? SdkPresent((json['admin'] as bool?)!)
-            : const SdkOmitted(),
-        maintain: json['maintain'] != null
-            ? SdkPresent((json['maintain'] as bool?)!)
-            : const SdkOmitted(),
-        push: json['push'] != null
-            ? SdkPresent((json['push'] as bool?)!)
-            : const SdkOmitted(),
-        triage: json['triage'] != null
-            ? SdkPresent((json['triage'] as bool?)!)
-            : const SdkOmitted(),
-        pull: json['pull'] != null
-            ? SdkPresent((json['pull'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory MinimalRepositoryPermissions.fromJson(Map<String, dynamic> json) => MinimalRepositoryPermissions(
+    admin: json['admin'] != null ? SdkPresent((json['admin'] as bool?)!) : const SdkOmitted(),
+    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
+    push: json['push'] != null ? SdkPresent((json['push'] as bool?)!) : const SdkOmitted(),
+    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
+    pull: json['pull'] != null ? SdkPresent((json['pull'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (admin) {
-          SdkPresent<bool>(value: final value) => {
-              'admin': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maintain) {
-          SdkPresent<bool>(value: final value) => {
-              'maintain': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (push) {
-          SdkPresent<bool>(value: final value) => {
-              'push': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (triage) {
-          SdkPresent<bool>(value: final value) => {
-              'triage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pull) {
-          SdkPresent<bool>(value: final value) => {
-              'pull': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (admin) {
+      SdkPresent<bool>(value: final value) => {'admin': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maintain) {
+      SdkPresent<bool>(value: final value) => {'maintain': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (push) {
+      SdkPresent<bool>(value: final value) => {'push': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (triage) {
+      SdkPresent<bool>(value: final value) => {'triage': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pull) {
+      SdkPresent<bool>(value: final value) => {'pull': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `license` wire field.
 class MinimalRepositoryLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `key` wire field.
   final SdkOptional<String> key;
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `spdx_id` wire field.
   final SdkOptional<String> spdxId;
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String?> url;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
 
-  const MinimalRepositoryLicense(
-      {this.key = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.spdxId = const SdkOmitted(),
-      this.url = const SdkOmitted(),
-      this.nodeId = const SdkOmitted()});
+  const MinimalRepositoryLicense({this.key = const SdkOmitted(), this.name = const SdkOmitted(), this.spdxId = const SdkOmitted(), this.url = const SdkOmitted(), this.nodeId = const SdkOmitted()});
 
-  MinimalRepositoryLicense Function(
-      {SdkOptional<String> key,
-      SdkOptional<String> name,
-      SdkOptional<String> spdxId,
-      SdkOptional<String?> url,
-      SdkOptional<String> nodeId}) get copyWith => _copyWith;
+  MinimalRepositoryLicense Function({SdkOptional<String> key, SdkOptional<String> name, SdkOptional<String> spdxId, SdkOptional<String?> url, SdkOptional<String> nodeId}) get copyWith => _copyWith;
 
-  MinimalRepositoryLicense _copyWith(
-          {Object? key = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? spdxId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue}) =>
-      MinimalRepositoryLicense(
-        key: identical(key, sdkOmittedValue)
-            ? this.key
-            : key as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        spdxId: identical(spdxId, sdkOmittedValue)
-            ? this.spdxId
-            : spdxId as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String?>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-      );
+  MinimalRepositoryLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? nodeId = sdkOmittedValue}) => MinimalRepositoryLicense(
+    key: identical(key, sdkOmittedValue) ? this.key : key as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String?>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+  );
 
-  factory MinimalRepositoryLicense.fromJson(Map<String, dynamic> json) =>
-      MinimalRepositoryLicense(
-        key: json['key'] != null
-            ? SdkPresent((json['key'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        spdxId: json['spdx_id'] != null
-            ? SdkPresent((json['spdx_id'] as String?)!)
-            : const SdkOmitted(),
-        url: json.containsKey('url')
-            ? SdkPresent(json['url'] as String?)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory MinimalRepositoryLicense.fromJson(Map<String, dynamic> json) => MinimalRepositoryLicense(
+    key: json['key'] != null ? SdkPresent((json['key'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    spdxId: json['spdx_id'] != null ? SdkPresent((json['spdx_id'] as String?)!) : const SdkOmitted(),
+    url: json.containsKey('url') ? SdkPresent(json['url'] as String?) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (key) {
-          SdkPresent<String>(value: final value) => {
-              'key': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (spdxId) {
-          SdkPresent<String>(value: final value) => {
-              'spdx_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String?>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (key) {
+      SdkPresent<String>(value: final value) => {'key': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (spdxId) {
+      SdkPresent<String>(value: final value) => {'spdx_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String?>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

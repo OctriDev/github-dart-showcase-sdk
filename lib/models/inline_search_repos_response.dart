@@ -11,47 +11,27 @@ class SearchReposResponse {
   final bool incompleteResults;
   final List<RepoSearchResultItem> items;
 
-  const SearchReposResponse(
-      {required this.totalCount,
-      required this.incompleteResults,
-      required this.items});
+  const SearchReposResponse({required this.totalCount, required this.incompleteResults, required this.items});
 
-  SearchReposResponse Function(
-      {int totalCount,
-      bool incompleteResults,
-      List<RepoSearchResultItem> items}) get copyWith => _copyWith;
+  SearchReposResponse Function({int totalCount, bool incompleteResults, List<RepoSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchReposResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? incompleteResults = sdkOmittedValue,
-          Object? items = sdkOmittedValue}) =>
-      SearchReposResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        incompleteResults: identical(incompleteResults, sdkOmittedValue)
-            ? this.incompleteResults
-            : incompleteResults as bool,
-        items: identical(items, sdkOmittedValue)
-            ? this.items
-            : items as List<RepoSearchResultItem>,
-      );
+  SearchReposResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchReposResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
+    items: identical(items, sdkOmittedValue) ? this.items : items as List<RepoSearchResultItem>,
+  );
 
-  factory SearchReposResponse.fromJson(Map<String, dynamic> json) =>
-      SearchReposResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        incompleteResults: (json['incomplete_results'] as bool?)!,
-        items: ((json['items'] as List?)
-            ?.map(
-                (e) => RepoSearchResultItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory SearchReposResponse.fromJson(Map<String, dynamic> json) => SearchReposResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    incompleteResults: (json['incomplete_results'] as bool?)!,
+    items: ((json['items'] as List?)?.map((e) => RepoSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'incomplete_results': incompleteResults,
-        'items': items.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'incomplete_results': incompleteResults,
+    'items': items.map((item) => item.toJson()).toList(),
+  };
 }
 
 class SearchTopicsResponse {
@@ -61,47 +41,27 @@ class SearchTopicsResponse {
   final bool incompleteResults;
   final List<TopicSearchResultItem> items;
 
-  const SearchTopicsResponse(
-      {required this.totalCount,
-      required this.incompleteResults,
-      required this.items});
+  const SearchTopicsResponse({required this.totalCount, required this.incompleteResults, required this.items});
 
-  SearchTopicsResponse Function(
-      {int totalCount,
-      bool incompleteResults,
-      List<TopicSearchResultItem> items}) get copyWith => _copyWith;
+  SearchTopicsResponse Function({int totalCount, bool incompleteResults, List<TopicSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchTopicsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? incompleteResults = sdkOmittedValue,
-          Object? items = sdkOmittedValue}) =>
-      SearchTopicsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        incompleteResults: identical(incompleteResults, sdkOmittedValue)
-            ? this.incompleteResults
-            : incompleteResults as bool,
-        items: identical(items, sdkOmittedValue)
-            ? this.items
-            : items as List<TopicSearchResultItem>,
-      );
+  SearchTopicsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchTopicsResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
+    items: identical(items, sdkOmittedValue) ? this.items : items as List<TopicSearchResultItem>,
+  );
 
-  factory SearchTopicsResponse.fromJson(Map<String, dynamic> json) =>
-      SearchTopicsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        incompleteResults: (json['incomplete_results'] as bool?)!,
-        items: ((json['items'] as List?)
-            ?.map((e) =>
-                TopicSearchResultItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory SearchTopicsResponse.fromJson(Map<String, dynamic> json) => SearchTopicsResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    incompleteResults: (json['incomplete_results'] as bool?)!,
+    items: ((json['items'] as List?)?.map((e) => TopicSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'incomplete_results': incompleteResults,
-        'items': items.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'incomplete_results': incompleteResults,
+    'items': items.map((item) => item.toJson()).toList(),
+  };
 }
 
 class SearchUsersResponse {
@@ -111,362 +71,208 @@ class SearchUsersResponse {
   final bool incompleteResults;
   final List<UserSearchResultItem> items;
 
-  const SearchUsersResponse(
-      {required this.totalCount,
-      required this.incompleteResults,
-      required this.items});
+  const SearchUsersResponse({required this.totalCount, required this.incompleteResults, required this.items});
 
-  SearchUsersResponse Function(
-      {int totalCount,
-      bool incompleteResults,
-      List<UserSearchResultItem> items}) get copyWith => _copyWith;
+  SearchUsersResponse Function({int totalCount, bool incompleteResults, List<UserSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchUsersResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? incompleteResults = sdkOmittedValue,
-          Object? items = sdkOmittedValue}) =>
-      SearchUsersResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        incompleteResults: identical(incompleteResults, sdkOmittedValue)
-            ? this.incompleteResults
-            : incompleteResults as bool,
-        items: identical(items, sdkOmittedValue)
-            ? this.items
-            : items as List<UserSearchResultItem>,
-      );
+  SearchUsersResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchUsersResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
+    items: identical(items, sdkOmittedValue) ? this.items : items as List<UserSearchResultItem>,
+  );
 
-  factory SearchUsersResponse.fromJson(Map<String, dynamic> json) =>
-      SearchUsersResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        incompleteResults: (json['incomplete_results'] as bool?)!,
-        items: ((json['items'] as List?)
-            ?.map(
-                (e) => UserSearchResultItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory SearchUsersResponse.fromJson(Map<String, dynamic> json) => SearchUsersResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    incompleteResults: (json['incomplete_results'] as bool?)!,
+    items: ((json['items'] as List?)?.map((e) => UserSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'incomplete_results': incompleteResults,
-        'items': items.map((item) => item.toJson()).toList(),
-      };
+    'total_count': totalCount,
+    'incomplete_results': incompleteResults,
+    'items': items.map((item) => item.toJson()).toList(),
+  };
 }
 
 class UsersUpdateAuthenticatedRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The new name of the user.
   final SdkOptional<String> name;
-
   /// The publicly visible email address of the user.
   final SdkOptional<String> email;
-
   /// The new blog URL of the user.
   final SdkOptional<String> blog;
-
   /// The new Twitter username of the user.
   final SdkOptional<String?> twitterUsername;
-
   /// The new company of the user.
   final SdkOptional<String> company;
-
   /// The new location of the user.
   final SdkOptional<String> location;
-
   /// The new hiring availability of the user.
   final SdkOptional<bool> hireable;
-
   /// The new short biography of the user.
   final SdkOptional<String> bio;
 
-  const UsersUpdateAuthenticatedRequestBody(
-      {this.name = const SdkOmitted(),
-      this.email = const SdkOmitted(),
-      this.blog = const SdkOmitted(),
-      this.twitterUsername = const SdkOmitted(),
-      this.company = const SdkOmitted(),
-      this.location = const SdkOmitted(),
-      this.hireable = const SdkOmitted(),
-      this.bio = const SdkOmitted()});
+  const UsersUpdateAuthenticatedRequestBody({this.name = const SdkOmitted(), this.email = const SdkOmitted(), this.blog = const SdkOmitted(), this.twitterUsername = const SdkOmitted(), this.company = const SdkOmitted(), this.location = const SdkOmitted(), this.hireable = const SdkOmitted(), this.bio = const SdkOmitted()});
 
-  UsersUpdateAuthenticatedRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> email,
-      SdkOptional<String> blog,
-      SdkOptional<String?> twitterUsername,
-      SdkOptional<String> company,
-      SdkOptional<String> location,
-      SdkOptional<bool> hireable,
-      SdkOptional<String> bio}) get copyWith => _copyWith;
+  UsersUpdateAuthenticatedRequestBody Function({SdkOptional<String> name, SdkOptional<String> email, SdkOptional<String> blog, SdkOptional<String?> twitterUsername, SdkOptional<String> company, SdkOptional<String> location, SdkOptional<bool> hireable, SdkOptional<String> bio}) get copyWith => _copyWith;
 
-  UsersUpdateAuthenticatedRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? blog = sdkOmittedValue,
-          Object? twitterUsername = sdkOmittedValue,
-          Object? company = sdkOmittedValue,
-          Object? location = sdkOmittedValue,
-          Object? hireable = sdkOmittedValue,
-          Object? bio = sdkOmittedValue}) =>
-      UsersUpdateAuthenticatedRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String>,
-        blog: identical(blog, sdkOmittedValue)
-            ? this.blog
-            : blog as SdkOptional<String>,
-        twitterUsername: identical(twitterUsername, sdkOmittedValue)
-            ? this.twitterUsername
-            : twitterUsername as SdkOptional<String?>,
-        company: identical(company, sdkOmittedValue)
-            ? this.company
-            : company as SdkOptional<String>,
-        location: identical(location, sdkOmittedValue)
-            ? this.location
-            : location as SdkOptional<String>,
-        hireable: identical(hireable, sdkOmittedValue)
-            ? this.hireable
-            : hireable as SdkOptional<bool>,
-        bio: identical(bio, sdkOmittedValue)
-            ? this.bio
-            : bio as SdkOptional<String>,
-      );
+  UsersUpdateAuthenticatedRequestBody _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? blog = sdkOmittedValue, Object? twitterUsername = sdkOmittedValue, Object? company = sdkOmittedValue, Object? location = sdkOmittedValue, Object? hireable = sdkOmittedValue, Object? bio = sdkOmittedValue}) => UsersUpdateAuthenticatedRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
+    blog: identical(blog, sdkOmittedValue) ? this.blog : blog as SdkOptional<String>,
+    twitterUsername: identical(twitterUsername, sdkOmittedValue) ? this.twitterUsername : twitterUsername as SdkOptional<String?>,
+    company: identical(company, sdkOmittedValue) ? this.company : company as SdkOptional<String>,
+    location: identical(location, sdkOmittedValue) ? this.location : location as SdkOptional<String>,
+    hireable: identical(hireable, sdkOmittedValue) ? this.hireable : hireable as SdkOptional<bool>,
+    bio: identical(bio, sdkOmittedValue) ? this.bio : bio as SdkOptional<String>,
+  );
 
-  factory UsersUpdateAuthenticatedRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      UsersUpdateAuthenticatedRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        email: json['email'] != null
-            ? SdkPresent((json['email'] as String?)!)
-            : const SdkOmitted(),
-        blog: json['blog'] != null
-            ? SdkPresent((json['blog'] as String?)!)
-            : const SdkOmitted(),
-        twitterUsername: json.containsKey('twitter_username')
-            ? SdkPresent(json['twitter_username'] as String?)
-            : const SdkOmitted(),
-        company: json['company'] != null
-            ? SdkPresent((json['company'] as String?)!)
-            : const SdkOmitted(),
-        location: json['location'] != null
-            ? SdkPresent((json['location'] as String?)!)
-            : const SdkOmitted(),
-        hireable: json['hireable'] != null
-            ? SdkPresent((json['hireable'] as bool?)!)
-            : const SdkOmitted(),
-        bio: json['bio'] != null
-            ? SdkPresent((json['bio'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory UsersUpdateAuthenticatedRequestBody.fromJson(Map<String, dynamic> json) => UsersUpdateAuthenticatedRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
+    blog: json['blog'] != null ? SdkPresent((json['blog'] as String?)!) : const SdkOmitted(),
+    twitterUsername: json.containsKey('twitter_username') ? SdkPresent(json['twitter_username'] as String?) : const SdkOmitted(),
+    company: json['company'] != null ? SdkPresent((json['company'] as String?)!) : const SdkOmitted(),
+    location: json['location'] != null ? SdkPresent((json['location'] as String?)!) : const SdkOmitted(),
+    hireable: json['hireable'] != null ? SdkPresent((json['hireable'] as bool?)!) : const SdkOmitted(),
+    bio: json['bio'] != null ? SdkPresent((json['bio'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (email) {
-          SdkPresent<String>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (blog) {
-          SdkPresent<String>(value: final value) => {
-              'blog': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (twitterUsername) {
-          SdkPresent<String?>(value: final value) => {
-              'twitter_username': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (company) {
-          SdkPresent<String>(value: final value) => {
-              'company': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (location) {
-          SdkPresent<String>(value: final value) => {
-              'location': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hireable) {
-          SdkPresent<bool>(value: final value) => {
-              'hireable': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bio) {
-          SdkPresent<String>(value: final value) => {
-              'bio': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (email) {
+      SdkPresent<String>(value: final value) => {'email': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (blog) {
+      SdkPresent<String>(value: final value) => {'blog': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (twitterUsername) {
+      SdkPresent<String?>(value: final value) => {'twitter_username': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (company) {
+      SdkPresent<String>(value: final value) => {'company': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (location) {
+      SdkPresent<String>(value: final value) => {'location': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hireable) {
+      SdkPresent<bool>(value: final value) => {'hireable': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bio) {
+      SdkPresent<String>(value: final value) => {'bio': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Denotes whether an email is publicly visible.
-  final UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility
-      visibility;
+  final UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility visibility;
 
-  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody(
-      {required this.visibility});
+  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody({required this.visibility});
 
-  UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody Function(
-      {UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility
-          visibility}) get copyWith => _copyWith;
+  UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody Function({UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility visibility}) get copyWith => _copyWith;
 
-  UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody _copyWith(
-          {Object? visibility = sdkOmittedValue}) =>
-      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody(
-        visibility: identical(visibility, sdkOmittedValue)
-            ? this.visibility
-            : visibility
-                as UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility,
-      );
+  UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody _copyWith({Object? visibility = sdkOmittedValue}) => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody(
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility,
+  );
 
-  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody(
-        visibility: (json['visibility'] != null
-            ? UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility
-                .fromJson(json['visibility'] as String)
-            : null)!,
-      );
+  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody(
+    visibility: (json['visibility'] != null ? UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'visibility': visibility.toJson(),
-      };
+    'visibility': visibility.toJson(),
+  };
 }
 
 class UsersAddEmailForAuthenticatedUserRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
   final List<String> emails;
 
-  const UsersAddEmailForAuthenticatedUserRequestBodyVariant0(
-      {required this.emails});
+  const UsersAddEmailForAuthenticatedUserRequestBodyVariant0({required this.emails});
 
-  UsersAddEmailForAuthenticatedUserRequestBodyVariant0 Function(
-      {List<String> emails}) get copyWith => _copyWith;
+  UsersAddEmailForAuthenticatedUserRequestBodyVariant0 Function({List<String> emails}) get copyWith => _copyWith;
 
-  UsersAddEmailForAuthenticatedUserRequestBodyVariant0 _copyWith(
-          {Object? emails = sdkOmittedValue}) =>
-      UsersAddEmailForAuthenticatedUserRequestBodyVariant0(
-        emails: identical(emails, sdkOmittedValue)
-            ? this.emails
-            : emails as List<String>,
-      );
+  UsersAddEmailForAuthenticatedUserRequestBodyVariant0 _copyWith({Object? emails = sdkOmittedValue}) => UsersAddEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as List<String>,
+  );
 
-  factory UsersAddEmailForAuthenticatedUserRequestBodyVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      UsersAddEmailForAuthenticatedUserRequestBodyVariant0(
-        emails: ((json['emails'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory UsersAddEmailForAuthenticatedUserRequestBodyVariant0.fromJson(Map<String, dynamic> json) => UsersAddEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: ((json['emails'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'emails': emails,
-      };
+    'emails': emails,
+  };
 }
 
 /// Deletes one or more email addresses from your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
 class UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Email addresses associated with the GitHub user account.
   final List<String> emails;
 
-  const UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0(
-      {required this.emails});
+  const UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0({required this.emails});
 
-  UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 Function(
-      {List<String> emails}) get copyWith => _copyWith;
+  UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 Function({List<String> emails}) get copyWith => _copyWith;
 
-  UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 _copyWith(
-          {Object? emails = sdkOmittedValue}) =>
-      UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0(
-        emails: identical(emails, sdkOmittedValue)
-            ? this.emails
-            : emails as List<String>,
-      );
+  UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 _copyWith({Object? emails = sdkOmittedValue}) => UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as List<String>,
+  );
 
-  factory UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0(
-        emails: ((json['emails'] as List?)?.map((e) => e as String).toList())!,
-      );
+  factory UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0.fromJson(Map<String, dynamic> json) => UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: ((json['emails'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'emails': emails,
-      };
+    'emails': emails,
+  };
 }
 
 class UsersCreateGpgKeyForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A descriptive name for the new key.
   final SdkOptional<String> name;
-
   /// A GPG key in ASCII-armored format.
   final String armoredPublicKey;
 
-  const UsersCreateGpgKeyForAuthenticatedUserRequestBody(
-      {this.name = const SdkOmitted(), required this.armoredPublicKey});
+  const UsersCreateGpgKeyForAuthenticatedUserRequestBody({this.name = const SdkOmitted(), required this.armoredPublicKey});
 
-  UsersCreateGpgKeyForAuthenticatedUserRequestBody Function(
-      {SdkOptional<String> name,
-      String armoredPublicKey}) get copyWith => _copyWith;
+  UsersCreateGpgKeyForAuthenticatedUserRequestBody Function({SdkOptional<String> name, String armoredPublicKey}) get copyWith => _copyWith;
 
-  UsersCreateGpgKeyForAuthenticatedUserRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? armoredPublicKey = sdkOmittedValue}) =>
-      UsersCreateGpgKeyForAuthenticatedUserRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        armoredPublicKey: identical(armoredPublicKey, sdkOmittedValue)
-            ? this.armoredPublicKey
-            : armoredPublicKey as String,
-      );
+  UsersCreateGpgKeyForAuthenticatedUserRequestBody _copyWith({Object? name = sdkOmittedValue, Object? armoredPublicKey = sdkOmittedValue}) => UsersCreateGpgKeyForAuthenticatedUserRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    armoredPublicKey: identical(armoredPublicKey, sdkOmittedValue) ? this.armoredPublicKey : armoredPublicKey as String,
+  );
 
-  factory UsersCreateGpgKeyForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      UsersCreateGpgKeyForAuthenticatedUserRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        armoredPublicKey: (json['armored_public_key'] as String?)!,
-      );
+  factory UsersCreateGpgKeyForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersCreateGpgKeyForAuthenticatedUserRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    armoredPublicKey: (json['armored_public_key'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'armored_public_key': armoredPublicKey,
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    'armored_public_key': armoredPublicKey,
+  };
 }

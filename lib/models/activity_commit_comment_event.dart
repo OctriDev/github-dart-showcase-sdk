@@ -8,300 +8,150 @@ part of 'activity.dart';
 class CommitCommentEventComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// Optional `string` value serialized in the `body` wire field.
   final SdkOptional<String> body;
-
   /// Optional `string` value serialized in the `path` wire field.
   final SdkOptional<String?> path;
-
   /// Optional `integer` value serialized in the `position` wire field.
   final SdkOptional<int?> position;
-
   /// Optional `integer` value serialized in the `line` wire field.
   final SdkOptional<int?> line;
-
   /// Optional `string` value serialized in the `commit_id` wire field.
   final SdkOptional<String> commitId;
-
   /// A GitHub user.
   final SdkOptional<NullableSimpleUser?> user;
-
   /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
-
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
-
   /// Optional object value serialized in the `reactions` wire field.
   final SdkOptional<ReactionRollup> reactions;
 
-  const CommitCommentEventComment(
-      {this.htmlUrl = const SdkOmitted(),
-      this.url = const SdkOmitted(),
-      this.id = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.body = const SdkOmitted(),
-      this.path = const SdkOmitted(),
-      this.position = const SdkOmitted(),
-      this.line = const SdkOmitted(),
-      this.commitId = const SdkOmitted(),
-      this.user = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted(),
-      this.reactions = const SdkOmitted()});
+  const CommitCommentEventComment({this.htmlUrl = const SdkOmitted(), this.url = const SdkOmitted(), this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.body = const SdkOmitted(), this.path = const SdkOmitted(), this.position = const SdkOmitted(), this.line = const SdkOmitted(), this.commitId = const SdkOmitted(), this.user = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), this.reactions = const SdkOmitted()});
 
-  CommitCommentEventComment Function(
-      {SdkOptional<String> htmlUrl,
-      SdkOptional<String> url,
-      SdkOptional<int> id,
-      SdkOptional<String> nodeId,
-      SdkOptional<String> body,
-      SdkOptional<String?> path,
-      SdkOptional<int?> position,
-      SdkOptional<int?> line,
-      SdkOptional<String> commitId,
-      SdkOptional<NullableSimpleUser?> user,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> updatedAt,
-      SdkOptional<ReactionRollup> reactions}) get copyWith => _copyWith;
+  CommitCommentEventComment Function({SdkOptional<String> htmlUrl, SdkOptional<String> url, SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<String> body, SdkOptional<String?> path, SdkOptional<int?> position, SdkOptional<int?> line, SdkOptional<String> commitId, SdkOptional<NullableSimpleUser?> user, SdkOptional<String> createdAt, SdkOptional<String> updatedAt, SdkOptional<ReactionRollup> reactions}) get copyWith => _copyWith;
 
-  CommitCommentEventComment _copyWith(
-          {Object? htmlUrl = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? position = sdkOmittedValue,
-          Object? line = sdkOmittedValue,
-          Object? commitId = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? reactions = sdkOmittedValue}) =>
-      CommitCommentEventComment(
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String>,
-        path: identical(path, sdkOmittedValue)
-            ? this.path
-            : path as SdkOptional<String?>,
-        position: identical(position, sdkOmittedValue)
-            ? this.position
-            : position as SdkOptional<int?>,
-        line: identical(line, sdkOmittedValue)
-            ? this.line
-            : line as SdkOptional<int?>,
-        commitId: identical(commitId, sdkOmittedValue)
-            ? this.commitId
-            : commitId as SdkOptional<String>,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as SdkOptional<NullableSimpleUser?>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-        reactions: identical(reactions, sdkOmittedValue)
-            ? this.reactions
-            : reactions as SdkOptional<ReactionRollup>,
-      );
+  CommitCommentEventComment _copyWith({Object? htmlUrl = sdkOmittedValue, Object? url = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? body = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? line = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? user = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? reactions = sdkOmittedValue}) => CommitCommentEventComment(
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
+    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String?>,
+    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int?>,
+    line: identical(line, sdkOmittedValue) ? this.line : line as SdkOptional<int?>,
+    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as SdkOptional<String>,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<NullableSimpleUser?>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as SdkOptional<ReactionRollup>,
+  );
 
-  factory CommitCommentEventComment.fromJson(Map<String, dynamic> json) =>
-      CommitCommentEventComment(
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as String?)!)
-            : const SdkOmitted(),
-        path: json.containsKey('path')
-            ? SdkPresent(json['path'] as String?)
-            : const SdkOmitted(),
-        position: json.containsKey('position')
-            ? SdkPresent((json['position'] as num?)?.toInt())
-            : const SdkOmitted(),
-        line: json.containsKey('line')
-            ? SdkPresent((json['line'] as num?)?.toInt())
-            : const SdkOmitted(),
-        commitId: json['commit_id'] != null
-            ? SdkPresent((json['commit_id'] as String?)!)
-            : const SdkOmitted(),
-        user: json.containsKey('user')
-            ? SdkPresent(json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-        reactions: json['reactions'] != null
-            ? SdkPresent((json['reactions'] != null
-                ? ReactionRollup.fromJson(
-                    json['reactions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory CommitCommentEventComment.fromJson(Map<String, dynamic> json) => CommitCommentEventComment(
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
+    path: json.containsKey('path') ? SdkPresent(json['path'] as String?) : const SdkOmitted(),
+    position: json.containsKey('position') ? SdkPresent((json['position'] as num?)?.toInt()) : const SdkOmitted(),
+    line: json.containsKey('line') ? SdkPresent((json['line'] as num?)?.toInt()) : const SdkOmitted(),
+    commitId: json['commit_id'] != null ? SdkPresent((json['commit_id'] as String?)!) : const SdkOmitted(),
+    user: json.containsKey('user') ? SdkPresent(json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+    reactions: json['reactions'] != null ? SdkPresent((json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (body) {
-          SdkPresent<String>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (path) {
-          SdkPresent<String?>(value: final value) => {
-              'path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (position) {
-          SdkPresent<int?>(value: final value) => {
-              'position': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (line) {
-          SdkPresent<int?>(value: final value) => {
-              'line': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (commitId) {
-          SdkPresent<String>(value: final value) => {
-              'commit_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (user) {
-          SdkPresent<NullableSimpleUser?>(value: final value) => {
-              'user': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reactions) {
-          SdkPresent<ReactionRollup>(value: final value) => {
-              'reactions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (body) {
+      SdkPresent<String>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (path) {
+      SdkPresent<String?>(value: final value) => {'path': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (position) {
+      SdkPresent<int?>(value: final value) => {'position': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (line) {
+      SdkPresent<int?>(value: final value) => {'line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (commitId) {
+      SdkPresent<String>(value: final value) => {'commit_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (user) {
+      SdkPresent<NullableSimpleUser?>(value: final value) => {'user': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reactions) {
+      SdkPresent<ReactionRollup>(value: final value) => {'reactions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `CommitCommentEvent` API schema.
 class CommitCommentEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `action` wire field.
   final String action;
-
   /// Required object value serialized in the `comment` wire field.
   final CommitCommentEventComment comment;
 
   const CommitCommentEvent({required this.action, required this.comment});
 
-  CommitCommentEvent Function(
-      {String action,
-      CommitCommentEventComment comment}) get copyWith => _copyWith;
+  CommitCommentEvent Function({String action, CommitCommentEventComment comment}) get copyWith => _copyWith;
 
-  CommitCommentEvent _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? comment = sdkOmittedValue}) =>
-      CommitCommentEvent(
-        action:
-            identical(action, sdkOmittedValue) ? this.action : action as String,
-        comment: identical(comment, sdkOmittedValue)
-            ? this.comment
-            : comment as CommitCommentEventComment,
-      );
+  CommitCommentEvent _copyWith({Object? action = sdkOmittedValue, Object? comment = sdkOmittedValue}) => CommitCommentEvent(
+    action: identical(action, sdkOmittedValue) ? this.action : action as String,
+    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as CommitCommentEventComment,
+  );
 
-  factory CommitCommentEvent.fromJson(Map<String, dynamic> json) =>
-      CommitCommentEvent(
-        action: (json['action'] as String?)!,
-        comment: (json['comment'] != null
-            ? CommitCommentEventComment.fromJson(
-                json['comment'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory CommitCommentEvent.fromJson(Map<String, dynamic> json) => CommitCommentEvent(
+    action: (json['action'] as String?)!,
+    comment: (json['comment'] != null ? CommitCommentEventComment.fromJson(json['comment'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action,
-        'comment': comment.toJson(),
-      };
+    'action': action,
+    'comment': comment.toJson(),
+  };
 }

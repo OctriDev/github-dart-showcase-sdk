@@ -4,18 +4,14 @@
 part of 'webhook_team_edited.dart';
 
 // webhook_team_edited domain models
-final class WebhookTeamEditedRepositoryPushedAtInt
-    extends WebhookTeamEditedRepositoryPushedAt {
+final class WebhookTeamEditedRepositoryPushedAtInt extends WebhookTeamEditedRepositoryPushedAt {
   final int value;
   const WebhookTeamEditedRepositoryPushedAtInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class WebhookTeamEditedRepositoryPushedAtString
-    extends WebhookTeamEditedRepositoryPushedAt {
+final class WebhookTeamEditedRepositoryPushedAtString extends WebhookTeamEditedRepositoryPushedAt {
   final String value;
   const WebhookTeamEditedRepositoryPushedAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }

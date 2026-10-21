@@ -8,228 +8,98 @@ part of 'repos_repository_rule.dart';
 class RepositoryRulePullRequestParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
-  final SdkOptional<
-          List<RepositoryRulePullRequestParametersAllowedMergeMethodsItem>>
-      allowedMergeMethods;
-
+  final SdkOptional<List<RepositoryRulePullRequestParametersAllowedMergeMethodsItem>> allowedMergeMethods;
   /// New, reviewable commits pushed will dismiss previous pull request review approvals.
   final bool dismissStaleReviewsOnPush;
-
   /// Specify people, teams, or apps allowed to dismiss pull request reviews.
-  final SdkOptional<RepositoryRuleParamsDismissalRestriction>
-      dismissalRestriction;
-
+  final SdkOptional<RepositoryRuleParamsDismissalRestriction> dismissalRestriction;
   /// Require an approving review in pull requests that modify files that have a designated code owner.
   final bool requireCodeOwnerReview;
-
   /// Whether the most recent reviewable push must be approved by someone other than the person who pushed it.
   final bool requireLastPushApproval;
-
   /// The number of approving reviews that are required before a pull request can be merged.
   final int requiredApprovingReviewCount;
-
   /// All conversations on code must be resolved before a pull request can be merged.
   final bool requiredReviewThreadResolution;
-
   /// &gt; [!NOTE] &gt; `required_reviewers` is in beta and subject to change. A collection of reviewers and associated file patterns. Each reviewer has a list of file patterns which determine the files that reviewer is required to review.
-  final SdkOptional<List<RepositoryRuleParamsRequiredReviewerConfiguration>>
-      requiredReviewers;
+  final SdkOptional<List<RepositoryRuleParamsRequiredReviewerConfiguration>> requiredReviewers;
 
-  const RepositoryRulePullRequestParameters(
-      {this.allowedMergeMethods = const SdkOmitted(),
-      required this.dismissStaleReviewsOnPush,
-      this.dismissalRestriction = const SdkOmitted(),
-      required this.requireCodeOwnerReview,
-      required this.requireLastPushApproval,
-      required this.requiredApprovingReviewCount,
-      required this.requiredReviewThreadResolution,
-      this.requiredReviewers = const SdkOmitted()});
+  const RepositoryRulePullRequestParameters({this.allowedMergeMethods = const SdkOmitted(), required this.dismissStaleReviewsOnPush, this.dismissalRestriction = const SdkOmitted(), required this.requireCodeOwnerReview, required this.requireLastPushApproval, required this.requiredApprovingReviewCount, required this.requiredReviewThreadResolution, this.requiredReviewers = const SdkOmitted()});
 
-  RepositoryRulePullRequestParameters Function(
-      {SdkOptional<
-              List<RepositoryRulePullRequestParametersAllowedMergeMethodsItem>>
-          allowedMergeMethods,
-      bool dismissStaleReviewsOnPush,
-      SdkOptional<RepositoryRuleParamsDismissalRestriction>
-          dismissalRestriction,
-      bool requireCodeOwnerReview,
-      bool requireLastPushApproval,
-      int requiredApprovingReviewCount,
-      bool requiredReviewThreadResolution,
-      SdkOptional<List<RepositoryRuleParamsRequiredReviewerConfiguration>>
-          requiredReviewers}) get copyWith => _copyWith;
+  RepositoryRulePullRequestParameters Function({SdkOptional<List<RepositoryRulePullRequestParametersAllowedMergeMethodsItem>> allowedMergeMethods, bool dismissStaleReviewsOnPush, SdkOptional<RepositoryRuleParamsDismissalRestriction> dismissalRestriction, bool requireCodeOwnerReview, bool requireLastPushApproval, int requiredApprovingReviewCount, bool requiredReviewThreadResolution, SdkOptional<List<RepositoryRuleParamsRequiredReviewerConfiguration>> requiredReviewers}) get copyWith => _copyWith;
 
-  RepositoryRulePullRequestParameters _copyWith(
-          {Object? allowedMergeMethods = sdkOmittedValue,
-          Object? dismissStaleReviewsOnPush = sdkOmittedValue,
-          Object? dismissalRestriction = sdkOmittedValue,
-          Object? requireCodeOwnerReview = sdkOmittedValue,
-          Object? requireLastPushApproval = sdkOmittedValue,
-          Object? requiredApprovingReviewCount = sdkOmittedValue,
-          Object? requiredReviewThreadResolution = sdkOmittedValue,
-          Object? requiredReviewers = sdkOmittedValue}) =>
-      RepositoryRulePullRequestParameters(
-        allowedMergeMethods: identical(allowedMergeMethods, sdkOmittedValue)
-            ? this.allowedMergeMethods
-            : allowedMergeMethods as SdkOptional<
-                List<
-                    RepositoryRulePullRequestParametersAllowedMergeMethodsItem>>,
-        dismissStaleReviewsOnPush:
-            identical(dismissStaleReviewsOnPush, sdkOmittedValue)
-                ? this.dismissStaleReviewsOnPush
-                : dismissStaleReviewsOnPush as bool,
-        dismissalRestriction: identical(dismissalRestriction, sdkOmittedValue)
-            ? this.dismissalRestriction
-            : dismissalRestriction
-                as SdkOptional<RepositoryRuleParamsDismissalRestriction>,
-        requireCodeOwnerReview:
-            identical(requireCodeOwnerReview, sdkOmittedValue)
-                ? this.requireCodeOwnerReview
-                : requireCodeOwnerReview as bool,
-        requireLastPushApproval:
-            identical(requireLastPushApproval, sdkOmittedValue)
-                ? this.requireLastPushApproval
-                : requireLastPushApproval as bool,
-        requiredApprovingReviewCount:
-            identical(requiredApprovingReviewCount, sdkOmittedValue)
-                ? this.requiredApprovingReviewCount
-                : requiredApprovingReviewCount as int,
-        requiredReviewThreadResolution:
-            identical(requiredReviewThreadResolution, sdkOmittedValue)
-                ? this.requiredReviewThreadResolution
-                : requiredReviewThreadResolution as bool,
-        requiredReviewers: identical(requiredReviewers, sdkOmittedValue)
-            ? this.requiredReviewers
-            : requiredReviewers as SdkOptional<
-                List<RepositoryRuleParamsRequiredReviewerConfiguration>>,
-      );
+  RepositoryRulePullRequestParameters _copyWith({Object? allowedMergeMethods = sdkOmittedValue, Object? dismissStaleReviewsOnPush = sdkOmittedValue, Object? dismissalRestriction = sdkOmittedValue, Object? requireCodeOwnerReview = sdkOmittedValue, Object? requireLastPushApproval = sdkOmittedValue, Object? requiredApprovingReviewCount = sdkOmittedValue, Object? requiredReviewThreadResolution = sdkOmittedValue, Object? requiredReviewers = sdkOmittedValue}) => RepositoryRulePullRequestParameters(
+    allowedMergeMethods: identical(allowedMergeMethods, sdkOmittedValue) ? this.allowedMergeMethods : allowedMergeMethods as SdkOptional<List<RepositoryRulePullRequestParametersAllowedMergeMethodsItem>>,
+    dismissStaleReviewsOnPush: identical(dismissStaleReviewsOnPush, sdkOmittedValue) ? this.dismissStaleReviewsOnPush : dismissStaleReviewsOnPush as bool,
+    dismissalRestriction: identical(dismissalRestriction, sdkOmittedValue) ? this.dismissalRestriction : dismissalRestriction as SdkOptional<RepositoryRuleParamsDismissalRestriction>,
+    requireCodeOwnerReview: identical(requireCodeOwnerReview, sdkOmittedValue) ? this.requireCodeOwnerReview : requireCodeOwnerReview as bool,
+    requireLastPushApproval: identical(requireLastPushApproval, sdkOmittedValue) ? this.requireLastPushApproval : requireLastPushApproval as bool,
+    requiredApprovingReviewCount: identical(requiredApprovingReviewCount, sdkOmittedValue) ? this.requiredApprovingReviewCount : requiredApprovingReviewCount as int,
+    requiredReviewThreadResolution: identical(requiredReviewThreadResolution, sdkOmittedValue) ? this.requiredReviewThreadResolution : requiredReviewThreadResolution as bool,
+    requiredReviewers: identical(requiredReviewers, sdkOmittedValue) ? this.requiredReviewers : requiredReviewers as SdkOptional<List<RepositoryRuleParamsRequiredReviewerConfiguration>>,
+  );
 
-  factory RepositoryRulePullRequestParameters.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRulePullRequestParameters(
-        allowedMergeMethods: json['allowed_merge_methods'] != null
-            ? SdkPresent(((json['allowed_merge_methods'] as List?)
-                ?.map((e) =>
-                    RepositoryRulePullRequestParametersAllowedMergeMethodsItem
-                        .fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        dismissStaleReviewsOnPush:
-            (json['dismiss_stale_reviews_on_push'] as bool?)!,
-        dismissalRestriction: json['dismissal_restriction'] != null
-            ? SdkPresent((json['dismissal_restriction'] != null
-                ? RepositoryRuleParamsDismissalRestriction.fromJson(
-                    json['dismissal_restriction'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        requireCodeOwnerReview: (json['require_code_owner_review'] as bool?)!,
-        requireLastPushApproval: (json['require_last_push_approval'] as bool?)!,
-        requiredApprovingReviewCount:
-            ((json['required_approving_review_count'] as num?)?.toInt())!,
-        requiredReviewThreadResolution:
-            (json['required_review_thread_resolution'] as bool?)!,
-        requiredReviewers: json['required_reviewers'] != null
-            ? SdkPresent(((json['required_reviewers'] as List?)
-                ?.map((e) =>
-                    RepositoryRuleParamsRequiredReviewerConfiguration.fromJson(
-                        e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRulePullRequestParameters.fromJson(Map<String, dynamic> json) => RepositoryRulePullRequestParameters(
+    allowedMergeMethods: json['allowed_merge_methods'] != null ? SdkPresent(((json['allowed_merge_methods'] as List?)?.map((e) => RepositoryRulePullRequestParametersAllowedMergeMethodsItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    dismissStaleReviewsOnPush: (json['dismiss_stale_reviews_on_push'] as bool?)!,
+    dismissalRestriction: json['dismissal_restriction'] != null ? SdkPresent((json['dismissal_restriction'] != null ? RepositoryRuleParamsDismissalRestriction.fromJson(json['dismissal_restriction'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    requireCodeOwnerReview: (json['require_code_owner_review'] as bool?)!,
+    requireLastPushApproval: (json['require_last_push_approval'] as bool?)!,
+    requiredApprovingReviewCount: ((json['required_approving_review_count'] as num?)?.toInt())!,
+    requiredReviewThreadResolution: (json['required_review_thread_resolution'] as bool?)!,
+    requiredReviewers: json['required_reviewers'] != null ? SdkPresent(((json['required_reviewers'] as List?)?.map((e) => RepositoryRuleParamsRequiredReviewerConfiguration.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (allowedMergeMethods) {
-          SdkPresent<
-                List<
-                    RepositoryRulePullRequestParametersAllowedMergeMethodsItem>>(
-            value: final value
-          ) =>
-            {
-              'allowed_merge_methods':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'dismiss_stale_reviews_on_push': dismissStaleReviewsOnPush,
-        ...switch (dismissalRestriction) {
-          SdkPresent<RepositoryRuleParamsDismissalRestriction>(
-            value: final value
-          ) =>
-            {
-              'dismissal_restriction': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'require_code_owner_review': requireCodeOwnerReview,
-        'require_last_push_approval': requireLastPushApproval,
-        'required_approving_review_count': requiredApprovingReviewCount,
-        'required_review_thread_resolution': requiredReviewThreadResolution,
-        ...switch (requiredReviewers) {
-          SdkPresent<List<RepositoryRuleParamsRequiredReviewerConfiguration>>(
-            value: final value
-          ) =>
-            {
-              'required_reviewers': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (allowedMergeMethods) {
+      SdkPresent<List<RepositoryRulePullRequestParametersAllowedMergeMethodsItem>>(value: final value) => {'allowed_merge_methods': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'dismiss_stale_reviews_on_push': dismissStaleReviewsOnPush,
+    ...switch (dismissalRestriction) {
+      SdkPresent<RepositoryRuleParamsDismissalRestriction>(value: final value) => {'dismissal_restriction': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'require_code_owner_review': requireCodeOwnerReview,
+    'require_last_push_approval': requireLastPushApproval,
+    'required_approving_review_count': requiredApprovingReviewCount,
+    'required_review_thread_resolution': requiredReviewThreadResolution,
+    ...switch (requiredReviewers) {
+      SdkPresent<List<RepositoryRuleParamsRequiredReviewerConfiguration>>(value: final value) => {'required_reviewers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
 class RepositoryRulePullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRulePullRequestType type_;
-
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRulePullRequestParameters> parameters;
 
-  const RepositoryRulePullRequest(
-      {required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRulePullRequest({required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRulePullRequest Function(
-          {RepositoryRulePullRequestType type_,
-          SdkOptional<RepositoryRulePullRequestParameters> parameters})
-      get copyWith => _copyWith;
+  RepositoryRulePullRequest Function({RepositoryRulePullRequestType type_, SdkOptional<RepositoryRulePullRequestParameters> parameters}) get copyWith => _copyWith;
 
-  RepositoryRulePullRequest _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? parameters = sdkOmittedValue}) =>
-      RepositoryRulePullRequest(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRulePullRequestType,
-        parameters: identical(parameters, sdkOmittedValue)
-            ? this.parameters
-            : parameters as SdkOptional<RepositoryRulePullRequestParameters>,
-      );
+  RepositoryRulePullRequest _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRulePullRequest(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRulePullRequestType,
+    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRulePullRequestParameters>,
+  );
 
-  factory RepositoryRulePullRequest.fromJson(Map<String, dynamic> json) =>
-      RepositoryRulePullRequest(
-        type_: (json['type'] != null
-            ? RepositoryRulePullRequestType.fromJson(json['type'] as String)
-            : null)!,
-        parameters: json['parameters'] != null
-            ? SdkPresent((json['parameters'] != null
-                ? RepositoryRulePullRequestParameters.fromJson(
-                    json['parameters'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRulePullRequest.fromJson(Map<String, dynamic> json) => RepositoryRulePullRequest(
+    type_: (json['type'] != null ? RepositoryRulePullRequestType.fromJson(json['type'] as String) : null)!,
+    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRulePullRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (parameters) {
-          SdkPresent<RepositoryRulePullRequestParameters>(value: final value) =>
-            {
-              'parameters': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'type': type_.toJson(),
+    ...switch (parameters) {
+      SdkPresent<RepositoryRulePullRequestParameters>(value: final value) => {'parameters': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

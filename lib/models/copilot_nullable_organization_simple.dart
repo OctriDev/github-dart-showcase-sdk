@@ -8,147 +8,77 @@ part of 'copilot.dart';
 class NullableOrganizationSimple {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `login` wire field.
   final String login;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `uri`-formatted value serialized in the `repos_url` wire field.
   final String reposUrl;
-
   /// Required `uri`-formatted value serialized in the `events_url` wire field.
   final String eventsUrl;
-
   /// Required `string` value serialized in the `hooks_url` wire field.
   final String hooksUrl;
-
   /// Required `string` value serialized in the `issues_url` wire field.
   final String issuesUrl;
-
   /// Required `string` value serialized in the `members_url` wire field.
   final String membersUrl;
-
   /// Required `string` value serialized in the `public_members_url` wire field.
   final String publicMembersUrl;
-
   /// Required `string` value serialized in the `avatar_url` wire field.
   final String avatarUrl;
-
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
 
-  const NullableOrganizationSimple(
-      {required this.login,
-      required this.id,
-      required this.nodeId,
-      required this.url,
-      required this.reposUrl,
-      required this.eventsUrl,
-      required this.hooksUrl,
-      required this.issuesUrl,
-      required this.membersUrl,
-      required this.publicMembersUrl,
-      required this.avatarUrl,
-      required this.description});
+  const NullableOrganizationSimple({required this.login, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description});
 
-  NullableOrganizationSimple Function(
-      {String login,
-      int id,
-      String nodeId,
-      String url,
-      String reposUrl,
-      String eventsUrl,
-      String hooksUrl,
-      String issuesUrl,
-      String membersUrl,
-      String publicMembersUrl,
-      String avatarUrl,
-      String? description}) get copyWith => _copyWith;
+  NullableOrganizationSimple Function({String login, int id, String nodeId, String url, String reposUrl, String eventsUrl, String hooksUrl, String issuesUrl, String membersUrl, String publicMembersUrl, String avatarUrl, String? description}) get copyWith => _copyWith;
 
-  NullableOrganizationSimple _copyWith(
-          {Object? login = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? reposUrl = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? hooksUrl = sdkOmittedValue,
-          Object? issuesUrl = sdkOmittedValue,
-          Object? membersUrl = sdkOmittedValue,
-          Object? publicMembersUrl = sdkOmittedValue,
-          Object? avatarUrl = sdkOmittedValue,
-          Object? description = sdkOmittedValue}) =>
-      NullableOrganizationSimple(
-        login: identical(login, sdkOmittedValue) ? this.login : login as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        reposUrl: identical(reposUrl, sdkOmittedValue)
-            ? this.reposUrl
-            : reposUrl as String,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        hooksUrl: identical(hooksUrl, sdkOmittedValue)
-            ? this.hooksUrl
-            : hooksUrl as String,
-        issuesUrl: identical(issuesUrl, sdkOmittedValue)
-            ? this.issuesUrl
-            : issuesUrl as String,
-        membersUrl: identical(membersUrl, sdkOmittedValue)
-            ? this.membersUrl
-            : membersUrl as String,
-        publicMembersUrl: identical(publicMembersUrl, sdkOmittedValue)
-            ? this.publicMembersUrl
-            : publicMembersUrl as String,
-        avatarUrl: identical(avatarUrl, sdkOmittedValue)
-            ? this.avatarUrl
-            : avatarUrl as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-      );
+  NullableOrganizationSimple _copyWith({Object? login = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? hooksUrl = sdkOmittedValue, Object? issuesUrl = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? publicMembersUrl = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? description = sdkOmittedValue}) => NullableOrganizationSimple(
+    login: identical(login, sdkOmittedValue) ? this.login : login as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as String,
+    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
+    hooksUrl: identical(hooksUrl, sdkOmittedValue) ? this.hooksUrl : hooksUrl as String,
+    issuesUrl: identical(issuesUrl, sdkOmittedValue) ? this.issuesUrl : issuesUrl as String,
+    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
+    publicMembersUrl: identical(publicMembersUrl, sdkOmittedValue) ? this.publicMembersUrl : publicMembersUrl as String,
+    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+  );
 
-  factory NullableOrganizationSimple.fromJson(Map<String, dynamic> json) =>
-      NullableOrganizationSimple(
-        login: (json['login'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-        reposUrl: (json['repos_url'] as String?)!,
-        eventsUrl: (json['events_url'] as String?)!,
-        hooksUrl: (json['hooks_url'] as String?)!,
-        issuesUrl: (json['issues_url'] as String?)!,
-        membersUrl: (json['members_url'] as String?)!,
-        publicMembersUrl: (json['public_members_url'] as String?)!,
-        avatarUrl: (json['avatar_url'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-      );
+  factory NullableOrganizationSimple.fromJson(Map<String, dynamic> json) => NullableOrganizationSimple(
+    login: (json['login'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    url: (json['url'] as String?)!,
+    reposUrl: (json['repos_url'] as String?)!,
+    eventsUrl: (json['events_url'] as String?)!,
+    hooksUrl: (json['hooks_url'] as String?)!,
+    issuesUrl: (json['issues_url'] as String?)!,
+    membersUrl: (json['members_url'] as String?)!,
+    publicMembersUrl: (json['public_members_url'] as String?)!,
+    avatarUrl: (json['avatar_url'] as String?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'login': login,
-        'id': id,
-        'node_id': nodeId,
-        'url': url,
-        'repos_url': reposUrl,
-        'events_url': eventsUrl,
-        'hooks_url': hooksUrl,
-        'issues_url': issuesUrl,
-        'members_url': membersUrl,
-        'public_members_url': publicMembersUrl,
-        'avatar_url': avatarUrl,
-        'description': description,
-      };
+    'login': login,
+    'id': id,
+    'node_id': nodeId,
+    'url': url,
+    'repos_url': reposUrl,
+    'events_url': eventsUrl,
+    'hooks_url': hooksUrl,
+    'issues_url': issuesUrl,
+    'members_url': membersUrl,
+    'public_members_url': publicMembersUrl,
+    'avatar_url': avatarUrl,
+    'description': description,
+  };
 }

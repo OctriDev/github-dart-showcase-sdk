@@ -8,53 +8,37 @@ part of 'users.dart';
 class SshSigningKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `key` wire field.
   final String key;
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `title` wire field.
   final String title;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
 
-  const SshSigningKey(
-      {required this.key,
-      required this.id,
-      required this.title,
-      required this.createdAt});
+  const SshSigningKey({required this.key, required this.id, required this.title, required this.createdAt});
 
-  SshSigningKey Function({String key, int id, String title, String createdAt})
-      get copyWith => _copyWith;
+  SshSigningKey Function({String key, int id, String title, String createdAt}) get copyWith => _copyWith;
 
-  SshSigningKey _copyWith(
-          {Object? key = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue}) =>
-      SshSigningKey(
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-      );
+  SshSigningKey _copyWith({Object? key = sdkOmittedValue, Object? id = sdkOmittedValue, Object? title = sdkOmittedValue, Object? createdAt = sdkOmittedValue}) => SshSigningKey(
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+  );
 
   factory SshSigningKey.fromJson(Map<String, dynamic> json) => SshSigningKey(
-        key: (json['key'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        title: (json['title'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-      );
+    key: (json['key'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    title: (json['title'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'key': key,
-        'id': id,
-        'title': title,
-        'created_at': createdAt,
-      };
+    'key': key,
+    'id': id,
+    'title': title,
+    'created_at': createdAt,
+  };
 }

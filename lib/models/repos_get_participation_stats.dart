@@ -8,36 +8,27 @@ part of 'repos.dart';
 class ParticipationStats {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `all` wire field.
   final List<int> all;
-
   /// Required array value serialized in the `owner` wire field.
   final List<int> owner;
 
   const ParticipationStats({required this.all, required this.owner});
 
-  ParticipationStats Function({List<int> all, List<int> owner}) get copyWith =>
-      _copyWith;
+  ParticipationStats Function({List<int> all, List<int> owner}) get copyWith => _copyWith;
 
-  ParticipationStats _copyWith(
-          {Object? all = sdkOmittedValue, Object? owner = sdkOmittedValue}) =>
-      ParticipationStats(
-        all: identical(all, sdkOmittedValue) ? this.all : all as List<int>,
-        owner:
-            identical(owner, sdkOmittedValue) ? this.owner : owner as List<int>,
-      );
+  ParticipationStats _copyWith({Object? all = sdkOmittedValue, Object? owner = sdkOmittedValue}) => ParticipationStats(
+    all: identical(all, sdkOmittedValue) ? this.all : all as List<int>,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as List<int>,
+  );
 
-  factory ParticipationStats.fromJson(Map<String, dynamic> json) =>
-      ParticipationStats(
-        all: ((json['all'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-        owner: ((json['owner'] as List?)
-            ?.map((e) => (e as num).toInt())
-            .toList())!,
-      );
+  factory ParticipationStats.fromJson(Map<String, dynamic> json) => ParticipationStats(
+    all: ((json['all'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+    owner: ((json['owner'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'all': all,
-        'owner': owner,
-      };
+    'all': all,
+    'owner': owner,
+  };
 }

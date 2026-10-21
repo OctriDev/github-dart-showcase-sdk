@@ -6,519 +6,291 @@ part of 'inline.dart';
 // Inline operation models
 /// Required enumerated value serialized in the `events[]` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(value);
 
-  static const branchProtectionRule =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'branch_protection_rule');
-  static const checkRun =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'check_run');
-  static const checkSuite =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'check_suite');
-  static const codeScanningAlert =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'code_scanning_alert');
-  static const commitComment =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'commit_comment');
-  static const contentReference =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'content_reference');
-  static const create =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'create');
-  static const delete =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'delete');
-  static const deployment =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'deployment');
-  static const deploymentReview =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'deployment_review');
-  static const deploymentStatus =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'deployment_status');
-  static const deployKey =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'deploy_key');
-  static const discussion =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'discussion');
-  static const discussionComment =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'discussion_comment');
-  static const fork =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'fork');
-  static const gollum =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'gollum');
-  static const issues =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'issues');
-  static const issueComment =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'issue_comment');
-  static const label =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'label');
-  static const member =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'member');
-  static const membership =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'membership');
-  static const milestone =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'milestone');
-  static const organization =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'organization');
-  static const orgBlock =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'org_block');
-  static const pageBuild =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'page_build');
-  static const project =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'project');
-  static const projectCard =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'project_card');
-  static const projectColumn =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'project_column');
-  static const public =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'public');
-  static const pullRequest =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'pull_request');
-  static const pullRequestReview =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'pull_request_review');
-  static const pullRequestReviewComment =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'pull_request_review_comment');
-  static const push =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'push');
-  static const registryPackage =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'registry_package');
-  static const release =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'release');
-  static const repository =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'repository');
-  static const repositoryDispatch =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'repository_dispatch');
-  static const secretScanningAlert =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'secret_scanning_alert');
-  static const star =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'star');
-  static const status =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'status');
-  static const team =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'team');
-  static const teamAdd =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'team_add');
-  static const watch =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'watch');
-  static const workflowDispatch =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'workflow_dispatch');
-  static const workflowRun =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'workflow_run');
-  static const workflowJob =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'workflow_job');
-  static const pullRequestReviewThread =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'pull_request_review_thread');
-  static const mergeQueueEntry =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'merge_queue_entry');
-  static const secretScanningAlertLocation =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'secret_scanning_alert_location');
-  static const mergeGroup =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._(
-          'merge_group');
+  static const branchProtectionRule = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('branch_protection_rule');
+  static const checkRun = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('check_run');
+  static const checkSuite = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('check_suite');
+  static const codeScanningAlert = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('code_scanning_alert');
+  static const commitComment = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('commit_comment');
+  static const contentReference = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('content_reference');
+  static const create = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('create');
+  static const delete = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('delete');
+  static const deployment = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('deployment');
+  static const deploymentReview = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('deployment_review');
+  static const deploymentStatus = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('deployment_status');
+  static const deployKey = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('deploy_key');
+  static const discussion = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('discussion');
+  static const discussionComment = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('discussion_comment');
+  static const fork = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('fork');
+  static const gollum = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('gollum');
+  static const issues = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('issues');
+  static const issueComment = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('issue_comment');
+  static const label = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('label');
+  static const member = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('member');
+  static const membership = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('membership');
+  static const milestone = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('milestone');
+  static const organization = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('organization');
+  static const orgBlock = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('org_block');
+  static const pageBuild = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('page_build');
+  static const project = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('project');
+  static const projectCard = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('project_card');
+  static const projectColumn = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('project_column');
+  static const public = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('public');
+  static const pullRequest = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('pull_request');
+  static const pullRequestReview = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('pull_request_review');
+  static const pullRequestReviewComment = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('pull_request_review_comment');
+  static const push = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('push');
+  static const registryPackage = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('registry_package');
+  static const release = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('release');
+  static const repository = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('repository');
+  static const repositoryDispatch = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('repository_dispatch');
+  static const secretScanningAlert = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('secret_scanning_alert');
+  static const star = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('star');
+  static const status = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('status');
+  static const team = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('team');
+  static const teamAdd = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('team_add');
+  static const watch = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('watch');
+  static const workflowDispatch = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('workflow_dispatch');
+  static const workflowRun = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('workflow_run');
+  static const workflowJob = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('workflow_job');
+  static const pullRequestReviewThread = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('pull_request_review_thread');
+  static const mergeQueueEntry = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('merge_queue_entry');
+  static const secretScanningAlertLocation = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('secret_scanning_alert_location');
+  static const mergeGroup = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem._('merge_group');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(value);
 
-  static const bot =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._('Bot');
-  static const user =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(
-          'User');
-  static const organization =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(
-          'Organization');
+  static const bot = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._('Bot');
+  static const user = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._('User');
+  static const organization = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `actions` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `administration` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `checks` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `content_references` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `contents` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `deployments` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `discussions` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `emails` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `environments` wire field.
 final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments {
+
   final String value;
 
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments._(
-      this.value);
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments._(this.value);
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments.fromJson(
-          String value) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments
-          ._(value);
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments.fromJson(String value) => WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments._(value);
 
-  static const read =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments
-          ._('read');
-  static const write =
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments
-          ._('write');
+  static const read = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments._('read');
+  static const write = WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments._('write');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

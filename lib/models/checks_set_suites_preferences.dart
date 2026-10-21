@@ -8,137 +8,83 @@ part of 'checks.dart';
 class CheckSuitePreferencePreferencesAutoTriggerChecksItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `app_id` wire field.
   final int appId;
-
   /// Required `boolean` value serialized in the `setting` wire field.
   final bool setting;
 
-  const CheckSuitePreferencePreferencesAutoTriggerChecksItem(
-      {required this.appId, required this.setting});
+  const CheckSuitePreferencePreferencesAutoTriggerChecksItem({required this.appId, required this.setting});
 
-  CheckSuitePreferencePreferencesAutoTriggerChecksItem Function(
-      {int appId, bool setting}) get copyWith => _copyWith;
+  CheckSuitePreferencePreferencesAutoTriggerChecksItem Function({int appId, bool setting}) get copyWith => _copyWith;
 
-  CheckSuitePreferencePreferencesAutoTriggerChecksItem _copyWith(
-          {Object? appId = sdkOmittedValue,
-          Object? setting = sdkOmittedValue}) =>
-      CheckSuitePreferencePreferencesAutoTriggerChecksItem(
-        appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int,
-        setting: identical(setting, sdkOmittedValue)
-            ? this.setting
-            : setting as bool,
-      );
+  CheckSuitePreferencePreferencesAutoTriggerChecksItem _copyWith({Object? appId = sdkOmittedValue, Object? setting = sdkOmittedValue}) => CheckSuitePreferencePreferencesAutoTriggerChecksItem(
+    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int,
+    setting: identical(setting, sdkOmittedValue) ? this.setting : setting as bool,
+  );
 
-  factory CheckSuitePreferencePreferencesAutoTriggerChecksItem.fromJson(
-          Map<String, dynamic> json) =>
-      CheckSuitePreferencePreferencesAutoTriggerChecksItem(
-        appId: ((json['app_id'] as num?)?.toInt())!,
-        setting: (json['setting'] as bool?)!,
-      );
+  factory CheckSuitePreferencePreferencesAutoTriggerChecksItem.fromJson(Map<String, dynamic> json) => CheckSuitePreferencePreferencesAutoTriggerChecksItem(
+    appId: ((json['app_id'] as num?)?.toInt())!,
+    setting: (json['setting'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'app_id': appId,
-        'setting': setting,
-      };
+    'app_id': appId,
+    'setting': setting,
+  };
 }
 
 /// Required object value serialized in the `preferences` wire field.
 class CheckSuitePreferencePreferences {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `auto_trigger_checks` wire field.
-  final SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>
-      autoTriggerChecks;
+  final SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>> autoTriggerChecks;
 
-  const CheckSuitePreferencePreferences(
-      {this.autoTriggerChecks = const SdkOmitted()});
+  const CheckSuitePreferencePreferences({this.autoTriggerChecks = const SdkOmitted()});
 
-  CheckSuitePreferencePreferences Function(
-      {SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>
-          autoTriggerChecks}) get copyWith => _copyWith;
+  CheckSuitePreferencePreferences Function({SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>> autoTriggerChecks}) get copyWith => _copyWith;
 
-  CheckSuitePreferencePreferences _copyWith(
-          {Object? autoTriggerChecks = sdkOmittedValue}) =>
-      CheckSuitePreferencePreferences(
-        autoTriggerChecks: identical(autoTriggerChecks, sdkOmittedValue)
-            ? this.autoTriggerChecks
-            : autoTriggerChecks as SdkOptional<
-                List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>,
-      );
+  CheckSuitePreferencePreferences _copyWith({Object? autoTriggerChecks = sdkOmittedValue}) => CheckSuitePreferencePreferences(
+    autoTriggerChecks: identical(autoTriggerChecks, sdkOmittedValue) ? this.autoTriggerChecks : autoTriggerChecks as SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>,
+  );
 
-  factory CheckSuitePreferencePreferences.fromJson(Map<String, dynamic> json) =>
-      CheckSuitePreferencePreferences(
-        autoTriggerChecks: json['auto_trigger_checks'] != null
-            ? SdkPresent(((json['auto_trigger_checks'] as List?)
-                ?.map((e) =>
-                    CheckSuitePreferencePreferencesAutoTriggerChecksItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory CheckSuitePreferencePreferences.fromJson(Map<String, dynamic> json) => CheckSuitePreferencePreferences(
+    autoTriggerChecks: json['auto_trigger_checks'] != null ? SdkPresent(((json['auto_trigger_checks'] as List?)?.map((e) => CheckSuitePreferencePreferencesAutoTriggerChecksItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (autoTriggerChecks) {
-          SdkPresent<
-                List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>(
-            value: final value
-          ) =>
-            {
-              'auto_trigger_checks':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (autoTriggerChecks) {
+      SdkPresent<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>(value: final value) => {'auto_trigger_checks': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Check suite configuration preferences for a repository.
 class CheckSuitePreference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `preferences` wire field.
   final CheckSuitePreferencePreferences preferences;
-
   /// Minimal Repository
   final MinimalRepository repository;
 
-  const CheckSuitePreference(
-      {required this.preferences, required this.repository});
+  const CheckSuitePreference({required this.preferences, required this.repository});
 
-  CheckSuitePreference Function(
-      {CheckSuitePreferencePreferences preferences,
-      MinimalRepository repository}) get copyWith => _copyWith;
+  CheckSuitePreference Function({CheckSuitePreferencePreferences preferences, MinimalRepository repository}) get copyWith => _copyWith;
 
-  CheckSuitePreference _copyWith(
-          {Object? preferences = sdkOmittedValue,
-          Object? repository = sdkOmittedValue}) =>
-      CheckSuitePreference(
-        preferences: identical(preferences, sdkOmittedValue)
-            ? this.preferences
-            : preferences as CheckSuitePreferencePreferences,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as MinimalRepository,
-      );
+  CheckSuitePreference _copyWith({Object? preferences = sdkOmittedValue, Object? repository = sdkOmittedValue}) => CheckSuitePreference(
+    preferences: identical(preferences, sdkOmittedValue) ? this.preferences : preferences as CheckSuitePreferencePreferences,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
+  );
 
-  factory CheckSuitePreference.fromJson(Map<String, dynamic> json) =>
-      CheckSuitePreference(
-        preferences: (json['preferences'] != null
-            ? CheckSuitePreferencePreferences.fromJson(
-                json['preferences'] as Map<String, dynamic>)
-            : null)!,
-        repository: (json['repository'] != null
-            ? MinimalRepository.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory CheckSuitePreference.fromJson(Map<String, dynamic> json) => CheckSuitePreference(
+    preferences: (json['preferences'] != null ? CheckSuitePreferencePreferences.fromJson(json['preferences'] as Map<String, dynamic>) : null)!,
+    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'preferences': preferences.toJson(),
-        'repository': repository.toJson(),
-      };
+    'preferences': preferences.toJson(),
+    'repository': repository.toJson(),
+  };
 }

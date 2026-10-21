@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models
 /// The severity of the advisory.
 final class GlobalAdvisorySeverity {
+
   final String value;
 
   const GlobalAdvisorySeverity._(this.value);
 
-  factory GlobalAdvisorySeverity.fromJson(String value) =>
-      GlobalAdvisorySeverity._(value);
+  factory GlobalAdvisorySeverity.fromJson(String value) => GlobalAdvisorySeverity._(value);
 
   static const critical = GlobalAdvisorySeverity._('critical');
   static const high = GlobalAdvisorySeverity._('high');
@@ -21,25 +21,22 @@ final class GlobalAdvisorySeverity {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is GlobalAdvisorySeverity && other.value == value;
+  @override bool operator ==(Object other) => other is GlobalAdvisorySeverity && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of advisory.
 final class GlobalAdvisoryType {
+
   final String value;
 
   const GlobalAdvisoryType._(this.value);
 
-  factory GlobalAdvisoryType.fromJson(String value) =>
-      GlobalAdvisoryType._(value);
+  factory GlobalAdvisoryType.fromJson(String value) => GlobalAdvisoryType._(value);
 
   static const reviewed = GlobalAdvisoryType._('reviewed');
   static const unreviewed = GlobalAdvisoryType._('unreviewed');
@@ -47,50 +44,40 @@ final class GlobalAdvisoryType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is GlobalAdvisoryType && other.value == value;
+  @override bool operator ==(Object other) => other is GlobalAdvisoryType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The policy that controls how immutable releases are enforced in the organization.
 final class ImmutableReleasesOrganizationSettingsEnforcedRepositories {
+
   final String value;
 
   const ImmutableReleasesOrganizationSettingsEnforcedRepositories._(this.value);
 
-  factory ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(
-          String value) =>
-      ImmutableReleasesOrganizationSettingsEnforcedRepositories._(value);
+  factory ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(String value) => ImmutableReleasesOrganizationSettingsEnforcedRepositories._(value);
 
-  static const all =
-      ImmutableReleasesOrganizationSettingsEnforcedRepositories._('all');
-  static const none =
-      ImmutableReleasesOrganizationSettingsEnforcedRepositories._('none');
-  static const selected =
-      ImmutableReleasesOrganizationSettingsEnforcedRepositories._('selected');
+  static const all = ImmutableReleasesOrganizationSettingsEnforcedRepositories._('all');
+  static const none = ImmutableReleasesOrganizationSettingsEnforcedRepositories._('none');
+  static const selected = ImmutableReleasesOrganizationSettingsEnforcedRepositories._('selected');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ImmutableReleasesOrganizationSettingsEnforcedRepositories &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ImmutableReleasesOrganizationSettingsEnforcedRepositories && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class ImportStatus {
+
   final String value;
 
   const ImportStatus._(this.value);
@@ -110,77 +97,67 @@ final class ImportStatus {
   static const complete = ImportStatus._('complete');
   static const setup = ImportStatus._('setup');
   static const unknown = ImportStatus._('unknown');
-  static const detectionFoundMultiple =
-      ImportStatus._('detection_found_multiple');
-  static const detectionFoundNothing =
-      ImportStatus._('detection_found_nothing');
+  static const detectionFoundMultiple = ImportStatus._('detection_found_multiple');
+  static const detectionFoundNothing = ImportStatus._('detection_found_nothing');
   static const detectionNeedsAuth = ImportStatus._('detection_needs_auth');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ImportStatus && other.value == value;
+  @override bool operator ==(Object other) => other is ImportStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Describe whether all repositories have been selected or there's a selection involved
 final class InstallationRepositorySelection {
+
   final String value;
 
   const InstallationRepositorySelection._(this.value);
 
-  factory InstallationRepositorySelection.fromJson(String value) =>
-      InstallationRepositorySelection._(value);
+  factory InstallationRepositorySelection.fromJson(String value) => InstallationRepositorySelection._(value);
 
   static const all = InstallationRepositorySelection._('all');
   static const selected = InstallationRepositorySelection._('selected');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is InstallationRepositorySelection && other.value == value;
+  @override bool operator ==(Object other) => other is InstallationRepositorySelection && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `repository_selection` wire field.
 final class InstallationTokenRepositorySelection {
+
   final String value;
 
   const InstallationTokenRepositorySelection._(this.value);
 
-  factory InstallationTokenRepositorySelection.fromJson(String value) =>
-      InstallationTokenRepositorySelection._(value);
+  factory InstallationTokenRepositorySelection.fromJson(String value) => InstallationTokenRepositorySelection._(value);
 
   static const all = InstallationTokenRepositorySelection._('all');
   static const selected = InstallationTokenRepositorySelection._('selected');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is InstallationTokenRepositorySelection && other.value == value;
+  @override bool operator ==(Object other) => other is InstallationTokenRepositorySelection && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The reason for the current state
 final class IssueStateReason {
+
   final String value;
 
   const IssueStateReason._(this.value);
@@ -194,25 +171,22 @@ final class IssueStateReason {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueStateReason && other.value == value;
+  @override bool operator ==(Object other) => other is IssueStateReason && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The data type of the issue field.
 final class IssueFieldDataType {
+
   final String value;
 
   const IssueFieldDataType._(this.value);
 
-  factory IssueFieldDataType.fromJson(String value) =>
-      IssueFieldDataType._(value);
+  factory IssueFieldDataType.fromJson(String value) => IssueFieldDataType._(value);
 
   static const text = IssueFieldDataType._('text');
   static const date = IssueFieldDataType._('date');
@@ -222,25 +196,22 @@ final class IssueFieldDataType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueFieldDataType && other.value == value;
+  @override bool operator ==(Object other) => other is IssueFieldDataType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The color of the option.
 final class IssueFieldOptionsItemColor {
+
   final String value;
 
   const IssueFieldOptionsItemColor._(this.value);
 
-  factory IssueFieldOptionsItemColor.fromJson(String value) =>
-      IssueFieldOptionsItemColor._(value);
+  factory IssueFieldOptionsItemColor.fromJson(String value) => IssueFieldOptionsItemColor._(value);
 
   static const gray = IssueFieldOptionsItemColor._('gray');
   static const blue = IssueFieldOptionsItemColor._('blue');
@@ -253,51 +224,44 @@ final class IssueFieldOptionsItemColor {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueFieldOptionsItemColor && other.value == value;
+  @override bool operator ==(Object other) => other is IssueFieldOptionsItemColor && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues).
 final class IssueFieldVisibility {
+
   final String value;
 
   const IssueFieldVisibility._(this.value);
 
-  factory IssueFieldVisibility.fromJson(String value) =>
-      IssueFieldVisibility._(value);
+  factory IssueFieldVisibility.fromJson(String value) => IssueFieldVisibility._(value);
 
-  static const organizationMembersOnly =
-      IssueFieldVisibility._('organization_members_only');
+  static const organizationMembersOnly = IssueFieldVisibility._('organization_members_only');
   static const all = IssueFieldVisibility._('all');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueFieldVisibility && other.value == value;
+  @override bool operator ==(Object other) => other is IssueFieldVisibility && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The data type of the issue field
 final class IssueFieldValueDataType {
+
   final String value;
 
   const IssueFieldValueDataType._(this.value);
 
-  factory IssueFieldValueDataType.fromJson(String value) =>
-      IssueFieldValueDataType._(value);
+  factory IssueFieldValueDataType.fromJson(String value) => IssueFieldValueDataType._(value);
 
   static const text = IssueFieldValueDataType._('text');
   static const singleSelect = IssueFieldValueDataType._('single_select');
@@ -307,13 +271,10 @@ final class IssueFieldValueDataType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueFieldValueDataType && other.value == value;
+  @override bool operator ==(Object other) => other is IssueFieldValueDataType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

@@ -8,7 +8,6 @@ part of 'issues_issue.dart';
 class IssueEventMilestone {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `title` wire field.
   final String title;
 
@@ -16,17 +15,15 @@ class IssueEventMilestone {
 
   IssueEventMilestone Function({String title}) get copyWith => _copyWith;
 
-  IssueEventMilestone _copyWith({Object? title = sdkOmittedValue}) =>
-      IssueEventMilestone(
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-      );
+  IssueEventMilestone _copyWith({Object? title = sdkOmittedValue}) => IssueEventMilestone(
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+  );
 
-  factory IssueEventMilestone.fromJson(Map<String, dynamic> json) =>
-      IssueEventMilestone(
-        title: (json['title'] as String?)!,
-      );
+  factory IssueEventMilestone.fromJson(Map<String, dynamic> json) => IssueEventMilestone(
+    title: (json['title'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-      };
+    'title': title,
+  };
 }

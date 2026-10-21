@@ -6,12 +6,12 @@ part of 'projects.dart';
 // projects domain models
 /// The type of content tracked in a project item
 final class ProjectsV2ItemContentType {
+
   final String value;
 
   const ProjectsV2ItemContentType._(this.value);
 
-  factory ProjectsV2ItemContentType.fromJson(String value) =>
-      ProjectsV2ItemContentType._(value);
+  factory ProjectsV2ItemContentType.fromJson(String value) => ProjectsV2ItemContentType._(value);
 
   static const issue = ProjectsV2ItemContentType._('Issue');
   static const pullrequest = ProjectsV2ItemContentType._('PullRequest');
@@ -19,13 +19,10 @@ final class ProjectsV2ItemContentType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ProjectsV2ItemContentType && other.value == value;
+  @override bool operator ==(Object other) => other is ProjectsV2ItemContentType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

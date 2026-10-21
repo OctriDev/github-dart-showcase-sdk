@@ -6,6 +6,7 @@ part of 'inline.dart';
 // Inline operation models
 /// How the team's access to the repository was granted. This property is only present when the team is returned in a repository context, such as `GET /repos/{owner}/{repo}/teams`.
 final class TeamAccessSource {
+
   final String value;
 
   const TeamAccessSource._(this.value);
@@ -18,19 +19,17 @@ final class TeamAccessSource {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamAccessSource && other.value == value;
+  @override bool operator ==(Object other) => other is TeamAccessSource && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The ownership type of the team
 final class TeamType {
+
   final String value;
 
   const TeamType._(this.value);
@@ -42,45 +41,39 @@ final class TeamType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) => other is TeamType && other.value == value;
+  @override bool operator ==(Object other) => other is TeamType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The notification setting the team has set
 final class TeamFullNotificationSetting {
+
   final String value;
 
   const TeamFullNotificationSetting._(this.value);
 
-  factory TeamFullNotificationSetting.fromJson(String value) =>
-      TeamFullNotificationSetting._(value);
+  factory TeamFullNotificationSetting.fromJson(String value) => TeamFullNotificationSetting._(value);
 
-  static const notificationsEnabled =
-      TeamFullNotificationSetting._('notifications_enabled');
-  static const notificationsDisabled =
-      TeamFullNotificationSetting._('notifications_disabled');
+  static const notificationsEnabled = TeamFullNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = TeamFullNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamFullNotificationSetting && other.value == value;
+  @override bool operator ==(Object other) => other is TeamFullNotificationSetting && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The level of privacy this team should have
 final class TeamFullPrivacy {
+
   final String value;
 
   const TeamFullPrivacy._(this.value);
@@ -92,19 +85,17 @@ final class TeamFullPrivacy {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamFullPrivacy && other.value == value;
+  @override bool operator ==(Object other) => other is TeamFullPrivacy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The ownership type of the team
 final class TeamFullType {
+
   final String value;
 
   const TeamFullType._(this.value);
@@ -116,19 +107,17 @@ final class TeamFullType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamFullType && other.value == value;
+  @override bool operator ==(Object other) => other is TeamFullType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The member's role on the team. Only present on the `List team members` endpoint, and only when the feature is enabled for the organization.
 final class TeamMemberRole {
+
   final String value;
 
   const TeamMemberRole._(this.value);
@@ -140,75 +129,66 @@ final class TeamMemberRole {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamMemberRole && other.value == value;
+  @override bool operator ==(Object other) => other is TeamMemberRole && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The role of the user in the team.
 final class TeamMembershipRole {
+
   final String value;
 
   const TeamMembershipRole._(this.value);
 
-  factory TeamMembershipRole.fromJson(String value) =>
-      TeamMembershipRole._(value);
+  factory TeamMembershipRole.fromJson(String value) => TeamMembershipRole._(value);
 
   static const member = TeamMembershipRole._('member');
   static const maintainer = TeamMembershipRole._('maintainer');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamMembershipRole && other.value == value;
+  @override bool operator ==(Object other) => other is TeamMembershipRole && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The state of the user's membership in the team.
 final class TeamMembershipState {
+
   final String value;
 
   const TeamMembershipState._(this.value);
 
-  factory TeamMembershipState.fromJson(String value) =>
-      TeamMembershipState._(value);
+  factory TeamMembershipState.fromJson(String value) => TeamMembershipState._(value);
 
   static const active = TeamMembershipState._('active');
   static const pending = TeamMembershipState._('pending');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamMembershipState && other.value == value;
+  @override bool operator ==(Object other) => other is TeamMembershipState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Determines if the team has a direct, indirect, or mixed relationship to a role
 final class TeamRoleAssignmentAssignment {
+
   final String value;
 
   const TeamRoleAssignmentAssignment._(this.value);
 
-  factory TeamRoleAssignmentAssignment.fromJson(String value) =>
-      TeamRoleAssignmentAssignment._(value);
+  factory TeamRoleAssignmentAssignment.fromJson(String value) => TeamRoleAssignmentAssignment._(value);
 
   static const direct = TeamRoleAssignmentAssignment._('direct');
   static const indirect = TeamRoleAssignmentAssignment._('indirect');
@@ -216,44 +196,39 @@ final class TeamRoleAssignmentAssignment {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamRoleAssignmentAssignment && other.value == value;
+  @override bool operator ==(Object other) => other is TeamRoleAssignmentAssignment && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The ownership type of the team
 final class TeamRoleAssignmentType {
+
   final String value;
 
   const TeamRoleAssignmentType._(this.value);
 
-  factory TeamRoleAssignmentType.fromJson(String value) =>
-      TeamRoleAssignmentType._(value);
+  factory TeamRoleAssignmentType.fromJson(String value) => TeamRoleAssignmentType._(value);
 
   static const enterprise = TeamRoleAssignmentType._('enterprise');
   static const organization = TeamRoleAssignmentType._('organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamRoleAssignmentType && other.value == value;
+  @override bool operator ==(Object other) => other is TeamRoleAssignmentType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The ownership type of the team
 final class TeamSimpleType {
+
   final String value;
 
   const TeamSimpleType._(this.value);
@@ -265,45 +240,37 @@ final class TeamSimpleType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamSimpleType && other.value == value;
+  @override bool operator ==(Object other) => other is TeamSimpleType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of scope for the budget
 final class UpdateBudgetBudgetBudgetScope {
+
   final String value;
 
   const UpdateBudgetBudgetBudgetScope._(this.value);
 
-  factory UpdateBudgetBudgetBudgetScope.fromJson(String value) =>
-      UpdateBudgetBudgetBudgetScope._(value);
+  factory UpdateBudgetBudgetBudgetScope.fromJson(String value) => UpdateBudgetBudgetBudgetScope._(value);
 
   static const enterprise = UpdateBudgetBudgetBudgetScope._('enterprise');
   static const organization = UpdateBudgetBudgetBudgetScope._('organization');
   static const repository = UpdateBudgetBudgetBudgetScope._('repository');
   static const costCenter = UpdateBudgetBudgetBudgetScope._('cost_center');
-  static const multiUserCustomer =
-      UpdateBudgetBudgetBudgetScope._('multi_user_customer');
-  static const multiUserCostCenter =
-      UpdateBudgetBudgetBudgetScope._('multi_user_cost_center');
+  static const multiUserCustomer = UpdateBudgetBudgetBudgetScope._('multi_user_customer');
+  static const multiUserCostCenter = UpdateBudgetBudgetBudgetScope._('multi_user_cost_center');
   static const user = UpdateBudgetBudgetBudgetScope._('user');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is UpdateBudgetBudgetBudgetScope && other.value == value;
+  @override bool operator ==(Object other) => other is UpdateBudgetBudgetBudgetScope && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

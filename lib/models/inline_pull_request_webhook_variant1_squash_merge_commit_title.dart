@@ -6,35 +6,29 @@ part of 'inline.dart';
 // Inline operation models
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class PullRequestWebhookVariant1SquashMergeCommitTitle {
+
   final String value;
 
   const PullRequestWebhookVariant1SquashMergeCommitTitle._(this.value);
 
-  factory PullRequestWebhookVariant1SquashMergeCommitTitle.fromJson(
-          String value) =>
-      PullRequestWebhookVariant1SquashMergeCommitTitle._(value);
+  factory PullRequestWebhookVariant1SquashMergeCommitTitle.fromJson(String value) => PullRequestWebhookVariant1SquashMergeCommitTitle._(value);
 
-  static const prTitle =
-      PullRequestWebhookVariant1SquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle =
-      PullRequestWebhookVariant1SquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const prTitle = PullRequestWebhookVariant1SquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle = PullRequestWebhookVariant1SquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestWebhookVariant1SquashMergeCommitTitle &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is PullRequestWebhookVariant1SquashMergeCommitTitle && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The reaction to use
 final class ReactionContent {
+
   final String value;
 
   const ReactionContent._(this.value);
@@ -52,78 +46,66 @@ final class ReactionContent {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReactionContent && other.value == value;
+  @override bool operator ==(Object other) => other is ReactionContent && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// State of the release asset.
 final class ReleaseAssetState {
+
   final String value;
 
   const ReleaseAssetState._(this.value);
 
-  factory ReleaseAssetState.fromJson(String value) =>
-      ReleaseAssetState._(value);
+  factory ReleaseAssetState.fromJson(String value) => ReleaseAssetState._(value);
 
   static const uploaded = ReleaseAssetState._('uploaded');
   static const open = ReleaseAssetState._('open');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReleaseAssetState && other.value == value;
+  @override bool operator ==(Object other) => other is ReleaseAssetState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class RepoSearchResultItemPullRequestCreationPolicy {
+
   final String value;
 
   const RepoSearchResultItemPullRequestCreationPolicy._(this.value);
 
-  factory RepoSearchResultItemPullRequestCreationPolicy.fromJson(
-          String value) =>
-      RepoSearchResultItemPullRequestCreationPolicy._(value);
+  factory RepoSearchResultItemPullRequestCreationPolicy.fromJson(String value) => RepoSearchResultItemPullRequestCreationPolicy._(value);
 
   static const all = RepoSearchResultItemPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly =
-      RepoSearchResultItemPullRequestCreationPolicy._('collaborators_only');
+  static const collaboratorsOnly = RepoSearchResultItemPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepoSearchResultItemPullRequestCreationPolicy &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is RepoSearchResultItemPullRequestCreationPolicy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class RepositoryMergeCommitMessage {
+
   final String value;
 
   const RepositoryMergeCommitMessage._(this.value);
 
-  factory RepositoryMergeCommitMessage.fromJson(String value) =>
-      RepositoryMergeCommitMessage._(value);
+  factory RepositoryMergeCommitMessage.fromJson(String value) => RepositoryMergeCommitMessage._(value);
 
   static const prBody = RepositoryMergeCommitMessage._('PR_BODY');
   static const prTitle = RepositoryMergeCommitMessage._('PR_TITLE');
@@ -131,154 +113,133 @@ final class RepositoryMergeCommitMessage {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryMergeCommitMessage && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryMergeCommitMessage && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class RepositoryMergeCommitTitle {
+
   final String value;
 
   const RepositoryMergeCommitTitle._(this.value);
 
-  factory RepositoryMergeCommitTitle.fromJson(String value) =>
-      RepositoryMergeCommitTitle._(value);
+  factory RepositoryMergeCommitTitle.fromJson(String value) => RepositoryMergeCommitTitle._(value);
 
   static const prTitle = RepositoryMergeCommitTitle._('PR_TITLE');
   static const mergeMessage = RepositoryMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryMergeCommitTitle && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryMergeCommitTitle && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class RepositoryPullRequestCreationPolicy {
+
   final String value;
 
   const RepositoryPullRequestCreationPolicy._(this.value);
 
-  factory RepositoryPullRequestCreationPolicy.fromJson(String value) =>
-      RepositoryPullRequestCreationPolicy._(value);
+  factory RepositoryPullRequestCreationPolicy.fromJson(String value) => RepositoryPullRequestCreationPolicy._(value);
 
   static const all = RepositoryPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly =
-      RepositoryPullRequestCreationPolicy._('collaborators_only');
+  static const collaboratorsOnly = RepositoryPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryPullRequestCreationPolicy && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryPullRequestCreationPolicy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class RepositorySquashMergeCommitMessage {
+
   final String value;
 
   const RepositorySquashMergeCommitMessage._(this.value);
 
-  factory RepositorySquashMergeCommitMessage.fromJson(String value) =>
-      RepositorySquashMergeCommitMessage._(value);
+  factory RepositorySquashMergeCommitMessage.fromJson(String value) => RepositorySquashMergeCommitMessage._(value);
 
   static const prBody = RepositorySquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages =
-      RepositorySquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const commitMessages = RepositorySquashMergeCommitMessage._('COMMIT_MESSAGES');
   static const blank = RepositorySquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositorySquashMergeCommitMessage && other.value == value;
+  @override bool operator ==(Object other) => other is RepositorySquashMergeCommitMessage && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class RepositorySquashMergeCommitTitle {
+
   final String value;
 
   const RepositorySquashMergeCommitTitle._(this.value);
 
-  factory RepositorySquashMergeCommitTitle.fromJson(String value) =>
-      RepositorySquashMergeCommitTitle._(value);
+  factory RepositorySquashMergeCommitTitle.fromJson(String value) => RepositorySquashMergeCommitTitle._(value);
 
   static const prTitle = RepositorySquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle =
-      RepositorySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const commitOrPrTitle = RepositorySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositorySquashMergeCommitTitle && other.value == value;
+  @override bool operator ==(Object other) => other is RepositorySquashMergeCommitTitle && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of identifier.
 final class RepositoryAdvisoryIdentifiersItemType {
+
   final String value;
 
   const RepositoryAdvisoryIdentifiersItemType._(this.value);
 
-  factory RepositoryAdvisoryIdentifiersItemType.fromJson(String value) =>
-      RepositoryAdvisoryIdentifiersItemType._(value);
+  factory RepositoryAdvisoryIdentifiersItemType.fromJson(String value) => RepositoryAdvisoryIdentifiersItemType._(value);
 
   static const cve = RepositoryAdvisoryIdentifiersItemType._('CVE');
   static const ghsa = RepositoryAdvisoryIdentifiersItemType._('GHSA');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryAdvisoryIdentifiersItemType && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryAdvisoryIdentifiersItemType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The severity of the advisory.
 final class RepositoryAdvisorySeverity {
+
   final String value;
 
   const RepositoryAdvisorySeverity._(this.value);
 
-  factory RepositoryAdvisorySeverity.fromJson(String value) =>
-      RepositoryAdvisorySeverity._(value);
+  factory RepositoryAdvisorySeverity.fromJson(String value) => RepositoryAdvisorySeverity._(value);
 
   static const critical = RepositoryAdvisorySeverity._('critical');
   static const high = RepositoryAdvisorySeverity._('high');
@@ -287,25 +248,22 @@ final class RepositoryAdvisorySeverity {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryAdvisorySeverity && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryAdvisorySeverity && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The state of the advisory.
 final class RepositoryAdvisoryState {
+
   final String value;
 
   const RepositoryAdvisoryState._(this.value);
 
-  factory RepositoryAdvisoryState.fromJson(String value) =>
-      RepositoryAdvisoryState._(value);
+  factory RepositoryAdvisoryState.fromJson(String value) => RepositoryAdvisoryState._(value);
 
   static const published = RepositoryAdvisoryState._('published');
   static const closed = RepositoryAdvisoryState._('closed');
@@ -315,13 +273,10 @@ final class RepositoryAdvisoryState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryAdvisoryState && other.value == value;
+  @override bool operator ==(Object other) => other is RepositoryAdvisoryState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

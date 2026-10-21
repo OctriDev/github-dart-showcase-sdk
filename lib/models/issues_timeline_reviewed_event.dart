@@ -8,318 +8,181 @@ part of 'issues_timeline.dart';
 class TimelineReviewedEventLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const TimelineReviewedEventLinksHtml({required this.href});
 
-  TimelineReviewedEventLinksHtml Function({String href}) get copyWith =>
-      _copyWith;
+  TimelineReviewedEventLinksHtml Function({String href}) get copyWith => _copyWith;
 
-  TimelineReviewedEventLinksHtml _copyWith({Object? href = sdkOmittedValue}) =>
-      TimelineReviewedEventLinksHtml(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  TimelineReviewedEventLinksHtml _copyWith({Object? href = sdkOmittedValue}) => TimelineReviewedEventLinksHtml(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory TimelineReviewedEventLinksHtml.fromJson(Map<String, dynamic> json) =>
-      TimelineReviewedEventLinksHtml(
-        href: (json['href'] as String?)!,
-      );
+  factory TimelineReviewedEventLinksHtml.fromJson(Map<String, dynamic> json) => TimelineReviewedEventLinksHtml(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `pull_request` wire field.
 class TimelineReviewedEventLinksPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const TimelineReviewedEventLinksPullRequest({required this.href});
 
-  TimelineReviewedEventLinksPullRequest Function({String href}) get copyWith =>
-      _copyWith;
+  TimelineReviewedEventLinksPullRequest Function({String href}) get copyWith => _copyWith;
 
-  TimelineReviewedEventLinksPullRequest _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      TimelineReviewedEventLinksPullRequest(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  TimelineReviewedEventLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) => TimelineReviewedEventLinksPullRequest(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory TimelineReviewedEventLinksPullRequest.fromJson(
-          Map<String, dynamic> json) =>
-      TimelineReviewedEventLinksPullRequest(
-        href: (json['href'] as String?)!,
-      );
+  factory TimelineReviewedEventLinksPullRequest.fromJson(Map<String, dynamic> json) => TimelineReviewedEventLinksPullRequest(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class TimelineReviewedEventLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `html` wire field.
   final TimelineReviewedEventLinksHtml html;
-
   /// Required object value serialized in the `pull_request` wire field.
   final TimelineReviewedEventLinksPullRequest pullRequest;
 
-  const TimelineReviewedEventLinks(
-      {required this.html, required this.pullRequest});
+  const TimelineReviewedEventLinks({required this.html, required this.pullRequest});
 
-  TimelineReviewedEventLinks Function(
-          {TimelineReviewedEventLinksHtml html,
-          TimelineReviewedEventLinksPullRequest pullRequest})
-      get copyWith => _copyWith;
+  TimelineReviewedEventLinks Function({TimelineReviewedEventLinksHtml html, TimelineReviewedEventLinksPullRequest pullRequest}) get copyWith => _copyWith;
 
-  TimelineReviewedEventLinks _copyWith(
-          {Object? html = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue}) =>
-      TimelineReviewedEventLinks(
-        html: identical(html, sdkOmittedValue)
-            ? this.html
-            : html as TimelineReviewedEventLinksHtml,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as TimelineReviewedEventLinksPullRequest,
-      );
+  TimelineReviewedEventLinks _copyWith({Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => TimelineReviewedEventLinks(
+    html: identical(html, sdkOmittedValue) ? this.html : html as TimelineReviewedEventLinksHtml,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as TimelineReviewedEventLinksPullRequest,
+  );
 
-  factory TimelineReviewedEventLinks.fromJson(Map<String, dynamic> json) =>
-      TimelineReviewedEventLinks(
-        html: (json['html'] != null
-            ? TimelineReviewedEventLinksHtml.fromJson(
-                json['html'] as Map<String, dynamic>)
-            : null)!,
-        pullRequest: (json['pull_request'] != null
-            ? TimelineReviewedEventLinksPullRequest.fromJson(
-                json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory TimelineReviewedEventLinks.fromJson(Map<String, dynamic> json) => TimelineReviewedEventLinks(
+    html: (json['html'] != null ? TimelineReviewedEventLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
+    pullRequest: (json['pull_request'] != null ? TimelineReviewedEventLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'html': html.toJson(),
-        'pull_request': pullRequest.toJson(),
-      };
+    'html': html.toJson(),
+    'pull_request': pullRequest.toJson(),
+  };
 }
 
 /// Timeline Reviewed Event
 class TimelineReviewedEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `event` wire field.
   final String event;
-
   /// Unique identifier of the review
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// A GitHub user.
   final SimpleUser user;
-
   /// The text of the review.
   final String? body;
-
   /// Required `string` value serialized in the `state` wire field.
   final String state;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `uri`-formatted value serialized in the `pull_request_url` wire field.
   final String pullRequestUrl;
-
   /// Required object value serialized in the `_links` wire field.
   final TimelineReviewedEventLinks links;
-
   /// Optional `date-time`-formatted value serialized in the `submitted_at` wire field.
   final SdkOptional<String> submittedAt;
-
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String?> updatedAt;
-
   /// A commit SHA for the review.
   final String commitId;
-
   /// Optional `string` value serialized in the `body_html` wire field.
   final SdkOptional<String> bodyHtml;
-
   /// Optional `string` value serialized in the `body_text` wire field.
   final SdkOptional<String> bodyText;
-
   /// How the author is associated with the repository.
   final AuthorAssociation authorAssociation;
 
-  const TimelineReviewedEvent(
-      {required this.event,
-      required this.id,
-      required this.nodeId,
-      required this.user,
-      required this.body,
-      required this.state,
-      required this.htmlUrl,
-      required this.pullRequestUrl,
-      required this.links,
-      this.submittedAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted(),
-      required this.commitId,
-      this.bodyHtml = const SdkOmitted(),
-      this.bodyText = const SdkOmitted(),
-      required this.authorAssociation});
+  const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, this.submittedAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), required this.commitId, this.bodyHtml = const SdkOmitted(), this.bodyText = const SdkOmitted(), required this.authorAssociation});
 
-  TimelineReviewedEvent Function(
-      {String event,
-      int id,
-      String nodeId,
-      SimpleUser user,
-      String? body,
-      String state,
-      String htmlUrl,
-      String pullRequestUrl,
-      TimelineReviewedEventLinks links,
-      SdkOptional<String> submittedAt,
-      SdkOptional<String?> updatedAt,
-      String commitId,
-      SdkOptional<String> bodyHtml,
-      SdkOptional<String> bodyText,
-      AuthorAssociation authorAssociation}) get copyWith => _copyWith;
+  TimelineReviewedEvent Function({String event, int id, String nodeId, SimpleUser user, String? body, String state, String htmlUrl, String pullRequestUrl, TimelineReviewedEventLinks links, SdkOptional<String> submittedAt, SdkOptional<String?> updatedAt, String commitId, SdkOptional<String> bodyHtml, SdkOptional<String> bodyText, AuthorAssociation authorAssociation}) get copyWith => _copyWith;
 
-  TimelineReviewedEvent _copyWith(
-          {Object? event = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? pullRequestUrl = sdkOmittedValue,
-          Object? links = sdkOmittedValue,
-          Object? submittedAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? commitId = sdkOmittedValue,
-          Object? bodyHtml = sdkOmittedValue,
-          Object? bodyText = sdkOmittedValue,
-          Object? authorAssociation = sdkOmittedValue}) =>
-      TimelineReviewedEvent(
-        event: identical(event, sdkOmittedValue) ? this.event : event as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
-        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-        state: identical(state, sdkOmittedValue) ? this.state : state as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
-            ? this.pullRequestUrl
-            : pullRequestUrl as String,
-        links: identical(links, sdkOmittedValue)
-            ? this.links
-            : links as TimelineReviewedEventLinks,
-        submittedAt: identical(submittedAt, sdkOmittedValue)
-            ? this.submittedAt
-            : submittedAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String?>,
-        commitId: identical(commitId, sdkOmittedValue)
-            ? this.commitId
-            : commitId as String,
-        bodyHtml: identical(bodyHtml, sdkOmittedValue)
-            ? this.bodyHtml
-            : bodyHtml as SdkOptional<String>,
-        bodyText: identical(bodyText, sdkOmittedValue)
-            ? this.bodyText
-            : bodyText as SdkOptional<String>,
-        authorAssociation: identical(authorAssociation, sdkOmittedValue)
-            ? this.authorAssociation
-            : authorAssociation as AuthorAssociation,
-      );
+  TimelineReviewedEvent _copyWith({Object? event = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? user = sdkOmittedValue, Object? body = sdkOmittedValue, Object? state = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? links = sdkOmittedValue, Object? submittedAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? bodyText = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue}) => TimelineReviewedEvent(
+    event: identical(event, sdkOmittedValue) ? this.event : event as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
+    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+    state: identical(state, sdkOmittedValue) ? this.state : state as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as String,
+    links: identical(links, sdkOmittedValue) ? this.links : links as TimelineReviewedEventLinks,
+    submittedAt: identical(submittedAt, sdkOmittedValue) ? this.submittedAt : submittedAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String?>,
+    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String,
+    bodyHtml: identical(bodyHtml, sdkOmittedValue) ? this.bodyHtml : bodyHtml as SdkOptional<String>,
+    bodyText: identical(bodyText, sdkOmittedValue) ? this.bodyText : bodyText as SdkOptional<String>,
+    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as AuthorAssociation,
+  );
 
-  factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) =>
-      TimelineReviewedEvent(
-        event: (json['event'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        user: (json['user'] != null
-            ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
-            : null)!,
-        body: json.containsKey('body')
-            ? json['body'] as String?
-            : throw ArgumentError.value(
-                null, 'body', 'Required property is missing'),
-        state: (json['state'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        pullRequestUrl: (json['pull_request_url'] as String?)!,
-        links: (json['_links'] != null
-            ? TimelineReviewedEventLinks.fromJson(
-                json['_links'] as Map<String, dynamic>)
-            : null)!,
-        submittedAt: json['submitted_at'] != null
-            ? SdkPresent((json['submitted_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json.containsKey('updated_at')
-            ? SdkPresent(json['updated_at'] as String?)
-            : const SdkOmitted(),
-        commitId: (json['commit_id'] as String?)!,
-        bodyHtml: json['body_html'] != null
-            ? SdkPresent((json['body_html'] as String?)!)
-            : const SdkOmitted(),
-        bodyText: json['body_text'] != null
-            ? SdkPresent((json['body_text'] as String?)!)
-            : const SdkOmitted(),
-        authorAssociation: (json['author_association'] != null
-            ? AuthorAssociation.fromJson(json['author_association'] as String)
-            : null)!,
-      );
+  factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) => TimelineReviewedEvent(
+    event: (json['event'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    user: (json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null)!,
+    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
+    state: (json['state'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    pullRequestUrl: (json['pull_request_url'] as String?)!,
+    links: (json['_links'] != null ? TimelineReviewedEventLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
+    submittedAt: json['submitted_at'] != null ? SdkPresent((json['submitted_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json.containsKey('updated_at') ? SdkPresent(json['updated_at'] as String?) : const SdkOmitted(),
+    commitId: (json['commit_id'] as String?)!,
+    bodyHtml: json['body_html'] != null ? SdkPresent((json['body_html'] as String?)!) : const SdkOmitted(),
+    bodyText: json['body_text'] != null ? SdkPresent((json['body_text'] as String?)!) : const SdkOmitted(),
+    authorAssociation: (json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'event': event,
-        'id': id,
-        'node_id': nodeId,
-        'user': user.toJson(),
-        'body': body,
-        'state': state,
-        'html_url': htmlUrl,
-        'pull_request_url': pullRequestUrl,
-        '_links': links.toJson(),
-        ...switch (submittedAt) {
-          SdkPresent<String>(value: final value) => {
-              'submitted_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'commit_id': commitId,
-        ...switch (bodyHtml) {
-          SdkPresent<String>(value: final value) => {
-              'body_html': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodyText) {
-          SdkPresent<String>(value: final value) => {
-              'body_text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'author_association': authorAssociation.toJson(),
-      };
+    'event': event,
+    'id': id,
+    'node_id': nodeId,
+    'user': user.toJson(),
+    'body': body,
+    'state': state,
+    'html_url': htmlUrl,
+    'pull_request_url': pullRequestUrl,
+    '_links': links.toJson(),
+    ...switch (submittedAt) {
+      SdkPresent<String>(value: final value) => {'submitted_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String?>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    'commit_id': commitId,
+    ...switch (bodyHtml) {
+      SdkPresent<String>(value: final value) => {'body_html': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bodyText) {
+      SdkPresent<String>(value: final value) => {'body_text': value,},
+      _ => const <String, dynamic>{},
+    },
+    'author_association': authorAssociation.toJson(),
+  };
 }

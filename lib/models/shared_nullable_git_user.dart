@@ -8,73 +8,41 @@ part of 'shared_nullable.dart';
 class NullableGitUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String> email;
-
   /// Optional `date-time`-formatted value serialized in the `date` wire field.
   final SdkOptional<String> date;
 
-  const NullableGitUser(
-      {this.name = const SdkOmitted(),
-      this.email = const SdkOmitted(),
-      this.date = const SdkOmitted()});
+  const NullableGitUser({this.name = const SdkOmitted(), this.email = const SdkOmitted(), this.date = const SdkOmitted()});
 
-  NullableGitUser Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> email,
-      SdkOptional<String> date}) get copyWith => _copyWith;
+  NullableGitUser Function({SdkOptional<String> name, SdkOptional<String> email, SdkOptional<String> date}) get copyWith => _copyWith;
 
-  NullableGitUser _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? date = sdkOmittedValue}) =>
-      NullableGitUser(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String>,
-        date: identical(date, sdkOmittedValue)
-            ? this.date
-            : date as SdkOptional<String>,
-      );
+  NullableGitUser _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => NullableGitUser(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
+    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
+  );
 
-  factory NullableGitUser.fromJson(Map<String, dynamic> json) =>
-      NullableGitUser(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        email: json['email'] != null
-            ? SdkPresent((json['email'] as String?)!)
-            : const SdkOmitted(),
-        date: json['date'] != null
-            ? SdkPresent((json['date'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory NullableGitUser.fromJson(Map<String, dynamic> json) => NullableGitUser(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
+    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (email) {
-          SdkPresent<String>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (date) {
-          SdkPresent<String>(value: final value) => {
-              'date': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (email) {
+      SdkPresent<String>(value: final value) => {'email': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (date) {
+      SdkPresent<String>(value: final value) => {'date': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

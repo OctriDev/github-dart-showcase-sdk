@@ -8,30 +8,22 @@ part of 'codespaces.dart';
 class CodespacesPermissionsCheckForDevcontainer {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the user has accepted the permissions defined by the devcontainer config
   final bool accepted;
 
   const CodespacesPermissionsCheckForDevcontainer({required this.accepted});
 
-  CodespacesPermissionsCheckForDevcontainer Function({bool accepted})
-      get copyWith => _copyWith;
+  CodespacesPermissionsCheckForDevcontainer Function({bool accepted}) get copyWith => _copyWith;
 
-  CodespacesPermissionsCheckForDevcontainer _copyWith(
-          {Object? accepted = sdkOmittedValue}) =>
-      CodespacesPermissionsCheckForDevcontainer(
-        accepted: identical(accepted, sdkOmittedValue)
-            ? this.accepted
-            : accepted as bool,
-      );
+  CodespacesPermissionsCheckForDevcontainer _copyWith({Object? accepted = sdkOmittedValue}) => CodespacesPermissionsCheckForDevcontainer(
+    accepted: identical(accepted, sdkOmittedValue) ? this.accepted : accepted as bool,
+  );
 
-  factory CodespacesPermissionsCheckForDevcontainer.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesPermissionsCheckForDevcontainer(
-        accepted: (json['accepted'] as bool?)!,
-      );
+  factory CodespacesPermissionsCheckForDevcontainer.fromJson(Map<String, dynamic> json) => CodespacesPermissionsCheckForDevcontainer(
+    accepted: (json['accepted'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'accepted': accepted,
-      };
+    'accepted': accepted,
+  };
 }

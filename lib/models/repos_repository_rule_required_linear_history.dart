@@ -8,34 +8,22 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleRequiredLinearHistory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleRequiredLinearHistoryType type_;
 
   const RepositoryRuleRequiredLinearHistory({required this.type_});
 
-  RepositoryRuleRequiredLinearHistory Function(
-          {RepositoryRuleRequiredLinearHistoryType type_})
-      get copyWith => _copyWith;
+  RepositoryRuleRequiredLinearHistory Function({RepositoryRuleRequiredLinearHistoryType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleRequiredLinearHistory _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      RepositoryRuleRequiredLinearHistory(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleRequiredLinearHistoryType,
-      );
+  RepositoryRuleRequiredLinearHistory _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleRequiredLinearHistory(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleRequiredLinearHistoryType,
+  );
 
-  factory RepositoryRuleRequiredLinearHistory.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleRequiredLinearHistory(
-        type_: (json['type'] != null
-            ? RepositoryRuleRequiredLinearHistoryType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RepositoryRuleRequiredLinearHistory.fromJson(Map<String, dynamic> json) => RepositoryRuleRequiredLinearHistory(
+    type_: (json['type'] != null ? RepositoryRuleRequiredLinearHistoryType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

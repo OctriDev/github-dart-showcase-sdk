@@ -13,11 +13,10 @@ class PublicEvent {
   const PublicEvent({this.additionalProperties = const <String, dynamic>{}});
 
   factory PublicEvent.fromJson(Map<String, dynamic> json) => PublicEvent(
-        additionalProperties: Map.of(json)
-          ..removeWhere((key, _) => const <String>{}.contains(key)),
-      );
+    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{}.contains(key)),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...additionalProperties,
-      };
+    ...additionalProperties,
+  };
 }

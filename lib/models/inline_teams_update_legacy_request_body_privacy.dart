@@ -6,36 +6,33 @@ part of 'inline.dart';
 // Inline operation models
 /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. **For a parent or child team:** * `closed` - visible to all members of this organization.
 final class TeamsUpdateLegacyRequestBodyPrivacy {
+
   final String value;
 
   const TeamsUpdateLegacyRequestBodyPrivacy._(this.value);
 
-  factory TeamsUpdateLegacyRequestBodyPrivacy.fromJson(String value) =>
-      TeamsUpdateLegacyRequestBodyPrivacy._(value);
+  factory TeamsUpdateLegacyRequestBodyPrivacy.fromJson(String value) => TeamsUpdateLegacyRequestBodyPrivacy._(value);
 
   static const secret = TeamsUpdateLegacyRequestBodyPrivacy._('secret');
   static const closed = TeamsUpdateLegacyRequestBodyPrivacy._('closed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamsUpdateLegacyRequestBodyPrivacy && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateLegacyRequestBodyPrivacy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class TeamsListMembersLegacyRole {
+
   final String value;
 
   const TeamsListMembersLegacyRole._(this.value);
 
-  factory TeamsListMembersLegacyRole.fromJson(String value) =>
-      TeamsListMembersLegacyRole._(value);
+  factory TeamsListMembersLegacyRole.fromJson(String value) => TeamsListMembersLegacyRole._(value);
 
   static const member = TeamsListMembersLegacyRole._('member');
   static const maintainer = TeamsListMembersLegacyRole._('maintainer');
@@ -43,356 +40,237 @@ final class TeamsListMembersLegacyRole {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamsListMembersLegacyRole && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsListMembersLegacyRole && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The role that this user should have in the team.
 final class TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole {
+
   final String value;
 
   const TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._(this.value);
 
-  factory TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole.fromJson(
-          String value) =>
-      TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._(value);
+  factory TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole.fromJson(String value) => TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._(value);
 
-  static const member =
-      TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._('member');
-  static const maintainer =
-      TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._('maintainer');
+  static const member = TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._('member');
+  static const maintainer = TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._('maintainer');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
 final class TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission {
+
   final String value;
 
-  const TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(
-      this.value);
+  const TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(this.value);
 
-  factory TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission.fromJson(
-          String value) =>
-      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(value);
+  factory TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission.fromJson(String value) => TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(value);
 
-  static const pull =
-      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('pull');
-  static const push =
-      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('push');
-  static const admin =
-      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('admin');
+  static const pull = TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('pull');
+  static const push = TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('push');
+  static const admin = TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('admin');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 final class CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo {
+
   final String value;
 
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
-      this.value);
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(this.value);
 
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo.fromJson(
-          String value) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(value);
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo.fromJson(String value) => CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(value);
 
-  static const europewest =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
-          'EuropeWest');
-  static const southeastasia =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
-          'SoutheastAsia');
-  static const useast =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsEast');
-  static const uswest =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsWest');
+  static const europewest = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('EuropeWest');
+  static const southeastasia = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('SoutheastAsia');
+  static const useast = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsEast');
+  static const uswest = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsWest');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 final class CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo {
+
   final String value;
 
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
-      this.value);
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(this.value);
 
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo.fromJson(
-          String value) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(value);
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo.fromJson(String value) => CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(value);
 
-  static const europewest =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
-          'EuropeWest');
-  static const southeastasia =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
-          'SoutheastAsia');
-  static const useast =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsEast');
-  static const uswest =
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsWest');
+  static const europewest = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('EuropeWest');
+  static const southeastasia = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('SoutheastAsia');
+  static const useast = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsEast');
+  static const uswest = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsWest');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Denotes whether an email is publicly visible.
 final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility {
+
   final String value;
 
-  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
-      this.value);
+  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(this.value);
 
-  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility.fromJson(
-          String value) =>
-      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
-          value);
+  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility.fromJson(String value) => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(value);
 
-  static const public =
-      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
-          'public');
-  static const private =
-      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
-          'private');
+  static const public = UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._('public');
+  static const private = UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._('private');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage {
+
   final String value;
 
-  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage._(
-      this.value);
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage._(this.value);
 
-  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage.fromJson(
-          String value) =>
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
-          ._(value);
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage.fromJson(String value) => AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage._(value);
 
-  static const prBody =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
-          ._('PR_BODY');
-  static const prTitle =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
-          ._('PR_TITLE');
-  static const blank =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
-          ._('BLANK');
+  static const prBody = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage._('PR_BODY');
+  static const prTitle = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage._('PR_TITLE');
+  static const blank = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle {
+
   final String value;
 
-  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle._(
-      this.value);
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle._(this.value);
 
-  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle.fromJson(
-          String value) =>
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle
-          ._(value);
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle.fromJson(String value) => AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle._(value);
 
-  static const prTitle =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle
-          ._('PR_TITLE');
-  static const mergeMessage =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle
-          ._('MERGE_MESSAGE');
+  static const prTitle = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy {
+
   final String value;
 
-  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy._(
-      this.value);
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy._(this.value);
 
-  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy.fromJson(
-          String value) =>
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy
-          ._(value);
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy.fromJson(String value) => AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy._(value);
 
-  static const all =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy
-          ._('all');
-  static const collaboratorsOnly =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy
-          ._('collaborators_only');
+  static const all = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy._('all');
+  static const collaboratorsOnly = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage {
+
   final String value;
 
-  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage._(
-      this.value);
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage._(this.value);
 
-  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage.fromJson(
-          String value) =>
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
-          ._(value);
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage.fromJson(String value) => AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage._(value);
 
-  static const prBody =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
-          ._('PR_BODY');
-  static const commitMessages =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
-          ._('COMMIT_MESSAGES');
-  static const blank =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
-          ._('BLANK');
+  static const prBody = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle {
+
   final String value;
 
-  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle._(
-      this.value);
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle._(this.value);
 
-  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle.fromJson(
-          String value) =>
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle
-          ._(value);
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle.fromJson(String value) => AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle._(value);
 
-  static const prTitle =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle
-          ._('PR_TITLE');
-  static const commitOrPrTitle =
-      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle
-          ._('COMMIT_OR_PR_TITLE');
+  static const prTitle = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle = AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

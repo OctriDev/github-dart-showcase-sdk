@@ -8,85 +8,47 @@ part of 'code_scanning_code_scanning_variant.dart';
 class CodeScanningVariantAnalysisRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A unique identifier of the repository.
   final int id;
-
   /// The name of the repository.
   final String name;
-
   /// The full, globally unique, name of the repository.
   final String fullName;
-
   /// Whether the repository is private.
   final bool private;
-
   /// Required `integer` value serialized in the `stargazers_count` wire field.
   final int stargazersCount;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String? updatedAt;
 
-  const CodeScanningVariantAnalysisRepository(
-      {required this.id,
-      required this.name,
-      required this.fullName,
-      required this.private,
-      required this.stargazersCount,
-      required this.updatedAt});
+  const CodeScanningVariantAnalysisRepository({required this.id, required this.name, required this.fullName, required this.private, required this.stargazersCount, required this.updatedAt});
 
-  CodeScanningVariantAnalysisRepository Function(
-      {int id,
-      String name,
-      String fullName,
-      bool private,
-      int stargazersCount,
-      String? updatedAt}) get copyWith => _copyWith;
+  CodeScanningVariantAnalysisRepository Function({int id, String name, String fullName, bool private, int stargazersCount, String? updatedAt}) get copyWith => _copyWith;
 
-  CodeScanningVariantAnalysisRepository _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? fullName = sdkOmittedValue,
-          Object? private = sdkOmittedValue,
-          Object? stargazersCount = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      CodeScanningVariantAnalysisRepository(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        fullName: identical(fullName, sdkOmittedValue)
-            ? this.fullName
-            : fullName as String,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as bool,
-        stargazersCount: identical(stargazersCount, sdkOmittedValue)
-            ? this.stargazersCount
-            : stargazersCount as int,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
-      );
+  CodeScanningVariantAnalysisRepository _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? fullName = sdkOmittedValue, Object? private = sdkOmittedValue, Object? stargazersCount = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => CodeScanningVariantAnalysisRepository(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as String,
+    private: identical(private, sdkOmittedValue) ? this.private : private as bool,
+    stargazersCount: identical(stargazersCount, sdkOmittedValue) ? this.stargazersCount : stargazersCount as int,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String?,
+  );
 
-  factory CodeScanningVariantAnalysisRepository.fromJson(
-          Map<String, dynamic> json) =>
-      CodeScanningVariantAnalysisRepository(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        fullName: (json['full_name'] as String?)!,
-        private: (json['private'] as bool?)!,
-        stargazersCount: ((json['stargazers_count'] as num?)?.toInt())!,
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
-      );
+  factory CodeScanningVariantAnalysisRepository.fromJson(Map<String, dynamic> json) => CodeScanningVariantAnalysisRepository(
+    id: ((json['id'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    fullName: (json['full_name'] as String?)!,
+    private: (json['private'] as bool?)!,
+    stargazersCount: ((json['stargazers_count'] as num?)?.toInt())!,
+    updatedAt: json.containsKey('updated_at') ? json['updated_at'] as String? : throw ArgumentError.value(null, 'updated_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'full_name': fullName,
-        'private': private,
-        'stargazers_count': stargazersCount,
-        'updated_at': updatedAt,
-      };
+    'id': id,
+    'name': name,
+    'full_name': fullName,
+    'private': private,
+    'stargazers_count': stargazersCount,
+    'updated_at': updatedAt,
+  };
 }

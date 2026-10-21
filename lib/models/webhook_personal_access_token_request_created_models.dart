@@ -8,119 +8,53 @@ part of 'webhook_personal_access_token_request_created.dart';
 class WebhookPersonalAccessTokenRequestCreated {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookPersonalAccessTokenRequestCreatedAction action;
-
   /// Details of a Personal Access Token Request.
   final PersonalAccessTokenRequest personalAccessTokenRequest;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final OrganizationSimpleWebhooks organization;
-
   /// A GitHub user.
   final SimpleUser sender;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
 
-  const WebhookPersonalAccessTokenRequestCreated(
-      {required this.action,
-      required this.personalAccessTokenRequest,
-      this.enterprise = const SdkOmitted(),
-      required this.organization,
-      required this.sender,
-      this.installation = const SdkOmitted()});
+  const WebhookPersonalAccessTokenRequestCreated({required this.action, required this.personalAccessTokenRequest, this.enterprise = const SdkOmitted(), required this.organization, required this.sender, this.installation = const SdkOmitted()});
 
-  WebhookPersonalAccessTokenRequestCreated Function(
-      {WebhookPersonalAccessTokenRequestCreatedAction action,
-      PersonalAccessTokenRequest personalAccessTokenRequest,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      OrganizationSimpleWebhooks organization,
-      SimpleUser sender,
-      SdkOptional<SimpleInstallation> installation}) get copyWith => _copyWith;
+  WebhookPersonalAccessTokenRequestCreated Function({WebhookPersonalAccessTokenRequestCreatedAction action, PersonalAccessTokenRequest personalAccessTokenRequest, SdkOptional<EnterpriseWebhooks> enterprise, OrganizationSimpleWebhooks organization, SimpleUser sender, SdkOptional<SimpleInstallation> installation}) get copyWith => _copyWith;
 
-  WebhookPersonalAccessTokenRequestCreated _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? personalAccessTokenRequest = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? sender = sdkOmittedValue,
-          Object? installation = sdkOmittedValue}) =>
-      WebhookPersonalAccessTokenRequestCreated(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookPersonalAccessTokenRequestCreatedAction,
-        personalAccessTokenRequest:
-            identical(personalAccessTokenRequest, sdkOmittedValue)
-                ? this.personalAccessTokenRequest
-                : personalAccessTokenRequest as PersonalAccessTokenRequest,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as OrganizationSimpleWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-      );
+  WebhookPersonalAccessTokenRequestCreated _copyWith({Object? action = sdkOmittedValue, Object? personalAccessTokenRequest = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? sender = sdkOmittedValue, Object? installation = sdkOmittedValue}) => WebhookPersonalAccessTokenRequestCreated(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookPersonalAccessTokenRequestCreatedAction,
+    personalAccessTokenRequest: identical(personalAccessTokenRequest, sdkOmittedValue) ? this.personalAccessTokenRequest : personalAccessTokenRequest as PersonalAccessTokenRequest,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as OrganizationSimpleWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+  );
 
-  factory WebhookPersonalAccessTokenRequestCreated.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPersonalAccessTokenRequestCreated(
-        action: (json['action'] != null
-            ? WebhookPersonalAccessTokenRequestCreatedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        personalAccessTokenRequest: (json['personal_access_token_request'] !=
-                null
-            ? PersonalAccessTokenRequest.fromJson(
-                json['personal_access_token_request'] as Map<String, dynamic>)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: (json['organization'] != null
-            ? OrganizationSimpleWebhooks.fromJson(
-                json['organization'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookPersonalAccessTokenRequestCreated.fromJson(Map<String, dynamic> json) => WebhookPersonalAccessTokenRequestCreated(
+    action: (json['action'] != null ? WebhookPersonalAccessTokenRequestCreatedAction.fromJson(json['action'] as String) : null)!,
+    personalAccessTokenRequest: (json['personal_access_token_request'] != null ? PersonalAccessTokenRequest.fromJson(json['personal_access_token_request'] as Map<String, dynamic>) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: (json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        'personal_access_token_request': personalAccessTokenRequest.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'organization': organization.toJson(),
-        'sender': sender.toJson(),
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'action': action.toJson(),
+    'personal_access_token_request': personalAccessTokenRequest.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'organization': organization.toJson(),
+    'sender': sender.toJson(),
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

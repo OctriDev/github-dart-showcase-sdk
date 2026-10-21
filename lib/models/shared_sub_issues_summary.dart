@@ -8,48 +8,32 @@ part of 'shared.dart';
 class SubIssuesSummary {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `total` wire field.
   final int total;
-
   /// Required `integer` value serialized in the `completed` wire field.
   final int completed;
-
   /// Required `integer` value serialized in the `percent_completed` wire field.
   final int percentCompleted;
 
-  const SubIssuesSummary(
-      {required this.total,
-      required this.completed,
-      required this.percentCompleted});
+  const SubIssuesSummary({required this.total, required this.completed, required this.percentCompleted});
 
-  SubIssuesSummary Function({int total, int completed, int percentCompleted})
-      get copyWith => _copyWith;
+  SubIssuesSummary Function({int total, int completed, int percentCompleted}) get copyWith => _copyWith;
 
-  SubIssuesSummary _copyWith(
-          {Object? total = sdkOmittedValue,
-          Object? completed = sdkOmittedValue,
-          Object? percentCompleted = sdkOmittedValue}) =>
-      SubIssuesSummary(
-        total: identical(total, sdkOmittedValue) ? this.total : total as int,
-        completed: identical(completed, sdkOmittedValue)
-            ? this.completed
-            : completed as int,
-        percentCompleted: identical(percentCompleted, sdkOmittedValue)
-            ? this.percentCompleted
-            : percentCompleted as int,
-      );
+  SubIssuesSummary _copyWith({Object? total = sdkOmittedValue, Object? completed = sdkOmittedValue, Object? percentCompleted = sdkOmittedValue}) => SubIssuesSummary(
+    total: identical(total, sdkOmittedValue) ? this.total : total as int,
+    completed: identical(completed, sdkOmittedValue) ? this.completed : completed as int,
+    percentCompleted: identical(percentCompleted, sdkOmittedValue) ? this.percentCompleted : percentCompleted as int,
+  );
 
-  factory SubIssuesSummary.fromJson(Map<String, dynamic> json) =>
-      SubIssuesSummary(
-        total: ((json['total'] as num?)?.toInt())!,
-        completed: ((json['completed'] as num?)?.toInt())!,
-        percentCompleted: ((json['percent_completed'] as num?)?.toInt())!,
-      );
+  factory SubIssuesSummary.fromJson(Map<String, dynamic> json) => SubIssuesSummary(
+    total: ((json['total'] as num?)?.toInt())!,
+    completed: ((json['completed'] as num?)?.toInt())!,
+    percentCompleted: ((json['percent_completed'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'total': total,
-        'completed': completed,
-        'percent_completed': percentCompleted,
-      };
+    'total': total,
+    'completed': completed,
+    'percent_completed': percentCompleted,
+  };
 }

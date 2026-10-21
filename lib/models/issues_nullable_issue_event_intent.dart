@@ -8,60 +8,33 @@ part of 'issues_nullable.dart';
 class NullableIssueEventIntent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The reasoning the agent provided for the change.
   final SdkOptional<String?> rationale;
-
   /// The confidence level the agent had when performing this action.
   final SdkOptional<NullableIssueEventIntentConfidence?> confidence;
 
-  const NullableIssueEventIntent(
-      {this.rationale = const SdkOmitted(),
-      this.confidence = const SdkOmitted()});
+  const NullableIssueEventIntent({this.rationale = const SdkOmitted(), this.confidence = const SdkOmitted()});
 
-  NullableIssueEventIntent Function(
-          {SdkOptional<String?> rationale,
-          SdkOptional<NullableIssueEventIntentConfidence?> confidence})
-      get copyWith => _copyWith;
+  NullableIssueEventIntent Function({SdkOptional<String?> rationale, SdkOptional<NullableIssueEventIntentConfidence?> confidence}) get copyWith => _copyWith;
 
-  NullableIssueEventIntent _copyWith(
-          {Object? rationale = sdkOmittedValue,
-          Object? confidence = sdkOmittedValue}) =>
-      NullableIssueEventIntent(
-        rationale: identical(rationale, sdkOmittedValue)
-            ? this.rationale
-            : rationale as SdkOptional<String?>,
-        confidence: identical(confidence, sdkOmittedValue)
-            ? this.confidence
-            : confidence as SdkOptional<NullableIssueEventIntentConfidence?>,
-      );
+  NullableIssueEventIntent _copyWith({Object? rationale = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => NullableIssueEventIntent(
+    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String?>,
+    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<NullableIssueEventIntentConfidence?>,
+  );
 
-  factory NullableIssueEventIntent.fromJson(Map<String, dynamic> json) =>
-      NullableIssueEventIntent(
-        rationale: json.containsKey('rationale')
-            ? SdkPresent(json['rationale'] as String?)
-            : const SdkOmitted(),
-        confidence: json.containsKey('confidence')
-            ? SdkPresent(json['confidence'] != null
-                ? NullableIssueEventIntentConfidence.fromJson(
-                    json['confidence'] as String)
-                : null)
-            : const SdkOmitted(),
-      );
+  factory NullableIssueEventIntent.fromJson(Map<String, dynamic> json) => NullableIssueEventIntent(
+    rationale: json.containsKey('rationale') ? SdkPresent(json['rationale'] as String?) : const SdkOmitted(),
+    confidence: json.containsKey('confidence') ? SdkPresent(json['confidence'] != null ? NullableIssueEventIntentConfidence.fromJson(json['confidence'] as String) : null) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (rationale) {
-          SdkPresent<String?>(value: final value) => {
-              'rationale': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (confidence) {
-          SdkPresent<NullableIssueEventIntentConfidence?>(value: final value) =>
-            {
-              'confidence': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (rationale) {
+      SdkPresent<String?>(value: final value) => {'rationale': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (confidence) {
+      SdkPresent<NullableIssueEventIntentConfidence?>(value: final value) => {'confidence': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

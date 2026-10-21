@@ -10,48 +10,24 @@ sealed class CopilotSpaceCollaborator {
   const CopilotSpaceCollaborator();
   factory CopilotSpaceCollaborator.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = CopilotSpaceCollaboratorVariant0.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = CopilotSpaceCollaboratorVariant1.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1(
-              value);
-        }
-      } catch (_) {}
+      try { final value = CopilotSpaceCollaboratorVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0(value); } } catch (_) {}
+      try { final value = CopilotSpaceCollaboratorVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1(value); } } catch (_) {}
     }
-    try {
-      return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0(
-          CopilotSpaceCollaboratorVariant0.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1(
-          CopilotSpaceCollaboratorVariant1.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
+    try { return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0(CopilotSpaceCollaboratorVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1(CopilotSpaceCollaboratorVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for CopilotSpaceCollaborator");
   }
   Object? toJson();
 }
 
-final class CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0
-    extends CopilotSpaceCollaborator {
+final class CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0 extends CopilotSpaceCollaborator {
   final CopilotSpaceCollaboratorVariant0 value;
   const CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1
-    extends CopilotSpaceCollaborator {
+final class CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1 extends CopilotSpaceCollaborator {
   final CopilotSpaceCollaboratorVariant1 value;
   const CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

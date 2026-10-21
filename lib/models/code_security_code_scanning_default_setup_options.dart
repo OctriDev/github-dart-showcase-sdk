@@ -8,62 +8,33 @@ part of 'code_security.dart';
 class CodeScanningDefaultSetupOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether to use labeled runners or standard GitHub runners.
   final SdkOptional<CodeScanningDefaultSetupOptionsRunnerType> runnerType;
-
   /// The label of the runner to use for code scanning default setup when runner_type is 'labeled'.
   final SdkOptional<String?> runnerLabel;
 
-  const CodeScanningDefaultSetupOptions(
-      {this.runnerType = const SdkOmitted(),
-      this.runnerLabel = const SdkOmitted()});
+  const CodeScanningDefaultSetupOptions({this.runnerType = const SdkOmitted(), this.runnerLabel = const SdkOmitted()});
 
-  CodeScanningDefaultSetupOptions Function(
-      {SdkOptional<CodeScanningDefaultSetupOptionsRunnerType> runnerType,
-      SdkOptional<String?> runnerLabel}) get copyWith => _copyWith;
+  CodeScanningDefaultSetupOptions Function({SdkOptional<CodeScanningDefaultSetupOptionsRunnerType> runnerType, SdkOptional<String?> runnerLabel}) get copyWith => _copyWith;
 
-  CodeScanningDefaultSetupOptions _copyWith(
-          {Object? runnerType = sdkOmittedValue,
-          Object? runnerLabel = sdkOmittedValue}) =>
-      CodeScanningDefaultSetupOptions(
-        runnerType: identical(runnerType, sdkOmittedValue)
-            ? this.runnerType
-            : runnerType
-                as SdkOptional<CodeScanningDefaultSetupOptionsRunnerType>,
-        runnerLabel: identical(runnerLabel, sdkOmittedValue)
-            ? this.runnerLabel
-            : runnerLabel as SdkOptional<String?>,
-      );
+  CodeScanningDefaultSetupOptions _copyWith({Object? runnerType = sdkOmittedValue, Object? runnerLabel = sdkOmittedValue}) => CodeScanningDefaultSetupOptions(
+    runnerType: identical(runnerType, sdkOmittedValue) ? this.runnerType : runnerType as SdkOptional<CodeScanningDefaultSetupOptionsRunnerType>,
+    runnerLabel: identical(runnerLabel, sdkOmittedValue) ? this.runnerLabel : runnerLabel as SdkOptional<String?>,
+  );
 
-  factory CodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) =>
-      CodeScanningDefaultSetupOptions(
-        runnerType: json['runner_type'] != null
-            ? SdkPresent((json['runner_type'] != null
-                ? CodeScanningDefaultSetupOptionsRunnerType.fromJson(
-                    json['runner_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        runnerLabel: json.containsKey('runner_label')
-            ? SdkPresent(json['runner_label'] as String?)
-            : const SdkOmitted(),
-      );
+  factory CodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) => CodeScanningDefaultSetupOptions(
+    runnerType: json['runner_type'] != null ? SdkPresent((json['runner_type'] != null ? CodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null)!) : const SdkOmitted(),
+    runnerLabel: json.containsKey('runner_label') ? SdkPresent(json['runner_label'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (runnerType) {
-          SdkPresent<CodeScanningDefaultSetupOptionsRunnerType>(
-            value: final value
-          ) =>
-            {
-              'runner_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (runnerLabel) {
-          SdkPresent<String?>(value: final value) => {
-              'runner_label': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (runnerType) {
+      SdkPresent<CodeScanningDefaultSetupOptionsRunnerType>(value: final value) => {'runner_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (runnerLabel) {
+      SdkPresent<String?>(value: final value) => {'runner_label': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

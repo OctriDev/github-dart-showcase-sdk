@@ -8,260 +8,138 @@ part of 'actions_pending.dart';
 class PendingDeploymentEnvironment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The id of the environment.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// The name of the environment.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
 
-  const PendingDeploymentEnvironment(
-      {this.id = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.url = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted()});
+  const PendingDeploymentEnvironment({this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.name = const SdkOmitted(), this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted()});
 
-  PendingDeploymentEnvironment Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> nodeId,
-      SdkOptional<String> name,
-      SdkOptional<String> url,
-      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  PendingDeploymentEnvironment Function({SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<String> name, SdkOptional<String> url, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  PendingDeploymentEnvironment _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue}) =>
-      PendingDeploymentEnvironment(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-      );
+  PendingDeploymentEnvironment _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => PendingDeploymentEnvironment(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+  );
 
-  factory PendingDeploymentEnvironment.fromJson(Map<String, dynamic> json) =>
-      PendingDeploymentEnvironment(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory PendingDeploymentEnvironment.fromJson(Map<String, dynamic> json) => PendingDeploymentEnvironment(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `reviewers[]` wire field.
 class PendingDeploymentReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The type of reviewer.
   final SdkOptional<DeploymentReviewerType> type_;
-
   /// Optional API value serialized in the `reviewer` wire field.
   final SdkOptional<PendingDeploymentReviewersItemReviewer> reviewer;
 
-  const PendingDeploymentReviewersItem(
-      {this.type_ = const SdkOmitted(), this.reviewer = const SdkOmitted()});
+  const PendingDeploymentReviewersItem({this.type_ = const SdkOmitted(), this.reviewer = const SdkOmitted()});
 
-  PendingDeploymentReviewersItem Function(
-          {SdkOptional<DeploymentReviewerType> type_,
-          SdkOptional<PendingDeploymentReviewersItemReviewer> reviewer})
-      get copyWith => _copyWith;
+  PendingDeploymentReviewersItem Function({SdkOptional<DeploymentReviewerType> type_, SdkOptional<PendingDeploymentReviewersItemReviewer> reviewer}) get copyWith => _copyWith;
 
-  PendingDeploymentReviewersItem _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? reviewer = sdkOmittedValue}) =>
-      PendingDeploymentReviewersItem(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<DeploymentReviewerType>,
-        reviewer: identical(reviewer, sdkOmittedValue)
-            ? this.reviewer
-            : reviewer as SdkOptional<PendingDeploymentReviewersItemReviewer>,
-      );
+  PendingDeploymentReviewersItem _copyWith({Object? type_ = sdkOmittedValue, Object? reviewer = sdkOmittedValue}) => PendingDeploymentReviewersItem(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<DeploymentReviewerType>,
+    reviewer: identical(reviewer, sdkOmittedValue) ? this.reviewer : reviewer as SdkOptional<PendingDeploymentReviewersItemReviewer>,
+  );
 
-  factory PendingDeploymentReviewersItem.fromJson(Map<String, dynamic> json) =>
-      PendingDeploymentReviewersItem(
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? DeploymentReviewerType.fromJson(json['type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        reviewer: json['reviewer'] != null
-            ? SdkPresent((json['reviewer'] != null
-                ? PendingDeploymentReviewersItemReviewer.fromJson(
-                    json['reviewer'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory PendingDeploymentReviewersItem.fromJson(Map<String, dynamic> json) => PendingDeploymentReviewersItem(
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+    reviewer: json['reviewer'] != null ? SdkPresent((json['reviewer'] != null ? PendingDeploymentReviewersItemReviewer.fromJson(json['reviewer']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (type_) {
-          SdkPresent<DeploymentReviewerType>(value: final value) => {
-              'type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reviewer) {
-          SdkPresent<PendingDeploymentReviewersItemReviewer>(
-            value: final value
-          ) =>
-            {
-              'reviewer': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (type_) {
+      SdkPresent<DeploymentReviewerType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reviewer) {
+      SdkPresent<PendingDeploymentReviewersItemReviewer>(value: final value) => {'reviewer': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Details of a deployment that is waiting for protection rules to pass
 class PendingDeployment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `environment` wire field.
   final PendingDeploymentEnvironment environment;
-
   /// The set duration of the wait timer
   final int waitTimer;
-
   /// The time that the wait timer began.
   final String? waitTimerStartedAt;
-
   /// Whether the currently authenticated user can approve the deployment
   final bool currentUserCanApprove;
-
   /// The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
   final List<PendingDeploymentReviewersItem> reviewers;
 
-  const PendingDeployment(
-      {required this.environment,
-      required this.waitTimer,
-      required this.waitTimerStartedAt,
-      required this.currentUserCanApprove,
-      required this.reviewers});
+  const PendingDeployment({required this.environment, required this.waitTimer, required this.waitTimerStartedAt, required this.currentUserCanApprove, required this.reviewers});
 
-  PendingDeployment Function(
-          {PendingDeploymentEnvironment environment,
-          int waitTimer,
-          String? waitTimerStartedAt,
-          bool currentUserCanApprove,
-          List<PendingDeploymentReviewersItem> reviewers})
-      get copyWith => _copyWith;
+  PendingDeployment Function({PendingDeploymentEnvironment environment, int waitTimer, String? waitTimerStartedAt, bool currentUserCanApprove, List<PendingDeploymentReviewersItem> reviewers}) get copyWith => _copyWith;
 
-  PendingDeployment _copyWith(
-          {Object? environment = sdkOmittedValue,
-          Object? waitTimer = sdkOmittedValue,
-          Object? waitTimerStartedAt = sdkOmittedValue,
-          Object? currentUserCanApprove = sdkOmittedValue,
-          Object? reviewers = sdkOmittedValue}) =>
-      PendingDeployment(
-        environment: identical(environment, sdkOmittedValue)
-            ? this.environment
-            : environment as PendingDeploymentEnvironment,
-        waitTimer: identical(waitTimer, sdkOmittedValue)
-            ? this.waitTimer
-            : waitTimer as int,
-        waitTimerStartedAt: identical(waitTimerStartedAt, sdkOmittedValue)
-            ? this.waitTimerStartedAt
-            : waitTimerStartedAt as String?,
-        currentUserCanApprove: identical(currentUserCanApprove, sdkOmittedValue)
-            ? this.currentUserCanApprove
-            : currentUserCanApprove as bool,
-        reviewers: identical(reviewers, sdkOmittedValue)
-            ? this.reviewers
-            : reviewers as List<PendingDeploymentReviewersItem>,
-      );
+  PendingDeployment _copyWith({Object? environment = sdkOmittedValue, Object? waitTimer = sdkOmittedValue, Object? waitTimerStartedAt = sdkOmittedValue, Object? currentUserCanApprove = sdkOmittedValue, Object? reviewers = sdkOmittedValue}) => PendingDeployment(
+    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as PendingDeploymentEnvironment,
+    waitTimer: identical(waitTimer, sdkOmittedValue) ? this.waitTimer : waitTimer as int,
+    waitTimerStartedAt: identical(waitTimerStartedAt, sdkOmittedValue) ? this.waitTimerStartedAt : waitTimerStartedAt as String?,
+    currentUserCanApprove: identical(currentUserCanApprove, sdkOmittedValue) ? this.currentUserCanApprove : currentUserCanApprove as bool,
+    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as List<PendingDeploymentReviewersItem>,
+  );
 
-  factory PendingDeployment.fromJson(Map<String, dynamic> json) =>
-      PendingDeployment(
-        environment: (json['environment'] != null
-            ? PendingDeploymentEnvironment.fromJson(
-                json['environment'] as Map<String, dynamic>)
-            : null)!,
-        waitTimer: ((json['wait_timer'] as num?)?.toInt())!,
-        waitTimerStartedAt: json.containsKey('wait_timer_started_at')
-            ? json['wait_timer_started_at'] as String?
-            : throw ArgumentError.value(
-                null, 'wait_timer_started_at', 'Required property is missing'),
-        currentUserCanApprove: (json['current_user_can_approve'] as bool?)!,
-        reviewers: ((json['reviewers'] as List?)
-            ?.map((e) => PendingDeploymentReviewersItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory PendingDeployment.fromJson(Map<String, dynamic> json) => PendingDeployment(
+    environment: (json['environment'] != null ? PendingDeploymentEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null)!,
+    waitTimer: ((json['wait_timer'] as num?)?.toInt())!,
+    waitTimerStartedAt: json.containsKey('wait_timer_started_at') ? json['wait_timer_started_at'] as String? : throw ArgumentError.value(null, 'wait_timer_started_at', 'Required property is missing'),
+    currentUserCanApprove: (json['current_user_can_approve'] as bool?)!,
+    reviewers: ((json['reviewers'] as List?)?.map((e) => PendingDeploymentReviewersItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'environment': environment.toJson(),
-        'wait_timer': waitTimer,
-        'wait_timer_started_at': waitTimerStartedAt,
-        'current_user_can_approve': currentUserCanApprove,
-        'reviewers': reviewers.map((item) => item.toJson()).toList(),
-      };
+    'environment': environment.toJson(),
+    'wait_timer': waitTimer,
+    'wait_timer_started_at': waitTimerStartedAt,
+    'current_user_can_approve': currentUserCanApprove,
+    'reviewers': reviewers.map((item) => item.toJson()).toList(),
+  };
 }
 
 sealed class PendingDeploymentReviewersItemReviewer {
@@ -270,45 +148,24 @@ sealed class PendingDeploymentReviewersItemReviewer {
   const PendingDeploymentReviewersItemReviewer();
   factory PendingDeploymentReviewersItemReviewer.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = SimpleUser.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return PendingDeploymentReviewersItemReviewerSimpleUser(value);
-        }
-      } catch (_) {}
-      try {
-        final value = Team.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return PendingDeploymentReviewersItemReviewerTeam(value);
-        }
-      } catch (_) {}
+      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return PendingDeploymentReviewersItemReviewerSimpleUser(value); } } catch (_) {}
+      try { final value = Team.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return PendingDeploymentReviewersItemReviewerTeam(value); } } catch (_) {}
     }
-    try {
-      return PendingDeploymentReviewersItemReviewerSimpleUser(
-          SimpleUser.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return PendingDeploymentReviewersItemReviewerTeam(
-          Team.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for PendingDeploymentReviewersItemReviewer");
+    try { return PendingDeploymentReviewersItemReviewerSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return PendingDeploymentReviewersItemReviewerTeam(Team.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for PendingDeploymentReviewersItemReviewer");
   }
   Object? toJson();
 }
 
-final class PendingDeploymentReviewersItemReviewerSimpleUser
-    extends PendingDeploymentReviewersItemReviewer {
+final class PendingDeploymentReviewersItemReviewerSimpleUser extends PendingDeploymentReviewersItemReviewer {
   final SimpleUser value;
   const PendingDeploymentReviewersItemReviewerSimpleUser(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class PendingDeploymentReviewersItemReviewerTeam
-    extends PendingDeploymentReviewersItemReviewer {
+final class PendingDeploymentReviewersItemReviewerTeam extends PendingDeploymentReviewersItemReviewer {
   final Team value;
   const PendingDeploymentReviewersItemReviewerTeam(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

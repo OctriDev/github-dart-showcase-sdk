@@ -6,12 +6,12 @@ part of 'code_scanning_code_scanning_variant.dart';
 // code_scanning_code_scanning_variant domain models
 /// The language targeted by the CodeQL query
 final class CodeScanningVariantAnalysisLanguage {
+
   final String value;
 
   const CodeScanningVariantAnalysisLanguage._(this.value);
 
-  factory CodeScanningVariantAnalysisLanguage.fromJson(String value) =>
-      CodeScanningVariantAnalysisLanguage._(value);
+  factory CodeScanningVariantAnalysisLanguage.fromJson(String value) => CodeScanningVariantAnalysisLanguage._(value);
 
   static const actions = CodeScanningVariantAnalysisLanguage._('actions');
   static const cpp = CodeScanningVariantAnalysisLanguage._('cpp');
@@ -26,13 +26,10 @@ final class CodeScanningVariantAnalysisLanguage {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningVariantAnalysisLanguage && other.value == value;
+  @override bool operator ==(Object other) => other is CodeScanningVariantAnalysisLanguage && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

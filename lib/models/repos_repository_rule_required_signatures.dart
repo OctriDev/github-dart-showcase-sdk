@@ -8,33 +8,22 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleRequiredSignatures {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleRequiredSignaturesType type_;
 
   const RepositoryRuleRequiredSignatures({required this.type_});
 
-  RepositoryRuleRequiredSignatures Function(
-      {RepositoryRuleRequiredSignaturesType type_}) get copyWith => _copyWith;
+  RepositoryRuleRequiredSignatures Function({RepositoryRuleRequiredSignaturesType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleRequiredSignatures _copyWith(
-          {Object? type_ = sdkOmittedValue}) =>
-      RepositoryRuleRequiredSignatures(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleRequiredSignaturesType,
-      );
+  RepositoryRuleRequiredSignatures _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleRequiredSignatures(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleRequiredSignaturesType,
+  );
 
-  factory RepositoryRuleRequiredSignatures.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleRequiredSignatures(
-        type_: (json['type'] != null
-            ? RepositoryRuleRequiredSignaturesType.fromJson(
-                json['type'] as String)
-            : null)!,
-      );
+  factory RepositoryRuleRequiredSignatures.fromJson(Map<String, dynamic> json) => RepositoryRuleRequiredSignatures(
+    type_: (json['type'] != null ? RepositoryRuleRequiredSignaturesType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

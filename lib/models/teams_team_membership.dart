@@ -8,51 +8,32 @@ part of 'teams.dart';
 class TeamMembership {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// The role of the user in the team.
   final TeamMembershipRole role;
-
   /// The state of the user's membership in the team.
   final TeamMembershipState state;
 
-  const TeamMembership(
-      {required this.url, required this.role, required this.state});
+  const TeamMembership({required this.url, required this.role, required this.state});
 
-  TeamMembership Function(
-      {String url,
-      TeamMembershipRole role,
-      TeamMembershipState state}) get copyWith => _copyWith;
+  TeamMembership Function({String url, TeamMembershipRole role, TeamMembershipState state}) get copyWith => _copyWith;
 
-  TeamMembership _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? role = sdkOmittedValue,
-          Object? state = sdkOmittedValue}) =>
-      TeamMembership(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        role: identical(role, sdkOmittedValue)
-            ? this.role
-            : role as TeamMembershipRole,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as TeamMembershipState,
-      );
+  TeamMembership _copyWith({Object? url = sdkOmittedValue, Object? role = sdkOmittedValue, Object? state = sdkOmittedValue}) => TeamMembership(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    role: identical(role, sdkOmittedValue) ? this.role : role as TeamMembershipRole,
+    state: identical(state, sdkOmittedValue) ? this.state : state as TeamMembershipState,
+  );
 
   factory TeamMembership.fromJson(Map<String, dynamic> json) => TeamMembership(
-        url: (json['url'] as String?)!,
-        role: (json['role'] != null
-            ? TeamMembershipRole.fromJson(json['role'] as String)
-            : null)!,
-        state: (json['state'] != null
-            ? TeamMembershipState.fromJson(json['state'] as String)
-            : null)!,
-      );
+    url: (json['url'] as String?)!,
+    role: (json['role'] != null ? TeamMembershipRole.fromJson(json['role'] as String) : null)!,
+    state: (json['state'] != null ? TeamMembershipState.fromJson(json['state'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'role': role.toJson(),
-        'state': state.toJson(),
-      };
+    'url': url,
+    'role': role.toJson(),
+    'state': state.toJson(),
+  };
 }

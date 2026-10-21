@@ -7,516 +7,272 @@ part of 'inline.dart';
 class OrgsListAttestationsResponseAttestationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
   final SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle;
   final SdkOptional<int> repositoryId;
   final SdkOptional<String> bundleUrl;
   final SdkOptional<String> initiator;
 
-  const OrgsListAttestationsResponseAttestationsItem(
-      {this.bundle = const SdkOmitted(),
-      this.repositoryId = const SdkOmitted(),
-      this.bundleUrl = const SdkOmitted(),
-      this.initiator = const SdkOmitted()});
+  const OrgsListAttestationsResponseAttestationsItem({this.bundle = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.bundleUrl = const SdkOmitted(), this.initiator = const SdkOmitted()});
 
-  OrgsListAttestationsResponseAttestationsItem Function(
-      {SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle,
-      SdkOptional<int> repositoryId,
-      SdkOptional<String> bundleUrl,
-      SdkOptional<String> initiator}) get copyWith => _copyWith;
+  OrgsListAttestationsResponseAttestationsItem Function({SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle, SdkOptional<int> repositoryId, SdkOptional<String> bundleUrl, SdkOptional<String> initiator}) get copyWith => _copyWith;
 
-  OrgsListAttestationsResponseAttestationsItem _copyWith(
-          {Object? bundle = sdkOmittedValue,
-          Object? repositoryId = sdkOmittedValue,
-          Object? bundleUrl = sdkOmittedValue,
-          Object? initiator = sdkOmittedValue}) =>
-      OrgsListAttestationsResponseAttestationsItem(
-        bundle: identical(bundle, sdkOmittedValue)
-            ? this.bundle
-            : bundle as SdkOptional<
-                OrgsListAttestationsResponseAttestationsItemBundle?>,
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as SdkOptional<int>,
-        bundleUrl: identical(bundleUrl, sdkOmittedValue)
-            ? this.bundleUrl
-            : bundleUrl as SdkOptional<String>,
-        initiator: identical(initiator, sdkOmittedValue)
-            ? this.initiator
-            : initiator as SdkOptional<String>,
-      );
+  OrgsListAttestationsResponseAttestationsItem _copyWith({Object? bundle = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? bundleUrl = sdkOmittedValue, Object? initiator = sdkOmittedValue}) => OrgsListAttestationsResponseAttestationsItem(
+    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?>,
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
+    bundleUrl: identical(bundleUrl, sdkOmittedValue) ? this.bundleUrl : bundleUrl as SdkOptional<String>,
+    initiator: identical(initiator, sdkOmittedValue) ? this.initiator : initiator as SdkOptional<String>,
+  );
 
-  factory OrgsListAttestationsResponseAttestationsItem.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsListAttestationsResponseAttestationsItem(
-        bundle: json.containsKey('bundle')
-            ? SdkPresent(json['bundle'] != null
-                ? OrgsListAttestationsResponseAttestationsItemBundle.fromJson(
-                    json['bundle'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        bundleUrl: json['bundle_url'] != null
-            ? SdkPresent((json['bundle_url'] as String?)!)
-            : const SdkOmitted(),
-        initiator: json['initiator'] != null
-            ? SdkPresent((json['initiator'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory OrgsListAttestationsResponseAttestationsItem.fromJson(Map<String, dynamic> json) => OrgsListAttestationsResponseAttestationsItem(
+    bundle: json.containsKey('bundle') ? SdkPresent(json['bundle'] != null ? OrgsListAttestationsResponseAttestationsItemBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    bundleUrl: json['bundle_url'] != null ? SdkPresent((json['bundle_url'] as String?)!) : const SdkOmitted(),
+    initiator: json['initiator'] != null ? SdkPresent((json['initiator'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (bundle) {
-          SdkPresent<OrgsListAttestationsResponseAttestationsItemBundle?>(
-            value: final value
-          ) =>
-            {
-              'bundle': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bundleUrl) {
-          SdkPresent<String>(value: final value) => {
-              'bundle_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (initiator) {
-          SdkPresent<String>(value: final value) => {
-              'initiator': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (bundle) {
+      SdkPresent<OrgsListAttestationsResponseAttestationsItemBundle?>(value: final value) => {'bundle': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryId) {
+      SdkPresent<int>(value: final value) => {'repository_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bundleUrl) {
+      SdkPresent<String>(value: final value) => {'bundle_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (initiator) {
+      SdkPresent<String>(value: final value) => {'initiator': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class OrgsListAttestationsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<List<OrgsListAttestationsResponseAttestationsItem>>
-      attestations;
+  final SdkOptional<List<OrgsListAttestationsResponseAttestationsItem>> attestations;
 
   const OrgsListAttestationsResponse({this.attestations = const SdkOmitted()});
 
-  OrgsListAttestationsResponse Function(
-      {SdkOptional<List<OrgsListAttestationsResponseAttestationsItem>>
-          attestations}) get copyWith => _copyWith;
+  OrgsListAttestationsResponse Function({SdkOptional<List<OrgsListAttestationsResponseAttestationsItem>> attestations}) get copyWith => _copyWith;
 
-  OrgsListAttestationsResponse _copyWith(
-          {Object? attestations = sdkOmittedValue}) =>
-      OrgsListAttestationsResponse(
-        attestations: identical(attestations, sdkOmittedValue)
-            ? this.attestations
-            : attestations as SdkOptional<
-                List<OrgsListAttestationsResponseAttestationsItem>>,
-      );
+  OrgsListAttestationsResponse _copyWith({Object? attestations = sdkOmittedValue}) => OrgsListAttestationsResponse(
+    attestations: identical(attestations, sdkOmittedValue) ? this.attestations : attestations as SdkOptional<List<OrgsListAttestationsResponseAttestationsItem>>,
+  );
 
-  factory OrgsListAttestationsResponse.fromJson(Map<String, dynamic> json) =>
-      OrgsListAttestationsResponse(
-        attestations: json['attestations'] != null
-            ? SdkPresent(((json['attestations'] as List?)
-                ?.map((e) =>
-                    OrgsListAttestationsResponseAttestationsItem.fromJson(
-                        e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory OrgsListAttestationsResponse.fromJson(Map<String, dynamic> json) => OrgsListAttestationsResponse(
+    attestations: json['attestations'] != null ? SdkPresent(((json['attestations'] as List?)?.map((e) => OrgsListAttestationsResponseAttestationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (attestations) {
-          SdkPresent<List<OrgsListAttestationsResponseAttestationsItem>>(
-            value: final value
-          ) =>
-            {
-              'attestations': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (attestations) {
+      SdkPresent<List<OrgsListAttestationsResponseAttestationsItem>>(value: final value) => {'attestations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Key/value pairs to provide settings for this webhook.
 class OrgsCreateWebhookRequestBodyConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URL to which the payloads will be delivered.
   final String url;
-
   /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
   final SdkOptional<String> contentType;
-
   /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
   final SdkOptional<String> secret;
   final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
   final SdkOptional<String> username;
   final SdkOptional<String> password;
 
-  const OrgsCreateWebhookRequestBodyConfig(
-      {required this.url,
-      this.contentType = const SdkOmitted(),
-      this.secret = const SdkOmitted(),
-      this.insecureSsl = const SdkOmitted(),
-      this.username = const SdkOmitted(),
-      this.password = const SdkOmitted()});
+  const OrgsCreateWebhookRequestBodyConfig({required this.url, this.contentType = const SdkOmitted(), this.secret = const SdkOmitted(), this.insecureSsl = const SdkOmitted(), this.username = const SdkOmitted(), this.password = const SdkOmitted()});
 
-  OrgsCreateWebhookRequestBodyConfig Function(
-      {String url,
-      SdkOptional<String> contentType,
-      SdkOptional<String> secret,
-      SdkOptional<WebhookConfigInsecureSsl> insecureSsl,
-      SdkOptional<String> username,
-      SdkOptional<String> password}) get copyWith => _copyWith;
+  OrgsCreateWebhookRequestBodyConfig Function({String url, SdkOptional<String> contentType, SdkOptional<String> secret, SdkOptional<WebhookConfigInsecureSsl> insecureSsl, SdkOptional<String> username, SdkOptional<String> password}) get copyWith => _copyWith;
 
-  OrgsCreateWebhookRequestBodyConfig _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? secret = sdkOmittedValue,
-          Object? insecureSsl = sdkOmittedValue,
-          Object? username = sdkOmittedValue,
-          Object? password = sdkOmittedValue}) =>
-      OrgsCreateWebhookRequestBodyConfig(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as SdkOptional<String>,
-        secret: identical(secret, sdkOmittedValue)
-            ? this.secret
-            : secret as SdkOptional<String>,
-        insecureSsl: identical(insecureSsl, sdkOmittedValue)
-            ? this.insecureSsl
-            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
-        username: identical(username, sdkOmittedValue)
-            ? this.username
-            : username as SdkOptional<String>,
-        password: identical(password, sdkOmittedValue)
-            ? this.password
-            : password as SdkOptional<String>,
-      );
+  OrgsCreateWebhookRequestBodyConfig _copyWith({Object? url = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue, Object? username = sdkOmittedValue, Object? password = sdkOmittedValue}) => OrgsCreateWebhookRequestBodyConfig(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
+    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String>,
+    password: identical(password, sdkOmittedValue) ? this.password : password as SdkOptional<String>,
+  );
 
-  factory OrgsCreateWebhookRequestBodyConfig.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsCreateWebhookRequestBodyConfig(
-        url: (json['url'] as String?)!,
-        contentType: json['content_type'] != null
-            ? SdkPresent((json['content_type'] as String?)!)
-            : const SdkOmitted(),
-        secret: json['secret'] != null
-            ? SdkPresent((json['secret'] as String?)!)
-            : const SdkOmitted(),
-        insecureSsl: json['insecure_ssl'] != null
-            ? SdkPresent((json['insecure_ssl'] != null
-                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
-                : null)!)
-            : const SdkOmitted(),
-        username: json['username'] != null
-            ? SdkPresent((json['username'] as String?)!)
-            : const SdkOmitted(),
-        password: json['password'] != null
-            ? SdkPresent((json['password'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory OrgsCreateWebhookRequestBodyConfig.fromJson(Map<String, dynamic> json) => OrgsCreateWebhookRequestBodyConfig(
+    url: (json['url'] as String?)!,
+    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
+    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
+    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl']) : null)!) : const SdkOmitted(),
+    username: json['username'] != null ? SdkPresent((json['username'] as String?)!) : const SdkOmitted(),
+    password: json['password'] != null ? SdkPresent((json['password'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        ...switch (contentType) {
-          SdkPresent<String>(value: final value) => {
-              'content_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secret) {
-          SdkPresent<String>(value: final value) => {
-              'secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (insecureSsl) {
-          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
-              'insecure_ssl': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (username) {
-          SdkPresent<String>(value: final value) => {
-              'username': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (password) {
-          SdkPresent<String>(value: final value) => {
-              'password': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'url': url,
+    ...switch (contentType) {
+      SdkPresent<String>(value: final value) => {'content_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secret) {
+      SdkPresent<String>(value: final value) => {'secret': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (insecureSsl) {
+      SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {'insecure_ssl': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (username) {
+      SdkPresent<String>(value: final value) => {'username': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (password) {
+      SdkPresent<String>(value: final value) => {'password': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class OrgsCreateWebhookRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Must be passed as "web".
   final String name;
-
   /// Key/value pairs to provide settings for this webhook.
   final OrgsCreateWebhookRequestBodyConfig config;
-
   /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.
   final SdkOptional<List<String>> events;
-
   /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
   final SdkOptional<bool> active;
 
-  const OrgsCreateWebhookRequestBody(
-      {required this.name,
-      required this.config,
-      this.events = const SdkOmitted(),
-      this.active = const SdkOmitted()});
+  const OrgsCreateWebhookRequestBody({required this.name, required this.config, this.events = const SdkOmitted(), this.active = const SdkOmitted()});
 
-  OrgsCreateWebhookRequestBody Function(
-      {String name,
-      OrgsCreateWebhookRequestBodyConfig config,
-      SdkOptional<List<String>> events,
-      SdkOptional<bool> active}) get copyWith => _copyWith;
+  OrgsCreateWebhookRequestBody Function({String name, OrgsCreateWebhookRequestBodyConfig config, SdkOptional<List<String>> events, SdkOptional<bool> active}) get copyWith => _copyWith;
 
-  OrgsCreateWebhookRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? config = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? active = sdkOmittedValue}) =>
-      OrgsCreateWebhookRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        config: identical(config, sdkOmittedValue)
-            ? this.config
-            : config as OrgsCreateWebhookRequestBodyConfig,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<List<String>>,
-        active: identical(active, sdkOmittedValue)
-            ? this.active
-            : active as SdkOptional<bool>,
-      );
+  OrgsCreateWebhookRequestBody _copyWith({Object? name = sdkOmittedValue, Object? config = sdkOmittedValue, Object? events = sdkOmittedValue, Object? active = sdkOmittedValue}) => OrgsCreateWebhookRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    config: identical(config, sdkOmittedValue) ? this.config : config as OrgsCreateWebhookRequestBodyConfig,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<String>>,
+    active: identical(active, sdkOmittedValue) ? this.active : active as SdkOptional<bool>,
+  );
 
-  factory OrgsCreateWebhookRequestBody.fromJson(Map<String, dynamic> json) =>
-      OrgsCreateWebhookRequestBody(
-        name: (json['name'] as String?)!,
-        config: (json['config'] != null
-            ? OrgsCreateWebhookRequestBodyConfig.fromJson(
-                json['config'] as Map<String, dynamic>)
-            : null)!,
-        events: json['events'] != null
-            ? SdkPresent(
-                ((json['events'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        active: json['active'] != null
-            ? SdkPresent((json['active'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory OrgsCreateWebhookRequestBody.fromJson(Map<String, dynamic> json) => OrgsCreateWebhookRequestBody(
+    name: (json['name'] as String?)!,
+    config: (json['config'] != null ? OrgsCreateWebhookRequestBodyConfig.fromJson(json['config'] as Map<String, dynamic>) : null)!,
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    active: json['active'] != null ? SdkPresent((json['active'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'config': config.toJson(),
-        ...switch (events) {
-          SdkPresent<List<String>>(value: final value) => {
-              'events': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (active) {
-          SdkPresent<bool>(value: final value) => {
-              'active': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    'config': config.toJson(),
+    ...switch (events) {
+      SdkPresent<List<String>>(value: final value) => {'events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (active) {
+      SdkPresent<bool>(value: final value) => {'active': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Key/value pairs to provide settings for this webhook.
 class OrgsUpdateWebhookRequestBodyConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The URL to which the payloads will be delivered.
   final String url;
-
   /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
   final SdkOptional<String> contentType;
-
   /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
   final SdkOptional<String> secret;
   final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
 
-  const OrgsUpdateWebhookRequestBodyConfig(
-      {required this.url,
-      this.contentType = const SdkOmitted(),
-      this.secret = const SdkOmitted(),
-      this.insecureSsl = const SdkOmitted()});
+  const OrgsUpdateWebhookRequestBodyConfig({required this.url, this.contentType = const SdkOmitted(), this.secret = const SdkOmitted(), this.insecureSsl = const SdkOmitted()});
 
-  OrgsUpdateWebhookRequestBodyConfig Function(
-          {String url,
-          SdkOptional<String> contentType,
-          SdkOptional<String> secret,
-          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
-      get copyWith => _copyWith;
+  OrgsUpdateWebhookRequestBodyConfig Function({String url, SdkOptional<String> contentType, SdkOptional<String> secret, SdkOptional<WebhookConfigInsecureSsl> insecureSsl}) get copyWith => _copyWith;
 
-  OrgsUpdateWebhookRequestBodyConfig _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? secret = sdkOmittedValue,
-          Object? insecureSsl = sdkOmittedValue}) =>
-      OrgsUpdateWebhookRequestBodyConfig(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as SdkOptional<String>,
-        secret: identical(secret, sdkOmittedValue)
-            ? this.secret
-            : secret as SdkOptional<String>,
-        insecureSsl: identical(insecureSsl, sdkOmittedValue)
-            ? this.insecureSsl
-            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
-      );
+  OrgsUpdateWebhookRequestBodyConfig _copyWith({Object? url = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue}) => OrgsUpdateWebhookRequestBodyConfig(
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
+    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+  );
 
-  factory OrgsUpdateWebhookRequestBodyConfig.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsUpdateWebhookRequestBodyConfig(
-        url: (json['url'] as String?)!,
-        contentType: json['content_type'] != null
-            ? SdkPresent((json['content_type'] as String?)!)
-            : const SdkOmitted(),
-        secret: json['secret'] != null
-            ? SdkPresent((json['secret'] as String?)!)
-            : const SdkOmitted(),
-        insecureSsl: json['insecure_ssl'] != null
-            ? SdkPresent((json['insecure_ssl'] != null
-                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory OrgsUpdateWebhookRequestBodyConfig.fromJson(Map<String, dynamic> json) => OrgsUpdateWebhookRequestBodyConfig(
+    url: (json['url'] as String?)!,
+    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
+    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
+    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        ...switch (contentType) {
-          SdkPresent<String>(value: final value) => {
-              'content_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secret) {
-          SdkPresent<String>(value: final value) => {
-              'secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (insecureSsl) {
-          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
-              'insecure_ssl': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'url': url,
+    ...switch (contentType) {
+      SdkPresent<String>(value: final value) => {'content_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secret) {
+      SdkPresent<String>(value: final value) => {'secret': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (insecureSsl) {
+      SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {'insecure_ssl': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class OrgsUpdateWebhookRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Key/value pairs to provide settings for this webhook.
   final SdkOptional<OrgsUpdateWebhookRequestBodyConfig> config;
-
   /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
   final SdkOptional<List<String>> events;
-
   /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
   final SdkOptional<bool> active;
   final SdkOptional<String> name;
 
-  const OrgsUpdateWebhookRequestBody(
-      {this.config = const SdkOmitted(),
-      this.events = const SdkOmitted(),
-      this.active = const SdkOmitted(),
-      this.name = const SdkOmitted()});
+  const OrgsUpdateWebhookRequestBody({this.config = const SdkOmitted(), this.events = const SdkOmitted(), this.active = const SdkOmitted(), this.name = const SdkOmitted()});
 
-  OrgsUpdateWebhookRequestBody Function(
-      {SdkOptional<OrgsUpdateWebhookRequestBodyConfig> config,
-      SdkOptional<List<String>> events,
-      SdkOptional<bool> active,
-      SdkOptional<String> name}) get copyWith => _copyWith;
+  OrgsUpdateWebhookRequestBody Function({SdkOptional<OrgsUpdateWebhookRequestBodyConfig> config, SdkOptional<List<String>> events, SdkOptional<bool> active, SdkOptional<String> name}) get copyWith => _copyWith;
 
-  OrgsUpdateWebhookRequestBody _copyWith(
-          {Object? config = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? active = sdkOmittedValue,
-          Object? name = sdkOmittedValue}) =>
-      OrgsUpdateWebhookRequestBody(
-        config: identical(config, sdkOmittedValue)
-            ? this.config
-            : config as SdkOptional<OrgsUpdateWebhookRequestBodyConfig>,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<List<String>>,
-        active: identical(active, sdkOmittedValue)
-            ? this.active
-            : active as SdkOptional<bool>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-      );
+  OrgsUpdateWebhookRequestBody _copyWith({Object? config = sdkOmittedValue, Object? events = sdkOmittedValue, Object? active = sdkOmittedValue, Object? name = sdkOmittedValue}) => OrgsUpdateWebhookRequestBody(
+    config: identical(config, sdkOmittedValue) ? this.config : config as SdkOptional<OrgsUpdateWebhookRequestBodyConfig>,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<String>>,
+    active: identical(active, sdkOmittedValue) ? this.active : active as SdkOptional<bool>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+  );
 
-  factory OrgsUpdateWebhookRequestBody.fromJson(Map<String, dynamic> json) =>
-      OrgsUpdateWebhookRequestBody(
-        config: json['config'] != null
-            ? SdkPresent((json['config'] != null
-                ? OrgsUpdateWebhookRequestBodyConfig.fromJson(
-                    json['config'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        events: json['events'] != null
-            ? SdkPresent(
-                ((json['events'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        active: json['active'] != null
-            ? SdkPresent((json['active'] as bool?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory OrgsUpdateWebhookRequestBody.fromJson(Map<String, dynamic> json) => OrgsUpdateWebhookRequestBody(
+    config: json['config'] != null ? SdkPresent((json['config'] != null ? OrgsUpdateWebhookRequestBodyConfig.fromJson(json['config'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    active: json['active'] != null ? SdkPresent((json['active'] as bool?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (config) {
-          SdkPresent<OrgsUpdateWebhookRequestBodyConfig>(value: final value) =>
-            {
-              'config': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (events) {
-          SdkPresent<List<String>>(value: final value) => {
-              'events': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (active) {
-          SdkPresent<bool>(value: final value) => {
-              'active': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (config) {
+      SdkPresent<OrgsUpdateWebhookRequestBodyConfig>(value: final value) => {'config': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (events) {
+      SdkPresent<List<String>>(value: final value) => {'events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (active) {
+      SdkPresent<bool>(value: final value) => {'active': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

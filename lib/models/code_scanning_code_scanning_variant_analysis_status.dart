@@ -6,12 +6,12 @@ part of 'code_scanning_code_scanning_variant.dart';
 // code_scanning_code_scanning_variant domain models
 /// The new status of the CodeQL variant analysis repository task.
 final class CodeScanningVariantAnalysisStatus {
+
   final String value;
 
   const CodeScanningVariantAnalysisStatus._(this.value);
 
-  factory CodeScanningVariantAnalysisStatus.fromJson(String value) =>
-      CodeScanningVariantAnalysisStatus._(value);
+  factory CodeScanningVariantAnalysisStatus.fromJson(String value) => CodeScanningVariantAnalysisStatus._(value);
 
   static const pending = CodeScanningVariantAnalysisStatus._('pending');
   static const inProgress = CodeScanningVariantAnalysisStatus._('in_progress');
@@ -22,13 +22,10 @@ final class CodeScanningVariantAnalysisStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningVariantAnalysisStatus && other.value == value;
+  @override bool operator ==(Object other) => other is CodeScanningVariantAnalysisStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

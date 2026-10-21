@@ -8,1341 +8,599 @@ part of 'shared.dart';
 class MinimalRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `full_name` wire field.
   final String fullName;
-
   /// A GitHub user.
   final SimpleUser owner;
-
   /// Required `boolean` value serialized in the `private` wire field.
   final bool private;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
-
   /// Required `boolean` value serialized in the `fork` wire field.
   final bool fork;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `string` value serialized in the `archive_url` wire field.
   final String archiveUrl;
-
   /// Required `string` value serialized in the `assignees_url` wire field.
   final String assigneesUrl;
-
   /// Required `string` value serialized in the `blobs_url` wire field.
   final String blobsUrl;
-
   /// Required `string` value serialized in the `branches_url` wire field.
   final String branchesUrl;
-
   /// Required `string` value serialized in the `collaborators_url` wire field.
   final String collaboratorsUrl;
-
   /// Required `string` value serialized in the `comments_url` wire field.
   final String commentsUrl;
-
   /// Required `string` value serialized in the `commits_url` wire field.
   final String commitsUrl;
-
   /// Required `string` value serialized in the `compare_url` wire field.
   final String compareUrl;
-
   /// Required `string` value serialized in the `contents_url` wire field.
   final String contentsUrl;
-
   /// Required `uri`-formatted value serialized in the `contributors_url` wire field.
   final String contributorsUrl;
-
   /// Required `uri`-formatted value serialized in the `deployments_url` wire field.
   final String deploymentsUrl;
-
   /// Required `uri`-formatted value serialized in the `downloads_url` wire field.
   final String downloadsUrl;
-
   /// Required `uri`-formatted value serialized in the `events_url` wire field.
   final String eventsUrl;
-
   /// Required `uri`-formatted value serialized in the `forks_url` wire field.
   final String forksUrl;
-
   /// Required `string` value serialized in the `git_commits_url` wire field.
   final String gitCommitsUrl;
-
   /// Required `string` value serialized in the `git_refs_url` wire field.
   final String gitRefsUrl;
-
   /// Required `string` value serialized in the `git_tags_url` wire field.
   final String gitTagsUrl;
-
   /// Optional `string` value serialized in the `git_url` wire field.
   final SdkOptional<String> gitUrl;
-
   /// Required `string` value serialized in the `issue_comment_url` wire field.
   final String issueCommentUrl;
-
   /// Required `string` value serialized in the `issue_events_url` wire field.
   final String issueEventsUrl;
-
   /// Required `string` value serialized in the `issues_url` wire field.
   final String issuesUrl;
-
   /// Required `string` value serialized in the `keys_url` wire field.
   final String keysUrl;
-
   /// Required `string` value serialized in the `labels_url` wire field.
   final String labelsUrl;
-
   /// Required `uri`-formatted value serialized in the `languages_url` wire field.
   final String languagesUrl;
-
   /// Required `uri`-formatted value serialized in the `merges_url` wire field.
   final String mergesUrl;
-
   /// Required `string` value serialized in the `milestones_url` wire field.
   final String milestonesUrl;
-
   /// Required `string` value serialized in the `notifications_url` wire field.
   final String notificationsUrl;
-
   /// Required `string` value serialized in the `pulls_url` wire field.
   final String pullsUrl;
-
   /// Required `string` value serialized in the `releases_url` wire field.
   final String releasesUrl;
-
   /// Optional `string` value serialized in the `ssh_url` wire field.
   final SdkOptional<String> sshUrl;
-
   /// Required `uri`-formatted value serialized in the `stargazers_url` wire field.
   final String stargazersUrl;
-
   /// Required `string` value serialized in the `statuses_url` wire field.
   final String statusesUrl;
-
   /// Required `uri`-formatted value serialized in the `subscribers_url` wire field.
   final String subscribersUrl;
-
   /// Required `uri`-formatted value serialized in the `subscription_url` wire field.
   final String subscriptionUrl;
-
   /// Required `uri`-formatted value serialized in the `tags_url` wire field.
   final String tagsUrl;
-
   /// Required `uri`-formatted value serialized in the `teams_url` wire field.
   final String teamsUrl;
-
   /// Required `string` value serialized in the `trees_url` wire field.
   final String treesUrl;
-
   /// Optional `string` value serialized in the `clone_url` wire field.
   final SdkOptional<String> cloneUrl;
-
   /// Optional `string` value serialized in the `mirror_url` wire field.
   final SdkOptional<String?> mirrorUrl;
-
   /// Required `uri`-formatted value serialized in the `hooks_url` wire field.
   final String hooksUrl;
-
   /// Optional `string` value serialized in the `svn_url` wire field.
   final SdkOptional<String> svnUrl;
-
   /// Optional `string` value serialized in the `homepage` wire field.
   final SdkOptional<String?> homepage;
-
   /// Optional `string` value serialized in the `language` wire field.
   final SdkOptional<String?> language;
-
   /// Optional `integer` value serialized in the `forks_count` wire field.
   final SdkOptional<int> forksCount;
-
   /// Optional `integer` value serialized in the `stargazers_count` wire field.
   final SdkOptional<int> stargazersCount;
-
   /// Optional `integer` value serialized in the `watchers_count` wire field.
   final SdkOptional<int> watchersCount;
-
   /// The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
   final SdkOptional<int> size;
-
   /// Optional `string` value serialized in the `default_branch` wire field.
   final SdkOptional<String> defaultBranch;
-
   /// Optional `integer` value serialized in the `open_issues_count` wire field.
   final SdkOptional<int> openIssuesCount;
-
   /// Optional `boolean` value serialized in the `is_template` wire field.
   final SdkOptional<bool> isTemplate;
-
   /// Optional array value serialized in the `topics` wire field.
   final SdkOptional<List<String>> topics;
-
   /// Optional `boolean` value serialized in the `has_issues` wire field.
   final SdkOptional<bool> hasIssues;
-
   /// Optional `boolean` value serialized in the `has_projects` wire field.
   final SdkOptional<bool> hasProjects;
-
   /// Optional `boolean` value serialized in the `has_wiki` wire field.
   final SdkOptional<bool> hasWiki;
-
   /// Optional `boolean` value serialized in the `has_pages` wire field.
   final SdkOptional<bool> hasPages;
-
   /// Optional `boolean` value serialized in the `has_downloads` wire field.
   final SdkOptional<bool> hasDownloads;
-
   /// Optional `boolean` value serialized in the `has_discussions` wire field.
   final SdkOptional<bool> hasDiscussions;
-
   /// Optional `boolean` value serialized in the `has_pull_requests` wire field.
   final SdkOptional<bool> hasPullRequests;
-
   /// The policy controlling who can create pull requests: all or collaborators_only.
-  final SdkOptional<MinimalRepositoryPullRequestCreationPolicy>
-      pullRequestCreationPolicy;
-
+  final SdkOptional<MinimalRepositoryPullRequestCreationPolicy> pullRequestCreationPolicy;
   /// Optional `boolean` value serialized in the `archived` wire field.
   final SdkOptional<bool> archived;
-
   /// Optional `boolean` value serialized in the `disabled` wire field.
   final SdkOptional<bool> disabled;
-
   /// Optional `string` value serialized in the `visibility` wire field.
   final SdkOptional<String> visibility;
-
   /// Optional `date-time`-formatted value serialized in the `pushed_at` wire field.
   final SdkOptional<String?> pushedAt;
-
   /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
   final SdkOptional<String?> createdAt;
-
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String?> updatedAt;
-
   /// Optional object value serialized in the `permissions` wire field.
   final SdkOptional<MinimalRepositoryPermissions> permissions;
-
   /// Optional `string` value serialized in the `role_name` wire field.
   final SdkOptional<String> roleName;
-
   /// Optional `string` value serialized in the `temp_clone_token` wire field.
   final SdkOptional<String> tempCloneToken;
-
   /// Optional `boolean` value serialized in the `delete_branch_on_merge` wire field.
   final SdkOptional<bool> deleteBranchOnMerge;
-
   /// Optional `integer` value serialized in the `subscribers_count` wire field.
   final SdkOptional<int> subscribersCount;
-
   /// Optional `integer` value serialized in the `network_count` wire field.
   final SdkOptional<int> networkCount;
-
   /// Code Of Conduct
   final SdkOptional<CodeOfConduct> codeOfConduct;
-
   /// Optional object value serialized in the `license` wire field.
   final SdkOptional<MinimalRepositoryLicense?> license;
-
   /// Optional `integer` value serialized in the `forks` wire field.
   final SdkOptional<int> forks;
-
   /// Optional `integer` value serialized in the `open_issues` wire field.
   final SdkOptional<int> openIssues;
-
   /// Optional `integer` value serialized in the `watchers` wire field.
   final SdkOptional<int> watchers;
-
   /// Optional `boolean` value serialized in the `allow_forking` wire field.
   final SdkOptional<bool> allowForking;
-
   /// Optional `boolean` value serialized in the `web_commit_signoff_required` wire field.
   final SdkOptional<bool> webCommitSignoffRequired;
-
   /// Optional object value serialized in the `security_and_analysis` wire field.
   final SdkOptional<SecurityAndAnalysis?> securityAndAnalysis;
-
   /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
   final SdkOptional<Map<String, Object?>> customProperties;
 
-  const MinimalRepository(
-      {required this.id,
-      required this.nodeId,
-      required this.name,
-      required this.fullName,
-      required this.owner,
-      required this.private,
-      required this.htmlUrl,
-      required this.description,
-      required this.fork,
-      required this.url,
-      required this.archiveUrl,
-      required this.assigneesUrl,
-      required this.blobsUrl,
-      required this.branchesUrl,
-      required this.collaboratorsUrl,
-      required this.commentsUrl,
-      required this.commitsUrl,
-      required this.compareUrl,
-      required this.contentsUrl,
-      required this.contributorsUrl,
-      required this.deploymentsUrl,
-      required this.downloadsUrl,
-      required this.eventsUrl,
-      required this.forksUrl,
-      required this.gitCommitsUrl,
-      required this.gitRefsUrl,
-      required this.gitTagsUrl,
-      this.gitUrl = const SdkOmitted(),
-      required this.issueCommentUrl,
-      required this.issueEventsUrl,
-      required this.issuesUrl,
-      required this.keysUrl,
-      required this.labelsUrl,
-      required this.languagesUrl,
-      required this.mergesUrl,
-      required this.milestonesUrl,
-      required this.notificationsUrl,
-      required this.pullsUrl,
-      required this.releasesUrl,
-      this.sshUrl = const SdkOmitted(),
-      required this.stargazersUrl,
-      required this.statusesUrl,
-      required this.subscribersUrl,
-      required this.subscriptionUrl,
-      required this.tagsUrl,
-      required this.teamsUrl,
-      required this.treesUrl,
-      this.cloneUrl = const SdkOmitted(),
-      this.mirrorUrl = const SdkOmitted(),
-      required this.hooksUrl,
-      this.svnUrl = const SdkOmitted(),
-      this.homepage = const SdkOmitted(),
-      this.language = const SdkOmitted(),
-      this.forksCount = const SdkOmitted(),
-      this.stargazersCount = const SdkOmitted(),
-      this.watchersCount = const SdkOmitted(),
-      this.size = const SdkOmitted(),
-      this.defaultBranch = const SdkOmitted(),
-      this.openIssuesCount = const SdkOmitted(),
-      this.isTemplate = const SdkOmitted(),
-      this.topics = const SdkOmitted(),
-      this.hasIssues = const SdkOmitted(),
-      this.hasProjects = const SdkOmitted(),
-      this.hasWiki = const SdkOmitted(),
-      this.hasPages = const SdkOmitted(),
-      this.hasDownloads = const SdkOmitted(),
-      this.hasDiscussions = const SdkOmitted(),
-      this.hasPullRequests = const SdkOmitted(),
-      this.pullRequestCreationPolicy = const SdkOmitted(),
-      this.archived = const SdkOmitted(),
-      this.disabled = const SdkOmitted(),
-      this.visibility = const SdkOmitted(),
-      this.pushedAt = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted(),
-      this.permissions = const SdkOmitted(),
-      this.roleName = const SdkOmitted(),
-      this.tempCloneToken = const SdkOmitted(),
-      this.deleteBranchOnMerge = const SdkOmitted(),
-      this.subscribersCount = const SdkOmitted(),
-      this.networkCount = const SdkOmitted(),
-      this.codeOfConduct = const SdkOmitted(),
-      this.license = const SdkOmitted(),
-      this.forks = const SdkOmitted(),
-      this.openIssues = const SdkOmitted(),
-      this.watchers = const SdkOmitted(),
-      this.allowForking = const SdkOmitted(),
-      this.webCommitSignoffRequired = const SdkOmitted(),
-      this.securityAndAnalysis = const SdkOmitted(),
-      this.customProperties = const SdkOmitted()});
+  const MinimalRepository({required this.id, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, this.gitUrl = const SdkOmitted(), required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, this.sshUrl = const SdkOmitted(), required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, this.cloneUrl = const SdkOmitted(), this.mirrorUrl = const SdkOmitted(), required this.hooksUrl, this.svnUrl = const SdkOmitted(), this.homepage = const SdkOmitted(), this.language = const SdkOmitted(), this.forksCount = const SdkOmitted(), this.stargazersCount = const SdkOmitted(), this.watchersCount = const SdkOmitted(), this.size = const SdkOmitted(), this.defaultBranch = const SdkOmitted(), this.openIssuesCount = const SdkOmitted(), this.isTemplate = const SdkOmitted(), this.topics = const SdkOmitted(), this.hasIssues = const SdkOmitted(), this.hasProjects = const SdkOmitted(), this.hasWiki = const SdkOmitted(), this.hasPages = const SdkOmitted(), this.hasDownloads = const SdkOmitted(), this.hasDiscussions = const SdkOmitted(), this.hasPullRequests = const SdkOmitted(), this.pullRequestCreationPolicy = const SdkOmitted(), this.archived = const SdkOmitted(), this.disabled = const SdkOmitted(), this.visibility = const SdkOmitted(), this.pushedAt = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), this.permissions = const SdkOmitted(), this.roleName = const SdkOmitted(), this.tempCloneToken = const SdkOmitted(), this.deleteBranchOnMerge = const SdkOmitted(), this.subscribersCount = const SdkOmitted(), this.networkCount = const SdkOmitted(), this.codeOfConduct = const SdkOmitted(), this.license = const SdkOmitted(), this.forks = const SdkOmitted(), this.openIssues = const SdkOmitted(), this.watchers = const SdkOmitted(), this.allowForking = const SdkOmitted(), this.webCommitSignoffRequired = const SdkOmitted(), this.securityAndAnalysis = const SdkOmitted(), this.customProperties = const SdkOmitted()});
 
-  MinimalRepository Function(
-          {int id,
-          String nodeId,
-          String name,
-          String fullName,
-          SimpleUser owner,
-          bool private,
-          String htmlUrl,
-          String? description,
-          bool fork,
-          String url,
-          String archiveUrl,
-          String assigneesUrl,
-          String blobsUrl,
-          String branchesUrl,
-          String collaboratorsUrl,
-          String commentsUrl,
-          String commitsUrl,
-          String compareUrl,
-          String contentsUrl,
-          String contributorsUrl,
-          String deploymentsUrl,
-          String downloadsUrl,
-          String eventsUrl,
-          String forksUrl,
-          String gitCommitsUrl,
-          String gitRefsUrl,
-          String gitTagsUrl,
-          SdkOptional<String> gitUrl,
-          String issueCommentUrl,
-          String issueEventsUrl,
-          String issuesUrl,
-          String keysUrl,
-          String labelsUrl,
-          String languagesUrl,
-          String mergesUrl,
-          String milestonesUrl,
-          String notificationsUrl,
-          String pullsUrl,
-          String releasesUrl,
-          SdkOptional<String> sshUrl,
-          String stargazersUrl,
-          String statusesUrl,
-          String subscribersUrl,
-          String subscriptionUrl,
-          String tagsUrl,
-          String teamsUrl,
-          String treesUrl,
-          SdkOptional<String> cloneUrl,
-          SdkOptional<String?> mirrorUrl,
-          String hooksUrl,
-          SdkOptional<String> svnUrl,
-          SdkOptional<String?> homepage,
-          SdkOptional<String?> language,
-          SdkOptional<int> forksCount,
-          SdkOptional<int> stargazersCount,
-          SdkOptional<int> watchersCount,
-          SdkOptional<int> size,
-          SdkOptional<String> defaultBranch,
-          SdkOptional<int> openIssuesCount,
-          SdkOptional<bool> isTemplate,
-          SdkOptional<List<String>> topics,
-          SdkOptional<bool> hasIssues,
-          SdkOptional<bool> hasProjects,
-          SdkOptional<bool> hasWiki,
-          SdkOptional<bool> hasPages,
-          SdkOptional<bool> hasDownloads,
-          SdkOptional<bool> hasDiscussions,
-          SdkOptional<bool> hasPullRequests,
-          SdkOptional<MinimalRepositoryPullRequestCreationPolicy>
-              pullRequestCreationPolicy,
-          SdkOptional<bool> archived,
-          SdkOptional<bool> disabled,
-          SdkOptional<String> visibility,
-          SdkOptional<String?> pushedAt,
-          SdkOptional<String?> createdAt,
-          SdkOptional<String?> updatedAt,
-          SdkOptional<MinimalRepositoryPermissions> permissions,
-          SdkOptional<String> roleName,
-          SdkOptional<String> tempCloneToken,
-          SdkOptional<bool> deleteBranchOnMerge,
-          SdkOptional<int> subscribersCount,
-          SdkOptional<int> networkCount,
-          SdkOptional<CodeOfConduct> codeOfConduct,
-          SdkOptional<MinimalRepositoryLicense?> license,
-          SdkOptional<int> forks,
-          SdkOptional<int> openIssues,
-          SdkOptional<int> watchers,
-          SdkOptional<bool> allowForking,
-          SdkOptional<bool> webCommitSignoffRequired,
-          SdkOptional<SecurityAndAnalysis?> securityAndAnalysis,
-          SdkOptional<Map<String, Object?>> customProperties})
-      get copyWith => _copyWith;
+  MinimalRepository Function({int id, String nodeId, String name, String fullName, SimpleUser owner, bool private, String htmlUrl, String? description, bool fork, String url, String archiveUrl, String assigneesUrl, String blobsUrl, String branchesUrl, String collaboratorsUrl, String commentsUrl, String commitsUrl, String compareUrl, String contentsUrl, String contributorsUrl, String deploymentsUrl, String downloadsUrl, String eventsUrl, String forksUrl, String gitCommitsUrl, String gitRefsUrl, String gitTagsUrl, SdkOptional<String> gitUrl, String issueCommentUrl, String issueEventsUrl, String issuesUrl, String keysUrl, String labelsUrl, String languagesUrl, String mergesUrl, String milestonesUrl, String notificationsUrl, String pullsUrl, String releasesUrl, SdkOptional<String> sshUrl, String stargazersUrl, String statusesUrl, String subscribersUrl, String subscriptionUrl, String tagsUrl, String teamsUrl, String treesUrl, SdkOptional<String> cloneUrl, SdkOptional<String?> mirrorUrl, String hooksUrl, SdkOptional<String> svnUrl, SdkOptional<String?> homepage, SdkOptional<String?> language, SdkOptional<int> forksCount, SdkOptional<int> stargazersCount, SdkOptional<int> watchersCount, SdkOptional<int> size, SdkOptional<String> defaultBranch, SdkOptional<int> openIssuesCount, SdkOptional<bool> isTemplate, SdkOptional<List<String>> topics, SdkOptional<bool> hasIssues, SdkOptional<bool> hasProjects, SdkOptional<bool> hasWiki, SdkOptional<bool> hasPages, SdkOptional<bool> hasDownloads, SdkOptional<bool> hasDiscussions, SdkOptional<bool> hasPullRequests, SdkOptional<MinimalRepositoryPullRequestCreationPolicy> pullRequestCreationPolicy, SdkOptional<bool> archived, SdkOptional<bool> disabled, SdkOptional<String> visibility, SdkOptional<String?> pushedAt, SdkOptional<String?> createdAt, SdkOptional<String?> updatedAt, SdkOptional<MinimalRepositoryPermissions> permissions, SdkOptional<String> roleName, SdkOptional<String> tempCloneToken, SdkOptional<bool> deleteBranchOnMerge, SdkOptional<int> subscribersCount, SdkOptional<int> networkCount, SdkOptional<CodeOfConduct> codeOfConduct, SdkOptional<MinimalRepositoryLicense?> license, SdkOptional<int> forks, SdkOptional<int> openIssues, SdkOptional<int> watchers, SdkOptional<bool> allowForking, SdkOptional<bool> webCommitSignoffRequired, SdkOptional<SecurityAndAnalysis?> securityAndAnalysis, SdkOptional<Map<String, Object?>> customProperties}) get copyWith => _copyWith;
 
-  MinimalRepository _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? fullName = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? private = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? fork = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? archiveUrl = sdkOmittedValue,
-          Object? assigneesUrl = sdkOmittedValue,
-          Object? blobsUrl = sdkOmittedValue,
-          Object? branchesUrl = sdkOmittedValue,
-          Object? collaboratorsUrl = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? commitsUrl = sdkOmittedValue,
-          Object? compareUrl = sdkOmittedValue,
-          Object? contentsUrl = sdkOmittedValue,
-          Object? contributorsUrl = sdkOmittedValue,
-          Object? deploymentsUrl = sdkOmittedValue,
-          Object? downloadsUrl = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? forksUrl = sdkOmittedValue,
-          Object? gitCommitsUrl = sdkOmittedValue,
-          Object? gitRefsUrl = sdkOmittedValue,
-          Object? gitTagsUrl = sdkOmittedValue,
-          Object? gitUrl = sdkOmittedValue,
-          Object? issueCommentUrl = sdkOmittedValue,
-          Object? issueEventsUrl = sdkOmittedValue,
-          Object? issuesUrl = sdkOmittedValue,
-          Object? keysUrl = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
-          Object? languagesUrl = sdkOmittedValue,
-          Object? mergesUrl = sdkOmittedValue,
-          Object? milestonesUrl = sdkOmittedValue,
-          Object? notificationsUrl = sdkOmittedValue,
-          Object? pullsUrl = sdkOmittedValue,
-          Object? releasesUrl = sdkOmittedValue,
-          Object? sshUrl = sdkOmittedValue,
-          Object? stargazersUrl = sdkOmittedValue,
-          Object? statusesUrl = sdkOmittedValue,
-          Object? subscribersUrl = sdkOmittedValue,
-          Object? subscriptionUrl = sdkOmittedValue,
-          Object? tagsUrl = sdkOmittedValue,
-          Object? teamsUrl = sdkOmittedValue,
-          Object? treesUrl = sdkOmittedValue,
-          Object? cloneUrl = sdkOmittedValue,
-          Object? mirrorUrl = sdkOmittedValue,
-          Object? hooksUrl = sdkOmittedValue,
-          Object? svnUrl = sdkOmittedValue,
-          Object? homepage = sdkOmittedValue,
-          Object? language = sdkOmittedValue,
-          Object? forksCount = sdkOmittedValue,
-          Object? stargazersCount = sdkOmittedValue,
-          Object? watchersCount = sdkOmittedValue,
-          Object? size = sdkOmittedValue,
-          Object? defaultBranch = sdkOmittedValue,
-          Object? openIssuesCount = sdkOmittedValue,
-          Object? isTemplate = sdkOmittedValue,
-          Object? topics = sdkOmittedValue,
-          Object? hasIssues = sdkOmittedValue,
-          Object? hasProjects = sdkOmittedValue,
-          Object? hasWiki = sdkOmittedValue,
-          Object? hasPages = sdkOmittedValue,
-          Object? hasDownloads = sdkOmittedValue,
-          Object? hasDiscussions = sdkOmittedValue,
-          Object? hasPullRequests = sdkOmittedValue,
-          Object? pullRequestCreationPolicy = sdkOmittedValue,
-          Object? archived = sdkOmittedValue,
-          Object? disabled = sdkOmittedValue,
-          Object? visibility = sdkOmittedValue,
-          Object? pushedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? roleName = sdkOmittedValue,
-          Object? tempCloneToken = sdkOmittedValue,
-          Object? deleteBranchOnMerge = sdkOmittedValue,
-          Object? subscribersCount = sdkOmittedValue,
-          Object? networkCount = sdkOmittedValue,
-          Object? codeOfConduct = sdkOmittedValue,
-          Object? license = sdkOmittedValue,
-          Object? forks = sdkOmittedValue,
-          Object? openIssues = sdkOmittedValue,
-          Object? watchers = sdkOmittedValue,
-          Object? allowForking = sdkOmittedValue,
-          Object? webCommitSignoffRequired = sdkOmittedValue,
-          Object? securityAndAnalysis = sdkOmittedValue,
-          Object? customProperties = sdkOmittedValue}) =>
-      MinimalRepository(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        fullName: identical(fullName, sdkOmittedValue)
-            ? this.fullName
-            : fullName as String,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SimpleUser,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as bool,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        fork: identical(fork, sdkOmittedValue) ? this.fork : fork as bool,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        archiveUrl: identical(archiveUrl, sdkOmittedValue)
-            ? this.archiveUrl
-            : archiveUrl as String,
-        assigneesUrl: identical(assigneesUrl, sdkOmittedValue)
-            ? this.assigneesUrl
-            : assigneesUrl as String,
-        blobsUrl: identical(blobsUrl, sdkOmittedValue)
-            ? this.blobsUrl
-            : blobsUrl as String,
-        branchesUrl: identical(branchesUrl, sdkOmittedValue)
-            ? this.branchesUrl
-            : branchesUrl as String,
-        collaboratorsUrl: identical(collaboratorsUrl, sdkOmittedValue)
-            ? this.collaboratorsUrl
-            : collaboratorsUrl as String,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as String,
-        commitsUrl: identical(commitsUrl, sdkOmittedValue)
-            ? this.commitsUrl
-            : commitsUrl as String,
-        compareUrl: identical(compareUrl, sdkOmittedValue)
-            ? this.compareUrl
-            : compareUrl as String,
-        contentsUrl: identical(contentsUrl, sdkOmittedValue)
-            ? this.contentsUrl
-            : contentsUrl as String,
-        contributorsUrl: identical(contributorsUrl, sdkOmittedValue)
-            ? this.contributorsUrl
-            : contributorsUrl as String,
-        deploymentsUrl: identical(deploymentsUrl, sdkOmittedValue)
-            ? this.deploymentsUrl
-            : deploymentsUrl as String,
-        downloadsUrl: identical(downloadsUrl, sdkOmittedValue)
-            ? this.downloadsUrl
-            : downloadsUrl as String,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        forksUrl: identical(forksUrl, sdkOmittedValue)
-            ? this.forksUrl
-            : forksUrl as String,
-        gitCommitsUrl: identical(gitCommitsUrl, sdkOmittedValue)
-            ? this.gitCommitsUrl
-            : gitCommitsUrl as String,
-        gitRefsUrl: identical(gitRefsUrl, sdkOmittedValue)
-            ? this.gitRefsUrl
-            : gitRefsUrl as String,
-        gitTagsUrl: identical(gitTagsUrl, sdkOmittedValue)
-            ? this.gitTagsUrl
-            : gitTagsUrl as String,
-        gitUrl: identical(gitUrl, sdkOmittedValue)
-            ? this.gitUrl
-            : gitUrl as SdkOptional<String>,
-        issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue)
-            ? this.issueCommentUrl
-            : issueCommentUrl as String,
-        issueEventsUrl: identical(issueEventsUrl, sdkOmittedValue)
-            ? this.issueEventsUrl
-            : issueEventsUrl as String,
-        issuesUrl: identical(issuesUrl, sdkOmittedValue)
-            ? this.issuesUrl
-            : issuesUrl as String,
-        keysUrl: identical(keysUrl, sdkOmittedValue)
-            ? this.keysUrl
-            : keysUrl as String,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as String,
-        languagesUrl: identical(languagesUrl, sdkOmittedValue)
-            ? this.languagesUrl
-            : languagesUrl as String,
-        mergesUrl: identical(mergesUrl, sdkOmittedValue)
-            ? this.mergesUrl
-            : mergesUrl as String,
-        milestonesUrl: identical(milestonesUrl, sdkOmittedValue)
-            ? this.milestonesUrl
-            : milestonesUrl as String,
-        notificationsUrl: identical(notificationsUrl, sdkOmittedValue)
-            ? this.notificationsUrl
-            : notificationsUrl as String,
-        pullsUrl: identical(pullsUrl, sdkOmittedValue)
-            ? this.pullsUrl
-            : pullsUrl as String,
-        releasesUrl: identical(releasesUrl, sdkOmittedValue)
-            ? this.releasesUrl
-            : releasesUrl as String,
-        sshUrl: identical(sshUrl, sdkOmittedValue)
-            ? this.sshUrl
-            : sshUrl as SdkOptional<String>,
-        stargazersUrl: identical(stargazersUrl, sdkOmittedValue)
-            ? this.stargazersUrl
-            : stargazersUrl as String,
-        statusesUrl: identical(statusesUrl, sdkOmittedValue)
-            ? this.statusesUrl
-            : statusesUrl as String,
-        subscribersUrl: identical(subscribersUrl, sdkOmittedValue)
-            ? this.subscribersUrl
-            : subscribersUrl as String,
-        subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue)
-            ? this.subscriptionUrl
-            : subscriptionUrl as String,
-        tagsUrl: identical(tagsUrl, sdkOmittedValue)
-            ? this.tagsUrl
-            : tagsUrl as String,
-        teamsUrl: identical(teamsUrl, sdkOmittedValue)
-            ? this.teamsUrl
-            : teamsUrl as String,
-        treesUrl: identical(treesUrl, sdkOmittedValue)
-            ? this.treesUrl
-            : treesUrl as String,
-        cloneUrl: identical(cloneUrl, sdkOmittedValue)
-            ? this.cloneUrl
-            : cloneUrl as SdkOptional<String>,
-        mirrorUrl: identical(mirrorUrl, sdkOmittedValue)
-            ? this.mirrorUrl
-            : mirrorUrl as SdkOptional<String?>,
-        hooksUrl: identical(hooksUrl, sdkOmittedValue)
-            ? this.hooksUrl
-            : hooksUrl as String,
-        svnUrl: identical(svnUrl, sdkOmittedValue)
-            ? this.svnUrl
-            : svnUrl as SdkOptional<String>,
-        homepage: identical(homepage, sdkOmittedValue)
-            ? this.homepage
-            : homepage as SdkOptional<String?>,
-        language: identical(language, sdkOmittedValue)
-            ? this.language
-            : language as SdkOptional<String?>,
-        forksCount: identical(forksCount, sdkOmittedValue)
-            ? this.forksCount
-            : forksCount as SdkOptional<int>,
-        stargazersCount: identical(stargazersCount, sdkOmittedValue)
-            ? this.stargazersCount
-            : stargazersCount as SdkOptional<int>,
-        watchersCount: identical(watchersCount, sdkOmittedValue)
-            ? this.watchersCount
-            : watchersCount as SdkOptional<int>,
-        size: identical(size, sdkOmittedValue)
-            ? this.size
-            : size as SdkOptional<int>,
-        defaultBranch: identical(defaultBranch, sdkOmittedValue)
-            ? this.defaultBranch
-            : defaultBranch as SdkOptional<String>,
-        openIssuesCount: identical(openIssuesCount, sdkOmittedValue)
-            ? this.openIssuesCount
-            : openIssuesCount as SdkOptional<int>,
-        isTemplate: identical(isTemplate, sdkOmittedValue)
-            ? this.isTemplate
-            : isTemplate as SdkOptional<bool>,
-        topics: identical(topics, sdkOmittedValue)
-            ? this.topics
-            : topics as SdkOptional<List<String>>,
-        hasIssues: identical(hasIssues, sdkOmittedValue)
-            ? this.hasIssues
-            : hasIssues as SdkOptional<bool>,
-        hasProjects: identical(hasProjects, sdkOmittedValue)
-            ? this.hasProjects
-            : hasProjects as SdkOptional<bool>,
-        hasWiki: identical(hasWiki, sdkOmittedValue)
-            ? this.hasWiki
-            : hasWiki as SdkOptional<bool>,
-        hasPages: identical(hasPages, sdkOmittedValue)
-            ? this.hasPages
-            : hasPages as SdkOptional<bool>,
-        hasDownloads: identical(hasDownloads, sdkOmittedValue)
-            ? this.hasDownloads
-            : hasDownloads as SdkOptional<bool>,
-        hasDiscussions: identical(hasDiscussions, sdkOmittedValue)
-            ? this.hasDiscussions
-            : hasDiscussions as SdkOptional<bool>,
-        hasPullRequests: identical(hasPullRequests, sdkOmittedValue)
-            ? this.hasPullRequests
-            : hasPullRequests as SdkOptional<bool>,
-        pullRequestCreationPolicy:
-            identical(pullRequestCreationPolicy, sdkOmittedValue)
-                ? this.pullRequestCreationPolicy
-                : pullRequestCreationPolicy
-                    as SdkOptional<MinimalRepositoryPullRequestCreationPolicy>,
-        archived: identical(archived, sdkOmittedValue)
-            ? this.archived
-            : archived as SdkOptional<bool>,
-        disabled: identical(disabled, sdkOmittedValue)
-            ? this.disabled
-            : disabled as SdkOptional<bool>,
-        visibility: identical(visibility, sdkOmittedValue)
-            ? this.visibility
-            : visibility as SdkOptional<String>,
-        pushedAt: identical(pushedAt, sdkOmittedValue)
-            ? this.pushedAt
-            : pushedAt as SdkOptional<String?>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String?>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String?>,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions as SdkOptional<MinimalRepositoryPermissions>,
-        roleName: identical(roleName, sdkOmittedValue)
-            ? this.roleName
-            : roleName as SdkOptional<String>,
-        tempCloneToken: identical(tempCloneToken, sdkOmittedValue)
-            ? this.tempCloneToken
-            : tempCloneToken as SdkOptional<String>,
-        deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue)
-            ? this.deleteBranchOnMerge
-            : deleteBranchOnMerge as SdkOptional<bool>,
-        subscribersCount: identical(subscribersCount, sdkOmittedValue)
-            ? this.subscribersCount
-            : subscribersCount as SdkOptional<int>,
-        networkCount: identical(networkCount, sdkOmittedValue)
-            ? this.networkCount
-            : networkCount as SdkOptional<int>,
-        codeOfConduct: identical(codeOfConduct, sdkOmittedValue)
-            ? this.codeOfConduct
-            : codeOfConduct as SdkOptional<CodeOfConduct>,
-        license: identical(license, sdkOmittedValue)
-            ? this.license
-            : license as SdkOptional<MinimalRepositoryLicense?>,
-        forks: identical(forks, sdkOmittedValue)
-            ? this.forks
-            : forks as SdkOptional<int>,
-        openIssues: identical(openIssues, sdkOmittedValue)
-            ? this.openIssues
-            : openIssues as SdkOptional<int>,
-        watchers: identical(watchers, sdkOmittedValue)
-            ? this.watchers
-            : watchers as SdkOptional<int>,
-        allowForking: identical(allowForking, sdkOmittedValue)
-            ? this.allowForking
-            : allowForking as SdkOptional<bool>,
-        webCommitSignoffRequired:
-            identical(webCommitSignoffRequired, sdkOmittedValue)
-                ? this.webCommitSignoffRequired
-                : webCommitSignoffRequired as SdkOptional<bool>,
-        securityAndAnalysis: identical(securityAndAnalysis, sdkOmittedValue)
-            ? this.securityAndAnalysis
-            : securityAndAnalysis as SdkOptional<SecurityAndAnalysis?>,
-        customProperties: identical(customProperties, sdkOmittedValue)
-            ? this.customProperties
-            : customProperties as SdkOptional<Map<String, Object?>>,
-      );
+  MinimalRepository _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? fullName = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? private = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? description = sdkOmittedValue, Object? fork = sdkOmittedValue, Object? url = sdkOmittedValue, Object? archiveUrl = sdkOmittedValue, Object? assigneesUrl = sdkOmittedValue, Object? blobsUrl = sdkOmittedValue, Object? branchesUrl = sdkOmittedValue, Object? collaboratorsUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? commitsUrl = sdkOmittedValue, Object? compareUrl = sdkOmittedValue, Object? contentsUrl = sdkOmittedValue, Object? contributorsUrl = sdkOmittedValue, Object? deploymentsUrl = sdkOmittedValue, Object? downloadsUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? forksUrl = sdkOmittedValue, Object? gitCommitsUrl = sdkOmittedValue, Object? gitRefsUrl = sdkOmittedValue, Object? gitTagsUrl = sdkOmittedValue, Object? gitUrl = sdkOmittedValue, Object? issueCommentUrl = sdkOmittedValue, Object? issueEventsUrl = sdkOmittedValue, Object? issuesUrl = sdkOmittedValue, Object? keysUrl = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? languagesUrl = sdkOmittedValue, Object? mergesUrl = sdkOmittedValue, Object? milestonesUrl = sdkOmittedValue, Object? notificationsUrl = sdkOmittedValue, Object? pullsUrl = sdkOmittedValue, Object? releasesUrl = sdkOmittedValue, Object? sshUrl = sdkOmittedValue, Object? stargazersUrl = sdkOmittedValue, Object? statusesUrl = sdkOmittedValue, Object? subscribersUrl = sdkOmittedValue, Object? subscriptionUrl = sdkOmittedValue, Object? tagsUrl = sdkOmittedValue, Object? teamsUrl = sdkOmittedValue, Object? treesUrl = sdkOmittedValue, Object? cloneUrl = sdkOmittedValue, Object? mirrorUrl = sdkOmittedValue, Object? hooksUrl = sdkOmittedValue, Object? svnUrl = sdkOmittedValue, Object? homepage = sdkOmittedValue, Object? language = sdkOmittedValue, Object? forksCount = sdkOmittedValue, Object? stargazersCount = sdkOmittedValue, Object? watchersCount = sdkOmittedValue, Object? size = sdkOmittedValue, Object? defaultBranch = sdkOmittedValue, Object? openIssuesCount = sdkOmittedValue, Object? isTemplate = sdkOmittedValue, Object? topics = sdkOmittedValue, Object? hasIssues = sdkOmittedValue, Object? hasProjects = sdkOmittedValue, Object? hasWiki = sdkOmittedValue, Object? hasPages = sdkOmittedValue, Object? hasDownloads = sdkOmittedValue, Object? hasDiscussions = sdkOmittedValue, Object? hasPullRequests = sdkOmittedValue, Object? pullRequestCreationPolicy = sdkOmittedValue, Object? archived = sdkOmittedValue, Object? disabled = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? pushedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? roleName = sdkOmittedValue, Object? tempCloneToken = sdkOmittedValue, Object? deleteBranchOnMerge = sdkOmittedValue, Object? subscribersCount = sdkOmittedValue, Object? networkCount = sdkOmittedValue, Object? codeOfConduct = sdkOmittedValue, Object? license = sdkOmittedValue, Object? forks = sdkOmittedValue, Object? openIssues = sdkOmittedValue, Object? watchers = sdkOmittedValue, Object? allowForking = sdkOmittedValue, Object? webCommitSignoffRequired = sdkOmittedValue, Object? securityAndAnalysis = sdkOmittedValue, Object? customProperties = sdkOmittedValue}) => MinimalRepository(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as String,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SimpleUser,
+    private: identical(private, sdkOmittedValue) ? this.private : private as bool,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    fork: identical(fork, sdkOmittedValue) ? this.fork : fork as bool,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    archiveUrl: identical(archiveUrl, sdkOmittedValue) ? this.archiveUrl : archiveUrl as String,
+    assigneesUrl: identical(assigneesUrl, sdkOmittedValue) ? this.assigneesUrl : assigneesUrl as String,
+    blobsUrl: identical(blobsUrl, sdkOmittedValue) ? this.blobsUrl : blobsUrl as String,
+    branchesUrl: identical(branchesUrl, sdkOmittedValue) ? this.branchesUrl : branchesUrl as String,
+    collaboratorsUrl: identical(collaboratorsUrl, sdkOmittedValue) ? this.collaboratorsUrl : collaboratorsUrl as String,
+    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
+    commitsUrl: identical(commitsUrl, sdkOmittedValue) ? this.commitsUrl : commitsUrl as String,
+    compareUrl: identical(compareUrl, sdkOmittedValue) ? this.compareUrl : compareUrl as String,
+    contentsUrl: identical(contentsUrl, sdkOmittedValue) ? this.contentsUrl : contentsUrl as String,
+    contributorsUrl: identical(contributorsUrl, sdkOmittedValue) ? this.contributorsUrl : contributorsUrl as String,
+    deploymentsUrl: identical(deploymentsUrl, sdkOmittedValue) ? this.deploymentsUrl : deploymentsUrl as String,
+    downloadsUrl: identical(downloadsUrl, sdkOmittedValue) ? this.downloadsUrl : downloadsUrl as String,
+    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
+    forksUrl: identical(forksUrl, sdkOmittedValue) ? this.forksUrl : forksUrl as String,
+    gitCommitsUrl: identical(gitCommitsUrl, sdkOmittedValue) ? this.gitCommitsUrl : gitCommitsUrl as String,
+    gitRefsUrl: identical(gitRefsUrl, sdkOmittedValue) ? this.gitRefsUrl : gitRefsUrl as String,
+    gitTagsUrl: identical(gitTagsUrl, sdkOmittedValue) ? this.gitTagsUrl : gitTagsUrl as String,
+    gitUrl: identical(gitUrl, sdkOmittedValue) ? this.gitUrl : gitUrl as SdkOptional<String>,
+    issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue) ? this.issueCommentUrl : issueCommentUrl as String,
+    issueEventsUrl: identical(issueEventsUrl, sdkOmittedValue) ? this.issueEventsUrl : issueEventsUrl as String,
+    issuesUrl: identical(issuesUrl, sdkOmittedValue) ? this.issuesUrl : issuesUrl as String,
+    keysUrl: identical(keysUrl, sdkOmittedValue) ? this.keysUrl : keysUrl as String,
+    labelsUrl: identical(labelsUrl, sdkOmittedValue) ? this.labelsUrl : labelsUrl as String,
+    languagesUrl: identical(languagesUrl, sdkOmittedValue) ? this.languagesUrl : languagesUrl as String,
+    mergesUrl: identical(mergesUrl, sdkOmittedValue) ? this.mergesUrl : mergesUrl as String,
+    milestonesUrl: identical(milestonesUrl, sdkOmittedValue) ? this.milestonesUrl : milestonesUrl as String,
+    notificationsUrl: identical(notificationsUrl, sdkOmittedValue) ? this.notificationsUrl : notificationsUrl as String,
+    pullsUrl: identical(pullsUrl, sdkOmittedValue) ? this.pullsUrl : pullsUrl as String,
+    releasesUrl: identical(releasesUrl, sdkOmittedValue) ? this.releasesUrl : releasesUrl as String,
+    sshUrl: identical(sshUrl, sdkOmittedValue) ? this.sshUrl : sshUrl as SdkOptional<String>,
+    stargazersUrl: identical(stargazersUrl, sdkOmittedValue) ? this.stargazersUrl : stargazersUrl as String,
+    statusesUrl: identical(statusesUrl, sdkOmittedValue) ? this.statusesUrl : statusesUrl as String,
+    subscribersUrl: identical(subscribersUrl, sdkOmittedValue) ? this.subscribersUrl : subscribersUrl as String,
+    subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue) ? this.subscriptionUrl : subscriptionUrl as String,
+    tagsUrl: identical(tagsUrl, sdkOmittedValue) ? this.tagsUrl : tagsUrl as String,
+    teamsUrl: identical(teamsUrl, sdkOmittedValue) ? this.teamsUrl : teamsUrl as String,
+    treesUrl: identical(treesUrl, sdkOmittedValue) ? this.treesUrl : treesUrl as String,
+    cloneUrl: identical(cloneUrl, sdkOmittedValue) ? this.cloneUrl : cloneUrl as SdkOptional<String>,
+    mirrorUrl: identical(mirrorUrl, sdkOmittedValue) ? this.mirrorUrl : mirrorUrl as SdkOptional<String?>,
+    hooksUrl: identical(hooksUrl, sdkOmittedValue) ? this.hooksUrl : hooksUrl as String,
+    svnUrl: identical(svnUrl, sdkOmittedValue) ? this.svnUrl : svnUrl as SdkOptional<String>,
+    homepage: identical(homepage, sdkOmittedValue) ? this.homepage : homepage as SdkOptional<String?>,
+    language: identical(language, sdkOmittedValue) ? this.language : language as SdkOptional<String?>,
+    forksCount: identical(forksCount, sdkOmittedValue) ? this.forksCount : forksCount as SdkOptional<int>,
+    stargazersCount: identical(stargazersCount, sdkOmittedValue) ? this.stargazersCount : stargazersCount as SdkOptional<int>,
+    watchersCount: identical(watchersCount, sdkOmittedValue) ? this.watchersCount : watchersCount as SdkOptional<int>,
+    size: identical(size, sdkOmittedValue) ? this.size : size as SdkOptional<int>,
+    defaultBranch: identical(defaultBranch, sdkOmittedValue) ? this.defaultBranch : defaultBranch as SdkOptional<String>,
+    openIssuesCount: identical(openIssuesCount, sdkOmittedValue) ? this.openIssuesCount : openIssuesCount as SdkOptional<int>,
+    isTemplate: identical(isTemplate, sdkOmittedValue) ? this.isTemplate : isTemplate as SdkOptional<bool>,
+    topics: identical(topics, sdkOmittedValue) ? this.topics : topics as SdkOptional<List<String>>,
+    hasIssues: identical(hasIssues, sdkOmittedValue) ? this.hasIssues : hasIssues as SdkOptional<bool>,
+    hasProjects: identical(hasProjects, sdkOmittedValue) ? this.hasProjects : hasProjects as SdkOptional<bool>,
+    hasWiki: identical(hasWiki, sdkOmittedValue) ? this.hasWiki : hasWiki as SdkOptional<bool>,
+    hasPages: identical(hasPages, sdkOmittedValue) ? this.hasPages : hasPages as SdkOptional<bool>,
+    hasDownloads: identical(hasDownloads, sdkOmittedValue) ? this.hasDownloads : hasDownloads as SdkOptional<bool>,
+    hasDiscussions: identical(hasDiscussions, sdkOmittedValue) ? this.hasDiscussions : hasDiscussions as SdkOptional<bool>,
+    hasPullRequests: identical(hasPullRequests, sdkOmittedValue) ? this.hasPullRequests : hasPullRequests as SdkOptional<bool>,
+    pullRequestCreationPolicy: identical(pullRequestCreationPolicy, sdkOmittedValue) ? this.pullRequestCreationPolicy : pullRequestCreationPolicy as SdkOptional<MinimalRepositoryPullRequestCreationPolicy>,
+    archived: identical(archived, sdkOmittedValue) ? this.archived : archived as SdkOptional<bool>,
+    disabled: identical(disabled, sdkOmittedValue) ? this.disabled : disabled as SdkOptional<bool>,
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<String>,
+    pushedAt: identical(pushedAt, sdkOmittedValue) ? this.pushedAt : pushedAt as SdkOptional<String?>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String?>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String?>,
+    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<MinimalRepositoryPermissions>,
+    roleName: identical(roleName, sdkOmittedValue) ? this.roleName : roleName as SdkOptional<String>,
+    tempCloneToken: identical(tempCloneToken, sdkOmittedValue) ? this.tempCloneToken : tempCloneToken as SdkOptional<String>,
+    deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue) ? this.deleteBranchOnMerge : deleteBranchOnMerge as SdkOptional<bool>,
+    subscribersCount: identical(subscribersCount, sdkOmittedValue) ? this.subscribersCount : subscribersCount as SdkOptional<int>,
+    networkCount: identical(networkCount, sdkOmittedValue) ? this.networkCount : networkCount as SdkOptional<int>,
+    codeOfConduct: identical(codeOfConduct, sdkOmittedValue) ? this.codeOfConduct : codeOfConduct as SdkOptional<CodeOfConduct>,
+    license: identical(license, sdkOmittedValue) ? this.license : license as SdkOptional<MinimalRepositoryLicense?>,
+    forks: identical(forks, sdkOmittedValue) ? this.forks : forks as SdkOptional<int>,
+    openIssues: identical(openIssues, sdkOmittedValue) ? this.openIssues : openIssues as SdkOptional<int>,
+    watchers: identical(watchers, sdkOmittedValue) ? this.watchers : watchers as SdkOptional<int>,
+    allowForking: identical(allowForking, sdkOmittedValue) ? this.allowForking : allowForking as SdkOptional<bool>,
+    webCommitSignoffRequired: identical(webCommitSignoffRequired, sdkOmittedValue) ? this.webCommitSignoffRequired : webCommitSignoffRequired as SdkOptional<bool>,
+    securityAndAnalysis: identical(securityAndAnalysis, sdkOmittedValue) ? this.securityAndAnalysis : securityAndAnalysis as SdkOptional<SecurityAndAnalysis?>,
+    customProperties: identical(customProperties, sdkOmittedValue) ? this.customProperties : customProperties as SdkOptional<Map<String, Object?>>,
+  );
 
-  factory MinimalRepository.fromJson(Map<String, dynamic> json) =>
-      MinimalRepository(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        name: (json['name'] as String?)!,
-        fullName: (json['full_name'] as String?)!,
-        owner: (json['owner'] != null
-            ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
-            : null)!,
-        private: (json['private'] as bool?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        fork: (json['fork'] as bool?)!,
-        url: (json['url'] as String?)!,
-        archiveUrl: (json['archive_url'] as String?)!,
-        assigneesUrl: (json['assignees_url'] as String?)!,
-        blobsUrl: (json['blobs_url'] as String?)!,
-        branchesUrl: (json['branches_url'] as String?)!,
-        collaboratorsUrl: (json['collaborators_url'] as String?)!,
-        commentsUrl: (json['comments_url'] as String?)!,
-        commitsUrl: (json['commits_url'] as String?)!,
-        compareUrl: (json['compare_url'] as String?)!,
-        contentsUrl: (json['contents_url'] as String?)!,
-        contributorsUrl: (json['contributors_url'] as String?)!,
-        deploymentsUrl: (json['deployments_url'] as String?)!,
-        downloadsUrl: (json['downloads_url'] as String?)!,
-        eventsUrl: (json['events_url'] as String?)!,
-        forksUrl: (json['forks_url'] as String?)!,
-        gitCommitsUrl: (json['git_commits_url'] as String?)!,
-        gitRefsUrl: (json['git_refs_url'] as String?)!,
-        gitTagsUrl: (json['git_tags_url'] as String?)!,
-        gitUrl: json['git_url'] != null
-            ? SdkPresent((json['git_url'] as String?)!)
-            : const SdkOmitted(),
-        issueCommentUrl: (json['issue_comment_url'] as String?)!,
-        issueEventsUrl: (json['issue_events_url'] as String?)!,
-        issuesUrl: (json['issues_url'] as String?)!,
-        keysUrl: (json['keys_url'] as String?)!,
-        labelsUrl: (json['labels_url'] as String?)!,
-        languagesUrl: (json['languages_url'] as String?)!,
-        mergesUrl: (json['merges_url'] as String?)!,
-        milestonesUrl: (json['milestones_url'] as String?)!,
-        notificationsUrl: (json['notifications_url'] as String?)!,
-        pullsUrl: (json['pulls_url'] as String?)!,
-        releasesUrl: (json['releases_url'] as String?)!,
-        sshUrl: json['ssh_url'] != null
-            ? SdkPresent((json['ssh_url'] as String?)!)
-            : const SdkOmitted(),
-        stargazersUrl: (json['stargazers_url'] as String?)!,
-        statusesUrl: (json['statuses_url'] as String?)!,
-        subscribersUrl: (json['subscribers_url'] as String?)!,
-        subscriptionUrl: (json['subscription_url'] as String?)!,
-        tagsUrl: (json['tags_url'] as String?)!,
-        teamsUrl: (json['teams_url'] as String?)!,
-        treesUrl: (json['trees_url'] as String?)!,
-        cloneUrl: json['clone_url'] != null
-            ? SdkPresent((json['clone_url'] as String?)!)
-            : const SdkOmitted(),
-        mirrorUrl: json.containsKey('mirror_url')
-            ? SdkPresent(json['mirror_url'] as String?)
-            : const SdkOmitted(),
-        hooksUrl: (json['hooks_url'] as String?)!,
-        svnUrl: json['svn_url'] != null
-            ? SdkPresent((json['svn_url'] as String?)!)
-            : const SdkOmitted(),
-        homepage: json.containsKey('homepage')
-            ? SdkPresent(json['homepage'] as String?)
-            : const SdkOmitted(),
-        language: json.containsKey('language')
-            ? SdkPresent(json['language'] as String?)
-            : const SdkOmitted(),
-        forksCount: json['forks_count'] != null
-            ? SdkPresent(((json['forks_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        stargazersCount: json['stargazers_count'] != null
-            ? SdkPresent(((json['stargazers_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        watchersCount: json['watchers_count'] != null
-            ? SdkPresent(((json['watchers_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        size: json['size'] != null
-            ? SdkPresent(((json['size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        defaultBranch: json['default_branch'] != null
-            ? SdkPresent((json['default_branch'] as String?)!)
-            : const SdkOmitted(),
-        openIssuesCount: json['open_issues_count'] != null
-            ? SdkPresent(((json['open_issues_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        isTemplate: json['is_template'] != null
-            ? SdkPresent((json['is_template'] as bool?)!)
-            : const SdkOmitted(),
-        topics: json['topics'] != null
-            ? SdkPresent(
-                ((json['topics'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        hasIssues: json['has_issues'] != null
-            ? SdkPresent((json['has_issues'] as bool?)!)
-            : const SdkOmitted(),
-        hasProjects: json['has_projects'] != null
-            ? SdkPresent((json['has_projects'] as bool?)!)
-            : const SdkOmitted(),
-        hasWiki: json['has_wiki'] != null
-            ? SdkPresent((json['has_wiki'] as bool?)!)
-            : const SdkOmitted(),
-        hasPages: json['has_pages'] != null
-            ? SdkPresent((json['has_pages'] as bool?)!)
-            : const SdkOmitted(),
-        hasDownloads: json['has_downloads'] != null
-            ? SdkPresent((json['has_downloads'] as bool?)!)
-            : const SdkOmitted(),
-        hasDiscussions: json['has_discussions'] != null
-            ? SdkPresent((json['has_discussions'] as bool?)!)
-            : const SdkOmitted(),
-        hasPullRequests: json['has_pull_requests'] != null
-            ? SdkPresent((json['has_pull_requests'] as bool?)!)
-            : const SdkOmitted(),
-        pullRequestCreationPolicy: json['pull_request_creation_policy'] != null
-            ? SdkPresent((json['pull_request_creation_policy'] != null
-                ? MinimalRepositoryPullRequestCreationPolicy.fromJson(
-                    json['pull_request_creation_policy'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        archived: json['archived'] != null
-            ? SdkPresent((json['archived'] as bool?)!)
-            : const SdkOmitted(),
-        disabled: json['disabled'] != null
-            ? SdkPresent((json['disabled'] as bool?)!)
-            : const SdkOmitted(),
-        visibility: json['visibility'] != null
-            ? SdkPresent((json['visibility'] as String?)!)
-            : const SdkOmitted(),
-        pushedAt: json.containsKey('pushed_at')
-            ? SdkPresent(json['pushed_at'] as String?)
-            : const SdkOmitted(),
-        createdAt: json.containsKey('created_at')
-            ? SdkPresent(json['created_at'] as String?)
-            : const SdkOmitted(),
-        updatedAt: json.containsKey('updated_at')
-            ? SdkPresent(json['updated_at'] as String?)
-            : const SdkOmitted(),
-        permissions: json['permissions'] != null
-            ? SdkPresent((json['permissions'] != null
-                ? MinimalRepositoryPermissions.fromJson(
-                    json['permissions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        roleName: json['role_name'] != null
-            ? SdkPresent((json['role_name'] as String?)!)
-            : const SdkOmitted(),
-        tempCloneToken: json['temp_clone_token'] != null
-            ? SdkPresent((json['temp_clone_token'] as String?)!)
-            : const SdkOmitted(),
-        deleteBranchOnMerge: json['delete_branch_on_merge'] != null
-            ? SdkPresent((json['delete_branch_on_merge'] as bool?)!)
-            : const SdkOmitted(),
-        subscribersCount: json['subscribers_count'] != null
-            ? SdkPresent(((json['subscribers_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        networkCount: json['network_count'] != null
-            ? SdkPresent(((json['network_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        codeOfConduct: json['code_of_conduct'] != null
-            ? SdkPresent((json['code_of_conduct'] != null
-                ? CodeOfConduct.fromJson(
-                    json['code_of_conduct'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        license: json.containsKey('license')
-            ? SdkPresent(json['license'] != null
-                ? MinimalRepositoryLicense.fromJson(
-                    json['license'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        forks: json['forks'] != null
-            ? SdkPresent(((json['forks'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        openIssues: json['open_issues'] != null
-            ? SdkPresent(((json['open_issues'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        watchers: json['watchers'] != null
-            ? SdkPresent(((json['watchers'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        allowForking: json['allow_forking'] != null
-            ? SdkPresent((json['allow_forking'] as bool?)!)
-            : const SdkOmitted(),
-        webCommitSignoffRequired: json['web_commit_signoff_required'] != null
-            ? SdkPresent((json['web_commit_signoff_required'] as bool?)!)
-            : const SdkOmitted(),
-        securityAndAnalysis: json.containsKey('security_and_analysis')
-            ? SdkPresent(json['security_and_analysis'] != null
-                ? SecurityAndAnalysis.fromJson(
-                    json['security_and_analysis'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        customProperties: json['custom_properties'] != null
-            ? SdkPresent((json['custom_properties'] == null
-                ? null
-                : Map<String, dynamic>.from(json['custom_properties'] as Map)
-                    .map((key, value) => MapEntry(key, value)))!)
-            : const SdkOmitted(),
-      );
+  factory MinimalRepository.fromJson(Map<String, dynamic> json) => MinimalRepository(
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    name: (json['name'] as String?)!,
+    fullName: (json['full_name'] as String?)!,
+    owner: (json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null)!,
+    private: (json['private'] as bool?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    fork: (json['fork'] as bool?)!,
+    url: (json['url'] as String?)!,
+    archiveUrl: (json['archive_url'] as String?)!,
+    assigneesUrl: (json['assignees_url'] as String?)!,
+    blobsUrl: (json['blobs_url'] as String?)!,
+    branchesUrl: (json['branches_url'] as String?)!,
+    collaboratorsUrl: (json['collaborators_url'] as String?)!,
+    commentsUrl: (json['comments_url'] as String?)!,
+    commitsUrl: (json['commits_url'] as String?)!,
+    compareUrl: (json['compare_url'] as String?)!,
+    contentsUrl: (json['contents_url'] as String?)!,
+    contributorsUrl: (json['contributors_url'] as String?)!,
+    deploymentsUrl: (json['deployments_url'] as String?)!,
+    downloadsUrl: (json['downloads_url'] as String?)!,
+    eventsUrl: (json['events_url'] as String?)!,
+    forksUrl: (json['forks_url'] as String?)!,
+    gitCommitsUrl: (json['git_commits_url'] as String?)!,
+    gitRefsUrl: (json['git_refs_url'] as String?)!,
+    gitTagsUrl: (json['git_tags_url'] as String?)!,
+    gitUrl: json['git_url'] != null ? SdkPresent((json['git_url'] as String?)!) : const SdkOmitted(),
+    issueCommentUrl: (json['issue_comment_url'] as String?)!,
+    issueEventsUrl: (json['issue_events_url'] as String?)!,
+    issuesUrl: (json['issues_url'] as String?)!,
+    keysUrl: (json['keys_url'] as String?)!,
+    labelsUrl: (json['labels_url'] as String?)!,
+    languagesUrl: (json['languages_url'] as String?)!,
+    mergesUrl: (json['merges_url'] as String?)!,
+    milestonesUrl: (json['milestones_url'] as String?)!,
+    notificationsUrl: (json['notifications_url'] as String?)!,
+    pullsUrl: (json['pulls_url'] as String?)!,
+    releasesUrl: (json['releases_url'] as String?)!,
+    sshUrl: json['ssh_url'] != null ? SdkPresent((json['ssh_url'] as String?)!) : const SdkOmitted(),
+    stargazersUrl: (json['stargazers_url'] as String?)!,
+    statusesUrl: (json['statuses_url'] as String?)!,
+    subscribersUrl: (json['subscribers_url'] as String?)!,
+    subscriptionUrl: (json['subscription_url'] as String?)!,
+    tagsUrl: (json['tags_url'] as String?)!,
+    teamsUrl: (json['teams_url'] as String?)!,
+    treesUrl: (json['trees_url'] as String?)!,
+    cloneUrl: json['clone_url'] != null ? SdkPresent((json['clone_url'] as String?)!) : const SdkOmitted(),
+    mirrorUrl: json.containsKey('mirror_url') ? SdkPresent(json['mirror_url'] as String?) : const SdkOmitted(),
+    hooksUrl: (json['hooks_url'] as String?)!,
+    svnUrl: json['svn_url'] != null ? SdkPresent((json['svn_url'] as String?)!) : const SdkOmitted(),
+    homepage: json.containsKey('homepage') ? SdkPresent(json['homepage'] as String?) : const SdkOmitted(),
+    language: json.containsKey('language') ? SdkPresent(json['language'] as String?) : const SdkOmitted(),
+    forksCount: json['forks_count'] != null ? SdkPresent(((json['forks_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    stargazersCount: json['stargazers_count'] != null ? SdkPresent(((json['stargazers_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    watchersCount: json['watchers_count'] != null ? SdkPresent(((json['watchers_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    size: json['size'] != null ? SdkPresent(((json['size'] as num?)?.toInt())!) : const SdkOmitted(),
+    defaultBranch: json['default_branch'] != null ? SdkPresent((json['default_branch'] as String?)!) : const SdkOmitted(),
+    openIssuesCount: json['open_issues_count'] != null ? SdkPresent(((json['open_issues_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    isTemplate: json['is_template'] != null ? SdkPresent((json['is_template'] as bool?)!) : const SdkOmitted(),
+    topics: json['topics'] != null ? SdkPresent(((json['topics'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    hasIssues: json['has_issues'] != null ? SdkPresent((json['has_issues'] as bool?)!) : const SdkOmitted(),
+    hasProjects: json['has_projects'] != null ? SdkPresent((json['has_projects'] as bool?)!) : const SdkOmitted(),
+    hasWiki: json['has_wiki'] != null ? SdkPresent((json['has_wiki'] as bool?)!) : const SdkOmitted(),
+    hasPages: json['has_pages'] != null ? SdkPresent((json['has_pages'] as bool?)!) : const SdkOmitted(),
+    hasDownloads: json['has_downloads'] != null ? SdkPresent((json['has_downloads'] as bool?)!) : const SdkOmitted(),
+    hasDiscussions: json['has_discussions'] != null ? SdkPresent((json['has_discussions'] as bool?)!) : const SdkOmitted(),
+    hasPullRequests: json['has_pull_requests'] != null ? SdkPresent((json['has_pull_requests'] as bool?)!) : const SdkOmitted(),
+    pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? SdkPresent((json['pull_request_creation_policy'] != null ? MinimalRepositoryPullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null)!) : const SdkOmitted(),
+    archived: json['archived'] != null ? SdkPresent((json['archived'] as bool?)!) : const SdkOmitted(),
+    disabled: json['disabled'] != null ? SdkPresent((json['disabled'] as bool?)!) : const SdkOmitted(),
+    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] as String?)!) : const SdkOmitted(),
+    pushedAt: json.containsKey('pushed_at') ? SdkPresent(json['pushed_at'] as String?) : const SdkOmitted(),
+    createdAt: json.containsKey('created_at') ? SdkPresent(json['created_at'] as String?) : const SdkOmitted(),
+    updatedAt: json.containsKey('updated_at') ? SdkPresent(json['updated_at'] as String?) : const SdkOmitted(),
+    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] != null ? MinimalRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    roleName: json['role_name'] != null ? SdkPresent((json['role_name'] as String?)!) : const SdkOmitted(),
+    tempCloneToken: json['temp_clone_token'] != null ? SdkPresent((json['temp_clone_token'] as String?)!) : const SdkOmitted(),
+    deleteBranchOnMerge: json['delete_branch_on_merge'] != null ? SdkPresent((json['delete_branch_on_merge'] as bool?)!) : const SdkOmitted(),
+    subscribersCount: json['subscribers_count'] != null ? SdkPresent(((json['subscribers_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    networkCount: json['network_count'] != null ? SdkPresent(((json['network_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    codeOfConduct: json['code_of_conduct'] != null ? SdkPresent((json['code_of_conduct'] != null ? CodeOfConduct.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    license: json.containsKey('license') ? SdkPresent(json['license'] != null ? MinimalRepositoryLicense.fromJson(json['license'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    forks: json['forks'] != null ? SdkPresent(((json['forks'] as num?)?.toInt())!) : const SdkOmitted(),
+    openIssues: json['open_issues'] != null ? SdkPresent(((json['open_issues'] as num?)?.toInt())!) : const SdkOmitted(),
+    watchers: json['watchers'] != null ? SdkPresent(((json['watchers'] as num?)?.toInt())!) : const SdkOmitted(),
+    allowForking: json['allow_forking'] != null ? SdkPresent((json['allow_forking'] as bool?)!) : const SdkOmitted(),
+    webCommitSignoffRequired: json['web_commit_signoff_required'] != null ? SdkPresent((json['web_commit_signoff_required'] as bool?)!) : const SdkOmitted(),
+    securityAndAnalysis: json.containsKey('security_and_analysis') ? SdkPresent(json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    customProperties: json['custom_properties'] != null ? SdkPresent((json['custom_properties'] == null ? null : Map<String, dynamic>.from(json['custom_properties'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'name': name,
-        'full_name': fullName,
-        'owner': owner.toJson(),
-        'private': private,
-        'html_url': htmlUrl,
-        'description': description,
-        'fork': fork,
-        'url': url,
-        'archive_url': archiveUrl,
-        'assignees_url': assigneesUrl,
-        'blobs_url': blobsUrl,
-        'branches_url': branchesUrl,
-        'collaborators_url': collaboratorsUrl,
-        'comments_url': commentsUrl,
-        'commits_url': commitsUrl,
-        'compare_url': compareUrl,
-        'contents_url': contentsUrl,
-        'contributors_url': contributorsUrl,
-        'deployments_url': deploymentsUrl,
-        'downloads_url': downloadsUrl,
-        'events_url': eventsUrl,
-        'forks_url': forksUrl,
-        'git_commits_url': gitCommitsUrl,
-        'git_refs_url': gitRefsUrl,
-        'git_tags_url': gitTagsUrl,
-        ...switch (gitUrl) {
-          SdkPresent<String>(value: final value) => {
-              'git_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'issue_comment_url': issueCommentUrl,
-        'issue_events_url': issueEventsUrl,
-        'issues_url': issuesUrl,
-        'keys_url': keysUrl,
-        'labels_url': labelsUrl,
-        'languages_url': languagesUrl,
-        'merges_url': mergesUrl,
-        'milestones_url': milestonesUrl,
-        'notifications_url': notificationsUrl,
-        'pulls_url': pullsUrl,
-        'releases_url': releasesUrl,
-        ...switch (sshUrl) {
-          SdkPresent<String>(value: final value) => {
-              'ssh_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'stargazers_url': stargazersUrl,
-        'statuses_url': statusesUrl,
-        'subscribers_url': subscribersUrl,
-        'subscription_url': subscriptionUrl,
-        'tags_url': tagsUrl,
-        'teams_url': teamsUrl,
-        'trees_url': treesUrl,
-        ...switch (cloneUrl) {
-          SdkPresent<String>(value: final value) => {
-              'clone_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mirrorUrl) {
-          SdkPresent<String?>(value: final value) => {
-              'mirror_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'hooks_url': hooksUrl,
-        ...switch (svnUrl) {
-          SdkPresent<String>(value: final value) => {
-              'svn_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (homepage) {
-          SdkPresent<String?>(value: final value) => {
-              'homepage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (language) {
-          SdkPresent<String?>(value: final value) => {
-              'language': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (forksCount) {
-          SdkPresent<int>(value: final value) => {
-              'forks_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (stargazersCount) {
-          SdkPresent<int>(value: final value) => {
-              'stargazers_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (watchersCount) {
-          SdkPresent<int>(value: final value) => {
-              'watchers_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (size) {
-          SdkPresent<int>(value: final value) => {
-              'size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (defaultBranch) {
-          SdkPresent<String>(value: final value) => {
-              'default_branch': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (openIssuesCount) {
-          SdkPresent<int>(value: final value) => {
-              'open_issues_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (isTemplate) {
-          SdkPresent<bool>(value: final value) => {
-              'is_template': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (topics) {
-          SdkPresent<List<String>>(value: final value) => {
-              'topics': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasIssues) {
-          SdkPresent<bool>(value: final value) => {
-              'has_issues': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasProjects) {
-          SdkPresent<bool>(value: final value) => {
-              'has_projects': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasWiki) {
-          SdkPresent<bool>(value: final value) => {
-              'has_wiki': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasPages) {
-          SdkPresent<bool>(value: final value) => {
-              'has_pages': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasDownloads) {
-          SdkPresent<bool>(value: final value) => {
-              'has_downloads': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasDiscussions) {
-          SdkPresent<bool>(value: final value) => {
-              'has_discussions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasPullRequests) {
-          SdkPresent<bool>(value: final value) => {
-              'has_pull_requests': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestCreationPolicy) {
-          SdkPresent<MinimalRepositoryPullRequestCreationPolicy>(
-            value: final value
-          ) =>
-            {
-              'pull_request_creation_policy': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (archived) {
-          SdkPresent<bool>(value: final value) => {
-              'archived': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (disabled) {
-          SdkPresent<bool>(value: final value) => {
-              'disabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (visibility) {
-          SdkPresent<String>(value: final value) => {
-              'visibility': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pushedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'pushed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String?>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (permissions) {
-          SdkPresent<MinimalRepositoryPermissions>(value: final value) => {
-              'permissions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (roleName) {
-          SdkPresent<String>(value: final value) => {
-              'role_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tempCloneToken) {
-          SdkPresent<String>(value: final value) => {
-              'temp_clone_token': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deleteBranchOnMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'delete_branch_on_merge': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subscribersCount) {
-          SdkPresent<int>(value: final value) => {
-              'subscribers_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (networkCount) {
-          SdkPresent<int>(value: final value) => {
-              'network_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeOfConduct) {
-          SdkPresent<CodeOfConduct>(value: final value) => {
-              'code_of_conduct': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (license) {
-          SdkPresent<MinimalRepositoryLicense?>(value: final value) => {
-              'license': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (forks) {
-          SdkPresent<int>(value: final value) => {
-              'forks': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (openIssues) {
-          SdkPresent<int>(value: final value) => {
-              'open_issues': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (watchers) {
-          SdkPresent<int>(value: final value) => {
-              'watchers': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowForking) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_forking': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (webCommitSignoffRequired) {
-          SdkPresent<bool>(value: final value) => {
-              'web_commit_signoff_required': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (securityAndAnalysis) {
-          SdkPresent<SecurityAndAnalysis?>(value: final value) => {
-              'security_and_analysis': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (customProperties) {
-          SdkPresent<Map<String, Object?>>(value: final value) => {
-              'custom_properties': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'node_id': nodeId,
+    'name': name,
+    'full_name': fullName,
+    'owner': owner.toJson(),
+    'private': private,
+    'html_url': htmlUrl,
+    'description': description,
+    'fork': fork,
+    'url': url,
+    'archive_url': archiveUrl,
+    'assignees_url': assigneesUrl,
+    'blobs_url': blobsUrl,
+    'branches_url': branchesUrl,
+    'collaborators_url': collaboratorsUrl,
+    'comments_url': commentsUrl,
+    'commits_url': commitsUrl,
+    'compare_url': compareUrl,
+    'contents_url': contentsUrl,
+    'contributors_url': contributorsUrl,
+    'deployments_url': deploymentsUrl,
+    'downloads_url': downloadsUrl,
+    'events_url': eventsUrl,
+    'forks_url': forksUrl,
+    'git_commits_url': gitCommitsUrl,
+    'git_refs_url': gitRefsUrl,
+    'git_tags_url': gitTagsUrl,
+    ...switch (gitUrl) {
+      SdkPresent<String>(value: final value) => {'git_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'issue_comment_url': issueCommentUrl,
+    'issue_events_url': issueEventsUrl,
+    'issues_url': issuesUrl,
+    'keys_url': keysUrl,
+    'labels_url': labelsUrl,
+    'languages_url': languagesUrl,
+    'merges_url': mergesUrl,
+    'milestones_url': milestonesUrl,
+    'notifications_url': notificationsUrl,
+    'pulls_url': pullsUrl,
+    'releases_url': releasesUrl,
+    ...switch (sshUrl) {
+      SdkPresent<String>(value: final value) => {'ssh_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'stargazers_url': stargazersUrl,
+    'statuses_url': statusesUrl,
+    'subscribers_url': subscribersUrl,
+    'subscription_url': subscriptionUrl,
+    'tags_url': tagsUrl,
+    'teams_url': teamsUrl,
+    'trees_url': treesUrl,
+    ...switch (cloneUrl) {
+      SdkPresent<String>(value: final value) => {'clone_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mirrorUrl) {
+      SdkPresent<String?>(value: final value) => {'mirror_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    'hooks_url': hooksUrl,
+    ...switch (svnUrl) {
+      SdkPresent<String>(value: final value) => {'svn_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (homepage) {
+      SdkPresent<String?>(value: final value) => {'homepage': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (language) {
+      SdkPresent<String?>(value: final value) => {'language': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (forksCount) {
+      SdkPresent<int>(value: final value) => {'forks_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (stargazersCount) {
+      SdkPresent<int>(value: final value) => {'stargazers_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (watchersCount) {
+      SdkPresent<int>(value: final value) => {'watchers_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (size) {
+      SdkPresent<int>(value: final value) => {'size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (defaultBranch) {
+      SdkPresent<String>(value: final value) => {'default_branch': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (openIssuesCount) {
+      SdkPresent<int>(value: final value) => {'open_issues_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (isTemplate) {
+      SdkPresent<bool>(value: final value) => {'is_template': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (topics) {
+      SdkPresent<List<String>>(value: final value) => {'topics': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hasIssues) {
+      SdkPresent<bool>(value: final value) => {'has_issues': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hasProjects) {
+      SdkPresent<bool>(value: final value) => {'has_projects': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hasWiki) {
+      SdkPresent<bool>(value: final value) => {'has_wiki': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hasPages) {
+      SdkPresent<bool>(value: final value) => {'has_pages': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hasDownloads) {
+      SdkPresent<bool>(value: final value) => {'has_downloads': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hasDiscussions) {
+      SdkPresent<bool>(value: final value) => {'has_discussions': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hasPullRequests) {
+      SdkPresent<bool>(value: final value) => {'has_pull_requests': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestCreationPolicy) {
+      SdkPresent<MinimalRepositoryPullRequestCreationPolicy>(value: final value) => {'pull_request_creation_policy': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (archived) {
+      SdkPresent<bool>(value: final value) => {'archived': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (disabled) {
+      SdkPresent<bool>(value: final value) => {'disabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (visibility) {
+      SdkPresent<String>(value: final value) => {'visibility': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pushedAt) {
+      SdkPresent<String?>(value: final value) => {'pushed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String?>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String?>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (permissions) {
+      SdkPresent<MinimalRepositoryPermissions>(value: final value) => {'permissions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (roleName) {
+      SdkPresent<String>(value: final value) => {'role_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (tempCloneToken) {
+      SdkPresent<String>(value: final value) => {'temp_clone_token': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deleteBranchOnMerge) {
+      SdkPresent<bool>(value: final value) => {'delete_branch_on_merge': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subscribersCount) {
+      SdkPresent<int>(value: final value) => {'subscribers_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (networkCount) {
+      SdkPresent<int>(value: final value) => {'network_count': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeOfConduct) {
+      SdkPresent<CodeOfConduct>(value: final value) => {'code_of_conduct': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (license) {
+      SdkPresent<MinimalRepositoryLicense?>(value: final value) => {'license': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (forks) {
+      SdkPresent<int>(value: final value) => {'forks': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (openIssues) {
+      SdkPresent<int>(value: final value) => {'open_issues': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (watchers) {
+      SdkPresent<int>(value: final value) => {'watchers': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowForking) {
+      SdkPresent<bool>(value: final value) => {'allow_forking': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (webCommitSignoffRequired) {
+      SdkPresent<bool>(value: final value) => {'web_commit_signoff_required': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (securityAndAnalysis) {
+      SdkPresent<SecurityAndAnalysis?>(value: final value) => {'security_and_analysis': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (customProperties) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'custom_properties': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

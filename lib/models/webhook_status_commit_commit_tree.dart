@@ -8,231 +8,125 @@ part of 'webhook_status.dart';
 class WebhookStatusCommitCommitTree {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
   const WebhookStatusCommitCommitTree({required this.sha, required this.url});
 
-  WebhookStatusCommitCommitTree Function({String sha, String url})
-      get copyWith => _copyWith;
+  WebhookStatusCommitCommitTree Function({String sha, String url}) get copyWith => _copyWith;
 
-  WebhookStatusCommitCommitTree _copyWith(
-          {Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
-      WebhookStatusCommitCommitTree(
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookStatusCommitCommitTree _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookStatusCommitCommitTree(
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookStatusCommitCommitTree.fromJson(Map<String, dynamic> json) =>
-      WebhookStatusCommitCommitTree(
-        sha: (json['sha'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookStatusCommitCommitTree.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitTree(
+    sha: (json['sha'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'sha': sha,
-        'url': url,
-      };
+    'sha': sha,
+    'url': url,
+  };
 }
 
 /// Required object value serialized in the `verification` wire field.
 class WebhookStatusCommitCommitVerification {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `payload` wire field.
   final String? payload;
-
   /// Required enumerated value serialized in the `reason` wire field.
   final WebhookStatusCommitCommitVerificationReason reason;
-
   /// Required `string` value serialized in the `signature` wire field.
   final String? signature;
-
   /// Required `boolean` value serialized in the `verified` wire field.
   final bool verified;
-
   /// Required `string` value serialized in the `verified_at` wire field.
   final String? verifiedAt;
 
-  const WebhookStatusCommitCommitVerification(
-      {required this.payload,
-      required this.reason,
-      required this.signature,
-      required this.verified,
-      required this.verifiedAt});
+  const WebhookStatusCommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt});
 
-  WebhookStatusCommitCommitVerification Function(
-      {String? payload,
-      WebhookStatusCommitCommitVerificationReason reason,
-      String? signature,
-      bool verified,
-      String? verifiedAt}) get copyWith => _copyWith;
+  WebhookStatusCommitCommitVerification Function({String? payload, WebhookStatusCommitCommitVerificationReason reason, String? signature, bool verified, String? verifiedAt}) get copyWith => _copyWith;
 
-  WebhookStatusCommitCommitVerification _copyWith(
-          {Object? payload = sdkOmittedValue,
-          Object? reason = sdkOmittedValue,
-          Object? signature = sdkOmittedValue,
-          Object? verified = sdkOmittedValue,
-          Object? verifiedAt = sdkOmittedValue}) =>
-      WebhookStatusCommitCommitVerification(
-        payload: identical(payload, sdkOmittedValue)
-            ? this.payload
-            : payload as String?,
-        reason: identical(reason, sdkOmittedValue)
-            ? this.reason
-            : reason as WebhookStatusCommitCommitVerificationReason,
-        signature: identical(signature, sdkOmittedValue)
-            ? this.signature
-            : signature as String?,
-        verified: identical(verified, sdkOmittedValue)
-            ? this.verified
-            : verified as bool,
-        verifiedAt: identical(verifiedAt, sdkOmittedValue)
-            ? this.verifiedAt
-            : verifiedAt as String?,
-      );
+  WebhookStatusCommitCommitVerification _copyWith({Object? payload = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? signature = sdkOmittedValue, Object? verified = sdkOmittedValue, Object? verifiedAt = sdkOmittedValue}) => WebhookStatusCommitCommitVerification(
+    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String?,
+    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as WebhookStatusCommitCommitVerificationReason,
+    signature: identical(signature, sdkOmittedValue) ? this.signature : signature as String?,
+    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
+    verifiedAt: identical(verifiedAt, sdkOmittedValue) ? this.verifiedAt : verifiedAt as String?,
+  );
 
-  factory WebhookStatusCommitCommitVerification.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookStatusCommitCommitVerification(
-        payload: json.containsKey('payload')
-            ? json['payload'] as String?
-            : throw ArgumentError.value(
-                null, 'payload', 'Required property is missing'),
-        reason: (json['reason'] != null
-            ? WebhookStatusCommitCommitVerificationReason.fromJson(
-                json['reason'] as String)
-            : null)!,
-        signature: json.containsKey('signature')
-            ? json['signature'] as String?
-            : throw ArgumentError.value(
-                null, 'signature', 'Required property is missing'),
-        verified: (json['verified'] as bool?)!,
-        verifiedAt: json.containsKey('verified_at')
-            ? json['verified_at'] as String?
-            : throw ArgumentError.value(
-                null, 'verified_at', 'Required property is missing'),
-      );
+  factory WebhookStatusCommitCommitVerification.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitVerification(
+    payload: json.containsKey('payload') ? json['payload'] as String? : throw ArgumentError.value(null, 'payload', 'Required property is missing'),
+    reason: (json['reason'] != null ? WebhookStatusCommitCommitVerificationReason.fromJson(json['reason'] as String) : null)!,
+    signature: json.containsKey('signature') ? json['signature'] as String? : throw ArgumentError.value(null, 'signature', 'Required property is missing'),
+    verified: (json['verified'] as bool?)!,
+    verifiedAt: json.containsKey('verified_at') ? json['verified_at'] as String? : throw ArgumentError.value(null, 'verified_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'payload': payload,
-        'reason': reason.toJson(),
-        'signature': signature,
-        'verified': verified,
-        'verified_at': verifiedAt,
-      };
+    'payload': payload,
+    'reason': reason.toJson(),
+    'signature': signature,
+    'verified': verified,
+    'verified_at': verifiedAt,
+  };
 }
 
 /// Required object value serialized in the `commit` wire field.
 class WebhookStatusCommitCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `author` wire field.
   final WebhookStatusCommitCommitAuthor author;
-
   /// Required `integer` value serialized in the `comment_count` wire field.
   final int commentCount;
-
   /// Required object value serialized in the `committer` wire field.
   final WebhookStatusCommitCommitCommitter committer;
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required object value serialized in the `tree` wire field.
   final WebhookStatusCommitCommitTree tree;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required object value serialized in the `verification` wire field.
   final WebhookStatusCommitCommitVerification verification;
 
-  const WebhookStatusCommitCommit(
-      {required this.author,
-      required this.commentCount,
-      required this.committer,
-      required this.message,
-      required this.tree,
-      required this.url,
-      required this.verification});
+  const WebhookStatusCommitCommit({required this.author, required this.commentCount, required this.committer, required this.message, required this.tree, required this.url, required this.verification});
 
-  WebhookStatusCommitCommit Function(
-          {WebhookStatusCommitCommitAuthor author,
-          int commentCount,
-          WebhookStatusCommitCommitCommitter committer,
-          String message,
-          WebhookStatusCommitCommitTree tree,
-          String url,
-          WebhookStatusCommitCommitVerification verification})
-      get copyWith => _copyWith;
+  WebhookStatusCommitCommit Function({WebhookStatusCommitCommitAuthor author, int commentCount, WebhookStatusCommitCommitCommitter committer, String message, WebhookStatusCommitCommitTree tree, String url, WebhookStatusCommitCommitVerification verification}) get copyWith => _copyWith;
 
-  WebhookStatusCommitCommit _copyWith(
-          {Object? author = sdkOmittedValue,
-          Object? commentCount = sdkOmittedValue,
-          Object? committer = sdkOmittedValue,
-          Object? message = sdkOmittedValue,
-          Object? tree = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? verification = sdkOmittedValue}) =>
-      WebhookStatusCommitCommit(
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as WebhookStatusCommitCommitAuthor,
-        commentCount: identical(commentCount, sdkOmittedValue)
-            ? this.commentCount
-            : commentCount as int,
-        committer: identical(committer, sdkOmittedValue)
-            ? this.committer
-            : committer as WebhookStatusCommitCommitCommitter,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        tree: identical(tree, sdkOmittedValue)
-            ? this.tree
-            : tree as WebhookStatusCommitCommitTree,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        verification: identical(verification, sdkOmittedValue)
-            ? this.verification
-            : verification as WebhookStatusCommitCommitVerification,
-      );
+  WebhookStatusCommitCommit _copyWith({Object? author = sdkOmittedValue, Object? commentCount = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? message = sdkOmittedValue, Object? tree = sdkOmittedValue, Object? url = sdkOmittedValue, Object? verification = sdkOmittedValue}) => WebhookStatusCommitCommit(
+    author: identical(author, sdkOmittedValue) ? this.author : author as WebhookStatusCommitCommitAuthor,
+    commentCount: identical(commentCount, sdkOmittedValue) ? this.commentCount : commentCount as int,
+    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as WebhookStatusCommitCommitCommitter,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as WebhookStatusCommitCommitTree,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    verification: identical(verification, sdkOmittedValue) ? this.verification : verification as WebhookStatusCommitCommitVerification,
+  );
 
-  factory WebhookStatusCommitCommit.fromJson(Map<String, dynamic> json) =>
-      WebhookStatusCommitCommit(
-        author: (json['author'] != null
-            ? WebhookStatusCommitCommitAuthor.fromJson(
-                json['author'] as Map<String, dynamic>)
-            : null)!,
-        commentCount: ((json['comment_count'] as num?)?.toInt())!,
-        committer: (json['committer'] != null
-            ? WebhookStatusCommitCommitCommitter.fromJson(
-                json['committer'] as Map<String, dynamic>)
-            : null)!,
-        message: (json['message'] as String?)!,
-        tree: (json['tree'] != null
-            ? WebhookStatusCommitCommitTree.fromJson(
-                json['tree'] as Map<String, dynamic>)
-            : null)!,
-        url: (json['url'] as String?)!,
-        verification: (json['verification'] != null
-            ? WebhookStatusCommitCommitVerification.fromJson(
-                json['verification'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookStatusCommitCommit.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommit(
+    author: (json['author'] != null ? WebhookStatusCommitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!,
+    commentCount: ((json['comment_count'] as num?)?.toInt())!,
+    committer: (json['committer'] != null ? WebhookStatusCommitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!,
+    message: (json['message'] as String?)!,
+    tree: (json['tree'] != null ? WebhookStatusCommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null)!,
+    url: (json['url'] as String?)!,
+    verification: (json['verification'] != null ? WebhookStatusCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'author': author.toJson(),
-        'comment_count': commentCount,
-        'committer': committer.toJson(),
-        'message': message,
-        'tree': tree.toJson(),
-        'url': url,
-        'verification': verification.toJson(),
-      };
+    'author': author.toJson(),
+    'comment_count': commentCount,
+    'committer': committer.toJson(),
+    'message': message,
+    'tree': tree.toJson(),
+    'url': url,
+    'verification': verification.toJson(),
+  };
 }

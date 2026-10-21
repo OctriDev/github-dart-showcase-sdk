@@ -8,37 +8,27 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleParamsActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// ID of the actor that can dismiss reviews.
   final int id;
-
   /// The type of the actor
   final RepositoryRuleParamsActorType type_;
 
   const RepositoryRuleParamsActor({required this.id, required this.type_});
 
-  RepositoryRuleParamsActor Function(
-      {int id, RepositoryRuleParamsActorType type_}) get copyWith => _copyWith;
+  RepositoryRuleParamsActor Function({int id, RepositoryRuleParamsActorType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsActor _copyWith(
-          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      RepositoryRuleParamsActor(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleParamsActorType,
-      );
+  RepositoryRuleParamsActor _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RepositoryRuleParamsActor(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleParamsActorType,
+  );
 
-  factory RepositoryRuleParamsActor.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleParamsActor(
-        id: ((json['id'] as num?)?.toInt())!,
-        type_: (json['type'] != null
-            ? RepositoryRuleParamsActorType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory RepositoryRuleParamsActor.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsActor(
+    id: ((json['id'] as num?)?.toInt())!,
+    type_: (json['type'] != null ? RepositoryRuleParamsActorType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'type': type_.toJson(),
-      };
+    'id': id,
+    'type': type_.toJson(),
+  };
 }

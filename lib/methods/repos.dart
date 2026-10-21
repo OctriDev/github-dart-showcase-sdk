@@ -34,26 +34,19 @@ Future<List<MinimalRepository>> reposListForOrg(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/repos',
           config: config,
           query: {
-            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListForOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a new repository in the specified organization. The authenticated user must be a member of the organization. OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
@@ -126,8 +119,7 @@ Future<FullRepository> reposCreateInOrg(ClientConfig config,
     SdkOptional<String> description = const SdkOmitted(),
     SdkOptional<String> homepage = const SdkOmitted(),
     SdkOptional<bool> private = const SdkOmitted(),
-    SdkOptional<ReposCreateInOrgRequestBodyVisibility> visibility =
-        const SdkOmitted(),
+    SdkOptional<ReposCreateInOrgRequestBodyVisibility> visibility = const SdkOmitted(),
     SdkOptional<bool> hasIssues = const SdkOmitted(),
     SdkOptional<bool> hasProjects = const SdkOmitted(),
     SdkOptional<bool> hasWiki = const SdkOmitted(),
@@ -143,14 +135,10 @@ Future<FullRepository> reposCreateInOrg(ClientConfig config,
     SdkOptional<bool> allowAutoMerge = const SdkOmitted(),
     SdkOptional<bool> deleteBranchOnMerge = const SdkOmitted(),
     SdkOptional<bool> useSquashPrTitleAsDefault = const SdkOmitted(),
-    SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitTitle>
-        squashMergeCommitTitle = const SdkOmitted(),
-    SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitMessage>
-        squashMergeCommitMessage = const SdkOmitted(),
-    SdkOptional<ReposCreateInOrgRequestBodyMergeCommitTitle> mergeCommitTitle =
-        const SdkOmitted(),
-    SdkOptional<ReposCreateInOrgRequestBodyMergeCommitMessage>
-        mergeCommitMessage = const SdkOmitted(),
+    SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitTitle> squashMergeCommitTitle = const SdkOmitted(),
+    SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitMessage> squashMergeCommitMessage = const SdkOmitted(),
+    SdkOptional<ReposCreateInOrgRequestBodyMergeCommitTitle> mergeCommitTitle = const SdkOmitted(),
+    SdkOptional<ReposCreateInOrgRequestBodyMergeCommitMessage> mergeCommitMessage = const SdkOmitted(),
     SdkOptional<Map<String, Object?>> customProperties = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<FullRepository>(
@@ -175,31 +163,22 @@ Future<FullRepository> reposCreateInOrg(ClientConfig config,
             'allow_merge_commit': SdkUtils.unwrapOptional(allowMergeCommit),
             'allow_rebase_merge': SdkUtils.unwrapOptional(allowRebaseMerge),
             'allow_auto_merge': SdkUtils.unwrapOptional(allowAutoMerge),
-            'delete_branch_on_merge':
-                SdkUtils.unwrapOptional(deleteBranchOnMerge),
-            'use_squash_pr_title_as_default':
-                SdkUtils.unwrapOptional(useSquashPrTitleAsDefault),
-            'squash_merge_commit_title':
-                SdkUtils.unwrapOptional(squashMergeCommitTitle),
-            'squash_merge_commit_message':
-                SdkUtils.unwrapOptional(squashMergeCommitMessage),
+            'delete_branch_on_merge': SdkUtils.unwrapOptional(deleteBranchOnMerge),
+            'use_squash_pr_title_as_default': SdkUtils.unwrapOptional(useSquashPrTitleAsDefault),
+            'squash_merge_commit_title': SdkUtils.unwrapOptional(squashMergeCommitTitle),
+            'squash_merge_commit_message': SdkUtils.unwrapOptional(squashMergeCommitMessage),
             'merge_commit_title': SdkUtils.unwrapOptional(mergeCommitTitle),
             'merge_commit_message': SdkUtils.unwrapOptional(mergeCommitMessage),
             'custom_properties': SdkUtils.unwrapOptional(customProperties)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateInOrg',
-          fromJsonRaw: (value) =>
-              FullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FullRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get all the repository rulesets for an organization.
 ///
@@ -225,27 +204,18 @@ Future<List<RepositoryRuleset>> reposGetOrgRulesets(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/rulesets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'targets': SdkQueryValue(SdkUtils.unwrapOptional(targets),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'targets': SdkQueryValue(SdkUtils.unwrapOptional(targets), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetOrgRulesets',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RepositoryRuleset.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RepositoryRuleset.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a repository ruleset for an organization. Set the required `name` and `enforcement`, and optionally configure the target, bypass actors, conditions, and rules. Use `evaluate` to test rules before enforcing them; this enforcement level is available only with GitHub Enterprise.
 ///
@@ -270,10 +240,8 @@ Future<RepositoryRuleset> reposCreateOrgRuleset(ClientConfig config,
     {required String org,
     required String name,
     required RepositoryRuleEnforcement enforcement,
-    SdkOptional<ReposCreateOrgRulesetRequestBodyTarget> target =
-        const SdkOmitted(),
-    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors =
-        const SdkOmitted(),
+    SdkOptional<ReposCreateOrgRulesetRequestBodyTarget> target = const SdkOmitted(),
+    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors = const SdkOmitted(),
     SdkOptional<OrgRulesetConditions> conditions = const SdkOmitted(),
     SdkOptional<List<OrgRules>> rules = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -290,18 +258,12 @@ Future<RepositoryRuleset> reposCreateOrgRuleset(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateOrgRuleset',
-          fromJsonRaw: (value) =>
-              RepositoryRuleset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryRuleset.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists suites of rule evaluations at the organization level. For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
 ///
@@ -347,43 +309,23 @@ Future<List<RuleSuitesItem>> reposGetOrgRuleSuites(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/rulesets/rule-suites',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true),
-            'repository_name': SdkQueryValue(
-                SdkUtils.unwrapOptional(repositoryName),
-                style: 'form',
-                explode: true),
-            'time_period': SdkQueryValue(SdkUtils.unwrapOptional(timePeriod),
-                style: 'form', explode: true),
-            'actor_name': SdkQueryValue(SdkUtils.unwrapOptional(actorName),
-                style: 'form', explode: true),
-            'rule_suite_result': SdkQueryValue(
-                SdkUtils.unwrapOptional(ruleSuiteResult),
-                style: 'form',
-                explode: true),
-            'evaluate_status': SdkQueryValue(
-                SdkUtils.unwrapOptional(evaluateStatus),
-                style: 'form',
-                explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
+            'repository_name': SdkQueryValue(SdkUtils.unwrapOptional(repositoryName), style: 'form', explode: true),
+            'time_period': SdkQueryValue(SdkUtils.unwrapOptional(timePeriod), style: 'form', explode: true),
+            'actor_name': SdkQueryValue(SdkUtils.unwrapOptional(actorName), style: 'form', explode: true),
+            'rule_suite_result': SdkQueryValue(SdkUtils.unwrapOptional(ruleSuiteResult), style: 'form', explode: true),
+            'evaluate_status': SdkQueryValue(SdkUtils.unwrapOptional(evaluateStatus), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetOrgRuleSuites',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RuleSuitesItem.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RuleSuitesItem.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets information about a suite of rule evaluations from within an organization. For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
 ///
@@ -406,23 +348,16 @@ Future<RuleSuite> reposGetOrgRuleSuite(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/rulesets/rule-suites/${Uri.encodeComponent(ruleSuiteId.toString())}',
           config: config,
           query: {
-            'include_metadata': SdkQueryValue(
-                SdkUtils.unwrapOptional(includeMetadata),
-                style: 'form',
-                explode: true)
+            'include_metadata': SdkQueryValue(SdkUtils.unwrapOptional(includeMetadata), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetOrgRuleSuite',
-          fromJsonRaw: (value) =>
-              RuleSuite.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RuleSuite.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get a repository ruleset for an organization. **Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the user making the API request has write access to the ruleset.
 ///
@@ -437,15 +372,12 @@ Future<RepositoryRuleset> reposGetOrgRuleset(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetOrgRuleset',
-          fromJsonRaw: (value) =>
-              RepositoryRuleset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryRuleset.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Replaces an organization repository ruleset. Supply the ruleset properties you want to change, including `target` and `enforcement` where applicable; `bypass_actors`, `conditions`, and `rules` configure access and matching behavior. A 200 response returns the updated ruleset.
 ///
@@ -471,11 +403,9 @@ Future<RepositoryRuleset> reposUpdateOrgRuleset(ClientConfig config,
     {required String org,
     required int rulesetId,
     SdkOptional<String> name = const SdkOmitted(),
-    SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget> target =
-        const SdkOmitted(),
+    SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget> target = const SdkOmitted(),
     SdkOptional<RepositoryRuleEnforcement> enforcement = const SdkOmitted(),
-    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors =
-        const SdkOmitted(),
+    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors = const SdkOmitted(),
     SdkOptional<OrgRulesetConditions> conditions = const SdkOmitted(),
     SdkOptional<List<OrgRules>> rules = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -492,18 +422,12 @@ Future<RepositoryRuleset> reposUpdateOrgRuleset(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateOrgRuleset',
-          fromJsonRaw: (value) =>
-              RepositoryRuleset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryRuleset.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a ruleset from an organization. Use the `org` and `ruleset_id` path parameters to identify the organization ruleset to remove. A 204 response confirms deletion and has no response body.
 ///
@@ -521,12 +445,10 @@ Future<void> reposDeleteOrgRuleset(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteOrgRuleset',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network. &gt; [!NOTE] &gt; - In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." &gt; - To view merge-related settings, you must have the `contents:read` and `contents:write` permissions.
 ///
@@ -542,16 +464,12 @@ Future<FullRepository> reposGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGet',
-          fromJsonRaw: (value) =>
-              FullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FullRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '301': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'301': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.
 ///
@@ -642,16 +560,13 @@ Future<FullRepository> reposUpdate(ClientConfig config,
     SdkOptional<String> description = const SdkOmitted(),
     SdkOptional<String> homepage = const SdkOmitted(),
     SdkOptional<bool> private = const SdkOmitted(),
-    SdkOptional<ReposUpdateRequestBodyVisibility> visibility =
-        const SdkOmitted(),
-    SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?>
-        securityAndAnalysis = const SdkOmitted(),
+    SdkOptional<ReposUpdateRequestBodyVisibility> visibility = const SdkOmitted(),
+    SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?> securityAndAnalysis = const SdkOmitted(),
     SdkOptional<bool> hasIssues = const SdkOmitted(),
     SdkOptional<bool> hasProjects = const SdkOmitted(),
     SdkOptional<bool> hasWiki = const SdkOmitted(),
     SdkOptional<bool> hasPullRequests = const SdkOmitted(),
-    SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy>
-        pullRequestCreationPolicy = const SdkOmitted(),
+    SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy> pullRequestCreationPolicy = const SdkOmitted(),
     SdkOptional<bool> isTemplate = const SdkOmitted(),
     SdkOptional<String> defaultBranch = const SdkOmitted(),
     SdkOptional<bool> allowSquashMerge = const SdkOmitted(),
@@ -661,14 +576,10 @@ Future<FullRepository> reposUpdate(ClientConfig config,
     SdkOptional<bool> deleteBranchOnMerge = const SdkOmitted(),
     SdkOptional<bool> allowUpdateBranch = const SdkOmitted(),
     SdkOptional<bool> useSquashPrTitleAsDefault = const SdkOmitted(),
-    SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle>
-        squashMergeCommitTitle = const SdkOmitted(),
-    SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage>
-        squashMergeCommitMessage = const SdkOmitted(),
-    SdkOptional<ReposUpdateRequestBodyMergeCommitTitle>
-        mergeCommitTitle = const SdkOmitted(),
-    SdkOptional<ReposUpdateRequestBodyMergeCommitMessage> mergeCommitMessage =
-        const SdkOmitted(),
+    SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle> squashMergeCommitTitle = const SdkOmitted(),
+    SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage> squashMergeCommitMessage = const SdkOmitted(),
+    SdkOptional<ReposUpdateRequestBodyMergeCommitTitle> mergeCommitTitle = const SdkOmitted(),
+    SdkOptional<ReposUpdateRequestBodyMergeCommitMessage> mergeCommitMessage = const SdkOmitted(),
     SdkOptional<bool> archived = const SdkOmitted(),
     SdkOptional<bool> allowForking = const SdkOmitted(),
     SdkOptional<bool> webCommitSignoffRequired = const SdkOmitted(),
@@ -682,53 +593,37 @@ Future<FullRepository> reposUpdate(ClientConfig config,
             'homepage': SdkUtils.unwrapOptional(homepage),
             'private': SdkUtils.unwrapOptional(private),
             'visibility': SdkUtils.unwrapOptional(visibility),
-            'security_and_analysis':
-                SdkUtils.unwrapOptional(securityAndAnalysis),
+            'security_and_analysis': SdkUtils.unwrapOptional(securityAndAnalysis),
             'has_issues': SdkUtils.unwrapOptional(hasIssues),
             'has_projects': SdkUtils.unwrapOptional(hasProjects),
             'has_wiki': SdkUtils.unwrapOptional(hasWiki),
             'has_pull_requests': SdkUtils.unwrapOptional(hasPullRequests),
-            'pull_request_creation_policy':
-                SdkUtils.unwrapOptional(pullRequestCreationPolicy),
+            'pull_request_creation_policy': SdkUtils.unwrapOptional(pullRequestCreationPolicy),
             'is_template': SdkUtils.unwrapOptional(isTemplate),
             'default_branch': SdkUtils.unwrapOptional(defaultBranch),
             'allow_squash_merge': SdkUtils.unwrapOptional(allowSquashMerge),
             'allow_merge_commit': SdkUtils.unwrapOptional(allowMergeCommit),
             'allow_rebase_merge': SdkUtils.unwrapOptional(allowRebaseMerge),
             'allow_auto_merge': SdkUtils.unwrapOptional(allowAutoMerge),
-            'delete_branch_on_merge':
-                SdkUtils.unwrapOptional(deleteBranchOnMerge),
+            'delete_branch_on_merge': SdkUtils.unwrapOptional(deleteBranchOnMerge),
             'allow_update_branch': SdkUtils.unwrapOptional(allowUpdateBranch),
-            'use_squash_pr_title_as_default':
-                SdkUtils.unwrapOptional(useSquashPrTitleAsDefault),
-            'squash_merge_commit_title':
-                SdkUtils.unwrapOptional(squashMergeCommitTitle),
-            'squash_merge_commit_message':
-                SdkUtils.unwrapOptional(squashMergeCommitMessage),
+            'use_squash_pr_title_as_default': SdkUtils.unwrapOptional(useSquashPrTitleAsDefault),
+            'squash_merge_commit_title': SdkUtils.unwrapOptional(squashMergeCommitTitle),
+            'squash_merge_commit_message': SdkUtils.unwrapOptional(squashMergeCommitMessage),
             'merge_commit_title': SdkUtils.unwrapOptional(mergeCommitTitle),
             'merge_commit_message': SdkUtils.unwrapOptional(mergeCommitMessage),
             'archived': SdkUtils.unwrapOptional(archived),
             'allow_forking': SdkUtils.unwrapOptional(allowForking),
-            'web_commit_signoff_required':
-                SdkUtils.unwrapOptional(webCommitSignoffRequired)
+            'web_commit_signoff_required': SdkUtils.unwrapOptional(webCommitSignoffRequired)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdate',
-          fromJsonRaw: (value) =>
-              FullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FullRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '307': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'307': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deleting a repository requires admin access. If an organization owner has configured the organization to prevent members from deleting organization-owned repositories, you will get a `403 Forbidden` response. OAuth app tokens and personal access tokens (classic) need the `delete_repo` scope to use this endpoint.
 ///
@@ -745,13 +640,10 @@ Future<void> reposDelete(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDelete',
           options: requestOptions,
-          errors: {
-        '307': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'307': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users. For more information about viewing repository activity, see "[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository)."
 ///
@@ -795,44 +687,29 @@ Future<List<Activity>> reposListActivities(ClientConfig config,
     SdkOptional<String> ref = const SdkOmitted(),
     SdkOptional<String> actor = const SdkOmitted(),
     SdkOptional<ReposListActivitiesTimePeriod> timePeriod = const SdkOmitted(),
-    SdkOptional<ReposListActivitiesActivityType> activityType =
-        const SdkOmitted(),
+    SdkOptional<ReposListActivitiesActivityType> activityType = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Activity>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/activity',
           config: config,
           query: {
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true),
-            'actor': SdkQueryValue(SdkUtils.unwrapOptional(actor),
-                style: 'form', explode: true),
-            'time_period': SdkQueryValue(SdkUtils.unwrapOptional(timePeriod),
-                style: 'form', explode: true),
-            'activity_type': SdkQueryValue(
-                SdkUtils.unwrapOptional(activityType),
-                style: 'form',
-                explode: true)
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
+            'actor': SdkQueryValue(SdkUtils.unwrapOptional(actor), style: 'form', explode: true),
+            'time_period': SdkQueryValue(SdkUtils.unwrapOptional(timePeriod), style: 'form', explode: true),
+            'activity_type': SdkQueryValue(SdkUtils.unwrapOptional(activityType), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListActivities',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Activity.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Activity.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Store an artifact attestation and associate it with a repository. The authenticated user must have write permission to the repository and, if using a fine-grained access token, the `attestations:write` permission is required. Artifact attestations are meant to be created using the [attest action](https://github.com/actions/attest). For more information, see our guide on [using artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
@@ -842,29 +719,24 @@ Future<List<Activity>> reposListActivities(ClientConfig config,
 /// [bundle] The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle
 ///   Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/s
 ///   igstore_bundle.proto) for more information.
-Future<ReposCreateAttestationResponse> reposCreateAttestation(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required ReposCreateAttestationRequestBodyBundle bundle,
-    RequestOptions? requestOptions}) async {
+Future<ReposCreateAttestationResponse>
+    reposCreateAttestation(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required ReposCreateAttestationRequestBodyBundle bundle,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ReposCreateAttestationResponse>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/attestations',
           config: config,
           body: {'bundle': bundle},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateAttestation',
-          fromJsonRaw: (value) => ReposCreateAttestationResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReposCreateAttestationResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List a collection of artifact attestations with a given subject digest that are associated with a repository. The authenticated user making the request must have read access to the repository. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
@@ -905,24 +777,18 @@ Future<ReposListAttestationsResponse> reposListAttestations(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/attestations/${Uri.encodeComponent(subjectDigest.toString())}',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'predicate_type': SdkQueryValue(
-                SdkUtils.unwrapOptional(predicateType),
-                style: 'form',
-                explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'predicate_type': SdkQueryValue(SdkUtils.unwrapOptional(predicateType), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListAttestations',
-          fromJsonRaw: (value) => ReposListAttestationsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReposListAttestationsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets all autolinks that are configured for a repository. Information about autolinks are only available to repository administrators.
 ///
@@ -938,12 +804,11 @@ Future<List<Autolink>> reposListAutolinks(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListAutolinks',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Autolink.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Autolink.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Users with admin access to the repository can create an autolink.
 ///
@@ -976,15 +841,12 @@ Future<Autolink> reposCreateAutolink(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateAutolink',
-          fromJsonRaw: (value) =>
-              Autolink.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Autolink.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// This returns a single autolink reference by ID that was configured for the given repository. Information about autolinks are only available to repository administrators.
 ///
@@ -1004,11 +866,10 @@ Future<Autolink> reposGetAutolink(ClientConfig config,
           operationId: 'reposGetAutolink',
           fromJsonRaw: (value) => Autolink.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// This deletes a single autolink reference by ID that was configured for the given repository. Information about autolinks are only available to repository administrators.
 ///
@@ -1027,32 +888,31 @@ Future<void> reposDeleteAutolink(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteAutolink',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Shows whether Dependabot security updates are enabled, disabled or paused for a repository. The authenticated user must have admin read access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<CheckAutomatedSecurityFixes> reposCheckAutomatedSecurityFixes(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    RequestOptions? requestOptions}) async {
+Future<CheckAutomatedSecurityFixes>
+    reposCheckAutomatedSecurityFixes(ClientConfig config,
+        {required String owner,
+        required String repo,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CheckAutomatedSecurityFixes>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/automated-security-fixes',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCheckAutomatedSecurityFixes',
-          fromJsonRaw: (value) => CheckAutomatedSecurityFixes.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CheckAutomatedSecurityFixes.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Enables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 ///
@@ -1072,6 +932,7 @@ Future<void> reposEnableAutomatedSecurityFixes(ClientConfig config,
       .data;
 }
 
+
 /// Disables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -1089,6 +950,7 @@ Future<void> reposDisableAutomatedSecurityFixes(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists branches in a repository, including each branch's commit and protection status. Use `protected` to filter for protected or unprotected branches, or omit it to include all branches; use `page` and `per_page` to paginate the results.
 ///
@@ -1117,24 +979,18 @@ Future<List<ShortBranch>> reposListBranches(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches',
           config: config,
           query: {
-            'protected': SdkQueryValue(SdkUtils.unwrapOptional(protected),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'protected': SdkQueryValue(SdkUtils.unwrapOptional(protected), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListBranches',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => ShortBranch.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ShortBranch.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a branch and its protection details from a repository. Use `branch` to identify the branch; its name cannot contain wildcard characters.
 ///
@@ -1154,15 +1010,12 @@ Future<BranchWithProtection> reposGetBranch(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetBranch',
-          fromJsonRaw: (value) =>
-              BranchWithProtection.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BranchWithProtection.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '301': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'301': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
@@ -1184,11 +1037,10 @@ Future<BranchProtection> reposGetBranchProtection(ClientConfig config,
           operationId: 'reposGetBranchProtection',
           fromJsonRaw: (value) => BranchProtection.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Protecting a branch requires admin or owner permissions to the repository. &gt; [!NOTE] &gt; Passing new arrays of `users` and `teams` replaces their previous values. &gt; [!NOTE] &gt; The list of users, apps, and teams in total is limited to 100 items.
 ///
@@ -1245,11 +1097,9 @@ Future<ProtectedBranch> reposUpdateBranchProtection(ClientConfig config,
     {required String owner,
     required String repo,
     required String branch,
-    required ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks?
-        requiredStatusChecks,
+    required ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks? requiredStatusChecks,
     required bool? enforceAdmins,
-    required ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews?
-        requiredPullRequestReviews,
+    required ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviews? requiredPullRequestReviews,
     required ReposUpdateBranchProtectionRequestBodyRestrictions? restrictions,
     SdkOptional<bool> requiredLinearHistory = const SdkOmitted(),
     SdkOptional<bool?> allowForcePushes = const SdkOmitted(),
@@ -1267,31 +1117,22 @@ Future<ProtectedBranch> reposUpdateBranchProtection(ClientConfig config,
             'enforce_admins': enforceAdmins,
             'required_pull_request_reviews': requiredPullRequestReviews,
             'restrictions': restrictions,
-            'required_linear_history':
-                SdkUtils.unwrapOptional(requiredLinearHistory),
+            'required_linear_history': SdkUtils.unwrapOptional(requiredLinearHistory),
             'allow_force_pushes': SdkUtils.unwrapOptional(allowForcePushes),
             'allow_deletions': SdkUtils.unwrapOptional(allowDeletions),
             'block_creations': SdkUtils.unwrapOptional(blockCreations),
-            'required_conversation_resolution':
-                SdkUtils.unwrapOptional(requiredConversationResolution),
+            'required_conversation_resolution': SdkUtils.unwrapOptional(requiredConversationResolution),
             'lock_branch': SdkUtils.unwrapOptional(lockBranch),
             'allow_fork_syncing': SdkUtils.unwrapOptional(allowForkSyncing)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateBranchProtection',
-          fromJsonRaw: (value) =>
-              ProtectedBranch.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProtectedBranch.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
@@ -1312,11 +1153,10 @@ Future<void> reposDeleteBranchProtection(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteBranchProtection',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
@@ -1326,22 +1166,22 @@ Future<void> reposDeleteBranchProtection(ClientConfig config,
 /// [branch] The name of the branch. Cannot contain wildcard characters. To use
 ///   wildcard characters in branch names, use [the GraphQL
 ///   API](https://docs.github.com/graphql).
-Future<ProtectedBranchAdminEnforced> reposGetAdminBranchProtection(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    RequestOptions? requestOptions}) async {
+Future<ProtectedBranchAdminEnforced>
+    reposGetAdminBranchProtection(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ProtectedBranchAdminEnforced>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/enforce_admins',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetAdminBranchProtection',
-          fromJsonRaw: (value) => ProtectedBranchAdminEnforced.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProtectedBranchAdminEnforced.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Adding admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 ///
@@ -1351,22 +1191,22 @@ Future<ProtectedBranchAdminEnforced> reposGetAdminBranchProtection(
 /// [branch] The name of the branch. Cannot contain wildcard characters. To use
 ///   wildcard characters in branch names, use [the GraphQL
 ///   API](https://docs.github.com/graphql).
-Future<ProtectedBranchAdminEnforced> reposSetAdminBranchProtection(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    RequestOptions? requestOptions}) async {
+Future<ProtectedBranchAdminEnforced>
+    reposSetAdminBranchProtection(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ProtectedBranchAdminEnforced>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/enforce_admins',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposSetAdminBranchProtection',
-          fromJsonRaw: (value) => ProtectedBranchAdminEnforced.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProtectedBranchAdminEnforced.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Removing admin enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 ///
@@ -1387,11 +1227,10 @@ Future<void> reposDeleteAdminBranchProtection(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteAdminBranchProtection',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
@@ -1401,22 +1240,22 @@ Future<void> reposDeleteAdminBranchProtection(ClientConfig config,
 /// [branch] The name of the branch. Cannot contain wildcard characters. To use
 ///   wildcard characters in branch names, use [the GraphQL
 ///   API](https://docs.github.com/graphql).
-Future<ProtectedBranchPullRequestReview> reposGetPullRequestReviewProtection(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    RequestOptions? requestOptions}) async {
+Future<ProtectedBranchPullRequestReview>
+    reposGetPullRequestReviewProtection(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ProtectedBranchPullRequestReview>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/required_pull_request_reviews',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetPullRequestReviewProtection',
-          fromJsonRaw: (value) => ProtectedBranchPullRequestReview.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProtectedBranchPullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled. &gt; [!NOTE] &gt; Passing new arrays of `users` and `teams` replaces their previous values.
 ///
@@ -1442,50 +1281,37 @@ Future<ProtectedBranchPullRequestReview> reposGetPullRequestReviewProtection(
 ///   someone other than the person who pushed it. Default: `false`
 /// [bypassPullRequestAllowances] Allow specific users, teams, or apps to bypass
 ///   pull request requirements.
-Future<ProtectedBranchPullRequestReview> reposUpdatePullRequestReviewProtection(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    SdkOptional<
-            ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions>
-        dismissalRestrictions = const SdkOmitted(),
-    SdkOptional<bool> dismissStaleReviews = const SdkOmitted(),
-    SdkOptional<bool> requireCodeOwnerReviews = const SdkOmitted(),
-    SdkOptional<int> requiredApprovingReviewCount = const SdkOmitted(),
-    SdkOptional<bool> requireLastPushApproval = const SdkOmitted(),
-    SdkOptional<
-            ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances>
-        bypassPullRequestAllowances = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ProtectedBranchPullRequestReview>
+    reposUpdatePullRequestReviewProtection(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyDismissalRestrictions> dismissalRestrictions = const SdkOmitted(),
+        SdkOptional<bool> dismissStaleReviews = const SdkOmitted(),
+        SdkOptional<bool> requireCodeOwnerReviews = const SdkOmitted(),
+        SdkOptional<int> requiredApprovingReviewCount = const SdkOmitted(),
+        SdkOptional<bool> requireLastPushApproval = const SdkOmitted(),
+        SdkOptional<ReposUpdatePullRequestReviewProtectionRequestBodyBypassPullRequestAllowances> bypassPullRequestAllowances = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ProtectedBranchPullRequestReview>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/required_pull_request_reviews',
           config: config,
           body: {
-            'dismissal_restrictions':
-                SdkUtils.unwrapOptional(dismissalRestrictions),
-            'dismiss_stale_reviews':
-                SdkUtils.unwrapOptional(dismissStaleReviews),
-            'require_code_owner_reviews':
-                SdkUtils.unwrapOptional(requireCodeOwnerReviews),
-            'required_approving_review_count':
-                SdkUtils.unwrapOptional(requiredApprovingReviewCount),
-            'require_last_push_approval':
-                SdkUtils.unwrapOptional(requireLastPushApproval),
-            'bypass_pull_request_allowances':
-                SdkUtils.unwrapOptional(bypassPullRequestAllowances)
+            'dismissal_restrictions': SdkUtils.unwrapOptional(dismissalRestrictions),
+            'dismiss_stale_reviews': SdkUtils.unwrapOptional(dismissStaleReviews),
+            'require_code_owner_reviews': SdkUtils.unwrapOptional(requireCodeOwnerReviews),
+            'required_approving_review_count': SdkUtils.unwrapOptional(requiredApprovingReviewCount),
+            'require_last_push_approval': SdkUtils.unwrapOptional(requireLastPushApproval),
+            'bypass_pull_request_allowances': SdkUtils.unwrapOptional(bypassPullRequestAllowances)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdatePullRequestReviewProtection',
-          fromJsonRaw: (value) => ProtectedBranchPullRequestReview.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ProtectedBranchPullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
@@ -1506,11 +1332,10 @@ Future<void> reposDeletePullRequestReviewProtection(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeletePullRequestReviewProtection',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. When authenticated with admin or owner permissions to the repository, you can use this endpoint to check whether a branch requires signed commits. An enabled status of `true` indicates you must sign commits on this branch. For more information, see [Signing commits with GPG](https://docs.github.com/articles/signing-commits-with-gpg) in GitHub Help. &gt; [!NOTE] &gt; You must enable branch protection to require signed commits.
 ///
@@ -1520,12 +1345,12 @@ Future<void> reposDeletePullRequestReviewProtection(ClientConfig config,
 /// [branch] The name of the branch. Cannot contain wildcard characters. To use
 ///   wildcard characters in branch names, use [the GraphQL
 ///   API](https://docs.github.com/graphql).
-Future<ProtectedBranchAdminEnforced> reposGetCommitSignatureProtection(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    RequestOptions? requestOptions}) async {
+Future<ProtectedBranchAdminEnforced>
+    reposGetCommitSignatureProtection(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ProtectedBranchAdminEnforced>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/required_signatures',
           config: config,
@@ -1533,11 +1358,10 @@ Future<ProtectedBranchAdminEnforced> reposGetCommitSignatureProtection(
           operationId: 'reposGetCommitSignatureProtection',
           fromJsonRaw: (value) => ProtectedBranchAdminEnforced.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. When authenticated with admin or owner permissions to the repository, you can use this endpoint to require signed commits on a branch. You must enable branch protection to require signed commits.
 ///
@@ -1547,12 +1371,12 @@ Future<ProtectedBranchAdminEnforced> reposGetCommitSignatureProtection(
 /// [branch] The name of the branch. Cannot contain wildcard characters. To use
 ///   wildcard characters in branch names, use [the GraphQL
 ///   API](https://docs.github.com/graphql).
-Future<ProtectedBranchAdminEnforced> reposCreateCommitSignatureProtection(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    RequestOptions? requestOptions}) async {
+Future<ProtectedBranchAdminEnforced>
+    reposCreateCommitSignatureProtection(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ProtectedBranchAdminEnforced>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/required_signatures',
           config: config,
@@ -1560,11 +1384,10 @@ Future<ProtectedBranchAdminEnforced> reposCreateCommitSignatureProtection(
           operationId: 'reposCreateCommitSignatureProtection',
           fromJsonRaw: (value) => ProtectedBranchAdminEnforced.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. When authenticated with admin or owner permissions to the repository, you can use this endpoint to disable required signed commits on a branch. You must enable branch protection to require signed commits.
 ///
@@ -1585,11 +1408,10 @@ Future<void> reposDeleteCommitSignatureProtection(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteCommitSignatureProtection',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
@@ -1611,11 +1433,10 @@ Future<StatusCheckPolicy> reposGetStatusChecksProtection(ClientConfig config,
           operationId: 'reposGetStatusChecksProtection',
           fromJsonRaw: (value) => StatusCheckPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Updating required status checks requires admin or owner permissions to the repository and branch protection to be enabled.
 ///
@@ -1639,8 +1460,7 @@ Future<StatusCheckPolicy> reposUpdateStatusCheckProtection(ClientConfig config,
     required String branch,
     SdkOptional<bool> strict = const SdkOmitted(),
     SdkOptional<List<String>> contexts = const SdkOmitted(),
-    SdkOptional<List<ReposUpdateStatusCheckProtectionRequestBodyChecksItem>>
-        checks = const SdkOmitted(),
+    SdkOptional<List<ReposUpdateStatusCheckProtectionRequestBodyChecksItem>> checks = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<StatusCheckPolicy>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/required_status_checks',
@@ -1652,17 +1472,12 @@ Future<StatusCheckPolicy> reposUpdateStatusCheckProtection(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateStatusCheckProtection',
-          fromJsonRaw: (value) =>
-              StatusCheckPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => StatusCheckPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
@@ -1686,6 +1501,7 @@ Future<void> reposRemoveStatusCheckProtection(ClientConfig config,
       .data;
 }
 
+
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -1706,11 +1522,10 @@ Future<List<String>> reposGetAllStatusCheckContexts(ClientConfig config,
           operationId: 'reposGetAllStatusCheckContexts',
           fromJsonRaw: (value) => (value as List).map((item) => item as String).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Adds status check contexts to a protected branch in a repository. Supply the context names in `contexts`, either in an object or as a top-level array; the request body can be omitted. The `branch` name cannot contain wildcard characters.
 ///
@@ -1734,17 +1549,12 @@ Future<List<String>> reposAddStatusCheckContexts(ClientConfig config,
           body: SdkUtils.unwrapOptional(body),
           decoder: SdkResponseDecoder.json,
           operationId: 'reposAddStatusCheckContexts',
-          fromJsonRaw: (value) =>
-              (value as List).map((item) => item as String).toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item as String).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Replaces the status check contexts configured for a protected branch in a repository. Supply the complete set of context names in `contexts`, either in an object or as a top-level array; the request body can be omitted. The `branch` name cannot contain wildcard characters.
 ///
@@ -1768,16 +1578,12 @@ Future<List<String>> reposSetStatusCheckContexts(ClientConfig config,
           body: SdkUtils.unwrapOptional(body),
           decoder: SdkResponseDecoder.json,
           operationId: 'reposSetStatusCheckContexts',
-          fromJsonRaw: (value) =>
-              (value as List).map((item) => item as String).toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item as String).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes status check contexts from a protected branch in a repository. Supply the context names to remove in `contexts`, either in an object or as a top-level array; the request body can be omitted. The `branch` name cannot contain wildcard characters.
 ///
@@ -1801,16 +1607,12 @@ Future<List<String>> reposRemoveStatusCheckContexts(ClientConfig config,
           body: SdkUtils.unwrapOptional(body),
           decoder: SdkResponseDecoder.json,
           operationId: 'reposRemoveStatusCheckContexts',
-          fromJsonRaw: (value) =>
-              (value as List).map((item) => item as String).toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item as String).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Lists who has access to this protected branch. &gt; [!NOTE] &gt; Users, apps, and teams `restrictions` are only available for organization-owned repositories.
 ///
@@ -1832,11 +1634,10 @@ Future<BranchRestrictionPolicy> reposGetAccessRestrictions(ClientConfig config,
           operationId: 'reposGetAccessRestrictions',
           fromJsonRaw: (value) => BranchRestrictionPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Disables the ability to restrict who can push to this branch.
 ///
@@ -1860,6 +1661,7 @@ Future<void> reposDeleteAccessRestrictions(ClientConfig config,
       .data;
 }
 
+
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Lists the GitHub Apps that have push access to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -1868,12 +1670,12 @@ Future<void> reposDeleteAccessRestrictions(ClientConfig config,
 /// [branch] The name of the branch. Cannot contain wildcard characters. To use
 ///   wildcard characters in branch names, use [the GraphQL
 ///   API](https://docs.github.com/graphql).
-Future<List<Integration?>> reposGetAppsWithAccessToProtectedBranch(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    RequestOptions? requestOptions}) async {
+Future<List<Integration?>>
+    reposGetAppsWithAccessToProtectedBranch(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Integration?>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/restrictions/apps',
           config: config,
@@ -1881,11 +1683,10 @@ Future<List<Integration?>> reposGetAppsWithAccessToProtectedBranch(
           operationId: 'reposGetAppsWithAccessToProtectedBranch',
           fromJsonRaw: (value) => (value as List).map((item) => item == null ? null : Integration.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Grants the specified apps push access for this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
@@ -1910,18 +1711,12 @@ Future<List<Integration?>> reposAddAppAccessRestrictions(ClientConfig config,
           body: {'apps': apps},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposAddAppAccessRestrictions',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => item == null
-                  ? null
-                  : Integration.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item == null ? null : Integration.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
@@ -1946,18 +1741,12 @@ Future<List<Integration?>> reposSetAppAccessRestrictions(ClientConfig config,
           body: {'apps': apps},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposSetAppAccessRestrictions',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => item == null
-                  ? null
-                  : Integration.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item == null ? null : Integration.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Removes the ability of an app to push to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
 ///
@@ -1982,18 +1771,12 @@ Future<List<Integration?>> reposRemoveAppAccessRestrictions(ClientConfig config,
           body: {'apps': apps},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposRemoveAppAccessRestrictions',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => item == null
-                  ? null
-                  : Integration.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item == null ? null : Integration.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Lists the teams who have push access to this branch. The list includes child teams.
 ///
@@ -2015,11 +1798,10 @@ Future<List<Team>> reposGetTeamsWithAccessToProtectedBranch(ClientConfig config,
           operationId: 'reposGetTeamsWithAccessToProtectedBranch',
           fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Grants the specified teams push access to a protected branch, including access for child teams. Provide team slugs in `teams` to add those teams to the branch's access restrictions.
 ///
@@ -2045,12 +1827,10 @@ Future<List<Team>> reposAddTeamAccessRestrictions(ClientConfig config,
           operationId: 'reposAddTeamAccessRestrictions',
           fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Replaces the list of teams that have push access to a protected branch, including access for child teams. Provide the complete list in `teams`; teams not included in the new list lose push access.
 ///
@@ -2076,12 +1856,10 @@ Future<List<Team>> reposSetTeamAccessRestrictions(ClientConfig config,
           operationId: 'reposSetTeamAccessRestrictions',
           fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes the specified team's push access to a protected branch, including access for child teams. Provide team slugs in `teams` to identify the teams whose access you want to remove.
 ///
@@ -2107,12 +1885,10 @@ Future<List<Team>> reposRemoveTeamAccessRestrictions(ClientConfig config,
           operationId: 'reposRemoveTeamAccessRestrictions',
           fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Lists the people who have push access to this branch.
 ///
@@ -2122,12 +1898,12 @@ Future<List<Team>> reposRemoveTeamAccessRestrictions(ClientConfig config,
 /// [branch] The name of the branch. Cannot contain wildcard characters. To use
 ///   wildcard characters in branch names, use [the GraphQL
 ///   API](https://docs.github.com/graphql).
-Future<List<SimpleUser>> reposGetUsersWithAccessToProtectedBranch(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String branch,
-    RequestOptions? requestOptions}) async {
+Future<List<SimpleUser>>
+    reposGetUsersWithAccessToProtectedBranch(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String branch,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SimpleUser>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/branches/${Uri.encodeComponent(branch.toString())}/protection/restrictions/users',
           config: config,
@@ -2135,11 +1911,10 @@ Future<List<SimpleUser>> reposGetUsersWithAccessToProtectedBranch(
           operationId: 'reposGetUsersWithAccessToProtectedBranch',
           fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Grants the specified people push access for this branch. | Type | Description | | ------- | ----------------------------------------------------------------------------------------------------------------------------- | | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 ///
@@ -2162,16 +1937,12 @@ Future<List<SimpleUser>> reposAddUserAccessRestrictions(ClientConfig config,
           body: {'users': users},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposAddUserAccessRestrictions',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Replaces the list of people that have push access to this branch. This removes all people that previously had push access and grants push access to the new list of people. | Type | Description | | ------- | ----------------------------------------------------------------------------------------------------------------------------- | | `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 ///
@@ -2194,16 +1965,12 @@ Future<List<SimpleUser>> reposSetUserAccessRestrictions(ClientConfig config,
           body: {'users': users},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposSetUserAccessRestrictions',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Removes the ability of a user to push to this branch. | Type | Description | | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- | | `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
 ///
@@ -2226,16 +1993,12 @@ Future<List<SimpleUser>> reposRemoveUserAccessRestrictions(ClientConfig config,
           body: {'users': users},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposRemoveUserAccessRestrictions',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Renames a branch in a repository. &gt; [!NOTE] &gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)". The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions. In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
 ///
@@ -2258,19 +2021,12 @@ Future<BranchWithProtection> reposRenameBranch(ClientConfig config,
           body: {'new_name': newName},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposRenameBranch',
-          fromJsonRaw: (value) =>
-              BranchWithProtection.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BranchWithProtection.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List any syntax errors that are detected in the CODEOWNERS file. For more information about the correct CODEOWNERS syntax, see "[About code owners](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)."
 ///
@@ -2289,16 +2045,15 @@ Future<CodeownersErrors> reposCodeownersErrors(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/codeowners/errors',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCodeownersErrors',
-          fromJsonRaw: (value) =>
-              CodeownersErrors.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeownersErrors.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// For organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. The `permissions` hash returned in the response contains the base role permissions of the collaborator. The `role_name` is the highest role assigned to the collaborator after considering all sources of grants, including: repo, teams, organization, and enterprise. There is presently not a way to differentiate between an organization level grant and a repository level grant from this endpoint response. Team members will include the members of child teams. The authenticated user must have write, maintain, or admin privileges on the repository to use this endpoint. For organization-owned repositories, the authenticated user needs to be a member of the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` and `repo` scopes to use this endpoint.
 ///
@@ -2323,10 +2078,8 @@ Future<CodeownersErrors> reposCodeownersErrors(ClientConfig config,
 Future<List<Collaborator>> reposListCollaborators(ClientConfig config,
     {required String owner,
     required String repo,
-    SdkOptional<ReposListCollaboratorsAffiliation> affiliation =
-        const SdkOmitted(),
-    SdkOptional<ReposListCollaboratorsPermission> permission =
-        const SdkOmitted(),
+    SdkOptional<ReposListCollaboratorsAffiliation> affiliation = const SdkOmitted(),
+    SdkOptional<ReposListCollaboratorsPermission> permission = const SdkOmitted(),
     SdkOptional<int> perPage = const SdkOmitted(),
     SdkOptional<int> page = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -2334,27 +2087,19 @@ Future<List<Collaborator>> reposListCollaborators(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/collaborators',
           config: config,
           query: {
-            'affiliation': SdkQueryValue(SdkUtils.unwrapOptional(affiliation),
-                style: 'form', explode: true),
-            'permission': SdkQueryValue(SdkUtils.unwrapOptional(permission),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'affiliation': SdkQueryValue(SdkUtils.unwrapOptional(affiliation), style: 'form', explode: true),
+            'permission': SdkQueryValue(SdkUtils.unwrapOptional(permission), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListCollaborators',
-          fromJsonRaw: (value) => (value as List)
-              .map(
-                  (item) => Collaborator.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Collaborator.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// For organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. Team members will include the members of child teams. The authenticated user must have push access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:org` and `repo` scopes to use this endpoint.
 ///
@@ -2375,6 +2120,7 @@ Future<void> reposCheckCollaborator(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Add a user to a repository with a specified level of access. If the repository is owned by an organization, this API does not add the user to the organization - a user that has repository access without being an organization member is called an "outside collaborator" (if they are not an Enterprise Managed User) or a "repository collaborator" if they are an Enterprise Managed User. These users are exempt from some organization policies - see "[Adding outside collaborators to repositories](https://docs.github.com/organizations/managing-user-access-to-your-organizations-repositories/managing-outside-collaborators/adding-outside-collaborators-to-repositories-in-your-organization)" to learn more about these collaborator types. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Adding an outside collaborator may be restricted by enterprise and organization administrators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)" and "[Setting permissions for adding outside collaborators](https://docs.github.com/organizations/managing-organization-settings/setting-permissions-for-adding-outside-collaborators)" for organization settings. For more information on permission levels, see "[Repository permission levels for an organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)". There are restrictions on which permissions can be granted to organization members when an organization base role is in place. In this case, the role being given must be equal to or higher than the org base permission.…
 ///
@@ -2399,17 +2145,12 @@ Future<RepositoryInvitation> reposAddCollaborator(ClientConfig config,
           body: {'permission': SdkUtils.unwrapOptional(permission)},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposAddCollaborator',
-          fromJsonRaw: (value) =>
-              RepositoryInvitation.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryInvitation.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a collaborator from a repository. To use this endpoint, the authenticated user must either be an administrator of the repository or target themselves for removal. This endpoint also: - Cancels any outstanding invitations sent by the collaborator - Unassigns the user from any issues - Removes access to organization projects if the user is not an organization member and is not a collaborator on any other organization repositories. - Unstars the repository - Updates access permissions to packages Removing a user as a collaborator has the following effects on forks: - If the user had access to a fork through their membership to this repository, the user will also be removed from the fork. - If the user had their own fork of the repository, the fork will be deleted. - If the user still has read access to the repository, open pull requests by this user from a fork will be denied. &gt; [!NOTE] &gt; A user can still have access to the repository through organization permissions like base repository permissions. Although the API responds immediately, the additional permission updates might take some extra time to complete in the background. For more information on fork permissions, see "[About permissions and visibility of forks](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)".
 ///
@@ -2428,13 +2169,10 @@ Future<void> reposRemoveCollaborator(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposRemoveCollaborator',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Checks the repository permission and role of a collaborator. The `permission` attribute provides the legacy base roles of `admin`, `write`, `read`, and `none`, where the `maintain` role is mapped to `write` and the `triage` role is mapped to `read`. The `role_name` attribute provides the name of the assigned role, including custom roles. The `permission` can also be used to determine which base level of access the collaborator has to the repository. The calculated permissions are the highest role assigned to the collaborator after considering all sources of grants, including: repo, teams, organization, and enterprise. There is presently not a way to differentiate between an organization level grant and a repository level grant from this endpoint response.
 ///
@@ -2442,12 +2180,12 @@ Future<void> reposRemoveCollaborator(ClientConfig config,
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [username] The handle for the GitHub user account.
-Future<RepositoryCollaboratorPermission> reposGetCollaboratorPermissionLevel(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String username,
-    RequestOptions? requestOptions}) async {
+Future<RepositoryCollaboratorPermission>
+    reposGetCollaboratorPermissionLevel(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String username,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<RepositoryCollaboratorPermission>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/collaborators/${Uri.encodeComponent(username.toString())}/permission',
           config: config,
@@ -2455,11 +2193,10 @@ Future<RepositoryCollaboratorPermission> reposGetCollaboratorPermissionLevel(
           operationId: 'reposGetCollaboratorPermissionLevel',
           fromJsonRaw: (value) => RepositoryCollaboratorPermission.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the commit comments for a specified repository. Comments are ordered by ascending ID. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -2484,20 +2221,16 @@ Future<List<CommitComment>> reposListCommitCommentsForRepo(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/comments',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListCommitCommentsForRepo',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CommitComment.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CommitComment.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets a specified commit comment. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -2517,11 +2250,10 @@ Future<CommitComment> reposGetCommitComment(ClientConfig config,
           operationId: 'reposGetCommitComment',
           fromJsonRaw: (value) => CommitComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the contents of a specified commit comment. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -2542,14 +2274,12 @@ Future<CommitComment> reposUpdateCommitComment(ClientConfig config,
           body: {'body': body},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateCommitComment',
-          fromJsonRaw: (value) =>
-              CommitComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CommitComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a commit comment from the specified repository. Use `owner`, `repo`, and `comment_id` to identify the repository and comment to remove.
 ///
@@ -2568,11 +2298,10 @@ Future<void> reposDeleteCommitComment(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteCommitComment',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// **Signature verification object** The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object: | Name | Type | Description | | ---- | ---- | ----------- | | `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. | | `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in table below. | | `signature` | `string` | The signature that was extracted from the commit. | | `payload` | `string` | The value that was signed. | | `verified_at` | `string` | The date the signature was verified by GitHub. | These are the possible values for `reason` in the `verification` object: | Value | Description | | ----- | ----------- | | `expired_key` | The key that made the signature is expired. | | `not_signing_key` | The "signing" flag is not among the usage flags in the GPG key that made the signature. | | `gpgverify_error` | There was an error communicating with the signature verification service. | | `gpgverify_unavailable` | The signature verification service is currently unavailable. | | `unsigned` | The object does not include a signature. | | `unknown_signature_type` | A non-PGP signature was found in the commit. | | `no_user` | No user was associated with the `committer` email address in the commit. | | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. | | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. | | `unknown_key` | The key that made the signature has not been registered with any user's account. | | `malformed_signature` | There was an error parsing the signature. | | `invalid` | The signature could not be cryptographically verified using the key whose key-id was found in the…
 ///
@@ -2626,44 +2355,23 @@ Future<List<Commit>> reposListCommits(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits',
           config: config,
           query: {
-            'sha': SdkQueryValue(SdkUtils.unwrapOptional(sha),
-                style: 'form', explode: true),
-            'path': SdkQueryValue(SdkUtils.unwrapOptional(path),
-                style: 'form', explode: true),
-            'author': SdkQueryValue(SdkUtils.unwrapOptional(author),
-                style: 'form', explode: true),
-            'committer': SdkQueryValue(SdkUtils.unwrapOptional(committer),
-                style: 'form', explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'until': SdkQueryValue(SdkUtils.unwrapOptional(until),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sha': SdkQueryValue(SdkUtils.unwrapOptional(sha), style: 'form', explode: true),
+            'path': SdkQueryValue(SdkUtils.unwrapOptional(path), style: 'form', explode: true),
+            'author': SdkQueryValue(SdkUtils.unwrapOptional(author), style: 'form', explode: true),
+            'committer': SdkQueryValue(SdkUtils.unwrapOptional(committer), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'until': SdkQueryValue(SdkUtils.unwrapOptional(until), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListCommits',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Commit.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Commit.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '429': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Returns all branches where the given commit SHA is the HEAD, or latest commit for the branch.
 ///
@@ -2681,17 +2389,12 @@ Future<List<BranchShort>> reposListBranchesForHeadCommit(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListBranchesForHeadCommit',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => BranchShort.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => BranchShort.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the comments for a specified commit. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -2718,20 +2421,16 @@ Future<List<CommitComment>> reposListCommentsForCommit(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits/${Uri.encodeComponent(commitSha.toString())}/comments',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListCommentsForCommit',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CommitComment.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CommitComment.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Create a comment for a commit using its `:commit_sha`. Access to commit comments can be controlled by organization owners. For more information, see "[Managing commit comments for your organization](https://docs.github.com/organizations/managing-organization-settings/managing-commit-comments-for-your-organization)". This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)." This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -2764,17 +2463,12 @@ Future<CommitComment> reposCreateCommitComment(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateCommitComment',
-          fromJsonRaw: (value) =>
-              CommitComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CommitComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, it will return merged and open pull requests associated with the commit. To list the open or merged pull requests associated with a branch, you can set the `commit_sha` parameter to the branch name.
 ///
@@ -2790,35 +2484,29 @@ Future<CommitComment> reposCreateCommitComment(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<PullRequestSimple>> reposListPullRequestsAssociatedWithCommit(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String commitSha,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<PullRequestSimple>>
+    reposListPullRequestsAssociatedWithCommit(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String commitSha,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<PullRequestSimple>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits/${Uri.encodeComponent(commitSha.toString())}/pulls',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListPullRequestsAssociatedWithCommit',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  PullRequestSimple.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => PullRequestSimple.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint. &gt; [!NOTE] &gt; If there are more than 300 files in the commit diff and the default JSON media type is requested, the response will include pagination link headers for the remaining files, up to a limit of 3000 files. Each page contains the static commit information, and the only changes are to the file listing. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." Pagination query parameters are not supported for these media types. - **`application/vnd.github.diff`**: Returns the diff of the commit. Larger diffs may time out and return a 5xx status code. - **`application/vnd.github.patch`**: Returns the patch of the commit. Diffs with binary data will have no `patch` property. Larger diffs may time out and return a 5xx status code. - **`application/vnd.github.sha`**: Returns the commit's SHA-1 hash. You can use this endpoint to check if a remote reference's SHA-1 hash is the same as your local reference's SHA-1 hash by providing the local SHA-1 reference as the ETag. **Signature verification object** The response will include a `verification` object that describes the result of verifying the commit's signature. The following fields are included in the `verification` object: | Name | Type | Description | | ---- | ---- | ----------- | | `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. | | `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in table below. | | `signature` | `string` | The signature that was extracted from the commit. | | `payload` | `string` | The value that was signed. | | `verified_at` | `string` | The date the signature was verified by GitHub. | These are the possible values for `reason` in…
 ///
@@ -2849,32 +2537,17 @@ Future<Commit> reposGetCommit(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits/${Uri.encodeComponent(ref.toString())}',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetCommit',
-          fromJsonRaw: (value) =>
-              Commit.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Commit.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '429': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '429': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Users with pull access in a repository can access a combined view of commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Additionally, a combined `state` is returned. The `state` is one of: * **failure** if any of the contexts report as `error` or `failure` * **pending** if there are no statuses or a context is `pending` * **success** if the latest status for all contexts is `success`
 ///
@@ -2905,21 +2578,17 @@ Future<CombinedCommitStatus> reposGetCombinedStatusForRef(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits/${Uri.encodeComponent(ref.toString())}/status',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetCombinedStatusForRef',
-          fromJsonRaw: (value) =>
-              CombinedCommitStatus.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CombinedCommitStatus.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Users with pull access in a repository can view commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Statuses are returned in reverse chronological order. The first status in the list will be the latest one. This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
 ///
@@ -2950,22 +2619,17 @@ Future<List<Status>> reposListCommitStatusesForRef(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits/${Uri.encodeComponent(ref.toString())}/statuses',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListCommitStatusesForRef',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Status.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Status.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '301': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'301': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns all community profile metrics for a repository. The repository cannot be a fork. The returned metrics include an overall health score, the repository description, the presence of documentation, the detected code of conduct, the detected license, and the presence of ISSUE\_TEMPLATE, PULL\_REQUEST\_TEMPLATE, README, and CONTRIBUTING files. The `health_percentage` score is defined as a percentage of how many of the recommended community health files are present. For more information, see "[About community profiles for public repositories](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories)." `content_reports_enabled` is only returned for organization-owned repositories.
 ///
@@ -2981,11 +2645,11 @@ Future<CommunityProfile> reposGetCommunityProfileMetrics(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetCommunityProfileMetrics',
-          fromJsonRaw: (value) =>
-              CommunityProfile.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CommunityProfile.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Compares two commits against one another. You can compare refs (branches or tags) and commit SHAs in the same repository, or you can compare refs and commit SHAs that exist in different repositories within the same repository network, including fork branches. For more information about how to view a repository's network, see "[Understanding connections between repositories](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories)." This endpoint is equivalent to running the `git log BASE..HEAD` command, but it returns commits in a different order. The `git log BASE..HEAD` command returns commits in reverse chronological order, whereas the API returns commits in chronological order. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.diff`**: Returns the diff of the commit. - **`application/vnd.github.patch`**: Returns the patch of the commit. Diffs with binary data will have no `patch` property. The API response includes details about the files that were changed between the two commits. This includes the status of the change (if a file was added, removed, modified, or renamed), and details of the change itself. For example, files with a `renamed` status have a `previous_filename` field showing the previous filename of the file, and files with a `modified` status have a `patch` field showing the changes made to the file. When calling this endpoint without any paging parameter (`per_page` or `page`), the returned list is limited to 250 commits, and the last commit in the list is the most recent of the entire comparison. **Working with large comparisons** To process a response with a large number of commits, use a query parameter (`per_page` or `page`) to paginate the results. When using pagination: - The list of changed files…
 ///
@@ -3016,28 +2680,17 @@ Future<CommitComparison> reposCompareCommits(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/compare/${Uri.encodeComponent(basehead.toString())}',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCompareCommits',
-          fromJsonRaw: (value) =>
-              CommitComparison.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CommitComparison.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a file or directory from a repository at the specified `path`. Use `ref` to select a commit, branch, or tag; it defaults to the repository's default branch when omitted. Directory responses are limited to 1,000 items, and files larger than 100 MB are not supported.
 ///
@@ -3059,21 +2712,16 @@ Future<ContentTree> reposGetContent(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/contents/${Uri.encodeComponent(path.toString())}',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetContent',
-          fromJsonRaw: (value) =>
-              ContentTree.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ContentTree.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a new file or replaces an existing file in a repository. &gt; [!NOTE] &gt; If you use this endpoint and the "[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.
 ///
@@ -3098,10 +2746,8 @@ Future<FileCommit> reposCreateOrUpdateFileContents(ClientConfig config,
     required String content,
     SdkOptional<String> sha = const SdkOmitted(),
     SdkOptional<String> branch = const SdkOmitted(),
-    SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter> committer =
-        const SdkOmitted(),
-    SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author =
-        const SdkOmitted(),
+    SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter> committer = const SdkOmitted(),
+    SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<FileCommit>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/contents/${Uri.encodeComponent(path.toString())}',
@@ -3116,17 +2762,12 @@ Future<FileCommit> reposCreateOrUpdateFileContents(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateOrUpdateFileContents',
-          fromJsonRaw: (value) =>
-              FileCommit.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FileCommit.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a file in a repository. You can provide an additional `committer` parameter, which is an object containing information about the committer. Or, you can provide an `author` parameter, which is an object containing information about the author. The `author` section is optional and is filled in with the `committer` information if omitted. If the `committer` information is omitted, the authenticated user's information is used. You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code. &gt; [!NOTE] &gt; If you use this endpoint and the "[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
 ///
@@ -3146,8 +2787,7 @@ Future<FileCommit> reposDeleteFile(ClientConfig config,
     required String message,
     required String sha,
     SdkOptional<String> branch = const SdkOmitted(),
-    SdkOptional<ReposDeleteFileRequestBodyCommitter> committer =
-        const SdkOmitted(),
+    SdkOptional<ReposDeleteFileRequestBodyCommitter> committer = const SdkOmitted(),
     SdkOptional<ReposDeleteFileRequestBodyAuthor> author = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<FileCommit>('DELETE',
@@ -3162,21 +2802,12 @@ Future<FileCommit> reposDeleteFile(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposDeleteFile',
-          fromJsonRaw: (value) =>
-              FileCommit.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FileCommit.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API caches contributor data to improve performance. GitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.
 ///
@@ -3203,26 +2834,18 @@ Future<List<Contributor>> reposListContributors(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/contributors',
           config: config,
           query: {
-            'anon': SdkQueryValue(SdkUtils.unwrapOptional(anon),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'anon': SdkQueryValue(SdkUtils.unwrapOptional(anon), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListContributors',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Contributor.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Contributor.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Simple filtering of deployments is available via query parameters:
 ///
@@ -3257,27 +2880,20 @@ Future<List<Deployment>> reposListDeployments(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/deployments',
           config: config,
           query: {
-            'sha': SdkQueryValue(SdkUtils.unwrapOptional(sha),
-                style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true),
-            'task': SdkQueryValue(SdkUtils.unwrapOptional(task),
-                style: 'form', explode: true),
-            'environment': SdkQueryValue(SdkUtils.unwrapOptional(environment),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sha': SdkQueryValue(SdkUtils.unwrapOptional(sha), style: 'form', explode: true),
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
+            'task': SdkQueryValue(SdkUtils.unwrapOptional(task), style: 'form', explode: true),
+            'environment': SdkQueryValue(SdkUtils.unwrapOptional(environment), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListDeployments',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Deployment.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Deployment.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a deployment for a repository ref, such as a branch, tag, or commit SHA. Supply `ref` and configure the target `environment`, commit status checks, or deployment `payload` as needed; omitted settings use the documented defaults. A 202 response indicates that the default branch was merged into the requested ref instead of creating a deployment.
 ///
@@ -3313,8 +2929,7 @@ Future<Deployment> reposCreateDeployment(ClientConfig config,
     SdkOptional<String> task = const SdkOmitted(),
     SdkOptional<bool> autoMerge = const SdkOmitted(),
     SdkOptional<List<String>> requiredContexts = const SdkOmitted(),
-    SdkOptional<ReposCreateDeploymentRequestPayload> payload =
-        const SdkOmitted(),
+    SdkOptional<ReposCreateDeploymentRequestPayload> payload = const SdkOmitted(),
     SdkOptional<String> environment = const SdkOmitted(),
     SdkOptional<String?> description = const SdkOmitted(),
     SdkOptional<bool> transientEnvironment = const SdkOmitted(),
@@ -3331,22 +2946,17 @@ Future<Deployment> reposCreateDeployment(ClientConfig config,
             'payload': SdkUtils.unwrapOptional(payload),
             'environment': SdkUtils.unwrapOptional(environment),
             'description': SdkUtils.unwrapOptional(description),
-            'transient_environment':
-                SdkUtils.unwrapOptional(transientEnvironment),
-            'production_environment':
-                SdkUtils.unwrapOptional(productionEnvironment)
+            'transient_environment': SdkUtils.unwrapOptional(transientEnvironment),
+            'production_environment': SdkUtils.unwrapOptional(productionEnvironment)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateDeployment',
-          fromJsonRaw: (value) =>
-              Deployment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Deployment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a deployment from a repository by its deployment ID. Use this operation to inspect the deployment's ref, environment, task, and current record details.
 ///
@@ -3366,11 +2976,10 @@ Future<Deployment> reposGetDeployment(ClientConfig config,
           operationId: 'reposGetDeployment',
           fromJsonRaw: (value) => Deployment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// If the repository only has one deployment, you can delete the deployment regardless of its status. If the repository has more than one deployment, you can only delete inactive deployments. This ensures that repositories with multiple deployments will always have an active deployment. To set a deployment as inactive, you must: * Create a new deployment that is active so that the system has a record of the current state, then delete the previously active deployment. * Mark the active deployment as inactive by adding any non-successful deployment status. For more information, see "[Create a deployment](https://docs.github.com/rest/deployments/deployments/#create-a-deployment)" and "[Create a deployment status](https://docs.github.com/rest/deployments/statuses#create-a-deployment-status)." OAuth app tokens and personal access tokens (classic) need the `repo` or `repo_deployment` scope to use this endpoint.
 ///
@@ -3389,13 +2998,10 @@ Future<void> reposDeleteDeployment(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteDeployment',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Users with pull access can view deployment statuses for a deployment:
 ///
@@ -3422,23 +3028,17 @@ Future<List<DeploymentStatus>> reposListDeploymentStatuses(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}/statuses',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListDeploymentStatuses',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  DeploymentStatus.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => DeploymentStatus.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Users with `push` access can create deployment statuses for a given deployment. OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
 ///
@@ -3496,15 +3096,12 @@ Future<DeploymentStatus> reposCreateDeploymentStatus(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateDeploymentStatus',
-          fromJsonRaw: (value) =>
-              DeploymentStatus.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeploymentStatus.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a status record for a deployment in a repository. You must have pull access to the repository to view the deployment status.
 ///
@@ -3527,11 +3124,10 @@ Future<DeploymentStatus> reposGetDeploymentStatus(ClientConfig config,
           operationId: 'reposGetDeploymentStatus',
           fromJsonRaw: (value) => DeploymentStatus.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// You can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. You must configure your GitHub Actions workflow or GitHub App to run when the `repository_dispatch` event occurs. For an example `repository_dispatch` webhook payload, see "[RepositoryDispatchEvent](https://docs.github.com/webhooks/event-payloads/#repository_dispatch)." The `client_payload` parameter is available for any extra information that your workflow might need. This parameter is a JSON payload that will be passed on when the webhook event is dispatched. For example, the `client_payload` can include a message that a user would like to send using a GitHub Actions workflow. Or the `client_payload` can be used as a test to debug your workflow. This input example shows how you can use the `client_payload` as a test to debug your workflow. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3560,14 +3156,10 @@ Future<void> reposCreateDispatchEvent(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposCreateDispatchEvent',
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the environments for a repository. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -3582,29 +3174,27 @@ Future<void> reposCreateDispatchEvent(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ReposGetAllEnvironmentsResponse> reposGetAllEnvironments(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ReposGetAllEnvironmentsResponse>
+    reposGetAllEnvironments(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ReposGetAllEnvironmentsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetAllEnvironments',
-          fromJsonRaw: (value) => ReposGetAllEnvironmentsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReposGetAllEnvironmentsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!NOTE] &gt; To get information about name patterns that branches must match in order to deploy to this environment, see "Get a deployment branch policy." Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -3623,11 +3213,11 @@ Future<Environment> reposGetEnvironment(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetEnvironment',
-          fromJsonRaw: (value) =>
-              Environment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Environment.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "Environments." &gt; [!NOTE] &gt; To create or update name patterns that branches must match in order to deploy to this environment, see "Deployment branch policies." &gt; [!NOTE] &gt; To create or update secrets for an environment, see "GitHub Actions secrets." OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3653,10 +3243,8 @@ Future<Environment> reposCreateOrUpdateEnvironment(ClientConfig config,
     required String environmentName,
     SdkOptional<int> waitTimer = const SdkOmitted(),
     SdkOptional<bool> preventSelfReview = const SdkOmitted(),
-    SdkOptional<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>
-        reviewers = const SdkOmitted(),
-    SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy =
-        const SdkOmitted(),
+    SdkOptional<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?> reviewers = const SdkOmitted(),
+    SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Environment>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}',
@@ -3665,19 +3253,16 @@ Future<Environment> reposCreateOrUpdateEnvironment(ClientConfig config,
             'wait_timer': SdkUtils.unwrapOptional(waitTimer),
             'prevent_self_review': SdkUtils.unwrapOptional(preventSelfReview),
             'reviewers': SdkUtils.unwrapOptional(reviewers),
-            'deployment_branch_policy':
-                SdkUtils.unwrapOptional(deploymentBranchPolicy)
+            'deployment_branch_policy': SdkUtils.unwrapOptional(deploymentBranchPolicy)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateOrUpdateEnvironment',
-          fromJsonRaw: (value) =>
-              Environment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Environment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3699,6 +3284,7 @@ Future<void> reposDeleteAnEnvironment(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the deployment branch policies for an environment. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -3727,19 +3313,16 @@ Future<ReposListDeploymentBranchPoliciesResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/deployment-branch-policies',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListDeploymentBranchPolicies',
-          fromJsonRaw: (value) =>
-              ReposListDeploymentBranchPoliciesResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReposListDeploymentBranchPoliciesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a deployment branch or tag policy for an environment. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3755,26 +3338,25 @@ Future<ReposListDeploymentBranchPoliciesResponse>
 ///   syntax, see the [Ruby File.fnmatch
 ///   documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).
 /// [type_] Whether this rule targets a branch or tag
-Future<DeploymentBranchPolicy> reposCreateDeploymentBranchPolicy(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String environmentName,
-    required String name,
-    SdkOptional<DeploymentBranchPolicyNamePatternWithTypeType> type_ =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<DeploymentBranchPolicy>
+    reposCreateDeploymentBranchPolicy(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String environmentName,
+        required String name,
+        SdkOptional<DeploymentBranchPolicyNamePatternWithTypeType> type_ = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<DeploymentBranchPolicy>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/deployment-branch-policies',
           config: config,
           body: {'name': name, 'type': SdkUtils.unwrapOptional(type_)},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateDeploymentBranchPolicy',
-          fromJsonRaw: (value) =>
-              DeploymentBranchPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeploymentBranchPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets a deployment branch or tag policy for an environment. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -3784,23 +3366,23 @@ Future<DeploymentBranchPolicy> reposCreateDeploymentBranchPolicy(
 /// [environmentName] The name of the environment. The name must be URL encoded.
 ///   For example, any slashes in the name must be replaced with `%2F`.
 /// [branchPolicyId] The unique identifier of the branch policy.
-Future<DeploymentBranchPolicy> reposGetDeploymentBranchPolicy(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String environmentName,
-    required int branchPolicyId,
-    RequestOptions? requestOptions}) async {
+Future<DeploymentBranchPolicy>
+    reposGetDeploymentBranchPolicy(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String environmentName,
+        required int branchPolicyId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<DeploymentBranchPolicy>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/deployment-branch-policies/${Uri.encodeComponent(branchPolicyId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetDeploymentBranchPolicy',
-          fromJsonRaw: (value) =>
-              DeploymentBranchPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeploymentBranchPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates a deployment branch or tag policy for an environment. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3816,25 +3398,25 @@ Future<DeploymentBranchPolicy> reposGetDeploymentBranchPolicy(
 ///   use `release/*/*`. For more information about pattern matching syntax, see
 ///   the [Ruby File.fnmatch
 ///   documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).
-Future<DeploymentBranchPolicy> reposUpdateDeploymentBranchPolicy(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String environmentName,
-    required int branchPolicyId,
-    required String name,
-    RequestOptions? requestOptions}) async {
+Future<DeploymentBranchPolicy>
+    reposUpdateDeploymentBranchPolicy(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String environmentName,
+        required int branchPolicyId,
+        required String name,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<DeploymentBranchPolicy>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/deployment-branch-policies/${Uri.encodeComponent(branchPolicyId.toString())}',
           config: config,
           body: {'name': name},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateDeploymentBranchPolicy',
-          fromJsonRaw: (value) =>
-              DeploymentBranchPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeploymentBranchPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a deployment branch or tag policy for an environment. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3859,6 +3441,7 @@ Future<void> reposDeleteDeploymentBranchPolicy(ClientConfig config,
       .data;
 }
 
+
 /// Gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)." For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app). OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// [environmentName] The name of the environment. The name must be URL encoded.
@@ -3877,12 +3460,11 @@ Future<ReposGetAllDeploymentProtectionRulesResponse>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetAllDeploymentProtectionRules',
-          fromJsonRaw: (value) =>
-              ReposGetAllDeploymentProtectionRulesResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReposGetAllDeploymentProtectionRulesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Enable a custom deployment protection rule for an environment. The authenticated user must have admin or owner permissions to the repository to use this endpoint. For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app), as well as the [guide to creating custom deployment protection rules](https://docs.github.com/actions/managing-workflow-runs-and-deployments/managing-deployments/creating-custom-deployment-protection-rules). OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3893,24 +3475,24 @@ Future<ReposGetAllDeploymentProtectionRulesResponse>
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [integrationId] The ID of the custom app that will be enabled on the
 ///   environment.
-Future<DeploymentProtectionRule> reposCreateDeploymentProtectionRule(
-    ClientConfig config,
-    {required String environmentName,
-    required String repo,
-    required String owner,
-    SdkOptional<int> integrationId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<DeploymentProtectionRule>
+    reposCreateDeploymentProtectionRule(ClientConfig config,
+        {required String environmentName,
+        required String repo,
+        required String owner,
+        SdkOptional<int> integrationId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<DeploymentProtectionRule>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/deployment_protection_rules',
           config: config,
           body: {'integration_id': SdkUtils.unwrapOptional(integrationId)},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateDeploymentProtectionRule',
-          fromJsonRaw: (value) =>
-              DeploymentProtectionRule.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeploymentProtectionRule.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets all custom deployment protection rule integrations that are available for an environment. The authenticated user must have admin or owner permissions to the repository to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)." For more information about the app that is providing this custom deployment rule, see "[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)". OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -3935,24 +3517,20 @@ Future<ReposListCustomDeploymentRuleIntegrationsResponse>
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ReposListCustomDeploymentRuleIntegrationsResponse>(
-          'GET',
+  return (await sdkRequest<ReposListCustomDeploymentRuleIntegrationsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/deployment_protection_rules/apps',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListCustomDeploymentRuleIntegrations',
-          fromJsonRaw: (value) =>
-              ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets an enabled custom deployment protection rule for an environment. Anyone with read access to the repository can use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)." For more information about the app that is providing this custom deployment rule, see [`GET /apps/{app_slug}`](https://docs.github.com/rest/apps/apps#get-an-app). OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -3962,23 +3540,23 @@ Future<ReposListCustomDeploymentRuleIntegrationsResponse>
 /// [environmentName] The name of the environment. The name must be URL encoded.
 ///   For example, any slashes in the name must be replaced with `%2F`.
 /// [protectionRuleId] The unique identifier of the protection rule.
-Future<DeploymentProtectionRule> reposGetCustomDeploymentProtectionRule(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String environmentName,
-    required int protectionRuleId,
-    RequestOptions? requestOptions}) async {
+Future<DeploymentProtectionRule>
+    reposGetCustomDeploymentProtectionRule(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String environmentName,
+        required int protectionRuleId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<DeploymentProtectionRule>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/deployment_protection_rules/${Uri.encodeComponent(protectionRuleId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetCustomDeploymentProtectionRule',
-          fromJsonRaw: (value) =>
-              DeploymentProtectionRule.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeploymentProtectionRule.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Disables a custom deployment protection rule for an environment. The authenticated user must have admin or owner permissions to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4002,6 +3580,7 @@ Future<void> reposDisableDeploymentProtectionRule(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists forks of a repository. Use `sort` to order forks by newest, oldest, stargazers, or watchers. Use `page` and `per_page` to paginate the results.
 ///
@@ -4028,25 +3607,18 @@ Future<List<MinimalRepository>> reposListForks(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/forks',
           config: config,
           query: {
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListForks',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '400': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create a fork for the authenticated user. &gt; [!NOTE] &gt; Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api). &gt; [!NOTE] &gt; Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
 ///
@@ -4075,21 +3647,12 @@ Future<FullRepository> reposCreateFork(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateFork',
-          fromJsonRaw: (value) =>
-              FullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FullRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns the hash algorithm used to store repository objects.
 ///
@@ -4105,15 +3668,12 @@ Future<RepositoryHashAlgorithm> reposGetHashAlgorithm(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetHashAlgorithm',
-          fromJsonRaw: (value) =>
-              RepositoryHashAlgorithm.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryHashAlgorithm.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.
 ///
@@ -4138,22 +3698,17 @@ Future<List<Hook>> reposListWebhooks(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/hooks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListWebhooks',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Hook.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Hook.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can share the same `config` as long as those webhooks do not have any `events` that overlap.
 ///
@@ -4172,8 +3727,7 @@ Future<Hook> reposCreateWebhook(ClientConfig config,
     {required String owner,
     required String repo,
     SdkOptional<String> name = const SdkOmitted(),
-    SdkOptional<ReposCreateWebhookRequestBodyConfig> config_ =
-        const SdkOmitted(),
+    SdkOptional<ReposCreateWebhookRequestBodyConfig> config_ = const SdkOmitted(),
     SdkOptional<List<String>> events = const SdkOmitted(),
     SdkOptional<bool> active = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -4190,16 +3744,10 @@ Future<Hook> reposCreateWebhook(ClientConfig config,
           operationId: 'reposCreateWebhook',
           fromJsonRaw: (value) => Hook.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns a webhook configured in a repository. To get only the webhook `config` properties, see "Get a webhook configuration for a repository."
 ///
@@ -4220,11 +3768,10 @@ Future<Hook> reposGetWebhook(ClientConfig config,
           operationId: 'reposGetWebhook',
           fromJsonRaw: (value) => Hook.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "Update a webhook configuration for a repository."
 ///
@@ -4267,14 +3814,10 @@ Future<Hook> reposUpdateWebhook(ClientConfig config,
           operationId: 'reposUpdateWebhook',
           fromJsonRaw: (value) => Hook.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Delete a webhook for an organization. The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.
 ///
@@ -4294,11 +3837,10 @@ Future<void> reposDeleteWebhook(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteWebhook',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use "Get a repository webhook." OAuth app tokens and personal access tokens (classic) need the `read:repo_hook` or `repo` scope to use this endpoint.
 ///
@@ -4317,11 +3859,11 @@ Future<WebhookConfig> reposGetWebhookConfigForRepo(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetWebhookConfigForRepo',
-          fromJsonRaw: (value) =>
-              WebhookConfig.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => WebhookConfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the delivery settings for a webhook configured in a repository. Supply the configuration fields you want to change; use the repository webhook update endpoint to change its active state or subscribed events. OAuth app tokens and personal access tokens (classic) need the `write:repo_hook` or `repo` scope.
 ///
@@ -4362,11 +3904,11 @@ Future<WebhookConfig> reposUpdateWebhookConfigForRepo(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateWebhookConfigForRepo',
-          fromJsonRaw: (value) =>
-              WebhookConfig.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => WebhookConfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns a list of webhook deliveries for a webhook configured in a repository.
 ///
@@ -4399,28 +3941,18 @@ Future<List<HookDeliveryItem>> reposListWebhookDeliveries(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/hooks/${Uri.encodeComponent(hookId.toString())}/deliveries',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'cursor': SdkQueryValue(SdkUtils.unwrapOptional(cursor),
-                style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'cursor': SdkQueryValue(SdkUtils.unwrapOptional(cursor), style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListWebhookDeliveries',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  HookDeliveryItem.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => HookDeliveryItem.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a delivery record for a webhook configured in a repository. Use the repository owner, repository name, hook ID, and delivery ID to inspect the delivery status, event metadata, and request and response details.
 ///
@@ -4442,16 +3974,12 @@ Future<HookDelivery> reposGetWebhookDelivery(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetWebhookDelivery',
-          fromJsonRaw: (value) =>
-              HookDelivery.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => HookDelivery.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Submits a redelivery attempt for a delivery made by a webhook configured in a repository. Use the repository owner, repository name, hook ID, and delivery ID to identify the delivery to retry. A 202 response confirms that the redelivery request was accepted.
 ///
@@ -4475,13 +4003,10 @@ Future<Map<String, dynamic>> reposRedeliverWebhookDelivery(ClientConfig config,
           operationId: 'reposRedeliverWebhookDelivery',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
 ///
@@ -4501,11 +4026,10 @@ Future<void> reposPingWebhook(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposPingWebhook',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated. &gt; [!NOTE] &gt; Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 ///
@@ -4525,11 +4049,10 @@ Future<void> reposTestPushWebhook(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposTestPushWebhook',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Shows whether immutable releases are enabled or disabled. Also identifies whether immutability is being enforced by the repository owner. The authenticated user must have admin read access to the repository.
 ///
@@ -4545,11 +4068,11 @@ Future<CheckImmutableReleases> reposCheckImmutableReleases(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCheckImmutableReleases',
-          fromJsonRaw: (value) =>
-              CheckImmutableReleases.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CheckImmutableReleases.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Enables immutable releases for a repository. The authenticated user must have admin access to the repository.
 ///
@@ -4566,11 +4089,10 @@ Future<void> reposEnableImmutableReleases(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposEnableImmutableReleases',
           options: requestOptions,
-          errors: {
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Disables immutable releases for a repository. The authenticated user must have admin access to the repository.
 ///
@@ -4587,11 +4109,10 @@ Future<void> reposDisableImmutableReleases(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDisableImmutableReleases',
           options: requestOptions,
-          errors: {
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.
 ///
@@ -4616,20 +4137,16 @@ Future<List<RepositoryInvitation>> reposListInvitations(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/invitations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListInvitations',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RepositoryInvitation.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RepositoryInvitation.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the permissions on a repository invitation. Supply `permissions` to set the invitee's access level; accepted values are read, write, maintain, triage, and admin. A 200 response returns the updated invitation, including its repository, invitee, inviter, and permissions.
 ///
@@ -4644,8 +4161,7 @@ Future<RepositoryInvitation> reposUpdateInvitation(ClientConfig config,
     {required String owner,
     required String repo,
     required int invitationId,
-    SdkOptional<ReposUpdateInvitationRequestBodyPermissions> permissions =
-        const SdkOmitted(),
+    SdkOptional<ReposUpdateInvitationRequestBodyPermissions> permissions = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<RepositoryInvitation>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/invitations/${Uri.encodeComponent(invitationId.toString())}',
@@ -4653,11 +4169,11 @@ Future<RepositoryInvitation> reposUpdateInvitation(ClientConfig config,
           body: {'permissions': SdkUtils.unwrapOptional(permissions)},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateInvitation',
-          fromJsonRaw: (value) =>
-              RepositoryInvitation.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryInvitation.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a repository invitation from a repository. Use the repository owner, repository name, and invitation identifier to select the invitation to remove. A 204 response confirms the invitation was deleted and contains no response body.
 ///
@@ -4679,6 +4195,7 @@ Future<void> reposDeleteInvitation(ClientConfig config,
       .data;
 }
 
+
 /// Lists enabled issue types inherited from the repository owner. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. Fine-grained access tokens require the "Metadata" repository permission (read).
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4695,11 +4212,10 @@ Future<List<IssueType?>> reposListIssueTypes(ClientConfig config,
           operationId: 'reposListIssueTypes',
           fromJsonRaw: (value) => (value as List).map((item) => item == null ? null : IssueType.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the deploy keys associated with a repository. Use `page` and `per_page` to paginate the results; each entry contains key details and its access mode.
 ///
@@ -4724,19 +4240,16 @@ Future<List<DeployKey>> reposListDeployKeys(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/keys',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListDeployKeys',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => DeployKey.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => DeployKey.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a deploy key that grants access to a repository. Provide the public key in `key` and optionally set `title` and `read_only` to name the key and control its access. A 201 response returns the created deploy key.
 ///
@@ -4773,15 +4286,12 @@ Future<DeployKey> reposCreateDeployKey(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateDeployKey',
-          fromJsonRaw: (value) =>
-              DeployKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => DeployKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a specific deploy key associated with a repository. Use `key_id` to identify the key whose details you need.
 ///
@@ -4801,11 +4311,10 @@ Future<DeployKey> reposGetDeployKey(ClientConfig config,
           operationId: 'reposGetDeployKey',
           fromJsonRaw: (value) => DeployKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deploy keys are immutable. If you need to update a key, remove the key and create a new one instead.
 ///
@@ -4827,6 +4336,7 @@ Future<void> reposDeleteDeployKey(ClientConfig config,
       .data;
 }
 
+
 /// Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4846,6 +4356,7 @@ Future<Map<String, dynamic>> reposListLanguages(ClientConfig config,
       .data;
 }
 
+
 /// Sync a branch of a forked repository to keep it up-to-date with the upstream repository.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4863,11 +4374,11 @@ Future<MergedUpstream> reposMergeUpstream(ClientConfig config,
           body: {'branch': branch},
           decoder: SdkResponseDecoder.json,
           operationId: 'reposMergeUpstream',
-          fromJsonRaw: (value) =>
-              MergedUpstream.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => MergedUpstream.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Merges a branch or commit into a base branch in a repository. Supply `base` and `head`; `commit_message` is optional and defaults to a generated message when omitted. If the changes are already merged, the endpoint returns 204 without a merge commit body.
 ///
@@ -4895,17 +4406,12 @@ Future<Commit> reposMerge(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposMerge',
-          fromJsonRaw: (value) =>
-              Commit.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Commit.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets information about a GitHub Pages site. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4923,11 +4429,10 @@ Future<Page> reposGetPages(ClientConfig config,
           operationId: 'reposGetPages',
           fromJsonRaw: (value) => Page.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Configures a GitHub Pages site. For more information, see "About GitHub Pages." The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4940,10 +4445,8 @@ Future<Page> reposGetPages(ClientConfig config,
 Future<Page> reposCreatePagesSite(ClientConfig config,
     {required String owner,
     required String repo,
-    SdkOptional<ReposCreatePagesSiteRequestBodyBuildType> buildType =
-        const SdkOmitted(),
-    SdkOptional<ReposCreatePagesSiteRequestBodySource> source =
-        const SdkOmitted(),
+    SdkOptional<ReposCreatePagesSiteRequestBodyBuildType> buildType = const SdkOmitted(),
+    SdkOptional<ReposCreatePagesSiteRequestBodySource> source = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Page>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pages',
@@ -4956,14 +4459,10 @@ Future<Page> reposCreatePagesSite(ClientConfig config,
           operationId: 'reposCreatePagesSite',
           fromJsonRaw: (value) => Page.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates GitHub Pages settings for a repository. Provide at least one of `build_type`, `source`, or `cname`; `build_type` accepts `legacy` or `workflow`, and `source` accepts a branch name with an optional `/docs` path or an object containing `branch` and `path`. The authenticated user must be a repository administrator, maintainer, or have the `manage GitHub Pages settings` permission.
 ///
@@ -4989,10 +4488,8 @@ Future<void> reposUpdateInformationAboutPagesSite(ClientConfig config,
     required String repo,
     SdkOptional<String?> cname = const SdkOmitted(),
     SdkOptional<bool> httpsEnforced = const SdkOmitted(),
-    SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>
-        buildType = const SdkOmitted(),
-    SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource> source =
-        const SdkOmitted(),
+    SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType> buildType = const SdkOmitted(),
+    SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource> source = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pages',
@@ -5006,16 +4503,10 @@ Future<void> reposUpdateInformationAboutPagesSite(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposUpdateInformationAboutPagesSite',
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a GitHub Pages site. For more information, see "About GitHub Pages. The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5032,14 +4523,10 @@ Future<void> reposDeletePagesSite(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeletePagesSite',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists builts of a GitHub Pages site. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5064,19 +4551,16 @@ Future<List<PageBuild>> reposListPagesBuilds(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pages/builds',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListPagesBuilds',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => PageBuild.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => PageBuild.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures. Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
 ///
@@ -5092,11 +4576,11 @@ Future<PageBuildStatus> reposRequestPagesBuild(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposRequestPagesBuild',
-          fromJsonRaw: (value) =>
-              PageBuildStatus.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PageBuildStatus.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets information about the single most recent build of a GitHub Pages site. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5112,11 +4596,11 @@ Future<PageBuild> reposGetLatestPagesBuild(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetLatestPagesBuild',
-          fromJsonRaw: (value) =>
-              PageBuild.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PageBuild.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves information about a GitHub Pages build in a repository. Use `owner`, `repo`, and `build_id` to identify the repository and build; the response includes the build status, commit, duration, timestamps, error details, and pusher.
 ///
@@ -5135,11 +4619,11 @@ Future<PageBuild> reposGetPagesBuild(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetPagesBuild',
-          fromJsonRaw: (value) =>
-              PageBuild.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PageBuild.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Create a GitHub Pages deployment for a repository. The authenticated user must have write permission to the repository.
 ///
@@ -5178,19 +4662,12 @@ Future<PageDeployment> reposCreatePagesDeployment(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreatePagesDeployment',
-          fromJsonRaw: (value) =>
-              PageDeployment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PageDeployment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the current status of a GitHub Pages deployment. The authenticated user must have read permission for the GitHub Pages site.
 ///
@@ -5211,11 +4688,10 @@ Future<PagesDeploymentStatus> reposGetPagesDeployment(ClientConfig config,
           operationId: 'reposGetPagesDeployment',
           fromJsonRaw: (value) => PagesDeploymentStatus.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Cancels a GitHub Pages deployment. The authenticated user must have write permissions for the GitHub Pages site.
 ///
@@ -5235,11 +4711,10 @@ Future<void> reposCancelPagesDeployment(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposCancelPagesDeployment',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a health check of the DNS settings for the `CNAME` record configured for a repository's GitHub Pages. The first request to this endpoint returns a `202 Accepted` status and starts an asynchronous background task to get the results for the domain. After the background task completes, subsequent requests to this endpoint return a `200 OK` status with the health check results in the response. The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5257,11 +4732,10 @@ Future<PagesHealthCheck> reposGetPagesHealthCheck(ClientConfig config,
           operationId: 'reposGetPagesHealthCheck',
           fromJsonRaw: (value) => PagesHealthCheck.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns a boolean indicating whether or not private vulnerability reporting is enabled for the repository. For more information, see "[Evaluating the security settings of a repository](https://docs.github.com/code-security/security-advisories/working-with-repository-security-advisories/evaluating-the-security-settings-of-a-repository)".
 ///
@@ -5273,19 +4747,17 @@ Future<ReposCheckPrivateVulnerabilityReportingResponse>
         {required String owner,
         required String repo,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ReposCheckPrivateVulnerabilityReportingResponse>(
-          'GET',
+  return (await sdkRequest<ReposCheckPrivateVulnerabilityReportingResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/private-vulnerability-reporting',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCheckPrivateVulnerabilityReporting',
           fromJsonRaw: (value) => ReposCheckPrivateVulnerabilityReportingResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Enables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)."
 ///
@@ -5302,11 +4774,10 @@ Future<void> reposEnablePrivateVulnerabilityReporting(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposEnablePrivateVulnerabilityReporting',
           options: requestOptions,
-          errors: {
-        '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Disables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)".
 ///
@@ -5323,11 +4794,10 @@ Future<void> reposDisablePrivateVulnerabilityReporting(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDisablePrivateVulnerabilityReporting',
           options: requestOptions,
-          errors: {
-        '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets all custom property values that are set for a repository. Users with read access to the repository can use this endpoint.
 ///
@@ -5344,17 +4814,12 @@ Future<List<CustomPropertyValue>>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCustomPropertiesForReposGetRepositoryValues',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CustomPropertyValue.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CustomPropertyValue.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create new or update existing custom property values for a repository. Using a value of `null` for a custom property will remove or 'unset' the property value from the repository. Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.
 ///
@@ -5363,30 +4828,23 @@ Future<List<CustomPropertyValue>>
 ///   not case sensitive.
 /// [properties] A list of custom property names and associated values to apply
 ///   to the repositories.
-Future<void> reposCustomPropertiesForReposCreateOrUpdateRepositoryValues(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required List<CustomPropertyValue> properties,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    reposCustomPropertiesForReposCreateOrUpdateRepositoryValues(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required List<CustomPropertyValue> properties,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/properties/values',
           config: config,
           body: {'properties': properties},
           decoder: SdkResponseDecoder.empty,
-          operationId:
-              'reposCustomPropertiesForReposCreateOrUpdateRepositoryValues',
+          operationId: 'reposCustomPropertiesForReposCreateOrUpdateRepositoryValues',
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the preferred README for a repository. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw file contents. This is the default if you do not specify a media type. - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
@@ -5404,22 +4862,16 @@ Future<ContentFile> reposGetReadme(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/readme',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetReadme',
-          fromJsonRaw: (value) =>
-              ContentFile.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ContentFile.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the README from a repository directory. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw file contents. This is the default if you do not specify a media type. - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
@@ -5439,22 +4891,16 @@ Future<ContentFile> reposGetReadmeInDirectory(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/readme/${Uri.encodeComponent(dir.toString())}',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetReadmeInDirectory',
-          fromJsonRaw: (value) =>
-              ContentFile.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ContentFile.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://docs.github.com/rest/repos/repos#list-repository-tags). Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
 ///
@@ -5479,22 +4925,17 @@ Future<List<Release>> reposListReleases(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/releases',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListReleases',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Release.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Release.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Users with push access to the repository can create a release. &gt; [!NOTE] &gt; If the commit identified by `target_commitish` (or, when `target_commitish` is omitted, the latest commit on the default branch) adds or modifies any file under `.github/workflows/` relative to the repository's default branch, the authenticating token must be authorized to modify workflows. Otherwise, this endpoint returns `404 Not Found`; some authentication paths surface `403 Resource not accessible by integration` instead. OAuth app tokens and personal access tokens (classic) need the `workflow` scope when the resolved target commit modifies workflow files. Fine-grained access tokens and GitHub App installation tokens also need the "Workflows" repository permission (write). The `GITHUB_TOKEN` available to GitHub Actions cannot be authorized for this; for more information, see "[Automatic token authentication](https://docs.github.com/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)". This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
@@ -5537,8 +4978,7 @@ Future<Release> reposCreateRelease(ClientConfig config,
     SdkOptional<bool> prerelease = const SdkOmitted(),
     SdkOptional<String> discussionCategoryName = const SdkOmitted(),
     SdkOptional<bool> generateReleaseNotes = const SdkOmitted(),
-    SdkOptional<ReposCreateReleaseRequestBodyMakeLatest> makeLatest =
-        const SdkOmitted(),
+    SdkOptional<ReposCreateReleaseRequestBodyMakeLatest> makeLatest = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Release>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/releases',
@@ -5550,25 +4990,18 @@ Future<Release> reposCreateRelease(ClientConfig config,
             'body': SdkUtils.unwrapOptional(body),
             'draft': SdkUtils.unwrapOptional(draft),
             'prerelease': SdkUtils.unwrapOptional(prerelease),
-            'discussion_category_name':
-                SdkUtils.unwrapOptional(discussionCategoryName),
-            'generate_release_notes':
-                SdkUtils.unwrapOptional(generateReleaseNotes),
+            'discussion_category_name': SdkUtils.unwrapOptional(discussionCategoryName),
+            'generate_release_notes': SdkUtils.unwrapOptional(generateReleaseNotes),
             'make_latest': SdkUtils.unwrapOptional(makeLatest)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateRelease',
-          fromJsonRaw: (value) =>
-              Release.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Release.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// To download the asset's binary content: - If within a browser, fetch the location specified in the `browser_download_url` key provided in the response. - Alternatively, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
 ///
@@ -5588,11 +5021,10 @@ Future<ReleaseAsset> reposGetReleaseAsset(ClientConfig config,
           operationId: 'reposGetReleaseAsset',
           fromJsonRaw: (value) => ReleaseAsset.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the name, label, or state of a release asset in a repository. The authenticated user must have push access to the repository; supply any of `name`, `label`, or `state` that you want to change. The response includes the updated release asset details.
 ///
@@ -5623,11 +5055,11 @@ Future<ReleaseAsset> reposUpdateReleaseAsset(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateReleaseAsset',
-          fromJsonRaw: (value) =>
-              ReleaseAsset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReleaseAsset.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a release asset from a repository. Use this operation when you no longer want the asset associated with the repository's release. The authenticated user must have permission to modify the repository.
 ///
@@ -5646,11 +5078,10 @@ Future<void> reposDeleteReleaseAsset(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteReleaseAsset',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Generate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
 ///
@@ -5685,19 +5116,16 @@ Future<ReleaseNotesContent> reposGenerateReleaseNotes(ClientConfig config,
             'tag_name': tagName,
             'target_commitish': SdkUtils.unwrapOptional(targetCommitish),
             'previous_tag_name': SdkUtils.unwrapOptional(previousTagName),
-            'configuration_file_path':
-                SdkUtils.unwrapOptional(configurationFilePath)
+            'configuration_file_path': SdkUtils.unwrapOptional(configurationFilePath)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGenerateReleaseNotes',
-          fromJsonRaw: (value) =>
-              ReleaseNotesContent.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReleaseNotesContent.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// View the latest published full release for the repository. The latest release is the most recent non-prerelease, non-draft release, sorted by the `created_at` attribute. The `created_at` attribute is the date of the commit used for the release, and not the date when the release was drafted or published.
 ///
@@ -5715,11 +5143,10 @@ Future<Release> reposGetLatestRelease(ClientConfig config,
           operationId: 'reposGetLatestRelease',
           fromJsonRaw: (value) => Release.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a published release from a repository by its tag name. Use `tag` to identify the release you want to retrieve.
 ///
@@ -5741,11 +5168,10 @@ Future<Release> reposGetReleaseByTag(ClientConfig config,
           operationId: 'reposGetReleaseByTag',
           fromJsonRaw: (value) => Release.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a public release with the specified release ID. &gt; [!NOTE] &gt; This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
 ///
@@ -5763,11 +5189,11 @@ Future<Release> reposGetRelease(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetRelease',
-          fromJsonRaw: (value) =>
-              Release.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Release.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Users with push access to the repository can edit a release. &gt; [!NOTE] &gt; If the resolved target commit (the new value of `target_commitish` if you are changing it, otherwise the existing target) adds or modifies any file under `.github/workflows/` relative to the repository's default branch, the authenticating token must be authorized to modify workflows. Otherwise, this endpoint returns `404 Not Found`; some authentication paths surface `403 Resource not accessible by integration` instead. OAuth app tokens and personal access tokens (classic) need the `workflow` scope when the resolved target commit modifies workflow files. Fine-grained access tokens and GitHub App installation tokens also need the "Workflows" repository permission (write). The `GITHUB_TOKEN` available to GitHub Actions cannot be authorized for this; for more information, see "[Automatic token authentication](https://docs.github.com/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)".
 ///
@@ -5806,8 +5232,7 @@ Future<Release> reposUpdateRelease(ClientConfig config,
     SdkOptional<String> body = const SdkOmitted(),
     SdkOptional<bool> draft = const SdkOmitted(),
     SdkOptional<bool> prerelease = const SdkOmitted(),
-    SdkOptional<ReposUpdateReleaseRequestBodyMakeLatest> makeLatest =
-        const SdkOmitted(),
+    SdkOptional<ReposUpdateReleaseRequestBodyMakeLatest> makeLatest = const SdkOmitted(),
     SdkOptional<String> discussionCategoryName = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Release>('PATCH',
@@ -5821,19 +5246,16 @@ Future<Release> reposUpdateRelease(ClientConfig config,
             'draft': SdkUtils.unwrapOptional(draft),
             'prerelease': SdkUtils.unwrapOptional(prerelease),
             'make_latest': SdkUtils.unwrapOptional(makeLatest),
-            'discussion_category_name':
-                SdkUtils.unwrapOptional(discussionCategoryName)
+            'discussion_category_name': SdkUtils.unwrapOptional(discussionCategoryName)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateRelease',
-          fromJsonRaw: (value) =>
-              Release.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Release.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Users with push access to the repository can delete a release.
 ///
@@ -5852,11 +5274,10 @@ Future<void> reposDeleteRelease(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteRelease',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the assets attached to a specific release in a repository. Use `page` and `per_page` to paginate the results.
 ///
@@ -5883,20 +5304,16 @@ Future<List<ReleaseAsset>> reposListReleaseAssets(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/releases/${Uri.encodeComponent(releaseId.toString())}/assets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListReleaseAssets',
-          fromJsonRaw: (value) => (value as List)
-              .map(
-                  (item) => ReleaseAsset.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ReleaseAsset.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Uploads a binary asset to a specific release in a repository. Use the release-specific `upload_url` returned when creating the release, provide the asset filename in `name`, and send the raw file data with a media-type `Content-Type` header. The API may rename filenames containing special characters or leading or trailing periods.
 ///
@@ -5919,18 +5336,17 @@ Future<ReleaseAsset> reposUploadReleaseAsset(ClientConfig config,
           config: config,
           query: {
             'name': SdkQueryValue(name, style: 'form', explode: true),
-            'label': SdkQueryValue(SdkUtils.unwrapOptional(label),
-                style: 'form', explode: true)
+            'label': SdkQueryValue(SdkUtils.unwrapOptional(label), style: 'form', explode: true)
           },
           body: SdkUtils.unwrapOptional(body),
           contentType: 'application/octet-stream',
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUploadReleaseAsset',
-          fromJsonRaw: (value) =>
-              ReleaseAsset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ReleaseAsset.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns all active rules that apply to the specified branch. The branch does not need to exist; rules that would apply to a branch with that name will be returned. All active rules that apply will be returned, regardless of the level at which they are configured (e.g. repository or organization). Rules in rulesets with "evaluate" or "disabled" enforcement statuses are not returned.
 ///
@@ -5959,19 +5375,16 @@ Future<List<RepositoryRuleDetailed>> reposGetBranchRules(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/rules/branches/${Uri.encodeComponent(branch.toString())}',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetBranchRules',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => RepositoryRuleDetailed.fromJson(item))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RepositoryRuleDetailed.fromJson(item)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the rulesets for a repository. Use `includes_parents` to include rulesets configured at higher levels and `targets` to filter by a comma-separated list of rule targets.
 ///
@@ -6005,31 +5418,19 @@ Future<List<RepositoryRuleset>> reposGetRepoRulesets(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/rulesets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'includes_parents': SdkQueryValue(
-                SdkUtils.unwrapOptional(includesParents),
-                style: 'form',
-                explode: true),
-            'targets': SdkQueryValue(SdkUtils.unwrapOptional(targets),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'includes_parents': SdkQueryValue(SdkUtils.unwrapOptional(includesParents), style: 'form', explode: true),
+            'targets': SdkQueryValue(SdkUtils.unwrapOptional(targets), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetRepoRulesets',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RepositoryRuleset.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RepositoryRuleset.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a ruleset for a repository to apply rules when its specified conditions are met. Supply a `name` and `enforcement` level, and use `target`, `conditions`, and `rules` to configure where the ruleset applies and which rules it enforces. You can also configure actors that can bypass the ruleset with `bypass_actors`.
 ///
@@ -6051,10 +5452,8 @@ Future<RepositoryRuleset> reposCreateRepoRuleset(ClientConfig config,
     required String repo,
     required String name,
     required RepositoryRuleEnforcement enforcement,
-    SdkOptional<ReposCreateRepoRulesetRequestBodyTarget> target =
-        const SdkOmitted(),
-    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors =
-        const SdkOmitted(),
+    SdkOptional<ReposCreateRepoRulesetRequestBodyTarget> target = const SdkOmitted(),
+    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors = const SdkOmitted(),
     SdkOptional<RepositoryRulesetConditions> conditions = const SdkOmitted(),
     SdkOptional<List<RepositoryRule>> rules = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -6071,18 +5470,12 @@ Future<RepositoryRuleset> reposCreateRepoRuleset(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateRepoRuleset',
-          fromJsonRaw: (value) =>
-              RepositoryRuleset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryRuleset.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists suites of rule evaluations at the repository level. For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
 ///
@@ -6129,39 +5522,22 @@ Future<List<RuleSuitesItem>> reposGetRepoRuleSuites(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/rulesets/rule-suites',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true),
-            'time_period': SdkQueryValue(SdkUtils.unwrapOptional(timePeriod),
-                style: 'form', explode: true),
-            'actor_name': SdkQueryValue(SdkUtils.unwrapOptional(actorName),
-                style: 'form', explode: true),
-            'rule_suite_result': SdkQueryValue(
-                SdkUtils.unwrapOptional(ruleSuiteResult),
-                style: 'form',
-                explode: true),
-            'evaluate_status': SdkQueryValue(
-                SdkUtils.unwrapOptional(evaluateStatus),
-                style: 'form',
-                explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
+            'time_period': SdkQueryValue(SdkUtils.unwrapOptional(timePeriod), style: 'form', explode: true),
+            'actor_name': SdkQueryValue(SdkUtils.unwrapOptional(actorName), style: 'form', explode: true),
+            'rule_suite_result': SdkQueryValue(SdkUtils.unwrapOptional(ruleSuiteResult), style: 'form', explode: true),
+            'evaluate_status': SdkQueryValue(SdkUtils.unwrapOptional(evaluateStatus), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetRepoRuleSuites',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RuleSuitesItem.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RuleSuitesItem.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets information about a suite of rule evaluations from within a repository. For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
 ///
@@ -6187,23 +5563,16 @@ Future<RuleSuite> reposGetRepoRuleSuite(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/rulesets/rule-suites/${Uri.encodeComponent(ruleSuiteId.toString())}',
           config: config,
           query: {
-            'include_metadata': SdkQueryValue(
-                SdkUtils.unwrapOptional(includeMetadata),
-                style: 'form',
-                explode: true)
+            'include_metadata': SdkQueryValue(SdkUtils.unwrapOptional(includeMetadata), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetRepoRuleSuite',
-          fromJsonRaw: (value) =>
-              RuleSuite.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RuleSuite.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get a ruleset for a repository. **Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the user making the API request has write access to the ruleset.
 ///
@@ -6223,23 +5592,16 @@ Future<RepositoryRuleset> reposGetRepoRuleset(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
           config: config,
           query: {
-            'includes_parents': SdkQueryValue(
-                SdkUtils.unwrapOptional(includesParents),
-                style: 'form',
-                explode: true)
+            'includes_parents': SdkQueryValue(SdkUtils.unwrapOptional(includesParents), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetRepoRuleset',
-          fromJsonRaw: (value) =>
-              RepositoryRuleset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryRuleset.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Replaces a repository ruleset with the supplied configuration. Supply the ruleset properties you want to set, including its target, enforcement level, bypass actors, conditions, or rules. Use `evaluate` to test rules before enforcement; this option is available only with GitHub Enterprise.
 ///
@@ -6262,11 +5624,9 @@ Future<RepositoryRuleset> reposUpdateRepoRuleset(ClientConfig config,
     required String repo,
     required int rulesetId,
     SdkOptional<String> name = const SdkOmitted(),
-    SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget> target =
-        const SdkOmitted(),
+    SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget> target = const SdkOmitted(),
     SdkOptional<RepositoryRuleEnforcement> enforcement = const SdkOmitted(),
-    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors =
-        const SdkOmitted(),
+    SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors = const SdkOmitted(),
     SdkOptional<RepositoryRulesetConditions> conditions = const SdkOmitted(),
     SdkOptional<List<RepositoryRule>> rules = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -6283,18 +5643,12 @@ Future<RepositoryRuleset> reposUpdateRepoRuleset(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposUpdateRepoRuleset',
-          fromJsonRaw: (value) =>
-              RepositoryRuleset.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryRuleset.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a ruleset from a repository. Identify the repository with `owner` and `repo`, and specify the ruleset with `ruleset_id`. The operation returns no content when the ruleset is deleted.
 ///
@@ -6315,12 +5669,10 @@ Future<void> reposDeleteRepoRuleset(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeleteRepoRuleset',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists historical versions of a repository ruleset. Use `ruleset_id` to select the ruleset and `page` and `per_page` to navigate its history. Each result identifies the version, the actor who updated it, and the update time.
 ///
@@ -6349,25 +5701,17 @@ Future<List<RulesetVersion>> reposGetRepoRulesetHistory(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/history',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetRepoRulesetHistory',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RulesetVersion.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RulesetVersion.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a specific historical version of a repository ruleset. Identify the repository and ruleset with `owner`, `repo`, and `ruleset_id`, then specify the version with `version_id`. The response includes the version details and the ruleset state for that version.
 ///
@@ -6389,15 +5733,12 @@ Future<RulesetVersionWithState> reposGetRepoRulesetVersion(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetRepoRulesetVersion',
-          fromJsonRaw: (value) =>
-              RulesetVersionWithState.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RulesetVersionWithState.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository. &gt; [!NOTE] &gt; This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains 10,000 or more commits, a 422 status code will be returned.
 ///
@@ -6413,13 +5754,11 @@ Future<List<List<int>>> reposGetCodeFrequencyStats(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetCodeFrequencyStats',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  (item as List).map((item) => (item as num).toInt()).toList())
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => (item as List).map((item) => (item as num).toInt()).toList()).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.
 ///
@@ -6435,13 +5774,11 @@ Future<List<CommitActivity>> reposGetCommitActivityStats(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetCommitActivityStats',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CommitActivity.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CommitActivity.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns the `total` number of commits authored by the contributor. In addition, the response includes a Weekly Hash (`weeks` array) with the following information: * `w` - Start of the week, given as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time). * `a` - Number of additions * `d` - Number of deletions * `c` - Number of commits &gt; [!NOTE] &gt; This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
 ///
@@ -6457,13 +5794,11 @@ Future<List<ContributorActivity>> reposGetContributorsStats(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetContributorsStats',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  ContributorActivity.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ContributorActivity.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns the total commit counts for the `owner` and total commit counts in `all`. `all` is everyone combined, including the `owner` in the last 52 weeks. If you'd like to get the commit counts for non-owners, you can subtract `owner` from `all`. The array order is oldest week (index 0) to most recent week. The most recent week is seven days ago at UTC midnight to today at UTC midnight.
 ///
@@ -6481,11 +5816,10 @@ Future<ParticipationStats> reposGetParticipationStats(ClientConfig config,
           operationId: 'reposGetParticipationStats',
           fromJsonRaw: (value) => ParticipationStats.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Each array contains the day number, hour number, and number of commits: * `0-6`: Sunday - Saturday * `0-23`: Hour of day * Number of commits For example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
 ///
@@ -6501,13 +5835,11 @@ Future<List<List<int>>> reposGetPunchCardStats(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetPunchCardStats',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  (item as List).map((item) => (item as num).toInt()).toList())
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => (item as List).map((item) => (item as num).toInt()).toList()).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a commit status for a specific commit in a repository. You need push access to the repository, and `state` must be one of the supported values; each `sha` and `context` pair is limited to 1,000 statuses.
 ///
@@ -6545,11 +5877,11 @@ Future<Status> reposCreateCommitStatus(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateCommitStatus',
-          fromJsonRaw: (value) =>
-              Status.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Status.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the tags for a repository. Use `page` and `per_page` to paginate the results, with up to 100 tags per page.
 ///
@@ -6574,19 +5906,16 @@ Future<List<Tag>> reposListTags(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/tags',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListTags',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Tag.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Tag.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns a redirect to a tar archive for a repository. Use `ref` to select a branch, tag, or commit; if you omit it, the repository's default branch is used. Follow the redirect or use its `Location` header to make a second GET request; download links for private repositories expire after five minutes.
 ///
@@ -6608,6 +5937,7 @@ Future<void> reposDownloadTarballArchive(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the teams that have access to the specified repository and that are also visible to the authenticated user. For a public repository, a team is listed only if that team added the public repository explicitly. OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to use this endpoint with a public repository, and `repo` scope to use this endpoint with a private repository.
 ///
@@ -6632,22 +5962,17 @@ Future<List<Team>> reposListTeams(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/teams',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListTeams',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Team.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves the topic names associated with a repository. Use `page` and `per_page` to paginate the results.
 ///
@@ -6672,20 +5997,17 @@ Future<Topic> reposGetAllTopics(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/topics',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetAllTopics',
           fromJsonRaw: (value) => Topic.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Replaces all topics associated with a repository. Supply `names` with the complete topic list; send an empty array to clear all topics, and note that topic names are saved as lowercase.
 ///
@@ -6709,14 +6031,10 @@ Future<Topic> reposReplaceAllTopics(ClientConfig config,
           operationId: 'reposReplaceAllTopics',
           fromJsonRaw: (value) => Topic.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get the total number of clones and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 ///
@@ -6733,19 +6051,16 @@ Future<CloneTraffic> reposGetClones(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/traffic/clones',
           config: config,
           query: {
-            'per': SdkQueryValue(SdkUtils.unwrapOptional(per),
-                style: 'form', explode: true)
+            'per': SdkQueryValue(SdkUtils.unwrapOptional(per), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetClones',
-          fromJsonRaw: (value) =>
-              CloneTraffic.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CloneTraffic.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get the top 10 popular contents over the last 14 days.
 ///
@@ -6763,11 +6078,10 @@ Future<List<ContentTraffic>> reposGetTopPaths(ClientConfig config,
           operationId: 'reposGetTopPaths',
           fromJsonRaw: (value) => (value as List).map((item) => ContentTraffic.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves the top 10 referral sources for a repository over the last 14 days. Use this endpoint to review which sources drive visits to the repository.
 ///
@@ -6787,11 +6101,10 @@ Future<List<ReferrerTraffic>> reposGetTopReferrers(ClientConfig config,
           operationId: 'reposGetTopReferrers',
           fromJsonRaw: (value) => (value as List).map((item) => ReferrerTraffic.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
 ///
@@ -6808,19 +6121,16 @@ Future<ViewTraffic> reposGetViews(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/traffic/views',
           config: config,
           query: {
-            'per': SdkQueryValue(SdkUtils.unwrapOptional(per),
-                style: 'form', explode: true)
+            'per': SdkQueryValue(SdkUtils.unwrapOptional(per), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposGetViews',
-          fromJsonRaw: (value) =>
-              ViewTraffic.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ViewTraffic.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// A transfer request will need to be accepted by the new owner when transferring a personal repository to another user. The response will contain the original `owner`, and the transfer will continue asynchronously. For more details on the requirements to transfer personal and organization-owned repositories, see [about repository transfers](https://docs.github.com/articles/about-repository-transfers/).
 ///
@@ -6849,11 +6159,11 @@ Future<MinimalRepository> reposTransfer(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposTransfer',
-          fromJsonRaw: (value) =>
-              MinimalRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => MinimalRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Shows whether dependency alerts are enabled or disabled for a repository. The authenticated user must have admin read access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
 ///
@@ -6873,6 +6183,7 @@ Future<void> reposCheckVulnerabilityAlerts(ClientConfig config,
       .data;
 }
 
+
 /// Enables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -6891,6 +6202,7 @@ Future<void> reposEnableVulnerabilityAlerts(ClientConfig config,
       .data;
 }
 
+
 /// Disables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -6908,6 +6220,7 @@ Future<void> reposDisableVulnerabilityAlerts(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Downloads a ZIP archive of a repository at the specified revision. Use `ref` to select a branch, tag, or commit; if omitted, the repository’s default branch is used. Follow the redirect or use its `Location` header to make a second GET request; download links for private repositories expire after five minutes.
 ///
@@ -6929,6 +6242,7 @@ Future<void> reposDownloadZipballArchive(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. If the repository is not public, the authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://docs.github.com/rest/repos/repos#get-a-repository) endpoint and check that the `is_template` key is `true`. OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
@@ -6967,11 +6281,11 @@ Future<FullRepository> reposCreateUsingTemplate(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateUsingTemplate',
-          fromJsonRaw: (value) =>
-              FullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FullRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists all public repositories in the order that they were created. Note: - For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise. - Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
 ///
@@ -6983,22 +6297,16 @@ Future<List<MinimalRepository>> reposListPublic(ClientConfig config,
   return (await sdkRequest<List<MinimalRepository>>('GET', '/repositories',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListPublic',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access. The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
 ///
@@ -7030,13 +6338,11 @@ Future<List<MinimalRepository>> reposListPublic(ClientConfig config,
 ///   timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`.
 Future<List<Repository>> reposListForAuthenticatedUser(ClientConfig config,
-    {SdkOptional<ReposListForAuthenticatedUserVisibility> visibility =
-        const SdkOmitted(),
+    {SdkOptional<ReposListForAuthenticatedUserVisibility> visibility = const SdkOmitted(),
     SdkOptional<String> affiliation = const SdkOmitted(),
     SdkOptional<ReposListForAuthenticatedUserType> type_ = const SdkOmitted(),
     SdkOptional<ReposListForAuthenticatedUserSort> sort = const SdkOmitted(),
-    SdkOptional<ReposListForAuthenticatedUserDirection> direction =
-        const SdkOmitted(),
+    SdkOptional<ReposListForAuthenticatedUserDirection> direction = const SdkOmitted(),
     SdkOptional<int> perPage = const SdkOmitted(),
     SdkOptional<int> page = const SdkOmitted(),
     SdkOptional<String> since = const SdkOmitted(),
@@ -7052,41 +6358,24 @@ Future<List<Repository>> reposListForAuthenticatedUser(ClientConfig config,
   return (await sdkRequest<List<Repository>>('GET', '/user/repos',
           config: config,
           query: {
-            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility),
-                style: 'form', explode: true),
-            'affiliation': SdkQueryValue(SdkUtils.unwrapOptional(affiliation),
-                style: 'form', explode: true),
-            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true)
+            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility), style: 'form', explode: true),
+            'affiliation': SdkQueryValue(SdkUtils.unwrapOptional(affiliation), style: 'form', explode: true),
+            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Repository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Repository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a new repository for the authenticated user. OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
 ///
@@ -7148,16 +6437,10 @@ Future<FullRepository> reposCreateForAuthenticatedUser(ClientConfig config,
     SdkOptional<bool> allowRebaseMerge = const SdkOmitted(),
     SdkOptional<bool> allowAutoMerge = const SdkOmitted(),
     SdkOptional<bool> deleteBranchOnMerge = const SdkOmitted(),
-    SdkOptional<
-            ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle>
-        squashMergeCommitTitle = const SdkOmitted(),
-    SdkOptional<
-            ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage>
-        squashMergeCommitMessage = const SdkOmitted(),
-    SdkOptional<ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle>
-        mergeCommitTitle = const SdkOmitted(),
-    SdkOptional<ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage>
-        mergeCommitMessage = const SdkOmitted(),
+    SdkOptional<ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle> squashMergeCommitTitle = const SdkOmitted(),
+    SdkOptional<ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage> squashMergeCommitMessage = const SdkOmitted(),
+    SdkOptional<ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle> mergeCommitTitle = const SdkOmitted(),
+    SdkOptional<ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage> mergeCommitMessage = const SdkOmitted(),
     SdkOptional<bool> hasDownloads = const SdkOmitted(),
     SdkOptional<bool> isTemplate = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -7180,12 +6463,9 @@ Future<FullRepository> reposCreateForAuthenticatedUser(ClientConfig config,
             'allow_merge_commit': SdkUtils.unwrapOptional(allowMergeCommit),
             'allow_rebase_merge': SdkUtils.unwrapOptional(allowRebaseMerge),
             'allow_auto_merge': SdkUtils.unwrapOptional(allowAutoMerge),
-            'delete_branch_on_merge':
-                SdkUtils.unwrapOptional(deleteBranchOnMerge),
-            'squash_merge_commit_title':
-                SdkUtils.unwrapOptional(squashMergeCommitTitle),
-            'squash_merge_commit_message':
-                SdkUtils.unwrapOptional(squashMergeCommitMessage),
+            'delete_branch_on_merge': SdkUtils.unwrapOptional(deleteBranchOnMerge),
+            'squash_merge_commit_title': SdkUtils.unwrapOptional(squashMergeCommitTitle),
+            'squash_merge_commit_message': SdkUtils.unwrapOptional(squashMergeCommitMessage),
             'merge_commit_title': SdkUtils.unwrapOptional(mergeCommitTitle),
             'merge_commit_message': SdkUtils.unwrapOptional(mergeCommitMessage),
             'has_downloads': SdkUtils.unwrapOptional(hasDownloads),
@@ -7193,23 +6473,12 @@ Future<FullRepository> reposCreateForAuthenticatedUser(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposCreateForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              FullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FullRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
 ///
@@ -7221,36 +6490,26 @@ Future<FullRepository> reposCreateForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<RepositoryInvitation>> reposListInvitationsForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<RepositoryInvitation>>
+    reposListInvitationsForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<RepositoryInvitation>>(
           'GET', '/user/repository_invitations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListInvitationsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RepositoryInvitation.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RepositoryInvitation.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Accepts a repository invitation for the authenticated user. Use `invitation_id` to identify the invitation to accept. A 204 response confirms acceptance without returning a response body.
 ///
@@ -7263,13 +6522,10 @@ Future<void> reposAcceptInvitationForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposAcceptInvitationForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Declines a repository invitation for the authenticated user. Use `invitation_id` to identify the invitation to decline. A 204 response confirms the invitation was declined without returning a response body.
 ///
@@ -7282,13 +6538,10 @@ Future<void> reposDeclineInvitationForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'reposDeclineInvitationForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists public repositories for the specified GitHub user. Filter by repository `type` and sort by `sort` and `direction`; use `page` and `per_page` to paginate the results.
 ///
@@ -7319,23 +6572,15 @@ Future<List<MinimalRepository>> reposListForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/repos',
           config: config,
           query: {
-            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reposListForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }

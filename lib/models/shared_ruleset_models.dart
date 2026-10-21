@@ -8,206 +8,129 @@ part of 'shared_ruleset.dart';
 class RulesetVersionActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `type` wire field.
   final SdkOptional<String> type_;
 
-  const RulesetVersionActor(
-      {this.id = const SdkOmitted(), this.type_ = const SdkOmitted()});
+  const RulesetVersionActor({this.id = const SdkOmitted(), this.type_ = const SdkOmitted()});
 
-  RulesetVersionActor Function({SdkOptional<int> id, SdkOptional<String> type_})
-      get copyWith => _copyWith;
+  RulesetVersionActor Function({SdkOptional<int> id, SdkOptional<String> type_}) get copyWith => _copyWith;
 
-  RulesetVersionActor _copyWith(
-          {Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
-      RulesetVersionActor(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<String>,
-      );
+  RulesetVersionActor _copyWith({Object? id = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RulesetVersionActor(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
+  );
 
-  factory RulesetVersionActor.fromJson(Map<String, dynamic> json) =>
-      RulesetVersionActor(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory RulesetVersionActor.fromJson(Map<String, dynamic> json) => RulesetVersionActor(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (type_) {
+      SdkPresent<String>(value: final value) => {'type': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The historical version of a ruleset
 class RulesetVersion {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of the previous version of the ruleset
   final int versionId;
-
   /// The actor who updated the ruleset
   final RulesetVersionActor actor;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
 
-  const RulesetVersion(
-      {required this.versionId, required this.actor, required this.updatedAt});
+  const RulesetVersion({required this.versionId, required this.actor, required this.updatedAt});
 
-  RulesetVersion Function(
-      {int versionId,
-      RulesetVersionActor actor,
-      String updatedAt}) get copyWith => _copyWith;
+  RulesetVersion Function({int versionId, RulesetVersionActor actor, String updatedAt}) get copyWith => _copyWith;
 
-  RulesetVersion _copyWith(
-          {Object? versionId = sdkOmittedValue,
-          Object? actor = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      RulesetVersion(
-        versionId: identical(versionId, sdkOmittedValue)
-            ? this.versionId
-            : versionId as int,
-        actor: identical(actor, sdkOmittedValue)
-            ? this.actor
-            : actor as RulesetVersionActor,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-      );
+  RulesetVersion _copyWith({Object? versionId = sdkOmittedValue, Object? actor = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => RulesetVersion(
+    versionId: identical(versionId, sdkOmittedValue) ? this.versionId : versionId as int,
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as RulesetVersionActor,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+  );
 
   factory RulesetVersion.fromJson(Map<String, dynamic> json) => RulesetVersion(
-        versionId: ((json['version_id'] as num?)?.toInt())!,
-        actor: (json['actor'] != null
-            ? RulesetVersionActor.fromJson(
-                json['actor'] as Map<String, dynamic>)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-      );
+    versionId: ((json['version_id'] as num?)?.toInt())!,
+    actor: (json['actor'] != null ? RulesetVersionActor.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'version_id': versionId,
-        'actor': actor.toJson(),
-        'updated_at': updatedAt,
-      };
+    'version_id': versionId,
+    'actor': actor.toJson(),
+    'updated_at': updatedAt,
+  };
 }
 
 class RulesetVersionWithStateVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The state of the ruleset version
   final Map<String, dynamic> state;
 
   const RulesetVersionWithStateVariant1({required this.state});
 
-  RulesetVersionWithStateVariant1 Function({Map<String, dynamic> state})
-      get copyWith => _copyWith;
+  RulesetVersionWithStateVariant1 Function({Map<String, dynamic> state}) get copyWith => _copyWith;
 
-  RulesetVersionWithStateVariant1 _copyWith(
-          {Object? state = sdkOmittedValue}) =>
-      RulesetVersionWithStateVariant1(
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as Map<String, dynamic>,
-      );
+  RulesetVersionWithStateVariant1 _copyWith({Object? state = sdkOmittedValue}) => RulesetVersionWithStateVariant1(
+    state: identical(state, sdkOmittedValue) ? this.state : state as Map<String, dynamic>,
+  );
 
-  factory RulesetVersionWithStateVariant1.fromJson(Map<String, dynamic> json) =>
-      RulesetVersionWithStateVariant1(
-        state: (json['state'] == null
-            ? null
-            : json['state'] as Map<String, dynamic>)!,
-      );
+  factory RulesetVersionWithStateVariant1.fromJson(Map<String, dynamic> json) => RulesetVersionWithStateVariant1(
+    state: (json['state'] == null ? null : json['state'] as Map<String, dynamic>)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'state': state,
-      };
+    'state': state,
+  };
 }
 
 /// Typed representation of the `RulesetVersionWithState` API schema.
 class RulesetVersionWithState {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of the previous version of the ruleset
   final int versionId;
-
   /// The actor who updated the ruleset
   final RulesetVersionActor actor;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// The state of the ruleset version
   final Map<String, dynamic> state;
 
-  const RulesetVersionWithState(
-      {required this.versionId,
-      required this.actor,
-      required this.updatedAt,
-      required this.state});
+  const RulesetVersionWithState({required this.versionId, required this.actor, required this.updatedAt, required this.state});
 
-  RulesetVersionWithState Function(
-      {int versionId,
-      RulesetVersionActor actor,
-      String updatedAt,
-      Map<String, dynamic> state}) get copyWith => _copyWith;
+  RulesetVersionWithState Function({int versionId, RulesetVersionActor actor, String updatedAt, Map<String, dynamic> state}) get copyWith => _copyWith;
 
-  RulesetVersionWithState _copyWith(
-          {Object? versionId = sdkOmittedValue,
-          Object? actor = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? state = sdkOmittedValue}) =>
-      RulesetVersionWithState(
-        versionId: identical(versionId, sdkOmittedValue)
-            ? this.versionId
-            : versionId as int,
-        actor: identical(actor, sdkOmittedValue)
-            ? this.actor
-            : actor as RulesetVersionActor,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as Map<String, dynamic>,
-      );
+  RulesetVersionWithState _copyWith({Object? versionId = sdkOmittedValue, Object? actor = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? state = sdkOmittedValue}) => RulesetVersionWithState(
+    versionId: identical(versionId, sdkOmittedValue) ? this.versionId : versionId as int,
+    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as RulesetVersionActor,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as Map<String, dynamic>,
+  );
 
-  factory RulesetVersionWithState.fromJson(Map<String, dynamic> json) =>
-      RulesetVersionWithState(
-        versionId: ((json['version_id'] as num?)?.toInt())!,
-        actor: (json['actor'] != null
-            ? RulesetVersionActor.fromJson(
-                json['actor'] as Map<String, dynamic>)
-            : null)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        state: (json['state'] == null
-            ? null
-            : json['state'] as Map<String, dynamic>)!,
-      );
+  factory RulesetVersionWithState.fromJson(Map<String, dynamic> json) => RulesetVersionWithState(
+    versionId: ((json['version_id'] as num?)?.toInt())!,
+    actor: (json['actor'] != null ? RulesetVersionActor.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    state: (json['state'] == null ? null : json['state'] as Map<String, dynamic>)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'version_id': versionId,
-        'actor': actor.toJson(),
-        'updated_at': updatedAt,
-        'state': state,
-      };
+    'version_id': versionId,
+    'actor': actor.toJson(),
+    'updated_at': updatedAt,
+    'state': state,
+  };
 }

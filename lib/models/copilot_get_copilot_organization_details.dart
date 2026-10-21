@@ -8,296 +8,135 @@ part of 'copilot.dart';
 class CopilotOrganizationDetails {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The breakdown of Copilot Business seats for the organization.
   final CopilotOrganizationSeatBreakdown seatBreakdown;
-
   /// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
   final CopilotOrganizationDetailsPublicCodeSuggestions publicCodeSuggestions;
-
   /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
   final SdkOptional<CopilotOrganizationDetailsIdeChat> ideChat;
-
   /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
   final SdkOptional<CopilotOrganizationDetailsPlatformChat> platformChat;
-
   /// The organization policy for allowing or disallowing Copilot CLI.
   final SdkOptional<CopilotOrganizationDetailsCli> cli;
-
   /// The mode of assigning new seats.
   final CopilotOrganizationDetailsSeatManagementSetting seatManagementSetting;
-
   /// The Copilot plan of the organization, or the parent enterprise, when applicable.
   final SdkOptional<CopilotOrganizationDetailsPlanType> planType;
   final Map<String, dynamic> additionalProperties;
 
-  const CopilotOrganizationDetails(
-      {required this.seatBreakdown,
-      required this.publicCodeSuggestions,
-      this.ideChat = const SdkOmitted(),
-      this.platformChat = const SdkOmitted(),
-      this.cli = const SdkOmitted(),
-      required this.seatManagementSetting,
-      this.planType = const SdkOmitted(),
-      this.additionalProperties = const <String, dynamic>{}});
+  const CopilotOrganizationDetails({required this.seatBreakdown, required this.publicCodeSuggestions, this.ideChat = const SdkOmitted(), this.platformChat = const SdkOmitted(), this.cli = const SdkOmitted(), required this.seatManagementSetting, this.planType = const SdkOmitted(), this.additionalProperties = const <String, dynamic>{}});
 
-  CopilotOrganizationDetails Function(
-          {CopilotOrganizationSeatBreakdown seatBreakdown,
-          CopilotOrganizationDetailsPublicCodeSuggestions publicCodeSuggestions,
-          SdkOptional<CopilotOrganizationDetailsIdeChat> ideChat,
-          SdkOptional<CopilotOrganizationDetailsPlatformChat> platformChat,
-          SdkOptional<CopilotOrganizationDetailsCli> cli,
-          CopilotOrganizationDetailsSeatManagementSetting seatManagementSetting,
-          SdkOptional<CopilotOrganizationDetailsPlanType> planType})
-      get copyWith => _copyWith;
+  CopilotOrganizationDetails Function({CopilotOrganizationSeatBreakdown seatBreakdown, CopilotOrganizationDetailsPublicCodeSuggestions publicCodeSuggestions, SdkOptional<CopilotOrganizationDetailsIdeChat> ideChat, SdkOptional<CopilotOrganizationDetailsPlatformChat> platformChat, SdkOptional<CopilotOrganizationDetailsCli> cli, CopilotOrganizationDetailsSeatManagementSetting seatManagementSetting, SdkOptional<CopilotOrganizationDetailsPlanType> planType}) get copyWith => _copyWith;
 
-  CopilotOrganizationDetails _copyWith(
-          {Object? seatBreakdown = sdkOmittedValue,
-          Object? publicCodeSuggestions = sdkOmittedValue,
-          Object? ideChat = sdkOmittedValue,
-          Object? platformChat = sdkOmittedValue,
-          Object? cli = sdkOmittedValue,
-          Object? seatManagementSetting = sdkOmittedValue,
-          Object? planType = sdkOmittedValue}) =>
-      CopilotOrganizationDetails(
-        seatBreakdown: identical(seatBreakdown, sdkOmittedValue)
-            ? this.seatBreakdown
-            : seatBreakdown as CopilotOrganizationSeatBreakdown,
-        publicCodeSuggestions: identical(publicCodeSuggestions, sdkOmittedValue)
-            ? this.publicCodeSuggestions
-            : publicCodeSuggestions
-                as CopilotOrganizationDetailsPublicCodeSuggestions,
-        ideChat: identical(ideChat, sdkOmittedValue)
-            ? this.ideChat
-            : ideChat as SdkOptional<CopilotOrganizationDetailsIdeChat>,
-        platformChat: identical(platformChat, sdkOmittedValue)
-            ? this.platformChat
-            : platformChat
-                as SdkOptional<CopilotOrganizationDetailsPlatformChat>,
-        cli: identical(cli, sdkOmittedValue)
-            ? this.cli
-            : cli as SdkOptional<CopilotOrganizationDetailsCli>,
-        seatManagementSetting: identical(seatManagementSetting, sdkOmittedValue)
-            ? this.seatManagementSetting
-            : seatManagementSetting
-                as CopilotOrganizationDetailsSeatManagementSetting,
-        planType: identical(planType, sdkOmittedValue)
-            ? this.planType
-            : planType as SdkOptional<CopilotOrganizationDetailsPlanType>,
-        additionalProperties: additionalProperties,
-      );
+  CopilotOrganizationDetails _copyWith({Object? seatBreakdown = sdkOmittedValue, Object? publicCodeSuggestions = sdkOmittedValue, Object? ideChat = sdkOmittedValue, Object? platformChat = sdkOmittedValue, Object? cli = sdkOmittedValue, Object? seatManagementSetting = sdkOmittedValue, Object? planType = sdkOmittedValue}) => CopilotOrganizationDetails(
+    seatBreakdown: identical(seatBreakdown, sdkOmittedValue) ? this.seatBreakdown : seatBreakdown as CopilotOrganizationSeatBreakdown,
+    publicCodeSuggestions: identical(publicCodeSuggestions, sdkOmittedValue) ? this.publicCodeSuggestions : publicCodeSuggestions as CopilotOrganizationDetailsPublicCodeSuggestions,
+    ideChat: identical(ideChat, sdkOmittedValue) ? this.ideChat : ideChat as SdkOptional<CopilotOrganizationDetailsIdeChat>,
+    platformChat: identical(platformChat, sdkOmittedValue) ? this.platformChat : platformChat as SdkOptional<CopilotOrganizationDetailsPlatformChat>,
+    cli: identical(cli, sdkOmittedValue) ? this.cli : cli as SdkOptional<CopilotOrganizationDetailsCli>,
+    seatManagementSetting: identical(seatManagementSetting, sdkOmittedValue) ? this.seatManagementSetting : seatManagementSetting as CopilotOrganizationDetailsSeatManagementSetting,
+    planType: identical(planType, sdkOmittedValue) ? this.planType : planType as SdkOptional<CopilotOrganizationDetailsPlanType>,
+    additionalProperties: additionalProperties,
+  );
 
-  factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) =>
-      CopilotOrganizationDetails(
-        seatBreakdown: (json['seat_breakdown'] != null
-            ? CopilotOrganizationSeatBreakdown.fromJson(
-                json['seat_breakdown'] as Map<String, dynamic>)
-            : null)!,
-        publicCodeSuggestions: (json['public_code_suggestions'] != null
-            ? CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(
-                json['public_code_suggestions'] as String)
-            : null)!,
-        ideChat: json['ide_chat'] != null
-            ? SdkPresent((json['ide_chat'] != null
-                ? CopilotOrganizationDetailsIdeChat.fromJson(
-                    json['ide_chat'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        platformChat: json['platform_chat'] != null
-            ? SdkPresent((json['platform_chat'] != null
-                ? CopilotOrganizationDetailsPlatformChat.fromJson(
-                    json['platform_chat'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        cli: json['cli'] != null
-            ? SdkPresent((json['cli'] != null
-                ? CopilotOrganizationDetailsCli.fromJson(json['cli'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        seatManagementSetting: (json['seat_management_setting'] != null
-            ? CopilotOrganizationDetailsSeatManagementSetting.fromJson(
-                json['seat_management_setting'] as String)
-            : null)!,
-        planType: json['plan_type'] != null
-            ? SdkPresent((json['plan_type'] != null
-                ? CopilotOrganizationDetailsPlanType.fromJson(
-                    json['plan_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        additionalProperties: Map.of(json)
-          ..removeWhere((key, _) => const <String>{
-                'seat_breakdown',
-                'public_code_suggestions',
-                'ide_chat',
-                'platform_chat',
-                'cli',
-                'seat_management_setting',
-                'plan_type'
-              }.contains(key)),
-      );
+  factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) => CopilotOrganizationDetails(
+    seatBreakdown: (json['seat_breakdown'] != null ? CopilotOrganizationSeatBreakdown.fromJson(json['seat_breakdown'] as Map<String, dynamic>) : null)!,
+    publicCodeSuggestions: (json['public_code_suggestions'] != null ? CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(json['public_code_suggestions'] as String) : null)!,
+    ideChat: json['ide_chat'] != null ? SdkPresent((json['ide_chat'] != null ? CopilotOrganizationDetailsIdeChat.fromJson(json['ide_chat'] as String) : null)!) : const SdkOmitted(),
+    platformChat: json['platform_chat'] != null ? SdkPresent((json['platform_chat'] != null ? CopilotOrganizationDetailsPlatformChat.fromJson(json['platform_chat'] as String) : null)!) : const SdkOmitted(),
+    cli: json['cli'] != null ? SdkPresent((json['cli'] != null ? CopilotOrganizationDetailsCli.fromJson(json['cli'] as String) : null)!) : const SdkOmitted(),
+    seatManagementSetting: (json['seat_management_setting'] != null ? CopilotOrganizationDetailsSeatManagementSetting.fromJson(json['seat_management_setting'] as String) : null)!,
+    planType: json['plan_type'] != null ? SdkPresent((json['plan_type'] != null ? CopilotOrganizationDetailsPlanType.fromJson(json['plan_type'] as String) : null)!) : const SdkOmitted(),
+    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'seat_breakdown', 'public_code_suggestions', 'ide_chat', 'platform_chat', 'cli', 'seat_management_setting', 'plan_type'}.contains(key)),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...additionalProperties,
-        'seat_breakdown': seatBreakdown.toJson(),
-        'public_code_suggestions': publicCodeSuggestions.toJson(),
-        ...switch (ideChat) {
-          SdkPresent<CopilotOrganizationDetailsIdeChat>(value: final value) => {
-              'ide_chat': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (platformChat) {
-          SdkPresent<CopilotOrganizationDetailsPlatformChat>(
-            value: final value
-          ) =>
-            {
-              'platform_chat': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cli) {
-          SdkPresent<CopilotOrganizationDetailsCli>(value: final value) => {
-              'cli': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'seat_management_setting': seatManagementSetting.toJson(),
-        ...switch (planType) {
-          SdkPresent<CopilotOrganizationDetailsPlanType>(value: final value) =>
-            {
-              'plan_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...additionalProperties,
+    'seat_breakdown': seatBreakdown.toJson(),
+    'public_code_suggestions': publicCodeSuggestions.toJson(),
+    ...switch (ideChat) {
+      SdkPresent<CopilotOrganizationDetailsIdeChat>(value: final value) => {'ide_chat': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (platformChat) {
+      SdkPresent<CopilotOrganizationDetailsPlatformChat>(value: final value) => {'platform_chat': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cli) {
+      SdkPresent<CopilotOrganizationDetailsCli>(value: final value) => {'cli': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'seat_management_setting': seatManagementSetting.toJson(),
+    ...switch (planType) {
+      SdkPresent<CopilotOrganizationDetailsPlanType>(value: final value) => {'plan_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The breakdown of Copilot Business seats for the organization.
 class CopilotOrganizationSeatBreakdown {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The total number of seats being billed for the organization as of the current billing cycle.
   final SdkOptional<int> total;
-
   /// Seats added during the current billing cycle.
   final SdkOptional<int> addedThisCycle;
-
   /// The number of seats that are pending cancellation at the end of the current billing cycle.
   final SdkOptional<int> pendingCancellation;
-
   /// The number of users who have been invited to receive a Copilot seat through this organization.
   final SdkOptional<int> pendingInvitation;
-
   /// The number of seats that have used Copilot during the current billing cycle.
   final SdkOptional<int> activeThisCycle;
-
   /// The number of seats that have not used Copilot during the current billing cycle.
   final SdkOptional<int> inactiveThisCycle;
 
-  const CopilotOrganizationSeatBreakdown(
-      {this.total = const SdkOmitted(),
-      this.addedThisCycle = const SdkOmitted(),
-      this.pendingCancellation = const SdkOmitted(),
-      this.pendingInvitation = const SdkOmitted(),
-      this.activeThisCycle = const SdkOmitted(),
-      this.inactiveThisCycle = const SdkOmitted()});
+  const CopilotOrganizationSeatBreakdown({this.total = const SdkOmitted(), this.addedThisCycle = const SdkOmitted(), this.pendingCancellation = const SdkOmitted(), this.pendingInvitation = const SdkOmitted(), this.activeThisCycle = const SdkOmitted(), this.inactiveThisCycle = const SdkOmitted()});
 
-  CopilotOrganizationSeatBreakdown Function(
-      {SdkOptional<int> total,
-      SdkOptional<int> addedThisCycle,
-      SdkOptional<int> pendingCancellation,
-      SdkOptional<int> pendingInvitation,
-      SdkOptional<int> activeThisCycle,
-      SdkOptional<int> inactiveThisCycle}) get copyWith => _copyWith;
+  CopilotOrganizationSeatBreakdown Function({SdkOptional<int> total, SdkOptional<int> addedThisCycle, SdkOptional<int> pendingCancellation, SdkOptional<int> pendingInvitation, SdkOptional<int> activeThisCycle, SdkOptional<int> inactiveThisCycle}) get copyWith => _copyWith;
 
-  CopilotOrganizationSeatBreakdown _copyWith(
-          {Object? total = sdkOmittedValue,
-          Object? addedThisCycle = sdkOmittedValue,
-          Object? pendingCancellation = sdkOmittedValue,
-          Object? pendingInvitation = sdkOmittedValue,
-          Object? activeThisCycle = sdkOmittedValue,
-          Object? inactiveThisCycle = sdkOmittedValue}) =>
-      CopilotOrganizationSeatBreakdown(
-        total: identical(total, sdkOmittedValue)
-            ? this.total
-            : total as SdkOptional<int>,
-        addedThisCycle: identical(addedThisCycle, sdkOmittedValue)
-            ? this.addedThisCycle
-            : addedThisCycle as SdkOptional<int>,
-        pendingCancellation: identical(pendingCancellation, sdkOmittedValue)
-            ? this.pendingCancellation
-            : pendingCancellation as SdkOptional<int>,
-        pendingInvitation: identical(pendingInvitation, sdkOmittedValue)
-            ? this.pendingInvitation
-            : pendingInvitation as SdkOptional<int>,
-        activeThisCycle: identical(activeThisCycle, sdkOmittedValue)
-            ? this.activeThisCycle
-            : activeThisCycle as SdkOptional<int>,
-        inactiveThisCycle: identical(inactiveThisCycle, sdkOmittedValue)
-            ? this.inactiveThisCycle
-            : inactiveThisCycle as SdkOptional<int>,
-      );
+  CopilotOrganizationSeatBreakdown _copyWith({Object? total = sdkOmittedValue, Object? addedThisCycle = sdkOmittedValue, Object? pendingCancellation = sdkOmittedValue, Object? pendingInvitation = sdkOmittedValue, Object? activeThisCycle = sdkOmittedValue, Object? inactiveThisCycle = sdkOmittedValue}) => CopilotOrganizationSeatBreakdown(
+    total: identical(total, sdkOmittedValue) ? this.total : total as SdkOptional<int>,
+    addedThisCycle: identical(addedThisCycle, sdkOmittedValue) ? this.addedThisCycle : addedThisCycle as SdkOptional<int>,
+    pendingCancellation: identical(pendingCancellation, sdkOmittedValue) ? this.pendingCancellation : pendingCancellation as SdkOptional<int>,
+    pendingInvitation: identical(pendingInvitation, sdkOmittedValue) ? this.pendingInvitation : pendingInvitation as SdkOptional<int>,
+    activeThisCycle: identical(activeThisCycle, sdkOmittedValue) ? this.activeThisCycle : activeThisCycle as SdkOptional<int>,
+    inactiveThisCycle: identical(inactiveThisCycle, sdkOmittedValue) ? this.inactiveThisCycle : inactiveThisCycle as SdkOptional<int>,
+  );
 
-  factory CopilotOrganizationSeatBreakdown.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotOrganizationSeatBreakdown(
-        total: json['total'] != null
-            ? SdkPresent(((json['total'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        addedThisCycle: json['added_this_cycle'] != null
-            ? SdkPresent(((json['added_this_cycle'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pendingCancellation: json['pending_cancellation'] != null
-            ? SdkPresent(((json['pending_cancellation'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pendingInvitation: json['pending_invitation'] != null
-            ? SdkPresent(((json['pending_invitation'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        activeThisCycle: json['active_this_cycle'] != null
-            ? SdkPresent(((json['active_this_cycle'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        inactiveThisCycle: json['inactive_this_cycle'] != null
-            ? SdkPresent(((json['inactive_this_cycle'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory CopilotOrganizationSeatBreakdown.fromJson(Map<String, dynamic> json) => CopilotOrganizationSeatBreakdown(
+    total: json['total'] != null ? SdkPresent(((json['total'] as num?)?.toInt())!) : const SdkOmitted(),
+    addedThisCycle: json['added_this_cycle'] != null ? SdkPresent(((json['added_this_cycle'] as num?)?.toInt())!) : const SdkOmitted(),
+    pendingCancellation: json['pending_cancellation'] != null ? SdkPresent(((json['pending_cancellation'] as num?)?.toInt())!) : const SdkOmitted(),
+    pendingInvitation: json['pending_invitation'] != null ? SdkPresent(((json['pending_invitation'] as num?)?.toInt())!) : const SdkOmitted(),
+    activeThisCycle: json['active_this_cycle'] != null ? SdkPresent(((json['active_this_cycle'] as num?)?.toInt())!) : const SdkOmitted(),
+    inactiveThisCycle: json['inactive_this_cycle'] != null ? SdkPresent(((json['inactive_this_cycle'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (total) {
-          SdkPresent<int>(value: final value) => {
-              'total': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (addedThisCycle) {
-          SdkPresent<int>(value: final value) => {
-              'added_this_cycle': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pendingCancellation) {
-          SdkPresent<int>(value: final value) => {
-              'pending_cancellation': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pendingInvitation) {
-          SdkPresent<int>(value: final value) => {
-              'pending_invitation': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (activeThisCycle) {
-          SdkPresent<int>(value: final value) => {
-              'active_this_cycle': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (inactiveThisCycle) {
-          SdkPresent<int>(value: final value) => {
-              'inactive_this_cycle': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (total) {
+      SdkPresent<int>(value: final value) => {'total': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (addedThisCycle) {
+      SdkPresent<int>(value: final value) => {'added_this_cycle': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pendingCancellation) {
+      SdkPresent<int>(value: final value) => {'pending_cancellation': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pendingInvitation) {
+      SdkPresent<int>(value: final value) => {'pending_invitation': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (activeThisCycle) {
+      SdkPresent<int>(value: final value) => {'active_this_cycle': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (inactiveThisCycle) {
+      SdkPresent<int>(value: final value) => {'inactive_this_cycle': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -14,34 +14,28 @@ Future<Integration> appsGetAuthenticated(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetAuthenticated',
-          fromJsonRaw: (value) =>
-              Integration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Integration.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
 
+
 /// Creates a GitHub App from a manifest to complete the GitHub App Manifest flow. Use the temporary `code` to retrieve the app details and credentials, including its `id`, `pem`, and `webhook_secret`.
 ///
 /// Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://docs.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.
-Future<AppsCreateFromManifestResponse> appsCreateFromManifest(
-    ClientConfig config,
-    {required String code,
-    RequestOptions? requestOptions}) async {
+Future<AppsCreateFromManifestResponse> appsCreateFromManifest(ClientConfig config,
+    {required String code, RequestOptions? requestOptions}) async {
   return (await sdkRequest<AppsCreateFromManifestResponse>('POST',
           '/app-manifests/${Uri.encodeComponent(code.toString())}/conversions',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsCreateFromManifest',
-          fromJsonRaw: (value) => AppsCreateFromManifestResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AppsCreateFromManifestResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns the webhook configuration for a GitHub App. For more information about configuring a webhook for your app, see "Creating a GitHub App." You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 Future<WebhookConfig> appsGetWebhookConfigForApp(ClientConfig config,
@@ -50,11 +44,11 @@ Future<WebhookConfig> appsGetWebhookConfigForApp(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetWebhookConfigForApp',
-          fromJsonRaw: (value) =>
-              WebhookConfig.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => WebhookConfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the webhook configuration for a GitHub App, including its payload URL and delivery settings. Supply `url` as a URI; `content_type` defaults to `form`, and `insecure_ssl` defaults to `0`. Authenticate with a GitHub App JWT to access this endpoint.
 ///
@@ -86,11 +80,11 @@ Future<WebhookConfig> appsUpdateWebhookConfigForApp(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsUpdateWebhookConfigForApp',
-          fromJsonRaw: (value) =>
-              WebhookConfig.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => WebhookConfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns a list of webhook deliveries for the webhook configured for a GitHub App. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -115,28 +109,18 @@ Future<List<HookDeliveryItem>> appsListWebhookDeliveries(ClientConfig config,
           'GET', '/app/hook/deliveries',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'cursor': SdkQueryValue(SdkUtils.unwrapOptional(cursor),
-                style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'cursor': SdkQueryValue(SdkUtils.unwrapOptional(cursor), style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListWebhookDeliveries',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  HookDeliveryItem.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => HookDeliveryItem.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a delivery for a webhook configured for a GitHub App. Use `delivery_id` to identify the delivery whose request, response, and delivery status you need to inspect. Authenticate with a GitHub App JWT to access this endpoint.
 ///
@@ -148,16 +132,12 @@ Future<HookDelivery> appsGetWebhookDelivery(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetWebhookDelivery',
-          fromJsonRaw: (value) =>
-              HookDelivery.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => HookDelivery.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Triggers a redelivery attempt for a delivery made by a webhook configured for a GitHub App. Supply `delivery_id` to identify the delivery to attempt again. Authenticate with a GitHub App JWT to access this endpoint.
 ///
@@ -171,13 +151,10 @@ Future<Map<String, dynamic>> appsRedeliverWebhookDelivery(ClientConfig config,
           operationId: 'appsRedeliverWebhookDelivery',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all the pending installation requests for the authenticated GitHub App.
 ///
@@ -198,23 +175,17 @@ Future<List<IntegrationInstallationRequest>>
           'GET', '/app/installation-requests',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListInstallationRequestsForAuthenticatedApp',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => IntegrationInstallationRequest.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => IntegrationInstallationRequest.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists installations for the authenticated GitHub App. Use `since` to filter for installations updated after a timestamp, and use `page` and `per_page` to paginate the results. Each installation includes its granted permissions; authenticate with a GitHub App JWT to access this endpoint.
 ///
@@ -244,24 +215,18 @@ Future<List<Installation>> appsListInstallations(ClientConfig config,
   return (await sdkRequest<List<Installation>>('GET', '/app/installations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'outdated': SdkQueryValue(SdkUtils.unwrapOptional(outdated),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'outdated': SdkQueryValue(SdkUtils.unwrapOptional(outdated), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListInstallations',
-          fromJsonRaw: (value) => (value as List)
-              .map(
-                  (item) => Installation.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Installation.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Enables an authenticated GitHub App to find an installation's information using the installation id. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -275,11 +240,10 @@ Future<Installation> appsGetInstallation(ClientConfig config,
           operationId: 'appsGetInstallation',
           fromJsonRaw: (value) => Installation.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Uninstalls a GitHub App on a user, organization, or enterprise account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an app installation](https://docs.github.com/rest/apps/apps#suspend-an-app-installation)" endpoint. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -292,11 +256,10 @@ Future<void> appsDeleteInstallation(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'appsDeleteInstallation',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. &gt; [!NOTE] &gt; Starting April 27, 2026, GitHub began a staged rollout of a stateless format (`ghs_APPID_JWT`) to all newly minted GitHub App installation tokens, making them more performant and improving the reliability of our API surface. If your application expects or relies on installation tokens being exactly 40 characters long, it may not handle this new token format correctly. You can now validate your apps and workflows using a temporary request header that lets you enable the token format on demand. For more information about the temporary header, see [the GitHub blog](https://github.blog/changelog/2026-05-15-github-app-installation-tokens-per-request-override-header). Optionally, you can use the `repositories` or `repository_ids` body parameters to specify individual repositories that the installation access token can access. If you don't use `repositories` or `repository_ids` to grant access to specific repositories, the installation access token will have access to all repositories that the installation was granted access to. The installation access token cannot be granted access to repositories that the installation was not granted access to. Up to 500 repositories can be listed in this manner. Optionally, use the `permissions` body parameter to specify the permissions that the installation access token should have. If `permissions` is not specified, the installation access token will have all of the permissions that were granted to the app. The installation access token cannot be granted permissions that the app…
 ///
@@ -320,21 +283,12 @@ Future<InstallationToken> appsCreateInstallationAccessToken(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsCreateInstallationAccessToken',
-          fromJsonRaw: (value) =>
-              InstallationToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => InstallationToken.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Suspends a GitHub App on a user, organization, or enterprise account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -347,11 +301,10 @@ Future<void> appsSuspendInstallation(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'appsSuspendInstallation',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a GitHub App installation suspension. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -364,11 +317,10 @@ Future<void> appsUnsuspendInstallation(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'appsUnsuspendInstallation',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted. Deleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
 ///
@@ -385,12 +337,10 @@ Future<void> appsDeleteAuthorization(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'appsDeleteAuthorization',
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. Invalid tokens will return `404 NOT FOUND`.
 ///
@@ -406,17 +356,12 @@ Future<Authorization> appsCheckToken(ClientConfig config,
           body: {'access_token': accessToken},
           decoder: SdkResponseDecoder.json,
           operationId: 'appsCheckToken',
-          fromJsonRaw: (value) =>
-              Authorization.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Authorization.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. Invalid tokens will return `404 NOT FOUND`.
 ///
@@ -432,15 +377,12 @@ Future<Authorization> appsResetToken(ClientConfig config,
           body: {'access_token': accessToken},
           decoder: SdkResponseDecoder.json,
           operationId: 'appsResetToken',
-          fromJsonRaw: (value) =>
-              Authorization.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Authorization.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// OAuth or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.
 ///
@@ -457,12 +399,10 @@ Future<void> appsDeleteToken(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'appsDeleteToken',
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify which repositories the token can access and which permissions are granted to the token. Invalid tokens will return `404 NOT FOUND`.
 ///
@@ -499,21 +439,12 @@ Future<Authorization> appsScopeToken(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsScopeToken',
-          fromJsonRaw: (value) =>
-              Authorization.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Authorization.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a GitHub App by its URL-friendly slug. Use the `app_slug` path parameter shown in the app's settings URL to identify the app.
 ///
@@ -525,15 +456,12 @@ Future<Integration> appsGetBySlug(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetBySlug',
-          fromJsonRaw: (value) =>
-              Integration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Integration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List repositories that an app installation can access.
 ///
@@ -554,24 +482,17 @@ Future<AppsListReposAccessibleToInstallationResponse>
           'GET', '/installation/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListReposAccessibleToInstallation',
-          fromJsonRaw: (value) =>
-              AppsListReposAccessibleToInstallationResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AppsListReposAccessibleToInstallationResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Revokes the installation token you're using to authenticate as an installation and access this endpoint. Once an installation token is revoked, the token is invalidated and cannot be used. Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the "[Create an installation access token for an app](https://docs.github.com/rest/apps/apps#create-an-installation-access-token-for-an-app)" endpoint.
 Future<void> appsRevokeInstallationAccessToken(ClientConfig config,
@@ -584,27 +505,23 @@ Future<void> appsRevokeInstallationAccessToken(ClientConfig config,
       .data;
 }
 
+
 /// Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change. GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// [accountId] account_id parameter
-Future<MarketplacePurchase> appsGetSubscriptionPlanForAccount(
-    ClientConfig config,
-    {required int accountId,
-    RequestOptions? requestOptions}) async {
+Future<MarketplacePurchase> appsGetSubscriptionPlanForAccount(ClientConfig config,
+    {required int accountId, RequestOptions? requestOptions}) async {
   return (await sdkRequest<MarketplacePurchase>('GET',
           '/marketplace_listing/accounts/${Uri.encodeComponent(accountId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetSubscriptionPlanForAccount',
-          fromJsonRaw: (value) =>
-              MarketplacePurchase.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => MarketplacePurchase.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all plans that are part of your GitHub Marketplace listing. GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
@@ -624,25 +541,17 @@ Future<List<MarketplaceListingPlan>> appsListPlans(ClientConfig config,
           'GET', '/marketplace_listing/plans',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListPlans',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MarketplaceListingPlan.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MarketplaceListingPlan.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change. GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
@@ -661,8 +570,7 @@ Future<List<MarketplaceListingPlan>> appsListPlans(ClientConfig config,
 Future<List<MarketplacePurchase>> appsListAccountsForPlan(ClientConfig config,
     {required int planId,
     SdkOptional<SchemaSchema2e5fa964> sort = const SdkOmitted(),
-    SdkOptional<AppsListAccountsForPlanDirection> direction =
-        const SdkOmitted(),
+    SdkOptional<AppsListAccountsForPlanDirection> direction = const SdkOmitted(),
     SdkOptional<int> perPage = const SdkOmitted(),
     SdkOptional<int> page = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -670,40 +578,25 @@ Future<List<MarketplacePurchase>> appsListAccountsForPlan(ClientConfig config,
           '/marketplace_listing/plans/${Uri.encodeComponent(planId.toString())}/accounts',
           config: config,
           query: {
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListAccountsForPlan',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MarketplacePurchase.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MarketplacePurchase.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change. GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// [accountId] account_id parameter
-Future<MarketplacePurchase> appsGetSubscriptionPlanForAccountStubbed(
-    ClientConfig config,
-    {required int accountId,
-    RequestOptions? requestOptions}) async {
+Future<MarketplacePurchase> appsGetSubscriptionPlanForAccountStubbed(ClientConfig config,
+    {required int accountId, RequestOptions? requestOptions}) async {
   return (await sdkRequest<MarketplacePurchase>('GET',
           '/marketplace_listing/stubbed/accounts/${Uri.encodeComponent(accountId.toString())}',
           config: config,
@@ -711,11 +604,10 @@ Future<MarketplacePurchase> appsGetSubscriptionPlanForAccountStubbed(
           operationId: 'appsGetSubscriptionPlanForAccountStubbed',
           fromJsonRaw: (value) => MarketplacePurchase.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all plans that are part of your GitHub Marketplace listing. GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
@@ -735,23 +627,17 @@ Future<List<MarketplaceListingPlan>> appsListPlansStubbed(ClientConfig config,
           'GET', '/marketplace_listing/stubbed/plans',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListPlansStubbed',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MarketplaceListingPlan.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MarketplaceListingPlan.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change. GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
@@ -767,40 +653,31 @@ Future<List<MarketplaceListingPlan>> appsListPlansStubbed(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<MarketplacePurchase>> appsListAccountsForPlanStubbed(
-    ClientConfig config,
-    {required int planId,
-    SdkOptional<SchemaSchema2e5fa964> sort = const SdkOmitted(),
-    SdkOptional<AppsListAccountsForPlanStubbedDirection> direction =
-        const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<MarketplacePurchase>>
+    appsListAccountsForPlanStubbed(ClientConfig config,
+        {required int planId,
+        SdkOptional<SchemaSchema2e5fa964> sort = const SdkOmitted(),
+        SdkOptional<AppsListAccountsForPlanStubbedDirection> direction = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<MarketplacePurchase>>('GET',
           '/marketplace_listing/stubbed/plans/${Uri.encodeComponent(planId.toString())}/accounts',
           config: config,
           query: {
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListAccountsForPlanStubbed',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MarketplacePurchase.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MarketplacePurchase.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Enables an authenticated GitHub App to find the organization's installation information. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -812,11 +689,11 @@ Future<Installation> appsGetOrgInstallation(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetOrgInstallation',
-          fromJsonRaw: (value) =>
-              Installation.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Installation.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -832,15 +709,12 @@ Future<Installation> appsGetRepoInstallation(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetRepoInstallation',
-          fromJsonRaw: (value) =>
-              Installation.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Installation.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '301': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'301': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists installations of your GitHub App that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access. The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership. You can find the permissions for the installation under the `permissions` key.
 ///
@@ -861,24 +735,17 @@ Future<AppsListInstallationsForAuthenticatedUserResponse>
           'GET', '/user/installations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListInstallationsForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              AppsListInstallationsForAuthenticatedUserResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AppsListInstallationsForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access for an installation. The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership. The access the user has to each repository is included in the hash under the `permissions` key.
 ///
@@ -897,29 +764,21 @@ Future<AppsListInstallationReposForAuthenticatedUserResponse>
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<
-              AppsListInstallationReposForAuthenticatedUserResponse>('GET',
+  return (await sdkRequest<AppsListInstallationReposForAuthenticatedUserResponse>('GET',
           '/user/installations/${Uri.encodeComponent(installationId.toString())}/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListInstallationReposForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              AppsListInstallationReposForAuthenticatedUserResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AppsListInstallationReposForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Add a single repository to an installation. The authenticated user must have admin access to the repository.
 ///
@@ -935,34 +794,30 @@ Future<void> appsAddRepoToInstallationForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'appsAddRepoToInstallationForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`. To use a PAT (classic) with this endpoint, the `repo` scope is required
 ///
 /// [installationId] The unique identifier of the installation.
 /// [repositoryId] The unique identifier of the repository.
-Future<void> appsRemoveRepoFromInstallationForAuthenticatedUser(
-    ClientConfig config,
-    {required int installationId,
-    required int repositoryId,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    appsRemoveRepoFromInstallationForAuthenticatedUser(ClientConfig config,
+        {required int installationId,
+        required int repositoryId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/user/installations/${Uri.encodeComponent(installationId.toString())}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'appsRemoveRepoFromInstallationForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the active subscriptions for the authenticated user.
 ///
@@ -974,34 +829,26 @@ Future<void> appsRemoveRepoFromInstallationForAuthenticatedUser(
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<UserMarketplacePurchase>> appsListSubscriptionsForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<UserMarketplacePurchase>>
+    appsListSubscriptionsForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<UserMarketplacePurchase>>(
           'GET', '/user/marketplace_purchases',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListSubscriptionsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => UserMarketplacePurchase.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => UserMarketplacePurchase.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the active subscriptions for the authenticated user.
 ///
@@ -1022,23 +869,17 @@ Future<List<UserMarketplacePurchase>>
           'GET', '/user/marketplace_purchases/stubbed',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'appsListSubscriptionsForAuthenticatedUserStubbed',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => UserMarketplacePurchase.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => UserMarketplacePurchase.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Enables an authenticated GitHub App to find the user’s installation information. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
@@ -1050,8 +891,7 @@ Future<Installation> appsGetUserInstallation(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'appsGetUserInstallation',
-          fromJsonRaw: (value) =>
-              Installation.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Installation.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

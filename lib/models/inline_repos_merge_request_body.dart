@@ -7,456 +7,251 @@ part of 'inline.dart';
 class ReposMergeRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the base branch that the head will be merged into.
   final String base_;
-
   /// The head to merge. This can be a branch name or a commit SHA1.
   final String head;
-
   /// Commit message to use for the merge commit. If omitted, a default message will be used.
   final SdkOptional<String> commitMessage;
 
-  const ReposMergeRequestBody(
-      {required this.base_,
-      required this.head,
-      this.commitMessage = const SdkOmitted()});
+  const ReposMergeRequestBody({required this.base_, required this.head, this.commitMessage = const SdkOmitted()});
 
-  ReposMergeRequestBody Function(
-      {String base_,
-      String head,
-      SdkOptional<String> commitMessage}) get copyWith => _copyWith;
+  ReposMergeRequestBody Function({String base_, String head, SdkOptional<String> commitMessage}) get copyWith => _copyWith;
 
-  ReposMergeRequestBody _copyWith(
-          {Object? base_ = sdkOmittedValue,
-          Object? head = sdkOmittedValue,
-          Object? commitMessage = sdkOmittedValue}) =>
-      ReposMergeRequestBody(
-        base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
-        head: identical(head, sdkOmittedValue) ? this.head : head as String,
-        commitMessage: identical(commitMessage, sdkOmittedValue)
-            ? this.commitMessage
-            : commitMessage as SdkOptional<String>,
-      );
+  ReposMergeRequestBody _copyWith({Object? base_ = sdkOmittedValue, Object? head = sdkOmittedValue, Object? commitMessage = sdkOmittedValue}) => ReposMergeRequestBody(
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
+    head: identical(head, sdkOmittedValue) ? this.head : head as String,
+    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as SdkOptional<String>,
+  );
 
-  factory ReposMergeRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposMergeRequestBody(
-        base_: (json['base'] as String?)!,
-        head: (json['head'] as String?)!,
-        commitMessage: json['commit_message'] != null
-            ? SdkPresent((json['commit_message'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposMergeRequestBody.fromJson(Map<String, dynamic> json) => ReposMergeRequestBody(
+    base_: (json['base'] as String?)!,
+    head: (json['head'] as String?)!,
+    commitMessage: json['commit_message'] != null ? SdkPresent((json['commit_message'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'base': base_,
-        'head': head,
-        ...switch (commitMessage) {
-          SdkPresent<String>(value: final value) => {
-              'commit_message': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'base': base_,
+    'head': head,
+    ...switch (commitMessage) {
+      SdkPresent<String>(value: final value) => {'commit_message': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The source branch and directory used to publish your Pages site.
 class ReposCreatePagesSiteRequestBodySource {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The repository branch used to publish your site's source files.
   final String branch;
-
   /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`
   final SdkOptional<ReposCreatePagesSiteRequestBodySourcePath> path;
 
-  const ReposCreatePagesSiteRequestBodySource(
-      {required this.branch, this.path = const SdkOmitted()});
+  const ReposCreatePagesSiteRequestBodySource({required this.branch, this.path = const SdkOmitted()});
 
-  ReposCreatePagesSiteRequestBodySource Function(
-          {String branch,
-          SdkOptional<ReposCreatePagesSiteRequestBodySourcePath> path})
-      get copyWith => _copyWith;
+  ReposCreatePagesSiteRequestBodySource Function({String branch, SdkOptional<ReposCreatePagesSiteRequestBodySourcePath> path}) get copyWith => _copyWith;
 
-  ReposCreatePagesSiteRequestBodySource _copyWith(
-          {Object? branch = sdkOmittedValue, Object? path = sdkOmittedValue}) =>
-      ReposCreatePagesSiteRequestBodySource(
-        branch:
-            identical(branch, sdkOmittedValue) ? this.branch : branch as String,
-        path: identical(path, sdkOmittedValue)
-            ? this.path
-            : path as SdkOptional<ReposCreatePagesSiteRequestBodySourcePath>,
-      );
+  ReposCreatePagesSiteRequestBodySource _copyWith({Object? branch = sdkOmittedValue, Object? path = sdkOmittedValue}) => ReposCreatePagesSiteRequestBodySource(
+    branch: identical(branch, sdkOmittedValue) ? this.branch : branch as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<ReposCreatePagesSiteRequestBodySourcePath>,
+  );
 
-  factory ReposCreatePagesSiteRequestBodySource.fromJson(
-          Map<String, dynamic> json) =>
-      ReposCreatePagesSiteRequestBodySource(
-        branch: (json['branch'] as String?)!,
-        path: json['path'] != null
-            ? SdkPresent((json['path'] != null
-                ? ReposCreatePagesSiteRequestBodySourcePath.fromJson(
-                    json['path'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposCreatePagesSiteRequestBodySource.fromJson(Map<String, dynamic> json) => ReposCreatePagesSiteRequestBodySource(
+    branch: (json['branch'] as String?)!,
+    path: json['path'] != null ? SdkPresent((json['path'] != null ? ReposCreatePagesSiteRequestBodySourcePath.fromJson(json['path'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'branch': branch,
-        ...switch (path) {
-          SdkPresent<ReposCreatePagesSiteRequestBodySourcePath>(
-            value: final value
-          ) =>
-            {
-              'path': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'branch': branch,
+    ...switch (path) {
+      SdkPresent<ReposCreatePagesSiteRequestBodySourcePath>(value: final value) => {'path': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The source branch and directory used to publish your Pages site.
 class ReposCreatePagesSiteRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
   final SdkOptional<ReposCreatePagesSiteRequestBodyBuildType> buildType;
-
   /// The source branch and directory used to publish your Pages site.
   final SdkOptional<ReposCreatePagesSiteRequestBodySource> source;
 
-  const ReposCreatePagesSiteRequestBody(
-      {this.buildType = const SdkOmitted(), this.source = const SdkOmitted()});
+  const ReposCreatePagesSiteRequestBody({this.buildType = const SdkOmitted(), this.source = const SdkOmitted()});
 
-  ReposCreatePagesSiteRequestBody Function(
-          {SdkOptional<ReposCreatePagesSiteRequestBodyBuildType> buildType,
-          SdkOptional<ReposCreatePagesSiteRequestBodySource> source})
-      get copyWith => _copyWith;
+  ReposCreatePagesSiteRequestBody Function({SdkOptional<ReposCreatePagesSiteRequestBodyBuildType> buildType, SdkOptional<ReposCreatePagesSiteRequestBodySource> source}) get copyWith => _copyWith;
 
-  ReposCreatePagesSiteRequestBody _copyWith(
-          {Object? buildType = sdkOmittedValue,
-          Object? source = sdkOmittedValue}) =>
-      ReposCreatePagesSiteRequestBody(
-        buildType: identical(buildType, sdkOmittedValue)
-            ? this.buildType
-            : buildType
-                as SdkOptional<ReposCreatePagesSiteRequestBodyBuildType>,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as SdkOptional<ReposCreatePagesSiteRequestBodySource>,
-      );
+  ReposCreatePagesSiteRequestBody _copyWith({Object? buildType = sdkOmittedValue, Object? source = sdkOmittedValue}) => ReposCreatePagesSiteRequestBody(
+    buildType: identical(buildType, sdkOmittedValue) ? this.buildType : buildType as SdkOptional<ReposCreatePagesSiteRequestBodyBuildType>,
+    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<ReposCreatePagesSiteRequestBodySource>,
+  );
 
-  factory ReposCreatePagesSiteRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposCreatePagesSiteRequestBody(
-        buildType: json['build_type'] != null
-            ? SdkPresent((json['build_type'] != null
-                ? ReposCreatePagesSiteRequestBodyBuildType.fromJson(
-                    json['build_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        source: json['source'] != null
-            ? SdkPresent((json['source'] != null
-                ? ReposCreatePagesSiteRequestBodySource.fromJson(
-                    json['source'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposCreatePagesSiteRequestBody.fromJson(Map<String, dynamic> json) => ReposCreatePagesSiteRequestBody(
+    buildType: json['build_type'] != null ? SdkPresent((json['build_type'] != null ? ReposCreatePagesSiteRequestBodyBuildType.fromJson(json['build_type'] as String) : null)!) : const SdkOmitted(),
+    source: json['source'] != null ? SdkPresent((json['source'] != null ? ReposCreatePagesSiteRequestBodySource.fromJson(json['source'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (buildType) {
-          SdkPresent<ReposCreatePagesSiteRequestBodyBuildType>(
-            value: final value
-          ) =>
-            {
-              'build_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (source) {
-          SdkPresent<ReposCreatePagesSiteRequestBodySource>(
-            value: final value
-          ) =>
-            {
-              'source': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (buildType) {
+      SdkPresent<ReposCreatePagesSiteRequestBodyBuildType>(value: final value) => {'build_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (source) {
+      SdkPresent<ReposCreatePagesSiteRequestBodySource>(value: final value) => {'source': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdateInformationAboutPagesSiteRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)."
   final SdkOptional<String?> cname;
-
   /// Specify whether HTTPS should be enforced for the repository.
   final SdkOptional<bool> httpsEnforced;
-
   /// The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
-  final SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>
-      buildType;
-
+  final SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType> buildType;
   /// Typed representation of the `ReposUpdateInformationAboutPagesSiteRequestSource` API schema.
   final SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource> source;
 
-  const ReposUpdateInformationAboutPagesSiteRequestBody(
-      {this.cname = const SdkOmitted(),
-      this.httpsEnforced = const SdkOmitted(),
-      this.buildType = const SdkOmitted(),
-      this.source = const SdkOmitted()});
+  const ReposUpdateInformationAboutPagesSiteRequestBody({this.cname = const SdkOmitted(), this.httpsEnforced = const SdkOmitted(), this.buildType = const SdkOmitted(), this.source = const SdkOmitted()});
 
-  ReposUpdateInformationAboutPagesSiteRequestBody Function(
-      {SdkOptional<String?> cname,
-      SdkOptional<bool> httpsEnforced,
-      SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>
-          buildType,
-      SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource>
-          source}) get copyWith => _copyWith;
+  ReposUpdateInformationAboutPagesSiteRequestBody Function({SdkOptional<String?> cname, SdkOptional<bool> httpsEnforced, SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType> buildType, SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource> source}) get copyWith => _copyWith;
 
-  ReposUpdateInformationAboutPagesSiteRequestBody _copyWith(
-          {Object? cname = sdkOmittedValue,
-          Object? httpsEnforced = sdkOmittedValue,
-          Object? buildType = sdkOmittedValue,
-          Object? source = sdkOmittedValue}) =>
-      ReposUpdateInformationAboutPagesSiteRequestBody(
-        cname: identical(cname, sdkOmittedValue)
-            ? this.cname
-            : cname as SdkOptional<String?>,
-        httpsEnforced: identical(httpsEnforced, sdkOmittedValue)
-            ? this.httpsEnforced
-            : httpsEnforced as SdkOptional<bool>,
-        buildType: identical(buildType, sdkOmittedValue)
-            ? this.buildType
-            : buildType as SdkOptional<
-                ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>,
-        source: identical(source, sdkOmittedValue)
-            ? this.source
-            : source as SdkOptional<
-                ReposUpdateInformationAboutPagesSiteRequestSource>,
-      );
+  ReposUpdateInformationAboutPagesSiteRequestBody _copyWith({Object? cname = sdkOmittedValue, Object? httpsEnforced = sdkOmittedValue, Object? buildType = sdkOmittedValue, Object? source = sdkOmittedValue}) => ReposUpdateInformationAboutPagesSiteRequestBody(
+    cname: identical(cname, sdkOmittedValue) ? this.cname : cname as SdkOptional<String?>,
+    httpsEnforced: identical(httpsEnforced, sdkOmittedValue) ? this.httpsEnforced : httpsEnforced as SdkOptional<bool>,
+    buildType: identical(buildType, sdkOmittedValue) ? this.buildType : buildType as SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>,
+    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource>,
+  );
 
-  factory ReposUpdateInformationAboutPagesSiteRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateInformationAboutPagesSiteRequestBody(
-        cname: json.containsKey('cname')
-            ? SdkPresent(json['cname'] as String?)
-            : const SdkOmitted(),
-        httpsEnforced: json['https_enforced'] != null
-            ? SdkPresent((json['https_enforced'] as bool?)!)
-            : const SdkOmitted(),
-        buildType: json['build_type'] != null
-            ? SdkPresent((json['build_type'] != null
-                ? ReposUpdateInformationAboutPagesSiteRequestBodyBuildType
-                    .fromJson(json['build_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        source: json['source'] != null
-            ? SdkPresent((json['source'] != null
-                ? ReposUpdateInformationAboutPagesSiteRequestSource.fromJson(
-                    json['source'])
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateInformationAboutPagesSiteRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateInformationAboutPagesSiteRequestBody(
+    cname: json.containsKey('cname') ? SdkPresent(json['cname'] as String?) : const SdkOmitted(),
+    httpsEnforced: json['https_enforced'] != null ? SdkPresent((json['https_enforced'] as bool?)!) : const SdkOmitted(),
+    buildType: json['build_type'] != null ? SdkPresent((json['build_type'] != null ? ReposUpdateInformationAboutPagesSiteRequestBodyBuildType.fromJson(json['build_type'] as String) : null)!) : const SdkOmitted(),
+    source: json['source'] != null ? SdkPresent((json['source'] != null ? ReposUpdateInformationAboutPagesSiteRequestSource.fromJson(json['source']) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (cname) {
-          SdkPresent<String?>(value: final value) => {
-              'cname': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (httpsEnforced) {
-          SdkPresent<bool>(value: final value) => {
-              'https_enforced': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (buildType) {
-          SdkPresent<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>(
-            value: final value
-          ) =>
-            {
-              'build_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (source) {
-          SdkPresent<ReposUpdateInformationAboutPagesSiteRequestSource>(
-            value: final value
-          ) =>
-            {
-              'source': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (cname) {
+      SdkPresent<String?>(value: final value) => {'cname': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (httpsEnforced) {
+      SdkPresent<bool>(value: final value) => {'https_enforced': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (buildType) {
+      SdkPresent<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>(value: final value) => {'build_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (source) {
+      SdkPresent<ReposUpdateInformationAboutPagesSiteRequestSource>(value: final value) => {'source': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The object used to create GitHub Pages deployment
 class ReposCreatePagesDeploymentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
   final SdkOptional<double> artifactId;
-
   /// The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
   final SdkOptional<String> artifactUrl;
-
   /// The target environment for this GitHub Pages deployment.
   final SdkOptional<String> environment;
-
   /// A unique string that represents the version of the build for this deployment.
   final String pagesBuildVersion;
-
   /// The OIDC token issued by GitHub Actions certifying the origin of the deployment.
   final String oidcToken;
 
-  const ReposCreatePagesDeploymentRequestBody(
-      {this.artifactId = const SdkOmitted(),
-      this.artifactUrl = const SdkOmitted(),
-      this.environment = const SdkOmitted(),
-      required this.pagesBuildVersion,
-      required this.oidcToken});
+  const ReposCreatePagesDeploymentRequestBody({this.artifactId = const SdkOmitted(), this.artifactUrl = const SdkOmitted(), this.environment = const SdkOmitted(), required this.pagesBuildVersion, required this.oidcToken});
 
-  ReposCreatePagesDeploymentRequestBody Function(
-      {SdkOptional<double> artifactId,
-      SdkOptional<String> artifactUrl,
-      SdkOptional<String> environment,
-      String pagesBuildVersion,
-      String oidcToken}) get copyWith => _copyWith;
+  ReposCreatePagesDeploymentRequestBody Function({SdkOptional<double> artifactId, SdkOptional<String> artifactUrl, SdkOptional<String> environment, String pagesBuildVersion, String oidcToken}) get copyWith => _copyWith;
 
-  ReposCreatePagesDeploymentRequestBody _copyWith(
-          {Object? artifactId = sdkOmittedValue,
-          Object? artifactUrl = sdkOmittedValue,
-          Object? environment = sdkOmittedValue,
-          Object? pagesBuildVersion = sdkOmittedValue,
-          Object? oidcToken = sdkOmittedValue}) =>
-      ReposCreatePagesDeploymentRequestBody(
-        artifactId: identical(artifactId, sdkOmittedValue)
-            ? this.artifactId
-            : artifactId as SdkOptional<double>,
-        artifactUrl: identical(artifactUrl, sdkOmittedValue)
-            ? this.artifactUrl
-            : artifactUrl as SdkOptional<String>,
-        environment: identical(environment, sdkOmittedValue)
-            ? this.environment
-            : environment as SdkOptional<String>,
-        pagesBuildVersion: identical(pagesBuildVersion, sdkOmittedValue)
-            ? this.pagesBuildVersion
-            : pagesBuildVersion as String,
-        oidcToken: identical(oidcToken, sdkOmittedValue)
-            ? this.oidcToken
-            : oidcToken as String,
-      );
+  ReposCreatePagesDeploymentRequestBody _copyWith({Object? artifactId = sdkOmittedValue, Object? artifactUrl = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? pagesBuildVersion = sdkOmittedValue, Object? oidcToken = sdkOmittedValue}) => ReposCreatePagesDeploymentRequestBody(
+    artifactId: identical(artifactId, sdkOmittedValue) ? this.artifactId : artifactId as SdkOptional<double>,
+    artifactUrl: identical(artifactUrl, sdkOmittedValue) ? this.artifactUrl : artifactUrl as SdkOptional<String>,
+    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as SdkOptional<String>,
+    pagesBuildVersion: identical(pagesBuildVersion, sdkOmittedValue) ? this.pagesBuildVersion : pagesBuildVersion as String,
+    oidcToken: identical(oidcToken, sdkOmittedValue) ? this.oidcToken : oidcToken as String,
+  );
 
-  factory ReposCreatePagesDeploymentRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposCreatePagesDeploymentRequestBody(
-        artifactId: json['artifact_id'] != null
-            ? SdkPresent(((json['artifact_id'] as num?)?.toDouble())!)
-            : const SdkOmitted(),
-        artifactUrl: json['artifact_url'] != null
-            ? SdkPresent((json['artifact_url'] as String?)!)
-            : const SdkOmitted(),
-        environment: json['environment'] != null
-            ? SdkPresent((json['environment'] as String?)!)
-            : const SdkOmitted(),
-        pagesBuildVersion: (json['pages_build_version'] as String?)!,
-        oidcToken: (json['oidc_token'] as String?)!,
-      );
+  factory ReposCreatePagesDeploymentRequestBody.fromJson(Map<String, dynamic> json) => ReposCreatePagesDeploymentRequestBody(
+    artifactId: json['artifact_id'] != null ? SdkPresent(((json['artifact_id'] as num?)?.toDouble())!) : const SdkOmitted(),
+    artifactUrl: json['artifact_url'] != null ? SdkPresent((json['artifact_url'] as String?)!) : const SdkOmitted(),
+    environment: json['environment'] != null ? SdkPresent((json['environment'] as String?)!) : const SdkOmitted(),
+    pagesBuildVersion: (json['pages_build_version'] as String?)!,
+    oidcToken: (json['oidc_token'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (artifactId) {
-          SdkPresent<double>(value: final value) => {
-              'artifact_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (artifactUrl) {
-          SdkPresent<String>(value: final value) => {
-              'artifact_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (environment) {
-          SdkPresent<String>(value: final value) => {
-              'environment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'pages_build_version': pagesBuildVersion,
-        'oidc_token': oidcToken,
-      };
+    ...switch (artifactId) {
+      SdkPresent<double>(value: final value) => {'artifact_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (artifactUrl) {
+      SdkPresent<String>(value: final value) => {'artifact_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (environment) {
+      SdkPresent<String>(value: final value) => {'environment': value,},
+      _ => const <String, dynamic>{},
+    },
+    'pages_build_version': pagesBuildVersion,
+    'oidc_token': oidcToken,
+  };
 }
 
 class ReposCheckPrivateVulnerabilityReportingResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether or not private vulnerability reporting is enabled for the repository.
   final bool enabled;
 
-  const ReposCheckPrivateVulnerabilityReportingResponse(
-      {required this.enabled});
+  const ReposCheckPrivateVulnerabilityReportingResponse({required this.enabled});
 
-  ReposCheckPrivateVulnerabilityReportingResponse Function({bool enabled})
-      get copyWith => _copyWith;
+  ReposCheckPrivateVulnerabilityReportingResponse Function({bool enabled}) get copyWith => _copyWith;
 
-  ReposCheckPrivateVulnerabilityReportingResponse _copyWith(
-          {Object? enabled = sdkOmittedValue}) =>
-      ReposCheckPrivateVulnerabilityReportingResponse(
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as bool,
-      );
+  ReposCheckPrivateVulnerabilityReportingResponse _copyWith({Object? enabled = sdkOmittedValue}) => ReposCheckPrivateVulnerabilityReportingResponse(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+  );
 
-  factory ReposCheckPrivateVulnerabilityReportingResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ReposCheckPrivateVulnerabilityReportingResponse(
-        enabled: (json['enabled'] as bool?)!,
-      );
+  factory ReposCheckPrivateVulnerabilityReportingResponse.fromJson(Map<String, dynamic> json) => ReposCheckPrivateVulnerabilityReportingResponse(
+    enabled: (json['enabled'] as bool?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'enabled': enabled,
-      };
+    'enabled': enabled,
+  };
 }
 
 class ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A list of custom property names and associated values to apply to the repositories.
   final List<CustomPropertyValue> properties;
 
-  const ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
-      {required this.properties});
+  const ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody({required this.properties});
 
-  ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody
-          Function({List<CustomPropertyValue> properties})
-      get copyWith => _copyWith;
+  ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody Function({List<CustomPropertyValue> properties}) get copyWith => _copyWith;
 
-  ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody
-      _copyWith({Object? properties = sdkOmittedValue}) =>
-          ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
-            properties: identical(properties, sdkOmittedValue)
-                ? this.properties
-                : properties as List<CustomPropertyValue>,
-          );
+  ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody _copyWith({Object? properties = sdkOmittedValue}) => ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
+    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as List<CustomPropertyValue>,
+  );
 
-  factory ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
-        properties: ((json['properties'] as List?)
-            ?.map(
-                (e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody.fromJson(Map<String, dynamic> json) => ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
+    properties: ((json['properties'] as List?)?.map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'properties': properties.map((item) => item.toJson()).toList(),
-      };
+    'properties': properties.map((item) => item.toJson()).toList(),
+  };
 }

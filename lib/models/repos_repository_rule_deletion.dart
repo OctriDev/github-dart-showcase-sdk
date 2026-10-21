@@ -8,30 +8,22 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleDeletion {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleDeletionType type_;
 
   const RepositoryRuleDeletion({required this.type_});
 
-  RepositoryRuleDeletion Function({RepositoryRuleDeletionType type_})
-      get copyWith => _copyWith;
+  RepositoryRuleDeletion Function({RepositoryRuleDeletionType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleDeletion _copyWith({Object? type_ = sdkOmittedValue}) =>
-      RepositoryRuleDeletion(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleDeletionType,
-      );
+  RepositoryRuleDeletion _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleDeletion(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleDeletionType,
+  );
 
-  factory RepositoryRuleDeletion.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleDeletion(
-        type_: (json['type'] != null
-            ? RepositoryRuleDeletionType.fromJson(json['type'] as String)
-            : null)!,
-      );
+  factory RepositoryRuleDeletion.fromJson(Map<String, dynamic> json) => RepositoryRuleDeletion(
+    type_: (json['type'] != null ? RepositoryRuleDeletionType.fromJson(json['type'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-      };
+    'type': type_.toJson(),
+  };
 }

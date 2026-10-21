@@ -8,441 +8,214 @@ part of 'webhook_issues_deleted.dart';
 class WebhookIssuesDeletedIssuePerformedViaGithubApp {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String? createdAt;
-
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
-
   /// The list of events for the GitHub app
-  final SdkOptional<
-      List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>> events;
-
+  final SdkOptional<List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>> events;
   /// Required `uri`-formatted value serialized in the `external_url` wire field.
   final String? externalUrl;
-
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
-
   /// Unique identifier of the GitHub app
   final int? id;
-
   /// The name of the GitHub app
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required object value serialized in the `owner` wire field.
   final WebhookIssuesDeletedIssuePerformedViaGithubAppOwner? owner;
-
   /// The set of permissions for the GitHub app
-  final SdkOptional<WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions>
-      permissions;
-
+  final SdkOptional<WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions> permissions;
   /// The slug name of the GitHub app
   final SdkOptional<String> slug;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String? updatedAt;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubApp(
-      {required this.createdAt,
-      required this.description,
-      this.events = const SdkOmitted(),
-      required this.externalUrl,
-      required this.htmlUrl,
-      required this.id,
-      required this.name,
-      required this.nodeId,
-      required this.owner,
-      this.permissions = const SdkOmitted(),
-      this.slug = const SdkOmitted(),
-      required this.updatedAt});
+  const WebhookIssuesDeletedIssuePerformedViaGithubApp({required this.createdAt, required this.description, this.events = const SdkOmitted(), required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, this.permissions = const SdkOmitted(), this.slug = const SdkOmitted(), required this.updatedAt});
 
-  WebhookIssuesDeletedIssuePerformedViaGithubApp Function(
-      {String? createdAt,
-      String? description,
-      SdkOptional<
-              List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>>
-          events,
-      String? externalUrl,
-      String htmlUrl,
-      int? id,
-      String name,
-      String nodeId,
-      WebhookIssuesDeletedIssuePerformedViaGithubAppOwner? owner,
-      SdkOptional<WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions>
-          permissions,
-      SdkOptional<String> slug,
-      String? updatedAt}) get copyWith => _copyWith;
+  WebhookIssuesDeletedIssuePerformedViaGithubApp Function({String? createdAt, String? description, SdkOptional<List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>> events, String? externalUrl, String htmlUrl, int? id, String name, String nodeId, WebhookIssuesDeletedIssuePerformedViaGithubAppOwner? owner, SdkOptional<WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions> permissions, SdkOptional<String> slug, String? updatedAt}) get copyWith => _copyWith;
 
-  WebhookIssuesDeletedIssuePerformedViaGithubApp _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? externalUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? slug = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubApp(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String?,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<
-                List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>>,
-        externalUrl: identical(externalUrl, sdkOmittedValue)
-            ? this.externalUrl
-            : externalUrl as String?,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int?,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as WebhookIssuesDeletedIssuePerformedViaGithubAppOwner?,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions as SdkOptional<
-                WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions>,
-        slug: identical(slug, sdkOmittedValue)
-            ? this.slug
-            : slug as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
-      );
+  WebhookIssuesDeletedIssuePerformedViaGithubApp _copyWith({Object? createdAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? events = sdkOmittedValue, Object? externalUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => WebhookIssuesDeletedIssuePerformedViaGithubApp(
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String?,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>>,
+    externalUrl: identical(externalUrl, sdkOmittedValue) ? this.externalUrl : externalUrl as String?,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int?,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as WebhookIssuesDeletedIssuePerformedViaGithubAppOwner?,
+    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions>,
+    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String?,
+  );
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubApp.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubApp(
-        createdAt: json.containsKey('created_at')
-            ? json['created_at'] as String?
-            : throw ArgumentError.value(
-                null, 'created_at', 'Required property is missing'),
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        events: json['events'] != null
-            ? SdkPresent(((json['events'] as List?)
-                ?.map((e) =>
-                    WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem
-                        .fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        externalUrl: json.containsKey('external_url')
-            ? json['external_url'] as String?
-            : throw ArgumentError.value(
-                null, 'external_url', 'Required property is missing'),
-        htmlUrl: (json['html_url'] as String?)!,
-        id: json.containsKey('id')
-            ? (json['id'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'id', 'Required property is missing'),
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        owner: json.containsKey('owner')
-            ? json['owner'] != null
-                ? WebhookIssuesDeletedIssuePerformedViaGithubAppOwner.fromJson(
-                    json['owner'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'owner', 'Required property is missing'),
-        permissions: json['permissions'] != null
-            ? SdkPresent((json['permissions'] != null
-                ? WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions
-                    .fromJson(json['permissions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        slug: json['slug'] != null
-            ? SdkPresent((json['slug'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
-      );
+  factory WebhookIssuesDeletedIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) => WebhookIssuesDeletedIssuePerformedViaGithubApp(
+    createdAt: json.containsKey('created_at') ? json['created_at'] as String? : throw ArgumentError.value(null, 'created_at', 'Required property is missing'),
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    externalUrl: json.containsKey('external_url') ? json['external_url'] as String? : throw ArgumentError.value(null, 'external_url', 'Required property is missing'),
+    htmlUrl: (json['html_url'] as String?)!,
+    id: json.containsKey('id') ? (json['id'] as num?)?.toInt() : throw ArgumentError.value(null, 'id', 'Required property is missing'),
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    owner: json.containsKey('owner') ? json['owner'] != null ? WebhookIssuesDeletedIssuePerformedViaGithubAppOwner.fromJson(json['owner'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'owner', 'Required property is missing'),
+    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] != null ? WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    slug: json['slug'] != null ? SdkPresent((json['slug'] as String?)!) : const SdkOmitted(),
+    updatedAt: json.containsKey('updated_at') ? json['updated_at'] as String? : throw ArgumentError.value(null, 'updated_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'description': description,
-        ...switch (events) {
-          SdkPresent<
-                List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>>(
-            value: final value
-          ) =>
-            {
-              'events': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'external_url': externalUrl,
-        'html_url': htmlUrl,
-        'id': id,
-        'name': name,
-        'node_id': nodeId,
-        'owner': owner?.toJson(),
-        ...switch (permissions) {
-          SdkPresent<WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions>(
-            value: final value
-          ) =>
-            {
-              'permissions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (slug) {
-          SdkPresent<String>(value: final value) => {
-              'slug': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'updated_at': updatedAt,
-      };
+    'created_at': createdAt,
+    'description': description,
+    ...switch (events) {
+      SdkPresent<List<WebhookIssuesDeletedIssuePerformedViaGithubAppEventsItem>>(value: final value) => {'events': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'external_url': externalUrl,
+    'html_url': htmlUrl,
+    'id': id,
+    'name': name,
+    'node_id': nodeId,
+    'owner': owner?.toJson(),
+    ...switch (permissions) {
+      SdkPresent<WebhookIssuesDeletedIssuePerformedViaGithubAppPermissions>(value: final value) => {'permissions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (slug) {
+      SdkPresent<String>(value: final value) => {'slug': value,},
+      _ => const <String, dynamic>{},
+    },
+    'updated_at': updatedAt,
+  };
 }
 
 /// Optional object value serialized in the `pull_request` wire field.
 class WebhookIssuesDeletedIssuePullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `uri`-formatted value serialized in the `diff_url` wire field.
   final SdkOptional<String> diffUrl;
-
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// Optional `date-time`-formatted value serialized in the `merged_at` wire field.
   final SdkOptional<String?> mergedAt;
-
   /// Optional `uri`-formatted value serialized in the `patch_url` wire field.
   final SdkOptional<String> patchUrl;
-
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
 
-  const WebhookIssuesDeletedIssuePullRequest(
-      {this.diffUrl = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.mergedAt = const SdkOmitted(),
-      this.patchUrl = const SdkOmitted(),
-      this.url = const SdkOmitted()});
+  const WebhookIssuesDeletedIssuePullRequest({this.diffUrl = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.mergedAt = const SdkOmitted(), this.patchUrl = const SdkOmitted(), this.url = const SdkOmitted()});
 
-  WebhookIssuesDeletedIssuePullRequest Function(
-      {SdkOptional<String> diffUrl,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String?> mergedAt,
-      SdkOptional<String> patchUrl,
-      SdkOptional<String> url}) get copyWith => _copyWith;
+  WebhookIssuesDeletedIssuePullRequest Function({SdkOptional<String> diffUrl, SdkOptional<String> htmlUrl, SdkOptional<String?> mergedAt, SdkOptional<String> patchUrl, SdkOptional<String> url}) get copyWith => _copyWith;
 
-  WebhookIssuesDeletedIssuePullRequest _copyWith(
-          {Object? diffUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? mergedAt = sdkOmittedValue,
-          Object? patchUrl = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookIssuesDeletedIssuePullRequest(
-        diffUrl: identical(diffUrl, sdkOmittedValue)
-            ? this.diffUrl
-            : diffUrl as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        mergedAt: identical(mergedAt, sdkOmittedValue)
-            ? this.mergedAt
-            : mergedAt as SdkOptional<String?>,
-        patchUrl: identical(patchUrl, sdkOmittedValue)
-            ? this.patchUrl
-            : patchUrl as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-      );
+  WebhookIssuesDeletedIssuePullRequest _copyWith({Object? diffUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? patchUrl = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookIssuesDeletedIssuePullRequest(
+    diffUrl: identical(diffUrl, sdkOmittedValue) ? this.diffUrl : diffUrl as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as SdkOptional<String?>,
+    patchUrl: identical(patchUrl, sdkOmittedValue) ? this.patchUrl : patchUrl as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+  );
 
-  factory WebhookIssuesDeletedIssuePullRequest.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssuesDeletedIssuePullRequest(
-        diffUrl: json['diff_url'] != null
-            ? SdkPresent((json['diff_url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        mergedAt: json.containsKey('merged_at')
-            ? SdkPresent(json['merged_at'] as String?)
-            : const SdkOmitted(),
-        patchUrl: json['patch_url'] != null
-            ? SdkPresent((json['patch_url'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookIssuesDeletedIssuePullRequest.fromJson(Map<String, dynamic> json) => WebhookIssuesDeletedIssuePullRequest(
+    diffUrl: json['diff_url'] != null ? SdkPresent((json['diff_url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    mergedAt: json.containsKey('merged_at') ? SdkPresent(json['merged_at'] as String?) : const SdkOmitted(),
+    patchUrl: json['patch_url'] != null ? SdkPresent((json['patch_url'] as String?)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (diffUrl) {
-          SdkPresent<String>(value: final value) => {
-              'diff_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mergedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'merged_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (patchUrl) {
-          SdkPresent<String>(value: final value) => {
-              'patch_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (diffUrl) {
+      SdkPresent<String>(value: final value) => {'diff_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mergedAt) {
+      SdkPresent<String?>(value: final value) => {'merged_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (patchUrl) {
+      SdkPresent<String>(value: final value) => {'patch_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `reactions` wire field.
 class WebhookIssuesDeletedIssueReactions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `+1` wire field.
   final int plus1;
-
   /// Required `integer` value serialized in the `-1` wire field.
   final int minus1;
-
   /// Required `integer` value serialized in the `confused` wire field.
   final int confused;
-
   /// Required `integer` value serialized in the `eyes` wire field.
   final int eyes;
-
   /// Required `integer` value serialized in the `heart` wire field.
   final int heart;
-
   /// Required `integer` value serialized in the `hooray` wire field.
   final int hooray;
-
   /// Required `integer` value serialized in the `laugh` wire field.
   final int laugh;
-
   /// Required `integer` value serialized in the `rocket` wire field.
   final int rocket;
-
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookIssuesDeletedIssueReactions(
-      {required this.plus1,
-      required this.minus1,
-      required this.confused,
-      required this.eyes,
-      required this.heart,
-      required this.hooray,
-      required this.laugh,
-      required this.rocket,
-      required this.totalCount,
-      required this.url});
+  const WebhookIssuesDeletedIssueReactions({required this.plus1, required this.minus1, required this.confused, required this.eyes, required this.heart, required this.hooray, required this.laugh, required this.rocket, required this.totalCount, required this.url});
 
-  WebhookIssuesDeletedIssueReactions Function(
-      {int plus1,
-      int minus1,
-      int confused,
-      int eyes,
-      int heart,
-      int hooray,
-      int laugh,
-      int rocket,
-      int totalCount,
-      String url}) get copyWith => _copyWith;
+  WebhookIssuesDeletedIssueReactions Function({int plus1, int minus1, int confused, int eyes, int heart, int hooray, int laugh, int rocket, int totalCount, String url}) get copyWith => _copyWith;
 
-  WebhookIssuesDeletedIssueReactions _copyWith(
-          {Object? plus1 = sdkOmittedValue,
-          Object? minus1 = sdkOmittedValue,
-          Object? confused = sdkOmittedValue,
-          Object? eyes = sdkOmittedValue,
-          Object? heart = sdkOmittedValue,
-          Object? hooray = sdkOmittedValue,
-          Object? laugh = sdkOmittedValue,
-          Object? rocket = sdkOmittedValue,
-          Object? totalCount = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookIssuesDeletedIssueReactions(
-        plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
-        minus1:
-            identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
-        confused: identical(confused, sdkOmittedValue)
-            ? this.confused
-            : confused as int,
-        eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
-        heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
-        hooray:
-            identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
-        laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
-        rocket:
-            identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookIssuesDeletedIssueReactions _copyWith({Object? plus1 = sdkOmittedValue, Object? minus1 = sdkOmittedValue, Object? confused = sdkOmittedValue, Object? eyes = sdkOmittedValue, Object? heart = sdkOmittedValue, Object? hooray = sdkOmittedValue, Object? laugh = sdkOmittedValue, Object? rocket = sdkOmittedValue, Object? totalCount = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookIssuesDeletedIssueReactions(
+    plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
+    minus1: identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
+    confused: identical(confused, sdkOmittedValue) ? this.confused : confused as int,
+    eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
+    heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
+    hooray: identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
+    laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
+    rocket: identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookIssuesDeletedIssueReactions.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssuesDeletedIssueReactions(
-        plus1: ((json['+1'] as num?)?.toInt())!,
-        minus1: ((json['-1'] as num?)?.toInt())!,
-        confused: ((json['confused'] as num?)?.toInt())!,
-        eyes: ((json['eyes'] as num?)?.toInt())!,
-        heart: ((json['heart'] as num?)?.toInt())!,
-        hooray: ((json['hooray'] as num?)?.toInt())!,
-        laugh: ((json['laugh'] as num?)?.toInt())!,
-        rocket: ((json['rocket'] as num?)?.toInt())!,
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookIssuesDeletedIssueReactions.fromJson(Map<String, dynamic> json) => WebhookIssuesDeletedIssueReactions(
+    plus1: ((json['+1'] as num?)?.toInt())!,
+    minus1: ((json['-1'] as num?)?.toInt())!,
+    confused: ((json['confused'] as num?)?.toInt())!,
+    eyes: ((json['eyes'] as num?)?.toInt())!,
+    heart: ((json['heart'] as num?)?.toInt())!,
+    hooray: ((json['hooray'] as num?)?.toInt())!,
+    laugh: ((json['laugh'] as num?)?.toInt())!,
+    rocket: ((json['rocket'] as num?)?.toInt())!,
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        '+1': plus1,
-        '-1': minus1,
-        'confused': confused,
-        'eyes': eyes,
-        'heart': heart,
-        'hooray': hooray,
-        'laugh': laugh,
-        'rocket': rocket,
-        'total_count': totalCount,
-        'url': url,
-      };
+    '+1': plus1,
+    '-1': minus1,
+    'confused': confused,
+    'eyes': eyes,
+    'heart': heart,
+    'hooray': hooray,
+    'laugh': laugh,
+    'rocket': rocket,
+    'total_count': totalCount,
+    'url': url,
+  };
 }

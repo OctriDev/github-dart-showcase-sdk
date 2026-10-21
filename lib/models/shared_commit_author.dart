@@ -9,13 +9,8 @@ sealed class CommitAuthor {
   static const String constructionSurface = 'named';
   const CommitAuthor();
   factory CommitAuthor.fromJson(Object? json) {
-    if (json is Map) {
-      return CommitAuthorMap(Map<String, dynamic>.from(json));
-    }
-    try {
-      return CommitAuthorSimpleUser(
-          SimpleUser.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
+    if (json is Map) { return CommitAuthorMap(Map<String, dynamic>.from(json)); }
+    try { return CommitAuthorSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for CommitAuthor");
   }
   Object? toJson();
@@ -24,13 +19,11 @@ sealed class CommitAuthor {
 final class CommitAuthorSimpleUser extends CommitAuthor {
   final SimpleUser value;
   const CommitAuthorSimpleUser(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class CommitAuthorMap extends CommitAuthor {
   final Map<String, dynamic> value;
   const CommitAuthorMap(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }

@@ -6,39 +6,35 @@ part of 'inline.dart';
 // Inline operation models
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksRelease1AssetsItemUploaderType {
+
   final String value;
 
   const WebhooksRelease1AssetsItemUploaderType._(this.value);
 
-  factory WebhooksRelease1AssetsItemUploaderType.fromJson(String value) =>
-      WebhooksRelease1AssetsItemUploaderType._(value);
+  factory WebhooksRelease1AssetsItemUploaderType.fromJson(String value) => WebhooksRelease1AssetsItemUploaderType._(value);
 
   static const bot = WebhooksRelease1AssetsItemUploaderType._('Bot');
   static const user = WebhooksRelease1AssetsItemUploaderType._('User');
-  static const organization =
-      WebhooksRelease1AssetsItemUploaderType._('Organization');
+  static const organization = WebhooksRelease1AssetsItemUploaderType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksRelease1AssetsItemUploaderType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRelease1AssetsItemUploaderType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksRelease1AuthorType {
+
   final String value;
 
   const WebhooksRelease1AuthorType._(this.value);
 
-  factory WebhooksRelease1AuthorType.fromJson(String value) =>
-      WebhooksRelease1AuthorType._(value);
+  factory WebhooksRelease1AuthorType.fromJson(String value) => WebhooksRelease1AuthorType._(value);
 
   static const bot = WebhooksRelease1AuthorType._('Bot');
   static const user = WebhooksRelease1AuthorType._('User');
@@ -46,31 +42,27 @@ final class WebhooksRelease1AuthorType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksRelease1AuthorType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRelease1AuthorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// How the author is associated with the repository.
 final class WebhooksReviewAuthorAssociation {
+
   final String value;
 
   const WebhooksReviewAuthorAssociation._(this.value);
 
-  factory WebhooksReviewAuthorAssociation.fromJson(String value) =>
-      WebhooksReviewAuthorAssociation._(value);
+  factory WebhooksReviewAuthorAssociation.fromJson(String value) => WebhooksReviewAuthorAssociation._(value);
 
   static const collaborator = WebhooksReviewAuthorAssociation._('COLLABORATOR');
   static const contributor = WebhooksReviewAuthorAssociation._('CONTRIBUTOR');
   static const firstTimer = WebhooksReviewAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor =
-      WebhooksReviewAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+  static const firstTimeContributor = WebhooksReviewAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
   static const mannequin = WebhooksReviewAuthorAssociation._('MANNEQUIN');
   static const member = WebhooksReviewAuthorAssociation._('MEMBER');
   static const none = WebhooksReviewAuthorAssociation._('NONE');
@@ -78,25 +70,22 @@ final class WebhooksReviewAuthorAssociation {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewAuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewAuthorAssociation && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksReviewUserType {
+
   final String value;
 
   const WebhooksReviewUserType._(this.value);
 
-  factory WebhooksReviewUserType.fromJson(String value) =>
-      WebhooksReviewUserType._(value);
+  factory WebhooksReviewUserType.fromJson(String value) => WebhooksReviewUserType._(value);
 
   static const bot = WebhooksReviewUserType._('Bot');
   static const user = WebhooksReviewUserType._('User');
@@ -104,136 +93,116 @@ final class WebhooksReviewUserType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewUserType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewUserType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// How the author is associated with the repository.
 final class WebhooksReviewCommentAuthorAssociation {
+
   final String value;
 
   const WebhooksReviewCommentAuthorAssociation._(this.value);
 
-  factory WebhooksReviewCommentAuthorAssociation.fromJson(String value) =>
-      WebhooksReviewCommentAuthorAssociation._(value);
+  factory WebhooksReviewCommentAuthorAssociation.fromJson(String value) => WebhooksReviewCommentAuthorAssociation._(value);
 
-  static const collaborator =
-      WebhooksReviewCommentAuthorAssociation._('COLLABORATOR');
-  static const contributor =
-      WebhooksReviewCommentAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer =
-      WebhooksReviewCommentAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor =
-      WebhooksReviewCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin =
-      WebhooksReviewCommentAuthorAssociation._('MANNEQUIN');
+  static const collaborator = WebhooksReviewCommentAuthorAssociation._('COLLABORATOR');
+  static const contributor = WebhooksReviewCommentAuthorAssociation._('CONTRIBUTOR');
+  static const firstTimer = WebhooksReviewCommentAuthorAssociation._('FIRST_TIMER');
+  static const firstTimeContributor = WebhooksReviewCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+  static const mannequin = WebhooksReviewCommentAuthorAssociation._('MANNEQUIN');
   static const member = WebhooksReviewCommentAuthorAssociation._('MEMBER');
   static const none = WebhooksReviewCommentAuthorAssociation._('NONE');
   static const owner = WebhooksReviewCommentAuthorAssociation._('OWNER');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewCommentAuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewCommentAuthorAssociation && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The side of the first line of the range for a multi-line comment.
 final class WebhooksReviewCommentSide {
+
   final String value;
 
   const WebhooksReviewCommentSide._(this.value);
 
-  factory WebhooksReviewCommentSide.fromJson(String value) =>
-      WebhooksReviewCommentSide._(value);
+  factory WebhooksReviewCommentSide.fromJson(String value) => WebhooksReviewCommentSide._(value);
 
   static const left = WebhooksReviewCommentSide._('LEFT');
   static const right = WebhooksReviewCommentSide._('RIGHT');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewCommentSide && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewCommentSide && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The side of the first line of the range for a multi-line comment.
 final class WebhooksReviewCommentStartSide {
+
   final String value;
 
   const WebhooksReviewCommentStartSide._(this.value);
 
-  factory WebhooksReviewCommentStartSide.fromJson(String value) =>
-      WebhooksReviewCommentStartSide._(value);
+  factory WebhooksReviewCommentStartSide.fromJson(String value) => WebhooksReviewCommentStartSide._(value);
 
   static const left = WebhooksReviewCommentStartSide._('LEFT');
   static const right = WebhooksReviewCommentStartSide._('RIGHT');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewCommentStartSide && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewCommentStartSide && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The level at which the comment is targeted, can be a diff line or a file.
 final class WebhooksReviewCommentSubjectType {
+
   final String value;
 
   const WebhooksReviewCommentSubjectType._(this.value);
 
-  factory WebhooksReviewCommentSubjectType.fromJson(String value) =>
-      WebhooksReviewCommentSubjectType._(value);
+  factory WebhooksReviewCommentSubjectType.fromJson(String value) => WebhooksReviewCommentSubjectType._(value);
 
   static const line = WebhooksReviewCommentSubjectType._('line');
   static const file = WebhooksReviewCommentSubjectType._('file');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewCommentSubjectType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewCommentSubjectType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksReviewCommentUserType {
+
   final String value;
 
   const WebhooksReviewCommentUserType._(this.value);
 
-  factory WebhooksReviewCommentUserType.fromJson(String value) =>
-      WebhooksReviewCommentUserType._(value);
+  factory WebhooksReviewCommentUserType.fromJson(String value) => WebhooksReviewCommentUserType._(value);
 
   static const bot = WebhooksReviewCommentUserType._('Bot');
   static const user = WebhooksReviewCommentUserType._('User');
@@ -241,93 +210,77 @@ final class WebhooksReviewCommentUserType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewCommentUserType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewCommentUserType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksReviewersItemReviewerType {
+
   final String value;
 
   const WebhooksReviewersItemReviewerType._(this.value);
 
-  factory WebhooksReviewersItemReviewerType.fromJson(String value) =>
-      WebhooksReviewersItemReviewerType._(value);
+  factory WebhooksReviewersItemReviewerType.fromJson(String value) => WebhooksReviewersItemReviewerType._(value);
 
   static const bot = WebhooksReviewersItemReviewerType._('Bot');
   static const user = WebhooksReviewersItemReviewerType._('User');
-  static const organization =
-      WebhooksReviewersItemReviewerType._('Organization');
+  static const organization = WebhooksReviewersItemReviewerType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewersItemReviewerType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewersItemReviewerType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksReviewersItemType {
+
   final String value;
 
   const WebhooksReviewersItemType._(this.value);
 
-  factory WebhooksReviewersItemType.fromJson(String value) =>
-      WebhooksReviewersItemType._(value);
+  factory WebhooksReviewersItemType.fromJson(String value) => WebhooksReviewersItemType._(value);
 
   static const user = WebhooksReviewersItemType._('User');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewersItemType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksReviewersItemType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `allow_deletions_enforcement_level` wire field.
 final class WebhooksRuleAllowDeletionsEnforcementLevel {
+
   final String value;
 
   const WebhooksRuleAllowDeletionsEnforcementLevel._(this.value);
 
-  factory WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(String value) =>
-      WebhooksRuleAllowDeletionsEnforcementLevel._(value);
+  factory WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(String value) => WebhooksRuleAllowDeletionsEnforcementLevel._(value);
 
   static const off = WebhooksRuleAllowDeletionsEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleAllowDeletionsEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleAllowDeletionsEnforcementLevel._('everyone');
+  static const nonAdmins = WebhooksRuleAllowDeletionsEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleAllowDeletionsEnforcementLevel._('everyone');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksRuleAllowDeletionsEnforcementLevel &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleAllowDeletionsEnforcementLevel && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

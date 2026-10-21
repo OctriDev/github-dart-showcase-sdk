@@ -8,334 +8,196 @@ part of 'actions_enterprise.dart';
 class EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The organization IDs that the ruleset applies to. One of these IDs must match for the condition to pass.
   final SdkOptional<List<int>> organizationIds;
 
-  const EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId(
-      {this.organizationIds = const SdkOmitted()});
+  const EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId({this.organizationIds = const SdkOmitted()});
 
-  EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId Function(
-      {SdkOptional<List<int>> organizationIds}) get copyWith => _copyWith;
+  EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId Function({SdkOptional<List<int>> organizationIds}) get copyWith => _copyWith;
 
-  EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId _copyWith(
-          {Object? organizationIds = sdkOmittedValue}) =>
-      EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId(
-        organizationIds: identical(organizationIds, sdkOmittedValue)
-            ? this.organizationIds
-            : organizationIds as SdkOptional<List<int>>,
-      );
+  EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId _copyWith({Object? organizationIds = sdkOmittedValue}) => EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId(
+    organizationIds: identical(organizationIds, sdkOmittedValue) ? this.organizationIds : organizationIds as SdkOptional<List<int>>,
+  );
 
-  factory EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId.fromJson(
-          Map<String, dynamic> json) =>
-      EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId(
-        organizationIds: json['organization_ids'] != null
-            ? SdkPresent(((json['organization_ids'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId.fromJson(Map<String, dynamic> json) => EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId(
+    organizationIds: json['organization_ids'] != null ? SdkPresent(((json['organization_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (organizationIds) {
-          SdkPresent<List<int>>(value: final value) => {
-              'organization_ids': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (organizationIds) {
+      SdkPresent<List<int>>(value: final value) => {'organization_ids': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Parameters for an organization ID condition
 class EnterpriseRulesetConditionsOrganizationIdTarget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `organization_id` wire field.
-  final EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-      organizationId;
+  final EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId organizationId;
 
-  const EnterpriseRulesetConditionsOrganizationIdTarget(
-      {required this.organizationId});
+  const EnterpriseRulesetConditionsOrganizationIdTarget({required this.organizationId});
 
-  EnterpriseRulesetConditionsOrganizationIdTarget Function(
-      {EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-          organizationId}) get copyWith => _copyWith;
+  EnterpriseRulesetConditionsOrganizationIdTarget Function({EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId organizationId}) get copyWith => _copyWith;
 
-  EnterpriseRulesetConditionsOrganizationIdTarget _copyWith(
-          {Object? organizationId = sdkOmittedValue}) =>
-      EnterpriseRulesetConditionsOrganizationIdTarget(
-        organizationId: identical(organizationId, sdkOmittedValue)
-            ? this.organizationId
-            : organizationId
-                as EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId,
-      );
+  EnterpriseRulesetConditionsOrganizationIdTarget _copyWith({Object? organizationId = sdkOmittedValue}) => EnterpriseRulesetConditionsOrganizationIdTarget(
+    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId,
+  );
 
-  factory EnterpriseRulesetConditionsOrganizationIdTarget.fromJson(
-          Map<String, dynamic> json) =>
-      EnterpriseRulesetConditionsOrganizationIdTarget(
-        organizationId: (json['organization_id'] != null
-            ? EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-                .fromJson(json['organization_id'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory EnterpriseRulesetConditionsOrganizationIdTarget.fromJson(Map<String, dynamic> json) => EnterpriseRulesetConditionsOrganizationIdTarget(
+    organizationId: (json['organization_id'] != null ? EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId.fromJson(json['organization_id'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_id': organizationId.toJson(),
-      };
+    'organization_id': organizationId.toJson(),
+  };
 }
 
 /// Required object value serialized in the `organization_name` wire field.
 class EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Array of organization names or patterns to include. One of these patterns must match for the condition to pass. Also accepts `~ALL` to include all organizations and ~EMUS to target all enterprise managed user accounts.
   final SdkOptional<List<String>> include;
-
   /// Array of organization names or patterns to exclude. The condition will not pass if any of these patterns match.
   final SdkOptional<List<String>> exclude;
 
-  const EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName(
-      {this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
+  const EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName({this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
 
-  EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName Function(
-      {SdkOptional<List<String>> include,
-      SdkOptional<List<String>> exclude}) get copyWith => _copyWith;
+  EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName Function({SdkOptional<List<String>> include, SdkOptional<List<String>> exclude}) get copyWith => _copyWith;
 
-  EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName _copyWith(
-          {Object? include = sdkOmittedValue,
-          Object? exclude = sdkOmittedValue}) =>
-      EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName(
-        include: identical(include, sdkOmittedValue)
-            ? this.include
-            : include as SdkOptional<List<String>>,
-        exclude: identical(exclude, sdkOmittedValue)
-            ? this.exclude
-            : exclude as SdkOptional<List<String>>,
-      );
+  EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName _copyWith({Object? include = sdkOmittedValue, Object? exclude = sdkOmittedValue}) => EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName(
+    include: identical(include, sdkOmittedValue) ? this.include : include as SdkOptional<List<String>>,
+    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<String>>,
+  );
 
-  factory EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName.fromJson(
-          Map<String, dynamic> json) =>
-      EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName(
-        include: json['include'] != null
-            ? SdkPresent(
-                ((json['include'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        exclude: json['exclude'] != null
-            ? SdkPresent(
-                ((json['exclude'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+  factory EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName.fromJson(Map<String, dynamic> json) => EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName(
+    include: json['include'] != null ? SdkPresent(((json['include'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (include) {
-          SdkPresent<List<String>>(value: final value) => {
-              'include': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (exclude) {
-          SdkPresent<List<String>>(value: final value) => {
-              'exclude': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (include) {
+      SdkPresent<List<String>>(value: final value) => {'include': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (exclude) {
+      SdkPresent<List<String>>(value: final value) => {'exclude': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Parameters for an organization name condition
 class EnterpriseRulesetConditionsOrganizationNameTarget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `organization_name` wire field.
-  final EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName
-      organizationName;
+  final EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName organizationName;
 
-  const EnterpriseRulesetConditionsOrganizationNameTarget(
-      {required this.organizationName});
+  const EnterpriseRulesetConditionsOrganizationNameTarget({required this.organizationName});
 
-  EnterpriseRulesetConditionsOrganizationNameTarget Function(
-      {EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName
-          organizationName}) get copyWith => _copyWith;
+  EnterpriseRulesetConditionsOrganizationNameTarget Function({EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName organizationName}) get copyWith => _copyWith;
 
-  EnterpriseRulesetConditionsOrganizationNameTarget _copyWith(
-          {Object? organizationName = sdkOmittedValue}) =>
-      EnterpriseRulesetConditionsOrganizationNameTarget(
-        organizationName: identical(organizationName, sdkOmittedValue)
-            ? this.organizationName
-            : organizationName
-                as EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName,
-      );
+  EnterpriseRulesetConditionsOrganizationNameTarget _copyWith({Object? organizationName = sdkOmittedValue}) => EnterpriseRulesetConditionsOrganizationNameTarget(
+    organizationName: identical(organizationName, sdkOmittedValue) ? this.organizationName : organizationName as EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName,
+  );
 
-  factory EnterpriseRulesetConditionsOrganizationNameTarget.fromJson(
-          Map<String, dynamic> json) =>
-      EnterpriseRulesetConditionsOrganizationNameTarget(
-        organizationName: (json['organization_name'] != null
-            ? EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName
-                .fromJson(json['organization_name'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory EnterpriseRulesetConditionsOrganizationNameTarget.fromJson(Map<String, dynamic> json) => EnterpriseRulesetConditionsOrganizationNameTarget(
+    organizationName: (json['organization_name'] != null ? EnterpriseRulesetConditionsOrganizationNameTargetOrganizationName.fromJson(json['organization_name'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_name': organizationName.toJson(),
-      };
+    'organization_name': organizationName.toJson(),
+  };
 }
 
 /// Parameters for a targeting a organization property
 class EnterpriseRulesetConditionsOrganizationPropertySpec {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the organization property to target
   final String name;
-
   /// The values to match for the organization property
   final List<String> propertyValues;
 
-  const EnterpriseRulesetConditionsOrganizationPropertySpec(
-      {required this.name, required this.propertyValues});
+  const EnterpriseRulesetConditionsOrganizationPropertySpec({required this.name, required this.propertyValues});
 
-  EnterpriseRulesetConditionsOrganizationPropertySpec Function(
-      {String name, List<String> propertyValues}) get copyWith => _copyWith;
+  EnterpriseRulesetConditionsOrganizationPropertySpec Function({String name, List<String> propertyValues}) get copyWith => _copyWith;
 
-  EnterpriseRulesetConditionsOrganizationPropertySpec _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? propertyValues = sdkOmittedValue}) =>
-      EnterpriseRulesetConditionsOrganizationPropertySpec(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        propertyValues: identical(propertyValues, sdkOmittedValue)
-            ? this.propertyValues
-            : propertyValues as List<String>,
-      );
+  EnterpriseRulesetConditionsOrganizationPropertySpec _copyWith({Object? name = sdkOmittedValue, Object? propertyValues = sdkOmittedValue}) => EnterpriseRulesetConditionsOrganizationPropertySpec(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    propertyValues: identical(propertyValues, sdkOmittedValue) ? this.propertyValues : propertyValues as List<String>,
+  );
 
-  factory EnterpriseRulesetConditionsOrganizationPropertySpec.fromJson(
-          Map<String, dynamic> json) =>
-      EnterpriseRulesetConditionsOrganizationPropertySpec(
-        name: (json['name'] as String?)!,
-        propertyValues: ((json['property_values'] as List?)
-            ?.map((e) => e as String)
-            .toList())!,
-      );
+  factory EnterpriseRulesetConditionsOrganizationPropertySpec.fromJson(Map<String, dynamic> json) => EnterpriseRulesetConditionsOrganizationPropertySpec(
+    name: (json['name'] as String?)!,
+    propertyValues: ((json['property_values'] as List?)?.map((e) => e as String).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'property_values': propertyValues,
-      };
+    'name': name,
+    'property_values': propertyValues,
+  };
 }
 
 /// Required object value serialized in the `organization_property` wire field.
 class EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The organization properties and values to include. All of these properties must match for the condition to pass.
-  final SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>
-      include;
-
+  final SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>> include;
   /// The organization properties and values to exclude. The condition will not pass if any of these properties match.
-  final SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>
-      exclude;
+  final SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>> exclude;
 
-  const EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty(
-      {this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
+  const EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty({this.include = const SdkOmitted(), this.exclude = const SdkOmitted()});
 
-  EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty Function(
-      {SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>
-          include,
-      SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>
-          exclude}) get copyWith => _copyWith;
+  EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty Function({SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>> include, SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>> exclude}) get copyWith => _copyWith;
 
-  EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-      _copyWith(
-              {Object? include = sdkOmittedValue,
-              Object? exclude = sdkOmittedValue}) =>
-          EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty(
-            include: identical(include, sdkOmittedValue)
-                ? this.include
-                : include as SdkOptional<
-                    List<EnterpriseRulesetConditionsOrganizationPropertySpec>>,
-            exclude: identical(exclude, sdkOmittedValue)
-                ? this.exclude
-                : exclude as SdkOptional<
-                    List<EnterpriseRulesetConditionsOrganizationPropertySpec>>,
-          );
+  EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty _copyWith({Object? include = sdkOmittedValue, Object? exclude = sdkOmittedValue}) => EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty(
+    include: identical(include, sdkOmittedValue) ? this.include : include as SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>,
+    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>,
+  );
 
-  factory EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty.fromJson(
-          Map<String, dynamic> json) =>
-      EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty(
-        include: json['include'] != null
-            ? SdkPresent(((json['include'] as List?)
-                ?.map((e) => EnterpriseRulesetConditionsOrganizationPropertySpec
-                    .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        exclude: json['exclude'] != null
-            ? SdkPresent(((json['exclude'] as List?)
-                ?.map((e) => EnterpriseRulesetConditionsOrganizationPropertySpec
-                    .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty.fromJson(Map<String, dynamic> json) => EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty(
+    include: json['include'] != null ? SdkPresent(((json['include'] as List?)?.map((e) => EnterpriseRulesetConditionsOrganizationPropertySpec.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => EnterpriseRulesetConditionsOrganizationPropertySpec.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (include) {
-          SdkPresent<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>(
-            value: final value
-          ) =>
-            {
-              'include': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (exclude) {
-          SdkPresent<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>(
-            value: final value
-          ) =>
-            {
-              'exclude': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (include) {
+      SdkPresent<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>(value: final value) => {'include': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (exclude) {
+      SdkPresent<List<EnterpriseRulesetConditionsOrganizationPropertySpec>>(value: final value) => {'exclude': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Parameters for a organization property condition
 class EnterpriseRulesetConditionsOrganizationPropertyTarget {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `organization_property` wire field.
-  final EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-      organizationProperty;
+  final EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty organizationProperty;
 
-  const EnterpriseRulesetConditionsOrganizationPropertyTarget(
-      {required this.organizationProperty});
+  const EnterpriseRulesetConditionsOrganizationPropertyTarget({required this.organizationProperty});
 
-  EnterpriseRulesetConditionsOrganizationPropertyTarget Function(
-      {EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-          organizationProperty}) get copyWith => _copyWith;
+  EnterpriseRulesetConditionsOrganizationPropertyTarget Function({EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty organizationProperty}) get copyWith => _copyWith;
 
-  EnterpriseRulesetConditionsOrganizationPropertyTarget _copyWith(
-          {Object? organizationProperty = sdkOmittedValue}) =>
-      EnterpriseRulesetConditionsOrganizationPropertyTarget(
-        organizationProperty: identical(organizationProperty, sdkOmittedValue)
-            ? this.organizationProperty
-            : organizationProperty
-                as EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty,
-      );
+  EnterpriseRulesetConditionsOrganizationPropertyTarget _copyWith({Object? organizationProperty = sdkOmittedValue}) => EnterpriseRulesetConditionsOrganizationPropertyTarget(
+    organizationProperty: identical(organizationProperty, sdkOmittedValue) ? this.organizationProperty : organizationProperty as EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty,
+  );
 
-  factory EnterpriseRulesetConditionsOrganizationPropertyTarget.fromJson(
-          Map<String, dynamic> json) =>
-      EnterpriseRulesetConditionsOrganizationPropertyTarget(
-        organizationProperty: (json['organization_property'] != null
-            ? EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-                .fromJson(json['organization_property'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory EnterpriseRulesetConditionsOrganizationPropertyTarget.fromJson(Map<String, dynamic> json) => EnterpriseRulesetConditionsOrganizationPropertyTarget(
+    organizationProperty: (json['organization_property'] != null ? EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty.fromJson(json['organization_property'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_property': organizationProperty.toJson(),
-      };
+    'organization_property': organizationProperty.toJson(),
+  };
 }

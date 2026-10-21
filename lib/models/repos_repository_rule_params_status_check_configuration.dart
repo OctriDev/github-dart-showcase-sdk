@@ -8,48 +8,30 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleParamsStatusCheckConfiguration {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The status check context name that must be present on the commit.
   final String context;
-
   /// The optional integration ID that this status check must originate from.
   final SdkOptional<int> integrationId;
 
-  const RepositoryRuleParamsStatusCheckConfiguration(
-      {required this.context, this.integrationId = const SdkOmitted()});
+  const RepositoryRuleParamsStatusCheckConfiguration({required this.context, this.integrationId = const SdkOmitted()});
 
-  RepositoryRuleParamsStatusCheckConfiguration Function(
-      {String context,
-      SdkOptional<int> integrationId}) get copyWith => _copyWith;
+  RepositoryRuleParamsStatusCheckConfiguration Function({String context, SdkOptional<int> integrationId}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsStatusCheckConfiguration _copyWith(
-          {Object? context = sdkOmittedValue,
-          Object? integrationId = sdkOmittedValue}) =>
-      RepositoryRuleParamsStatusCheckConfiguration(
-        context: identical(context, sdkOmittedValue)
-            ? this.context
-            : context as String,
-        integrationId: identical(integrationId, sdkOmittedValue)
-            ? this.integrationId
-            : integrationId as SdkOptional<int>,
-      );
+  RepositoryRuleParamsStatusCheckConfiguration _copyWith({Object? context = sdkOmittedValue, Object? integrationId = sdkOmittedValue}) => RepositoryRuleParamsStatusCheckConfiguration(
+    context: identical(context, sdkOmittedValue) ? this.context : context as String,
+    integrationId: identical(integrationId, sdkOmittedValue) ? this.integrationId : integrationId as SdkOptional<int>,
+  );
 
-  factory RepositoryRuleParamsStatusCheckConfiguration.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleParamsStatusCheckConfiguration(
-        context: (json['context'] as String?)!,
-        integrationId: json['integration_id'] != null
-            ? SdkPresent(((json['integration_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory RepositoryRuleParamsStatusCheckConfiguration.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsStatusCheckConfiguration(
+    context: (json['context'] as String?)!,
+    integrationId: json['integration_id'] != null ? SdkPresent(((json['integration_id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'context': context,
-        ...switch (integrationId) {
-          SdkPresent<int>(value: final value) => {
-              'integration_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'context': context,
+    ...switch (integrationId) {
+      SdkPresent<int>(value: final value) => {'integration_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

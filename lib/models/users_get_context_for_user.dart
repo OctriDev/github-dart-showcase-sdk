@@ -8,69 +8,51 @@ part of 'users.dart';
 class HovercardContextsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `message` wire field.
   final String message;
-
   /// Required `string` value serialized in the `octicon` wire field.
   final String octicon;
 
   const HovercardContextsItem({required this.message, required this.octicon});
 
-  HovercardContextsItem Function({String message, String octicon})
-      get copyWith => _copyWith;
+  HovercardContextsItem Function({String message, String octicon}) get copyWith => _copyWith;
 
-  HovercardContextsItem _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? octicon = sdkOmittedValue}) =>
-      HovercardContextsItem(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        octicon: identical(octicon, sdkOmittedValue)
-            ? this.octicon
-            : octicon as String,
-      );
+  HovercardContextsItem _copyWith({Object? message = sdkOmittedValue, Object? octicon = sdkOmittedValue}) => HovercardContextsItem(
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    octicon: identical(octicon, sdkOmittedValue) ? this.octicon : octicon as String,
+  );
 
-  factory HovercardContextsItem.fromJson(Map<String, dynamic> json) =>
-      HovercardContextsItem(
-        message: (json['message'] as String?)!,
-        octicon: (json['octicon'] as String?)!,
-      );
+  factory HovercardContextsItem.fromJson(Map<String, dynamic> json) => HovercardContextsItem(
+    message: (json['message'] as String?)!,
+    octicon: (json['octicon'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'octicon': octicon,
-      };
+    'message': message,
+    'octicon': octicon,
+  };
 }
 
 /// Hovercard
 class Hovercard {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required array value serialized in the `contexts` wire field.
   final List<HovercardContextsItem> contexts;
 
   const Hovercard({required this.contexts});
 
-  Hovercard Function({List<HovercardContextsItem> contexts}) get copyWith =>
-      _copyWith;
+  Hovercard Function({List<HovercardContextsItem> contexts}) get copyWith => _copyWith;
 
   Hovercard _copyWith({Object? contexts = sdkOmittedValue}) => Hovercard(
-        contexts: identical(contexts, sdkOmittedValue)
-            ? this.contexts
-            : contexts as List<HovercardContextsItem>,
-      );
+    contexts: identical(contexts, sdkOmittedValue) ? this.contexts : contexts as List<HovercardContextsItem>,
+  );
 
   factory Hovercard.fromJson(Map<String, dynamic> json) => Hovercard(
-        contexts: ((json['contexts'] as List?)
-            ?.map((e) =>
-                HovercardContextsItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+    contexts: ((json['contexts'] as List?)?.map((e) => HovercardContextsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'contexts': contexts.map((item) => item.toJson()).toList(),
-      };
+    'contexts': contexts.map((item) => item.toJson()).toList(),
+  };
 }
