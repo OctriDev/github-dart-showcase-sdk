@@ -5,5 +5,5 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'private_registries_part1.dart';
-part 'private_registries_part2.dart';
+part 'private_registries_shared.dart';
+part 'private_registries_create_org_private_registry.dart';

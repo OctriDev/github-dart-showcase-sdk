@@ -11,4 +11,4 @@ import 'shared_repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_issue_dependencies_blocked_by_added_part1.dart';
+part 'webhook_issue_dependencies_blocked_by_added_models.dart';

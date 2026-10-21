@@ -4,5 +4,5 @@
 // shared_simple domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_simple_part1.dart';
-part 'shared_simple_part2.dart';
+part 'shared_simple_repository.dart';
+part 'shared_simple_user.dart';

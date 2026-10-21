@@ -18,10 +18,10 @@ import 'webhook_registry_package_published_registry_package_package_version_nuge
 import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_item_value.dart';
 import 'webhook_rubygems_metadata.dart';
 
-part 'webhook_registry_package_published_part1.dart';
-part 'webhook_registry_package_published_part2.dart';
-part 'webhook_registry_package_published_part3.dart';
-part 'webhook_registry_package_published_part4.dart';
-part 'webhook_registry_package_published_part5.dart';
-part 'webhook_registry_package_published_part6.dart';
-part 'webhook_registry_package_published_part7.dart';
+part 'webhook_registry_package_published2.dart';
+part 'webhook_registry_package_published_registry_package_package_version_container_metadata.dart';
+part 'webhook_registry_package_published_registry_package_package_version_npm_metadata.dart';
+part 'webhook_registry_package_published_registry_package_package_version_release_author.dart';
+part 'webhook_registry_package_published_registry_package_package_version_docker_metadata_item.dart';
+part 'webhook_registry_package_published_registry_package_package_version.dart';
+part 'webhook_registry_package_published_registry_package.dart';

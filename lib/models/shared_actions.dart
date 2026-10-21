@@ -4,4 +4,4 @@
 // shared_actions domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_actions_part1.dart';
+part 'shared_actions_models.dart';

@@ -9,5 +9,5 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_code_scanning_alert_reopened_by_user_part1.dart';
-part 'webhook_code_scanning_alert_reopened_by_user_part2.dart';
+part 'webhook_code_scanning_alert_reopened_by_user2.dart';
+part 'webhook_code_scanning_alert_reopened_by_user_alert.dart';

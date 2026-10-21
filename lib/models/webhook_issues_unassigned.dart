@@ -11,4 +11,4 @@ import 'simple.dart';
 import 'webhooks_issue.dart';
 import 'webhooks_user.dart';
 
-part 'webhook_issues_unassigned_part1.dart';
+part 'webhook_issues_unassigned_models.dart';

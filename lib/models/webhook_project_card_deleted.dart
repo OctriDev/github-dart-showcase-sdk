@@ -9,5 +9,5 @@ import 'nullable.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_project_card_deleted_part1.dart';
-part 'webhook_project_card_deleted_part2.dart';
+part 'webhook_project_card_deleted_project_card_creator.dart';
+part 'webhook_project_card_deleted2.dart';

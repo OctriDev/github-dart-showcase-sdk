@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'shared_simple.dart';
 import 'shared_team.dart';
 
-part 'campaigns_part1.dart';
+part 'campaigns_models.dart';

@@ -4,4 +4,4 @@
 // shared_webhook domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_webhook_part1.dart';
+part 'shared_webhook_models.dart';

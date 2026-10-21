@@ -6,5 +6,4 @@ import '../sdk_utils.dart';
 import 'shared.dart';
 import 'shared_simple.dart';
 
-part 'repos_release_part1.dart';
-part 'repos_release_part2.dart';
+part 'repos_release_models.dart';

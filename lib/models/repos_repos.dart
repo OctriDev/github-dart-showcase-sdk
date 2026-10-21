@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'repos_repos_part1.dart';
+part 'repos_repos_models.dart';

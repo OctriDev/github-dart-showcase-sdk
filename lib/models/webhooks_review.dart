@@ -5,8 +5,8 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'webhooks_review_part1.dart';
-part 'webhooks_review_part2.dart';
-part 'webhooks_review_part3.dart';
-part 'webhooks_review_part4.dart';
-part 'webhooks_review_part5.dart';
+part 'webhooks_review_links_html.dart';
+part 'webhooks_review2.dart';
+part 'webhooks_review_comment_links_html.dart';
+part 'webhooks_review_comment_user.dart';
+part 'webhooks_review_comment.dart';

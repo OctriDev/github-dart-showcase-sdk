@@ -11,4 +11,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks.dart';
 
-part 'webhook_discussion_comment_edited_part1.dart';
+part 'webhook_discussion_comment_edited_models.dart';

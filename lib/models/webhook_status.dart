@@ -9,7 +9,7 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_status_part1.dart';
-part 'webhook_status_part2.dart';
-part 'webhook_status_part3.dart';
-part 'webhook_status_part4.dart';
+part 'webhook_status2.dart';
+part 'webhook_status_commit_commit_tree.dart';
+part 'webhook_status_commit_committer.dart';
+part 'webhook_status_branches_item_commit.dart';

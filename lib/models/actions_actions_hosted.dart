@@ -7,5 +7,5 @@ import 'actions.dart';
 import 'actions_nullable.dart';
 import 'inline.dart';
 
-part 'actions_actions_hosted_part1.dart';
-part 'actions_actions_hosted_part2.dart';
+part 'actions_actions_hosted_shared.dart';
+part 'actions_actions_hosted_actions_get_hosted_runners_limits_for_org.dart';

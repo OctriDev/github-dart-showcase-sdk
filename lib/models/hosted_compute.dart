@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'hosted_compute_part1.dart';
+part 'hosted_compute_models.dart';

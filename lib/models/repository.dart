@@ -7,8 +7,6 @@ import 'inline.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'repository_part1.dart';
-part 'repository_part2.dart';
-part 'repository_part3.dart';
-part 'repository_part4.dart';
-part 'repository_part5.dart';
+part 'repository_webhooks_permissions.dart';
+part 'repository_webhooks_template_repository.dart';
+part 'repository_webhooks.dart';

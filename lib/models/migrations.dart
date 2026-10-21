@@ -7,6 +7,7 @@ import 'inline.dart';
 import 'shared_nullable.dart';
 import 'shared_repository.dart';
 
-part 'migrations_part1.dart';
-part 'migrations_part2.dart';
-part 'migrations_part3.dart';
+part 'migrations_import.dart';
+part 'migrations_migration.dart';
+part 'migrations_porter_author.dart';
+part 'migrations_get_large_files.dart';

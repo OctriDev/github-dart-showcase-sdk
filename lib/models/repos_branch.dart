@@ -7,9 +7,10 @@ import 'repos_protected.dart';
 import 'shared_commit.dart';
 import 'shared_team.dart';
 
-part 'repos_branch_part1.dart';
-part 'repos_branch_part2.dart';
-part 'repos_branch_part3.dart';
-part 'repos_branch_part4.dart';
-part 'repos_branch_part5.dart';
-part 'repos_branch_part6.dart';
+part 'repos_branch_protection_required_linear_history.dart';
+part 'repos_branch_protection.dart';
+part 'repos_branch_restriction_policy.dart';
+part 'repos_branch_restriction_policy_apps_item_owner.dart';
+part 'repos_branch_restriction_policy_apps_item.dart';
+part 'repos_branch_with_protection.dart';
+part 'repos_branch_repos_list_branches_for_head_commit.dart';

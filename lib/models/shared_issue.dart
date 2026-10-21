@@ -9,7 +9,10 @@ import 'shared_nullable.dart';
 import 'shared_repository.dart';
 import 'shared_simple.dart';
 
-part 'shared_issue_part1.dart';
-part 'shared_issue_part2.dart';
-part 'shared_issue_part3.dart';
-part 'shared_issue_part4.dart';
+part 'shared_issue_pull_request.dart';
+part 'shared_issue2.dart';
+part 'shared_issue_comment.dart';
+part 'shared_issue_dependencies_summary.dart';
+part 'shared_issue_field_value.dart';
+part 'shared_issue_labels_item.dart';
+part 'shared_issue_type.dart';

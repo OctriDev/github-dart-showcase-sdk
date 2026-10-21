@@ -8,4 +8,4 @@ import 'code_scanning_code_scanning_analysis.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'code_scanning_code_scanning_part1.dart';
+part 'code_scanning_code_scanning_models.dart';

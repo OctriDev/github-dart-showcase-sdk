@@ -11,4 +11,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_pull_request5.dart';
 
-part 'webhook_pull_request_demilestoned_part1.dart';
+part 'webhook_pull_request_demilestoned_models.dart';

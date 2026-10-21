@@ -10,6 +10,8 @@ import 'shared_nullable.dart';
 import 'shared_repository.dart';
 import 'shared_simple.dart';
 
-part 'issues_nullable_part1.dart';
-part 'issues_nullable_part2.dart';
-part 'issues_nullable_part3.dart';
+part 'issues_nullable_issue_pull_request.dart';
+part 'issues_nullable_issue.dart';
+part 'issues_nullable_issue_event_intent.dart';
+part 'issues_nullable_issue_labels_item.dart';
+part 'issues_nullable_issue_reference.dart';

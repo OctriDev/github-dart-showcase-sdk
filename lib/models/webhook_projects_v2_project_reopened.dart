@@ -9,4 +9,4 @@ import 'projects.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_projects_v2_project_reopened_part1.dart';
+part 'webhook_projects_v2_project_reopened_models.dart';

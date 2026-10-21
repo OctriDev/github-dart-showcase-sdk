@@ -9,6 +9,6 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_code_scanning_alert_fixed_part1.dart';
-part 'webhook_code_scanning_alert_fixed_part2.dart';
-part 'webhook_code_scanning_alert_fixed_part3.dart';
+part 'webhook_code_scanning_alert_fixed2.dart';
+part 'webhook_code_scanning_alert_fixed_alert_most_recent_instance.dart';
+part 'webhook_code_scanning_alert_fixed_alert.dart';

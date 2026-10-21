@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // webhooks_code_scanning domain model library.
-part 'webhooks_code_scanning_part1.dart';
+part 'webhooks_code_scanning_models.dart';

@@ -7,8 +7,6 @@ import 'inline.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'nullable_part1.dart';
-part 'nullable_part2.dart';
-part 'nullable_part3.dart';
-part 'nullable_part4.dart';
-part 'nullable_part5.dart';
+part 'nullable_repository_webhooks_permissions.dart';
+part 'nullable_repository_webhooks_template_repository.dart';
+part 'nullable_repository_webhooks.dart';

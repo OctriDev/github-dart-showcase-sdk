@@ -835,7 +835,7 @@ const _selectedOperationSecurity = <String, List<List<String>>>{
   "gistsStar": [],
   "gistsUnstar": [],
   "gistsGetRevision": [],
-  "gitignoreGetAllTemplates": [],
+  "listTemplates": [],
   "gitignoreGetTemplate": [],
   "appsListReposAccessibleToInstallation": [],
   "appsRevokeInstallationAccessToken": [],

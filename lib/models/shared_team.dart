@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_nullable.dart';
 
-part 'shared_team_part1.dart';
+part 'shared_team_models.dart';

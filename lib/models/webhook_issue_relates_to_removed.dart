@@ -10,4 +10,4 @@ import 'shared_issue.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_issue_relates_to_removed_part1.dart';
+part 'webhook_issue_relates_to_removed_models.dart';

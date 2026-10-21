@@ -10,4 +10,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks.dart';
 
-part 'webhook_marketplace_purchase_changed_part1.dart';
+part 'webhook_marketplace_purchase_changed_models.dart';

@@ -4,4 +4,4 @@
 // actions_actions_artifact domain model library.
 import '../sdk_utils.dart';
 
-part 'actions_actions_artifact_part1.dart';
+part 'actions_actions_artifact_models.dart';

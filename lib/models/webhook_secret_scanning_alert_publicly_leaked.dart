@@ -10,4 +10,4 @@ import 'secret_scanning.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_secret_scanning_alert_publicly_leaked_part1.dart';
+part 'webhook_secret_scanning_alert_publicly_leaked_models.dart';

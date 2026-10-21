@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // shared_alert domain model library.
-part 'shared_alert_part1.dart';
+part 'shared_alert_models.dart';

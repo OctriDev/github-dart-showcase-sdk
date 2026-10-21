@@ -10,4 +10,4 @@ import 'shared_installation.dart';
 import 'shared_simple.dart';
 import 'webhooks_repositories.dart';
 
-part 'webhook_installation_unsuspend_part1.dart';
+part 'webhook_installation_unsuspend_models.dart';

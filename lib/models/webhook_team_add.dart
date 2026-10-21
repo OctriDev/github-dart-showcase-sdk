@@ -9,4 +9,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks.dart';
 
-part 'webhook_team_add_part1.dart';
+part 'webhook_team_add_models.dart';

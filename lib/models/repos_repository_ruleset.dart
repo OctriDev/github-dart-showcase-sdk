@@ -8,5 +8,7 @@ import 'repos_org.dart';
 import 'repos_repository_rule.dart';
 import 'shared_repository.dart';
 
-part 'repos_repository_ruleset_part1.dart';
-part 'repos_repository_ruleset_part2.dart';
+part 'repos_repository_ruleset2.dart';
+part 'repos_repository_ruleset_bypass_actor.dart';
+part 'repos_repository_ruleset_conditions.dart';
+part 'repos_repository_ruleset_conditions2.dart';

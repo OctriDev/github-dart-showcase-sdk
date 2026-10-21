@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // webhook_deployment_status_created_deployment_payload domain model library.
-part 'webhook_deployment_status_created_deployment_payload_part1.dart';
+part 'webhook_deployment_status_created_deployment_payload_models.dart';

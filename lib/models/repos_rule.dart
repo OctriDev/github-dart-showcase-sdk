@@ -5,7 +5,9 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'repos_rule_part1.dart';
-part 'repos_rule_part2.dart';
-part 'repos_rule_part3.dart';
-part 'repos_rule_part4.dart';
+part 'repos_rule_suite.dart';
+part 'repos_rule_suite_pull_request.dart';
+part 'repos_rule_suite_pull_request_pull_request.dart';
+part 'repos_rule_suite_required_status_checks.dart';
+part 'repos_rule_suite_rule_evaluations_item_metadata.dart';
+part 'repos_rule_suites.dart';

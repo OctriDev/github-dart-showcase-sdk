@@ -5,5 +5,6 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'actions_concurrency_part1.dart';
-part 'actions_concurrency_part2.dart';
+part 'actions_concurrency_actions_get_concurrency_group_for_repository.dart';
+part 'actions_concurrency_actions_list_concurrency_groups_for_repository.dart';
+part 'actions_concurrency_actions_list_concurrency_groups_for_workflow_run.dart';

@@ -9,5 +9,5 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_installation_target_renamed_part1.dart';
-part 'webhook_installation_target_renamed_part2.dart';
+part 'webhook_installation_target_renamed2.dart';
+part 'webhook_installation_target_renamed_changes_login.dart';

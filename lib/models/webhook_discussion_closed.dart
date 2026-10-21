@@ -10,4 +10,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_discussion_closed_part1.dart';
+part 'webhook_discussion_closed_models.dart';

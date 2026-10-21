@@ -9,4 +9,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_merge_group_checks_requested_part1.dart';
+part 'webhook_merge_group_checks_requested_models.dart';

@@ -5,5 +5,6 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'issues_issues_part1.dart';
-part 'issues_issues_part2.dart';
+part 'issues_issues_add_assignees.dart';
+part 'issues_issues_create.dart';
+part 'issues_issues_update.dart';

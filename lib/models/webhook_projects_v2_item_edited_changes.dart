@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'projects.dart';
 
-part 'webhook_projects_v2_item_edited_changes_part1.dart';
+part 'webhook_projects_v2_item_edited_changes_models.dart';

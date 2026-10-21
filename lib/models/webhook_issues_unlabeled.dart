@@ -11,4 +11,4 @@ import 'simple.dart';
 import 'webhooks_issue.dart';
 import 'webhooks_label.dart';
 
-part 'webhook_issues_unlabeled_part1.dart';
+part 'webhook_issues_unlabeled_models.dart';

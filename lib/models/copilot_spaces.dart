@@ -7,6 +7,8 @@ import 'inline.dart';
 import 'shared_organization.dart';
 import 'shared_simple.dart';
 
-part 'copilot_spaces_part1.dart';
-part 'copilot_spaces_part2.dart';
-part 'copilot_spaces_part3.dart';
+part 'copilot_spaces_copilot_space.dart';
+part 'copilot_spaces_copilot_space_collaborator_variant0_variant1.dart';
+part 'copilot_spaces_copilot_space_collaborator.dart';
+part 'copilot_spaces_copilot_space_owner.dart';
+part 'copilot_spaces_copilot_space_resource.dart';

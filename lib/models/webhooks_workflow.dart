@@ -4,4 +4,4 @@
 // webhooks_workflow domain model library.
 import '../sdk_utils.dart';
 
-part 'webhooks_workflow_part1.dart';
+part 'webhooks_workflow_models.dart';

@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'repos.dart';
 import 'shared_nullable.dart';
 
-part 'repos_deployment_part1.dart';
+part 'repos_deployment_models.dart';

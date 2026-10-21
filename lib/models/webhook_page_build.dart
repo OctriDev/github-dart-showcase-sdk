@@ -9,6 +9,5 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_page_build_part1.dart';
-part 'webhook_page_build_part2.dart';
-part 'webhook_page_build_part3.dart';
+part 'webhook_page_build_build_error.dart';
+part 'webhook_page_build2.dart';

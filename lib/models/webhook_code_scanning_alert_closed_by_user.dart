@@ -9,7 +9,7 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_code_scanning_alert_closed_by_user_part1.dart';
-part 'webhook_code_scanning_alert_closed_by_user_part2.dart';
-part 'webhook_code_scanning_alert_closed_by_user_part3.dart';
-part 'webhook_code_scanning_alert_closed_by_user_part4.dart';
+part 'webhook_code_scanning_alert_closed_by_user_alert_dismissed_by.dart';
+part 'webhook_code_scanning_alert_closed_by_user_alert_most_recent_instance.dart';
+part 'webhook_code_scanning_alert_closed_by_user_alert_dismissal_approved_by.dart';
+part 'webhook_code_scanning_alert_closed_by_user2.dart';

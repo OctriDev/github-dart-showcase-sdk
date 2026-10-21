@@ -6,5 +6,9 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_simple.dart';
 
-part 'code_scanning_code_scanning_variant_part1.dart';
-part 'code_scanning_code_scanning_variant_part2.dart';
+part 'code_scanning_code_scanning_variant_analysis.dart';
+part 'code_scanning_code_scanning_variant_analysis_language.dart';
+part 'code_scanning_code_scanning_variant_analysis_repository.dart';
+part 'code_scanning_code_scanning_variant_analysis_skipped_repo_group.dart';
+part 'code_scanning_code_scanning_variant_analysis_status.dart';
+part 'code_scanning_code_scanning_variant_code_scanning_get_variant_analysis_repo_task.dart';

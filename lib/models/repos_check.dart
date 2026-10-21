@@ -4,4 +4,4 @@
 // repos_check domain model library.
 import '../sdk_utils.dart';
 
-part 'repos_check_part1.dart';
+part 'repos_check_models.dart';

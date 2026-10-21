@@ -8,4 +8,4 @@ import 'shared.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'shared_installation_part1.dart';
+part 'shared_installation_models.dart';

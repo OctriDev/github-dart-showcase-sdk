@@ -10,4 +10,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_deploy.dart';
 
-part 'webhook_deploy_key_created_part1.dart';
+part 'webhook_deploy_key_created_models.dart';

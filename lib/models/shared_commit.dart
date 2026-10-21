@@ -7,5 +7,7 @@ import 'shared.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'shared_commit_part1.dart';
-part 'shared_commit_part2.dart';
+part 'shared_commit2.dart';
+part 'shared_commit_author.dart';
+part 'shared_commit_comment.dart';
+part 'shared_commit_committer.dart';

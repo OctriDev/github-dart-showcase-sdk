@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // webhook_registry_package_published_registry_package_package_version_nuget_metadata_item_id domain model library.
-part 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_item_id_part1.dart';
+part 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_item_id_models.dart';

@@ -11,6 +11,6 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_repository_ruleset_edited_part1.dart';
-part 'webhook_repository_ruleset_edited_part2.dart';
-part 'webhook_repository_ruleset_edited_part3.dart';
+part 'webhook_repository_ruleset_edited_changes_name.dart';
+part 'webhook_repository_ruleset_edited_changes_rules_updated_item_changes_configuration.dart';
+part 'webhook_repository_ruleset_edited2.dart';

@@ -14,7 +14,12 @@ import 'shared_simple.dart';
 import 'shared_team.dart';
 import 'simple.dart';
 
-part 'misc_part1.dart';
-part 'misc_part2.dart';
-part 'misc_part3.dart';
-part 'misc_part4.dart';
+part 'misc_campaign_alert_type.dart';
+part 'misc_check_run_with_simple_check_suite.dart';
+part 'misc_enterprise_webhooks.dart';
+part 'misc_issue_reference.dart';
+part 'misc_merge_group.dart';
+part 'misc_organization_simple_webhooks.dart';
+part 'misc_personal_access_token_request.dart';
+part 'misc_pull_request_webhook_variant1.dart';
+part 'misc_pull_request_webhook.dart';

@@ -7,4 +7,4 @@ import 'inline.dart';
 import 'shared.dart';
 import 'shared_commit.dart';
 
-part 'repos_commit_part1.dart';
+part 'repos_commit_models.dart';

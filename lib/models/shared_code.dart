@@ -4,4 +4,4 @@
 // shared_code domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_code_part1.dart';
+part 'shared_code_models.dart';

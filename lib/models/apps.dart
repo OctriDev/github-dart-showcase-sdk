@@ -9,6 +9,11 @@ import 'shared_nullable.dart';
 import 'shared_repository.dart';
 import 'shared_simple.dart';
 
-part 'apps_part1.dart';
-part 'apps_part2.dart';
-part 'apps_part3.dart';
+part 'apps_authorization.dart';
+part 'apps_marketplace_account.dart';
+part 'apps_marketplace_listing_plan.dart';
+part 'apps_marketplace_purchase.dart';
+part 'apps_nullable_scoped_installation.dart';
+part 'apps_user_marketplace_purchase.dart';
+part 'apps_create_installation_access_token.dart';
+part 'apps_list_installation_requests_for_authenticated_app.dart';

@@ -10,5 +10,5 @@ import 'shared.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_security_advisory_withdrawn_part1.dart';
-part 'webhook_security_advisory_withdrawn_part2.dart';
+part 'webhook_security_advisory_withdrawn_security_advisory_cvss.dart';
+part 'webhook_security_advisory_withdrawn2.dart';

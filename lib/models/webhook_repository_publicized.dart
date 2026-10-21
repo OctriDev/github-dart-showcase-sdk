@@ -9,4 +9,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_repository_publicized_part1.dart';
+part 'webhook_repository_publicized_models.dart';

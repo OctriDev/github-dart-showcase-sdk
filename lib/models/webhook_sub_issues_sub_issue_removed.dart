@@ -11,4 +11,4 @@ import 'shared_repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_sub_issues_sub_issue_removed_part1.dart';
+part 'webhook_sub_issues_sub_issue_removed_models.dart';

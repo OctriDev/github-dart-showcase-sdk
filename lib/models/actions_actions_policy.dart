@@ -8,6 +8,9 @@ import 'actions_enterprise.dart';
 import 'inline.dart';
 import 'shared_repository.dart';
 
-part 'actions_actions_policy_part1.dart';
-part 'actions_actions_policy_part2.dart';
-part 'actions_actions_policy_part3.dart';
+part 'actions_actions_policy2.dart';
+part 'actions_actions_policy_conditions.dart';
+part 'actions_actions_policy_enterprise_conditions.dart';
+part 'actions_actions_policy_org_conditions.dart';
+part 'actions_actions_policy_repo_conditions.dart';
+part 'actions_actions_policy_workflow_path_condition.dart';

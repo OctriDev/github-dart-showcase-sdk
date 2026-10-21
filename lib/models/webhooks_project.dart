@@ -5,7 +5,7 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'webhooks_project_part1.dart';
-part 'webhooks_project_part2.dart';
-part 'webhooks_project_part3.dart';
-part 'webhooks_project_part4.dart';
+part 'webhooks_project2.dart';
+part 'webhooks_project_card.dart';
+part 'webhooks_project_changes.dart';
+part 'webhooks_project_column.dart';
