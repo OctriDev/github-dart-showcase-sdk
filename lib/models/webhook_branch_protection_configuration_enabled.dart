@@ -9,4 +9,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_branch_protection_configuration_enabled_part1.dart';
+part 'webhook_branch_protection_configuration_enabled_models.dart';

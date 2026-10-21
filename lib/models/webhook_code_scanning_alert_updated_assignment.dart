@@ -9,6 +9,6 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_code_scanning_alert_updated_assignment_part1.dart';
-part 'webhook_code_scanning_alert_updated_assignment_part2.dart';
-part 'webhook_code_scanning_alert_updated_assignment_part3.dart';
+part 'webhook_code_scanning_alert_updated_assignment_alert_dismissed_by.dart';
+part 'webhook_code_scanning_alert_updated_assignment_alert_most_recent_instance.dart';
+part 'webhook_code_scanning_alert_updated_assignment2.dart';

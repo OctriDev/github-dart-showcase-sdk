@@ -7,8 +7,10 @@ import 'shared.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'gists_part1.dart';
-part 'gists_part2.dart';
-part 'gists_part3.dart';
-part 'gists_part4.dart';
-part 'gists_part5.dart';
+part 'gists_base_gist.dart';
+part 'gists_forbidden_gist.dart';
+part 'gists_gist_comment.dart';
+part 'gists_gist_history.dart';
+part 'gists_gist_simple.dart';
+part 'gists_gist_simple_forks_item.dart';
+part 'gists_list_commits.dart';

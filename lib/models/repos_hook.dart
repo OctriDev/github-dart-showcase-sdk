@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_webhook.dart';
 
-part 'repos_hook_part1.dart';
+part 'repos_hook_models.dart';

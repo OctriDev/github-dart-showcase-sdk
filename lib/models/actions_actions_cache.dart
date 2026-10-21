@@ -4,5 +4,12 @@
 // actions_actions_cache domain model library.
 import '../sdk_utils.dart';
 
-part 'actions_actions_cache_part1.dart';
-part 'actions_actions_cache_part2.dart';
+part 'actions_actions_cache_list.dart';
+part 'actions_actions_cache_retention_limit_for_enterprise.dart';
+part 'actions_actions_cache_retention_limit_for_organization.dart';
+part 'actions_actions_cache_retention_limit_for_repository.dart';
+part 'actions_actions_cache_storage_limit_for_enterprise.dart';
+part 'actions_actions_cache_storage_limit_for_organization.dart';
+part 'actions_actions_cache_storage_limit_for_repository.dart';
+part 'actions_actions_cache_usage_by_repository.dart';
+part 'actions_actions_cache_actions_get_actions_cache_usage_for_org.dart';

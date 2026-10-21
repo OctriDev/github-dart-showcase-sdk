@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_simple.dart';
 
-part 'webhook_github_app_authorization_revoked_part1.dart';
+part 'webhook_github_app_authorization_revoked_models.dart';

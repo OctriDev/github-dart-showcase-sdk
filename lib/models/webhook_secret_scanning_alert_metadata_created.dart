@@ -10,4 +10,4 @@ import 'secret_scanning.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_secret_scanning_alert_metadata_created_part1.dart';
+part 'webhook_secret_scanning_alert_metadata_created_models.dart';

@@ -8,4 +8,4 @@ import 'misc.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_personal_access_token_request_denied_part1.dart';
+part 'webhook_personal_access_token_request_denied_models.dart';

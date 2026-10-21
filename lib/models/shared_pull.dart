@@ -10,8 +10,9 @@ import 'shared_repository.dart';
 import 'shared_simple.dart';
 import 'shared_team.dart';
 
-part 'shared_pull_part1.dart';
-part 'shared_pull_part2.dart';
-part 'shared_pull_part3.dart';
-part 'shared_pull_part4.dart';
-part 'shared_pull_part5.dart';
+part 'shared_pull_request_minimal.dart';
+part 'shared_pull_request_review_comment_links_self.dart';
+part 'shared_pull_request_review_comment.dart';
+part 'shared_pull_request_simple_head.dart';
+part 'shared_pull_request_simple.dart';
+part 'shared_pull_request_stack.dart';

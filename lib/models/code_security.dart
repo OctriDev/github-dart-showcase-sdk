@@ -6,6 +6,10 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_simple.dart';
 
-part 'code_security_part1.dart';
-part 'code_security_part2.dart';
-part 'code_security_part3.dart';
+part 'code_security_code_scanning_default_setup_options.dart';
+part 'code_security_code_scanning_options.dart';
+part 'code_security_configuration_dependency_graph_autosubmit_action_options.dart';
+part 'code_security_configuration.dart';
+part 'code_security_configuration_repositories.dart';
+part 'code_security_default_configurations.dart';
+part 'code_security_get_configuration_for_repository.dart';

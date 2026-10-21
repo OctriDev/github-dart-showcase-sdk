@@ -9,6 +9,7 @@ import 'shared_nullable.dart';
 import 'shared_security.dart';
 import 'shared_simple.dart';
 
-part 'packages_part1.dart';
-part 'packages_part2.dart';
-part 'packages_part3.dart';
+part 'packages_nullable_minimal_repository_permissions.dart';
+part 'packages_nullable_minimal_repository.dart';
+part 'packages_package.dart';
+part 'packages_package_version.dart';

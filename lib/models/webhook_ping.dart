@@ -10,4 +10,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'shared_webhook.dart';
 
-part 'webhook_ping_part1.dart';
+part 'webhook_ping_models.dart';

@@ -5,5 +5,6 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'code_quality_part1.dart';
-part 'code_quality_part2.dart';
+part 'code_quality_shared.dart';
+part 'code_quality_get_setup.dart';
+part 'code_quality_update_setup.dart';

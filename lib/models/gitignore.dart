@@ -4,4 +4,4 @@
 // gitignore domain model library.
 import '../sdk_utils.dart';
 
-part 'gitignore_part1.dart';
+part 'gitignore_models.dart';

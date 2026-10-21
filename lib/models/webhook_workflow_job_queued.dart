@@ -10,4 +10,4 @@ import 'shared_deployment.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_workflow_job_queued_part1.dart';
+part 'webhook_workflow_job_queued_models.dart';

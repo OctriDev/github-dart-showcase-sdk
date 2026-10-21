@@ -13,9 +13,7 @@ import 'simple.dart';
 import 'webhooks.dart';
 import 'webhooks_issue.dart';
 
-part 'webhook_issue_comment_edited_part1.dart';
-part 'webhook_issue_comment_edited_part2.dart';
-part 'webhook_issue_comment_edited_part3.dart';
-part 'webhook_issue_comment_edited_part4.dart';
-part 'webhook_issue_comment_edited_part5.dart';
-part 'webhook_issue_comment_edited_part6.dart';
+part 'webhook_issue_comment_edited_issue_assignee.dart';
+part 'webhook_issue_comment_edited_issue_reactions.dart';
+part 'webhook_issue_comment_edited_issue_labels_item.dart';
+part 'webhook_issue_comment_edited2.dart';

@@ -10,4 +10,4 @@ import 'shared.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_custom_property_values_updated_part1.dart';
+part 'webhook_custom_property_values_updated_models.dart';

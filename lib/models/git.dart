@@ -5,6 +5,10 @@
 import '../sdk_utils.dart';
 import 'shared.dart';
 
-part 'git_part1.dart';
-part 'git_part2.dart';
-part 'git_part3.dart';
+part 'git_get_blob.dart';
+part 'git_commit.dart';
+part 'git_ref.dart';
+part 'git_tag.dart';
+part 'git_tree.dart';
+part 'git_user.dart';
+part 'git_create_blob.dart';

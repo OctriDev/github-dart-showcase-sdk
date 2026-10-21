@@ -7,7 +7,11 @@ import 'inline.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'shared_repository_part1.dart';
-part 'shared_repository_part2.dart';
-part 'shared_repository_part3.dart';
-part 'shared_repository_part4.dart';
+part 'shared_repository_permissions.dart';
+part 'shared_repository2.dart';
+part 'shared_repository_rule_enforcement.dart';
+part 'shared_repository_ruleset_conditions_repository_id_target.dart';
+part 'shared_repository_ruleset_conditions_repository_name_target.dart';
+part 'shared_repository_ruleset_conditions_repository_property_spec.dart';
+part 'shared_repository_ruleset_conditions_repository_property_target.dart';
+part 'shared_repository_rule_violation_error.dart';

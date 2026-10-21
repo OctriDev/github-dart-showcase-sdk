@@ -9,7 +9,6 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_release_prereleased_part1.dart';
-part 'webhook_release_prereleased_part2.dart';
-part 'webhook_release_prereleased_part3.dart';
-part 'webhook_release_prereleased_part4.dart';
+part 'webhook_release_prereleased2.dart';
+part 'webhook_release_prereleased_release_assets_item_uploader.dart';
+part 'webhook_release_prereleased_release.dart';

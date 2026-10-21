@@ -4,4 +4,4 @@
 // webhook_registry_package_published_registry_package_package_version_nuget_metadata_item_value domain model library.
 import '../sdk_utils.dart';
 
-part 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_item_value_part1.dart';
+part 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_item_value_models.dart';

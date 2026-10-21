@@ -4,4 +4,4 @@
 // shared_hook domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_hook_part1.dart';
+part 'shared_hook_models.dart';

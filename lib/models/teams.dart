@@ -6,9 +6,11 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_nullable.dart';
 
-part 'teams_part1.dart';
-part 'teams_part2.dart';
-part 'teams_part3.dart';
-part 'teams_part4.dart';
-part 'teams_part5.dart';
-part 'teams_part6.dart';
+part 'teams_ldap_dn.dart';
+part 'teams_team_full.dart';
+part 'teams_team_member.dart';
+part 'teams_team_membership.dart';
+part 'teams_team_organization_plan.dart';
+part 'teams_team_organization.dart';
+part 'teams_team_repository_permissions.dart';
+part 'teams_team_repository.dart';

@@ -7,4 +7,4 @@ import 'shared_nullable.dart';
 import 'shared_simple.dart';
 import 'shared_team.dart';
 
-part 'issues_review_part1.dart';
+part 'issues_review_models.dart';

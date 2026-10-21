@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_nullable.dart';
 
-part 'licenses_part1.dart';
+part 'licenses_models.dart';

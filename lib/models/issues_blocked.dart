@@ -7,4 +7,4 @@ import 'issues_nullable.dart';
 import 'shared_nullable.dart';
 import 'shared_simple.dart';
 
-part 'issues_blocked_part1.dart';
+part 'issues_blocked_models.dart';

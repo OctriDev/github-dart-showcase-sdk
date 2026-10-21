@@ -4,4 +4,4 @@
 // webhooks_repositories domain model library.
 import '../sdk_utils.dart';
 
-part 'webhooks_repositories_part1.dart';
+part 'webhooks_repositories_models.dart';

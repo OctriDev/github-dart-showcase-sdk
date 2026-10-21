@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // code_scanning domain model library.
-part 'code_scanning_part1.dart';
+part 'code_scanning_models.dart';

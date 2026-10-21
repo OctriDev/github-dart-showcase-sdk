@@ -10,4 +10,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_repository_ruleset_deleted_part1.dart';
+part 'webhook_repository_ruleset_deleted_models.dart';

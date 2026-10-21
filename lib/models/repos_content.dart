@@ -5,6 +5,9 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'repos_content_part1.dart';
-part 'repos_content_part2.dart';
-part 'repos_content_part3.dart';
+part 'repos_content_directory.dart';
+part 'repos_content_submodule.dart';
+part 'repos_content_symlink.dart';
+part 'repos_content_tree.dart';
+part 'repos_content_shared.dart';
+part 'repos_content_repos_get_top_paths.dart';

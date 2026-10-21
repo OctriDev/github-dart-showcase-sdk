@@ -9,4 +9,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_secret_scanning_scan_completed_part1.dart';
+part 'webhook_secret_scanning_scan_completed_models.dart';

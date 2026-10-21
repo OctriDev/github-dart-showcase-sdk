@@ -4,4 +4,4 @@
 // webhook_secret_scanning_alert_location_created_form_encoded domain model library.
 import '../sdk_utils.dart';
 
-part 'webhook_secret_scanning_alert_location_created_form_encoded_part1.dart';
+part 'webhook_secret_scanning_alert_location_created_form_encoded_models.dart';

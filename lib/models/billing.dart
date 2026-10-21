@@ -5,11 +5,16 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'billing_part1.dart';
-part 'billing_part2.dart';
-part 'billing_part3.dart';
-part 'billing_part4.dart';
-part 'billing_part5.dart';
-part 'billing_part6.dart';
-part 'billing_part7.dart';
-part 'billing_part8.dart';
+part 'billing_get_github_billing_ai_credit_usage_report_org.dart';
+part 'billing_get_github_billing_ai_credit_usage_report_user.dart';
+part 'billing_get_github_billing_premium_request_usage_report_org.dart';
+part 'billing_get_github_billing_premium_request_usage_report_user.dart';
+part 'billing_get_github_billing_usage_report_org.dart';
+part 'billing_get_github_billing_usage_report_user.dart';
+part 'billing_get_github_billing_usage_summary_report_org.dart';
+part 'billing_get_github_billing_usage_summary_report_user.dart';
+part 'billing_get_all_budgets_org.dart';
+part 'billing_create_organization_budget.dart';
+part 'billing_delete_budget_org.dart';
+part 'billing_get_budget_org.dart';
+part 'billing_update_budget_org.dart';

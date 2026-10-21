@@ -7,5 +7,11 @@ import 'inline.dart';
 import 'shared_nullable.dart';
 import 'shared_team.dart';
 
-part 'copilot_part1.dart';
-part 'copilot_part2.dart';
+part 'copilot_copilot_content_exclusion_for_organization.dart';
+part 'copilot_get_copilot_organization_details.dart';
+part 'copilot_seat_details.dart';
+part 'copilot_seat_details_assigning_team.dart';
+part 'copilot_usage_metrics1_day_report.dart';
+part 'copilot_usage_metrics28_day_report.dart';
+part 'copilot_enterprise_team.dart';
+part 'copilot_nullable_organization_simple.dart';

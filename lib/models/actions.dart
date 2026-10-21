@@ -7,7 +7,14 @@ import 'inline.dart';
 import 'shared_repository.dart';
 import 'shared_simple.dart';
 
-part 'actions_part1.dart';
-part 'actions_part2.dart';
-part 'actions_part3.dart';
-part 'actions_part4.dart';
+part 'actions_allowed_actions.dart';
+part 'actions_artifact.dart';
+part 'actions_authentication_token.dart';
+part 'actions_enabled_repositories.dart';
+part 'actions_job.dart';
+part 'actions_public_ip.dart';
+part 'actions_referenced_workflow.dart';
+part 'actions_sha_pinning_required.dart';
+part 'actions_get_reviews_for_run.dart';
+part 'actions_get_custom_oidc_sub_claim_for_repo.dart';
+part 'actions_get_self_hosted_runners_permissions_organization.dart';

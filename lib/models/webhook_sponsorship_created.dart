@@ -10,4 +10,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks.dart';
 
-part 'webhook_sponsorship_created_part1.dart';
+part 'webhook_sponsorship_created_models.dart';

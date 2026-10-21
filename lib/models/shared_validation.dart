@@ -4,4 +4,4 @@
 // shared_validation domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_validation_part1.dart';
+part 'shared_validation_models.dart';

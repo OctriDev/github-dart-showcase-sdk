@@ -9,8 +9,8 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_check_suite_completed_part1.dart';
-part 'webhook_check_suite_completed_part2.dart';
-part 'webhook_check_suite_completed_part3.dart';
-part 'webhook_check_suite_completed_part4.dart';
-part 'webhook_check_suite_completed_part5.dart';
+part 'webhook_check_suite_completed_check_suite_app_owner.dart';
+part 'webhook_check_suite_completed_check_suite_app_permissions.dart';
+part 'webhook_check_suite_completed_check_suite_app.dart';
+part 'webhook_check_suite_completed_check_suite_pull_requests_item_base.dart';
+part 'webhook_check_suite_completed2.dart';

@@ -8,5 +8,5 @@ import 'shared_deployment.dart';
 import 'shared_simple.dart';
 import 'shared_team.dart';
 
-part 'repos_environment_part1.dart';
-part 'repos_environment_part2.dart';
+part 'repos_environment2.dart';
+part 'repos_environment_protection_rules_item.dart';

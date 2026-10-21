@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'repository_rule_params_part1.dart';
+part 'repository_rule_params_models.dart';

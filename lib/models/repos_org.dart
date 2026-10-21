@@ -7,5 +7,5 @@ import 'repos_repository_rule.dart';
 import 'repos_repository_ruleset.dart';
 import 'shared_repository.dart';
 
-part 'repos_org_part1.dart';
-part 'repos_org_part2.dart';
+part 'repos_org_rules.dart';
+part 'repos_org_ruleset_conditions.dart';

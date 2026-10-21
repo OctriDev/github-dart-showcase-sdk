@@ -4,4 +4,4 @@
 // rate_limit domain model library.
 import '../sdk_utils.dart';
 
-part 'rate_limit_part1.dart';
+part 'rate_limit_models.dart';

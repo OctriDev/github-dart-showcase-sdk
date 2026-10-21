@@ -10,8 +10,7 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhook_rubygems_metadata.dart';
 
-part 'webhook_registry_package_updated_part1.dart';
-part 'webhook_registry_package_updated_part2.dart';
-part 'webhook_registry_package_updated_part3.dart';
-part 'webhook_registry_package_updated_part4.dart';
-part 'webhook_registry_package_updated_part5.dart';
+part 'webhook_registry_package_updated2.dart';
+part 'webhook_registry_package_updated_registry_package_package_version_release_author.dart';
+part 'webhook_registry_package_updated_registry_package_package_version_package_files_item.dart';
+part 'webhook_registry_package_updated_registry_package.dart';

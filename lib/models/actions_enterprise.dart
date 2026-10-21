@@ -4,4 +4,4 @@
 // actions_enterprise domain model library.
 import '../sdk_utils.dart';
 
-part 'actions_enterprise_part1.dart';
+part 'actions_enterprise_models.dart';

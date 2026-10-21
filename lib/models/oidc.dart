@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'oidc_part1.dart';
+part 'oidc_models.dart';

@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'shared.dart';
 import 'shared_simple.dart';
 
-part 'shared_integration_part1.dart';
+part 'shared_integration_models.dart';

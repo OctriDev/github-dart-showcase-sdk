@@ -4,4 +4,4 @@
 // shared_ruleset domain model library.
 import '../sdk_utils.dart';
 
-part 'shared_ruleset_part1.dart';
+part 'shared_ruleset_models.dart';

@@ -4,4 +4,4 @@
 // webhook_check_run_created_form_encoded domain model library.
 import '../sdk_utils.dart';
 
-part 'webhook_check_run_created_form_encoded_part1.dart';
+part 'webhook_check_run_created_form_encoded_models.dart';

@@ -4,7 +4,11 @@
 // users domain model library.
 import '../sdk_utils.dart';
 
-part 'users_part1.dart';
-part 'users_part2.dart';
-part 'users_part3.dart';
-part 'users_part4.dart';
+part 'users_email.dart';
+part 'users_gpg_key.dart';
+part 'users_key.dart';
+part 'users_private_user.dart';
+part 'users_social_account.dart';
+part 'users_ssh_signing_key.dart';
+part 'users_get_context_for_user.dart';
+part 'users_list_public_keys_for_user.dart';

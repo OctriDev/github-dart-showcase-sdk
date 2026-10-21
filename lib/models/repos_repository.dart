@@ -8,4 +8,4 @@ import 'repos_nullable.dart';
 import 'shared.dart';
 import 'shared_nullable.dart';
 
-part 'repos_repository_part1.dart';
+part 'repos_repository_models.dart';

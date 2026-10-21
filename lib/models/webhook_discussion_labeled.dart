@@ -11,4 +11,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_label.dart';
 
-part 'webhook_discussion_labeled_part1.dart';
+part 'webhook_discussion_labeled_models.dart';

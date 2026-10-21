@@ -10,5 +10,5 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks.dart';
 
-part 'webhook_branch_protection_rule_edited_part1.dart';
-part 'webhook_branch_protection_rule_edited_part2.dart';
+part 'webhook_branch_protection_rule_edited2.dart';
+part 'webhook_branch_protection_rule_edited_changes.dart';

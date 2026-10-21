@@ -4,6 +4,6 @@
 // meta domain model library.
 import '../sdk_utils.dart';
 
-part 'meta_part1.dart';
-part 'meta_part2.dart';
-part 'meta_part3.dart';
+part 'meta_api_overview_ssh_key_fingerprints.dart';
+part 'meta_api_overview.dart';
+part 'meta_root.dart';

@@ -5,7 +5,7 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'repos_pages_part1.dart';
-part 'repos_pages_part2.dart';
-part 'repos_pages_part3.dart';
-part 'repos_pages_part4.dart';
+part 'repos_pages_repos_get_pages_deployment.dart';
+part 'repos_pages_health_check.dart';
+part 'repos_pages_health_check_alt_domain.dart';
+part 'repos_pages_shared.dart';

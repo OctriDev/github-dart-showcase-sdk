@@ -4,4 +4,4 @@
 // webhook_rubygems_metadata domain model library.
 import '../sdk_utils.dart';
 
-part 'webhook_rubygems_metadata_part1.dart';
+part 'webhook_rubygems_metadata_models.dart';

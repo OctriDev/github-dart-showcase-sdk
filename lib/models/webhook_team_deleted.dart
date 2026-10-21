@@ -9,8 +9,7 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks.dart';
 
-part 'webhook_team_deleted_part1.dart';
-part 'webhook_team_deleted_part2.dart';
-part 'webhook_team_deleted_part3.dart';
-part 'webhook_team_deleted_part4.dart';
-part 'webhook_team_deleted_part5.dart';
+part 'webhook_team_deleted_repository_created_at.dart';
+part 'webhook_team_deleted_repository_permissions.dart';
+part 'webhook_team_deleted_repository.dart';
+part 'webhook_team_deleted2.dart';

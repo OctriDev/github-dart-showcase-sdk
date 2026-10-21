@@ -12,4 +12,4 @@ import 'webhooks.dart';
 import 'webhooks_repositories.dart';
 import 'webhooks_user.dart';
 
-part 'webhook_installation_repositories_removed_part1.dart';
+part 'webhook_installation_repositories_removed_models.dart';

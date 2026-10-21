@@ -4,4 +4,4 @@
 // interactions domain model library.
 import '../sdk_utils.dart';
 
-part 'interactions_part1.dart';
+part 'interactions_models.dart';

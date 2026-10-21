@@ -10,4 +10,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_user.dart';
 
-part 'webhook_org_block_unblocked_part1.dart';
+part 'webhook_org_block_unblocked_models.dart';

@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // webhook_registry_package_published_registry_package_package_version_npm_metadata_directories domain model library.
-part 'webhook_registry_package_published_registry_package_package_version_npm_metadata_directories_part1.dart';
+part 'webhook_registry_package_published_registry_package_package_version_npm_metadata_directories_models.dart';

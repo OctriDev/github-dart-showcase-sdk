@@ -10,6 +10,6 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_issue.dart';
 
-part 'webhook_issues_field_added_part1.dart';
-part 'webhook_issues_field_added_part2.dart';
-part 'webhook_issues_field_added_part3.dart';
+part 'webhook_issues_field_added_issue_field.dart';
+part 'webhook_issues_field_added_changes_issue_field_value_from_option.dart';
+part 'webhook_issues_field_added2.dart';

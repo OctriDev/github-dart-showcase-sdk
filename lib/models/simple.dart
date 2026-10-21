@@ -8,4 +8,4 @@ import 'shared.dart';
 import 'shared_integration.dart';
 import 'shared_pull.dart';
 
-part 'simple_part1.dart';
+part 'simple_models.dart';

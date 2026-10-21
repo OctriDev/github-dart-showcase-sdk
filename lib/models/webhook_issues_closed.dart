@@ -12,7 +12,6 @@ import 'shared_nullable.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_issues_closed_part1.dart';
-part 'webhook_issues_closed_part2.dart';
-part 'webhook_issues_closed_part3.dart';
-part 'webhook_issues_closed_part4.dart';
+part 'webhook_issues_closed2.dart';
+part 'webhook_issues_closed_issue_user.dart';
+part 'webhook_issues_closed_issue.dart';

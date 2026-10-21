@@ -6,4 +6,4 @@ import '../sdk_utils.dart';
 import 'inline.dart';
 import 'shared_nullable.dart';
 
-part 'reactions_part1.dart';
+part 'reactions_models.dart';

@@ -10,4 +10,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_label.dart';
 
-part 'webhook_label_deleted_part1.dart';
+part 'webhook_label_deleted_models.dart';

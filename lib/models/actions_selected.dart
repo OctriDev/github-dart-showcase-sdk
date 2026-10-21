@@ -4,4 +4,4 @@
 // actions_selected domain model library.
 import '../sdk_utils.dart';
 
-part 'actions_selected_part1.dart';
+part 'actions_selected_models.dart';

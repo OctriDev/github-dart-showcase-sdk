@@ -10,4 +10,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks.dart';
 
-part 'webhook_milestone_closed_part1.dart';
+part 'webhook_milestone_closed_models.dart';

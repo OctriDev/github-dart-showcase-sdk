@@ -9,4 +9,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_watch_started_part1.dart';
+part 'webhook_watch_started_models.dart';

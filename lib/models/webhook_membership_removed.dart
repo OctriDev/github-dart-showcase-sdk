@@ -10,5 +10,4 @@ import 'simple.dart';
 import 'webhooks.dart';
 import 'webhooks_user.dart';
 
-part 'webhook_membership_removed_part1.dart';
-part 'webhook_membership_removed_part2.dart';
+part 'webhook_membership_removed_models.dart';

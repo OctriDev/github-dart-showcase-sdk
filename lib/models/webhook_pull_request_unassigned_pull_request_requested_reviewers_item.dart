@@ -5,5 +5,5 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'webhook_pull_request_unassigned_pull_request_requested_reviewers_item_part1.dart';
-part 'webhook_pull_request_unassigned_pull_request_requested_reviewers_item_part2.dart';
+part 'webhook_pull_request_unassigned_pull_request_requested_reviewers_item2.dart';
+part 'webhook_pull_request_unassigned_pull_request_requested_reviewers_item_variant1.dart';

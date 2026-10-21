@@ -4,4 +4,4 @@
 // code_scanning_code_scanning_analysis domain model library.
 import '../sdk_utils.dart';
 
-part 'code_scanning_code_scanning_analysis_part1.dart';
+part 'code_scanning_code_scanning_analysis_models.dart';

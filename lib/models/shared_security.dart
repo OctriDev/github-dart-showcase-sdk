@@ -5,5 +5,6 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'shared_security_part1.dart';
-part 'shared_security_part2.dart';
+part 'shared_security_advisory_epss.dart';
+part 'shared_security_and_analysis.dart';
+part 'shared_security_and_analysis_secret_scanning_delegated_bypass_options.dart';

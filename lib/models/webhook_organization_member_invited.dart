@@ -10,5 +10,5 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_user.dart';
 
-part 'webhook_organization_member_invited_part1.dart';
-part 'webhook_organization_member_invited_part2.dart';
+part 'webhook_organization_member_invited_invitation_inviter.dart';
+part 'webhook_organization_member_invited2.dart';

@@ -10,5 +10,5 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_issue.dart';
 
-part 'webhook_issues_field_removed_part1.dart';
-part 'webhook_issues_field_removed_part2.dart';
+part 'webhook_issues_field_removed_issue_field.dart';
+part 'webhook_issues_field_removed2.dart';

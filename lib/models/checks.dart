@@ -8,6 +8,9 @@ import 'shared.dart';
 import 'shared_nullable.dart';
 import 'shared_pull.dart';
 
-part 'checks_part1.dart';
-part 'checks_part2.dart';
-part 'checks_part3.dart';
+part 'checks_list_annotations.dart';
+part 'checks_check_run.dart';
+part 'checks_check_suite.dart';
+part 'checks_deployment_simple.dart';
+part 'checks_simple_commit.dart';
+part 'checks_set_suites_preferences.dart';

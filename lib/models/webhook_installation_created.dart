@@ -11,4 +11,4 @@ import 'shared_simple.dart';
 import 'webhooks_repositories.dart';
 import 'webhooks_user.dart';
 
-part 'webhook_installation_created_part1.dart';
+part 'webhook_installation_created_models.dart';

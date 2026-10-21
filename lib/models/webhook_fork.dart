@@ -9,7 +9,6 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_fork_part1.dart';
-part 'webhook_fork_part2.dart';
-part 'webhook_fork_part3.dart';
-part 'webhook_fork_part4.dart';
+part 'webhook_fork_forkee_owner.dart';
+part 'webhook_fork_forkee.dart';
+part 'webhook_fork2.dart';

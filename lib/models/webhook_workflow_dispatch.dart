@@ -8,4 +8,4 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_workflow_dispatch_part1.dart';
+part 'webhook_workflow_dispatch_models.dart';

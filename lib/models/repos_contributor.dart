@@ -5,5 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_nullable.dart';
 
-part 'repos_contributor_part1.dart';
-part 'repos_contributor_part2.dart';
+part 'repos_contributor_models.dart';

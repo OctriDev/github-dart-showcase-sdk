@@ -9,6 +9,8 @@ import 'shared_integration.dart';
 import 'shared_simple.dart';
 import 'shared_team.dart';
 
-part 'repos_protected_part1.dart';
-part 'repos_protected_part2.dart';
-part 'repos_protected_part3.dart';
+part 'repos_protected_branch.dart';
+part 'repos_protected_branch_required_conversation_resolution.dart';
+part 'repos_protected_branch_admin_enforced.dart';
+part 'repos_protected_branch_pull_request_review.dart';
+part 'repos_protected_branch_required_status_check.dart';

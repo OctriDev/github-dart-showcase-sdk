@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'code_scanning_code_scanning_default_part1.dart';
+part 'code_scanning_code_scanning_default_models.dart';

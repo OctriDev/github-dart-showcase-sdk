@@ -9,6 +9,5 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_repository_transferred_part1.dart';
-part 'webhook_repository_transferred_part2.dart';
-part 'webhook_repository_transferred_part3.dart';
+part 'webhook_repository_transferred2.dart';
+part 'webhook_repository_transferred_changes_owner_from.dart';

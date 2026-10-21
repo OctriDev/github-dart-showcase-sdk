@@ -8,8 +8,7 @@ import 'misc.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_push_part1.dart';
-part 'webhook_push_part2.dart';
-part 'webhook_push_part3.dart';
-part 'webhook_push_part4.dart';
-part 'webhook_push_part5.dart';
+part 'webhook_push2.dart';
+part 'webhook_push_repository_owner.dart';
+part 'webhook_push_repository.dart';
+part 'webhook_push_commits_item_author.dart';

@@ -9,6 +9,5 @@ import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_commit_comment_created_part1.dart';
-part 'webhook_commit_comment_created_part2.dart';
-part 'webhook_commit_comment_created_part3.dart';
+part 'webhook_commit_comment_created2.dart';
+part 'webhook_commit_comment_created_comment.dart';

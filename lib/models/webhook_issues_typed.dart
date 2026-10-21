@@ -11,4 +11,4 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_issue.dart';
 
-part 'webhook_issues_typed_part1.dart';
+part 'webhook_issues_typed_models.dart';

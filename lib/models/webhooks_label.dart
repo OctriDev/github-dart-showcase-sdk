@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_simple.dart';
 
-part 'webhooks_label_part1.dart';
+part 'webhooks_label_models.dart';

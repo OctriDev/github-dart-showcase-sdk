@@ -5,6 +5,7 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'dependency_graph_part1.dart';
-part 'dependency_graph_part2.dart';
-part 'dependency_graph_part3.dart';
+part 'dependency_graph_create_repository_snapshot.dart';
+part 'dependency_graph_diff_range.dart';
+part 'dependency_graph_spdx_sbom_sbom_creation_info.dart';
+part 'dependency_graph_spdx_sbom.dart';

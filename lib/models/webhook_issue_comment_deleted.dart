@@ -12,9 +12,7 @@ import 'shared_simple.dart';
 import 'simple.dart';
 import 'webhooks_issue.dart';
 
-part 'webhook_issue_comment_deleted_part1.dart';
-part 'webhook_issue_comment_deleted_part2.dart';
-part 'webhook_issue_comment_deleted_part3.dart';
-part 'webhook_issue_comment_deleted_part4.dart';
-part 'webhook_issue_comment_deleted_part5.dart';
-part 'webhook_issue_comment_deleted_part6.dart';
+part 'webhook_issue_comment_deleted_issue_assignee.dart';
+part 'webhook_issue_comment_deleted_issue_reactions.dart';
+part 'webhook_issue_comment_deleted_issue_labels_item.dart';
+part 'webhook_issue_comment_deleted2.dart';

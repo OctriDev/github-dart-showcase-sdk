@@ -5,5 +5,5 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'webhooks_user_part1.dart';
-part 'webhooks_user_part2.dart';
+part 'webhooks_user2.dart';
+part 'webhooks_user_mannequin.dart';

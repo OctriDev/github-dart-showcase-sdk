@@ -15644,19 +15644,6 @@ void main() {
       );
     });
 
-    test("gitignoreGetAllTemplates reaches the mock and decodes its response", () async {
-      final actual = await sdk_methods_23.gitignoreGetAllTemplates(
-        config,
-      );
-      expect(
-        mismatch(
-          normal(actual),
-          SdkUtils.decodeJson("[\"Actionscript\",\"Android\",\"AppceleratorTitanium\",\"Autotools\",\"Bancha\",\"C\",\"C++\"]"),
-        ),
-        isNull,
-      );
-    });
-
     test("gitignoreGetTemplate reaches the mock and decodes its response", () async {
       final actual = await sdk_methods_23.gitignoreGetTemplate(
         config,
@@ -18659,6 +18646,19 @@ void main() {
       expect(error.statusCode, 404);
       expect(
         mismatch(normal(error.data), SdkUtils.decodeJson("{\"message\":\"example text\",\"documentation_url\":\"https://example.com\",\"url\":\"https://example.com\",\"status\":\"active\"}")),
+        isNull,
+      );
+    });
+
+    test("listTemplates reaches the mock and decodes its response", () async {
+      final actual = await sdk_methods_23.listTemplates(
+        config,
+      );
+      expect(
+        mismatch(
+          normal(actual),
+          SdkUtils.decodeJson("[\"Actionscript\",\"Android\",\"AppceleratorTitanium\",\"Autotools\",\"Bancha\",\"C\",\"C++\"]"),
+        ),
         isNull,
       );
     });

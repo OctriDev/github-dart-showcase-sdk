@@ -4,4 +4,4 @@
 // repos_nullable domain model library.
 import '../sdk_utils.dart';
 
-part 'repos_nullable_part1.dart';
+part 'repos_nullable_models.dart';

@@ -10,7 +10,8 @@ import 'shared.dart';
 import 'shared_pull.dart';
 import 'shared_simple.dart';
 
-part 'actions_workflow_part1.dart';
-part 'actions_workflow_part2.dart';
-part 'actions_workflow_part3.dart';
-part 'actions_workflow_part4.dart';
+part 'actions_workflow2.dart';
+part 'actions_workflow_run.dart';
+part 'actions_workflow_actions_create_workflow_dispatch.dart';
+part 'actions_workflow_actions_get_workflow_run_usage.dart';
+part 'actions_workflow_actions_get_workflow_usage.dart';

@@ -4131,9 +4131,8 @@ class GitignoreNamespace {
   final ClientConfig _config;
   GitignoreNamespace(ClientConfig config) : _config = config;
   /// List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
-  Future<List<String>> getAllTemplates(
-      {RequestOptions? requestOptions}) async {
-    return gitignore_methods.gitignoreGetAllTemplates(_config, requestOptions: requestOptions);
+  Future<List<String>> listTemplates({RequestOptions? requestOptions}) async {
+    return gitignore_methods.listTemplates(_config, requestOptions: requestOptions);
   }
 
   /// Retrieves the content of a gitignore template by name. The `application/vnd.github.raw+json` media type returns the raw `.gitignore` contents; the response object includes the template name and source.

@@ -12,12 +12,8 @@ import 'shared_nullable.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
 
-part 'webhook_issue_comment_created_part1.dart';
-part 'webhook_issue_comment_created_part2.dart';
-part 'webhook_issue_comment_created_part3.dart';
-part 'webhook_issue_comment_created_part4.dart';
-part 'webhook_issue_comment_created_part5.dart';
-part 'webhook_issue_comment_created_part6.dart';
-part 'webhook_issue_comment_created_part7.dart';
-part 'webhook_issue_comment_created_part8.dart';
-part 'webhook_issue_comment_created_part9.dart';
+part 'webhook_issue_comment_created2.dart';
+part 'webhook_issue_comment_created_comment.dart';
+part 'webhook_issue_comment_created_issue_pull_request.dart';
+part 'webhook_issue_comment_created_issue_user.dart';
+part 'webhook_issue_comment_created_issue.dart';

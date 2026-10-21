@@ -5,4 +5,4 @@
 import '../sdk_utils.dart';
 import 'shared_nullable.dart';
 
-part 'repos_status_part1.dart';
+part 'repos_status_models.dart';

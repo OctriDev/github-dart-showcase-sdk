@@ -6,12 +6,12 @@ import '../sdk_client.dart';
 import '../types.dart';
 
 /// List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
-Future<List<String>> gitignoreGetAllTemplates(ClientConfig config,
+Future<List<String>> listTemplates(ClientConfig config,
     {RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<String>>('GET', '/gitignore/templates',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'gitignoreGetAllTemplates',
+          operationId: 'listTemplates',
           fromJsonRaw: (value) => (value as List).map((item) => item as String).toList(),
           options: requestOptions))
       .data;
