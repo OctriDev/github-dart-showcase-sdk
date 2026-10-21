@@ -8,37 +8,66 @@ part of 'shared.dart';
 class AutoMerge {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A GitHub user.
   final SimpleUser enabledBy;
+
   /// The merge method to use.
   final AutoMergeMergeMethod mergeMethod;
+
   /// Title for the merge commit message.
   final String commitTitle;
+
   /// Commit message for the merge commit.
   final String commitMessage;
 
-  const AutoMerge({required this.enabledBy, required this.mergeMethod, required this.commitTitle, required this.commitMessage});
+  const AutoMerge(
+      {required this.enabledBy,
+      required this.mergeMethod,
+      required this.commitTitle,
+      required this.commitMessage});
 
-  AutoMerge Function({SimpleUser enabledBy, AutoMergeMergeMethod mergeMethod, String commitTitle, String commitMessage}) get copyWith => _copyWith;
+  AutoMerge Function(
+      {SimpleUser enabledBy,
+      AutoMergeMergeMethod mergeMethod,
+      String commitTitle,
+      String commitMessage}) get copyWith => _copyWith;
 
-  AutoMerge _copyWith({Object? enabledBy = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue, Object? commitTitle = sdkOmittedValue, Object? commitMessage = sdkOmittedValue}) => AutoMerge(
-    enabledBy: identical(enabledBy, sdkOmittedValue) ? this.enabledBy : enabledBy as SimpleUser,
-    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as AutoMergeMergeMethod,
-    commitTitle: identical(commitTitle, sdkOmittedValue) ? this.commitTitle : commitTitle as String,
-    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as String,
-  );
+  AutoMerge _copyWith(
+          {Object? enabledBy = sdkOmittedValue,
+          Object? mergeMethod = sdkOmittedValue,
+          Object? commitTitle = sdkOmittedValue,
+          Object? commitMessage = sdkOmittedValue}) =>
+      AutoMerge(
+        enabledBy: identical(enabledBy, sdkOmittedValue)
+            ? this.enabledBy
+            : enabledBy as SimpleUser,
+        mergeMethod: identical(mergeMethod, sdkOmittedValue)
+            ? this.mergeMethod
+            : mergeMethod as AutoMergeMergeMethod,
+        commitTitle: identical(commitTitle, sdkOmittedValue)
+            ? this.commitTitle
+            : commitTitle as String,
+        commitMessage: identical(commitMessage, sdkOmittedValue)
+            ? this.commitMessage
+            : commitMessage as String,
+      );
 
   factory AutoMerge.fromJson(Map<String, dynamic> json) => AutoMerge(
-    enabledBy: (json['enabled_by'] != null ? SimpleUser.fromJson(json['enabled_by'] as Map<String, dynamic>) : null)!,
-    mergeMethod: (json['merge_method'] != null ? AutoMergeMergeMethod.fromJson(json['merge_method'] as String) : null)!,
-    commitTitle: (json['commit_title'] as String?)!,
-    commitMessage: (json['commit_message'] as String?)!,
-  );
+        enabledBy: (json['enabled_by'] != null
+            ? SimpleUser.fromJson(json['enabled_by'] as Map<String, dynamic>)
+            : null)!,
+        mergeMethod: (json['merge_method'] != null
+            ? AutoMergeMergeMethod.fromJson(json['merge_method'] as String)
+            : null)!,
+        commitTitle: (json['commit_title'] as String?)!,
+        commitMessage: (json['commit_message'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled_by': enabledBy.toJson(),
-    'merge_method': mergeMethod.toJson(),
-    'commit_title': commitTitle,
-    'commit_message': commitMessage,
-  };
+        'enabled_by': enabledBy.toJson(),
+        'merge_method': mergeMethod.toJson(),
+        'commit_title': commitTitle,
+        'commit_message': commitMessage,
+      };
 }

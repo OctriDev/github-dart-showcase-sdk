@@ -8,30 +8,48 @@ part of 'secret_scanning.dart';
 class SecretScanningLocationPullRequestTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the pull request where the secret was detected.
   final String pullRequestTitleUrl;
+
   /// The GitHub URL for the pull request where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationPullRequestTitle({required this.pullRequestTitleUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationPullRequestTitle(
+      {required this.pullRequestTitleUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationPullRequestTitle Function({String pullRequestTitleUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationPullRequestTitle Function(
+      {String pullRequestTitleUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationPullRequestTitle _copyWith({Object? pullRequestTitleUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationPullRequestTitle(
-    pullRequestTitleUrl: identical(pullRequestTitleUrl, sdkOmittedValue) ? this.pullRequestTitleUrl : pullRequestTitleUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationPullRequestTitle _copyWith(
+          {Object? pullRequestTitleUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationPullRequestTitle(
+        pullRequestTitleUrl: identical(pullRequestTitleUrl, sdkOmittedValue)
+            ? this.pullRequestTitleUrl
+            : pullRequestTitleUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationPullRequestTitle.fromJson(Map<String, dynamic> json) => SecretScanningLocationPullRequestTitle(
-    pullRequestTitleUrl: (json['pull_request_title_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationPullRequestTitle.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationPullRequestTitle(
+        pullRequestTitleUrl: (json['pull_request_title_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_request_title_url': pullRequestTitleUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'pull_request_title_url': pullRequestTitleUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -8,22 +8,31 @@ part of 'webhook_secret_scanning_alert_location_created_form_encoded.dart';
 class WebhookSecretScanningAlertLocationCreatedFormEncoded {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A URL-encoded string of the secret_scanning_alert_location.created JSON payload. The decoded payload is a JSON object.
   final String payload;
 
-  const WebhookSecretScanningAlertLocationCreatedFormEncoded({required this.payload});
+  const WebhookSecretScanningAlertLocationCreatedFormEncoded(
+      {required this.payload});
 
-  WebhookSecretScanningAlertLocationCreatedFormEncoded Function({String payload}) get copyWith => _copyWith;
+  WebhookSecretScanningAlertLocationCreatedFormEncoded Function(
+      {String payload}) get copyWith => _copyWith;
 
-  WebhookSecretScanningAlertLocationCreatedFormEncoded _copyWith({Object? payload = sdkOmittedValue}) => WebhookSecretScanningAlertLocationCreatedFormEncoded(
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String,
-  );
+  WebhookSecretScanningAlertLocationCreatedFormEncoded _copyWith(
+          {Object? payload = sdkOmittedValue}) =>
+      WebhookSecretScanningAlertLocationCreatedFormEncoded(
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as String,
+      );
 
-  factory WebhookSecretScanningAlertLocationCreatedFormEncoded.fromJson(Map<String, dynamic> json) => WebhookSecretScanningAlertLocationCreatedFormEncoded(
-    payload: (json['payload'] as String?)!,
-  );
+  factory WebhookSecretScanningAlertLocationCreatedFormEncoded.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookSecretScanningAlertLocationCreatedFormEncoded(
+        payload: (json['payload'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'payload': payload,
-  };
+        'payload': payload,
+      };
 }

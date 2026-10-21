@@ -10,32 +10,62 @@ sealed class ProjectsV2ItemSimpleContent {
   const ProjectsV2ItemSimpleContent();
   factory ProjectsV2ItemSimpleContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = Issue.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ProjectsV2ItemSimpleContentIssue(value); } } catch (_) {}
-      try { final value = PullRequestSimple.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ProjectsV2ItemSimpleContentPullRequestSimple(value); } } catch (_) {}
-      try { final value = ProjectsV2DraftIssue.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(value); } } catch (_) {}
+      try {
+        final value = Issue.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ProjectsV2ItemSimpleContentIssue(value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestSimple.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ProjectsV2ItemSimpleContentPullRequestSimple(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ProjectsV2DraftIssue.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(value);
+        }
+      } catch (_) {}
     }
-    try { return ProjectsV2ItemSimpleContentIssue(Issue.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ProjectsV2ItemSimpleContentPullRequestSimple(PullRequestSimple.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(ProjectsV2DraftIssue.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return ProjectsV2ItemSimpleContentIssue(
+          Issue.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ProjectsV2ItemSimpleContentPullRequestSimple(
+          PullRequestSimple.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(
+          ProjectsV2DraftIssue.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for ProjectsV2ItemSimpleContent");
   }
   Object? toJson();
 }
 
-final class ProjectsV2ItemSimpleContentIssue extends ProjectsV2ItemSimpleContent {
+final class ProjectsV2ItemSimpleContentIssue
+    extends ProjectsV2ItemSimpleContent {
   final Issue value;
   const ProjectsV2ItemSimpleContentIssue(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ProjectsV2ItemSimpleContentPullRequestSimple extends ProjectsV2ItemSimpleContent {
+final class ProjectsV2ItemSimpleContentPullRequestSimple
+    extends ProjectsV2ItemSimpleContent {
   final PullRequestSimple value;
   const ProjectsV2ItemSimpleContentPullRequestSimple(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ProjectsV2ItemSimpleContentProjectsV2DraftIssue extends ProjectsV2ItemSimpleContent {
+final class ProjectsV2ItemSimpleContentProjectsV2DraftIssue
+    extends ProjectsV2ItemSimpleContent {
   final ProjectsV2DraftIssue value;
   const ProjectsV2ItemSimpleContentProjectsV2DraftIssue(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

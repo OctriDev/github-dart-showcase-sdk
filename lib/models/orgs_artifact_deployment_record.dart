@@ -8,105 +8,226 @@ part of 'orgs.dart';
 class ArtifactDeploymentRecord {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `digest` wire field.
   final SdkOptional<String> digest;
+
   /// Optional `string` value serialized in the `logical_environment` wire field.
   final SdkOptional<String> logicalEnvironment;
+
   /// Optional `string` value serialized in the `physical_environment` wire field.
   final SdkOptional<String> physicalEnvironment;
+
   /// Optional `string` value serialized in the `cluster` wire field.
   final SdkOptional<String> cluster;
+
   /// Optional `string` value serialized in the `deployment_name` wire field.
   final SdkOptional<String> deploymentName;
+
   /// Optional object value serialized in the `tags` wire field.
   final SdkOptional<Map<String, String>> tags;
+
   /// A list of runtime risks associated with the deployment.
-  final SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>> runtimeRisks;
+  final SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>>
+      runtimeRisks;
+
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Optional `string` value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
+
   /// The ID of the provenance attestation associated with the deployment record.
   final SdkOptional<int?> attestationId;
 
-  const ArtifactDeploymentRecord({this.id = const SdkOmitted(), this.digest = const SdkOmitted(), this.logicalEnvironment = const SdkOmitted(), this.physicalEnvironment = const SdkOmitted(), this.cluster = const SdkOmitted(), this.deploymentName = const SdkOmitted(), this.tags = const SdkOmitted(), this.runtimeRisks = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), this.attestationId = const SdkOmitted()});
+  const ArtifactDeploymentRecord(
+      {this.id = const SdkOmitted(),
+      this.digest = const SdkOmitted(),
+      this.logicalEnvironment = const SdkOmitted(),
+      this.physicalEnvironment = const SdkOmitted(),
+      this.cluster = const SdkOmitted(),
+      this.deploymentName = const SdkOmitted(),
+      this.tags = const SdkOmitted(),
+      this.runtimeRisks = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted(),
+      this.attestationId = const SdkOmitted()});
 
-  ArtifactDeploymentRecord Function({SdkOptional<int> id, SdkOptional<String> digest, SdkOptional<String> logicalEnvironment, SdkOptional<String> physicalEnvironment, SdkOptional<String> cluster, SdkOptional<String> deploymentName, SdkOptional<Map<String, String>> tags, SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>> runtimeRisks, SdkOptional<String> createdAt, SdkOptional<String> updatedAt, SdkOptional<int?> attestationId}) get copyWith => _copyWith;
+  ArtifactDeploymentRecord Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> digest,
+      SdkOptional<String> logicalEnvironment,
+      SdkOptional<String> physicalEnvironment,
+      SdkOptional<String> cluster,
+      SdkOptional<String> deploymentName,
+      SdkOptional<Map<String, String>> tags,
+      SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>> runtimeRisks,
+      SdkOptional<String> createdAt,
+      SdkOptional<String> updatedAt,
+      SdkOptional<int?> attestationId}) get copyWith => _copyWith;
 
-  ArtifactDeploymentRecord _copyWith({Object? id = sdkOmittedValue, Object? digest = sdkOmittedValue, Object? logicalEnvironment = sdkOmittedValue, Object? physicalEnvironment = sdkOmittedValue, Object? cluster = sdkOmittedValue, Object? deploymentName = sdkOmittedValue, Object? tags = sdkOmittedValue, Object? runtimeRisks = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? attestationId = sdkOmittedValue}) => ArtifactDeploymentRecord(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    digest: identical(digest, sdkOmittedValue) ? this.digest : digest as SdkOptional<String>,
-    logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue) ? this.logicalEnvironment : logicalEnvironment as SdkOptional<String>,
-    physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue) ? this.physicalEnvironment : physicalEnvironment as SdkOptional<String>,
-    cluster: identical(cluster, sdkOmittedValue) ? this.cluster : cluster as SdkOptional<String>,
-    deploymentName: identical(deploymentName, sdkOmittedValue) ? this.deploymentName : deploymentName as SdkOptional<String>,
-    tags: identical(tags, sdkOmittedValue) ? this.tags : tags as SdkOptional<Map<String, String>>,
-    runtimeRisks: identical(runtimeRisks, sdkOmittedValue) ? this.runtimeRisks : runtimeRisks as SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-    attestationId: identical(attestationId, sdkOmittedValue) ? this.attestationId : attestationId as SdkOptional<int?>,
-  );
+  ArtifactDeploymentRecord _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? digest = sdkOmittedValue,
+          Object? logicalEnvironment = sdkOmittedValue,
+          Object? physicalEnvironment = sdkOmittedValue,
+          Object? cluster = sdkOmittedValue,
+          Object? deploymentName = sdkOmittedValue,
+          Object? tags = sdkOmittedValue,
+          Object? runtimeRisks = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? attestationId = sdkOmittedValue}) =>
+      ArtifactDeploymentRecord(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        digest: identical(digest, sdkOmittedValue)
+            ? this.digest
+            : digest as SdkOptional<String>,
+        logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue)
+            ? this.logicalEnvironment
+            : logicalEnvironment as SdkOptional<String>,
+        physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue)
+            ? this.physicalEnvironment
+            : physicalEnvironment as SdkOptional<String>,
+        cluster: identical(cluster, sdkOmittedValue)
+            ? this.cluster
+            : cluster as SdkOptional<String>,
+        deploymentName: identical(deploymentName, sdkOmittedValue)
+            ? this.deploymentName
+            : deploymentName as SdkOptional<String>,
+        tags: identical(tags, sdkOmittedValue)
+            ? this.tags
+            : tags as SdkOptional<Map<String, String>>,
+        runtimeRisks: identical(runtimeRisks, sdkOmittedValue)
+            ? this.runtimeRisks
+            : runtimeRisks
+                as SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        attestationId: identical(attestationId, sdkOmittedValue)
+            ? this.attestationId
+            : attestationId as SdkOptional<int?>,
+      );
 
-  factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) => ArtifactDeploymentRecord(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    digest: json['digest'] != null ? SdkPresent((json['digest'] as String?)!) : const SdkOmitted(),
-    logicalEnvironment: json['logical_environment'] != null ? SdkPresent((json['logical_environment'] as String?)!) : const SdkOmitted(),
-    physicalEnvironment: json['physical_environment'] != null ? SdkPresent((json['physical_environment'] as String?)!) : const SdkOmitted(),
-    cluster: json['cluster'] != null ? SdkPresent((json['cluster'] as String?)!) : const SdkOmitted(),
-    deploymentName: json['deployment_name'] != null ? SdkPresent((json['deployment_name'] as String?)!) : const SdkOmitted(),
-    tags: json['tags'] != null ? SdkPresent((json['tags'] == null ? null : Map<String, dynamic>.from(json['tags'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    runtimeRisks: json['runtime_risks'] != null ? SdkPresent(((json['runtime_risks'] as List?)?.map((e) => ArtifactDeploymentRecordRuntimeRisksItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-    attestationId: json.containsKey('attestation_id') ? SdkPresent((json['attestation_id'] as num?)?.toInt()) : const SdkOmitted(),
-  );
+  factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) =>
+      ArtifactDeploymentRecord(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        digest: json['digest'] != null
+            ? SdkPresent((json['digest'] as String?)!)
+            : const SdkOmitted(),
+        logicalEnvironment: json['logical_environment'] != null
+            ? SdkPresent((json['logical_environment'] as String?)!)
+            : const SdkOmitted(),
+        physicalEnvironment: json['physical_environment'] != null
+            ? SdkPresent((json['physical_environment'] as String?)!)
+            : const SdkOmitted(),
+        cluster: json['cluster'] != null
+            ? SdkPresent((json['cluster'] as String?)!)
+            : const SdkOmitted(),
+        deploymentName: json['deployment_name'] != null
+            ? SdkPresent((json['deployment_name'] as String?)!)
+            : const SdkOmitted(),
+        tags: json['tags'] != null
+            ? SdkPresent((json['tags'] == null
+                ? null
+                : Map<String, dynamic>.from(json['tags'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        runtimeRisks: json['runtime_risks'] != null
+            ? SdkPresent(((json['runtime_risks'] as List?)
+                ?.map((e) => ArtifactDeploymentRecordRuntimeRisksItem.fromJson(
+                    e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        attestationId: json.containsKey('attestation_id')
+            ? SdkPresent((json['attestation_id'] as num?)?.toInt())
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (digest) {
-      SdkPresent<String>(value: final value) => {'digest': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (logicalEnvironment) {
-      SdkPresent<String>(value: final value) => {'logical_environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (physicalEnvironment) {
-      SdkPresent<String>(value: final value) => {'physical_environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cluster) {
-      SdkPresent<String>(value: final value) => {'cluster': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deploymentName) {
-      SdkPresent<String>(value: final value) => {'deployment_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tags) {
-      SdkPresent<Map<String, String>>(value: final value) => {'tags': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (runtimeRisks) {
-      SdkPresent<List<ArtifactDeploymentRecordRuntimeRisksItem>>(value: final value) => {'runtime_risks': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (attestationId) {
-      SdkPresent<int?>(value: final value) => {'attestation_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (digest) {
+          SdkPresent<String>(value: final value) => {
+              'digest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (logicalEnvironment) {
+          SdkPresent<String>(value: final value) => {
+              'logical_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (physicalEnvironment) {
+          SdkPresent<String>(value: final value) => {
+              'physical_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cluster) {
+          SdkPresent<String>(value: final value) => {
+              'cluster': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deploymentName) {
+          SdkPresent<String>(value: final value) => {
+              'deployment_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tags) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'tags': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runtimeRisks) {
+          SdkPresent<List<ArtifactDeploymentRecordRuntimeRisksItem>>(
+            value: final value
+          ) =>
+            {
+              'runtime_risks': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (attestationId) {
+          SdkPresent<int?>(value: final value) => {
+              'attestation_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -10,11 +10,27 @@ sealed class CopilotSpaceOwner {
   const CopilotSpaceOwner();
   factory CopilotSpaceOwner.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CopilotSpaceOwnerSimpleUser(value); } } catch (_) {}
-      try { final value = OrganizationSimple.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return CopilotSpaceOwnerOrganizationSimple(value); } } catch (_) {}
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSpaceOwnerSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = OrganizationSimple.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSpaceOwnerOrganizationSimple(value);
+        }
+      } catch (_) {}
     }
-    try { return CopilotSpaceOwnerSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return CopilotSpaceOwnerOrganizationSimple(OrganizationSimple.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return CopilotSpaceOwnerSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return CopilotSpaceOwnerOrganizationSimple(
+          OrganizationSimple.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for CopilotSpaceOwner");
   }
   Object? toJson();
@@ -23,11 +39,13 @@ sealed class CopilotSpaceOwner {
 final class CopilotSpaceOwnerSimpleUser extends CopilotSpaceOwner {
   final SimpleUser value;
   const CopilotSpaceOwnerSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class CopilotSpaceOwnerOrganizationSimple extends CopilotSpaceOwner {
   final OrganizationSimple value;
   const CopilotSpaceOwnerOrganizationSimple(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

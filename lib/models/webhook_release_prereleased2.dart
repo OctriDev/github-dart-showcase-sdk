@@ -8,256 +8,523 @@ part of 'webhook_release_prereleased.dart';
 class WebhookReleasePrereleasedReleaseAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
   final SdkOptional<String> avatarUrl;
+
   /// Optional `boolean` value serialized in the `deleted` wire field.
   final SdkOptional<bool> deleted;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
+
   /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
+
   /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
   final SdkOptional<String> followersUrl;
+
   /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
   final SdkOptional<String> followingUrl;
+
   /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
   final SdkOptional<String> gistsUrl;
+
   /// Optional `string` value serialized in the `gravatar_id` wire field.
   final SdkOptional<String> gravatarId;
+
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
   final SdkOptional<String> organizationsUrl;
+
   /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
   final SdkOptional<String> receivedEventsUrl;
+
   /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
   final SdkOptional<String> reposUrl;
+
   /// Optional `boolean` value serialized in the `site_admin` wire field.
   final SdkOptional<bool> siteAdmin;
+
   /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
   final SdkOptional<String> starredUrl;
+
   /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
   final SdkOptional<String> subscriptionsUrl;
+
   /// Optional enumerated value serialized in the `type` wire field.
   final SdkOptional<WebhookReleasePrereleasedReleaseAuthorType> type_;
+
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const WebhookReleasePrereleasedReleaseAuthor({this.avatarUrl = const SdkOmitted(), this.deleted = const SdkOmitted(), this.email = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), required this.id, required this.login, this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted(), this.userViewType = const SdkOmitted()});
+  const WebhookReleasePrereleasedReleaseAuthor(
+      {this.avatarUrl = const SdkOmitted(),
+      this.deleted = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.eventsUrl = const SdkOmitted(),
+      this.followersUrl = const SdkOmitted(),
+      this.followingUrl = const SdkOmitted(),
+      this.gistsUrl = const SdkOmitted(),
+      this.gravatarId = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      required this.id,
+      required this.login,
+      this.name = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.organizationsUrl = const SdkOmitted(),
+      this.receivedEventsUrl = const SdkOmitted(),
+      this.reposUrl = const SdkOmitted(),
+      this.siteAdmin = const SdkOmitted(),
+      this.starredUrl = const SdkOmitted(),
+      this.subscriptionsUrl = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.userViewType = const SdkOmitted()});
 
-  WebhookReleasePrereleasedReleaseAuthor Function({SdkOptional<String> avatarUrl, SdkOptional<bool> deleted, SdkOptional<String?> email, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, int id, String login, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<WebhookReleasePrereleasedReleaseAuthorType> type_, SdkOptional<String> url, SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  WebhookReleasePrereleasedReleaseAuthor Function(
+      {SdkOptional<String> avatarUrl,
+      SdkOptional<bool> deleted,
+      SdkOptional<String?> email,
+      SdkOptional<String> eventsUrl,
+      SdkOptional<String> followersUrl,
+      SdkOptional<String> followingUrl,
+      SdkOptional<String> gistsUrl,
+      SdkOptional<String> gravatarId,
+      SdkOptional<String> htmlUrl,
+      int id,
+      String login,
+      SdkOptional<String> name,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> organizationsUrl,
+      SdkOptional<String> receivedEventsUrl,
+      SdkOptional<String> reposUrl,
+      SdkOptional<bool> siteAdmin,
+      SdkOptional<String> starredUrl,
+      SdkOptional<String> subscriptionsUrl,
+      SdkOptional<WebhookReleasePrereleasedReleaseAuthorType> type_,
+      SdkOptional<String> url,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookReleasePrereleasedReleaseAuthor _copyWith({Object? avatarUrl = sdkOmittedValue, Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => WebhookReleasePrereleasedReleaseAuthor(
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String>,
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
-    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as SdkOptional<String>,
-    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as SdkOptional<String>,
-    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as SdkOptional<String>,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as SdkOptional<String>,
-    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as SdkOptional<String>,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as SdkOptional<String>,
-    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as SdkOptional<bool>,
-    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as SdkOptional<String>,
-    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhookReleasePrereleasedReleaseAuthorType>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
-  );
+  WebhookReleasePrereleasedReleaseAuthor _copyWith(
+          {Object? avatarUrl = sdkOmittedValue,
+          Object? deleted = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      WebhookReleasePrereleasedReleaseAuthor(
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as SdkOptional<String>,
+        deleted: identical(deleted, sdkOmittedValue)
+            ? this.deleted
+            : deleted as SdkOptional<bool>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as SdkOptional<String>,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as SdkOptional<String>,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as SdkOptional<String>,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as SdkOptional<String>,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as SdkOptional<String>,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as SdkOptional<String>,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as SdkOptional<String>,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as SdkOptional<bool>,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as SdkOptional<String>,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<WebhookReleasePrereleasedReleaseAuthorType>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
+      );
 
-  factory WebhookReleasePrereleasedReleaseAuthor.fromJson(Map<String, dynamic> json) => WebhookReleasePrereleasedReleaseAuthor(
-    avatarUrl: json['avatar_url'] != null ? SdkPresent((json['avatar_url'] as String?)!) : const SdkOmitted(),
-    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
-    followersUrl: json['followers_url'] != null ? SdkPresent((json['followers_url'] as String?)!) : const SdkOmitted(),
-    followingUrl: json['following_url'] != null ? SdkPresent((json['following_url'] as String?)!) : const SdkOmitted(),
-    gistsUrl: json['gists_url'] != null ? SdkPresent((json['gists_url'] as String?)!) : const SdkOmitted(),
-    gravatarId: json['gravatar_id'] != null ? SdkPresent((json['gravatar_id'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    id: ((json['id'] as num?)?.toInt())!,
-    login: (json['login'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    organizationsUrl: json['organizations_url'] != null ? SdkPresent((json['organizations_url'] as String?)!) : const SdkOmitted(),
-    receivedEventsUrl: json['received_events_url'] != null ? SdkPresent((json['received_events_url'] as String?)!) : const SdkOmitted(),
-    reposUrl: json['repos_url'] != null ? SdkPresent((json['repos_url'] as String?)!) : const SdkOmitted(),
-    siteAdmin: json['site_admin'] != null ? SdkPresent((json['site_admin'] as bool?)!) : const SdkOmitted(),
-    starredUrl: json['starred_url'] != null ? SdkPresent((json['starred_url'] as String?)!) : const SdkOmitted(),
-    subscriptionsUrl: json['subscriptions_url'] != null ? SdkPresent((json['subscriptions_url'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhookReleasePrereleasedReleaseAuthorType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
-  );
+  factory WebhookReleasePrereleasedReleaseAuthor.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookReleasePrereleasedReleaseAuthor(
+        avatarUrl: json['avatar_url'] != null
+            ? SdkPresent((json['avatar_url'] as String?)!)
+            : const SdkOmitted(),
+        deleted: json['deleted'] != null
+            ? SdkPresent((json['deleted'] as bool?)!)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        eventsUrl: json['events_url'] != null
+            ? SdkPresent((json['events_url'] as String?)!)
+            : const SdkOmitted(),
+        followersUrl: json['followers_url'] != null
+            ? SdkPresent((json['followers_url'] as String?)!)
+            : const SdkOmitted(),
+        followingUrl: json['following_url'] != null
+            ? SdkPresent((json['following_url'] as String?)!)
+            : const SdkOmitted(),
+        gistsUrl: json['gists_url'] != null
+            ? SdkPresent((json['gists_url'] as String?)!)
+            : const SdkOmitted(),
+        gravatarId: json['gravatar_id'] != null
+            ? SdkPresent((json['gravatar_id'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        id: ((json['id'] as num?)?.toInt())!,
+        login: (json['login'] as String?)!,
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        organizationsUrl: json['organizations_url'] != null
+            ? SdkPresent((json['organizations_url'] as String?)!)
+            : const SdkOmitted(),
+        receivedEventsUrl: json['received_events_url'] != null
+            ? SdkPresent((json['received_events_url'] as String?)!)
+            : const SdkOmitted(),
+        reposUrl: json['repos_url'] != null
+            ? SdkPresent((json['repos_url'] as String?)!)
+            : const SdkOmitted(),
+        siteAdmin: json['site_admin'] != null
+            ? SdkPresent((json['site_admin'] as bool?)!)
+            : const SdkOmitted(),
+        starredUrl: json['starred_url'] != null
+            ? SdkPresent((json['starred_url'] as String?)!)
+            : const SdkOmitted(),
+        subscriptionsUrl: json['subscriptions_url'] != null
+            ? SdkPresent((json['subscriptions_url'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? WebhookReleasePrereleasedReleaseAuthorType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (avatarUrl) {
-      SdkPresent<String>(value: final value) => {'avatar_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deleted) {
-      SdkPresent<bool>(value: final value) => {'deleted': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (eventsUrl) {
-      SdkPresent<String>(value: final value) => {'events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (followersUrl) {
-      SdkPresent<String>(value: final value) => {'followers_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (followingUrl) {
-      SdkPresent<String>(value: final value) => {'following_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gistsUrl) {
-      SdkPresent<String>(value: final value) => {'gists_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gravatarId) {
-      SdkPresent<String>(value: final value) => {'gravatar_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'id': id,
-    'login': login,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationsUrl) {
-      SdkPresent<String>(value: final value) => {'organizations_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (receivedEventsUrl) {
-      SdkPresent<String>(value: final value) => {'received_events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reposUrl) {
-      SdkPresent<String>(value: final value) => {'repos_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (siteAdmin) {
-      SdkPresent<bool>(value: final value) => {'site_admin': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (starredUrl) {
-      SdkPresent<String>(value: final value) => {'starred_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subscriptionsUrl) {
-      SdkPresent<String>(value: final value) => {'subscriptions_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<WebhookReleasePrereleasedReleaseAuthorType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userViewType) {
-      SdkPresent<String>(value: final value) => {'user_view_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (avatarUrl) {
+          SdkPresent<String>(value: final value) => {
+              'avatar_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deleted) {
+          SdkPresent<bool>(value: final value) => {
+              'deleted': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (eventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'followers_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followingUrl) {
+          SdkPresent<String>(value: final value) => {
+              'following_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gistsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'gists_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gravatarId) {
+          SdkPresent<String>(value: final value) => {
+              'gravatar_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'id': id,
+        'login': login,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'organizations_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (receivedEventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'received_events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reposUrl) {
+          SdkPresent<String>(value: final value) => {
+              'repos_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (siteAdmin) {
+          SdkPresent<bool>(value: final value) => {
+              'site_admin': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (starredUrl) {
+          SdkPresent<String>(value: final value) => {
+              'starred_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subscriptionsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'subscriptions_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<WebhookReleasePrereleasedReleaseAuthorType>(
+            value: final value
+          ) =>
+            {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `reactions` wire field.
 class WebhookReleasePrereleasedReleaseReactions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `+1` wire field.
   final int plus1;
+
   /// Required `integer` value serialized in the `-1` wire field.
   final int minus1;
+
   /// Required `integer` value serialized in the `confused` wire field.
   final int confused;
+
   /// Required `integer` value serialized in the `eyes` wire field.
   final int eyes;
+
   /// Required `integer` value serialized in the `heart` wire field.
   final int heart;
+
   /// Required `integer` value serialized in the `hooray` wire field.
   final int hooray;
+
   /// Required `integer` value serialized in the `laugh` wire field.
   final int laugh;
+
   /// Required `integer` value serialized in the `rocket` wire field.
   final int rocket;
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookReleasePrereleasedReleaseReactions({required this.plus1, required this.minus1, required this.confused, required this.eyes, required this.heart, required this.hooray, required this.laugh, required this.rocket, required this.totalCount, required this.url});
+  const WebhookReleasePrereleasedReleaseReactions(
+      {required this.plus1,
+      required this.minus1,
+      required this.confused,
+      required this.eyes,
+      required this.heart,
+      required this.hooray,
+      required this.laugh,
+      required this.rocket,
+      required this.totalCount,
+      required this.url});
 
-  WebhookReleasePrereleasedReleaseReactions Function({int plus1, int minus1, int confused, int eyes, int heart, int hooray, int laugh, int rocket, int totalCount, String url}) get copyWith => _copyWith;
+  WebhookReleasePrereleasedReleaseReactions Function(
+      {int plus1,
+      int minus1,
+      int confused,
+      int eyes,
+      int heart,
+      int hooray,
+      int laugh,
+      int rocket,
+      int totalCount,
+      String url}) get copyWith => _copyWith;
 
-  WebhookReleasePrereleasedReleaseReactions _copyWith({Object? plus1 = sdkOmittedValue, Object? minus1 = sdkOmittedValue, Object? confused = sdkOmittedValue, Object? eyes = sdkOmittedValue, Object? heart = sdkOmittedValue, Object? hooray = sdkOmittedValue, Object? laugh = sdkOmittedValue, Object? rocket = sdkOmittedValue, Object? totalCount = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookReleasePrereleasedReleaseReactions(
-    plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
-    minus1: identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
-    confused: identical(confused, sdkOmittedValue) ? this.confused : confused as int,
-    eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
-    heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
-    hooray: identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
-    laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
-    rocket: identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookReleasePrereleasedReleaseReactions _copyWith(
+          {Object? plus1 = sdkOmittedValue,
+          Object? minus1 = sdkOmittedValue,
+          Object? confused = sdkOmittedValue,
+          Object? eyes = sdkOmittedValue,
+          Object? heart = sdkOmittedValue,
+          Object? hooray = sdkOmittedValue,
+          Object? laugh = sdkOmittedValue,
+          Object? rocket = sdkOmittedValue,
+          Object? totalCount = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookReleasePrereleasedReleaseReactions(
+        plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
+        minus1:
+            identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
+        confused: identical(confused, sdkOmittedValue)
+            ? this.confused
+            : confused as int,
+        eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
+        heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
+        hooray:
+            identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
+        laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
+        rocket:
+            identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookReleasePrereleasedReleaseReactions.fromJson(Map<String, dynamic> json) => WebhookReleasePrereleasedReleaseReactions(
-    plus1: ((json['+1'] as num?)?.toInt())!,
-    minus1: ((json['-1'] as num?)?.toInt())!,
-    confused: ((json['confused'] as num?)?.toInt())!,
-    eyes: ((json['eyes'] as num?)?.toInt())!,
-    heart: ((json['heart'] as num?)?.toInt())!,
-    hooray: ((json['hooray'] as num?)?.toInt())!,
-    laugh: ((json['laugh'] as num?)?.toInt())!,
-    rocket: ((json['rocket'] as num?)?.toInt())!,
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookReleasePrereleasedReleaseReactions.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookReleasePrereleasedReleaseReactions(
+        plus1: ((json['+1'] as num?)?.toInt())!,
+        minus1: ((json['-1'] as num?)?.toInt())!,
+        confused: ((json['confused'] as num?)?.toInt())!,
+        eyes: ((json['eyes'] as num?)?.toInt())!,
+        heart: ((json['heart'] as num?)?.toInt())!,
+        hooray: ((json['hooray'] as num?)?.toInt())!,
+        laugh: ((json['laugh'] as num?)?.toInt())!,
+        rocket: ((json['rocket'] as num?)?.toInt())!,
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    '+1': plus1,
-    '-1': minus1,
-    'confused': confused,
-    'eyes': eyes,
-    'heart': heart,
-    'hooray': hooray,
-    'laugh': laugh,
-    'rocket': rocket,
-    'total_count': totalCount,
-    'url': url,
-  };
+        '+1': plus1,
+        '-1': minus1,
+        'confused': confused,
+        'eyes': eyes,
+        'heart': heart,
+        'hooray': hooray,
+        'laugh': laugh,
+        'rocket': rocket,
+        'total_count': totalCount,
+        'url': url,
+      };
 }

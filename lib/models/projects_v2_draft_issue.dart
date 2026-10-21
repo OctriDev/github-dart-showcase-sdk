@@ -8,55 +8,104 @@ part of 'projects.dart';
 class ProjectsV2DraftIssue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the draft issue
   final double id;
+
   /// The node ID of the draft issue
   final String nodeId;
+
   /// The title of the draft issue
   final String title;
+
   /// The body content of the draft issue
   final SdkOptional<String?> body;
+
   /// A GitHub user.
   final NullableSimpleUser? user;
+
   /// The time the draft issue was created
   final String createdAt;
+
   /// The time the draft issue was last updated
   final String updatedAt;
 
-  const ProjectsV2DraftIssue({required this.id, required this.nodeId, required this.title, this.body = const SdkOmitted(), required this.user, required this.createdAt, required this.updatedAt});
+  const ProjectsV2DraftIssue(
+      {required this.id,
+      required this.nodeId,
+      required this.title,
+      this.body = const SdkOmitted(),
+      required this.user,
+      required this.createdAt,
+      required this.updatedAt});
 
-  ProjectsV2DraftIssue Function({double id, String nodeId, String title, SdkOptional<String?> body, NullableSimpleUser? user, String createdAt, String updatedAt}) get copyWith => _copyWith;
+  ProjectsV2DraftIssue Function(
+      {double id,
+      String nodeId,
+      String title,
+      SdkOptional<String?> body,
+      NullableSimpleUser? user,
+      String createdAt,
+      String updatedAt}) get copyWith => _copyWith;
 
-  ProjectsV2DraftIssue _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? title = sdkOmittedValue, Object? body = sdkOmittedValue, Object? user = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => ProjectsV2DraftIssue(
-    id: identical(id, sdkOmittedValue) ? this.id : id as double,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String?>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-  );
+  ProjectsV2DraftIssue _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      ProjectsV2DraftIssue(
+        id: identical(id, sdkOmittedValue) ? this.id : id as double,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String?>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+      );
 
-  factory ProjectsV2DraftIssue.fromJson(Map<String, dynamic> json) => ProjectsV2DraftIssue(
-    id: ((json['id'] as num?)?.toDouble())!,
-    nodeId: (json['node_id'] as String?)!,
-    title: (json['title'] as String?)!,
-    body: json.containsKey('body') ? SdkPresent(json['body'] as String?) : const SdkOmitted(),
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-  );
+  factory ProjectsV2DraftIssue.fromJson(Map<String, dynamic> json) =>
+      ProjectsV2DraftIssue(
+        id: ((json['id'] as num?)?.toDouble())!,
+        nodeId: (json['node_id'] as String?)!,
+        title: (json['title'] as String?)!,
+        body: json.containsKey('body')
+            ? SdkPresent(json['body'] as String?)
+            : const SdkOmitted(),
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'title': title,
-    ...switch (body) {
-      SdkPresent<String?>(value: final value) => {'body': value,},
-      _ => const <String, dynamic>{},
-    },
-    'user': user?.toJson(),
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-  };
+        'id': id,
+        'node_id': nodeId,
+        'title': title,
+        ...switch (body) {
+          SdkPresent<String?>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'user': user?.toJson(),
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+      };
 }

@@ -8,30 +8,48 @@ part of 'secret_scanning.dart';
 class SecretScanningLocationIssueComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the issue comment where the secret was detected.
   final String issueCommentUrl;
+
   /// The GitHub URL for the issue comment where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationIssueComment({required this.issueCommentUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationIssueComment(
+      {required this.issueCommentUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationIssueComment Function({String issueCommentUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationIssueComment Function(
+      {String issueCommentUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationIssueComment _copyWith({Object? issueCommentUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationIssueComment(
-    issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue) ? this.issueCommentUrl : issueCommentUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationIssueComment _copyWith(
+          {Object? issueCommentUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationIssueComment(
+        issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue)
+            ? this.issueCommentUrl
+            : issueCommentUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationIssueComment.fromJson(Map<String, dynamic> json) => SecretScanningLocationIssueComment(
-    issueCommentUrl: (json['issue_comment_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationIssueComment.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationIssueComment(
+        issueCommentUrl: (json['issue_comment_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'issue_comment_url': issueCommentUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'issue_comment_url': issueCommentUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

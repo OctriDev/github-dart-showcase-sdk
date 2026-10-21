@@ -9,9 +9,15 @@ sealed class IssueFieldValueValue {
   static const String constructionSurface = 'named';
   const IssueFieldValueValue();
   factory IssueFieldValueValue.fromJson(Object? json) {
-    if (json is String) { return IssueFieldValueValueString(json); }
-    if (json is num) { return IssueFieldValueValueDouble(json.toDouble()); }
-    if (json is num) { return IssueFieldValueValueInt(json.toInt()); }
+    if (json is String) {
+      return IssueFieldValueValueString(json);
+    }
+    if (json is num) {
+      return IssueFieldValueValueDouble(json.toDouble());
+    }
+    if (json is num) {
+      return IssueFieldValueValueInt(json.toInt());
+    }
     throw FormatException("No variant matched for IssueFieldValueValue");
   }
   Object? toJson();
@@ -20,148 +26,247 @@ sealed class IssueFieldValueValue {
 final class IssueFieldValueValueString extends IssueFieldValueValue {
   final String value;
   const IssueFieldValueValueString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 final class IssueFieldValueValueDouble extends IssueFieldValueValue {
   final double value;
   const IssueFieldValueValueDouble(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 final class IssueFieldValueValueInt extends IssueFieldValueValue {
   final int value;
   const IssueFieldValueValueInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Details about the selected option (only present for single_select fields)
 class IssueFieldValueSingleSelectOption {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier for the option.
   final int id;
+
   /// The name of the option
   final String name;
+
   /// The color of the option
   final String color;
 
-  const IssueFieldValueSingleSelectOption({required this.id, required this.name, required this.color});
+  const IssueFieldValueSingleSelectOption(
+      {required this.id, required this.name, required this.color});
 
-  IssueFieldValueSingleSelectOption Function({int id, String name, String color}) get copyWith => _copyWith;
+  IssueFieldValueSingleSelectOption Function(
+      {int id, String name, String color}) get copyWith => _copyWith;
 
-  IssueFieldValueSingleSelectOption _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) => IssueFieldValueSingleSelectOption(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-  );
+  IssueFieldValueSingleSelectOption _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue}) =>
+      IssueFieldValueSingleSelectOption(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+      );
 
-  factory IssueFieldValueSingleSelectOption.fromJson(Map<String, dynamic> json) => IssueFieldValueSingleSelectOption(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    color: (json['color'] as String?)!,
-  );
+  factory IssueFieldValueSingleSelectOption.fromJson(
+          Map<String, dynamic> json) =>
+      IssueFieldValueSingleSelectOption(
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        color: (json['color'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'color': color,
-  };
+        'id': id,
+        'name': name,
+        'color': color,
+      };
 }
 
 /// Required object value serialized in the `multi_select_options[]` wire field.
 class IssueFieldValueMultiSelectOptionsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier for the option.
   final int id;
+
   /// The name of the option
   final String name;
+
   /// The color of the option
   final String color;
 
-  const IssueFieldValueMultiSelectOptionsItem({required this.id, required this.name, required this.color});
+  const IssueFieldValueMultiSelectOptionsItem(
+      {required this.id, required this.name, required this.color});
 
-  IssueFieldValueMultiSelectOptionsItem Function({int id, String name, String color}) get copyWith => _copyWith;
+  IssueFieldValueMultiSelectOptionsItem Function(
+      {int id, String name, String color}) get copyWith => _copyWith;
 
-  IssueFieldValueMultiSelectOptionsItem _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) => IssueFieldValueMultiSelectOptionsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-  );
+  IssueFieldValueMultiSelectOptionsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue}) =>
+      IssueFieldValueMultiSelectOptionsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+      );
 
-  factory IssueFieldValueMultiSelectOptionsItem.fromJson(Map<String, dynamic> json) => IssueFieldValueMultiSelectOptionsItem(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    color: (json['color'] as String?)!,
-  );
+  factory IssueFieldValueMultiSelectOptionsItem.fromJson(
+          Map<String, dynamic> json) =>
+      IssueFieldValueMultiSelectOptionsItem(
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        color: (json['color'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'color': color,
-  };
+        'id': id,
+        'name': name,
+        'color': color,
+      };
 }
 
 /// A value assigned to an issue field
 class IssueFieldValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier for the issue field.
   final int issueFieldId;
+
   /// The human-readable name of the issue field.
   final SdkOptional<String> issueFieldName;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// The data type of the issue field
   final IssueFieldValueDataType dataType;
+
   /// The value of the issue field
   final dynamic value;
+
   /// Details about the selected option (only present for single_select fields)
   final SdkOptional<IssueFieldValueSingleSelectOption?> singleSelectOption;
+
   /// Details about the selected options
-  final SdkOptional<List<IssueFieldValueMultiSelectOptionsItem>?> multiSelectOptions;
+  final SdkOptional<List<IssueFieldValueMultiSelectOptionsItem>?>
+      multiSelectOptions;
 
-  const IssueFieldValue({required this.issueFieldId, this.issueFieldName = const SdkOmitted(), required this.nodeId, required this.dataType, required this.value, this.singleSelectOption = const SdkOmitted(), this.multiSelectOptions = const SdkOmitted()});
+  const IssueFieldValue(
+      {required this.issueFieldId,
+      this.issueFieldName = const SdkOmitted(),
+      required this.nodeId,
+      required this.dataType,
+      required this.value,
+      this.singleSelectOption = const SdkOmitted(),
+      this.multiSelectOptions = const SdkOmitted()});
 
-  IssueFieldValue Function({int issueFieldId, SdkOptional<String> issueFieldName, String nodeId, IssueFieldValueDataType dataType, dynamic value, SdkOptional<IssueFieldValueSingleSelectOption?> singleSelectOption, SdkOptional<List<IssueFieldValueMultiSelectOptionsItem>?> multiSelectOptions}) get copyWith => _copyWith;
+  IssueFieldValue Function(
+      {int issueFieldId,
+      SdkOptional<String> issueFieldName,
+      String nodeId,
+      IssueFieldValueDataType dataType,
+      dynamic value,
+      SdkOptional<IssueFieldValueSingleSelectOption?> singleSelectOption,
+      SdkOptional<List<IssueFieldValueMultiSelectOptionsItem>?>
+          multiSelectOptions}) get copyWith => _copyWith;
 
-  IssueFieldValue _copyWith({Object? issueFieldId = sdkOmittedValue, Object? issueFieldName = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? dataType = sdkOmittedValue, Object? value = sdkOmittedValue, Object? singleSelectOption = sdkOmittedValue, Object? multiSelectOptions = sdkOmittedValue}) => IssueFieldValue(
-    issueFieldId: identical(issueFieldId, sdkOmittedValue) ? this.issueFieldId : issueFieldId as int,
-    issueFieldName: identical(issueFieldName, sdkOmittedValue) ? this.issueFieldName : issueFieldName as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    dataType: identical(dataType, sdkOmittedValue) ? this.dataType : dataType as IssueFieldValueDataType,
-    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
-    singleSelectOption: identical(singleSelectOption, sdkOmittedValue) ? this.singleSelectOption : singleSelectOption as SdkOptional<IssueFieldValueSingleSelectOption?>,
-    multiSelectOptions: identical(multiSelectOptions, sdkOmittedValue) ? this.multiSelectOptions : multiSelectOptions as SdkOptional<List<IssueFieldValueMultiSelectOptionsItem>?>,
-  );
+  IssueFieldValue _copyWith(
+          {Object? issueFieldId = sdkOmittedValue,
+          Object? issueFieldName = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? dataType = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? singleSelectOption = sdkOmittedValue,
+          Object? multiSelectOptions = sdkOmittedValue}) =>
+      IssueFieldValue(
+        issueFieldId: identical(issueFieldId, sdkOmittedValue)
+            ? this.issueFieldId
+            : issueFieldId as int,
+        issueFieldName: identical(issueFieldName, sdkOmittedValue)
+            ? this.issueFieldName
+            : issueFieldName as SdkOptional<String>,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as IssueFieldValueDataType,
+        value:
+            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+        singleSelectOption: identical(singleSelectOption, sdkOmittedValue)
+            ? this.singleSelectOption
+            : singleSelectOption
+                as SdkOptional<IssueFieldValueSingleSelectOption?>,
+        multiSelectOptions: identical(multiSelectOptions, sdkOmittedValue)
+            ? this.multiSelectOptions
+            : multiSelectOptions
+                as SdkOptional<List<IssueFieldValueMultiSelectOptionsItem>?>,
+      );
 
-  factory IssueFieldValue.fromJson(Map<String, dynamic> json) => IssueFieldValue(
-    issueFieldId: ((json['issue_field_id'] as num?)?.toInt())!,
-    issueFieldName: json['issue_field_name'] != null ? SdkPresent((json['issue_field_name'] as String?)!) : const SdkOmitted(),
-    nodeId: (json['node_id'] as String?)!,
-    dataType: (json['data_type'] != null ? IssueFieldValueDataType.fromJson(json['data_type'] as String) : null)!,
-    value: json.containsKey('value') ? json['value'] : throw ArgumentError.value(null, 'value', 'Required property is missing'),
-    singleSelectOption: json.containsKey('single_select_option') ? SdkPresent(json['single_select_option'] != null ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    multiSelectOptions: json.containsKey('multi_select_options') ? SdkPresent((json['multi_select_options'] as List?)?.map((e) => IssueFieldValueMultiSelectOptionsItem.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
-  );
+  factory IssueFieldValue.fromJson(Map<String, dynamic> json) =>
+      IssueFieldValue(
+        issueFieldId: ((json['issue_field_id'] as num?)?.toInt())!,
+        issueFieldName: json['issue_field_name'] != null
+            ? SdkPresent((json['issue_field_name'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: (json['node_id'] as String?)!,
+        dataType: (json['data_type'] != null
+            ? IssueFieldValueDataType.fromJson(json['data_type'] as String)
+            : null)!,
+        value: json.containsKey('value')
+            ? json['value']
+            : throw ArgumentError.value(
+                null, 'value', 'Required property is missing'),
+        singleSelectOption: json.containsKey('single_select_option')
+            ? SdkPresent(json['single_select_option'] != null
+                ? IssueFieldValueSingleSelectOption.fromJson(
+                    json['single_select_option'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        multiSelectOptions: json.containsKey('multi_select_options')
+            ? SdkPresent((json['multi_select_options'] as List?)
+                ?.map((e) => IssueFieldValueMultiSelectOptionsItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'issue_field_id': issueFieldId,
-    ...switch (issueFieldName) {
-      SdkPresent<String>(value: final value) => {'issue_field_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'node_id': nodeId,
-    'data_type': dataType.toJson(),
-    'value': value,
-    ...switch (singleSelectOption) {
-      SdkPresent<IssueFieldValueSingleSelectOption?>(value: final value) => {'single_select_option': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (multiSelectOptions) {
-      SdkPresent<List<IssueFieldValueMultiSelectOptionsItem>?>(value: final value) => {'multi_select_options': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'issue_field_id': issueFieldId,
+        ...switch (issueFieldName) {
+          SdkPresent<String>(value: final value) => {
+              'issue_field_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'node_id': nodeId,
+        'data_type': dataType.toJson(),
+        'value': value,
+        ...switch (singleSelectOption) {
+          SdkPresent<IssueFieldValueSingleSelectOption?>(value: final value) =>
+            {
+              'single_select_option': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (multiSelectOptions) {
+          SdkPresent<List<IssueFieldValueMultiSelectOptionsItem>?>(
+            value: final value
+          ) =>
+            {
+              'multi_select_options':
+                  value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

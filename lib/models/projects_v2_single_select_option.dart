@@ -8,43 +8,73 @@ part of 'projects.dart';
 class ProjectsV2SingleSelectOption {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the option.
   final String id;
+
   /// The display name of the option.
   final String name;
+
   /// The color associated with the option.
   final SdkOptional<String?> color;
+
   /// A short description of the option.
   final SdkOptional<String?> description;
 
-  const ProjectsV2SingleSelectOption({required this.id, required this.name, this.color = const SdkOmitted(), this.description = const SdkOmitted()});
+  const ProjectsV2SingleSelectOption(
+      {required this.id,
+      required this.name,
+      this.color = const SdkOmitted(),
+      this.description = const SdkOmitted()});
 
-  ProjectsV2SingleSelectOption Function({String id, String name, SdkOptional<String?> color, SdkOptional<String?> description}) get copyWith => _copyWith;
+  ProjectsV2SingleSelectOption Function(
+      {String id,
+      String name,
+      SdkOptional<String?> color,
+      SdkOptional<String?> description}) get copyWith => _copyWith;
 
-  ProjectsV2SingleSelectOption _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue, Object? description = sdkOmittedValue}) => ProjectsV2SingleSelectOption(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String?>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-  );
+  ProjectsV2SingleSelectOption _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? description = sdkOmittedValue}) =>
+      ProjectsV2SingleSelectOption(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as SdkOptional<String?>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+      );
 
-  factory ProjectsV2SingleSelectOption.fromJson(Map<String, dynamic> json) => ProjectsV2SingleSelectOption(
-    id: (json['id'] as String?)!,
-    name: (json['name'] as String?)!,
-    color: json.containsKey('color') ? SdkPresent(json['color'] as String?) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-  );
+  factory ProjectsV2SingleSelectOption.fromJson(Map<String, dynamic> json) =>
+      ProjectsV2SingleSelectOption(
+        id: (json['id'] as String?)!,
+        name: (json['name'] as String?)!,
+        color: json.containsKey('color')
+            ? SdkPresent(json['color'] as String?)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    ...switch (color) {
-      SdkPresent<String?>(value: final value) => {'color': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'name': name,
+        ...switch (color) {
+          SdkPresent<String?>(value: final value) => {
+              'color': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

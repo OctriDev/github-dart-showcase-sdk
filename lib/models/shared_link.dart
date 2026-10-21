@@ -8,6 +8,7 @@ part of 'shared.dart';
 class Link {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
@@ -16,14 +17,14 @@ class Link {
   Link Function({String href}) get copyWith => _copyWith;
 
   Link _copyWith({Object? href = sdkOmittedValue}) => Link(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
   factory Link.fromJson(Map<String, dynamic> json) => Link(
-    href: (json['href'] as String?)!,
-  );
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }

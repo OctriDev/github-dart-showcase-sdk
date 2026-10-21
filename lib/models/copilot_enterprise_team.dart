@@ -8,102 +8,208 @@ part of 'copilot.dart';
 class EnterpriseTeam {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String> description;
+
   /// Required `string` value serialized in the `slug` wire field.
   final String slug;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Retired: this field will not be returned with GHEC enterprise teams.
   final SdkOptional<String> syncToOrganizations;
+
   /// Optional `string` value serialized in the `organization_selection_type` wire field.
   final SdkOptional<String> organizationSelectionType;
+
   /// Required `string` value serialized in the `group_id` wire field.
   final String? groupId;
+
   /// Retired: this field will not be returned with GHEC enterprise teams.
   final SdkOptional<String?> groupName;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `string` value serialized in the `members_url` wire field.
   final String membersUrl;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Whether team members will receive notifications when the team is mentioned.
   final SdkOptional<EnterpriseTeamNotificationSetting> notificationSetting;
 
-  const EnterpriseTeam({required this.id, required this.name, this.description = const SdkOmitted(), required this.slug, required this.url, this.syncToOrganizations = const SdkOmitted(), this.organizationSelectionType = const SdkOmitted(), required this.groupId, this.groupName = const SdkOmitted(), required this.htmlUrl, required this.membersUrl, required this.createdAt, required this.updatedAt, this.notificationSetting = const SdkOmitted()});
+  const EnterpriseTeam(
+      {required this.id,
+      required this.name,
+      this.description = const SdkOmitted(),
+      required this.slug,
+      required this.url,
+      this.syncToOrganizations = const SdkOmitted(),
+      this.organizationSelectionType = const SdkOmitted(),
+      required this.groupId,
+      this.groupName = const SdkOmitted(),
+      required this.htmlUrl,
+      required this.membersUrl,
+      required this.createdAt,
+      required this.updatedAt,
+      this.notificationSetting = const SdkOmitted()});
 
-  EnterpriseTeam Function({int id, String name, SdkOptional<String> description, String slug, String url, SdkOptional<String> syncToOrganizations, SdkOptional<String> organizationSelectionType, String? groupId, SdkOptional<String?> groupName, String htmlUrl, String membersUrl, String createdAt, String updatedAt, SdkOptional<EnterpriseTeamNotificationSetting> notificationSetting}) get copyWith => _copyWith;
+  EnterpriseTeam Function(
+          {int id,
+          String name,
+          SdkOptional<String> description,
+          String slug,
+          String url,
+          SdkOptional<String> syncToOrganizations,
+          SdkOptional<String> organizationSelectionType,
+          String? groupId,
+          SdkOptional<String?> groupName,
+          String htmlUrl,
+          String membersUrl,
+          String createdAt,
+          String updatedAt,
+          SdkOptional<EnterpriseTeamNotificationSetting> notificationSetting})
+      get copyWith => _copyWith;
 
-  EnterpriseTeam _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? url = sdkOmittedValue, Object? syncToOrganizations = sdkOmittedValue, Object? organizationSelectionType = sdkOmittedValue, Object? groupId = sdkOmittedValue, Object? groupName = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? notificationSetting = sdkOmittedValue}) => EnterpriseTeam(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    syncToOrganizations: identical(syncToOrganizations, sdkOmittedValue) ? this.syncToOrganizations : syncToOrganizations as SdkOptional<String>,
-    organizationSelectionType: identical(organizationSelectionType, sdkOmittedValue) ? this.organizationSelectionType : organizationSelectionType as SdkOptional<String>,
-    groupId: identical(groupId, sdkOmittedValue) ? this.groupId : groupId as String?,
-    groupName: identical(groupName, sdkOmittedValue) ? this.groupName : groupName as SdkOptional<String?>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    notificationSetting: identical(notificationSetting, sdkOmittedValue) ? this.notificationSetting : notificationSetting as SdkOptional<EnterpriseTeamNotificationSetting>,
-  );
+  EnterpriseTeam _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? slug = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? syncToOrganizations = sdkOmittedValue,
+          Object? organizationSelectionType = sdkOmittedValue,
+          Object? groupId = sdkOmittedValue,
+          Object? groupName = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? membersUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? notificationSetting = sdkOmittedValue}) =>
+      EnterpriseTeam(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        syncToOrganizations: identical(syncToOrganizations, sdkOmittedValue)
+            ? this.syncToOrganizations
+            : syncToOrganizations as SdkOptional<String>,
+        organizationSelectionType:
+            identical(organizationSelectionType, sdkOmittedValue)
+                ? this.organizationSelectionType
+                : organizationSelectionType as SdkOptional<String>,
+        groupId: identical(groupId, sdkOmittedValue)
+            ? this.groupId
+            : groupId as String?,
+        groupName: identical(groupName, sdkOmittedValue)
+            ? this.groupName
+            : groupName as SdkOptional<String?>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        membersUrl: identical(membersUrl, sdkOmittedValue)
+            ? this.membersUrl
+            : membersUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        notificationSetting: identical(notificationSetting, sdkOmittedValue)
+            ? this.notificationSetting
+            : notificationSetting
+                as SdkOptional<EnterpriseTeamNotificationSetting>,
+      );
 
   factory EnterpriseTeam.fromJson(Map<String, dynamic> json) => EnterpriseTeam(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    slug: (json['slug'] as String?)!,
-    url: (json['url'] as String?)!,
-    syncToOrganizations: json['sync_to_organizations'] != null ? SdkPresent((json['sync_to_organizations'] as String?)!) : const SdkOmitted(),
-    organizationSelectionType: json['organization_selection_type'] != null ? SdkPresent((json['organization_selection_type'] as String?)!) : const SdkOmitted(),
-    groupId: json.containsKey('group_id') ? json['group_id'] as String? : throw ArgumentError.value(null, 'group_id', 'Required property is missing'),
-    groupName: json.containsKey('group_name') ? SdkPresent(json['group_name'] as String?) : const SdkOmitted(),
-    htmlUrl: (json['html_url'] as String?)!,
-    membersUrl: (json['members_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    notificationSetting: json['notification_setting'] != null ? SdkPresent((json['notification_setting'] != null ? EnterpriseTeamNotificationSetting.fromJson(json['notification_setting'] as String) : null)!) : const SdkOmitted(),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        slug: (json['slug'] as String?)!,
+        url: (json['url'] as String?)!,
+        syncToOrganizations: json['sync_to_organizations'] != null
+            ? SdkPresent((json['sync_to_organizations'] as String?)!)
+            : const SdkOmitted(),
+        organizationSelectionType: json['organization_selection_type'] != null
+            ? SdkPresent((json['organization_selection_type'] as String?)!)
+            : const SdkOmitted(),
+        groupId: json.containsKey('group_id')
+            ? json['group_id'] as String?
+            : throw ArgumentError.value(
+                null, 'group_id', 'Required property is missing'),
+        groupName: json.containsKey('group_name')
+            ? SdkPresent(json['group_name'] as String?)
+            : const SdkOmitted(),
+        htmlUrl: (json['html_url'] as String?)!,
+        membersUrl: (json['members_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        notificationSetting: json['notification_setting'] != null
+            ? SdkPresent((json['notification_setting'] != null
+                ? EnterpriseTeamNotificationSetting.fromJson(
+                    json['notification_setting'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    'slug': slug,
-    'url': url,
-    ...switch (syncToOrganizations) {
-      SdkPresent<String>(value: final value) => {'sync_to_organizations': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationSelectionType) {
-      SdkPresent<String>(value: final value) => {'organization_selection_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    'group_id': groupId,
-    ...switch (groupName) {
-      SdkPresent<String?>(value: final value) => {'group_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'html_url': htmlUrl,
-    'members_url': membersUrl,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    ...switch (notificationSetting) {
-      SdkPresent<EnterpriseTeamNotificationSetting>(value: final value) => {'notification_setting': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'name': name,
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'slug': slug,
+        'url': url,
+        ...switch (syncToOrganizations) {
+          SdkPresent<String>(value: final value) => {
+              'sync_to_organizations': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationSelectionType) {
+          SdkPresent<String>(value: final value) => {
+              'organization_selection_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'group_id': groupId,
+        ...switch (groupName) {
+          SdkPresent<String?>(value: final value) => {
+              'group_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'html_url': htmlUrl,
+        'members_url': membersUrl,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        ...switch (notificationSetting) {
+          SdkPresent<EnterpriseTeamNotificationSetting>(value: final value) => {
+              'notification_setting': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

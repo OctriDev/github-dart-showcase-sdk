@@ -8,129 +8,246 @@ part of 'repos.dart';
 class CombinedCommitStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `state` wire field.
   final String state;
+
   /// Required array value serialized in the `statuses` wire field.
   final List<SimpleCommitStatus> statuses;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Minimal Repository
   final MinimalRepository repository;
+
   /// Required `uri`-formatted value serialized in the `commit_url` wire field.
   final String commitUrl;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const CombinedCommitStatus({required this.state, required this.statuses, required this.sha, required this.totalCount, required this.repository, required this.commitUrl, required this.url});
+  const CombinedCommitStatus(
+      {required this.state,
+      required this.statuses,
+      required this.sha,
+      required this.totalCount,
+      required this.repository,
+      required this.commitUrl,
+      required this.url});
 
-  CombinedCommitStatus Function({String state, List<SimpleCommitStatus> statuses, String sha, int totalCount, MinimalRepository repository, String commitUrl, String url}) get copyWith => _copyWith;
+  CombinedCommitStatus Function(
+      {String state,
+      List<SimpleCommitStatus> statuses,
+      String sha,
+      int totalCount,
+      MinimalRepository repository,
+      String commitUrl,
+      String url}) get copyWith => _copyWith;
 
-  CombinedCommitStatus _copyWith({Object? state = sdkOmittedValue, Object? statuses = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? totalCount = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? commitUrl = sdkOmittedValue, Object? url = sdkOmittedValue}) => CombinedCommitStatus(
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as List<SimpleCommitStatus>,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
-    commitUrl: identical(commitUrl, sdkOmittedValue) ? this.commitUrl : commitUrl as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  CombinedCommitStatus _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? statuses = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? totalCount = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? commitUrl = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      CombinedCommitStatus(
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        statuses: identical(statuses, sdkOmittedValue)
+            ? this.statuses
+            : statuses as List<SimpleCommitStatus>,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as MinimalRepository,
+        commitUrl: identical(commitUrl, sdkOmittedValue)
+            ? this.commitUrl
+            : commitUrl as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory CombinedCommitStatus.fromJson(Map<String, dynamic> json) => CombinedCommitStatus(
-    state: (json['state'] as String?)!,
-    statuses: ((json['statuses'] as List?)?.map((e) => SimpleCommitStatus.fromJson(e as Map<String, dynamic>)).toList())!,
-    sha: (json['sha'] as String?)!,
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    commitUrl: (json['commit_url'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory CombinedCommitStatus.fromJson(Map<String, dynamic> json) =>
+      CombinedCommitStatus(
+        state: (json['state'] as String?)!,
+        statuses: ((json['statuses'] as List?)
+            ?.map((e) => SimpleCommitStatus.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        sha: (json['sha'] as String?)!,
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repository: (json['repository'] != null
+            ? MinimalRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        commitUrl: (json['commit_url'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'state': state,
-    'statuses': statuses.map((item) => item.toJson()).toList(),
-    'sha': sha,
-    'total_count': totalCount,
-    'repository': repository.toJson(),
-    'commit_url': commitUrl,
-    'url': url,
-  };
+        'state': state,
+        'statuses': statuses.map((item) => item.toJson()).toList(),
+        'sha': sha,
+        'total_count': totalCount,
+        'repository': repository.toJson(),
+        'commit_url': commitUrl,
+        'url': url,
+      };
 }
 
 /// Typed representation of the `SimpleCommitStatus` API schema.
 class SimpleCommitStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `state` wire field.
   final String state;
+
   /// Required `string` value serialized in the `context` wire field.
   final String context;
+
   /// Required `uri`-formatted value serialized in the `target_url` wire field.
   final String? targetUrl;
+
   /// Optional `boolean` value serialized in the `required` wire field.
   final SdkOptional<bool?> required_;
+
   /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
   final String? avatarUrl;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
 
-  const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, this.required_ = const SdkOmitted(), required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt});
+  const SimpleCommitStatus(
+      {required this.description,
+      required this.id,
+      required this.nodeId,
+      required this.state,
+      required this.context,
+      required this.targetUrl,
+      this.required_ = const SdkOmitted(),
+      required this.avatarUrl,
+      required this.url,
+      required this.createdAt,
+      required this.updatedAt});
 
-  SimpleCommitStatus Function({String? description, int id, String nodeId, String state, String context, String? targetUrl, SdkOptional<bool?> required_, String? avatarUrl, String url, String createdAt, String updatedAt}) get copyWith => _copyWith;
+  SimpleCommitStatus Function(
+      {String? description,
+      int id,
+      String nodeId,
+      String state,
+      String context,
+      String? targetUrl,
+      SdkOptional<bool?> required_,
+      String? avatarUrl,
+      String url,
+      String createdAt,
+      String updatedAt}) get copyWith => _copyWith;
 
-  SimpleCommitStatus _copyWith({Object? description = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? state = sdkOmittedValue, Object? context = sdkOmittedValue, Object? targetUrl = sdkOmittedValue, Object? required_ = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? url = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => SimpleCommitStatus(
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    context: identical(context, sdkOmittedValue) ? this.context : context as String,
-    targetUrl: identical(targetUrl, sdkOmittedValue) ? this.targetUrl : targetUrl as String?,
-    required_: identical(required_, sdkOmittedValue) ? this.required_ : required_ as SdkOptional<bool?>,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-  );
+  SimpleCommitStatus _copyWith(
+          {Object? description = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? context = sdkOmittedValue,
+          Object? targetUrl = sdkOmittedValue,
+          Object? required_ = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      SimpleCommitStatus(
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        context: identical(context, sdkOmittedValue)
+            ? this.context
+            : context as String,
+        targetUrl: identical(targetUrl, sdkOmittedValue)
+            ? this.targetUrl
+            : targetUrl as String?,
+        required_: identical(required_, sdkOmittedValue)
+            ? this.required_
+            : required_ as SdkOptional<bool?>,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+      );
 
-  factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) => SimpleCommitStatus(
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    state: (json['state'] as String?)!,
-    context: (json['context'] as String?)!,
-    targetUrl: json.containsKey('target_url') ? json['target_url'] as String? : throw ArgumentError.value(null, 'target_url', 'Required property is missing'),
-    required_: json.containsKey('required') ? SdkPresent(json['required'] as bool?) : const SdkOmitted(),
-    avatarUrl: json.containsKey('avatar_url') ? json['avatar_url'] as String? : throw ArgumentError.value(null, 'avatar_url', 'Required property is missing'),
-    url: (json['url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-  );
+  factory SimpleCommitStatus.fromJson(Map<String, dynamic> json) =>
+      SimpleCommitStatus(
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        state: (json['state'] as String?)!,
+        context: (json['context'] as String?)!,
+        targetUrl: json.containsKey('target_url')
+            ? json['target_url'] as String?
+            : throw ArgumentError.value(
+                null, 'target_url', 'Required property is missing'),
+        required_: json.containsKey('required')
+            ? SdkPresent(json['required'] as bool?)
+            : const SdkOmitted(),
+        avatarUrl: json.containsKey('avatar_url')
+            ? json['avatar_url'] as String?
+            : throw ArgumentError.value(
+                null, 'avatar_url', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'description': description,
-    'id': id,
-    'node_id': nodeId,
-    'state': state,
-    'context': context,
-    'target_url': targetUrl,
-    ...switch (required_) {
-      SdkPresent<bool?>(value: final value) => {'required': value,},
-      _ => const <String, dynamic>{},
-    },
-    'avatar_url': avatarUrl,
-    'url': url,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-  };
+        'description': description,
+        'id': id,
+        'node_id': nodeId,
+        'state': state,
+        'context': context,
+        'target_url': targetUrl,
+        ...switch (required_) {
+          SdkPresent<bool?>(value: final value) => {
+              'required': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'avatar_url': avatarUrl,
+        'url': url,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+      };
 }

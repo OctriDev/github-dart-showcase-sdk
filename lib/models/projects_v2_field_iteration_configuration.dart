@@ -8,69 +8,118 @@ part of 'projects.dart';
 class ProjectsV2FieldIterationConfigurationIterationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The title of the iteration.
   final String title;
+
   /// The start date of the iteration.
   final String startDate;
+
   /// The duration of the iteration in days.
   final int duration;
 
-  const ProjectsV2FieldIterationConfigurationIterationsItem({required this.title, required this.startDate, required this.duration});
+  const ProjectsV2FieldIterationConfigurationIterationsItem(
+      {required this.title, required this.startDate, required this.duration});
 
-  ProjectsV2FieldIterationConfigurationIterationsItem Function({String title, String startDate, int duration}) get copyWith => _copyWith;
+  ProjectsV2FieldIterationConfigurationIterationsItem Function(
+      {String title, String startDate, int duration}) get copyWith => _copyWith;
 
-  ProjectsV2FieldIterationConfigurationIterationsItem _copyWith({Object? title = sdkOmittedValue, Object? startDate = sdkOmittedValue, Object? duration = sdkOmittedValue}) => ProjectsV2FieldIterationConfigurationIterationsItem(
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    startDate: identical(startDate, sdkOmittedValue) ? this.startDate : startDate as String,
-    duration: identical(duration, sdkOmittedValue) ? this.duration : duration as int,
-  );
+  ProjectsV2FieldIterationConfigurationIterationsItem _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? startDate = sdkOmittedValue,
+          Object? duration = sdkOmittedValue}) =>
+      ProjectsV2FieldIterationConfigurationIterationsItem(
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        startDate: identical(startDate, sdkOmittedValue)
+            ? this.startDate
+            : startDate as String,
+        duration: identical(duration, sdkOmittedValue)
+            ? this.duration
+            : duration as int,
+      );
 
-  factory ProjectsV2FieldIterationConfigurationIterationsItem.fromJson(Map<String, dynamic> json) => ProjectsV2FieldIterationConfigurationIterationsItem(
-    title: (json['title'] as String?)!,
-    startDate: (json['start_date'] as String?)!,
-    duration: ((json['duration'] as num?)?.toInt())!,
-  );
+  factory ProjectsV2FieldIterationConfigurationIterationsItem.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsV2FieldIterationConfigurationIterationsItem(
+        title: (json['title'] as String?)!,
+        startDate: (json['start_date'] as String?)!,
+        duration: ((json['duration'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-    'start_date': startDate,
-    'duration': duration,
-  };
+        'title': title,
+        'start_date': startDate,
+        'duration': duration,
+      };
 }
 
 /// The configuration for iteration fields.
 class ProjectsV2FieldIterationConfiguration {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The start date of the first iteration.
   final String startDate;
+
   /// The default duration for iterations in days. Individual iterations can override this value.
   final int duration;
+
   /// Zero or more iterations for the field.
-  final SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>> iterations;
+  final SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>>
+      iterations;
 
-  const ProjectsV2FieldIterationConfiguration({required this.startDate, required this.duration, this.iterations = const SdkOmitted()});
+  const ProjectsV2FieldIterationConfiguration(
+      {required this.startDate,
+      required this.duration,
+      this.iterations = const SdkOmitted()});
 
-  ProjectsV2FieldIterationConfiguration Function({String startDate, int duration, SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>> iterations}) get copyWith => _copyWith;
+  ProjectsV2FieldIterationConfiguration Function(
+      {String startDate,
+      int duration,
+      SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>>
+          iterations}) get copyWith => _copyWith;
 
-  ProjectsV2FieldIterationConfiguration _copyWith({Object? startDate = sdkOmittedValue, Object? duration = sdkOmittedValue, Object? iterations = sdkOmittedValue}) => ProjectsV2FieldIterationConfiguration(
-    startDate: identical(startDate, sdkOmittedValue) ? this.startDate : startDate as String,
-    duration: identical(duration, sdkOmittedValue) ? this.duration : duration as int,
-    iterations: identical(iterations, sdkOmittedValue) ? this.iterations : iterations as SdkOptional<List<ProjectsV2FieldIterationConfigurationIterationsItem>>,
-  );
+  ProjectsV2FieldIterationConfiguration _copyWith(
+          {Object? startDate = sdkOmittedValue,
+          Object? duration = sdkOmittedValue,
+          Object? iterations = sdkOmittedValue}) =>
+      ProjectsV2FieldIterationConfiguration(
+        startDate: identical(startDate, sdkOmittedValue)
+            ? this.startDate
+            : startDate as String,
+        duration: identical(duration, sdkOmittedValue)
+            ? this.duration
+            : duration as int,
+        iterations: identical(iterations, sdkOmittedValue)
+            ? this.iterations
+            : iterations as SdkOptional<
+                List<ProjectsV2FieldIterationConfigurationIterationsItem>>,
+      );
 
-  factory ProjectsV2FieldIterationConfiguration.fromJson(Map<String, dynamic> json) => ProjectsV2FieldIterationConfiguration(
-    startDate: (json['start_date'] as String?)!,
-    duration: ((json['duration'] as num?)?.toInt())!,
-    iterations: json['iterations'] != null ? SdkPresent(((json['iterations'] as List?)?.map((e) => ProjectsV2FieldIterationConfigurationIterationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ProjectsV2FieldIterationConfiguration.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsV2FieldIterationConfiguration(
+        startDate: (json['start_date'] as String?)!,
+        duration: ((json['duration'] as num?)?.toInt())!,
+        iterations: json['iterations'] != null
+            ? SdkPresent(((json['iterations'] as List?)
+                ?.map((e) => ProjectsV2FieldIterationConfigurationIterationsItem
+                    .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'start_date': startDate,
-    'duration': duration,
-    ...switch (iterations) {
-      SdkPresent<List<ProjectsV2FieldIterationConfigurationIterationsItem>>(value: final value) => {'iterations': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'start_date': startDate,
+        'duration': duration,
+        ...switch (iterations) {
+          SdkPresent<List<ProjectsV2FieldIterationConfigurationIterationsItem>>(
+            value: final value
+          ) =>
+            {
+              'iterations': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

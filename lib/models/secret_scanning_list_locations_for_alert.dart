@@ -8,35 +8,61 @@ part of 'secret_scanning.dart';
 class SecretScanningLocation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
   final SdkOptional<SecretScanningLocationType> type_;
+
   /// Optional API value serialized in the `details` wire field.
   final SdkOptional<SecretScanningLocationDetails> details;
 
-  const SecretScanningLocation({this.type_ = const SdkOmitted(), this.details = const SdkOmitted()});
+  const SecretScanningLocation(
+      {this.type_ = const SdkOmitted(), this.details = const SdkOmitted()});
 
-  SecretScanningLocation Function({SdkOptional<SecretScanningLocationType> type_, SdkOptional<SecretScanningLocationDetails> details}) get copyWith => _copyWith;
+  SecretScanningLocation Function(
+          {SdkOptional<SecretScanningLocationType> type_,
+          SdkOptional<SecretScanningLocationDetails> details})
+      get copyWith => _copyWith;
 
-  SecretScanningLocation _copyWith({Object? type_ = sdkOmittedValue, Object? details = sdkOmittedValue}) => SecretScanningLocation(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<SecretScanningLocationType>,
-    details: identical(details, sdkOmittedValue) ? this.details : details as SdkOptional<SecretScanningLocationDetails>,
-  );
+  SecretScanningLocation _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? details = sdkOmittedValue}) =>
+      SecretScanningLocation(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<SecretScanningLocationType>,
+        details: identical(details, sdkOmittedValue)
+            ? this.details
+            : details as SdkOptional<SecretScanningLocationDetails>,
+      );
 
-  factory SecretScanningLocation.fromJson(Map<String, dynamic> json) => SecretScanningLocation(
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? SecretScanningLocationType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    details: json['details'] != null ? SdkPresent((json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details']) : null)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocation.fromJson(Map<String, dynamic> json) =>
+      SecretScanningLocation(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? SecretScanningLocationType.fromJson(json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        details: json['details'] != null
+            ? SdkPresent((json['details'] != null
+                ? SecretScanningLocationDetails.fromJson(json['details'])
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<SecretScanningLocationType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (details) {
-      SdkPresent<SecretScanningLocationDetails>(value: final value) => {'details': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<SecretScanningLocationType>(value: final value) => {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (details) {
+          SdkPresent<SecretScanningLocationDetails>(value: final value) => {
+              'details': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class SecretScanningLocationDetails {
@@ -45,112 +71,281 @@ sealed class SecretScanningLocationDetails {
   const SecretScanningLocationDetails();
   factory SecretScanningLocationDetails.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = SecretScanningLocationCommit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationCommit(value); } } catch (_) {}
-      try { final value = SecretScanningLocationWikiCommit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationWikiCommit(value); } } catch (_) {}
-      try { final value = SecretScanningLocationIssueTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationIssueTitle(value); } } catch (_) {}
-      try { final value = SecretScanningLocationIssueBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationIssueBody(value); } } catch (_) {}
-      try { final value = SecretScanningLocationIssueComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationIssueComment(value); } } catch (_) {}
-      try { final value = SecretScanningLocationDiscussionTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(value); } } catch (_) {}
-      try { final value = SecretScanningLocationDiscussionBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(value); } } catch (_) {}
-      try { final value = SecretScanningLocationDiscussionComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(value); } } catch (_) {}
-      try { final value = SecretScanningLocationPullRequestTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(value); } } catch (_) {}
-      try { final value = SecretScanningLocationPullRequestBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(value); } } catch (_) {}
-      try { final value = SecretScanningLocationPullRequestComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(value); } } catch (_) {}
-      try { final value = SecretScanningLocationPullRequestReview.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(value); } } catch (_) {}
-      try { final value = SecretScanningLocationPullRequestReviewComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(value); } } catch (_) {}
+      try {
+        final value = SecretScanningLocationCommit.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationCommit(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationWikiCommit.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationWikiCommit(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationIssueTitle.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationIssueTitle(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationIssueBody.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationIssueBody(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationIssueComment.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationIssueComment(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationDiscussionTitle.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationDiscussionBody.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationDiscussionComment.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationPullRequestTitle.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationPullRequestBody.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationPullRequestComment.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = SecretScanningLocationPullRequestReview.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            SecretScanningLocationPullRequestReviewComment.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(
+              value);
+        }
+      } catch (_) {}
     }
-    try { return SecretScanningLocationDetailsSecretScanningLocationCommit(SecretScanningLocationCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationWikiCommit(SecretScanningLocationWikiCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationIssueTitle(SecretScanningLocationIssueTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationIssueBody(SecretScanningLocationIssueBody.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationIssueComment(SecretScanningLocationIssueComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(SecretScanningLocationDiscussionTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(SecretScanningLocationDiscussionBody.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(SecretScanningLocationDiscussionComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(SecretScanningLocationPullRequestTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(SecretScanningLocationPullRequestBody.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(SecretScanningLocationPullRequestComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(SecretScanningLocationPullRequestReview.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(SecretScanningLocationPullRequestReviewComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for SecretScanningLocationDetails");
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationCommit(
+          SecretScanningLocationCommit.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationWikiCommit(
+          SecretScanningLocationWikiCommit.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationIssueTitle(
+          SecretScanningLocationIssueTitle.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationIssueBody(
+          SecretScanningLocationIssueBody.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationIssueComment(
+          SecretScanningLocationIssueComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(
+          SecretScanningLocationDiscussionTitle.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(
+          SecretScanningLocationDiscussionBody.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(
+          SecretScanningLocationDiscussionComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(
+          SecretScanningLocationPullRequestTitle.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(
+          SecretScanningLocationPullRequestBody.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(
+          SecretScanningLocationPullRequestComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(
+          SecretScanningLocationPullRequestReview.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(
+          SecretScanningLocationPullRequestReviewComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for SecretScanningLocationDetails");
   }
   Object? toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationCommit extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationCommit
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationCommit value;
   const SecretScanningLocationDetailsSecretScanningLocationCommit(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationWikiCommit extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationWikiCommit
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationWikiCommit value;
-  const SecretScanningLocationDetailsSecretScanningLocationWikiCommit(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationWikiCommit(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationIssueTitle extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationIssueTitle
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationIssueTitle value;
-  const SecretScanningLocationDetailsSecretScanningLocationIssueTitle(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationIssueTitle(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationIssueBody extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationIssueBody
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationIssueBody value;
-  const SecretScanningLocationDetailsSecretScanningLocationIssueBody(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationIssueBody(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationIssueComment extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationIssueComment
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationIssueComment value;
-  const SecretScanningLocationDetailsSecretScanningLocationIssueComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationIssueComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationDiscussionTitle value;
-  const SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationDiscussionBody extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationDiscussionBody
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationDiscussionBody value;
-  const SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationDiscussionComment extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationDiscussionComment
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationDiscussionComment value;
-  const SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationPullRequestTitle value;
-  const SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestBody extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestBody
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationPullRequestBody value;
-  const SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestComment extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestComment
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationPullRequestComment value;
-  const SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReview extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReview
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationPullRequestReview value;
-  const SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment extends SecretScanningLocationDetails {
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment
+    extends SecretScanningLocationDetails {
   final SecretScanningLocationPullRequestReviewComment value;
-  const SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

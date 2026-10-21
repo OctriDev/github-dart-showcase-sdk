@@ -8,35 +8,69 @@ part of 'shared_repository.dart';
 class RepositoryRulesetConditionsRepositoryPropertySpec {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the repository property to target
   final String name;
+
   /// The values to match for the repository property
   final List<String> propertyValues;
+
   /// The source of the repository property. Defaults to 'custom' if not specified.
-  final SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource> source;
+  final SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource>
+      source;
 
-  const RepositoryRulesetConditionsRepositoryPropertySpec({required this.name, required this.propertyValues, this.source = const SdkOmitted()});
+  const RepositoryRulesetConditionsRepositoryPropertySpec(
+      {required this.name,
+      required this.propertyValues,
+      this.source = const SdkOmitted()});
 
-  RepositoryRulesetConditionsRepositoryPropertySpec Function({String name, List<String> propertyValues, SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource> source}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryPropertySpec Function(
+      {String name,
+      List<String> propertyValues,
+      SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource>
+          source}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryPropertySpec _copyWith({Object? name = sdkOmittedValue, Object? propertyValues = sdkOmittedValue, Object? source = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryPropertySpec(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    propertyValues: identical(propertyValues, sdkOmittedValue) ? this.propertyValues : propertyValues as List<String>,
-    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<RepositoryRulesetConditionsRepositoryPropertySpecSource>,
-  );
+  RepositoryRulesetConditionsRepositoryPropertySpec _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? propertyValues = sdkOmittedValue,
+          Object? source = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryPropertySpec(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        propertyValues: identical(propertyValues, sdkOmittedValue)
+            ? this.propertyValues
+            : propertyValues as List<String>,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as SdkOptional<
+                RepositoryRulesetConditionsRepositoryPropertySpecSource>,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditionsRepositoryPropertySpec(
-    name: (json['name'] as String?)!,
-    propertyValues: ((json['property_values'] as List?)?.map((e) => e as String).toList())!,
-    source: json['source'] != null ? SdkPresent((json['source'] != null ? RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(json['source'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRulesetConditionsRepositoryPropertySpec(
+        name: (json['name'] as String?)!,
+        propertyValues: ((json['property_values'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        source: json['source'] != null
+            ? SdkPresent((json['source'] != null
+                ? RepositoryRulesetConditionsRepositoryPropertySpecSource
+                    .fromJson(json['source'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'property_values': propertyValues,
-    ...switch (source) {
-      SdkPresent<RepositoryRulesetConditionsRepositoryPropertySpecSource>(value: final value) => {'source': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'property_values': propertyValues,
+        ...switch (source) {
+          SdkPresent<RepositoryRulesetConditionsRepositoryPropertySpecSource>(
+            value: final value
+          ) =>
+            {
+              'source': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

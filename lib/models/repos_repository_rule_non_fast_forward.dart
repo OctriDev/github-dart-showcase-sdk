@@ -8,22 +8,30 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleNonFastForward {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleNonFastForwardType type_;
 
   const RepositoryRuleNonFastForward({required this.type_});
 
-  RepositoryRuleNonFastForward Function({RepositoryRuleNonFastForwardType type_}) get copyWith => _copyWith;
+  RepositoryRuleNonFastForward Function(
+      {RepositoryRuleNonFastForwardType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleNonFastForward _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleNonFastForward(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleNonFastForwardType,
-  );
+  RepositoryRuleNonFastForward _copyWith({Object? type_ = sdkOmittedValue}) =>
+      RepositoryRuleNonFastForward(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleNonFastForwardType,
+      );
 
-  factory RepositoryRuleNonFastForward.fromJson(Map<String, dynamic> json) => RepositoryRuleNonFastForward(
-    type_: (json['type'] != null ? RepositoryRuleNonFastForwardType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RepositoryRuleNonFastForward.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleNonFastForward(
+        type_: (json['type'] != null
+            ? RepositoryRuleNonFastForwardType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

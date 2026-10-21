@@ -8,32 +8,49 @@ part of 'activity.dart';
 class IssueCommentEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `action` wire field.
   final String action;
+
   /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
   final Issue issue;
+
   /// Comments provide a way for people to collaborate on an issue.
   final IssueComment comment;
 
-  const IssueCommentEvent({required this.action, required this.issue, required this.comment});
+  const IssueCommentEvent(
+      {required this.action, required this.issue, required this.comment});
 
-  IssueCommentEvent Function({String action, Issue issue, IssueComment comment}) get copyWith => _copyWith;
+  IssueCommentEvent Function({String action, Issue issue, IssueComment comment})
+      get copyWith => _copyWith;
 
-  IssueCommentEvent _copyWith({Object? action = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? comment = sdkOmittedValue}) => IssueCommentEvent(
-    action: identical(action, sdkOmittedValue) ? this.action : action as String,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as Issue,
-    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as IssueComment,
-  );
+  IssueCommentEvent _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? comment = sdkOmittedValue}) =>
+      IssueCommentEvent(
+        action:
+            identical(action, sdkOmittedValue) ? this.action : action as String,
+        issue: identical(issue, sdkOmittedValue) ? this.issue : issue as Issue,
+        comment: identical(comment, sdkOmittedValue)
+            ? this.comment
+            : comment as IssueComment,
+      );
 
-  factory IssueCommentEvent.fromJson(Map<String, dynamic> json) => IssueCommentEvent(
-    action: (json['action'] as String?)!,
-    issue: (json['issue'] != null ? Issue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
-    comment: (json['comment'] != null ? IssueComment.fromJson(json['comment'] as Map<String, dynamic>) : null)!,
-  );
+  factory IssueCommentEvent.fromJson(Map<String, dynamic> json) =>
+      IssueCommentEvent(
+        action: (json['action'] as String?)!,
+        issue: (json['issue'] != null
+            ? Issue.fromJson(json['issue'] as Map<String, dynamic>)
+            : null)!,
+        comment: (json['comment'] != null
+            ? IssueComment.fromJson(json['comment'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action,
-    'issue': issue.toJson(),
-    'comment': comment.toJson(),
-  };
+        'action': action,
+        'issue': issue.toJson(),
+        'comment': comment.toJson(),
+      };
 }

@@ -8,50 +8,89 @@ part of 'activity.dart';
 class CreateEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
+
   /// Required `string` value serialized in the `ref_type` wire field.
   final String refType;
+
   /// Required `string` value serialized in the `full_ref` wire field.
   final String fullRef;
+
   /// Required `string` value serialized in the `master_branch` wire field.
   final String masterBranch;
+
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String?> description;
+
   /// Required `string` value serialized in the `pusher_type` wire field.
   final String pusherType;
 
-  const CreateEvent({required this.ref, required this.refType, required this.fullRef, required this.masterBranch, this.description = const SdkOmitted(), required this.pusherType});
+  const CreateEvent(
+      {required this.ref,
+      required this.refType,
+      required this.fullRef,
+      required this.masterBranch,
+      this.description = const SdkOmitted(),
+      required this.pusherType});
 
-  CreateEvent Function({String ref, String refType, String fullRef, String masterBranch, SdkOptional<String?> description, String pusherType}) get copyWith => _copyWith;
+  CreateEvent Function(
+      {String ref,
+      String refType,
+      String fullRef,
+      String masterBranch,
+      SdkOptional<String?> description,
+      String pusherType}) get copyWith => _copyWith;
 
-  CreateEvent _copyWith({Object? ref = sdkOmittedValue, Object? refType = sdkOmittedValue, Object? fullRef = sdkOmittedValue, Object? masterBranch = sdkOmittedValue, Object? description = sdkOmittedValue, Object? pusherType = sdkOmittedValue}) => CreateEvent(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    refType: identical(refType, sdkOmittedValue) ? this.refType : refType as String,
-    fullRef: identical(fullRef, sdkOmittedValue) ? this.fullRef : fullRef as String,
-    masterBranch: identical(masterBranch, sdkOmittedValue) ? this.masterBranch : masterBranch as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    pusherType: identical(pusherType, sdkOmittedValue) ? this.pusherType : pusherType as String,
-  );
+  CreateEvent _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? refType = sdkOmittedValue,
+          Object? fullRef = sdkOmittedValue,
+          Object? masterBranch = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? pusherType = sdkOmittedValue}) =>
+      CreateEvent(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        refType: identical(refType, sdkOmittedValue)
+            ? this.refType
+            : refType as String,
+        fullRef: identical(fullRef, sdkOmittedValue)
+            ? this.fullRef
+            : fullRef as String,
+        masterBranch: identical(masterBranch, sdkOmittedValue)
+            ? this.masterBranch
+            : masterBranch as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        pusherType: identical(pusherType, sdkOmittedValue)
+            ? this.pusherType
+            : pusherType as String,
+      );
 
   factory CreateEvent.fromJson(Map<String, dynamic> json) => CreateEvent(
-    ref: (json['ref'] as String?)!,
-    refType: (json['ref_type'] as String?)!,
-    fullRef: (json['full_ref'] as String?)!,
-    masterBranch: (json['master_branch'] as String?)!,
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    pusherType: (json['pusher_type'] as String?)!,
-  );
+        ref: (json['ref'] as String?)!,
+        refType: (json['ref_type'] as String?)!,
+        fullRef: (json['full_ref'] as String?)!,
+        masterBranch: (json['master_branch'] as String?)!,
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        pusherType: (json['pusher_type'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    'ref_type': refType,
-    'full_ref': fullRef,
-    'master_branch': masterBranch,
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    'pusher_type': pusherType,
-  };
+        'ref': ref,
+        'ref_type': refType,
+        'full_ref': fullRef,
+        'master_branch': masterBranch,
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'pusher_type': pusherType,
+      };
 }

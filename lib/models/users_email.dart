@@ -8,37 +8,63 @@ part of 'users.dart';
 class Email {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `email`-formatted value serialized in the `email` wire field.
   final String email;
+
   /// Required `boolean` value serialized in the `primary` wire field.
   final bool primary;
+
   /// Required `boolean` value serialized in the `verified` wire field.
   final bool verified;
+
   /// Required `string` value serialized in the `visibility` wire field.
   final String? visibility;
 
-  const Email({required this.email, required this.primary, required this.verified, required this.visibility});
+  const Email(
+      {required this.email,
+      required this.primary,
+      required this.verified,
+      required this.visibility});
 
-  Email Function({String email, bool primary, bool verified, String? visibility}) get copyWith => _copyWith;
+  Email Function(
+      {String email,
+      bool primary,
+      bool verified,
+      String? visibility}) get copyWith => _copyWith;
 
-  Email _copyWith({Object? email = sdkOmittedValue, Object? primary = sdkOmittedValue, Object? verified = sdkOmittedValue, Object? visibility = sdkOmittedValue}) => Email(
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    primary: identical(primary, sdkOmittedValue) ? this.primary : primary as bool,
-    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as String?,
-  );
+  Email _copyWith(
+          {Object? email = sdkOmittedValue,
+          Object? primary = sdkOmittedValue,
+          Object? verified = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue}) =>
+      Email(
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        primary: identical(primary, sdkOmittedValue)
+            ? this.primary
+            : primary as bool,
+        verified: identical(verified, sdkOmittedValue)
+            ? this.verified
+            : verified as bool,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as String?,
+      );
 
   factory Email.fromJson(Map<String, dynamic> json) => Email(
-    email: (json['email'] as String?)!,
-    primary: (json['primary'] as bool?)!,
-    verified: (json['verified'] as bool?)!,
-    visibility: json.containsKey('visibility') ? json['visibility'] as String? : throw ArgumentError.value(null, 'visibility', 'Required property is missing'),
-  );
+        email: (json['email'] as String?)!,
+        primary: (json['primary'] as bool?)!,
+        verified: (json['verified'] as bool?)!,
+        visibility: json.containsKey('visibility')
+            ? json['visibility'] as String?
+            : throw ArgumentError.value(
+                null, 'visibility', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'email': email,
-    'primary': primary,
-    'verified': verified,
-    'visibility': visibility,
-  };
+        'email': email,
+        'primary': primary,
+        'verified': verified,
+        'visibility': visibility,
+      };
 }

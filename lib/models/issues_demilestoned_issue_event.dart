@@ -8,91 +8,168 @@ part of 'issues.dart';
 class DemilestonedIssueEventMilestone {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
 
   const DemilestonedIssueEventMilestone({required this.title});
 
-  DemilestonedIssueEventMilestone Function({String title}) get copyWith => _copyWith;
+  DemilestonedIssueEventMilestone Function({String title}) get copyWith =>
+      _copyWith;
 
-  DemilestonedIssueEventMilestone _copyWith({Object? title = sdkOmittedValue}) => DemilestonedIssueEventMilestone(
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-  );
+  DemilestonedIssueEventMilestone _copyWith(
+          {Object? title = sdkOmittedValue}) =>
+      DemilestonedIssueEventMilestone(
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+      );
 
-  factory DemilestonedIssueEventMilestone.fromJson(Map<String, dynamic> json) => DemilestonedIssueEventMilestone(
-    title: (json['title'] as String?)!,
-  );
+  factory DemilestonedIssueEventMilestone.fromJson(Map<String, dynamic> json) =>
+      DemilestonedIssueEventMilestone(
+        title: (json['title'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-  };
+        'title': title,
+      };
 }
 
 /// Demilestoned Issue Event
 class DemilestonedIssueEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// A GitHub user.
   final SimpleUser actor;
+
   /// Required `string` value serialized in the `event` wire field.
   final String event;
+
   /// Required `string` value serialized in the `commit_id` wire field.
   final String? commitId;
+
   /// Required `string` value serialized in the `commit_url` wire field.
   final String? commitUrl;
+
   /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final NullableIntegration? performedViaGithubApp;
+
   /// Required object value serialized in the `milestone` wire field.
   final DemilestonedIssueEventMilestone milestone;
 
-  const DemilestonedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.milestone});
+  const DemilestonedIssueEvent(
+      {required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.actor,
+      required this.event,
+      required this.commitId,
+      required this.commitUrl,
+      required this.createdAt,
+      required this.performedViaGithubApp,
+      required this.milestone});
 
-  DemilestonedIssueEvent Function({int id, String nodeId, String url, SimpleUser actor, String event, String? commitId, String? commitUrl, String createdAt, NullableIntegration? performedViaGithubApp, DemilestonedIssueEventMilestone milestone}) get copyWith => _copyWith;
+  DemilestonedIssueEvent Function(
+      {int id,
+      String nodeId,
+      String url,
+      SimpleUser actor,
+      String event,
+      String? commitId,
+      String? commitUrl,
+      String createdAt,
+      NullableIntegration? performedViaGithubApp,
+      DemilestonedIssueEventMilestone milestone}) get copyWith => _copyWith;
 
-  DemilestonedIssueEvent _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? actor = sdkOmittedValue, Object? event = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? commitUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? milestone = sdkOmittedValue}) => DemilestonedIssueEvent(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as SimpleUser,
-    event: identical(event, sdkOmittedValue) ? this.event : event as String,
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String?,
-    commitUrl: identical(commitUrl, sdkOmittedValue) ? this.commitUrl : commitUrl as String?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as NullableIntegration?,
-    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as DemilestonedIssueEventMilestone,
-  );
+  DemilestonedIssueEvent _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? actor = sdkOmittedValue,
+          Object? event = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? commitUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? performedViaGithubApp = sdkOmittedValue,
+          Object? milestone = sdkOmittedValue}) =>
+      DemilestonedIssueEvent(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        actor: identical(actor, sdkOmittedValue)
+            ? this.actor
+            : actor as SimpleUser,
+        event: identical(event, sdkOmittedValue) ? this.event : event as String,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String?,
+        commitUrl: identical(commitUrl, sdkOmittedValue)
+            ? this.commitUrl
+            : commitUrl as String?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
+            ? this.performedViaGithubApp
+            : performedViaGithubApp as NullableIntegration?,
+        milestone: identical(milestone, sdkOmittedValue)
+            ? this.milestone
+            : milestone as DemilestonedIssueEventMilestone,
+      );
 
-  factory DemilestonedIssueEvent.fromJson(Map<String, dynamic> json) => DemilestonedIssueEvent(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    actor: (json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null)!,
-    event: (json['event'] as String?)!,
-    commitId: json.containsKey('commit_id') ? json['commit_id'] as String? : throw ArgumentError.value(null, 'commit_id', 'Required property is missing'),
-    commitUrl: json.containsKey('commit_url') ? json['commit_url'] as String? : throw ArgumentError.value(null, 'commit_url', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    performedViaGithubApp: json.containsKey('performed_via_github_app') ? json['performed_via_github_app'] != null ? NullableIntegration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'performed_via_github_app', 'Required property is missing'),
-    milestone: (json['milestone'] != null ? DemilestonedIssueEventMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null)!,
-  );
+  factory DemilestonedIssueEvent.fromJson(Map<String, dynamic> json) =>
+      DemilestonedIssueEvent(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        actor: (json['actor'] != null
+            ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>)
+            : null)!,
+        event: (json['event'] as String?)!,
+        commitId: json.containsKey('commit_id')
+            ? json['commit_id'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_id', 'Required property is missing'),
+        commitUrl: json.containsKey('commit_url')
+            ? json['commit_url'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_url', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        performedViaGithubApp: json.containsKey('performed_via_github_app')
+            ? json['performed_via_github_app'] != null
+                ? NullableIntegration.fromJson(
+                    json['performed_via_github_app'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(null, 'performed_via_github_app',
+                'Required property is missing'),
+        milestone: (json['milestone'] != null
+            ? DemilestonedIssueEventMilestone.fromJson(
+                json['milestone'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'actor': actor.toJson(),
-    'event': event,
-    'commit_id': commitId,
-    'commit_url': commitUrl,
-    'created_at': createdAt,
-    'performed_via_github_app': performedViaGithubApp?.toJson(),
-    'milestone': milestone.toJson(),
-  };
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'actor': actor.toJson(),
+        'event': event,
+        'commit_id': commitId,
+        'commit_url': commitUrl,
+        'created_at': createdAt,
+        'performed_via_github_app': performedViaGithubApp?.toJson(),
+        'milestone': milestone.toJson(),
+      };
 }

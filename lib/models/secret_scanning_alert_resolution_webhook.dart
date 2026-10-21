@@ -6,26 +6,33 @@ part of 'secret_scanning.dart';
 // secret_scanning domain models
 /// The reason for resolving the alert.
 final class SecretScanningAlertResolutionWebhook {
-
   final String value;
 
   const SecretScanningAlertResolutionWebhook._(this.value);
 
-  factory SecretScanningAlertResolutionWebhook.fromJson(String value) => SecretScanningAlertResolutionWebhook._(value);
+  factory SecretScanningAlertResolutionWebhook.fromJson(String value) =>
+      SecretScanningAlertResolutionWebhook._(value);
 
-  static const falsePositive = SecretScanningAlertResolutionWebhook._('false_positive');
+  static const falsePositive =
+      SecretScanningAlertResolutionWebhook._('false_positive');
   static const wontFix = SecretScanningAlertResolutionWebhook._('wont_fix');
   static const revoked = SecretScanningAlertResolutionWebhook._('revoked');
-  static const usedInTests = SecretScanningAlertResolutionWebhook._('used_in_tests');
-  static const patternDeleted = SecretScanningAlertResolutionWebhook._('pattern_deleted');
-  static const patternEdited = SecretScanningAlertResolutionWebhook._('pattern_edited');
+  static const usedInTests =
+      SecretScanningAlertResolutionWebhook._('used_in_tests');
+  static const patternDeleted =
+      SecretScanningAlertResolutionWebhook._('pattern_deleted');
+  static const patternEdited =
+      SecretScanningAlertResolutionWebhook._('pattern_edited');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningAlertResolutionWebhook && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningAlertResolutionWebhook && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

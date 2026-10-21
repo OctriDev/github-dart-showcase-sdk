@@ -8,159 +8,306 @@ part of 'code_security.dart';
 class CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
   final SdkOptional<bool> labeledRunners;
 
-  const CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions({this.labeledRunners = const SdkOmitted()});
+  const CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions(
+      {this.labeledRunners = const SdkOmitted()});
 
-  CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
+  CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions Function(
+      {SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
 
-  CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions _copyWith({Object? labeledRunners = sdkOmittedValue}) => CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions(
-    labeledRunners: identical(labeledRunners, sdkOmittedValue) ? this.labeledRunners : labeledRunners as SdkOptional<bool>,
-  );
+  CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions _copyWith(
+          {Object? labeledRunners = sdkOmittedValue}) =>
+      CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions(
+        labeledRunners: identical(labeledRunners, sdkOmittedValue)
+            ? this.labeledRunners
+            : labeledRunners as SdkOptional<bool>,
+      );
 
-  factory CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions.fromJson(Map<String, dynamic> json) => CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions(
-    labeledRunners: json['labeled_runners'] != null ? SdkPresent((json['labeled_runners'] as bool?)!) : const SdkOmitted(),
-  );
+  factory CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions(
+        labeledRunners: json['labeled_runners'] != null
+            ? SdkPresent((json['labeled_runners'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (labeledRunners) {
-      SdkPresent<bool>(value: final value) => {'labeled_runners': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (labeledRunners) {
+          SdkPresent<bool>(value: final value) => {
+              'labeled_runners': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Feature options for code scanning
 class CodeSecurityConfigurationCodeScanningOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to allow repos which use advanced setup
   final SdkOptional<bool?> allowAdvanced;
 
-  const CodeSecurityConfigurationCodeScanningOptions({this.allowAdvanced = const SdkOmitted()});
+  const CodeSecurityConfigurationCodeScanningOptions(
+      {this.allowAdvanced = const SdkOmitted()});
 
-  CodeSecurityConfigurationCodeScanningOptions Function({SdkOptional<bool?> allowAdvanced}) get copyWith => _copyWith;
+  CodeSecurityConfigurationCodeScanningOptions Function(
+      {SdkOptional<bool?> allowAdvanced}) get copyWith => _copyWith;
 
-  CodeSecurityConfigurationCodeScanningOptions _copyWith({Object? allowAdvanced = sdkOmittedValue}) => CodeSecurityConfigurationCodeScanningOptions(
-    allowAdvanced: identical(allowAdvanced, sdkOmittedValue) ? this.allowAdvanced : allowAdvanced as SdkOptional<bool?>,
-  );
+  CodeSecurityConfigurationCodeScanningOptions _copyWith(
+          {Object? allowAdvanced = sdkOmittedValue}) =>
+      CodeSecurityConfigurationCodeScanningOptions(
+        allowAdvanced: identical(allowAdvanced, sdkOmittedValue)
+            ? this.allowAdvanced
+            : allowAdvanced as SdkOptional<bool?>,
+      );
 
-  factory CodeSecurityConfigurationCodeScanningOptions.fromJson(Map<String, dynamic> json) => CodeSecurityConfigurationCodeScanningOptions(
-    allowAdvanced: json.containsKey('allow_advanced') ? SdkPresent(json['allow_advanced'] as bool?) : const SdkOmitted(),
-  );
+  factory CodeSecurityConfigurationCodeScanningOptions.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityConfigurationCodeScanningOptions(
+        allowAdvanced: json.containsKey('allow_advanced')
+            ? SdkPresent(json['allow_advanced'] as bool?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowAdvanced) {
-      SdkPresent<bool?>(value: final value) => {'allow_advanced': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (allowAdvanced) {
+          SdkPresent<bool?>(value: final value) => {
+              'allow_advanced': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Feature options for code scanning default setup
 class CodeSecurityConfigurationCodeScanningDefaultSetupOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to use labeled runners or standard GitHub runners.
-  final SdkOptional<CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?> runnerType;
+  final SdkOptional<
+          CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?>
+      runnerType;
+
   /// The label of the runner to use for code scanning when runner_type is 'labeled'.
   final SdkOptional<String?> runnerLabel;
 
-  const CodeSecurityConfigurationCodeScanningDefaultSetupOptions({this.runnerType = const SdkOmitted(), this.runnerLabel = const SdkOmitted()});
+  const CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
+      {this.runnerType = const SdkOmitted(),
+      this.runnerLabel = const SdkOmitted()});
 
-  CodeSecurityConfigurationCodeScanningDefaultSetupOptions Function({SdkOptional<CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?> runnerType, SdkOptional<String?> runnerLabel}) get copyWith => _copyWith;
+  CodeSecurityConfigurationCodeScanningDefaultSetupOptions Function(
+      {SdkOptional<
+              CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?>
+          runnerType,
+      SdkOptional<String?> runnerLabel}) get copyWith => _copyWith;
 
-  CodeSecurityConfigurationCodeScanningDefaultSetupOptions _copyWith({Object? runnerType = sdkOmittedValue, Object? runnerLabel = sdkOmittedValue}) => CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
-    runnerType: identical(runnerType, sdkOmittedValue) ? this.runnerType : runnerType as SdkOptional<CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?>,
-    runnerLabel: identical(runnerLabel, sdkOmittedValue) ? this.runnerLabel : runnerLabel as SdkOptional<String?>,
-  );
+  CodeSecurityConfigurationCodeScanningDefaultSetupOptions _copyWith(
+          {Object? runnerType = sdkOmittedValue,
+          Object? runnerLabel = sdkOmittedValue}) =>
+      CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
+        runnerType: identical(runnerType, sdkOmittedValue)
+            ? this.runnerType
+            : runnerType as SdkOptional<
+                CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?>,
+        runnerLabel: identical(runnerLabel, sdkOmittedValue)
+            ? this.runnerLabel
+            : runnerLabel as SdkOptional<String?>,
+      );
 
-  factory CodeSecurityConfigurationCodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) => CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
-    runnerType: json.containsKey('runner_type') ? SdkPresent(json['runner_type'] != null ? CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null) : const SdkOmitted(),
-    runnerLabel: json.containsKey('runner_label') ? SdkPresent(json['runner_label'] as String?) : const SdkOmitted(),
-  );
+  factory CodeSecurityConfigurationCodeScanningDefaultSetupOptions.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
+        runnerType: json.containsKey('runner_type')
+            ? SdkPresent(json['runner_type'] != null
+                ? CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType
+                    .fromJson(json['runner_type'] as String)
+                : null)
+            : const SdkOmitted(),
+        runnerLabel: json.containsKey('runner_label')
+            ? SdkPresent(json['runner_label'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (runnerType) {
-      SdkPresent<CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?>(value: final value) => {'runner_type': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (runnerLabel) {
-      SdkPresent<String?>(value: final value) => {'runner_label': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (runnerType) {
+          SdkPresent<
+                CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?>(
+            value: final value
+          ) =>
+            {
+              'runner_type': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runnerLabel) {
+          SdkPresent<String?>(value: final value) => {
+              'runner_label': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `reviewers[]` wire field.
 class CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the team or role selected as a bypass reviewer
   final int reviewerId;
+
   /// The type of the bypass reviewer
-  final CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType;
+  final CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+      reviewerType;
+
   /// The bypass mode for the reviewer
-  final SdkOptional<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode> mode;
+  final SdkOptional<
+          CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode>
+      mode;
+
   /// The ID of the security configuration associated with this bypass reviewer
   final SdkOptional<int> securityConfigurationId;
 
-  const CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem({required this.reviewerId, required this.reviewerType, this.mode = const SdkOmitted(), this.securityConfigurationId = const SdkOmitted()});
+  const CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem(
+      {required this.reviewerId,
+      required this.reviewerType,
+      this.mode = const SdkOmitted(),
+      this.securityConfigurationId = const SdkOmitted()});
 
-  CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem Function({int reviewerId, CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType, SdkOptional<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode> mode, SdkOptional<int> securityConfigurationId}) get copyWith => _copyWith;
+  CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem Function(
+      {int reviewerId,
+      CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+          reviewerType,
+      SdkOptional<
+              CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode>
+          mode,
+      SdkOptional<int> securityConfigurationId}) get copyWith => _copyWith;
 
-  CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem _copyWith({Object? reviewerId = sdkOmittedValue, Object? reviewerType = sdkOmittedValue, Object? mode = sdkOmittedValue, Object? securityConfigurationId = sdkOmittedValue}) => CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem(
-    reviewerId: identical(reviewerId, sdkOmittedValue) ? this.reviewerId : reviewerId as int,
-    reviewerType: identical(reviewerType, sdkOmittedValue) ? this.reviewerType : reviewerType as CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
-    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as SdkOptional<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode>,
-    securityConfigurationId: identical(securityConfigurationId, sdkOmittedValue) ? this.securityConfigurationId : securityConfigurationId as SdkOptional<int>,
-  );
+  CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem
+      _copyWith(
+              {Object? reviewerId = sdkOmittedValue,
+              Object? reviewerType = sdkOmittedValue,
+              Object? mode = sdkOmittedValue,
+              Object? securityConfigurationId = sdkOmittedValue}) =>
+          CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem(
+            reviewerId: identical(reviewerId, sdkOmittedValue)
+                ? this.reviewerId
+                : reviewerId as int,
+            reviewerType: identical(reviewerType, sdkOmittedValue)
+                ? this.reviewerType
+                : reviewerType
+                    as CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
+            mode: identical(mode, sdkOmittedValue)
+                ? this.mode
+                : mode as SdkOptional<
+                    CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode>,
+            securityConfigurationId:
+                identical(securityConfigurationId, sdkOmittedValue)
+                    ? this.securityConfigurationId
+                    : securityConfigurationId as SdkOptional<int>,
+          );
 
-  factory CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(Map<String, dynamic> json) => CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem(
-    reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
-    reviewerType: (json['reviewer_type'] != null ? CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(json['reviewer_type'] as String) : null)!,
-    mode: json['mode'] != null ? SdkPresent((json['mode'] != null ? CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(json['mode'] as String) : null)!) : const SdkOmitted(),
-    securityConfigurationId: json['security_configuration_id'] != null ? SdkPresent(((json['security_configuration_id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem(
+        reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
+        reviewerType: (json['reviewer_type'] != null
+            ? CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+                .fromJson(json['reviewer_type'] as String)
+            : null)!,
+        mode: json['mode'] != null
+            ? SdkPresent((json['mode'] != null
+                ? CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode
+                    .fromJson(json['mode'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        securityConfigurationId: json['security_configuration_id'] != null
+            ? SdkPresent(
+                ((json['security_configuration_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'reviewer_id': reviewerId,
-    'reviewer_type': reviewerType.toJson(),
-    ...switch (mode) {
-      SdkPresent<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode>(value: final value) => {'mode': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (securityConfigurationId) {
-      SdkPresent<int>(value: final value) => {'security_configuration_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'reviewer_id': reviewerId,
+        'reviewer_type': reviewerType.toJson(),
+        ...switch (mode) {
+          SdkPresent<
+                CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItemMode>(
+            value: final value
+          ) =>
+            {
+              'mode': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (securityConfigurationId) {
+          SdkPresent<int>(value: final value) => {
+              'security_configuration_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Feature options for secret scanning delegated bypass
 class CodeSecurityConfigurationSecretScanningDelegatedBypassOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The bypass reviewers for secret scanning delegated bypass
-  final SdkOptional<List<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>> reviewers;
+  final SdkOptional<
+          List<
+              CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>>
+      reviewers;
 
-  const CodeSecurityConfigurationSecretScanningDelegatedBypassOptions({this.reviewers = const SdkOmitted()});
+  const CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(
+      {this.reviewers = const SdkOmitted()});
 
-  CodeSecurityConfigurationSecretScanningDelegatedBypassOptions Function({SdkOptional<List<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>> reviewers}) get copyWith => _copyWith;
+  CodeSecurityConfigurationSecretScanningDelegatedBypassOptions Function(
+      {SdkOptional<
+              List<
+                  CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>>
+          reviewers}) get copyWith => _copyWith;
 
-  CodeSecurityConfigurationSecretScanningDelegatedBypassOptions _copyWith({Object? reviewers = sdkOmittedValue}) => CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(
-    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>>,
-  );
+  CodeSecurityConfigurationSecretScanningDelegatedBypassOptions _copyWith(
+          {Object? reviewers = sdkOmittedValue}) =>
+      CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(
+        reviewers: identical(reviewers, sdkOmittedValue)
+            ? this.reviewers
+            : reviewers as SdkOptional<
+                List<
+                    CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>>,
+      );
 
-  factory CodeSecurityConfigurationSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) => CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(
-    reviewers: json['reviewers'] != null ? SdkPresent(((json['reviewers'] as List?)?.map((e) => CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory CodeSecurityConfigurationSecretScanningDelegatedBypassOptions.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(
+        reviewers: json['reviewers'] != null
+            ? SdkPresent(((json['reviewers'] as List?)
+                ?.map((e) =>
+                    CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (reviewers) {
-      SdkPresent<List<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>>(value: final value) => {'reviewers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reviewers) {
+          SdkPresent<
+                List<
+                    CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewersItem>>(
+            value: final value
+          ) =>
+            {
+              'reviewers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

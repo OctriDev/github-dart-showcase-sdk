@@ -8,51 +8,77 @@ part of 'orgs.dart';
 class OrganizationExternalPropertyInstallationInstallation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the GitHub App installation.
   final int id;
 
-  const OrganizationExternalPropertyInstallationInstallation({required this.id});
+  const OrganizationExternalPropertyInstallationInstallation(
+      {required this.id});
 
-  OrganizationExternalPropertyInstallationInstallation Function({int id}) get copyWith => _copyWith;
+  OrganizationExternalPropertyInstallationInstallation Function({int id})
+      get copyWith => _copyWith;
 
-  OrganizationExternalPropertyInstallationInstallation _copyWith({Object? id = sdkOmittedValue}) => OrganizationExternalPropertyInstallationInstallation(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-  );
+  OrganizationExternalPropertyInstallationInstallation _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      OrganizationExternalPropertyInstallationInstallation(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+      );
 
-  factory OrganizationExternalPropertyInstallationInstallation.fromJson(Map<String, dynamic> json) => OrganizationExternalPropertyInstallationInstallation(
-    id: ((json['id'] as num?)?.toInt())!,
-  );
+  factory OrganizationExternalPropertyInstallationInstallation.fromJson(
+          Map<String, dynamic> json) =>
+      OrganizationExternalPropertyInstallationInstallation(
+        id: ((json['id'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-  };
+        'id': id,
+      };
 }
 
 /// A GitHub App installation that has been registered to read and write an organization's external custom properties, together with the display name assigned to it.
 class OrganizationExternalPropertyInstallation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The display name assigned to the app installation's external custom properties in the organization.
   final String displayName;
+
   /// The GitHub App installation that was registered.
   final OrganizationExternalPropertyInstallationInstallation installation;
 
-  const OrganizationExternalPropertyInstallation({required this.displayName, required this.installation});
+  const OrganizationExternalPropertyInstallation(
+      {required this.displayName, required this.installation});
 
-  OrganizationExternalPropertyInstallation Function({String displayName, OrganizationExternalPropertyInstallationInstallation installation}) get copyWith => _copyWith;
+  OrganizationExternalPropertyInstallation Function(
+          {String displayName,
+          OrganizationExternalPropertyInstallationInstallation installation})
+      get copyWith => _copyWith;
 
-  OrganizationExternalPropertyInstallation _copyWith({Object? displayName = sdkOmittedValue, Object? installation = sdkOmittedValue}) => OrganizationExternalPropertyInstallation(
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as OrganizationExternalPropertyInstallationInstallation,
-  );
+  OrganizationExternalPropertyInstallation _copyWith(
+          {Object? displayName = sdkOmittedValue,
+          Object? installation = sdkOmittedValue}) =>
+      OrganizationExternalPropertyInstallation(
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as String,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation
+                as OrganizationExternalPropertyInstallationInstallation,
+      );
 
-  factory OrganizationExternalPropertyInstallation.fromJson(Map<String, dynamic> json) => OrganizationExternalPropertyInstallation(
-    displayName: (json['display_name'] as String?)!,
-    installation: (json['installation'] != null ? OrganizationExternalPropertyInstallationInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!,
-  );
+  factory OrganizationExternalPropertyInstallation.fromJson(
+          Map<String, dynamic> json) =>
+      OrganizationExternalPropertyInstallation(
+        displayName: (json['display_name'] as String?)!,
+        installation: (json['installation'] != null
+            ? OrganizationExternalPropertyInstallationInstallation.fromJson(
+                json['installation'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'display_name': displayName,
-    'installation': installation.toJson(),
-  };
+        'display_name': displayName,
+        'installation': installation.toJson(),
+      };
 }

@@ -8,62 +8,120 @@ part of 'shared.dart';
 class Label {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier for the label.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// URL for the label
   final String url;
+
   /// The name of the label.
   final String name;
+
   /// Optional description of the label, such as its purpose.
   final String? description;
+
   /// 6-character hex code, without the leading #, identifying the color
   final String color;
+
   /// Whether this label comes by default in a new repository.
   final bool default_;
+
   /// Timestamp indicating when the label was archived, or `null` if it has not been archived.
   final String? archivedAt;
+
   /// The user who archived the label, or `null` if it has not been archived.
   final SimpleUser? archivedBy;
 
-  const Label({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.default_, required this.archivedAt, required this.archivedBy});
+  const Label(
+      {required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.name,
+      required this.description,
+      required this.color,
+      required this.default_,
+      required this.archivedAt,
+      required this.archivedBy});
 
-  Label Function({int id, String nodeId, String url, String name, String? description, String color, bool default_, String? archivedAt, SimpleUser? archivedBy}) get copyWith => _copyWith;
+  Label Function(
+      {int id,
+      String nodeId,
+      String url,
+      String name,
+      String? description,
+      String color,
+      bool default_,
+      String? archivedAt,
+      SimpleUser? archivedBy}) get copyWith => _copyWith;
 
-  Label _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? archivedBy = sdkOmittedValue}) => Label(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as bool,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    archivedBy: identical(archivedBy, sdkOmittedValue) ? this.archivedBy : archivedBy as SimpleUser?,
-  );
+  Label _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? archivedBy = sdkOmittedValue}) =>
+      Label(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as bool,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        archivedBy: identical(archivedBy, sdkOmittedValue)
+            ? this.archivedBy
+            : archivedBy as SimpleUser?,
+      );
 
   factory Label.fromJson(Map<String, dynamic> json) => Label(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    name: (json['name'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    color: (json['color'] as String?)!,
-    default_: (json['default'] as bool?)!,
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    archivedBy: json.containsKey('archived_by') ? json['archived_by'] != null ? SimpleUser.fromJson(json['archived_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'archived_by', 'Required property is missing'),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        name: (json['name'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        color: (json['color'] as String?)!,
+        default_: (json['default'] as bool?)!,
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        archivedBy: json.containsKey('archived_by')
+            ? json['archived_by'] != null
+                ? SimpleUser.fromJson(
+                    json['archived_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'archived_by', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'name': name,
-    'description': description,
-    'color': color,
-    'default': default_,
-    'archived_at': archivedAt,
-    'archived_by': archivedBy?.toJson(),
-  };
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'name': name,
+        'description': description,
+        'color': color,
+        'default': default_,
+        'archived_at': archivedAt,
+        'archived_by': archivedBy?.toJson(),
+      };
 }

@@ -4,14 +4,18 @@
 part of 'webhook_issues_transferred.dart';
 
 // webhook_issues_transferred domain models
-final class WebhookIssuesTransferredChangesNewRepositoryPushedAtInt extends WebhookIssuesTransferredChangesNewRepositoryPushedAt {
+final class WebhookIssuesTransferredChangesNewRepositoryPushedAtInt
+    extends WebhookIssuesTransferredChangesNewRepositoryPushedAt {
   final int value;
   const WebhookIssuesTransferredChangesNewRepositoryPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookIssuesTransferredChangesNewRepositoryPushedAtString extends WebhookIssuesTransferredChangesNewRepositoryPushedAt {
+final class WebhookIssuesTransferredChangesNewRepositoryPushedAtString
+    extends WebhookIssuesTransferredChangesNewRepositoryPushedAt {
   final String value;
   const WebhookIssuesTransferredChangesNewRepositoryPushedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

@@ -6,12 +6,12 @@ part of 'shared_repository.dart';
 // shared_repository domain models
 /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 final class RepositoryRuleEnforcement {
-
   final String value;
 
   const RepositoryRuleEnforcement._(this.value);
 
-  factory RepositoryRuleEnforcement.fromJson(String value) => RepositoryRuleEnforcement._(value);
+  factory RepositoryRuleEnforcement.fromJson(String value) =>
+      RepositoryRuleEnforcement._(value);
 
   static const disabled = RepositoryRuleEnforcement._('disabled');
   static const active = RepositoryRuleEnforcement._('active');
@@ -19,10 +19,13 @@ final class RepositoryRuleEnforcement {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleEnforcement && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleEnforcement && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

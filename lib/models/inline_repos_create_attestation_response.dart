@@ -7,27 +7,35 @@ part of 'inline.dart';
 class ReposCreateAttestationResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the attestation.
   final SdkOptional<int> id;
 
   const ReposCreateAttestationResponse({this.id = const SdkOmitted()});
 
-  ReposCreateAttestationResponse Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  ReposCreateAttestationResponse Function({SdkOptional<int> id}) get copyWith =>
+      _copyWith;
 
-  ReposCreateAttestationResponse _copyWith({Object? id = sdkOmittedValue}) => ReposCreateAttestationResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  ReposCreateAttestationResponse _copyWith({Object? id = sdkOmittedValue}) =>
+      ReposCreateAttestationResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory ReposCreateAttestationResponse.fromJson(Map<String, dynamic> json) => ReposCreateAttestationResponse(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory ReposCreateAttestationResponse.fromJson(Map<String, dynamic> json) =>
+      ReposCreateAttestationResponse(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
@@ -38,253 +46,478 @@ class ReposListAttestationsResponseAttestationsItemBundle {
   final SdkOptional<Map<String, Object?>> verificationMaterial;
   final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  const ReposListAttestationsResponseAttestationsItemBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
+  const ReposListAttestationsResponseAttestationsItemBundle(
+      {this.mediaType = const SdkOmitted(),
+      this.verificationMaterial = const SdkOmitted(),
+      this.dsseEnvelope = const SdkOmitted()});
 
-  ReposListAttestationsResponseAttestationsItemBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
+  ReposListAttestationsResponseAttestationsItemBundle Function(
+          {SdkOptional<String> mediaType,
+          SdkOptional<Map<String, Object?>> verificationMaterial,
+          SdkOptional<Map<String, Object?>> dsseEnvelope})
+      get copyWith => _copyWith;
 
-  ReposListAttestationsResponseAttestationsItemBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => ReposListAttestationsResponseAttestationsItemBundle(
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
-    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
-    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
-  );
+  ReposListAttestationsResponseAttestationsItemBundle _copyWith(
+          {Object? mediaType = sdkOmittedValue,
+          Object? verificationMaterial = sdkOmittedValue,
+          Object? dsseEnvelope = sdkOmittedValue}) =>
+      ReposListAttestationsResponseAttestationsItemBundle(
+        mediaType: identical(mediaType, sdkOmittedValue)
+            ? this.mediaType
+            : mediaType as SdkOptional<String>,
+        verificationMaterial: identical(verificationMaterial, sdkOmittedValue)
+            ? this.verificationMaterial
+            : verificationMaterial as SdkOptional<Map<String, Object?>>,
+        dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue)
+            ? this.dsseEnvelope
+            : dsseEnvelope as SdkOptional<Map<String, Object?>>,
+      );
 
-  factory ReposListAttestationsResponseAttestationsItemBundle.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponseAttestationsItemBundle(
-    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
-    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-  );
+  factory ReposListAttestationsResponseAttestationsItemBundle.fromJson(
+          Map<String, dynamic> json) =>
+      ReposListAttestationsResponseAttestationsItemBundle(
+        mediaType: json['mediaType'] != null
+            ? SdkPresent((json['mediaType'] as String?)!)
+            : const SdkOmitted(),
+        verificationMaterial: json['verificationMaterial'] != null
+            ? SdkPresent((json['verificationMaterial'] == null
+                ? null
+                : Map<String, dynamic>.from(json['verificationMaterial'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+        dsseEnvelope: json['dsseEnvelope'] != null
+            ? SdkPresent((json['dsseEnvelope'] == null
+                ? null
+                : Map<String, dynamic>.from(json['dsseEnvelope'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (mediaType) {
-      SdkPresent<String>(value: final value) => {'mediaType': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verificationMaterial) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dsseEnvelope) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (mediaType) {
+          SdkPresent<String>(value: final value) => {
+              'mediaType': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verificationMaterial) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'verificationMaterial': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dsseEnvelope) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'dsseEnvelope': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposListAttestationsResponseAttestationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
   final SdkOptional<ReposListAttestationsResponseAttestationsItemBundle> bundle;
   final SdkOptional<int> repositoryId;
   final SdkOptional<String> bundleUrl;
   final SdkOptional<String> initiator;
 
-  const ReposListAttestationsResponseAttestationsItem({this.bundle = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.bundleUrl = const SdkOmitted(), this.initiator = const SdkOmitted()});
+  const ReposListAttestationsResponseAttestationsItem(
+      {this.bundle = const SdkOmitted(),
+      this.repositoryId = const SdkOmitted(),
+      this.bundleUrl = const SdkOmitted(),
+      this.initiator = const SdkOmitted()});
 
-  ReposListAttestationsResponseAttestationsItem Function({SdkOptional<ReposListAttestationsResponseAttestationsItemBundle> bundle, SdkOptional<int> repositoryId, SdkOptional<String> bundleUrl, SdkOptional<String> initiator}) get copyWith => _copyWith;
+  ReposListAttestationsResponseAttestationsItem Function(
+      {SdkOptional<ReposListAttestationsResponseAttestationsItemBundle> bundle,
+      SdkOptional<int> repositoryId,
+      SdkOptional<String> bundleUrl,
+      SdkOptional<String> initiator}) get copyWith => _copyWith;
 
-  ReposListAttestationsResponseAttestationsItem _copyWith({Object? bundle = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? bundleUrl = sdkOmittedValue, Object? initiator = sdkOmittedValue}) => ReposListAttestationsResponseAttestationsItem(
-    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as SdkOptional<ReposListAttestationsResponseAttestationsItemBundle>,
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
-    bundleUrl: identical(bundleUrl, sdkOmittedValue) ? this.bundleUrl : bundleUrl as SdkOptional<String>,
-    initiator: identical(initiator, sdkOmittedValue) ? this.initiator : initiator as SdkOptional<String>,
-  );
+  ReposListAttestationsResponseAttestationsItem _copyWith(
+          {Object? bundle = sdkOmittedValue,
+          Object? repositoryId = sdkOmittedValue,
+          Object? bundleUrl = sdkOmittedValue,
+          Object? initiator = sdkOmittedValue}) =>
+      ReposListAttestationsResponseAttestationsItem(
+        bundle: identical(bundle, sdkOmittedValue)
+            ? this.bundle
+            : bundle as SdkOptional<
+                ReposListAttestationsResponseAttestationsItemBundle>,
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        bundleUrl: identical(bundleUrl, sdkOmittedValue)
+            ? this.bundleUrl
+            : bundleUrl as SdkOptional<String>,
+        initiator: identical(initiator, sdkOmittedValue)
+            ? this.initiator
+            : initiator as SdkOptional<String>,
+      );
 
-  factory ReposListAttestationsResponseAttestationsItem.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponseAttestationsItem(
-    bundle: json['bundle'] != null ? SdkPresent((json['bundle'] != null ? ReposListAttestationsResponseAttestationsItemBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    bundleUrl: json['bundle_url'] != null ? SdkPresent((json['bundle_url'] as String?)!) : const SdkOmitted(),
-    initiator: json['initiator'] != null ? SdkPresent((json['initiator'] as String?)!) : const SdkOmitted(),
-  );
+  factory ReposListAttestationsResponseAttestationsItem.fromJson(
+          Map<String, dynamic> json) =>
+      ReposListAttestationsResponseAttestationsItem(
+        bundle: json['bundle'] != null
+            ? SdkPresent((json['bundle'] != null
+                ? ReposListAttestationsResponseAttestationsItemBundle.fromJson(
+                    json['bundle'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        bundleUrl: json['bundle_url'] != null
+            ? SdkPresent((json['bundle_url'] as String?)!)
+            : const SdkOmitted(),
+        initiator: json['initiator'] != null
+            ? SdkPresent((json['initiator'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (bundle) {
-      SdkPresent<ReposListAttestationsResponseAttestationsItemBundle>(value: final value) => {'bundle': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryId) {
-      SdkPresent<int>(value: final value) => {'repository_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bundleUrl) {
-      SdkPresent<String>(value: final value) => {'bundle_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (initiator) {
-      SdkPresent<String>(value: final value) => {'initiator': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (bundle) {
+          SdkPresent<ReposListAttestationsResponseAttestationsItemBundle>(
+            value: final value
+          ) =>
+            {
+              'bundle': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bundleUrl) {
+          SdkPresent<String>(value: final value) => {
+              'bundle_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (initiator) {
+          SdkPresent<String>(value: final value) => {
+              'initiator': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposListAttestationsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<List<ReposListAttestationsResponseAttestationsItem>> attestations;
+  final SdkOptional<List<ReposListAttestationsResponseAttestationsItem>>
+      attestations;
 
   const ReposListAttestationsResponse({this.attestations = const SdkOmitted()});
 
-  ReposListAttestationsResponse Function({SdkOptional<List<ReposListAttestationsResponseAttestationsItem>> attestations}) get copyWith => _copyWith;
+  ReposListAttestationsResponse Function(
+      {SdkOptional<List<ReposListAttestationsResponseAttestationsItem>>
+          attestations}) get copyWith => _copyWith;
 
-  ReposListAttestationsResponse _copyWith({Object? attestations = sdkOmittedValue}) => ReposListAttestationsResponse(
-    attestations: identical(attestations, sdkOmittedValue) ? this.attestations : attestations as SdkOptional<List<ReposListAttestationsResponseAttestationsItem>>,
-  );
+  ReposListAttestationsResponse _copyWith(
+          {Object? attestations = sdkOmittedValue}) =>
+      ReposListAttestationsResponse(
+        attestations: identical(attestations, sdkOmittedValue)
+            ? this.attestations
+            : attestations as SdkOptional<
+                List<ReposListAttestationsResponseAttestationsItem>>,
+      );
 
-  factory ReposListAttestationsResponse.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponse(
-    attestations: json['attestations'] != null ? SdkPresent(((json['attestations'] as List?)?.map((e) => ReposListAttestationsResponseAttestationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ReposListAttestationsResponse.fromJson(Map<String, dynamic> json) =>
+      ReposListAttestationsResponse(
+        attestations: json['attestations'] != null
+            ? SdkPresent(((json['attestations'] as List?)
+                ?.map((e) =>
+                    ReposListAttestationsResponseAttestationsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (attestations) {
-      SdkPresent<List<ReposListAttestationsResponseAttestationsItem>>(value: final value) => {'attestations': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (attestations) {
+          SdkPresent<List<ReposListAttestationsResponseAttestationsItem>>(
+            value: final value
+          ) =>
+            {
+              'attestations': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposCreateAutolinkRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// This prefix appended by certain characters will generate a link any time it is found in an issue, pull request, or commit.
   final String keyPrefix;
+
   /// The URL must contain `&lt;num&gt;` for the reference number. `&lt;num&gt;` matches different characters depending on the value of `is_alphanumeric`.
   final String urlTemplate;
+
   /// Whether this autolink reference matches alphanumeric characters. If true, the `&lt;num&gt;` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
   final SdkOptional<bool> isAlphanumeric;
 
-  const ReposCreateAutolinkRequestBody({required this.keyPrefix, required this.urlTemplate, this.isAlphanumeric = const SdkOmitted()});
+  const ReposCreateAutolinkRequestBody(
+      {required this.keyPrefix,
+      required this.urlTemplate,
+      this.isAlphanumeric = const SdkOmitted()});
 
-  ReposCreateAutolinkRequestBody Function({String keyPrefix, String urlTemplate, SdkOptional<bool> isAlphanumeric}) get copyWith => _copyWith;
+  ReposCreateAutolinkRequestBody Function(
+      {String keyPrefix,
+      String urlTemplate,
+      SdkOptional<bool> isAlphanumeric}) get copyWith => _copyWith;
 
-  ReposCreateAutolinkRequestBody _copyWith({Object? keyPrefix = sdkOmittedValue, Object? urlTemplate = sdkOmittedValue, Object? isAlphanumeric = sdkOmittedValue}) => ReposCreateAutolinkRequestBody(
-    keyPrefix: identical(keyPrefix, sdkOmittedValue) ? this.keyPrefix : keyPrefix as String,
-    urlTemplate: identical(urlTemplate, sdkOmittedValue) ? this.urlTemplate : urlTemplate as String,
-    isAlphanumeric: identical(isAlphanumeric, sdkOmittedValue) ? this.isAlphanumeric : isAlphanumeric as SdkOptional<bool>,
-  );
+  ReposCreateAutolinkRequestBody _copyWith(
+          {Object? keyPrefix = sdkOmittedValue,
+          Object? urlTemplate = sdkOmittedValue,
+          Object? isAlphanumeric = sdkOmittedValue}) =>
+      ReposCreateAutolinkRequestBody(
+        keyPrefix: identical(keyPrefix, sdkOmittedValue)
+            ? this.keyPrefix
+            : keyPrefix as String,
+        urlTemplate: identical(urlTemplate, sdkOmittedValue)
+            ? this.urlTemplate
+            : urlTemplate as String,
+        isAlphanumeric: identical(isAlphanumeric, sdkOmittedValue)
+            ? this.isAlphanumeric
+            : isAlphanumeric as SdkOptional<bool>,
+      );
 
-  factory ReposCreateAutolinkRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateAutolinkRequestBody(
-    keyPrefix: (json['key_prefix'] as String?)!,
-    urlTemplate: (json['url_template'] as String?)!,
-    isAlphanumeric: json['is_alphanumeric'] != null ? SdkPresent((json['is_alphanumeric'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ReposCreateAutolinkRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposCreateAutolinkRequestBody(
+        keyPrefix: (json['key_prefix'] as String?)!,
+        urlTemplate: (json['url_template'] as String?)!,
+        isAlphanumeric: json['is_alphanumeric'] != null
+            ? SdkPresent((json['is_alphanumeric'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key_prefix': keyPrefix,
-    'url_template': urlTemplate,
-    ...switch (isAlphanumeric) {
-      SdkPresent<bool>(value: final value) => {'is_alphanumeric': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'key_prefix': keyPrefix,
+        'url_template': urlTemplate,
+        ...switch (isAlphanumeric) {
+          SdkPresent<bool>(value: final value) => {
+              'is_alphanumeric': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the required check
   final String context;
+
   /// The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
   final SdkOptional<int> appId;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem({required this.context, this.appId = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
+      {required this.context, this.appId = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem Function({String context, SdkOptional<int> appId}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem Function(
+      {String context, SdkOptional<int> appId}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem _copyWith({Object? context = sdkOmittedValue, Object? appId = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
-    context: identical(context, sdkOmittedValue) ? this.context : context as String,
-    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as SdkOptional<int>,
-  );
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem
+      _copyWith(
+              {Object? context = sdkOmittedValue,
+              Object? appId = sdkOmittedValue}) =>
+          ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
+            context: identical(context, sdkOmittedValue)
+                ? this.context
+                : context as String,
+            appId: identical(appId, sdkOmittedValue)
+                ? this.appId
+                : appId as SdkOptional<int>,
+          );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
-    context: (json['context'] as String?)!,
-    appId: json['app_id'] != null ? SdkPresent(((json['app_id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem.fromJson(
+          Map<String, dynamic> json) =>
+      ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
+        context: (json['context'] as String?)!,
+        appId: json['app_id'] != null
+            ? SdkPresent(((json['app_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'context': context,
-    ...switch (appId) {
-      SdkPresent<int>(value: final value) => {'app_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'context': context,
+        ...switch (appId) {
+          SdkPresent<int>(value: final value) => {
+              'app_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Require status checks to pass before merging. Set to `null` to disable.
 class ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Require branches to be up to date before merging.
   final bool strict;
+
   /// **Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
   final List<String> contexts;
+
   /// The list of status checks to require in order to merge into this branch.
-  final SdkOptional<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>> checks;
+  final SdkOptional<
+          List<
+              ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>
+      checks;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks({required this.strict, required this.contexts, this.checks = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
+      {required this.strict,
+      required this.contexts,
+      this.checks = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks Function({bool strict, List<String> contexts, SdkOptional<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>> checks}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks Function(
+      {bool strict,
+      List<String> contexts,
+      SdkOptional<
+              List<
+                  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>
+          checks}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks _copyWith({Object? strict = sdkOmittedValue, Object? contexts = sdkOmittedValue, Object? checks = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
-    strict: identical(strict, sdkOmittedValue) ? this.strict : strict as bool,
-    contexts: identical(contexts, sdkOmittedValue) ? this.contexts : contexts as List<String>,
-    checks: identical(checks, sdkOmittedValue) ? this.checks : checks as SdkOptional<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>,
-  );
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks _copyWith(
+          {Object? strict = sdkOmittedValue,
+          Object? contexts = sdkOmittedValue,
+          Object? checks = sdkOmittedValue}) =>
+      ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
+        strict:
+            identical(strict, sdkOmittedValue) ? this.strict : strict as bool,
+        contexts: identical(contexts, sdkOmittedValue)
+            ? this.contexts
+            : contexts as List<String>,
+        checks: identical(checks, sdkOmittedValue)
+            ? this.checks
+            : checks as SdkOptional<
+                List<
+                    ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>,
+      );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
-    strict: (json['strict'] as bool?)!,
-    contexts: ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
-    checks: json['checks'] != null ? SdkPresent(((json['checks'] as List?)?.map((e) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks.fromJson(
+          Map<String, dynamic> json) =>
+      ReposUpdateBranchProtectionRequestBodyRequiredStatusChecks(
+        strict: (json['strict'] as bool?)!,
+        contexts:
+            ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
+        checks: json['checks'] != null
+            ? SdkPresent(((json['checks'] as List?)
+                ?.map((e) =>
+                    ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'strict': strict,
-    'contexts': contexts,
-    ...switch (checks) {
-      SdkPresent<List<ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>(value: final value) => {'checks': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'strict': strict,
+        'contexts': contexts,
+        ...switch (checks) {
+          SdkPresent<
+                List<
+                    ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem>>(
+            value: final value
+          ) =>
+            {
+              'checks': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
 class ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The list of user `login`s with dismissal access
   final SdkOptional<List<String>> users;
+
   /// The list of team `slug`s with dismissal access
   final SdkOptional<List<String>> teams;
+
   /// The list of app `slug`s with dismissal access
   final SdkOptional<List<String>> apps;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions({this.users = const SdkOmitted(), this.teams = const SdkOmitted(), this.apps = const SdkOmitted()});
+  const ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
+      {this.users = const SdkOmitted(),
+      this.teams = const SdkOmitted(),
+      this.apps = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions Function({SdkOptional<List<String>> users, SdkOptional<List<String>> teams, SdkOptional<List<String>> apps}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions Function(
+      {SdkOptional<List<String>> users,
+      SdkOptional<List<String>> teams,
+      SdkOptional<List<String>> apps}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
-    users: identical(users, sdkOmittedValue) ? this.users : users as SdkOptional<List<String>>,
-    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as SdkOptional<List<String>>,
-    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<String>>,
-  );
+  ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions
+      _copyWith(
+              {Object? users = sdkOmittedValue,
+              Object? teams = sdkOmittedValue,
+              Object? apps = sdkOmittedValue}) =>
+          ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
+            users: identical(users, sdkOmittedValue)
+                ? this.users
+                : users as SdkOptional<List<String>>,
+            teams: identical(teams, sdkOmittedValue)
+                ? this.teams
+                : teams as SdkOptional<List<String>>,
+            apps: identical(apps, sdkOmittedValue)
+                ? this.apps
+                : apps as SdkOptional<List<String>>,
+          );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
-    users: json['users'] != null ? SdkPresent(((json['users'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    teams: json['teams'] != null ? SdkPresent(((json['teams'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions.fromJson(
+          Map<String, dynamic> json) =>
+      ReposUpdateBranchProtectionRequestBodyRequiredPullRequestReviewsDismissalRestrictions(
+        users: json['users'] != null
+            ? SdkPresent(
+                ((json['users'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        teams: json['teams'] != null
+            ? SdkPresent(
+                ((json['teams'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        apps: json['apps'] != null
+            ? SdkPresent(
+                ((json['apps'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (users) {
-      SdkPresent<List<String>>(value: final value) => {'users': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (teams) {
-      SdkPresent<List<String>>(value: final value) => {'teams': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apps) {
-      SdkPresent<List<String>>(value: final value) => {'apps': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (users) {
+          SdkPresent<List<String>>(value: final value) => {
+              'users': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teams) {
+          SdkPresent<List<String>>(value: final value) => {
+              'teams': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apps) {
+          SdkPresent<List<String>>(value: final value) => {
+              'apps': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

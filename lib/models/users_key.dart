@@ -8,60 +8,105 @@ part of 'users.dart';
 class Key {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `key` wire field.
   final String key;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `boolean` value serialized in the `verified` wire field.
   final bool verified;
+
   /// Required `boolean` value serialized in the `read_only` wire field.
   final bool readOnly;
+
   /// Optional `date-time`-formatted value serialized in the `last_used` wire field.
   final SdkOptional<String?> lastUsed;
 
-  const Key({required this.key, required this.id, required this.url, required this.title, required this.createdAt, required this.verified, required this.readOnly, this.lastUsed = const SdkOmitted()});
+  const Key(
+      {required this.key,
+      required this.id,
+      required this.url,
+      required this.title,
+      required this.createdAt,
+      required this.verified,
+      required this.readOnly,
+      this.lastUsed = const SdkOmitted()});
 
-  Key Function({String key, int id, String url, String title, String createdAt, bool verified, bool readOnly, SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
+  Key Function(
+      {String key,
+      int id,
+      String url,
+      String title,
+      String createdAt,
+      bool verified,
+      bool readOnly,
+      SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
 
-  Key _copyWith({Object? key = sdkOmittedValue, Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? title = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? verified = sdkOmittedValue, Object? readOnly = sdkOmittedValue, Object? lastUsed = sdkOmittedValue}) => Key(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
-    readOnly: identical(readOnly, sdkOmittedValue) ? this.readOnly : readOnly as bool,
-    lastUsed: identical(lastUsed, sdkOmittedValue) ? this.lastUsed : lastUsed as SdkOptional<String?>,
-  );
+  Key _copyWith(
+          {Object? key = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? verified = sdkOmittedValue,
+          Object? readOnly = sdkOmittedValue,
+          Object? lastUsed = sdkOmittedValue}) =>
+      Key(
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        verified: identical(verified, sdkOmittedValue)
+            ? this.verified
+            : verified as bool,
+        readOnly: identical(readOnly, sdkOmittedValue)
+            ? this.readOnly
+            : readOnly as bool,
+        lastUsed: identical(lastUsed, sdkOmittedValue)
+            ? this.lastUsed
+            : lastUsed as SdkOptional<String?>,
+      );
 
   factory Key.fromJson(Map<String, dynamic> json) => Key(
-    key: (json['key'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    url: (json['url'] as String?)!,
-    title: (json['title'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    verified: (json['verified'] as bool?)!,
-    readOnly: (json['read_only'] as bool?)!,
-    lastUsed: json.containsKey('last_used') ? SdkPresent(json['last_used'] as String?) : const SdkOmitted(),
-  );
+        key: (json['key'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        url: (json['url'] as String?)!,
+        title: (json['title'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        verified: (json['verified'] as bool?)!,
+        readOnly: (json['read_only'] as bool?)!,
+        lastUsed: json.containsKey('last_used')
+            ? SdkPresent(json['last_used'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'id': id,
-    'url': url,
-    'title': title,
-    'created_at': createdAt,
-    'verified': verified,
-    'read_only': readOnly,
-    ...switch (lastUsed) {
-      SdkPresent<String?>(value: final value) => {'last_used': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'key': key,
+        'id': id,
+        'url': url,
+        'title': title,
+        'created_at': createdAt,
+        'verified': verified,
+        'read_only': readOnly,
+        ...switch (lastUsed) {
+          SdkPresent<String?>(value: final value) => {
+              'last_used': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

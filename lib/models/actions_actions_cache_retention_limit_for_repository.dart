@@ -8,25 +8,38 @@ part of 'actions_actions_cache.dart';
 class ActionsCacheRetentionLimitForRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The maximum number of days to keep caches in this repository.
   final SdkOptional<int> maxCacheRetentionDays;
 
-  const ActionsCacheRetentionLimitForRepository({this.maxCacheRetentionDays = const SdkOmitted()});
+  const ActionsCacheRetentionLimitForRepository(
+      {this.maxCacheRetentionDays = const SdkOmitted()});
 
-  ActionsCacheRetentionLimitForRepository Function({SdkOptional<int> maxCacheRetentionDays}) get copyWith => _copyWith;
+  ActionsCacheRetentionLimitForRepository Function(
+      {SdkOptional<int> maxCacheRetentionDays}) get copyWith => _copyWith;
 
-  ActionsCacheRetentionLimitForRepository _copyWith({Object? maxCacheRetentionDays = sdkOmittedValue}) => ActionsCacheRetentionLimitForRepository(
-    maxCacheRetentionDays: identical(maxCacheRetentionDays, sdkOmittedValue) ? this.maxCacheRetentionDays : maxCacheRetentionDays as SdkOptional<int>,
-  );
+  ActionsCacheRetentionLimitForRepository _copyWith(
+          {Object? maxCacheRetentionDays = sdkOmittedValue}) =>
+      ActionsCacheRetentionLimitForRepository(
+        maxCacheRetentionDays: identical(maxCacheRetentionDays, sdkOmittedValue)
+            ? this.maxCacheRetentionDays
+            : maxCacheRetentionDays as SdkOptional<int>,
+      );
 
-  factory ActionsCacheRetentionLimitForRepository.fromJson(Map<String, dynamic> json) => ActionsCacheRetentionLimitForRepository(
-    maxCacheRetentionDays: json['max_cache_retention_days'] != null ? SdkPresent(((json['max_cache_retention_days'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory ActionsCacheRetentionLimitForRepository.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCacheRetentionLimitForRepository(
+        maxCacheRetentionDays: json['max_cache_retention_days'] != null
+            ? SdkPresent(((json['max_cache_retention_days'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (maxCacheRetentionDays) {
-      SdkPresent<int>(value: final value) => {'max_cache_retention_days': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (maxCacheRetentionDays) {
+          SdkPresent<int>(value: final value) => {
+              'max_cache_retention_days': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

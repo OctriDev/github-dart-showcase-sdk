@@ -8,54 +8,91 @@ part of 'actions_actions_policy.dart';
 class ActionsPolicyWorkflowPathConditionWorkflowPath {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Array of workflow file paths or glob patterns to include. An empty array includes all workflows not matched by an excluded pattern. Use `~ALL` by itself to include all workflows. `~ALL` cannot be combined with other included patterns.
   final List<String> include;
+
   /// Array of workflow file paths or glob patterns to exclude. The condition will not pass if any of these patterns match. `~ALL` is not allowed in this array.
   final List<String> exclude;
 
-  const ActionsPolicyWorkflowPathConditionWorkflowPath({required this.include, required this.exclude});
+  const ActionsPolicyWorkflowPathConditionWorkflowPath(
+      {required this.include, required this.exclude});
 
-  ActionsPolicyWorkflowPathConditionWorkflowPath Function({List<String> include, List<String> exclude}) get copyWith => _copyWith;
+  ActionsPolicyWorkflowPathConditionWorkflowPath Function(
+      {List<String> include, List<String> exclude}) get copyWith => _copyWith;
 
-  ActionsPolicyWorkflowPathConditionWorkflowPath _copyWith({Object? include = sdkOmittedValue, Object? exclude = sdkOmittedValue}) => ActionsPolicyWorkflowPathConditionWorkflowPath(
-    include: identical(include, sdkOmittedValue) ? this.include : include as List<String>,
-    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as List<String>,
-  );
+  ActionsPolicyWorkflowPathConditionWorkflowPath _copyWith(
+          {Object? include = sdkOmittedValue,
+          Object? exclude = sdkOmittedValue}) =>
+      ActionsPolicyWorkflowPathConditionWorkflowPath(
+        include: identical(include, sdkOmittedValue)
+            ? this.include
+            : include as List<String>,
+        exclude: identical(exclude, sdkOmittedValue)
+            ? this.exclude
+            : exclude as List<String>,
+      );
 
-  factory ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(Map<String, dynamic> json) => ActionsPolicyWorkflowPathConditionWorkflowPath(
-    include: ((json['include'] as List?)?.map((e) => e as String).toList())!,
-    exclude: ((json['exclude'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsPolicyWorkflowPathConditionWorkflowPath(
+        include:
+            ((json['include'] as List?)?.map((e) => e as String).toList())!,
+        exclude:
+            ((json['exclude'] as List?)?.map((e) => e as String).toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'include': include,
-    'exclude': exclude,
-  };
+        'include': include,
+        'exclude': exclude,
+      };
 }
 
 /// Parameters for an Actions policy workflow path condition. Omitting `workflow_path` when creating a policy targets all workflows without storing an explicit condition. Omitting it when updating a policy preserves the existing workflow targeting. For new or changed workflow conditions, the API requires at least one included or excluded pattern. This is validated server-side rather than by this schema, which can also describe existing stored conditions.
 class ActionsPolicyWorkflowPathCondition {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `workflow_path` wire field.
-  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath;
+  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
+      workflowPath;
 
-  const ActionsPolicyWorkflowPathCondition({this.workflowPath = const SdkOmitted()});
+  const ActionsPolicyWorkflowPathCondition(
+      {this.workflowPath = const SdkOmitted()});
 
-  ActionsPolicyWorkflowPathCondition Function({SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath}) get copyWith => _copyWith;
+  ActionsPolicyWorkflowPathCondition Function(
+      {SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
+          workflowPath}) get copyWith => _copyWith;
 
-  ActionsPolicyWorkflowPathCondition _copyWith({Object? workflowPath = sdkOmittedValue}) => ActionsPolicyWorkflowPathCondition(
-    workflowPath: identical(workflowPath, sdkOmittedValue) ? this.workflowPath : workflowPath as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
-  );
+  ActionsPolicyWorkflowPathCondition _copyWith(
+          {Object? workflowPath = sdkOmittedValue}) =>
+      ActionsPolicyWorkflowPathCondition(
+        workflowPath: identical(workflowPath, sdkOmittedValue)
+            ? this.workflowPath
+            : workflowPath
+                as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
+      );
 
-  factory ActionsPolicyWorkflowPathCondition.fromJson(Map<String, dynamic> json) => ActionsPolicyWorkflowPathCondition(
-    workflowPath: json['workflow_path'] != null ? SdkPresent((json['workflow_path'] != null ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(json['workflow_path'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory ActionsPolicyWorkflowPathCondition.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsPolicyWorkflowPathCondition(
+        workflowPath: json['workflow_path'] != null
+            ? SdkPresent((json['workflow_path'] != null
+                ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
+                    json['workflow_path'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (workflowPath) {
-      SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(value: final value) => {'workflow_path': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (workflowPath) {
+          SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(
+            value: final value
+          ) =>
+            {
+              'workflow_path': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -6,73 +6,110 @@ part of 'inline.dart';
 // Inline operation models
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy {
-
   final String value;
 
-  const AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy._(this.value);
+  const AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy._(
+      this.value);
 
-  factory AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy.fromJson(String value) => AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy._(value);
+  factory AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy.fromJson(
+          String value) =>
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy
+          ._(value);
 
-  static const all = AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy._('collaborators_only');
+  static const all =
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy
+          ._('all');
+  static const collaboratorsOnly =
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy
+          ._('collaborators_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AppsListReposAccessibleToInstallationResponseRepositoriesItemPullRequestCreationPolicy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage {
-
   final String value;
 
-  const AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage._(this.value);
+  const AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage._(
+      this.value);
 
-  factory AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage.fromJson(String value) => AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage._(value);
+  factory AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage.fromJson(
+          String value) =>
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage
+          ._(value);
 
-  static const prBody = AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage._('BLANK');
+  static const prBody =
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage
+          ._('PR_BODY');
+  static const commitMessages =
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage
+          ._('COMMIT_MESSAGES');
+  static const blank =
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage
+          ._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle {
-
   final String value;
 
-  const AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle._(this.value);
+  const AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle._(
+      this.value);
 
-  factory AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle.fromJson(String value) => AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle._(value);
+  factory AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle.fromJson(
+          String value) =>
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle
+          ._(value);
 
-  static const prTitle = AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const prTitle =
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle
+          ._('PR_TITLE');
+  static const commitOrPrTitle =
+      AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle
+          ._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AppsListReposAccessibleToInstallationResponseRepositoriesItemSquashMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListFilter {
-
   final String value;
 
   const IssuesListFilter._(this.value);
@@ -88,16 +125,18 @@ final class IssuesListFilter {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListState {
-
   final String value;
 
   const IssuesListState._(this.value);
@@ -110,16 +149,18 @@ final class IssuesListState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListSort {
-
   final String value;
 
   const IssuesListSort._(this.value);
@@ -132,163 +173,205 @@ final class IssuesListSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The rendering mode.
 final class MarkdownRenderRequestBodyMode {
-
   final String value;
 
   const MarkdownRenderRequestBodyMode._(this.value);
 
-  factory MarkdownRenderRequestBodyMode.fromJson(String value) => MarkdownRenderRequestBodyMode._(value);
+  factory MarkdownRenderRequestBodyMode.fromJson(String value) =>
+      MarkdownRenderRequestBodyMode._(value);
 
   static const markdown = MarkdownRenderRequestBodyMode._('markdown');
   static const gfm = MarkdownRenderRequestBodyMode._('gfm');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MarkdownRenderRequestBodyMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MarkdownRenderRequestBodyMode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class AppsListAccountsForPlanDirection {
-
   final String value;
 
   const AppsListAccountsForPlanDirection._(this.value);
 
-  factory AppsListAccountsForPlanDirection.fromJson(String value) => AppsListAccountsForPlanDirection._(value);
+  factory AppsListAccountsForPlanDirection.fromJson(String value) =>
+      AppsListAccountsForPlanDirection._(value);
 
   static const asc = AppsListAccountsForPlanDirection._('asc');
   static const desc = AppsListAccountsForPlanDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppsListAccountsForPlanDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AppsListAccountsForPlanDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class AppsListAccountsForPlanStubbedDirection {
-
   final String value;
 
   const AppsListAccountsForPlanStubbedDirection._(this.value);
 
-  factory AppsListAccountsForPlanStubbedDirection.fromJson(String value) => AppsListAccountsForPlanStubbedDirection._(value);
+  factory AppsListAccountsForPlanStubbedDirection.fromJson(String value) =>
+      AppsListAccountsForPlanStubbedDirection._(value);
 
   static const asc = AppsListAccountsForPlanStubbedDirection._('asc');
   static const desc = AppsListAccountsForPlanStubbedDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppsListAccountsForPlanStubbedDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AppsListAccountsForPlanStubbedDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class BillingGetAllBudgetsOrgScope {
-
   final String value;
 
   const BillingGetAllBudgetsOrgScope._(this.value);
 
-  factory BillingGetAllBudgetsOrgScope.fromJson(String value) => BillingGetAllBudgetsOrgScope._(value);
+  factory BillingGetAllBudgetsOrgScope.fromJson(String value) =>
+      BillingGetAllBudgetsOrgScope._(value);
 
   static const enterprise = BillingGetAllBudgetsOrgScope._('enterprise');
   static const organization = BillingGetAllBudgetsOrgScope._('organization');
   static const repository = BillingGetAllBudgetsOrgScope._('repository');
   static const costCenter = BillingGetAllBudgetsOrgScope._('cost_center');
-  static const multiUserCustomer = BillingGetAllBudgetsOrgScope._('multi_user_customer');
+  static const multiUserCustomer =
+      BillingGetAllBudgetsOrgScope._('multi_user_customer');
   static const user = BillingGetAllBudgetsOrgScope._('user');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BillingGetAllBudgetsOrgScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BillingGetAllBudgetsOrgScope && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The scope of the budget for this organization. - `organization`: Apply the budget to the organization. - `repository`: Apply the budget to a specific repository in the organization. - `multi_user_customer`: Apply a universal budget to all users in the organization. - `user`: Apply the budget to a single user in the organization. `user` and `multi_user_customer` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.
 final class BillingCreateOrganizationBudgetRequestBodyBudgetScope {
-
   final String value;
 
   const BillingCreateOrganizationBudgetRequestBodyBudgetScope._(this.value);
 
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetScope.fromJson(String value) => BillingCreateOrganizationBudgetRequestBodyBudgetScope._(value);
+  factory BillingCreateOrganizationBudgetRequestBodyBudgetScope.fromJson(
+          String value) =>
+      BillingCreateOrganizationBudgetRequestBodyBudgetScope._(value);
 
-  static const organization = BillingCreateOrganizationBudgetRequestBodyBudgetScope._('organization');
-  static const repository = BillingCreateOrganizationBudgetRequestBodyBudgetScope._('repository');
-  static const multiUserCustomer = BillingCreateOrganizationBudgetRequestBodyBudgetScope._('multi_user_customer');
-  static const user = BillingCreateOrganizationBudgetRequestBodyBudgetScope._('user');
+  static const organization =
+      BillingCreateOrganizationBudgetRequestBodyBudgetScope._('organization');
+  static const repository =
+      BillingCreateOrganizationBudgetRequestBodyBudgetScope._('repository');
+  static const multiUserCustomer =
+      BillingCreateOrganizationBudgetRequestBodyBudgetScope._(
+          'multi_user_customer');
+  static const user =
+      BillingCreateOrganizationBudgetRequestBodyBudgetScope._('user');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BillingCreateOrganizationBudgetRequestBodyBudgetScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BillingCreateOrganizationBudgetRequestBodyBudgetScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0 {
-
   final String value;
 
-  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(this.value);
+  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(
+      this.value);
 
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0.fromJson(String value) => BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(value);
+  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0.fromJson(
+          String value) =>
+      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(value);
 
-  static const bundlepricing = BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._('BundlePricing');
+  static const bundlepricing =
+      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(
+          'BundlePricing');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1 {
-
   final String value;
 
-  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(this.value);
+  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(
+      this.value);
 
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1.fromJson(String value) => BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(value);
+  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1.fromJson(
+          String value) =>
+      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(value);
 
-  static const productpricing = BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._('ProductPricing');
+  static const productpricing =
+      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(
+          'ProductPricing');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

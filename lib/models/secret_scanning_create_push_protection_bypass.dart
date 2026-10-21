@@ -8,64 +8,109 @@ part of 'secret_scanning.dart';
 class SecretScanningPushProtectionBypass {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The reason for bypassing push protection.
   final SdkOptional<SecretScanningPushProtectionBypassReason> reason;
+
   /// The time that the bypass will expire in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String?> expireAt;
+
   /// The token type this bypass is for.
   final SdkOptional<String> tokenType;
 
-  const SecretScanningPushProtectionBypass({this.reason = const SdkOmitted(), this.expireAt = const SdkOmitted(), this.tokenType = const SdkOmitted()});
+  const SecretScanningPushProtectionBypass(
+      {this.reason = const SdkOmitted(),
+      this.expireAt = const SdkOmitted(),
+      this.tokenType = const SdkOmitted()});
 
-  SecretScanningPushProtectionBypass Function({SdkOptional<SecretScanningPushProtectionBypassReason> reason, SdkOptional<String?> expireAt, SdkOptional<String> tokenType}) get copyWith => _copyWith;
+  SecretScanningPushProtectionBypass Function(
+      {SdkOptional<SecretScanningPushProtectionBypassReason> reason,
+      SdkOptional<String?> expireAt,
+      SdkOptional<String> tokenType}) get copyWith => _copyWith;
 
-  SecretScanningPushProtectionBypass _copyWith({Object? reason = sdkOmittedValue, Object? expireAt = sdkOmittedValue, Object? tokenType = sdkOmittedValue}) => SecretScanningPushProtectionBypass(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<SecretScanningPushProtectionBypassReason>,
-    expireAt: identical(expireAt, sdkOmittedValue) ? this.expireAt : expireAt as SdkOptional<String?>,
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
-  );
+  SecretScanningPushProtectionBypass _copyWith(
+          {Object? reason = sdkOmittedValue,
+          Object? expireAt = sdkOmittedValue,
+          Object? tokenType = sdkOmittedValue}) =>
+      SecretScanningPushProtectionBypass(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<SecretScanningPushProtectionBypassReason>,
+        expireAt: identical(expireAt, sdkOmittedValue)
+            ? this.expireAt
+            : expireAt as SdkOptional<String?>,
+        tokenType: identical(tokenType, sdkOmittedValue)
+            ? this.tokenType
+            : tokenType as SdkOptional<String>,
+      );
 
-  factory SecretScanningPushProtectionBypass.fromJson(Map<String, dynamic> json) => SecretScanningPushProtectionBypass(
-    reason: json['reason'] != null ? SdkPresent((json['reason'] != null ? SecretScanningPushProtectionBypassReason.fromJson(json['reason'] as String) : null)!) : const SdkOmitted(),
-    expireAt: json.containsKey('expire_at') ? SdkPresent(json['expire_at'] as String?) : const SdkOmitted(),
-    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningPushProtectionBypass.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningPushProtectionBypass(
+        reason: json['reason'] != null
+            ? SdkPresent((json['reason'] != null
+                ? SecretScanningPushProtectionBypassReason.fromJson(
+                    json['reason'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        expireAt: json.containsKey('expire_at')
+            ? SdkPresent(json['expire_at'] as String?)
+            : const SdkOmitted(),
+        tokenType: json['token_type'] != null
+            ? SdkPresent((json['token_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (reason) {
-      SdkPresent<SecretScanningPushProtectionBypassReason>(value: final value) => {'reason': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (expireAt) {
-      SdkPresent<String?>(value: final value) => {'expire_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tokenType) {
-      SdkPresent<String>(value: final value) => {'token_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reason) {
+          SdkPresent<SecretScanningPushProtectionBypassReason>(
+            value: final value
+          ) =>
+            {
+              'reason': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (expireAt) {
+          SdkPresent<String?>(value: final value) => {
+              'expire_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tokenType) {
+          SdkPresent<String>(value: final value) => {
+              'token_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The reason for bypassing push protection.
 final class SecretScanningPushProtectionBypassReason {
-
   final String value;
 
   const SecretScanningPushProtectionBypassReason._(this.value);
 
-  factory SecretScanningPushProtectionBypassReason.fromJson(String value) => SecretScanningPushProtectionBypassReason._(value);
+  factory SecretScanningPushProtectionBypassReason.fromJson(String value) =>
+      SecretScanningPushProtectionBypassReason._(value);
 
-  static const falsePositive = SecretScanningPushProtectionBypassReason._('false_positive');
-  static const usedInTests = SecretScanningPushProtectionBypassReason._('used_in_tests');
-  static const willFixLater = SecretScanningPushProtectionBypassReason._('will_fix_later');
+  static const falsePositive =
+      SecretScanningPushProtectionBypassReason._('false_positive');
+  static const usedInTests =
+      SecretScanningPushProtectionBypassReason._('used_in_tests');
+  static const willFixLater =
+      SecretScanningPushProtectionBypassReason._('will_fix_later');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningPushProtectionBypassReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningPushProtectionBypassReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

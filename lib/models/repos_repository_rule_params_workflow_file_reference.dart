@@ -8,43 +8,76 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleParamsWorkflowFileReference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The path to the workflow file
   final String path;
+
   /// The ref (branch or tag) of the workflow file to use
   final SdkOptional<String> ref;
+
   /// The ID of the repository where the workflow is defined
   final int repositoryId;
+
   /// The commit SHA of the workflow file to use
   final SdkOptional<String> sha;
 
-  const RepositoryRuleParamsWorkflowFileReference({required this.path, this.ref = const SdkOmitted(), required this.repositoryId, this.sha = const SdkOmitted()});
+  const RepositoryRuleParamsWorkflowFileReference(
+      {required this.path,
+      this.ref = const SdkOmitted(),
+      required this.repositoryId,
+      this.sha = const SdkOmitted()});
 
-  RepositoryRuleParamsWorkflowFileReference Function({String path, SdkOptional<String> ref, int repositoryId, SdkOptional<String> sha}) get copyWith => _copyWith;
+  RepositoryRuleParamsWorkflowFileReference Function(
+      {String path,
+      SdkOptional<String> ref,
+      int repositoryId,
+      SdkOptional<String> sha}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsWorkflowFileReference _copyWith({Object? path = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? sha = sdkOmittedValue}) => RepositoryRuleParamsWorkflowFileReference(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as int,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
-  );
+  RepositoryRuleParamsWorkflowFileReference _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? repositoryId = sdkOmittedValue,
+          Object? sha = sdkOmittedValue}) =>
+      RepositoryRuleParamsWorkflowFileReference(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as int,
+        sha: identical(sha, sdkOmittedValue)
+            ? this.sha
+            : sha as SdkOptional<String>,
+      );
 
-  factory RepositoryRuleParamsWorkflowFileReference.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsWorkflowFileReference(
-    path: (json['path'] as String?)!,
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-    repositoryId: ((json['repository_id'] as num?)?.toInt())!,
-    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleParamsWorkflowFileReference.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleParamsWorkflowFileReference(
+        path: (json['path'] as String?)!,
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
+        sha: json['sha'] != null
+            ? SdkPresent((json['sha'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    'repository_id': repositoryId,
-    ...switch (sha) {
-      SdkPresent<String>(value: final value) => {'sha': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'path': path,
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository_id': repositoryId,
+        ...switch (sha) {
+          SdkPresent<String>(value: final value) => {
+              'sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

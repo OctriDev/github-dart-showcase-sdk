@@ -6,7 +6,6 @@ part of 'campaigns.dart';
 // campaigns domain models
 /// Indicates whether a campaign is open or closed
 final class CampaignState {
-
   final String value;
 
   const CampaignState._(this.value);
@@ -18,143 +17,277 @@ final class CampaignState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CampaignState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CampaignState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional object value serialized in the `alert_stats` wire field.
 class CampaignSummaryAlertStats {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of open alerts
   final int openCount;
+
   /// The number of closed alerts
   final int closedCount;
+
   /// The number of in-progress alerts
   final int inProgressCount;
 
-  const CampaignSummaryAlertStats({required this.openCount, required this.closedCount, required this.inProgressCount});
+  const CampaignSummaryAlertStats(
+      {required this.openCount,
+      required this.closedCount,
+      required this.inProgressCount});
 
-  CampaignSummaryAlertStats Function({int openCount, int closedCount, int inProgressCount}) get copyWith => _copyWith;
+  CampaignSummaryAlertStats Function(
+      {int openCount,
+      int closedCount,
+      int inProgressCount}) get copyWith => _copyWith;
 
-  CampaignSummaryAlertStats _copyWith({Object? openCount = sdkOmittedValue, Object? closedCount = sdkOmittedValue, Object? inProgressCount = sdkOmittedValue}) => CampaignSummaryAlertStats(
-    openCount: identical(openCount, sdkOmittedValue) ? this.openCount : openCount as int,
-    closedCount: identical(closedCount, sdkOmittedValue) ? this.closedCount : closedCount as int,
-    inProgressCount: identical(inProgressCount, sdkOmittedValue) ? this.inProgressCount : inProgressCount as int,
-  );
+  CampaignSummaryAlertStats _copyWith(
+          {Object? openCount = sdkOmittedValue,
+          Object? closedCount = sdkOmittedValue,
+          Object? inProgressCount = sdkOmittedValue}) =>
+      CampaignSummaryAlertStats(
+        openCount: identical(openCount, sdkOmittedValue)
+            ? this.openCount
+            : openCount as int,
+        closedCount: identical(closedCount, sdkOmittedValue)
+            ? this.closedCount
+            : closedCount as int,
+        inProgressCount: identical(inProgressCount, sdkOmittedValue)
+            ? this.inProgressCount
+            : inProgressCount as int,
+      );
 
-  factory CampaignSummaryAlertStats.fromJson(Map<String, dynamic> json) => CampaignSummaryAlertStats(
-    openCount: ((json['open_count'] as num?)?.toInt())!,
-    closedCount: ((json['closed_count'] as num?)?.toInt())!,
-    inProgressCount: ((json['in_progress_count'] as num?)?.toInt())!,
-  );
+  factory CampaignSummaryAlertStats.fromJson(Map<String, dynamic> json) =>
+      CampaignSummaryAlertStats(
+        openCount: ((json['open_count'] as num?)?.toInt())!,
+        closedCount: ((json['closed_count'] as num?)?.toInt())!,
+        inProgressCount: ((json['in_progress_count'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'open_count': openCount,
-    'closed_count': closedCount,
-    'in_progress_count': inProgressCount,
-  };
+        'open_count': openCount,
+        'closed_count': closedCount,
+        'in_progress_count': inProgressCount,
+      };
 }
 
 /// The campaign metadata and alert stats.
 class CampaignSummary {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of the newly created campaign
   final int number;
+
   /// The date and time the campaign was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String createdAt;
+
   /// The date and time the campaign was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String updatedAt;
+
   /// The campaign name
   final SdkOptional<String> name;
+
   /// The campaign description
   final String description;
+
   /// The campaign managers
   final List<SimpleUser> managers;
+
   /// The campaign team managers
   final SdkOptional<List<Team>> teamManagers;
+
   /// The date and time the campaign was published, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final SdkOptional<String> publishedAt;
+
   /// The date and time the campaign has ended, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String endsAt;
+
   /// The date and time the campaign was closed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the campaign is still open.
   final SdkOptional<String?> closedAt;
+
   /// Indicates whether a campaign is open or closed
   final CampaignState state;
+
   /// The contact link of the campaign.
   final String? contactLink;
+
   /// Optional object value serialized in the `alert_stats` wire field.
   final SdkOptional<CampaignSummaryAlertStats> alertStats;
 
-  const CampaignSummary({required this.number, required this.createdAt, required this.updatedAt, this.name = const SdkOmitted(), required this.description, required this.managers, this.teamManagers = const SdkOmitted(), this.publishedAt = const SdkOmitted(), required this.endsAt, this.closedAt = const SdkOmitted(), required this.state, required this.contactLink, this.alertStats = const SdkOmitted()});
+  const CampaignSummary(
+      {required this.number,
+      required this.createdAt,
+      required this.updatedAt,
+      this.name = const SdkOmitted(),
+      required this.description,
+      required this.managers,
+      this.teamManagers = const SdkOmitted(),
+      this.publishedAt = const SdkOmitted(),
+      required this.endsAt,
+      this.closedAt = const SdkOmitted(),
+      required this.state,
+      required this.contactLink,
+      this.alertStats = const SdkOmitted()});
 
-  CampaignSummary Function({int number, String createdAt, String updatedAt, SdkOptional<String> name, String description, List<SimpleUser> managers, SdkOptional<List<Team>> teamManagers, SdkOptional<String> publishedAt, String endsAt, SdkOptional<String?> closedAt, CampaignState state, String? contactLink, SdkOptional<CampaignSummaryAlertStats> alertStats}) get copyWith => _copyWith;
+  CampaignSummary Function(
+          {int number,
+          String createdAt,
+          String updatedAt,
+          SdkOptional<String> name,
+          String description,
+          List<SimpleUser> managers,
+          SdkOptional<List<Team>> teamManagers,
+          SdkOptional<String> publishedAt,
+          String endsAt,
+          SdkOptional<String?> closedAt,
+          CampaignState state,
+          String? contactLink,
+          SdkOptional<CampaignSummaryAlertStats> alertStats})
+      get copyWith => _copyWith;
 
-  CampaignSummary _copyWith({Object? number = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? managers = sdkOmittedValue, Object? teamManagers = sdkOmittedValue, Object? publishedAt = sdkOmittedValue, Object? endsAt = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? state = sdkOmittedValue, Object? contactLink = sdkOmittedValue, Object? alertStats = sdkOmittedValue}) => CampaignSummary(
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    managers: identical(managers, sdkOmittedValue) ? this.managers : managers as List<SimpleUser>,
-    teamManagers: identical(teamManagers, sdkOmittedValue) ? this.teamManagers : teamManagers as SdkOptional<List<Team>>,
-    publishedAt: identical(publishedAt, sdkOmittedValue) ? this.publishedAt : publishedAt as SdkOptional<String>,
-    endsAt: identical(endsAt, sdkOmittedValue) ? this.endsAt : endsAt as String,
-    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as SdkOptional<String?>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as CampaignState,
-    contactLink: identical(contactLink, sdkOmittedValue) ? this.contactLink : contactLink as String?,
-    alertStats: identical(alertStats, sdkOmittedValue) ? this.alertStats : alertStats as SdkOptional<CampaignSummaryAlertStats>,
-  );
+  CampaignSummary _copyWith(
+          {Object? number = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? managers = sdkOmittedValue,
+          Object? teamManagers = sdkOmittedValue,
+          Object? publishedAt = sdkOmittedValue,
+          Object? endsAt = sdkOmittedValue,
+          Object? closedAt = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? contactLink = sdkOmittedValue,
+          Object? alertStats = sdkOmittedValue}) =>
+      CampaignSummary(
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        managers: identical(managers, sdkOmittedValue)
+            ? this.managers
+            : managers as List<SimpleUser>,
+        teamManagers: identical(teamManagers, sdkOmittedValue)
+            ? this.teamManagers
+            : teamManagers as SdkOptional<List<Team>>,
+        publishedAt: identical(publishedAt, sdkOmittedValue)
+            ? this.publishedAt
+            : publishedAt as SdkOptional<String>,
+        endsAt:
+            identical(endsAt, sdkOmittedValue) ? this.endsAt : endsAt as String,
+        closedAt: identical(closedAt, sdkOmittedValue)
+            ? this.closedAt
+            : closedAt as SdkOptional<String?>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as CampaignState,
+        contactLink: identical(contactLink, sdkOmittedValue)
+            ? this.contactLink
+            : contactLink as String?,
+        alertStats: identical(alertStats, sdkOmittedValue)
+            ? this.alertStats
+            : alertStats as SdkOptional<CampaignSummaryAlertStats>,
+      );
 
-  factory CampaignSummary.fromJson(Map<String, dynamic> json) => CampaignSummary(
-    number: ((json['number'] as num?)?.toInt())!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    description: (json['description'] as String?)!,
-    managers: ((json['managers'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!,
-    teamManagers: json['team_managers'] != null ? SdkPresent(((json['team_managers'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    publishedAt: json['published_at'] != null ? SdkPresent((json['published_at'] as String?)!) : const SdkOmitted(),
-    endsAt: (json['ends_at'] as String?)!,
-    closedAt: json.containsKey('closed_at') ? SdkPresent(json['closed_at'] as String?) : const SdkOmitted(),
-    state: (json['state'] != null ? CampaignState.fromJson(json['state'] as String) : null)!,
-    contactLink: json.containsKey('contact_link') ? json['contact_link'] as String? : throw ArgumentError.value(null, 'contact_link', 'Required property is missing'),
-    alertStats: json['alert_stats'] != null ? SdkPresent((json['alert_stats'] != null ? CampaignSummaryAlertStats.fromJson(json['alert_stats'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory CampaignSummary.fromJson(Map<String, dynamic> json) =>
+      CampaignSummary(
+        number: ((json['number'] as num?)?.toInt())!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        description: (json['description'] as String?)!,
+        managers: ((json['managers'] as List?)
+            ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        teamManagers: json['team_managers'] != null
+            ? SdkPresent(((json['team_managers'] as List?)
+                ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        publishedAt: json['published_at'] != null
+            ? SdkPresent((json['published_at'] as String?)!)
+            : const SdkOmitted(),
+        endsAt: (json['ends_at'] as String?)!,
+        closedAt: json.containsKey('closed_at')
+            ? SdkPresent(json['closed_at'] as String?)
+            : const SdkOmitted(),
+        state: (json['state'] != null
+            ? CampaignState.fromJson(json['state'] as String)
+            : null)!,
+        contactLink: json.containsKey('contact_link')
+            ? json['contact_link'] as String?
+            : throw ArgumentError.value(
+                null, 'contact_link', 'Required property is missing'),
+        alertStats: json['alert_stats'] != null
+            ? SdkPresent((json['alert_stats'] != null
+                ? CampaignSummaryAlertStats.fromJson(
+                    json['alert_stats'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'number': number,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'description': description,
-    'managers': managers.map((item) => item.toJson()).toList(),
-    ...switch (teamManagers) {
-      SdkPresent<List<Team>>(value: final value) => {'team_managers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (publishedAt) {
-      SdkPresent<String>(value: final value) => {'published_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'ends_at': endsAt,
-    ...switch (closedAt) {
-      SdkPresent<String?>(value: final value) => {'closed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'state': state.toJson(),
-    'contact_link': contactLink,
-    ...switch (alertStats) {
-      SdkPresent<CampaignSummaryAlertStats>(value: final value) => {'alert_stats': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'number': number,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'description': description,
+        'managers': managers.map((item) => item.toJson()).toList(),
+        ...switch (teamManagers) {
+          SdkPresent<List<Team>>(value: final value) => {
+              'team_managers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (publishedAt) {
+          SdkPresent<String>(value: final value) => {
+              'published_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'ends_at': endsAt,
+        ...switch (closedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'closed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'state': state.toJson(),
+        'contact_link': contactLink,
+        ...switch (alertStats) {
+          SdkPresent<CampaignSummaryAlertStats>(value: final value) => {
+              'alert_stats': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

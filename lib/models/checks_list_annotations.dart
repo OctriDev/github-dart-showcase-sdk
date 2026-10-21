@@ -8,67 +8,143 @@ part of 'checks.dart';
 class CheckAnnotation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Required `integer` value serialized in the `start_line` wire field.
   final int startLine;
+
   /// Required `integer` value serialized in the `end_line` wire field.
   final int endLine;
+
   /// Required `integer` value serialized in the `start_column` wire field.
   final int? startColumn;
+
   /// Required `integer` value serialized in the `end_column` wire field.
   final int? endColumn;
+
   /// Required `string` value serialized in the `annotation_level` wire field.
   final String? annotationLevel;
+
   /// Required `string` value serialized in the `title` wire field.
   final String? title;
+
   /// Required `string` value serialized in the `message` wire field.
   final String? message;
+
   /// Required `string` value serialized in the `raw_details` wire field.
   final String? rawDetails;
+
   /// Required `string` value serialized in the `blob_href` wire field.
   final String blobHref;
 
-  const CheckAnnotation({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.annotationLevel, required this.title, required this.message, required this.rawDetails, required this.blobHref});
+  const CheckAnnotation(
+      {required this.path,
+      required this.startLine,
+      required this.endLine,
+      required this.startColumn,
+      required this.endColumn,
+      required this.annotationLevel,
+      required this.title,
+      required this.message,
+      required this.rawDetails,
+      required this.blobHref});
 
-  CheckAnnotation Function({String path, int startLine, int endLine, int? startColumn, int? endColumn, String? annotationLevel, String? title, String? message, String? rawDetails, String blobHref}) get copyWith => _copyWith;
+  CheckAnnotation Function(
+      {String path,
+      int startLine,
+      int endLine,
+      int? startColumn,
+      int? endColumn,
+      String? annotationLevel,
+      String? title,
+      String? message,
+      String? rawDetails,
+      String blobHref}) get copyWith => _copyWith;
 
-  CheckAnnotation _copyWith({Object? path = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? endLine = sdkOmittedValue, Object? startColumn = sdkOmittedValue, Object? endColumn = sdkOmittedValue, Object? annotationLevel = sdkOmittedValue, Object? title = sdkOmittedValue, Object? message = sdkOmittedValue, Object? rawDetails = sdkOmittedValue, Object? blobHref = sdkOmittedValue}) => CheckAnnotation(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as int,
-    endLine: identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
-    startColumn: identical(startColumn, sdkOmittedValue) ? this.startColumn : startColumn as int?,
-    endColumn: identical(endColumn, sdkOmittedValue) ? this.endColumn : endColumn as int?,
-    annotationLevel: identical(annotationLevel, sdkOmittedValue) ? this.annotationLevel : annotationLevel as String?,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String?,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String?,
-    rawDetails: identical(rawDetails, sdkOmittedValue) ? this.rawDetails : rawDetails as String?,
-    blobHref: identical(blobHref, sdkOmittedValue) ? this.blobHref : blobHref as String,
-  );
+  CheckAnnotation _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? endLine = sdkOmittedValue,
+          Object? startColumn = sdkOmittedValue,
+          Object? endColumn = sdkOmittedValue,
+          Object? annotationLevel = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? rawDetails = sdkOmittedValue,
+          Object? blobHref = sdkOmittedValue}) =>
+      CheckAnnotation(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as int,
+        endLine:
+            identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
+        startColumn: identical(startColumn, sdkOmittedValue)
+            ? this.startColumn
+            : startColumn as int?,
+        endColumn: identical(endColumn, sdkOmittedValue)
+            ? this.endColumn
+            : endColumn as int?,
+        annotationLevel: identical(annotationLevel, sdkOmittedValue)
+            ? this.annotationLevel
+            : annotationLevel as String?,
+        title:
+            identical(title, sdkOmittedValue) ? this.title : title as String?,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String?,
+        rawDetails: identical(rawDetails, sdkOmittedValue)
+            ? this.rawDetails
+            : rawDetails as String?,
+        blobHref: identical(blobHref, sdkOmittedValue)
+            ? this.blobHref
+            : blobHref as String,
+      );
 
-  factory CheckAnnotation.fromJson(Map<String, dynamic> json) => CheckAnnotation(
-    path: (json['path'] as String?)!,
-    startLine: ((json['start_line'] as num?)?.toInt())!,
-    endLine: ((json['end_line'] as num?)?.toInt())!,
-    startColumn: json.containsKey('start_column') ? (json['start_column'] as num?)?.toInt() : throw ArgumentError.value(null, 'start_column', 'Required property is missing'),
-    endColumn: json.containsKey('end_column') ? (json['end_column'] as num?)?.toInt() : throw ArgumentError.value(null, 'end_column', 'Required property is missing'),
-    annotationLevel: json.containsKey('annotation_level') ? json['annotation_level'] as String? : throw ArgumentError.value(null, 'annotation_level', 'Required property is missing'),
-    title: json.containsKey('title') ? json['title'] as String? : throw ArgumentError.value(null, 'title', 'Required property is missing'),
-    message: json.containsKey('message') ? json['message'] as String? : throw ArgumentError.value(null, 'message', 'Required property is missing'),
-    rawDetails: json.containsKey('raw_details') ? json['raw_details'] as String? : throw ArgumentError.value(null, 'raw_details', 'Required property is missing'),
-    blobHref: (json['blob_href'] as String?)!,
-  );
+  factory CheckAnnotation.fromJson(Map<String, dynamic> json) =>
+      CheckAnnotation(
+        path: (json['path'] as String?)!,
+        startLine: ((json['start_line'] as num?)?.toInt())!,
+        endLine: ((json['end_line'] as num?)?.toInt())!,
+        startColumn: json.containsKey('start_column')
+            ? (json['start_column'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'start_column', 'Required property is missing'),
+        endColumn: json.containsKey('end_column')
+            ? (json['end_column'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'end_column', 'Required property is missing'),
+        annotationLevel: json.containsKey('annotation_level')
+            ? json['annotation_level'] as String?
+            : throw ArgumentError.value(
+                null, 'annotation_level', 'Required property is missing'),
+        title: json.containsKey('title')
+            ? json['title'] as String?
+            : throw ArgumentError.value(
+                null, 'title', 'Required property is missing'),
+        message: json.containsKey('message')
+            ? json['message'] as String?
+            : throw ArgumentError.value(
+                null, 'message', 'Required property is missing'),
+        rawDetails: json.containsKey('raw_details')
+            ? json['raw_details'] as String?
+            : throw ArgumentError.value(
+                null, 'raw_details', 'Required property is missing'),
+        blobHref: (json['blob_href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    'start_line': startLine,
-    'end_line': endLine,
-    'start_column': startColumn,
-    'end_column': endColumn,
-    'annotation_level': annotationLevel,
-    'title': title,
-    'message': message,
-    'raw_details': rawDetails,
-    'blob_href': blobHref,
-  };
+        'path': path,
+        'start_line': startLine,
+        'end_line': endLine,
+        'start_column': startColumn,
+        'end_column': endColumn,
+        'annotation_level': annotationLevel,
+        'title': title,
+        'message': message,
+        'raw_details': rawDetails,
+        'blob_href': blobHref,
+      };
 }

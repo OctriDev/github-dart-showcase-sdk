@@ -8,112 +8,214 @@ part of 'actions.dart';
 class EnvironmentApprovalsEnvironmentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The id of the environment.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// The name of the environment.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
+
   /// The time that the environment was created, in ISO 8601 format.
   final SdkOptional<String> createdAt;
+
   /// The time that the environment was last updated, in ISO 8601 format.
   final SdkOptional<String> updatedAt;
 
-  const EnvironmentApprovalsEnvironmentsItem({this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.name = const SdkOmitted(), this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted()});
+  const EnvironmentApprovalsEnvironmentsItem(
+      {this.id = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted()});
 
-  EnvironmentApprovalsEnvironmentsItem Function({SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<String> name, SdkOptional<String> url, SdkOptional<String> htmlUrl, SdkOptional<String> createdAt, SdkOptional<String> updatedAt}) get copyWith => _copyWith;
+  EnvironmentApprovalsEnvironmentsItem Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> name,
+      SdkOptional<String> url,
+      SdkOptional<String> htmlUrl,
+      SdkOptional<String> createdAt,
+      SdkOptional<String> updatedAt}) get copyWith => _copyWith;
 
-  EnvironmentApprovalsEnvironmentsItem _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => EnvironmentApprovalsEnvironmentsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-  );
+  EnvironmentApprovalsEnvironmentsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      EnvironmentApprovalsEnvironmentsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+      );
 
-  factory EnvironmentApprovalsEnvironmentsItem.fromJson(Map<String, dynamic> json) => EnvironmentApprovalsEnvironmentsItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-  );
+  factory EnvironmentApprovalsEnvironmentsItem.fromJson(
+          Map<String, dynamic> json) =>
+      EnvironmentApprovalsEnvironmentsItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// An entry in the reviews log for environment deployments
 class EnvironmentApprovals {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The list of environments that were approved or rejected
   final List<EnvironmentApprovalsEnvironmentsItem> environments;
+
   /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
   final EnvironmentApprovalsState state;
+
   /// A GitHub user.
   final SimpleUser user;
+
   /// The comment submitted with the deployment review
   final String comment;
 
-  const EnvironmentApprovals({required this.environments, required this.state, required this.user, required this.comment});
+  const EnvironmentApprovals(
+      {required this.environments,
+      required this.state,
+      required this.user,
+      required this.comment});
 
-  EnvironmentApprovals Function({List<EnvironmentApprovalsEnvironmentsItem> environments, EnvironmentApprovalsState state, SimpleUser user, String comment}) get copyWith => _copyWith;
+  EnvironmentApprovals Function(
+      {List<EnvironmentApprovalsEnvironmentsItem> environments,
+      EnvironmentApprovalsState state,
+      SimpleUser user,
+      String comment}) get copyWith => _copyWith;
 
-  EnvironmentApprovals _copyWith({Object? environments = sdkOmittedValue, Object? state = sdkOmittedValue, Object? user = sdkOmittedValue, Object? comment = sdkOmittedValue}) => EnvironmentApprovals(
-    environments: identical(environments, sdkOmittedValue) ? this.environments : environments as List<EnvironmentApprovalsEnvironmentsItem>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as EnvironmentApprovalsState,
-    user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
-    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as String,
-  );
+  EnvironmentApprovals _copyWith(
+          {Object? environments = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? comment = sdkOmittedValue}) =>
+      EnvironmentApprovals(
+        environments: identical(environments, sdkOmittedValue)
+            ? this.environments
+            : environments as List<EnvironmentApprovalsEnvironmentsItem>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as EnvironmentApprovalsState,
+        user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
+        comment: identical(comment, sdkOmittedValue)
+            ? this.comment
+            : comment as String,
+      );
 
-  factory EnvironmentApprovals.fromJson(Map<String, dynamic> json) => EnvironmentApprovals(
-    environments: ((json['environments'] as List?)?.map((e) => EnvironmentApprovalsEnvironmentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    state: (json['state'] != null ? EnvironmentApprovalsState.fromJson(json['state'] as String) : null)!,
-    user: (json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null)!,
-    comment: (json['comment'] as String?)!,
-  );
+  factory EnvironmentApprovals.fromJson(Map<String, dynamic> json) =>
+      EnvironmentApprovals(
+        environments: ((json['environments'] as List?)
+            ?.map((e) => EnvironmentApprovalsEnvironmentsItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        state: (json['state'] != null
+            ? EnvironmentApprovalsState.fromJson(json['state'] as String)
+            : null)!,
+        user: (json['user'] != null
+            ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
+            : null)!,
+        comment: (json['comment'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'environments': environments.map((item) => item.toJson()).toList(),
-    'state': state.toJson(),
-    'user': user.toJson(),
-    'comment': comment,
-  };
+        'environments': environments.map((item) => item.toJson()).toList(),
+        'state': state.toJson(),
+        'user': user.toJson(),
+        'comment': comment,
+      };
 }

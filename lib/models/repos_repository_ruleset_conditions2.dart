@@ -9,21 +9,32 @@ sealed class RepositoryRulesetConditions2 {
   static const String constructionSurface = 'named';
   const RepositoryRulesetConditions2();
   factory RepositoryRulesetConditions2.fromJson(Object? json) {
-    try { return RepositoryRulesetConditions2RepositoryRulesetConditions(RepositoryRulesetConditions.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RepositoryRulesetConditions2OrgRulesetConditions(OrgRulesetConditions.fromJson(json)); } catch (_) {}
-    throw FormatException("No variant matched for RepositoryRulesetConditions2");
+    try {
+      return RepositoryRulesetConditions2RepositoryRulesetConditions(
+          RepositoryRulesetConditions.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RepositoryRulesetConditions2OrgRulesetConditions(
+          OrgRulesetConditions.fromJson(json));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for RepositoryRulesetConditions2");
   }
   Object? toJson();
 }
 
-final class RepositoryRulesetConditions2RepositoryRulesetConditions extends RepositoryRulesetConditions2 {
+final class RepositoryRulesetConditions2RepositoryRulesetConditions
+    extends RepositoryRulesetConditions2 {
   final RepositoryRulesetConditions value;
   const RepositoryRulesetConditions2RepositoryRulesetConditions(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RepositoryRulesetConditions2OrgRulesetConditions extends RepositoryRulesetConditions2 {
+final class RepositoryRulesetConditions2OrgRulesetConditions
+    extends RepositoryRulesetConditions2 {
   final OrgRulesetConditions value;
   const RepositoryRulesetConditions2OrgRulesetConditions(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

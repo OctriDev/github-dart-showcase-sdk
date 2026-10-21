@@ -8,269 +8,583 @@ part of 'webhook_pull_request_review_dismissed.dart';
 class WebhookPullRequestReviewDismissedReviewUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
   final SdkOptional<String> avatarUrl;
+
   /// Optional `boolean` value serialized in the `deleted` wire field.
   final SdkOptional<bool> deleted;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
+
   /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
+
   /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
   final SdkOptional<String> followersUrl;
+
   /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
   final SdkOptional<String> followingUrl;
+
   /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
   final SdkOptional<String> gistsUrl;
+
   /// Optional `string` value serialized in the `gravatar_id` wire field.
   final SdkOptional<String> gravatarId;
+
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
   final SdkOptional<String> organizationsUrl;
+
   /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
   final SdkOptional<String> receivedEventsUrl;
+
   /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
   final SdkOptional<String> reposUrl;
+
   /// Optional `boolean` value serialized in the `site_admin` wire field.
   final SdkOptional<bool> siteAdmin;
+
   /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
   final SdkOptional<String> starredUrl;
+
   /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
   final SdkOptional<String> subscriptionsUrl;
+
   /// Optional enumerated value serialized in the `type` wire field.
   final SdkOptional<WebhookPullRequestReviewDismissedReviewUserType> type_;
+
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestReviewDismissedReviewUser({this.avatarUrl = const SdkOmitted(), this.deleted = const SdkOmitted(), this.email = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), required this.id, required this.login, this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted(), this.userViewType = const SdkOmitted()});
+  const WebhookPullRequestReviewDismissedReviewUser(
+      {this.avatarUrl = const SdkOmitted(),
+      this.deleted = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.eventsUrl = const SdkOmitted(),
+      this.followersUrl = const SdkOmitted(),
+      this.followingUrl = const SdkOmitted(),
+      this.gistsUrl = const SdkOmitted(),
+      this.gravatarId = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      required this.id,
+      required this.login,
+      this.name = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.organizationsUrl = const SdkOmitted(),
+      this.receivedEventsUrl = const SdkOmitted(),
+      this.reposUrl = const SdkOmitted(),
+      this.siteAdmin = const SdkOmitted(),
+      this.starredUrl = const SdkOmitted(),
+      this.subscriptionsUrl = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestReviewDismissedReviewUser Function({SdkOptional<String> avatarUrl, SdkOptional<bool> deleted, SdkOptional<String?> email, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, int id, String login, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<WebhookPullRequestReviewDismissedReviewUserType> type_, SdkOptional<String> url, SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  WebhookPullRequestReviewDismissedReviewUser Function(
+      {SdkOptional<String> avatarUrl,
+      SdkOptional<bool> deleted,
+      SdkOptional<String?> email,
+      SdkOptional<String> eventsUrl,
+      SdkOptional<String> followersUrl,
+      SdkOptional<String> followingUrl,
+      SdkOptional<String> gistsUrl,
+      SdkOptional<String> gravatarId,
+      SdkOptional<String> htmlUrl,
+      int id,
+      String login,
+      SdkOptional<String> name,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> organizationsUrl,
+      SdkOptional<String> receivedEventsUrl,
+      SdkOptional<String> reposUrl,
+      SdkOptional<bool> siteAdmin,
+      SdkOptional<String> starredUrl,
+      SdkOptional<String> subscriptionsUrl,
+      SdkOptional<WebhookPullRequestReviewDismissedReviewUserType> type_,
+      SdkOptional<String> url,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewDismissedReviewUser _copyWith({Object? avatarUrl = sdkOmittedValue, Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => WebhookPullRequestReviewDismissedReviewUser(
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String>,
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
-    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as SdkOptional<String>,
-    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as SdkOptional<String>,
-    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as SdkOptional<String>,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as SdkOptional<String>,
-    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as SdkOptional<String>,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as SdkOptional<String>,
-    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as SdkOptional<bool>,
-    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as SdkOptional<String>,
-    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhookPullRequestReviewDismissedReviewUserType>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
-  );
+  WebhookPullRequestReviewDismissedReviewUser _copyWith(
+          {Object? avatarUrl = sdkOmittedValue,
+          Object? deleted = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      WebhookPullRequestReviewDismissedReviewUser(
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as SdkOptional<String>,
+        deleted: identical(deleted, sdkOmittedValue)
+            ? this.deleted
+            : deleted as SdkOptional<bool>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as SdkOptional<String>,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as SdkOptional<String>,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as SdkOptional<String>,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as SdkOptional<String>,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as SdkOptional<String>,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as SdkOptional<String>,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as SdkOptional<String>,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as SdkOptional<bool>,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as SdkOptional<String>,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as SdkOptional<WebhookPullRequestReviewDismissedReviewUserType>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
+      );
 
-  factory WebhookPullRequestReviewDismissedReviewUser.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewDismissedReviewUser(
-    avatarUrl: json['avatar_url'] != null ? SdkPresent((json['avatar_url'] as String?)!) : const SdkOmitted(),
-    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
-    followersUrl: json['followers_url'] != null ? SdkPresent((json['followers_url'] as String?)!) : const SdkOmitted(),
-    followingUrl: json['following_url'] != null ? SdkPresent((json['following_url'] as String?)!) : const SdkOmitted(),
-    gistsUrl: json['gists_url'] != null ? SdkPresent((json['gists_url'] as String?)!) : const SdkOmitted(),
-    gravatarId: json['gravatar_id'] != null ? SdkPresent((json['gravatar_id'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    id: ((json['id'] as num?)?.toInt())!,
-    login: (json['login'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    organizationsUrl: json['organizations_url'] != null ? SdkPresent((json['organizations_url'] as String?)!) : const SdkOmitted(),
-    receivedEventsUrl: json['received_events_url'] != null ? SdkPresent((json['received_events_url'] as String?)!) : const SdkOmitted(),
-    reposUrl: json['repos_url'] != null ? SdkPresent((json['repos_url'] as String?)!) : const SdkOmitted(),
-    siteAdmin: json['site_admin'] != null ? SdkPresent((json['site_admin'] as bool?)!) : const SdkOmitted(),
-    starredUrl: json['starred_url'] != null ? SdkPresent((json['starred_url'] as String?)!) : const SdkOmitted(),
-    subscriptionsUrl: json['subscriptions_url'] != null ? SdkPresent((json['subscriptions_url'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhookPullRequestReviewDismissedReviewUserType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
-  );
+  factory WebhookPullRequestReviewDismissedReviewUser.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewDismissedReviewUser(
+        avatarUrl: json['avatar_url'] != null
+            ? SdkPresent((json['avatar_url'] as String?)!)
+            : const SdkOmitted(),
+        deleted: json['deleted'] != null
+            ? SdkPresent((json['deleted'] as bool?)!)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        eventsUrl: json['events_url'] != null
+            ? SdkPresent((json['events_url'] as String?)!)
+            : const SdkOmitted(),
+        followersUrl: json['followers_url'] != null
+            ? SdkPresent((json['followers_url'] as String?)!)
+            : const SdkOmitted(),
+        followingUrl: json['following_url'] != null
+            ? SdkPresent((json['following_url'] as String?)!)
+            : const SdkOmitted(),
+        gistsUrl: json['gists_url'] != null
+            ? SdkPresent((json['gists_url'] as String?)!)
+            : const SdkOmitted(),
+        gravatarId: json['gravatar_id'] != null
+            ? SdkPresent((json['gravatar_id'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        id: ((json['id'] as num?)?.toInt())!,
+        login: (json['login'] as String?)!,
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        organizationsUrl: json['organizations_url'] != null
+            ? SdkPresent((json['organizations_url'] as String?)!)
+            : const SdkOmitted(),
+        receivedEventsUrl: json['received_events_url'] != null
+            ? SdkPresent((json['received_events_url'] as String?)!)
+            : const SdkOmitted(),
+        reposUrl: json['repos_url'] != null
+            ? SdkPresent((json['repos_url'] as String?)!)
+            : const SdkOmitted(),
+        siteAdmin: json['site_admin'] != null
+            ? SdkPresent((json['site_admin'] as bool?)!)
+            : const SdkOmitted(),
+        starredUrl: json['starred_url'] != null
+            ? SdkPresent((json['starred_url'] as String?)!)
+            : const SdkOmitted(),
+        subscriptionsUrl: json['subscriptions_url'] != null
+            ? SdkPresent((json['subscriptions_url'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? WebhookPullRequestReviewDismissedReviewUserType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (avatarUrl) {
-      SdkPresent<String>(value: final value) => {'avatar_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deleted) {
-      SdkPresent<bool>(value: final value) => {'deleted': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (eventsUrl) {
-      SdkPresent<String>(value: final value) => {'events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (followersUrl) {
-      SdkPresent<String>(value: final value) => {'followers_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (followingUrl) {
-      SdkPresent<String>(value: final value) => {'following_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gistsUrl) {
-      SdkPresent<String>(value: final value) => {'gists_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gravatarId) {
-      SdkPresent<String>(value: final value) => {'gravatar_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'id': id,
-    'login': login,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationsUrl) {
-      SdkPresent<String>(value: final value) => {'organizations_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (receivedEventsUrl) {
-      SdkPresent<String>(value: final value) => {'received_events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reposUrl) {
-      SdkPresent<String>(value: final value) => {'repos_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (siteAdmin) {
-      SdkPresent<bool>(value: final value) => {'site_admin': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (starredUrl) {
-      SdkPresent<String>(value: final value) => {'starred_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subscriptionsUrl) {
-      SdkPresent<String>(value: final value) => {'subscriptions_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<WebhookPullRequestReviewDismissedReviewUserType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userViewType) {
-      SdkPresent<String>(value: final value) => {'user_view_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (avatarUrl) {
+          SdkPresent<String>(value: final value) => {
+              'avatar_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deleted) {
+          SdkPresent<bool>(value: final value) => {
+              'deleted': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (eventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'followers_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followingUrl) {
+          SdkPresent<String>(value: final value) => {
+              'following_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gistsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'gists_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gravatarId) {
+          SdkPresent<String>(value: final value) => {
+              'gravatar_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'id': id,
+        'login': login,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'organizations_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (receivedEventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'received_events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reposUrl) {
+          SdkPresent<String>(value: final value) => {
+              'repos_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (siteAdmin) {
+          SdkPresent<bool>(value: final value) => {
+              'site_admin': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (starredUrl) {
+          SdkPresent<String>(value: final value) => {
+              'starred_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subscriptionsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'subscriptions_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<WebhookPullRequestReviewDismissedReviewUserType>(
+            value: final value
+          ) =>
+            {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The review that was affected.
 class WebhookPullRequestReviewDismissedReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `_links` wire field.
   final WebhookPullRequestReviewDismissedReviewLinks links;
+
   /// How the author is associated with the repository.
-  final WebhookPullRequestReviewDismissedReviewAuthorAssociation authorAssociation;
+  final WebhookPullRequestReviewDismissedReviewAuthorAssociation
+      authorAssociation;
+
   /// The text of the review.
   final String? body;
+
   /// A commit SHA for the review.
   final String commitId;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Unique identifier of the review
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `pull_request_url` wire field.
   final String pullRequestUrl;
+
   /// Required enumerated value serialized in the `state` wire field.
   final WebhookPullRequestReviewDismissedReviewState state;
+
   /// Required `date-time`-formatted value serialized in the `submitted_at` wire field.
   final String submittedAt;
+
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String?> updatedAt;
+
   /// Required object value serialized in the `user` wire field.
   final WebhookPullRequestReviewDismissedReviewUser? user;
 
-  const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, this.updatedAt = const SdkOmitted(), required this.user});
+  const WebhookPullRequestReviewDismissedReview(
+      {required this.links,
+      required this.authorAssociation,
+      required this.body,
+      required this.commitId,
+      required this.htmlUrl,
+      required this.id,
+      required this.nodeId,
+      required this.pullRequestUrl,
+      required this.state,
+      required this.submittedAt,
+      this.updatedAt = const SdkOmitted(),
+      required this.user});
 
-  WebhookPullRequestReviewDismissedReview Function({WebhookPullRequestReviewDismissedReviewLinks links, WebhookPullRequestReviewDismissedReviewAuthorAssociation authorAssociation, String? body, String commitId, String htmlUrl, int id, String nodeId, String pullRequestUrl, WebhookPullRequestReviewDismissedReviewState state, String submittedAt, SdkOptional<String?> updatedAt, WebhookPullRequestReviewDismissedReviewUser? user}) get copyWith => _copyWith;
+  WebhookPullRequestReviewDismissedReview Function(
+          {WebhookPullRequestReviewDismissedReviewLinks links,
+          WebhookPullRequestReviewDismissedReviewAuthorAssociation
+              authorAssociation,
+          String? body,
+          String commitId,
+          String htmlUrl,
+          int id,
+          String nodeId,
+          String pullRequestUrl,
+          WebhookPullRequestReviewDismissedReviewState state,
+          String submittedAt,
+          SdkOptional<String?> updatedAt,
+          WebhookPullRequestReviewDismissedReviewUser? user})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestReviewDismissedReview _copyWith({Object? links = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? body = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? state = sdkOmittedValue, Object? submittedAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestReviewDismissedReview(
-    links: identical(links, sdkOmittedValue) ? this.links : links as WebhookPullRequestReviewDismissedReviewLinks,
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as WebhookPullRequestReviewDismissedReviewAuthorAssociation,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookPullRequestReviewDismissedReviewState,
-    submittedAt: identical(submittedAt, sdkOmittedValue) ? this.submittedAt : submittedAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String?>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestReviewDismissedReviewUser?,
-  );
+  WebhookPullRequestReviewDismissedReview _copyWith(
+          {Object? links = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? pullRequestUrl = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? submittedAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      WebhookPullRequestReviewDismissedReview(
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as WebhookPullRequestReviewDismissedReviewLinks,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation
+                as WebhookPullRequestReviewDismissedReviewAuthorAssociation,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
+            ? this.pullRequestUrl
+            : pullRequestUrl as String,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as WebhookPullRequestReviewDismissedReviewState,
+        submittedAt: identical(submittedAt, sdkOmittedValue)
+            ? this.submittedAt
+            : submittedAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String?>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as WebhookPullRequestReviewDismissedReviewUser?,
+      );
 
-  factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewDismissedReview(
-    links: (json['_links'] != null ? WebhookPullRequestReviewDismissedReviewLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    authorAssociation: (json['author_association'] != null ? WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
-    commitId: (json['commit_id'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    pullRequestUrl: (json['pull_request_url'] as String?)!,
-    state: (json['state'] != null ? WebhookPullRequestReviewDismissedReviewState.fromJson(json['state'] as String) : null)!,
-    submittedAt: (json['submitted_at'] as String?)!,
-    updatedAt: json.containsKey('updated_at') ? SdkPresent(json['updated_at'] as String?) : const SdkOmitted(),
-    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestReviewDismissedReviewUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+  factory WebhookPullRequestReviewDismissedReview.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewDismissedReview(
+        links: (json['_links'] != null
+            ? WebhookPullRequestReviewDismissedReviewLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
+            : null)!,
+        authorAssociation: (json['author_association'] != null
+            ? WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(
+                json['author_association'] as String)
+            : null)!,
+        body: json.containsKey('body')
+            ? json['body'] as String?
+            : throw ArgumentError.value(
+                null, 'body', 'Required property is missing'),
+        commitId: (json['commit_id'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        pullRequestUrl: (json['pull_request_url'] as String?)!,
+        state: (json['state'] != null
+            ? WebhookPullRequestReviewDismissedReviewState.fromJson(
+                json['state'] as String)
+            : null)!,
+        submittedAt: (json['submitted_at'] as String?)!,
+        updatedAt: json.containsKey('updated_at')
+            ? SdkPresent(json['updated_at'] as String?)
+            : const SdkOmitted(),
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? WebhookPullRequestReviewDismissedReviewUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    '_links': links.toJson(),
-    'author_association': authorAssociation.toJson(),
-    'body': body,
-    'commit_id': commitId,
-    'html_url': htmlUrl,
-    'id': id,
-    'node_id': nodeId,
-    'pull_request_url': pullRequestUrl,
-    'state': state.toJson(),
-    'submitted_at': submittedAt,
-    ...switch (updatedAt) {
-      SdkPresent<String?>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'user': user?.toJson(),
-  };
+        '_links': links.toJson(),
+        'author_association': authorAssociation.toJson(),
+        'body': body,
+        'commit_id': commitId,
+        'html_url': htmlUrl,
+        'id': id,
+        'node_id': nodeId,
+        'pull_request_url': pullRequestUrl,
+        'state': state.toJson(),
+        'submitted_at': submittedAt,
+        ...switch (updatedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'user': user?.toJson(),
+      };
 }

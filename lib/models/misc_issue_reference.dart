@@ -8,92 +8,162 @@ part of 'misc.dart';
 class IssueReferenceIssueType {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the issue type.
   final int id;
+
   /// The node identifier of the issue type.
   final String nodeId;
+
   /// The name of the issue type.
   final String name;
+
   /// The color of the issue type.
   final SdkOptional<String?> color;
 
-  const IssueReferenceIssueType({required this.id, required this.nodeId, required this.name, this.color = const SdkOmitted()});
+  const IssueReferenceIssueType(
+      {required this.id,
+      required this.nodeId,
+      required this.name,
+      this.color = const SdkOmitted()});
 
-  IssueReferenceIssueType Function({int id, String nodeId, String name, SdkOptional<String?> color}) get copyWith => _copyWith;
+  IssueReferenceIssueType Function(
+      {int id,
+      String nodeId,
+      String name,
+      SdkOptional<String?> color}) get copyWith => _copyWith;
 
-  IssueReferenceIssueType _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) => IssueReferenceIssueType(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String?>,
-  );
+  IssueReferenceIssueType _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue}) =>
+      IssueReferenceIssueType(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as SdkOptional<String?>,
+      );
 
-  factory IssueReferenceIssueType.fromJson(Map<String, dynamic> json) => IssueReferenceIssueType(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    name: (json['name'] as String?)!,
-    color: json.containsKey('color') ? SdkPresent(json['color'] as String?) : const SdkOmitted(),
-  );
+  factory IssueReferenceIssueType.fromJson(Map<String, dynamic> json) =>
+      IssueReferenceIssueType(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        name: (json['name'] as String?)!,
+        color: json.containsKey('color')
+            ? SdkPresent(json['color'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'name': name,
-    ...switch (color) {
-      SdkPresent<String?>(value: final value) => {'color': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        'name': name,
+        ...switch (color) {
+          SdkPresent<String?>(value: final value) => {
+              'color': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A minimal reference to an issue linked from a timeline event (e.g. sub-issue, parent-issue, or dependency events).
 class IssueReference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of the referenced issue.
   final int number;
+
   /// The title of the referenced issue.
   final String title;
+
   /// The state of the referenced issue.
   final String state;
+
   /// The reason for the referenced issue's state.
   final SdkOptional<String?> stateReason;
+
   /// A GitHub repository.
   final SimpleRepository repository;
+
   /// The type of the referenced issue.
   final IssueReferenceIssueType? issueType;
 
-  const IssueReference({required this.number, required this.title, required this.state, this.stateReason = const SdkOmitted(), required this.repository, required this.issueType});
+  const IssueReference(
+      {required this.number,
+      required this.title,
+      required this.state,
+      this.stateReason = const SdkOmitted(),
+      required this.repository,
+      required this.issueType});
 
-  IssueReference Function({int number, String title, String state, SdkOptional<String?> stateReason, SimpleRepository repository, IssueReferenceIssueType? issueType}) get copyWith => _copyWith;
+  IssueReference Function(
+      {int number,
+      String title,
+      String state,
+      SdkOptional<String?> stateReason,
+      SimpleRepository repository,
+      IssueReferenceIssueType? issueType}) get copyWith => _copyWith;
 
-  IssueReference _copyWith({Object? number = sdkOmittedValue, Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? issueType = sdkOmittedValue}) => IssueReference(
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    stateReason: identical(stateReason, sdkOmittedValue) ? this.stateReason : stateReason as SdkOptional<String?>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SimpleRepository,
-    issueType: identical(issueType, sdkOmittedValue) ? this.issueType : issueType as IssueReferenceIssueType?,
-  );
+  IssueReference _copyWith(
+          {Object? number = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? stateReason = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? issueType = sdkOmittedValue}) =>
+      IssueReference(
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        stateReason: identical(stateReason, sdkOmittedValue)
+            ? this.stateReason
+            : stateReason as SdkOptional<String?>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SimpleRepository,
+        issueType: identical(issueType, sdkOmittedValue)
+            ? this.issueType
+            : issueType as IssueReferenceIssueType?,
+      );
 
   factory IssueReference.fromJson(Map<String, dynamic> json) => IssueReference(
-    number: ((json['number'] as num?)?.toInt())!,
-    title: (json['title'] as String?)!,
-    state: (json['state'] as String?)!,
-    stateReason: json.containsKey('state_reason') ? SdkPresent(json['state_reason'] as String?) : const SdkOmitted(),
-    repository: (json['repository'] != null ? SimpleRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    issueType: json.containsKey('issue_type') ? json['issue_type'] != null ? IssueReferenceIssueType.fromJson(json['issue_type'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'issue_type', 'Required property is missing'),
-  );
+        number: ((json['number'] as num?)?.toInt())!,
+        title: (json['title'] as String?)!,
+        state: (json['state'] as String?)!,
+        stateReason: json.containsKey('state_reason')
+            ? SdkPresent(json['state_reason'] as String?)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? SimpleRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        issueType: json.containsKey('issue_type')
+            ? json['issue_type'] != null
+                ? IssueReferenceIssueType.fromJson(
+                    json['issue_type'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'issue_type', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'number': number,
-    'title': title,
-    'state': state,
-    ...switch (stateReason) {
-      SdkPresent<String?>(value: final value) => {'state_reason': value,},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    'issue_type': issueType?.toJson(),
-  };
+        'number': number,
+        'title': title,
+        'state': state,
+        ...switch (stateReason) {
+          SdkPresent<String?>(value: final value) => {
+              'state_reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'issue_type': issueType?.toJson(),
+      };
 }

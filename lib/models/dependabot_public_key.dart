@@ -8,27 +8,33 @@ part of 'dependabot.dart';
 class DependabotPublicKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The identifier for the key.
   final String keyId;
+
   /// The Base64 encoded public key.
   final String key;
 
   const DependabotPublicKey({required this.keyId, required this.key});
 
-  DependabotPublicKey Function({String keyId, String key}) get copyWith => _copyWith;
+  DependabotPublicKey Function({String keyId, String key}) get copyWith =>
+      _copyWith;
 
-  DependabotPublicKey _copyWith({Object? keyId = sdkOmittedValue, Object? key = sdkOmittedValue}) => DependabotPublicKey(
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-  );
+  DependabotPublicKey _copyWith(
+          {Object? keyId = sdkOmittedValue, Object? key = sdkOmittedValue}) =>
+      DependabotPublicKey(
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+      );
 
-  factory DependabotPublicKey.fromJson(Map<String, dynamic> json) => DependabotPublicKey(
-    keyId: (json['key_id'] as String?)!,
-    key: (json['key'] as String?)!,
-  );
+  factory DependabotPublicKey.fromJson(Map<String, dynamic> json) =>
+      DependabotPublicKey(
+        keyId: (json['key_id'] as String?)!,
+        key: (json['key'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'key_id': keyId,
-    'key': key,
-  };
+        'key_id': keyId,
+        'key': key,
+      };
 }

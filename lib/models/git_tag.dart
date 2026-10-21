@@ -8,128 +8,199 @@ part of 'git.dart';
 class GitTagTagger {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `date` wire field.
   final String date;
+
   /// Required `string` value serialized in the `email` wire field.
   final String email;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
 
-  const GitTagTagger({required this.date, required this.email, required this.name});
+  const GitTagTagger(
+      {required this.date, required this.email, required this.name});
 
-  GitTagTagger Function({String date, String email, String name}) get copyWith => _copyWith;
+  GitTagTagger Function({String date, String email, String name})
+      get copyWith => _copyWith;
 
-  GitTagTagger _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => GitTagTagger(
-    date: identical(date, sdkOmittedValue) ? this.date : date as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  GitTagTagger _copyWith(
+          {Object? date = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      GitTagTagger(
+        date: identical(date, sdkOmittedValue) ? this.date : date as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
   factory GitTagTagger.fromJson(Map<String, dynamic> json) => GitTagTagger(
-    date: (json['date'] as String?)!,
-    email: (json['email'] as String?)!,
-    name: (json['name'] as String?)!,
-  );
+        date: (json['date'] as String?)!,
+        email: (json['email'] as String?)!,
+        name: (json['name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'date': date,
-    'email': email,
-    'name': name,
-  };
+        'date': date,
+        'email': email,
+        'name': name,
+      };
 }
 
 /// Required object value serialized in the `object` wire field.
 class GitTagObject {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const GitTagObject({required this.sha, required this.type_, required this.url});
+  const GitTagObject(
+      {required this.sha, required this.type_, required this.url});
 
-  GitTagObject Function({String sha, String type_, String url}) get copyWith => _copyWith;
+  GitTagObject Function({String sha, String type_, String url}) get copyWith =>
+      _copyWith;
 
-  GitTagObject _copyWith({Object? sha = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => GitTagObject(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  GitTagObject _copyWith(
+          {Object? sha = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      GitTagObject(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
   factory GitTagObject.fromJson(Map<String, dynamic> json) => GitTagObject(
-    sha: (json['sha'] as String?)!,
-    type_: (json['type'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+        sha: (json['sha'] as String?)!,
+        type_: (json['type'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    'type': type_,
-    'url': url,
-  };
+        'sha': sha,
+        'type': type_,
+        'url': url,
+      };
 }
 
 /// Metadata for a Git tag
 class GitTag {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Name of the tag
   final String tag;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// URL for the tag
   final String url;
+
   /// Message describing the purpose of the tag
   final String message;
+
   /// Required object value serialized in the `tagger` wire field.
   final GitTagTagger tagger;
+
   /// Required object value serialized in the `object` wire field.
   final GitTagObject object;
+
   /// Optional object value serialized in the `verification` wire field.
   final SdkOptional<Verification> verification;
 
-  const GitTag({required this.nodeId, required this.tag, required this.sha, required this.url, required this.message, required this.tagger, required this.object, this.verification = const SdkOmitted()});
+  const GitTag(
+      {required this.nodeId,
+      required this.tag,
+      required this.sha,
+      required this.url,
+      required this.message,
+      required this.tagger,
+      required this.object,
+      this.verification = const SdkOmitted()});
 
-  GitTag Function({String nodeId, String tag, String sha, String url, String message, GitTagTagger tagger, GitTagObject object, SdkOptional<Verification> verification}) get copyWith => _copyWith;
+  GitTag Function(
+      {String nodeId,
+      String tag,
+      String sha,
+      String url,
+      String message,
+      GitTagTagger tagger,
+      GitTagObject object,
+      SdkOptional<Verification> verification}) get copyWith => _copyWith;
 
-  GitTag _copyWith({Object? nodeId = sdkOmittedValue, Object? tag = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue, Object? message = sdkOmittedValue, Object? tagger = sdkOmittedValue, Object? object = sdkOmittedValue, Object? verification = sdkOmittedValue}) => GitTag(
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    tag: identical(tag, sdkOmittedValue) ? this.tag : tag as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    tagger: identical(tagger, sdkOmittedValue) ? this.tagger : tagger as GitTagTagger,
-    object: identical(object, sdkOmittedValue) ? this.object : object as GitTagObject,
-    verification: identical(verification, sdkOmittedValue) ? this.verification : verification as SdkOptional<Verification>,
-  );
+  GitTag _copyWith(
+          {Object? nodeId = sdkOmittedValue,
+          Object? tag = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? tagger = sdkOmittedValue,
+          Object? object = sdkOmittedValue,
+          Object? verification = sdkOmittedValue}) =>
+      GitTag(
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        tag: identical(tag, sdkOmittedValue) ? this.tag : tag as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        tagger: identical(tagger, sdkOmittedValue)
+            ? this.tagger
+            : tagger as GitTagTagger,
+        object: identical(object, sdkOmittedValue)
+            ? this.object
+            : object as GitTagObject,
+        verification: identical(verification, sdkOmittedValue)
+            ? this.verification
+            : verification as SdkOptional<Verification>,
+      );
 
   factory GitTag.fromJson(Map<String, dynamic> json) => GitTag(
-    nodeId: (json['node_id'] as String?)!,
-    tag: (json['tag'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-    message: (json['message'] as String?)!,
-    tagger: (json['tagger'] != null ? GitTagTagger.fromJson(json['tagger'] as Map<String, dynamic>) : null)!,
-    object: (json['object'] != null ? GitTagObject.fromJson(json['object'] as Map<String, dynamic>) : null)!,
-    verification: json['verification'] != null ? SdkPresent((json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+        nodeId: (json['node_id'] as String?)!,
+        tag: (json['tag'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+        message: (json['message'] as String?)!,
+        tagger: (json['tagger'] != null
+            ? GitTagTagger.fromJson(json['tagger'] as Map<String, dynamic>)
+            : null)!,
+        object: (json['object'] != null
+            ? GitTagObject.fromJson(json['object'] as Map<String, dynamic>)
+            : null)!,
+        verification: json['verification'] != null
+            ? SdkPresent((json['verification'] != null
+                ? Verification.fromJson(
+                    json['verification'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'node_id': nodeId,
-    'tag': tag,
-    'sha': sha,
-    'url': url,
-    'message': message,
-    'tagger': tagger.toJson(),
-    'object': object.toJson(),
-    ...switch (verification) {
-      SdkPresent<Verification>(value: final value) => {'verification': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'node_id': nodeId,
+        'tag': tag,
+        'sha': sha,
+        'url': url,
+        'message': message,
+        'tagger': tagger.toJson(),
+        'object': object.toJson(),
+        ...switch (verification) {
+          SdkPresent<Verification>(value: final value) => {
+              'verification': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

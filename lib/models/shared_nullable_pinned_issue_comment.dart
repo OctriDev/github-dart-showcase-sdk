@@ -8,27 +8,46 @@ part of 'shared_nullable.dart';
 class NullablePinnedIssueComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `date-time`-formatted value serialized in the `pinned_at` wire field.
   final String pinnedAt;
+
   /// A GitHub user.
   final NullableSimpleUser? pinnedBy;
 
-  const NullablePinnedIssueComment({required this.pinnedAt, required this.pinnedBy});
+  const NullablePinnedIssueComment(
+      {required this.pinnedAt, required this.pinnedBy});
 
-  NullablePinnedIssueComment Function({String pinnedAt, NullableSimpleUser? pinnedBy}) get copyWith => _copyWith;
+  NullablePinnedIssueComment Function(
+      {String pinnedAt,
+      NullableSimpleUser? pinnedBy}) get copyWith => _copyWith;
 
-  NullablePinnedIssueComment _copyWith({Object? pinnedAt = sdkOmittedValue, Object? pinnedBy = sdkOmittedValue}) => NullablePinnedIssueComment(
-    pinnedAt: identical(pinnedAt, sdkOmittedValue) ? this.pinnedAt : pinnedAt as String,
-    pinnedBy: identical(pinnedBy, sdkOmittedValue) ? this.pinnedBy : pinnedBy as NullableSimpleUser?,
-  );
+  NullablePinnedIssueComment _copyWith(
+          {Object? pinnedAt = sdkOmittedValue,
+          Object? pinnedBy = sdkOmittedValue}) =>
+      NullablePinnedIssueComment(
+        pinnedAt: identical(pinnedAt, sdkOmittedValue)
+            ? this.pinnedAt
+            : pinnedAt as String,
+        pinnedBy: identical(pinnedBy, sdkOmittedValue)
+            ? this.pinnedBy
+            : pinnedBy as NullableSimpleUser?,
+      );
 
-  factory NullablePinnedIssueComment.fromJson(Map<String, dynamic> json) => NullablePinnedIssueComment(
-    pinnedAt: (json['pinned_at'] as String?)!,
-    pinnedBy: json.containsKey('pinned_by') ? json['pinned_by'] != null ? NullableSimpleUser.fromJson(json['pinned_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'pinned_by', 'Required property is missing'),
-  );
+  factory NullablePinnedIssueComment.fromJson(Map<String, dynamic> json) =>
+      NullablePinnedIssueComment(
+        pinnedAt: (json['pinned_at'] as String?)!,
+        pinnedBy: json.containsKey('pinned_by')
+            ? json['pinned_by'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['pinned_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'pinned_by', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pinned_at': pinnedAt,
-    'pinned_by': pinnedBy?.toJson(),
-  };
+        'pinned_at': pinnedAt,
+        'pinned_by': pinnedBy?.toJson(),
+      };
 }

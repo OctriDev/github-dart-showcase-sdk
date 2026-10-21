@@ -8,65 +8,114 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleCodeCoverageParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The maximum percentage points that line coverage may drop relative to the default branch. Pull requests that reduce line coverage by more than this amount will be blocked.
   final SdkOptional<double> maxCoverageDrop;
+
   /// The absolute minimum line coverage percentage required. Pull requests with line coverage below this threshold will be blocked.
   final SdkOptional<double> minimumCoverage;
 
-  const RepositoryRuleCodeCoverageParameters({this.maxCoverageDrop = const SdkOmitted(), this.minimumCoverage = const SdkOmitted()});
+  const RepositoryRuleCodeCoverageParameters(
+      {this.maxCoverageDrop = const SdkOmitted(),
+      this.minimumCoverage = const SdkOmitted()});
 
-  RepositoryRuleCodeCoverageParameters Function({SdkOptional<double> maxCoverageDrop, SdkOptional<double> minimumCoverage}) get copyWith => _copyWith;
+  RepositoryRuleCodeCoverageParameters Function(
+      {SdkOptional<double> maxCoverageDrop,
+      SdkOptional<double> minimumCoverage}) get copyWith => _copyWith;
 
-  RepositoryRuleCodeCoverageParameters _copyWith({Object? maxCoverageDrop = sdkOmittedValue, Object? minimumCoverage = sdkOmittedValue}) => RepositoryRuleCodeCoverageParameters(
-    maxCoverageDrop: identical(maxCoverageDrop, sdkOmittedValue) ? this.maxCoverageDrop : maxCoverageDrop as SdkOptional<double>,
-    minimumCoverage: identical(minimumCoverage, sdkOmittedValue) ? this.minimumCoverage : minimumCoverage as SdkOptional<double>,
-  );
+  RepositoryRuleCodeCoverageParameters _copyWith(
+          {Object? maxCoverageDrop = sdkOmittedValue,
+          Object? minimumCoverage = sdkOmittedValue}) =>
+      RepositoryRuleCodeCoverageParameters(
+        maxCoverageDrop: identical(maxCoverageDrop, sdkOmittedValue)
+            ? this.maxCoverageDrop
+            : maxCoverageDrop as SdkOptional<double>,
+        minimumCoverage: identical(minimumCoverage, sdkOmittedValue)
+            ? this.minimumCoverage
+            : minimumCoverage as SdkOptional<double>,
+      );
 
-  factory RepositoryRuleCodeCoverageParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleCodeCoverageParameters(
-    maxCoverageDrop: json['max_coverage_drop'] != null ? SdkPresent(((json['max_coverage_drop'] as num?)?.toDouble())!) : const SdkOmitted(),
-    minimumCoverage: json['minimum_coverage'] != null ? SdkPresent(((json['minimum_coverage'] as num?)?.toDouble())!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleCodeCoverageParameters.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleCodeCoverageParameters(
+        maxCoverageDrop: json['max_coverage_drop'] != null
+            ? SdkPresent(((json['max_coverage_drop'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+        minimumCoverage: json['minimum_coverage'] != null
+            ? SdkPresent(((json['minimum_coverage'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (maxCoverageDrop) {
-      SdkPresent<double>(value: final value) => {'max_coverage_drop': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (minimumCoverage) {
-      SdkPresent<double>(value: final value) => {'minimum_coverage': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (maxCoverageDrop) {
+          SdkPresent<double>(value: final value) => {
+              'max_coverage_drop': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (minimumCoverage) {
+          SdkPresent<double>(value: final value) => {
+              'minimum_coverage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Enforce minimum line coverage thresholds on pull requests. This rule evaluates uploaded coverage data but does not wait for coverage uploads. To ensure coverage is evaluated before merging, make each status check associated with a coverage upload a required status check.
 class RepositoryRuleCodeCoverage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleCodeCoverageType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleCodeCoverageParameters> parameters;
 
-  const RepositoryRuleCodeCoverage({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleCodeCoverage(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleCodeCoverage Function({RepositoryRuleCodeCoverageType type_, SdkOptional<RepositoryRuleCodeCoverageParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleCodeCoverage Function(
+          {RepositoryRuleCodeCoverageType type_,
+          SdkOptional<RepositoryRuleCodeCoverageParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleCodeCoverage _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleCodeCoverage(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleCodeCoverageType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleCodeCoverageParameters>,
-  );
+  RepositoryRuleCodeCoverage _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleCodeCoverage(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleCodeCoverageType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters as SdkOptional<RepositoryRuleCodeCoverageParameters>,
+      );
 
-  factory RepositoryRuleCodeCoverage.fromJson(Map<String, dynamic> json) => RepositoryRuleCodeCoverage(
-    type_: (json['type'] != null ? RepositoryRuleCodeCoverageType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleCodeCoverageParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleCodeCoverage.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleCodeCoverage(
+        type_: (json['type'] != null
+            ? RepositoryRuleCodeCoverageType.fromJson(json['type'] as String)
+            : null)!,
+        parameters: json['parameters'] != null
+            ? SdkPresent((json['parameters'] != null
+                ? RepositoryRuleCodeCoverageParameters.fromJson(
+                    json['parameters'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleCodeCoverageParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleCodeCoverageParameters>(
+            value: final value
+          ) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

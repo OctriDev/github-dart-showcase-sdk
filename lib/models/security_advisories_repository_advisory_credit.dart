@@ -8,32 +8,54 @@ part of 'security_advisories.dart';
 class RepositoryAdvisoryCredit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A GitHub user.
   final SimpleUser user;
+
   /// The type of credit the user is receiving.
   final SecurityAdvisoryCreditTypes type_;
+
   /// The state of the user's acceptance of the credit.
   final RepositoryAdvisoryCreditState state;
 
-  const RepositoryAdvisoryCredit({required this.user, required this.type_, required this.state});
+  const RepositoryAdvisoryCredit(
+      {required this.user, required this.type_, required this.state});
 
-  RepositoryAdvisoryCredit Function({SimpleUser user, SecurityAdvisoryCreditTypes type_, RepositoryAdvisoryCreditState state}) get copyWith => _copyWith;
+  RepositoryAdvisoryCredit Function(
+      {SimpleUser user,
+      SecurityAdvisoryCreditTypes type_,
+      RepositoryAdvisoryCreditState state}) get copyWith => _copyWith;
 
-  RepositoryAdvisoryCredit _copyWith({Object? user = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? state = sdkOmittedValue}) => RepositoryAdvisoryCredit(
-    user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SecurityAdvisoryCreditTypes,
-    state: identical(state, sdkOmittedValue) ? this.state : state as RepositoryAdvisoryCreditState,
-  );
+  RepositoryAdvisoryCredit _copyWith(
+          {Object? user = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? state = sdkOmittedValue}) =>
+      RepositoryAdvisoryCredit(
+        user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SecurityAdvisoryCreditTypes,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as RepositoryAdvisoryCreditState,
+      );
 
-  factory RepositoryAdvisoryCredit.fromJson(Map<String, dynamic> json) => RepositoryAdvisoryCredit(
-    user: (json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null)!,
-    type_: (json['type'] != null ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String) : null)!,
-    state: (json['state'] != null ? RepositoryAdvisoryCreditState.fromJson(json['state'] as String) : null)!,
-  );
+  factory RepositoryAdvisoryCredit.fromJson(Map<String, dynamic> json) =>
+      RepositoryAdvisoryCredit(
+        user: (json['user'] != null
+            ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
+            : null)!,
+        type_: (json['type'] != null
+            ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String)
+            : null)!,
+        state: (json['state'] != null
+            ? RepositoryAdvisoryCreditState.fromJson(json['state'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'user': user.toJson(),
-    'type': type_.toJson(),
-    'state': state.toJson(),
-  };
+        'user': user.toJson(),
+        'type': type_.toJson(),
+        'state': state.toJson(),
+      };
 }

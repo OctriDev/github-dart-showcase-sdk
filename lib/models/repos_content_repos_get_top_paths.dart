@@ -8,37 +8,52 @@ part of 'repos_content.dart';
 class ContentTraffic {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
+
   /// Required `integer` value serialized in the `count` wire field.
   final int count;
+
   /// Required `integer` value serialized in the `uniques` wire field.
   final int uniques;
 
-  const ContentTraffic({required this.path, required this.title, required this.count, required this.uniques});
+  const ContentTraffic(
+      {required this.path,
+      required this.title,
+      required this.count,
+      required this.uniques});
 
-  ContentTraffic Function({String path, String title, int count, int uniques}) get copyWith => _copyWith;
+  ContentTraffic Function({String path, String title, int count, int uniques})
+      get copyWith => _copyWith;
 
-  ContentTraffic _copyWith({Object? path = sdkOmittedValue, Object? title = sdkOmittedValue, Object? count = sdkOmittedValue, Object? uniques = sdkOmittedValue}) => ContentTraffic(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    count: identical(count, sdkOmittedValue) ? this.count : count as int,
-    uniques: identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
-  );
+  ContentTraffic _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? count = sdkOmittedValue,
+          Object? uniques = sdkOmittedValue}) =>
+      ContentTraffic(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        count: identical(count, sdkOmittedValue) ? this.count : count as int,
+        uniques:
+            identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
+      );
 
   factory ContentTraffic.fromJson(Map<String, dynamic> json) => ContentTraffic(
-    path: (json['path'] as String?)!,
-    title: (json['title'] as String?)!,
-    count: ((json['count'] as num?)?.toInt())!,
-    uniques: ((json['uniques'] as num?)?.toInt())!,
-  );
+        path: (json['path'] as String?)!,
+        title: (json['title'] as String?)!,
+        count: ((json['count'] as num?)?.toInt())!,
+        uniques: ((json['uniques'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    'title': title,
-    'count': count,
-    'uniques': uniques,
-  };
+        'path': path,
+        'title': title,
+        'count': count,
+        'uniques': uniques,
+      };
 }

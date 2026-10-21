@@ -8,65 +8,118 @@ part of 'webhooks_project.dart';
 class WebhooksProjectColumn {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `after_id` wire field.
   final SdkOptional<int?> afterId;
+
   /// Required `uri`-formatted value serialized in the `cards_url` wire field.
   final String cardsUrl;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// The unique identifier of the project column
   final int id;
+
   /// Name of the project column
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `project_url` wire field.
   final String projectUrl;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhooksProjectColumn({this.afterId = const SdkOmitted(), required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url});
+  const WebhooksProjectColumn(
+      {this.afterId = const SdkOmitted(),
+      required this.cardsUrl,
+      required this.createdAt,
+      required this.id,
+      required this.name,
+      required this.nodeId,
+      required this.projectUrl,
+      required this.updatedAt,
+      required this.url});
 
-  WebhooksProjectColumn Function({SdkOptional<int?> afterId, String cardsUrl, String createdAt, int id, String name, String nodeId, String projectUrl, String updatedAt, String url}) get copyWith => _copyWith;
+  WebhooksProjectColumn Function(
+      {SdkOptional<int?> afterId,
+      String cardsUrl,
+      String createdAt,
+      int id,
+      String name,
+      String nodeId,
+      String projectUrl,
+      String updatedAt,
+      String url}) get copyWith => _copyWith;
 
-  WebhooksProjectColumn _copyWith({Object? afterId = sdkOmittedValue, Object? cardsUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhooksProjectColumn(
-    afterId: identical(afterId, sdkOmittedValue) ? this.afterId : afterId as SdkOptional<int?>,
-    cardsUrl: identical(cardsUrl, sdkOmittedValue) ? this.cardsUrl : cardsUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhooksProjectColumn _copyWith(
+          {Object? afterId = sdkOmittedValue,
+          Object? cardsUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? projectUrl = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhooksProjectColumn(
+        afterId: identical(afterId, sdkOmittedValue)
+            ? this.afterId
+            : afterId as SdkOptional<int?>,
+        cardsUrl: identical(cardsUrl, sdkOmittedValue)
+            ? this.cardsUrl
+            : cardsUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        projectUrl: identical(projectUrl, sdkOmittedValue)
+            ? this.projectUrl
+            : projectUrl as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) => WebhooksProjectColumn(
-    afterId: json.containsKey('after_id') ? SdkPresent((json['after_id'] as num?)?.toInt()) : const SdkOmitted(),
-    cardsUrl: (json['cards_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    projectUrl: (json['project_url'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhooksProjectColumn.fromJson(Map<String, dynamic> json) =>
+      WebhooksProjectColumn(
+        afterId: json.containsKey('after_id')
+            ? SdkPresent((json['after_id'] as num?)?.toInt())
+            : const SdkOmitted(),
+        cardsUrl: (json['cards_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        projectUrl: (json['project_url'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (afterId) {
-      SdkPresent<int?>(value: final value) => {'after_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'cards_url': cardsUrl,
-    'created_at': createdAt,
-    'id': id,
-    'name': name,
-    'node_id': nodeId,
-    'project_url': projectUrl,
-    'updated_at': updatedAt,
-    'url': url,
-  };
+        ...switch (afterId) {
+          SdkPresent<int?>(value: final value) => {
+              'after_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'cards_url': cardsUrl,
+        'created_at': createdAt,
+        'id': id,
+        'name': name,
+        'node_id': nodeId,
+        'project_url': projectUrl,
+        'updated_at': updatedAt,
+        'url': url,
+      };
 }

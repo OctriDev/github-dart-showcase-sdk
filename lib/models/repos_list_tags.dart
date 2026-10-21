@@ -8,8 +8,10 @@ part of 'repos.dart';
 class TagCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
@@ -17,62 +19,94 @@ class TagCommit {
 
   TagCommit Function({String sha, String url}) get copyWith => _copyWith;
 
-  TagCommit _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => TagCommit(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  TagCommit _copyWith(
+          {Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      TagCommit(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
   factory TagCommit.fromJson(Map<String, dynamic> json) => TagCommit(
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    'url': url,
-  };
+        'sha': sha,
+        'url': url,
+      };
 }
 
 /// Tag
 class Tag {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required object value serialized in the `commit` wire field.
   final TagCommit commit;
+
   /// Required `uri`-formatted value serialized in the `zipball_url` wire field.
   final String zipballUrl;
+
   /// Required `uri`-formatted value serialized in the `tarball_url` wire field.
   final String tarballUrl;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
 
-  const Tag({required this.name, required this.commit, required this.zipballUrl, required this.tarballUrl, required this.nodeId});
+  const Tag(
+      {required this.name,
+      required this.commit,
+      required this.zipballUrl,
+      required this.tarballUrl,
+      required this.nodeId});
 
-  Tag Function({String name, TagCommit commit, String zipballUrl, String tarballUrl, String nodeId}) get copyWith => _copyWith;
+  Tag Function(
+      {String name,
+      TagCommit commit,
+      String zipballUrl,
+      String tarballUrl,
+      String nodeId}) get copyWith => _copyWith;
 
-  Tag _copyWith({Object? name = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? zipballUrl = sdkOmittedValue, Object? tarballUrl = sdkOmittedValue, Object? nodeId = sdkOmittedValue}) => Tag(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as TagCommit,
-    zipballUrl: identical(zipballUrl, sdkOmittedValue) ? this.zipballUrl : zipballUrl as String,
-    tarballUrl: identical(tarballUrl, sdkOmittedValue) ? this.tarballUrl : tarballUrl as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-  );
+  Tag _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? commit = sdkOmittedValue,
+          Object? zipballUrl = sdkOmittedValue,
+          Object? tarballUrl = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue}) =>
+      Tag(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        commit: identical(commit, sdkOmittedValue)
+            ? this.commit
+            : commit as TagCommit,
+        zipballUrl: identical(zipballUrl, sdkOmittedValue)
+            ? this.zipballUrl
+            : zipballUrl as String,
+        tarballUrl: identical(tarballUrl, sdkOmittedValue)
+            ? this.tarballUrl
+            : tarballUrl as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+      );
 
   factory Tag.fromJson(Map<String, dynamic> json) => Tag(
-    name: (json['name'] as String?)!,
-    commit: (json['commit'] != null ? TagCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
-    zipballUrl: (json['zipball_url'] as String?)!,
-    tarballUrl: (json['tarball_url'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-  );
+        name: (json['name'] as String?)!,
+        commit: (json['commit'] != null
+            ? TagCommit.fromJson(json['commit'] as Map<String, dynamic>)
+            : null)!,
+        zipballUrl: (json['zipball_url'] as String?)!,
+        tarballUrl: (json['tarball_url'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'commit': commit.toJson(),
-    'zipball_url': zipballUrl,
-    'tarball_url': tarballUrl,
-    'node_id': nodeId,
-  };
+        'name': name,
+        'commit': commit.toJson(),
+        'zipball_url': zipballUrl,
+        'tarball_url': tarballUrl,
+        'node_id': nodeId,
+      };
 }

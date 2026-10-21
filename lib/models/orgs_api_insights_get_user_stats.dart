@@ -17,72 +17,159 @@ class ApiInsightsUserStatsItem {
   final SdkOptional<String?> lastRateLimitedTimestamp;
   final SdkOptional<String> lastRequestTimestamp;
 
-  const ApiInsightsUserStatsItem({this.actorType = const SdkOmitted(), this.actorName = const SdkOmitted(), this.actorId = const SdkOmitted(), this.integrationId = const SdkOmitted(), this.oauthApplicationId = const SdkOmitted(), this.totalRequestCount = const SdkOmitted(), this.rateLimitedRequestCount = const SdkOmitted(), this.lastRateLimitedTimestamp = const SdkOmitted(), this.lastRequestTimestamp = const SdkOmitted()});
+  const ApiInsightsUserStatsItem(
+      {this.actorType = const SdkOmitted(),
+      this.actorName = const SdkOmitted(),
+      this.actorId = const SdkOmitted(),
+      this.integrationId = const SdkOmitted(),
+      this.oauthApplicationId = const SdkOmitted(),
+      this.totalRequestCount = const SdkOmitted(),
+      this.rateLimitedRequestCount = const SdkOmitted(),
+      this.lastRateLimitedTimestamp = const SdkOmitted(),
+      this.lastRequestTimestamp = const SdkOmitted()});
 
-  ApiInsightsUserStatsItem Function({SdkOptional<String> actorType, SdkOptional<String> actorName, SdkOptional<int> actorId, SdkOptional<int?> integrationId, SdkOptional<int?> oauthApplicationId, SdkOptional<int> totalRequestCount, SdkOptional<int> rateLimitedRequestCount, SdkOptional<String?> lastRateLimitedTimestamp, SdkOptional<String> lastRequestTimestamp}) get copyWith => _copyWith;
+  ApiInsightsUserStatsItem Function(
+      {SdkOptional<String> actorType,
+      SdkOptional<String> actorName,
+      SdkOptional<int> actorId,
+      SdkOptional<int?> integrationId,
+      SdkOptional<int?> oauthApplicationId,
+      SdkOptional<int> totalRequestCount,
+      SdkOptional<int> rateLimitedRequestCount,
+      SdkOptional<String?> lastRateLimitedTimestamp,
+      SdkOptional<String> lastRequestTimestamp}) get copyWith => _copyWith;
 
-  ApiInsightsUserStatsItem _copyWith({Object? actorType = sdkOmittedValue, Object? actorName = sdkOmittedValue, Object? actorId = sdkOmittedValue, Object? integrationId = sdkOmittedValue, Object? oauthApplicationId = sdkOmittedValue, Object? totalRequestCount = sdkOmittedValue, Object? rateLimitedRequestCount = sdkOmittedValue, Object? lastRateLimitedTimestamp = sdkOmittedValue, Object? lastRequestTimestamp = sdkOmittedValue}) => ApiInsightsUserStatsItem(
-    actorType: identical(actorType, sdkOmittedValue) ? this.actorType : actorType as SdkOptional<String>,
-    actorName: identical(actorName, sdkOmittedValue) ? this.actorName : actorName as SdkOptional<String>,
-    actorId: identical(actorId, sdkOmittedValue) ? this.actorId : actorId as SdkOptional<int>,
-    integrationId: identical(integrationId, sdkOmittedValue) ? this.integrationId : integrationId as SdkOptional<int?>,
-    oauthApplicationId: identical(oauthApplicationId, sdkOmittedValue) ? this.oauthApplicationId : oauthApplicationId as SdkOptional<int?>,
-    totalRequestCount: identical(totalRequestCount, sdkOmittedValue) ? this.totalRequestCount : totalRequestCount as SdkOptional<int>,
-    rateLimitedRequestCount: identical(rateLimitedRequestCount, sdkOmittedValue) ? this.rateLimitedRequestCount : rateLimitedRequestCount as SdkOptional<int>,
-    lastRateLimitedTimestamp: identical(lastRateLimitedTimestamp, sdkOmittedValue) ? this.lastRateLimitedTimestamp : lastRateLimitedTimestamp as SdkOptional<String?>,
-    lastRequestTimestamp: identical(lastRequestTimestamp, sdkOmittedValue) ? this.lastRequestTimestamp : lastRequestTimestamp as SdkOptional<String>,
-  );
+  ApiInsightsUserStatsItem _copyWith(
+          {Object? actorType = sdkOmittedValue,
+          Object? actorName = sdkOmittedValue,
+          Object? actorId = sdkOmittedValue,
+          Object? integrationId = sdkOmittedValue,
+          Object? oauthApplicationId = sdkOmittedValue,
+          Object? totalRequestCount = sdkOmittedValue,
+          Object? rateLimitedRequestCount = sdkOmittedValue,
+          Object? lastRateLimitedTimestamp = sdkOmittedValue,
+          Object? lastRequestTimestamp = sdkOmittedValue}) =>
+      ApiInsightsUserStatsItem(
+        actorType: identical(actorType, sdkOmittedValue)
+            ? this.actorType
+            : actorType as SdkOptional<String>,
+        actorName: identical(actorName, sdkOmittedValue)
+            ? this.actorName
+            : actorName as SdkOptional<String>,
+        actorId: identical(actorId, sdkOmittedValue)
+            ? this.actorId
+            : actorId as SdkOptional<int>,
+        integrationId: identical(integrationId, sdkOmittedValue)
+            ? this.integrationId
+            : integrationId as SdkOptional<int?>,
+        oauthApplicationId: identical(oauthApplicationId, sdkOmittedValue)
+            ? this.oauthApplicationId
+            : oauthApplicationId as SdkOptional<int?>,
+        totalRequestCount: identical(totalRequestCount, sdkOmittedValue)
+            ? this.totalRequestCount
+            : totalRequestCount as SdkOptional<int>,
+        rateLimitedRequestCount:
+            identical(rateLimitedRequestCount, sdkOmittedValue)
+                ? this.rateLimitedRequestCount
+                : rateLimitedRequestCount as SdkOptional<int>,
+        lastRateLimitedTimestamp:
+            identical(lastRateLimitedTimestamp, sdkOmittedValue)
+                ? this.lastRateLimitedTimestamp
+                : lastRateLimitedTimestamp as SdkOptional<String?>,
+        lastRequestTimestamp: identical(lastRequestTimestamp, sdkOmittedValue)
+            ? this.lastRequestTimestamp
+            : lastRequestTimestamp as SdkOptional<String>,
+      );
 
-  factory ApiInsightsUserStatsItem.fromJson(Map<String, dynamic> json) => ApiInsightsUserStatsItem(
-    actorType: json['actor_type'] != null ? SdkPresent((json['actor_type'] as String?)!) : const SdkOmitted(),
-    actorName: json['actor_name'] != null ? SdkPresent((json['actor_name'] as String?)!) : const SdkOmitted(),
-    actorId: json['actor_id'] != null ? SdkPresent(((json['actor_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    integrationId: json.containsKey('integration_id') ? SdkPresent((json['integration_id'] as num?)?.toInt()) : const SdkOmitted(),
-    oauthApplicationId: json.containsKey('oauth_application_id') ? SdkPresent((json['oauth_application_id'] as num?)?.toInt()) : const SdkOmitted(),
-    totalRequestCount: json['total_request_count'] != null ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    rateLimitedRequestCount: json['rate_limited_request_count'] != null ? SdkPresent(((json['rate_limited_request_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    lastRateLimitedTimestamp: json.containsKey('last_rate_limited_timestamp') ? SdkPresent(json['last_rate_limited_timestamp'] as String?) : const SdkOmitted(),
-    lastRequestTimestamp: json['last_request_timestamp'] != null ? SdkPresent((json['last_request_timestamp'] as String?)!) : const SdkOmitted(),
-  );
+  factory ApiInsightsUserStatsItem.fromJson(Map<String, dynamic> json) =>
+      ApiInsightsUserStatsItem(
+        actorType: json['actor_type'] != null
+            ? SdkPresent((json['actor_type'] as String?)!)
+            : const SdkOmitted(),
+        actorName: json['actor_name'] != null
+            ? SdkPresent((json['actor_name'] as String?)!)
+            : const SdkOmitted(),
+        actorId: json['actor_id'] != null
+            ? SdkPresent(((json['actor_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        integrationId: json.containsKey('integration_id')
+            ? SdkPresent((json['integration_id'] as num?)?.toInt())
+            : const SdkOmitted(),
+        oauthApplicationId: json.containsKey('oauth_application_id')
+            ? SdkPresent((json['oauth_application_id'] as num?)?.toInt())
+            : const SdkOmitted(),
+        totalRequestCount: json['total_request_count'] != null
+            ? SdkPresent(((json['total_request_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        rateLimitedRequestCount: json['rate_limited_request_count'] != null
+            ? SdkPresent(
+                ((json['rate_limited_request_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        lastRateLimitedTimestamp:
+            json.containsKey('last_rate_limited_timestamp')
+                ? SdkPresent(json['last_rate_limited_timestamp'] as String?)
+                : const SdkOmitted(),
+        lastRequestTimestamp: json['last_request_timestamp'] != null
+            ? SdkPresent((json['last_request_timestamp'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (actorType) {
-      SdkPresent<String>(value: final value) => {'actor_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (actorName) {
-      SdkPresent<String>(value: final value) => {'actor_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (actorId) {
-      SdkPresent<int>(value: final value) => {'actor_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (integrationId) {
-      SdkPresent<int?>(value: final value) => {'integration_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (oauthApplicationId) {
-      SdkPresent<int?>(value: final value) => {'oauth_application_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (totalRequestCount) {
-      SdkPresent<int>(value: final value) => {'total_request_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rateLimitedRequestCount) {
-      SdkPresent<int>(value: final value) => {'rate_limited_request_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (lastRateLimitedTimestamp) {
-      SdkPresent<String?>(value: final value) => {'last_rate_limited_timestamp': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (lastRequestTimestamp) {
-      SdkPresent<String>(value: final value) => {'last_request_timestamp': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (actorType) {
+          SdkPresent<String>(value: final value) => {
+              'actor_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (actorName) {
+          SdkPresent<String>(value: final value) => {
+              'actor_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (actorId) {
+          SdkPresent<int>(value: final value) => {
+              'actor_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (integrationId) {
+          SdkPresent<int?>(value: final value) => {
+              'integration_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (oauthApplicationId) {
+          SdkPresent<int?>(value: final value) => {
+              'oauth_application_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (totalRequestCount) {
+          SdkPresent<int>(value: final value) => {
+              'total_request_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rateLimitedRequestCount) {
+          SdkPresent<int>(value: final value) => {
+              'rate_limited_request_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (lastRateLimitedTimestamp) {
+          SdkPresent<String?>(value: final value) => {
+              'last_rate_limited_timestamp': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (lastRequestTimestamp) {
+          SdkPresent<String>(value: final value) => {
+              'last_request_timestamp': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 // ApiInsightsUserStats = List<ApiInsightsUserStatsItem>

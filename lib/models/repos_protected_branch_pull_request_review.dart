@@ -8,177 +8,382 @@ part of 'repos_protected.dart';
 class ProtectedBranchPullRequestReviewDismissalRestrictions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The list of users with review dismissal access.
   final SdkOptional<List<SimpleUser>> users;
+
   /// The list of teams with review dismissal access.
   final SdkOptional<List<Team>> teams;
+
   /// The list of apps with review dismissal access.
   final SdkOptional<List<Integration?>> apps;
+
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional `string` value serialized in the `users_url` wire field.
   final SdkOptional<String> usersUrl;
+
   /// Optional `string` value serialized in the `teams_url` wire field.
   final SdkOptional<String> teamsUrl;
 
-  const ProtectedBranchPullRequestReviewDismissalRestrictions({this.users = const SdkOmitted(), this.teams = const SdkOmitted(), this.apps = const SdkOmitted(), this.url = const SdkOmitted(), this.usersUrl = const SdkOmitted(), this.teamsUrl = const SdkOmitted()});
+  const ProtectedBranchPullRequestReviewDismissalRestrictions(
+      {this.users = const SdkOmitted(),
+      this.teams = const SdkOmitted(),
+      this.apps = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.usersUrl = const SdkOmitted(),
+      this.teamsUrl = const SdkOmitted()});
 
-  ProtectedBranchPullRequestReviewDismissalRestrictions Function({SdkOptional<List<SimpleUser>> users, SdkOptional<List<Team>> teams, SdkOptional<List<Integration?>> apps, SdkOptional<String> url, SdkOptional<String> usersUrl, SdkOptional<String> teamsUrl}) get copyWith => _copyWith;
+  ProtectedBranchPullRequestReviewDismissalRestrictions Function(
+      {SdkOptional<List<SimpleUser>> users,
+      SdkOptional<List<Team>> teams,
+      SdkOptional<List<Integration?>> apps,
+      SdkOptional<String> url,
+      SdkOptional<String> usersUrl,
+      SdkOptional<String> teamsUrl}) get copyWith => _copyWith;
 
-  ProtectedBranchPullRequestReviewDismissalRestrictions _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue, Object? url = sdkOmittedValue, Object? usersUrl = sdkOmittedValue, Object? teamsUrl = sdkOmittedValue}) => ProtectedBranchPullRequestReviewDismissalRestrictions(
-    users: identical(users, sdkOmittedValue) ? this.users : users as SdkOptional<List<SimpleUser>>,
-    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as SdkOptional<List<Team>>,
-    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<Integration?>>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    usersUrl: identical(usersUrl, sdkOmittedValue) ? this.usersUrl : usersUrl as SdkOptional<String>,
-    teamsUrl: identical(teamsUrl, sdkOmittedValue) ? this.teamsUrl : teamsUrl as SdkOptional<String>,
-  );
+  ProtectedBranchPullRequestReviewDismissalRestrictions _copyWith(
+          {Object? users = sdkOmittedValue,
+          Object? teams = sdkOmittedValue,
+          Object? apps = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? usersUrl = sdkOmittedValue,
+          Object? teamsUrl = sdkOmittedValue}) =>
+      ProtectedBranchPullRequestReviewDismissalRestrictions(
+        users: identical(users, sdkOmittedValue)
+            ? this.users
+            : users as SdkOptional<List<SimpleUser>>,
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as SdkOptional<List<Team>>,
+        apps: identical(apps, sdkOmittedValue)
+            ? this.apps
+            : apps as SdkOptional<List<Integration?>>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        usersUrl: identical(usersUrl, sdkOmittedValue)
+            ? this.usersUrl
+            : usersUrl as SdkOptional<String>,
+        teamsUrl: identical(teamsUrl, sdkOmittedValue)
+            ? this.teamsUrl
+            : teamsUrl as SdkOptional<String>,
+      );
 
-  factory ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(Map<String, dynamic> json) => ProtectedBranchPullRequestReviewDismissalRestrictions(
-    users: json['users'] != null ? SdkPresent(((json['users'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    teams: json['teams'] != null ? SdkPresent(((json['teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    usersUrl: json['users_url'] != null ? SdkPresent((json['users_url'] as String?)!) : const SdkOmitted(),
-    teamsUrl: json['teams_url'] != null ? SdkPresent((json['teams_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchPullRequestReviewDismissalRestrictions(
+        users: json['users'] != null
+            ? SdkPresent(((json['users'] as List?)
+                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        teams: json['teams'] != null
+            ? SdkPresent(((json['teams'] as List?)
+                ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        apps: json['apps'] != null
+            ? SdkPresent(((json['apps'] as List?)
+                ?.map((e) => e == null
+                    ? null
+                    : Integration.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        usersUrl: json['users_url'] != null
+            ? SdkPresent((json['users_url'] as String?)!)
+            : const SdkOmitted(),
+        teamsUrl: json['teams_url'] != null
+            ? SdkPresent((json['teams_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (users) {
-      SdkPresent<List<SimpleUser>>(value: final value) => {'users': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (teams) {
-      SdkPresent<List<Team>>(value: final value) => {'teams': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apps) {
-      SdkPresent<List<Integration?>>(value: final value) => {'apps': value.map((item) => item?.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usersUrl) {
-      SdkPresent<String>(value: final value) => {'users_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (teamsUrl) {
-      SdkPresent<String>(value: final value) => {'teams_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (users) {
+          SdkPresent<List<SimpleUser>>(value: final value) => {
+              'users': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teams) {
+          SdkPresent<List<Team>>(value: final value) => {
+              'teams': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apps) {
+          SdkPresent<List<Integration?>>(value: final value) => {
+              'apps': value.map((item) => item?.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'users_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teamsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'teams_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Allow specific users, teams, or apps to bypass pull request requirements.
 class ProtectedBranchPullRequestReviewBypassPullRequestAllowances {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The list of users allowed to bypass pull request requirements.
   final SdkOptional<List<SimpleUser>> users;
+
   /// The list of teams allowed to bypass pull request requirements.
   final SdkOptional<List<Team>> teams;
+
   /// The list of apps allowed to bypass pull request requirements.
   final SdkOptional<List<Integration?>> apps;
 
-  const ProtectedBranchPullRequestReviewBypassPullRequestAllowances({this.users = const SdkOmitted(), this.teams = const SdkOmitted(), this.apps = const SdkOmitted()});
+  const ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
+      {this.users = const SdkOmitted(),
+      this.teams = const SdkOmitted(),
+      this.apps = const SdkOmitted()});
 
-  ProtectedBranchPullRequestReviewBypassPullRequestAllowances Function({SdkOptional<List<SimpleUser>> users, SdkOptional<List<Team>> teams, SdkOptional<List<Integration?>> apps}) get copyWith => _copyWith;
+  ProtectedBranchPullRequestReviewBypassPullRequestAllowances Function(
+      {SdkOptional<List<SimpleUser>> users,
+      SdkOptional<List<Team>> teams,
+      SdkOptional<List<Integration?>> apps}) get copyWith => _copyWith;
 
-  ProtectedBranchPullRequestReviewBypassPullRequestAllowances _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
-    users: identical(users, sdkOmittedValue) ? this.users : users as SdkOptional<List<SimpleUser>>,
-    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as SdkOptional<List<Team>>,
-    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<Integration?>>,
-  );
+  ProtectedBranchPullRequestReviewBypassPullRequestAllowances _copyWith(
+          {Object? users = sdkOmittedValue,
+          Object? teams = sdkOmittedValue,
+          Object? apps = sdkOmittedValue}) =>
+      ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
+        users: identical(users, sdkOmittedValue)
+            ? this.users
+            : users as SdkOptional<List<SimpleUser>>,
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as SdkOptional<List<Team>>,
+        apps: identical(apps, sdkOmittedValue)
+            ? this.apps
+            : apps as SdkOptional<List<Integration?>>,
+      );
 
-  factory ProtectedBranchPullRequestReviewBypassPullRequestAllowances.fromJson(Map<String, dynamic> json) => ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
-    users: json['users'] != null ? SdkPresent(((json['users'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    teams: json['teams'] != null ? SdkPresent(((json['teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ProtectedBranchPullRequestReviewBypassPullRequestAllowances.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
+        users: json['users'] != null
+            ? SdkPresent(((json['users'] as List?)
+                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        teams: json['teams'] != null
+            ? SdkPresent(((json['teams'] as List?)
+                ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        apps: json['apps'] != null
+            ? SdkPresent(((json['apps'] as List?)
+                ?.map((e) => e == null
+                    ? null
+                    : Integration.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (users) {
-      SdkPresent<List<SimpleUser>>(value: final value) => {'users': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (teams) {
-      SdkPresent<List<Team>>(value: final value) => {'teams': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apps) {
-      SdkPresent<List<Integration?>>(value: final value) => {'apps': value.map((item) => item?.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (users) {
+          SdkPresent<List<SimpleUser>>(value: final value) => {
+              'users': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teams) {
+          SdkPresent<List<Team>>(value: final value) => {
+              'teams': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apps) {
+          SdkPresent<List<Integration?>>(value: final value) => {
+              'apps': value.map((item) => item?.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Protected Branch Pull Request Review
 class ProtectedBranchPullRequestReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional object value serialized in the `dismissal_restrictions` wire field.
-  final SdkOptional<ProtectedBranchPullRequestReviewDismissalRestrictions> dismissalRestrictions;
+  final SdkOptional<ProtectedBranchPullRequestReviewDismissalRestrictions>
+      dismissalRestrictions;
+
   /// Allow specific users, teams, or apps to bypass pull request requirements.
-  final SdkOptional<ProtectedBranchPullRequestReviewBypassPullRequestAllowances> bypassPullRequestAllowances;
+  final SdkOptional<ProtectedBranchPullRequestReviewBypassPullRequestAllowances>
+      bypassPullRequestAllowances;
+
   /// Required `boolean` value serialized in the `dismiss_stale_reviews` wire field.
   final bool dismissStaleReviews;
+
   /// Required `boolean` value serialized in the `require_code_owner_reviews` wire field.
   final bool requireCodeOwnerReviews;
+
   /// Optional `integer` value serialized in the `required_approving_review_count` wire field.
   final SdkOptional<int> requiredApprovingReviewCount;
+
   /// Whether the most recent push must be approved by someone other than the person who pushed it.
   final SdkOptional<bool> requireLastPushApproval;
 
-  const ProtectedBranchPullRequestReview({this.url = const SdkOmitted(), this.dismissalRestrictions = const SdkOmitted(), this.bypassPullRequestAllowances = const SdkOmitted(), required this.dismissStaleReviews, required this.requireCodeOwnerReviews, this.requiredApprovingReviewCount = const SdkOmitted(), this.requireLastPushApproval = const SdkOmitted()});
+  const ProtectedBranchPullRequestReview(
+      {this.url = const SdkOmitted(),
+      this.dismissalRestrictions = const SdkOmitted(),
+      this.bypassPullRequestAllowances = const SdkOmitted(),
+      required this.dismissStaleReviews,
+      required this.requireCodeOwnerReviews,
+      this.requiredApprovingReviewCount = const SdkOmitted(),
+      this.requireLastPushApproval = const SdkOmitted()});
 
-  ProtectedBranchPullRequestReview Function({SdkOptional<String> url, SdkOptional<ProtectedBranchPullRequestReviewDismissalRestrictions> dismissalRestrictions, SdkOptional<ProtectedBranchPullRequestReviewBypassPullRequestAllowances> bypassPullRequestAllowances, bool dismissStaleReviews, bool requireCodeOwnerReviews, SdkOptional<int> requiredApprovingReviewCount, SdkOptional<bool> requireLastPushApproval}) get copyWith => _copyWith;
+  ProtectedBranchPullRequestReview Function(
+      {SdkOptional<String> url,
+      SdkOptional<ProtectedBranchPullRequestReviewDismissalRestrictions>
+          dismissalRestrictions,
+      SdkOptional<ProtectedBranchPullRequestReviewBypassPullRequestAllowances>
+          bypassPullRequestAllowances,
+      bool dismissStaleReviews,
+      bool requireCodeOwnerReviews,
+      SdkOptional<int> requiredApprovingReviewCount,
+      SdkOptional<bool> requireLastPushApproval}) get copyWith => _copyWith;
 
-  ProtectedBranchPullRequestReview _copyWith({Object? url = sdkOmittedValue, Object? dismissalRestrictions = sdkOmittedValue, Object? bypassPullRequestAllowances = sdkOmittedValue, Object? dismissStaleReviews = sdkOmittedValue, Object? requireCodeOwnerReviews = sdkOmittedValue, Object? requiredApprovingReviewCount = sdkOmittedValue, Object? requireLastPushApproval = sdkOmittedValue}) => ProtectedBranchPullRequestReview(
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue) ? this.dismissalRestrictions : dismissalRestrictions as SdkOptional<ProtectedBranchPullRequestReviewDismissalRestrictions>,
-    bypassPullRequestAllowances: identical(bypassPullRequestAllowances, sdkOmittedValue) ? this.bypassPullRequestAllowances : bypassPullRequestAllowances as SdkOptional<ProtectedBranchPullRequestReviewBypassPullRequestAllowances>,
-    dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue) ? this.dismissStaleReviews : dismissStaleReviews as bool,
-    requireCodeOwnerReviews: identical(requireCodeOwnerReviews, sdkOmittedValue) ? this.requireCodeOwnerReviews : requireCodeOwnerReviews as bool,
-    requiredApprovingReviewCount: identical(requiredApprovingReviewCount, sdkOmittedValue) ? this.requiredApprovingReviewCount : requiredApprovingReviewCount as SdkOptional<int>,
-    requireLastPushApproval: identical(requireLastPushApproval, sdkOmittedValue) ? this.requireLastPushApproval : requireLastPushApproval as SdkOptional<bool>,
-  );
+  ProtectedBranchPullRequestReview _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? dismissalRestrictions = sdkOmittedValue,
+          Object? bypassPullRequestAllowances = sdkOmittedValue,
+          Object? dismissStaleReviews = sdkOmittedValue,
+          Object? requireCodeOwnerReviews = sdkOmittedValue,
+          Object? requiredApprovingReviewCount = sdkOmittedValue,
+          Object? requireLastPushApproval = sdkOmittedValue}) =>
+      ProtectedBranchPullRequestReview(
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue)
+            ? this.dismissalRestrictions
+            : dismissalRestrictions as SdkOptional<
+                ProtectedBranchPullRequestReviewDismissalRestrictions>,
+        bypassPullRequestAllowances: identical(
+                bypassPullRequestAllowances, sdkOmittedValue)
+            ? this.bypassPullRequestAllowances
+            : bypassPullRequestAllowances as SdkOptional<
+                ProtectedBranchPullRequestReviewBypassPullRequestAllowances>,
+        dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue)
+            ? this.dismissStaleReviews
+            : dismissStaleReviews as bool,
+        requireCodeOwnerReviews:
+            identical(requireCodeOwnerReviews, sdkOmittedValue)
+                ? this.requireCodeOwnerReviews
+                : requireCodeOwnerReviews as bool,
+        requiredApprovingReviewCount:
+            identical(requiredApprovingReviewCount, sdkOmittedValue)
+                ? this.requiredApprovingReviewCount
+                : requiredApprovingReviewCount as SdkOptional<int>,
+        requireLastPushApproval:
+            identical(requireLastPushApproval, sdkOmittedValue)
+                ? this.requireLastPushApproval
+                : requireLastPushApproval as SdkOptional<bool>,
+      );
 
-  factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) => ProtectedBranchPullRequestReview(
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    dismissalRestrictions: json['dismissal_restrictions'] != null ? SdkPresent((json['dismissal_restrictions'] != null ? ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? SdkPresent((json['bypass_pull_request_allowances'] != null ? ProtectedBranchPullRequestReviewBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    dismissStaleReviews: (json['dismiss_stale_reviews'] as bool?)!,
-    requireCodeOwnerReviews: (json['require_code_owner_reviews'] as bool?)!,
-    requiredApprovingReviewCount: json['required_approving_review_count'] != null ? SdkPresent(((json['required_approving_review_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    requireLastPushApproval: json['require_last_push_approval'] != null ? SdkPresent((json['require_last_push_approval'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ProtectedBranchPullRequestReview.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchPullRequestReview(
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        dismissalRestrictions: json['dismissal_restrictions'] != null
+            ? SdkPresent((json['dismissal_restrictions'] != null
+                ? ProtectedBranchPullRequestReviewDismissalRestrictions
+                    .fromJson(
+                        json['dismissal_restrictions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        bypassPullRequestAllowances: json['bypass_pull_request_allowances'] !=
+                null
+            ? SdkPresent((json['bypass_pull_request_allowances'] != null
+                ? ProtectedBranchPullRequestReviewBypassPullRequestAllowances
+                    .fromJson(json['bypass_pull_request_allowances']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        dismissStaleReviews: (json['dismiss_stale_reviews'] as bool?)!,
+        requireCodeOwnerReviews: (json['require_code_owner_reviews'] as bool?)!,
+        requiredApprovingReviewCount: json['required_approving_review_count'] !=
+                null
+            ? SdkPresent(
+                ((json['required_approving_review_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        requireLastPushApproval: json['require_last_push_approval'] != null
+            ? SdkPresent((json['require_last_push_approval'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dismissalRestrictions) {
-      SdkPresent<ProtectedBranchPullRequestReviewDismissalRestrictions>(value: final value) => {'dismissal_restrictions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bypassPullRequestAllowances) {
-      SdkPresent<ProtectedBranchPullRequestReviewBypassPullRequestAllowances>(value: final value) => {'bypass_pull_request_allowances': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'dismiss_stale_reviews': dismissStaleReviews,
-    'require_code_owner_reviews': requireCodeOwnerReviews,
-    ...switch (requiredApprovingReviewCount) {
-      SdkPresent<int>(value: final value) => {'required_approving_review_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requireLastPushApproval) {
-      SdkPresent<bool>(value: final value) => {'require_last_push_approval': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dismissalRestrictions) {
+          SdkPresent<ProtectedBranchPullRequestReviewDismissalRestrictions>(
+            value: final value
+          ) =>
+            {
+              'dismissal_restrictions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bypassPullRequestAllowances) {
+          SdkPresent<
+                ProtectedBranchPullRequestReviewBypassPullRequestAllowances>(
+            value: final value
+          ) =>
+            {
+              'bypass_pull_request_allowances': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'dismiss_stale_reviews': dismissStaleReviews,
+        'require_code_owner_reviews': requireCodeOwnerReviews,
+        ...switch (requiredApprovingReviewCount) {
+          SdkPresent<int>(value: final value) => {
+              'required_approving_review_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireLastPushApproval) {
+          SdkPresent<bool>(value: final value) => {
+              'require_last_push_approval': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

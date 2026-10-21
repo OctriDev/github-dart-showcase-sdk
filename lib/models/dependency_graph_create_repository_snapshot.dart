@@ -8,134 +8,247 @@ part of 'dependency_graph.dart';
 class Dependency {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.
   final SdkOptional<String> packageUrl;
+
   /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
   final SdkOptional<Map<String, dynamic>> metadata;
+
   /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
   final SdkOptional<DependencyRelationship> relationship;
+
   /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
   final SdkOptional<DependencyScope> scope;
+
   /// Array of package-url (PURLs) of direct child dependencies.
   final SdkOptional<List<String>> dependencies;
 
-  const Dependency({this.packageUrl = const SdkOmitted(), this.metadata = const SdkOmitted(), this.relationship = const SdkOmitted(), this.scope = const SdkOmitted(), this.dependencies = const SdkOmitted()});
+  const Dependency(
+      {this.packageUrl = const SdkOmitted(),
+      this.metadata = const SdkOmitted(),
+      this.relationship = const SdkOmitted(),
+      this.scope = const SdkOmitted(),
+      this.dependencies = const SdkOmitted()});
 
-  Dependency Function({SdkOptional<String> packageUrl, SdkOptional<Map<String, dynamic>> metadata, SdkOptional<DependencyRelationship> relationship, SdkOptional<DependencyScope> scope, SdkOptional<List<String>> dependencies}) get copyWith => _copyWith;
+  Dependency Function(
+      {SdkOptional<String> packageUrl,
+      SdkOptional<Map<String, dynamic>> metadata,
+      SdkOptional<DependencyRelationship> relationship,
+      SdkOptional<DependencyScope> scope,
+      SdkOptional<List<String>> dependencies}) get copyWith => _copyWith;
 
-  Dependency _copyWith({Object? packageUrl = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? relationship = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? dependencies = sdkOmittedValue}) => Dependency(
-    packageUrl: identical(packageUrl, sdkOmittedValue) ? this.packageUrl : packageUrl as SdkOptional<String>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, dynamic>>,
-    relationship: identical(relationship, sdkOmittedValue) ? this.relationship : relationship as SdkOptional<DependencyRelationship>,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<DependencyScope>,
-    dependencies: identical(dependencies, sdkOmittedValue) ? this.dependencies : dependencies as SdkOptional<List<String>>,
-  );
+  Dependency _copyWith(
+          {Object? packageUrl = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? relationship = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? dependencies = sdkOmittedValue}) =>
+      Dependency(
+        packageUrl: identical(packageUrl, sdkOmittedValue)
+            ? this.packageUrl
+            : packageUrl as SdkOptional<String>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, dynamic>>,
+        relationship: identical(relationship, sdkOmittedValue)
+            ? this.relationship
+            : relationship as SdkOptional<DependencyRelationship>,
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope as SdkOptional<DependencyScope>,
+        dependencies: identical(dependencies, sdkOmittedValue)
+            ? this.dependencies
+            : dependencies as SdkOptional<List<String>>,
+      );
 
   factory Dependency.fromJson(Map<String, dynamic> json) => Dependency(
-    packageUrl: json['package_url'] != null ? SdkPresent((json['package_url'] as String?)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : json['metadata'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    relationship: json['relationship'] != null ? SdkPresent((json['relationship'] != null ? DependencyRelationship.fromJson(json['relationship'] as String) : null)!) : const SdkOmitted(),
-    scope: json['scope'] != null ? SdkPresent((json['scope'] != null ? DependencyScope.fromJson(json['scope'] as String) : null)!) : const SdkOmitted(),
-    dependencies: json['dependencies'] != null ? SdkPresent(((json['dependencies'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+        packageUrl: json['package_url'] != null
+            ? SdkPresent((json['package_url'] as String?)!)
+            : const SdkOmitted(),
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] == null
+                ? null
+                : json['metadata'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        relationship: json['relationship'] != null
+            ? SdkPresent((json['relationship'] != null
+                ? DependencyRelationship.fromJson(
+                    json['relationship'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        scope: json['scope'] != null
+            ? SdkPresent((json['scope'] != null
+                ? DependencyScope.fromJson(json['scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        dependencies: json['dependencies'] != null
+            ? SdkPresent(((json['dependencies'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (packageUrl) {
-      SdkPresent<String>(value: final value) => {'package_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (relationship) {
-      SdkPresent<DependencyRelationship>(value: final value) => {'relationship': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (scope) {
-      SdkPresent<DependencyScope>(value: final value) => {'scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dependencies) {
-      SdkPresent<List<String>>(value: final value) => {'dependencies': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (packageUrl) {
+          SdkPresent<String>(value: final value) => {
+              'package_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (relationship) {
+          SdkPresent<DependencyRelationship>(value: final value) => {
+              'relationship': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (scope) {
+          SdkPresent<DependencyScope>(value: final value) => {
+              'scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dependencies) {
+          SdkPresent<List<String>>(value: final value) => {
+              'dependencies': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `file` wire field.
 class ManifestFile {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The path of the manifest file relative to the root of the Git repository.
   final SdkOptional<String> sourceLocation;
 
   const ManifestFile({this.sourceLocation = const SdkOmitted()});
 
-  ManifestFile Function({SdkOptional<String> sourceLocation}) get copyWith => _copyWith;
+  ManifestFile Function({SdkOptional<String> sourceLocation}) get copyWith =>
+      _copyWith;
 
-  ManifestFile _copyWith({Object? sourceLocation = sdkOmittedValue}) => ManifestFile(
-    sourceLocation: identical(sourceLocation, sdkOmittedValue) ? this.sourceLocation : sourceLocation as SdkOptional<String>,
-  );
+  ManifestFile _copyWith({Object? sourceLocation = sdkOmittedValue}) =>
+      ManifestFile(
+        sourceLocation: identical(sourceLocation, sdkOmittedValue)
+            ? this.sourceLocation
+            : sourceLocation as SdkOptional<String>,
+      );
 
   factory ManifestFile.fromJson(Map<String, dynamic> json) => ManifestFile(
-    sourceLocation: json['source_location'] != null ? SdkPresent((json['source_location'] as String?)!) : const SdkOmitted(),
-  );
+        sourceLocation: json['source_location'] != null
+            ? SdkPresent((json['source_location'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (sourceLocation) {
-      SdkPresent<String>(value: final value) => {'source_location': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (sourceLocation) {
+          SdkPresent<String>(value: final value) => {
+              'source_location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `Manifest` API schema.
 class Manifest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the manifest.
   final String name;
+
   /// Optional object value serialized in the `file` wire field.
   final SdkOptional<ManifestFile> file;
+
   /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
   final SdkOptional<Map<String, dynamic>> metadata;
+
   /// A collection of resolved package dependencies.
   final SdkOptional<Map<String, Dependency>> resolved;
 
-  const Manifest({required this.name, this.file = const SdkOmitted(), this.metadata = const SdkOmitted(), this.resolved = const SdkOmitted()});
+  const Manifest(
+      {required this.name,
+      this.file = const SdkOmitted(),
+      this.metadata = const SdkOmitted(),
+      this.resolved = const SdkOmitted()});
 
-  Manifest Function({String name, SdkOptional<ManifestFile> file, SdkOptional<Map<String, dynamic>> metadata, SdkOptional<Map<String, Dependency>> resolved}) get copyWith => _copyWith;
+  Manifest Function(
+      {String name,
+      SdkOptional<ManifestFile> file,
+      SdkOptional<Map<String, dynamic>> metadata,
+      SdkOptional<Map<String, Dependency>> resolved}) get copyWith => _copyWith;
 
-  Manifest _copyWith({Object? name = sdkOmittedValue, Object? file = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? resolved = sdkOmittedValue}) => Manifest(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    file: identical(file, sdkOmittedValue) ? this.file : file as SdkOptional<ManifestFile>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, dynamic>>,
-    resolved: identical(resolved, sdkOmittedValue) ? this.resolved : resolved as SdkOptional<Map<String, Dependency>>,
-  );
+  Manifest _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? file = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? resolved = sdkOmittedValue}) =>
+      Manifest(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        file: identical(file, sdkOmittedValue)
+            ? this.file
+            : file as SdkOptional<ManifestFile>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, dynamic>>,
+        resolved: identical(resolved, sdkOmittedValue)
+            ? this.resolved
+            : resolved as SdkOptional<Map<String, Dependency>>,
+      );
 
   factory Manifest.fromJson(Map<String, dynamic> json) => Manifest(
-    name: (json['name'] as String?)!,
-    file: json['file'] != null ? SdkPresent((json['file'] != null ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : json['metadata'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    resolved: json['resolved'] != null ? SdkPresent((json['resolved'] == null ? null : Map<String, dynamic>.from(json['resolved'] as Map).map((key, value) => MapEntry(key, Dependency.fromJson(value as Map<String, dynamic>))))!) : const SdkOmitted(),
-  );
+        name: (json['name'] as String?)!,
+        file: json['file'] != null
+            ? SdkPresent((json['file'] != null
+                ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] == null
+                ? null
+                : json['metadata'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        resolved: json['resolved'] != null
+            ? SdkPresent((json['resolved'] == null
+                ? null
+                : Map<String, dynamic>.from(json['resolved'] as Map).map(
+                    (key, value) => MapEntry(key,
+                        Dependency.fromJson(value as Map<String, dynamic>))))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (file) {
-      SdkPresent<ManifestFile>(value: final value) => {'file': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resolved) {
-      SdkPresent<Map<String, Dependency>>(value: final value) => {'resolved': value.map((key, value) => MapEntry(key, value.toJson())),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        ...switch (file) {
+          SdkPresent<ManifestFile>(value: final value) => {
+              'file': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resolved) {
+          SdkPresent<Map<String, Dependency>>(value: final value) => {
+              'resolved':
+                  value.map((key, value) => MapEntry(key, value.toJson())),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
@@ -147,12 +260,12 @@ class Metadata {
   const Metadata({this.value = const <String, dynamic>{}});
 
   factory Metadata.fromJson(Map<String, dynamic> json) => Metadata(
-    value: json.map((key, value) => MapEntry(key, value)),
-  );
+        value: json.map((key, value) => MapEntry(key, value)),
+      );
 
   Map<String, dynamic> toJson() => value.map(
-    (key, value) => MapEntry(key, value),
-  );
+        (key, value) => MapEntry(key, value),
+      );
 
   dynamic operator [](String key) => value[key];
   Iterable<String> get keys => value.keys;
@@ -162,134 +275,229 @@ class Metadata {
 class SnapshotJob {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The external ID of the job.
   final String id;
+
   /// Correlator provides a key that is used to group snapshots submitted over time. Only the "latest" submitted snapshot for a given combination of `job.correlator` and `detector.name` will be considered when calculating a repository's current dependencies. Correlator should be as unique as it takes to distinguish all detection runs for a given "wave" of CI workflow you run. If you're using GitHub Actions, a good default value for this could be the environment variables GITHUB_WORKFLOW and GITHUB_JOB concatenated together. If you're using a build matrix, then you'll also need to add additional key(s) to distinguish between each submission inside a matrix variation.
   final String correlator;
+
   /// The url for the job.
   final SdkOptional<String> htmlUrl;
 
-  const SnapshotJob({required this.id, required this.correlator, this.htmlUrl = const SdkOmitted()});
+  const SnapshotJob(
+      {required this.id,
+      required this.correlator,
+      this.htmlUrl = const SdkOmitted()});
 
-  SnapshotJob Function({String id, String correlator, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SnapshotJob Function(
+      {String id,
+      String correlator,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SnapshotJob _copyWith({Object? id = sdkOmittedValue, Object? correlator = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SnapshotJob(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    correlator: identical(correlator, sdkOmittedValue) ? this.correlator : correlator as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SnapshotJob _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? correlator = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SnapshotJob(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        correlator: identical(correlator, sdkOmittedValue)
+            ? this.correlator
+            : correlator as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
   factory SnapshotJob.fromJson(Map<String, dynamic> json) => SnapshotJob(
-    id: (json['id'] as String?)!,
-    correlator: (json['correlator'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+        id: (json['id'] as String?)!,
+        correlator: (json['correlator'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'correlator': correlator,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'correlator': correlator,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A description of the detector used.
 class SnapshotDetector {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the detector used.
   final String name;
+
   /// The version of the detector used.
   final String version;
+
   /// The url of the detector used.
   final String url;
 
-  const SnapshotDetector({required this.name, required this.version, required this.url});
+  const SnapshotDetector(
+      {required this.name, required this.version, required this.url});
 
-  SnapshotDetector Function({String name, String version, String url}) get copyWith => _copyWith;
+  SnapshotDetector Function({String name, String version, String url})
+      get copyWith => _copyWith;
 
-  SnapshotDetector _copyWith({Object? name = sdkOmittedValue, Object? version = sdkOmittedValue, Object? url = sdkOmittedValue}) => SnapshotDetector(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    version: identical(version, sdkOmittedValue) ? this.version : version as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  SnapshotDetector _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? version = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      SnapshotDetector(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory SnapshotDetector.fromJson(Map<String, dynamic> json) => SnapshotDetector(
-    name: (json['name'] as String?)!,
-    version: (json['version'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory SnapshotDetector.fromJson(Map<String, dynamic> json) =>
+      SnapshotDetector(
+        name: (json['name'] as String?)!,
+        version: (json['version'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'version': version,
-    'url': url,
-  };
+        'name': name,
+        'version': version,
+        'url': url,
+      };
 }
 
 /// Create a new snapshot of a repository's dependencies.
 class Snapshot {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The version of the repository snapshot submission.
   final int version;
+
   /// Required object value serialized in the `job` wire field.
   final SnapshotJob job;
+
   /// The commit SHA associated with this dependency snapshot. Maximum length: 64 characters.
   final String sha;
+
   /// The repository branch that triggered this snapshot.
   final String ref;
+
   /// A description of the detector used.
   final SnapshotDetector detector;
+
   /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
   final SdkOptional<Map<String, dynamic>> metadata;
+
   /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
   final SdkOptional<Map<String, Manifest>> manifests;
+
   /// The time at which the snapshot was scanned.
   final String scanned;
 
-  const Snapshot({required this.version, required this.job, required this.sha, required this.ref, required this.detector, this.metadata = const SdkOmitted(), this.manifests = const SdkOmitted(), required this.scanned});
+  const Snapshot(
+      {required this.version,
+      required this.job,
+      required this.sha,
+      required this.ref,
+      required this.detector,
+      this.metadata = const SdkOmitted(),
+      this.manifests = const SdkOmitted(),
+      required this.scanned});
 
-  Snapshot Function({int version, SnapshotJob job, String sha, String ref, SnapshotDetector detector, SdkOptional<Map<String, dynamic>> metadata, SdkOptional<Map<String, Manifest>> manifests, String scanned}) get copyWith => _copyWith;
+  Snapshot Function(
+      {int version,
+      SnapshotJob job,
+      String sha,
+      String ref,
+      SnapshotDetector detector,
+      SdkOptional<Map<String, dynamic>> metadata,
+      SdkOptional<Map<String, Manifest>> manifests,
+      String scanned}) get copyWith => _copyWith;
 
-  Snapshot _copyWith({Object? version = sdkOmittedValue, Object? job = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? detector = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? manifests = sdkOmittedValue, Object? scanned = sdkOmittedValue}) => Snapshot(
-    version: identical(version, sdkOmittedValue) ? this.version : version as int,
-    job: identical(job, sdkOmittedValue) ? this.job : job as SnapshotJob,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    detector: identical(detector, sdkOmittedValue) ? this.detector : detector as SnapshotDetector,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, dynamic>>,
-    manifests: identical(manifests, sdkOmittedValue) ? this.manifests : manifests as SdkOptional<Map<String, Manifest>>,
-    scanned: identical(scanned, sdkOmittedValue) ? this.scanned : scanned as String,
-  );
+  Snapshot _copyWith(
+          {Object? version = sdkOmittedValue,
+          Object? job = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? detector = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? manifests = sdkOmittedValue,
+          Object? scanned = sdkOmittedValue}) =>
+      Snapshot(
+        version:
+            identical(version, sdkOmittedValue) ? this.version : version as int,
+        job: identical(job, sdkOmittedValue) ? this.job : job as SnapshotJob,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        detector: identical(detector, sdkOmittedValue)
+            ? this.detector
+            : detector as SnapshotDetector,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, dynamic>>,
+        manifests: identical(manifests, sdkOmittedValue)
+            ? this.manifests
+            : manifests as SdkOptional<Map<String, Manifest>>,
+        scanned: identical(scanned, sdkOmittedValue)
+            ? this.scanned
+            : scanned as String,
+      );
 
   factory Snapshot.fromJson(Map<String, dynamic> json) => Snapshot(
-    version: ((json['version'] as num?)?.toInt())!,
-    job: (json['job'] != null ? SnapshotJob.fromJson(json['job'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    detector: (json['detector'] != null ? SnapshotDetector.fromJson(json['detector'] as Map<String, dynamic>) : null)!,
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : json['metadata'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    manifests: json['manifests'] != null ? SdkPresent((json['manifests'] == null ? null : Map<String, dynamic>.from(json['manifests'] as Map).map((key, value) => MapEntry(key, Manifest.fromJson(value as Map<String, dynamic>))))!) : const SdkOmitted(),
-    scanned: (json['scanned'] as String?)!,
-  );
+        version: ((json['version'] as num?)?.toInt())!,
+        job: (json['job'] != null
+            ? SnapshotJob.fromJson(json['job'] as Map<String, dynamic>)
+            : null)!,
+        sha: (json['sha'] as String?)!,
+        ref: (json['ref'] as String?)!,
+        detector: (json['detector'] != null
+            ? SnapshotDetector.fromJson(
+                json['detector'] as Map<String, dynamic>)
+            : null)!,
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] == null
+                ? null
+                : json['metadata'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        manifests: json['manifests'] != null
+            ? SdkPresent((json['manifests'] == null
+                ? null
+                : Map<String, dynamic>.from(json['manifests'] as Map).map(
+                    (key, value) => MapEntry(key,
+                        Manifest.fromJson(value as Map<String, dynamic>))))!)
+            : const SdkOmitted(),
+        scanned: (json['scanned'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'version': version,
-    'job': job.toJson(),
-    'sha': sha,
-    'ref': ref,
-    'detector': detector.toJson(),
-    ...switch (metadata) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (manifests) {
-      SdkPresent<Map<String, Manifest>>(value: final value) => {'manifests': value.map((key, value) => MapEntry(key, value.toJson())),},
-      _ => const <String, dynamic>{},
-    },
-    'scanned': scanned,
-  };
+        'version': version,
+        'job': job.toJson(),
+        'sha': sha,
+        'ref': ref,
+        'detector': detector.toJson(),
+        ...switch (metadata) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (manifests) {
+          SdkPresent<Map<String, Manifest>>(value: final value) => {
+              'manifests':
+                  value.map((key, value) => MapEntry(key, value.toJson())),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'scanned': scanned,
+      };
 }

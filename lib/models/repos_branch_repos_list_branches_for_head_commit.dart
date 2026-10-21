@@ -8,61 +8,82 @@ part of 'repos_branch.dart';
 class BranchShortCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
 
   const BranchShortCommit({required this.sha, required this.url});
 
-  BranchShortCommit Function({String sha, String url}) get copyWith => _copyWith;
+  BranchShortCommit Function({String sha, String url}) get copyWith =>
+      _copyWith;
 
-  BranchShortCommit _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => BranchShortCommit(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  BranchShortCommit _copyWith(
+          {Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      BranchShortCommit(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory BranchShortCommit.fromJson(Map<String, dynamic> json) => BranchShortCommit(
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory BranchShortCommit.fromJson(Map<String, dynamic> json) =>
+      BranchShortCommit(
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    'url': url,
-  };
+        'sha': sha,
+        'url': url,
+      };
 }
 
 /// Branch Short
 class BranchShort {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required object value serialized in the `commit` wire field.
   final BranchShortCommit commit;
+
   /// Required `boolean` value serialized in the `protected` wire field.
   final bool protected;
 
-  const BranchShort({required this.name, required this.commit, required this.protected});
+  const BranchShort(
+      {required this.name, required this.commit, required this.protected});
 
-  BranchShort Function({String name, BranchShortCommit commit, bool protected}) get copyWith => _copyWith;
+  BranchShort Function({String name, BranchShortCommit commit, bool protected})
+      get copyWith => _copyWith;
 
-  BranchShort _copyWith({Object? name = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? protected = sdkOmittedValue}) => BranchShort(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as BranchShortCommit,
-    protected: identical(protected, sdkOmittedValue) ? this.protected : protected as bool,
-  );
+  BranchShort _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? commit = sdkOmittedValue,
+          Object? protected = sdkOmittedValue}) =>
+      BranchShort(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        commit: identical(commit, sdkOmittedValue)
+            ? this.commit
+            : commit as BranchShortCommit,
+        protected: identical(protected, sdkOmittedValue)
+            ? this.protected
+            : protected as bool,
+      );
 
   factory BranchShort.fromJson(Map<String, dynamic> json) => BranchShort(
-    name: (json['name'] as String?)!,
-    commit: (json['commit'] != null ? BranchShortCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
-    protected: (json['protected'] as bool?)!,
-  );
+        name: (json['name'] as String?)!,
+        commit: (json['commit'] != null
+            ? BranchShortCommit.fromJson(json['commit'] as Map<String, dynamic>)
+            : null)!,
+        protected: (json['protected'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'commit': commit.toJson(),
-    'protected': protected,
-  };
+        'name': name,
+        'commit': commit.toJson(),
+        'protected': protected,
+      };
 }

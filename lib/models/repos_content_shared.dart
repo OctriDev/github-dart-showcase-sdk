@@ -8,127 +8,239 @@ part of 'repos_content.dart';
 class ContentFileLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `git` wire field.
   final String? git;
+
   /// Required `uri`-formatted value serialized in the `html` wire field.
   final String? html;
+
   /// Required `uri`-formatted value serialized in the `self` wire field.
   final String self;
 
-  const ContentFileLinks({required this.git, required this.html, required this.self});
+  const ContentFileLinks(
+      {required this.git, required this.html, required this.self});
 
-  ContentFileLinks Function({String? git, String? html, String self}) get copyWith => _copyWith;
+  ContentFileLinks Function({String? git, String? html, String self})
+      get copyWith => _copyWith;
 
-  ContentFileLinks _copyWith({Object? git = sdkOmittedValue, Object? html = sdkOmittedValue, Object? self = sdkOmittedValue}) => ContentFileLinks(
-    git: identical(git, sdkOmittedValue) ? this.git : git as String?,
-    html: identical(html, sdkOmittedValue) ? this.html : html as String?,
-    self: identical(self, sdkOmittedValue) ? this.self : self as String,
-  );
+  ContentFileLinks _copyWith(
+          {Object? git = sdkOmittedValue,
+          Object? html = sdkOmittedValue,
+          Object? self = sdkOmittedValue}) =>
+      ContentFileLinks(
+        git: identical(git, sdkOmittedValue) ? this.git : git as String?,
+        html: identical(html, sdkOmittedValue) ? this.html : html as String?,
+        self: identical(self, sdkOmittedValue) ? this.self : self as String,
+      );
 
-  factory ContentFileLinks.fromJson(Map<String, dynamic> json) => ContentFileLinks(
-    git: json.containsKey('git') ? json['git'] as String? : throw ArgumentError.value(null, 'git', 'Required property is missing'),
-    html: json.containsKey('html') ? json['html'] as String? : throw ArgumentError.value(null, 'html', 'Required property is missing'),
-    self: (json['self'] as String?)!,
-  );
+  factory ContentFileLinks.fromJson(Map<String, dynamic> json) =>
+      ContentFileLinks(
+        git: json.containsKey('git')
+            ? json['git'] as String?
+            : throw ArgumentError.value(
+                null, 'git', 'Required property is missing'),
+        html: json.containsKey('html')
+            ? json['html'] as String?
+            : throw ArgumentError.value(
+                null, 'html', 'Required property is missing'),
+        self: (json['self'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'git': git,
-    'html': html,
-    'self': self,
-  };
+        'git': git,
+        'html': html,
+        'self': self,
+      };
 }
 
 /// Content File
 class ContentFile {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final ContentFileType type_;
+
   /// Required `string` value serialized in the `encoding` wire field.
   final String encoding;
+
   /// Required `integer` value serialized in the `size` wire field.
   final int size;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Required `string` value serialized in the `content` wire field.
   final String content;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `git_url` wire field.
   final String? gitUrl;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String? htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `download_url` wire field.
   final String? downloadUrl;
+
   /// Required object value serialized in the `_links` wire field.
   final ContentFileLinks links;
+
   /// Optional `string` value serialized in the `target` wire field.
   final SdkOptional<String> target;
+
   /// Optional `string` value serialized in the `submodule_git_url` wire field.
   final SdkOptional<String> submoduleGitUrl;
 
-  const ContentFile({required this.type_, required this.encoding, required this.size, required this.name, required this.path, required this.content, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.target = const SdkOmitted(), this.submoduleGitUrl = const SdkOmitted()});
+  const ContentFile(
+      {required this.type_,
+      required this.encoding,
+      required this.size,
+      required this.name,
+      required this.path,
+      required this.content,
+      required this.sha,
+      required this.url,
+      required this.gitUrl,
+      required this.htmlUrl,
+      required this.downloadUrl,
+      required this.links,
+      this.target = const SdkOmitted(),
+      this.submoduleGitUrl = const SdkOmitted()});
 
-  ContentFile Function({ContentFileType type_, String encoding, int size, String name, String path, String content, String sha, String url, String? gitUrl, String? htmlUrl, String? downloadUrl, ContentFileLinks links, SdkOptional<String> target, SdkOptional<String> submoduleGitUrl}) get copyWith => _copyWith;
+  ContentFile Function(
+      {ContentFileType type_,
+      String encoding,
+      int size,
+      String name,
+      String path,
+      String content,
+      String sha,
+      String url,
+      String? gitUrl,
+      String? htmlUrl,
+      String? downloadUrl,
+      ContentFileLinks links,
+      SdkOptional<String> target,
+      SdkOptional<String> submoduleGitUrl}) get copyWith => _copyWith;
 
-  ContentFile _copyWith({Object? type_ = sdkOmittedValue, Object? encoding = sdkOmittedValue, Object? size = sdkOmittedValue, Object? name = sdkOmittedValue, Object? path = sdkOmittedValue, Object? content = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue, Object? gitUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? downloadUrl = sdkOmittedValue, Object? links = sdkOmittedValue, Object? target = sdkOmittedValue, Object? submoduleGitUrl = sdkOmittedValue}) => ContentFile(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ContentFileType,
-    encoding: identical(encoding, sdkOmittedValue) ? this.encoding : encoding as String,
-    size: identical(size, sdkOmittedValue) ? this.size : size as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    gitUrl: identical(gitUrl, sdkOmittedValue) ? this.gitUrl : gitUrl as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String?,
-    downloadUrl: identical(downloadUrl, sdkOmittedValue) ? this.downloadUrl : downloadUrl as String?,
-    links: identical(links, sdkOmittedValue) ? this.links : links as ContentFileLinks,
-    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<String>,
-    submoduleGitUrl: identical(submoduleGitUrl, sdkOmittedValue) ? this.submoduleGitUrl : submoduleGitUrl as SdkOptional<String>,
-  );
+  ContentFile _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? encoding = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? gitUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? downloadUrl = sdkOmittedValue,
+          Object? links = sdkOmittedValue,
+          Object? target = sdkOmittedValue,
+          Object? submoduleGitUrl = sdkOmittedValue}) =>
+      ContentFile(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ContentFileType,
+        encoding: identical(encoding, sdkOmittedValue)
+            ? this.encoding
+            : encoding as String,
+        size: identical(size, sdkOmittedValue) ? this.size : size as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        gitUrl: identical(gitUrl, sdkOmittedValue)
+            ? this.gitUrl
+            : gitUrl as String?,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String?,
+        downloadUrl: identical(downloadUrl, sdkOmittedValue)
+            ? this.downloadUrl
+            : downloadUrl as String?,
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as ContentFileLinks,
+        target: identical(target, sdkOmittedValue)
+            ? this.target
+            : target as SdkOptional<String>,
+        submoduleGitUrl: identical(submoduleGitUrl, sdkOmittedValue)
+            ? this.submoduleGitUrl
+            : submoduleGitUrl as SdkOptional<String>,
+      );
 
   factory ContentFile.fromJson(Map<String, dynamic> json) => ContentFile(
-    type_: (json['type'] != null ? ContentFileType.fromJson(json['type'] as String) : null)!,
-    encoding: (json['encoding'] as String?)!,
-    size: ((json['size'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    path: (json['path'] as String?)!,
-    content: (json['content'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-    gitUrl: json.containsKey('git_url') ? json['git_url'] as String? : throw ArgumentError.value(null, 'git_url', 'Required property is missing'),
-    htmlUrl: json.containsKey('html_url') ? json['html_url'] as String? : throw ArgumentError.value(null, 'html_url', 'Required property is missing'),
-    downloadUrl: json.containsKey('download_url') ? json['download_url'] as String? : throw ArgumentError.value(null, 'download_url', 'Required property is missing'),
-    links: (json['_links'] != null ? ContentFileLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    target: json['target'] != null ? SdkPresent((json['target'] as String?)!) : const SdkOmitted(),
-    submoduleGitUrl: json['submodule_git_url'] != null ? SdkPresent((json['submodule_git_url'] as String?)!) : const SdkOmitted(),
-  );
+        type_: (json['type'] != null
+            ? ContentFileType.fromJson(json['type'] as String)
+            : null)!,
+        encoding: (json['encoding'] as String?)!,
+        size: ((json['size'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        path: (json['path'] as String?)!,
+        content: (json['content'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+        gitUrl: json.containsKey('git_url')
+            ? json['git_url'] as String?
+            : throw ArgumentError.value(
+                null, 'git_url', 'Required property is missing'),
+        htmlUrl: json.containsKey('html_url')
+            ? json['html_url'] as String?
+            : throw ArgumentError.value(
+                null, 'html_url', 'Required property is missing'),
+        downloadUrl: json.containsKey('download_url')
+            ? json['download_url'] as String?
+            : throw ArgumentError.value(
+                null, 'download_url', 'Required property is missing'),
+        links: (json['_links'] != null
+            ? ContentFileLinks.fromJson(json['_links'] as Map<String, dynamic>)
+            : null)!,
+        target: json['target'] != null
+            ? SdkPresent((json['target'] as String?)!)
+            : const SdkOmitted(),
+        submoduleGitUrl: json['submodule_git_url'] != null
+            ? SdkPresent((json['submodule_git_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'encoding': encoding,
-    'size': size,
-    'name': name,
-    'path': path,
-    'content': content,
-    'sha': sha,
-    'url': url,
-    'git_url': gitUrl,
-    'html_url': htmlUrl,
-    'download_url': downloadUrl,
-    '_links': links.toJson(),
-    ...switch (target) {
-      SdkPresent<String>(value: final value) => {'target': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (submoduleGitUrl) {
-      SdkPresent<String>(value: final value) => {'submodule_git_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        'encoding': encoding,
+        'size': size,
+        'name': name,
+        'path': path,
+        'content': content,
+        'sha': sha,
+        'url': url,
+        'git_url': gitUrl,
+        'html_url': htmlUrl,
+        'download_url': downloadUrl,
+        '_links': links.toJson(),
+        ...switch (target) {
+          SdkPresent<String>(value: final value) => {
+              'target': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (submoduleGitUrl) {
+          SdkPresent<String>(value: final value) => {
+              'submodule_git_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

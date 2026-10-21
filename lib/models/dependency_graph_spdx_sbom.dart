@@ -8,22 +8,31 @@ part of 'dependency_graph.dart';
 class DependencyGraphSpdxSbom {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `sbom` wire field.
   final DependencyGraphSpdxSbomSbom sbom;
 
   const DependencyGraphSpdxSbom({required this.sbom});
 
-  DependencyGraphSpdxSbom Function({DependencyGraphSpdxSbomSbom sbom}) get copyWith => _copyWith;
+  DependencyGraphSpdxSbom Function({DependencyGraphSpdxSbomSbom sbom})
+      get copyWith => _copyWith;
 
-  DependencyGraphSpdxSbom _copyWith({Object? sbom = sdkOmittedValue}) => DependencyGraphSpdxSbom(
-    sbom: identical(sbom, sdkOmittedValue) ? this.sbom : sbom as DependencyGraphSpdxSbomSbom,
-  );
+  DependencyGraphSpdxSbom _copyWith({Object? sbom = sdkOmittedValue}) =>
+      DependencyGraphSpdxSbom(
+        sbom: identical(sbom, sdkOmittedValue)
+            ? this.sbom
+            : sbom as DependencyGraphSpdxSbomSbom,
+      );
 
-  factory DependencyGraphSpdxSbom.fromJson(Map<String, dynamic> json) => DependencyGraphSpdxSbom(
-    sbom: (json['sbom'] != null ? DependencyGraphSpdxSbomSbom.fromJson(json['sbom'] as Map<String, dynamic>) : null)!,
-  );
+  factory DependencyGraphSpdxSbom.fromJson(Map<String, dynamic> json) =>
+      DependencyGraphSpdxSbom(
+        sbom: (json['sbom'] != null
+            ? DependencyGraphSpdxSbomSbom.fromJson(
+                json['sbom'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sbom': sbom.toJson(),
-  };
+        'sbom': sbom.toJson(),
+      };
 }

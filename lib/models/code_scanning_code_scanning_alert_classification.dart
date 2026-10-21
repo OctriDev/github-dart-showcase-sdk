@@ -6,12 +6,12 @@ part of 'code_scanning_code_scanning_alert.dart';
 // code_scanning_code_scanning_alert domain models
 /// A classification of the file. For example to identify it as generated.
 final class CodeScanningAlertClassification {
-
   final String value;
 
   const CodeScanningAlertClassification._(this.value);
 
-  factory CodeScanningAlertClassification.fromJson(String value) => CodeScanningAlertClassification._(value);
+  factory CodeScanningAlertClassification.fromJson(String value) =>
+      CodeScanningAlertClassification._(value);
 
   static const source = CodeScanningAlertClassification._('source');
   static const generated = CodeScanningAlertClassification._('generated');
@@ -20,10 +20,13 @@ final class CodeScanningAlertClassification {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertClassification && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertClassification && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

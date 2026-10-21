@@ -7,289 +7,567 @@ part of 'inline.dart';
 class ReposCreateRepoRulesetRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the ruleset.
   final String name;
+
   /// The target of the ruleset
   final SdkOptional<ReposCreateRepoRulesetRequestBodyTarget> target;
+
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final RepositoryRuleEnforcement enforcement;
+
   /// The actors that can bypass the rules in this ruleset
   final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
+
   /// Parameters for a repository ruleset ref name condition
   final SdkOptional<RepositoryRulesetConditions> conditions;
+
   /// An array of rules within the ruleset.
   final SdkOptional<List<RepositoryRule>> rules;
 
-  const ReposCreateRepoRulesetRequestBody({required this.name, this.target = const SdkOmitted(), required this.enforcement, this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const ReposCreateRepoRulesetRequestBody(
+      {required this.name,
+      this.target = const SdkOmitted(),
+      required this.enforcement,
+      this.bypassActors = const SdkOmitted(),
+      this.conditions = const SdkOmitted(),
+      this.rules = const SdkOmitted()});
 
-  ReposCreateRepoRulesetRequestBody Function({String name, SdkOptional<ReposCreateRepoRulesetRequestBodyTarget> target, RepositoryRuleEnforcement enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<RepositoryRulesetConditions> conditions, SdkOptional<List<RepositoryRule>> rules}) get copyWith => _copyWith;
+  ReposCreateRepoRulesetRequestBody Function(
+      {String name,
+      SdkOptional<ReposCreateRepoRulesetRequestBodyTarget> target,
+      RepositoryRuleEnforcement enforcement,
+      SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors,
+      SdkOptional<RepositoryRulesetConditions> conditions,
+      SdkOptional<List<RepositoryRule>> rules}) get copyWith => _copyWith;
 
-  ReposCreateRepoRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposCreateRepoRulesetRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposCreateRepoRulesetRequestBodyTarget>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
-    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<RepositoryRulesetConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<RepositoryRule>>,
-  );
+  ReposCreateRepoRulesetRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? target = sdkOmittedValue,
+          Object? enforcement = sdkOmittedValue,
+          Object? bypassActors = sdkOmittedValue,
+          Object? conditions = sdkOmittedValue,
+          Object? rules = sdkOmittedValue}) =>
+      ReposCreateRepoRulesetRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        target: identical(target, sdkOmittedValue)
+            ? this.target
+            : target as SdkOptional<ReposCreateRepoRulesetRequestBodyTarget>,
+        enforcement: identical(enforcement, sdkOmittedValue)
+            ? this.enforcement
+            : enforcement as RepositoryRuleEnforcement,
+        bypassActors: identical(bypassActors, sdkOmittedValue)
+            ? this.bypassActors
+            : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
+        conditions: identical(conditions, sdkOmittedValue)
+            ? this.conditions
+            : conditions as SdkOptional<RepositoryRulesetConditions>,
+        rules: identical(rules, sdkOmittedValue)
+            ? this.rules
+            : rules as SdkOptional<List<RepositoryRule>>,
+      );
 
-  factory ReposCreateRepoRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateRepoRulesetRequestBody(
-    name: (json['name'] as String?)!,
-    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposCreateRepoRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
-    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
-    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => RepositoryRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  );
+  factory ReposCreateRepoRulesetRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateRepoRulesetRequestBody(
+        name: (json['name'] as String?)!,
+        target: json['target'] != null
+            ? SdkPresent((json['target'] != null
+                ? ReposCreateRepoRulesetRequestBodyTarget.fromJson(
+                    json['target'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        enforcement: (json['enforcement'] != null
+            ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String)
+            : null)!,
+        bypassActors: json['bypass_actors'] != null
+            ? SdkPresent(((json['bypass_actors'] as List?)
+                ?.map((e) => RepositoryRulesetBypassActor.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        conditions: json['conditions'] != null
+            ? SdkPresent((json['conditions'] != null
+                ? RepositoryRulesetConditions.fromJson(
+                    json['conditions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        rules: json['rules'] != null
+            ? SdkPresent(((json['rules'] as List?)
+                ?.map((e) => RepositoryRule.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (target) {
-      SdkPresent<ReposCreateRepoRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'enforcement': enforcement.toJson(),
-    ...switch (bypassActors) {
-      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conditions) {
-      SdkPresent<RepositoryRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<RepositoryRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        ...switch (target) {
+          SdkPresent<ReposCreateRepoRulesetRequestBodyTarget>(
+            value: final value
+          ) =>
+            {
+              'target': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'enforcement': enforcement.toJson(),
+        ...switch (bypassActors) {
+          SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) =>
+            {
+              'bypass_actors': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (conditions) {
+          SdkPresent<RepositoryRulesetConditions>(value: final value) => {
+              'conditions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rules) {
+          SdkPresent<List<RepositoryRule>>(value: final value) => {
+              'rules': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposUpdateRepoRulesetRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the ruleset.
   final SdkOptional<String> name;
+
   /// The target of the ruleset
   final SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget> target;
+
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final SdkOptional<RepositoryRuleEnforcement> enforcement;
+
   /// The actors that can bypass the rules in this ruleset
   final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
+
   /// Parameters for a repository ruleset ref name condition
   final SdkOptional<RepositoryRulesetConditions> conditions;
+
   /// An array of rules within the ruleset.
   final SdkOptional<List<RepositoryRule>> rules;
 
-  const ReposUpdateRepoRulesetRequestBody({this.name = const SdkOmitted(), this.target = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const ReposUpdateRepoRulesetRequestBody(
+      {this.name = const SdkOmitted(),
+      this.target = const SdkOmitted(),
+      this.enforcement = const SdkOmitted(),
+      this.bypassActors = const SdkOmitted(),
+      this.conditions = const SdkOmitted(),
+      this.rules = const SdkOmitted()});
 
-  ReposUpdateRepoRulesetRequestBody Function({SdkOptional<String> name, SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget> target, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<RepositoryRulesetConditions> conditions, SdkOptional<List<RepositoryRule>> rules}) get copyWith => _copyWith;
+  ReposUpdateRepoRulesetRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget> target,
+      SdkOptional<RepositoryRuleEnforcement> enforcement,
+      SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors,
+      SdkOptional<RepositoryRulesetConditions> conditions,
+      SdkOptional<List<RepositoryRule>> rules}) get copyWith => _copyWith;
 
-  ReposUpdateRepoRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposUpdateRepoRulesetRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
-    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<RepositoryRulesetConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<RepositoryRule>>,
-  );
+  ReposUpdateRepoRulesetRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? target = sdkOmittedValue,
+          Object? enforcement = sdkOmittedValue,
+          Object? bypassActors = sdkOmittedValue,
+          Object? conditions = sdkOmittedValue,
+          Object? rules = sdkOmittedValue}) =>
+      ReposUpdateRepoRulesetRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        target: identical(target, sdkOmittedValue)
+            ? this.target
+            : target as SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget>,
+        enforcement: identical(enforcement, sdkOmittedValue)
+            ? this.enforcement
+            : enforcement as SdkOptional<RepositoryRuleEnforcement>,
+        bypassActors: identical(bypassActors, sdkOmittedValue)
+            ? this.bypassActors
+            : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
+        conditions: identical(conditions, sdkOmittedValue)
+            ? this.conditions
+            : conditions as SdkOptional<RepositoryRulesetConditions>,
+        rules: identical(rules, sdkOmittedValue)
+            ? this.rules
+            : rules as SdkOptional<List<RepositoryRule>>,
+      );
 
-  factory ReposUpdateRepoRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateRepoRulesetRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposUpdateRepoRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
-    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
-    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => RepositoryRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  );
+  factory ReposUpdateRepoRulesetRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposUpdateRepoRulesetRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        target: json['target'] != null
+            ? SdkPresent((json['target'] != null
+                ? ReposUpdateRepoRulesetRequestBodyTarget.fromJson(
+                    json['target'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        enforcement: json['enforcement'] != null
+            ? SdkPresent((json['enforcement'] != null
+                ? RepositoryRuleEnforcement.fromJson(
+                    json['enforcement'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        bypassActors: json['bypass_actors'] != null
+            ? SdkPresent(((json['bypass_actors'] as List?)
+                ?.map((e) => RepositoryRulesetBypassActor.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        conditions: json['conditions'] != null
+            ? SdkPresent((json['conditions'] != null
+                ? RepositoryRulesetConditions.fromJson(
+                    json['conditions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        rules: json['rules'] != null
+            ? SdkPresent(((json['rules'] as List?)
+                ?.map((e) => RepositoryRule.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (target) {
-      SdkPresent<ReposUpdateRepoRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enforcement) {
-      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bypassActors) {
-      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conditions) {
-      SdkPresent<RepositoryRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<RepositoryRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (target) {
+          SdkPresent<ReposUpdateRepoRulesetRequestBodyTarget>(
+            value: final value
+          ) =>
+            {
+              'target': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enforcement) {
+          SdkPresent<RepositoryRuleEnforcement>(value: final value) => {
+              'enforcement': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bypassActors) {
+          SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) =>
+            {
+              'bypass_actors': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (conditions) {
+          SdkPresent<RepositoryRulesetConditions>(value: final value) => {
+              'conditions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rules) {
+          SdkPresent<List<RepositoryRule>>(value: final value) => {
+              'rules': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposCreateCommitStatusRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The state of the status.
   final ReposCreateCommitStatusRequestBodyState state;
+
   /// The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status. For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA: `http://ci.example.com/user/repo/build/sha`
   final SdkOptional<String?> targetUrl;
+
   /// A short description of the status.
   final SdkOptional<String?> description;
+
   /// A string label to differentiate this status from the status of other systems. This field is case-insensitive.
   final SdkOptional<String> context;
 
-  const ReposCreateCommitStatusRequestBody({required this.state, this.targetUrl = const SdkOmitted(), this.description = const SdkOmitted(), this.context = const SdkOmitted()});
+  const ReposCreateCommitStatusRequestBody(
+      {required this.state,
+      this.targetUrl = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.context = const SdkOmitted()});
 
-  ReposCreateCommitStatusRequestBody Function({ReposCreateCommitStatusRequestBodyState state, SdkOptional<String?> targetUrl, SdkOptional<String?> description, SdkOptional<String> context}) get copyWith => _copyWith;
+  ReposCreateCommitStatusRequestBody Function(
+      {ReposCreateCommitStatusRequestBodyState state,
+      SdkOptional<String?> targetUrl,
+      SdkOptional<String?> description,
+      SdkOptional<String> context}) get copyWith => _copyWith;
 
-  ReposCreateCommitStatusRequestBody _copyWith({Object? state = sdkOmittedValue, Object? targetUrl = sdkOmittedValue, Object? description = sdkOmittedValue, Object? context = sdkOmittedValue}) => ReposCreateCommitStatusRequestBody(
-    state: identical(state, sdkOmittedValue) ? this.state : state as ReposCreateCommitStatusRequestBodyState,
-    targetUrl: identical(targetUrl, sdkOmittedValue) ? this.targetUrl : targetUrl as SdkOptional<String?>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    context: identical(context, sdkOmittedValue) ? this.context : context as SdkOptional<String>,
-  );
+  ReposCreateCommitStatusRequestBody _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? targetUrl = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? context = sdkOmittedValue}) =>
+      ReposCreateCommitStatusRequestBody(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as ReposCreateCommitStatusRequestBodyState,
+        targetUrl: identical(targetUrl, sdkOmittedValue)
+            ? this.targetUrl
+            : targetUrl as SdkOptional<String?>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        context: identical(context, sdkOmittedValue)
+            ? this.context
+            : context as SdkOptional<String>,
+      );
 
-  factory ReposCreateCommitStatusRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateCommitStatusRequestBody(
-    state: (json['state'] != null ? ReposCreateCommitStatusRequestBodyState.fromJson(json['state'] as String) : null)!,
-    targetUrl: json.containsKey('target_url') ? SdkPresent(json['target_url'] as String?) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    context: json['context'] != null ? SdkPresent((json['context'] as String?)!) : const SdkOmitted(),
-  );
+  factory ReposCreateCommitStatusRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateCommitStatusRequestBody(
+        state: (json['state'] != null
+            ? ReposCreateCommitStatusRequestBodyState.fromJson(
+                json['state'] as String)
+            : null)!,
+        targetUrl: json.containsKey('target_url')
+            ? SdkPresent(json['target_url'] as String?)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        context: json['context'] != null
+            ? SdkPresent((json['context'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'state': state.toJson(),
-    ...switch (targetUrl) {
-      SdkPresent<String?>(value: final value) => {'target_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (context) {
-      SdkPresent<String>(value: final value) => {'context': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'state': state.toJson(),
+        ...switch (targetUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'target_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (context) {
+          SdkPresent<String>(value: final value) => {
+              'context': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposReplaceAllTopicsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` will be saved as lowercase.
   final List<String> names;
 
   const ReposReplaceAllTopicsRequestBody({required this.names});
 
-  ReposReplaceAllTopicsRequestBody Function({List<String> names}) get copyWith => _copyWith;
+  ReposReplaceAllTopicsRequestBody Function({List<String> names})
+      get copyWith => _copyWith;
 
-  ReposReplaceAllTopicsRequestBody _copyWith({Object? names = sdkOmittedValue}) => ReposReplaceAllTopicsRequestBody(
-    names: identical(names, sdkOmittedValue) ? this.names : names as List<String>,
-  );
+  ReposReplaceAllTopicsRequestBody _copyWith(
+          {Object? names = sdkOmittedValue}) =>
+      ReposReplaceAllTopicsRequestBody(
+        names: identical(names, sdkOmittedValue)
+            ? this.names
+            : names as List<String>,
+      );
 
-  factory ReposReplaceAllTopicsRequestBody.fromJson(Map<String, dynamic> json) => ReposReplaceAllTopicsRequestBody(
-    names: ((json['names'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory ReposReplaceAllTopicsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposReplaceAllTopicsRequestBody(
+        names: ((json['names'] as List?)?.map((e) => e as String).toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'names': names,
-  };
+        'names': names,
+      };
 }
 
 class ReposTransferRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The username or organization name the repository will be transferred to.
   final String newOwner;
+
   /// The new name to be given to the repository.
   final SdkOptional<String> newName;
+
   /// ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
   final SdkOptional<List<int>> teamIds;
 
-  const ReposTransferRequestBody({required this.newOwner, this.newName = const SdkOmitted(), this.teamIds = const SdkOmitted()});
+  const ReposTransferRequestBody(
+      {required this.newOwner,
+      this.newName = const SdkOmitted(),
+      this.teamIds = const SdkOmitted()});
 
-  ReposTransferRequestBody Function({String newOwner, SdkOptional<String> newName, SdkOptional<List<int>> teamIds}) get copyWith => _copyWith;
+  ReposTransferRequestBody Function(
+      {String newOwner,
+      SdkOptional<String> newName,
+      SdkOptional<List<int>> teamIds}) get copyWith => _copyWith;
 
-  ReposTransferRequestBody _copyWith({Object? newOwner = sdkOmittedValue, Object? newName = sdkOmittedValue, Object? teamIds = sdkOmittedValue}) => ReposTransferRequestBody(
-    newOwner: identical(newOwner, sdkOmittedValue) ? this.newOwner : newOwner as String,
-    newName: identical(newName, sdkOmittedValue) ? this.newName : newName as SdkOptional<String>,
-    teamIds: identical(teamIds, sdkOmittedValue) ? this.teamIds : teamIds as SdkOptional<List<int>>,
-  );
+  ReposTransferRequestBody _copyWith(
+          {Object? newOwner = sdkOmittedValue,
+          Object? newName = sdkOmittedValue,
+          Object? teamIds = sdkOmittedValue}) =>
+      ReposTransferRequestBody(
+        newOwner: identical(newOwner, sdkOmittedValue)
+            ? this.newOwner
+            : newOwner as String,
+        newName: identical(newName, sdkOmittedValue)
+            ? this.newName
+            : newName as SdkOptional<String>,
+        teamIds: identical(teamIds, sdkOmittedValue)
+            ? this.teamIds
+            : teamIds as SdkOptional<List<int>>,
+      );
 
-  factory ReposTransferRequestBody.fromJson(Map<String, dynamic> json) => ReposTransferRequestBody(
-    newOwner: (json['new_owner'] as String?)!,
-    newName: json['new_name'] != null ? SdkPresent((json['new_name'] as String?)!) : const SdkOmitted(),
-    teamIds: json['team_ids'] != null ? SdkPresent(((json['team_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory ReposTransferRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposTransferRequestBody(
+        newOwner: (json['new_owner'] as String?)!,
+        newName: json['new_name'] != null
+            ? SdkPresent((json['new_name'] as String?)!)
+            : const SdkOmitted(),
+        teamIds: json['team_ids'] != null
+            ? SdkPresent(((json['team_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'new_owner': newOwner,
-    ...switch (newName) {
-      SdkPresent<String>(value: final value) => {'new_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (teamIds) {
-      SdkPresent<List<int>>(value: final value) => {'team_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'new_owner': newOwner,
+        ...switch (newName) {
+          SdkPresent<String>(value: final value) => {
+              'new_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teamIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'team_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposCreateUsingTemplateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
   final SdkOptional<String> owner;
+
   /// The name of the new repository.
   final String name;
+
   /// A short description of the new repository.
   final SdkOptional<String> description;
+
   /// Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.
   final SdkOptional<bool> includeAllBranches;
+
   /// Either `true` to create a new private repository or `false` to create a new public one.
   final SdkOptional<bool> private;
 
-  const ReposCreateUsingTemplateRequestBody({this.owner = const SdkOmitted(), required this.name, this.description = const SdkOmitted(), this.includeAllBranches = const SdkOmitted(), this.private = const SdkOmitted()});
+  const ReposCreateUsingTemplateRequestBody(
+      {this.owner = const SdkOmitted(),
+      required this.name,
+      this.description = const SdkOmitted(),
+      this.includeAllBranches = const SdkOmitted(),
+      this.private = const SdkOmitted()});
 
-  ReposCreateUsingTemplateRequestBody Function({SdkOptional<String> owner, String name, SdkOptional<String> description, SdkOptional<bool> includeAllBranches, SdkOptional<bool> private}) get copyWith => _copyWith;
+  ReposCreateUsingTemplateRequestBody Function(
+      {SdkOptional<String> owner,
+      String name,
+      SdkOptional<String> description,
+      SdkOptional<bool> includeAllBranches,
+      SdkOptional<bool> private}) get copyWith => _copyWith;
 
-  ReposCreateUsingTemplateRequestBody _copyWith({Object? owner = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? includeAllBranches = sdkOmittedValue, Object? private = sdkOmittedValue}) => ReposCreateUsingTemplateRequestBody(
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    includeAllBranches: identical(includeAllBranches, sdkOmittedValue) ? this.includeAllBranches : includeAllBranches as SdkOptional<bool>,
-    private: identical(private, sdkOmittedValue) ? this.private : private as SdkOptional<bool>,
-  );
+  ReposCreateUsingTemplateRequestBody _copyWith(
+          {Object? owner = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? includeAllBranches = sdkOmittedValue,
+          Object? private = sdkOmittedValue}) =>
+      ReposCreateUsingTemplateRequestBody(
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        includeAllBranches: identical(includeAllBranches, sdkOmittedValue)
+            ? this.includeAllBranches
+            : includeAllBranches as SdkOptional<bool>,
+        private: identical(private, sdkOmittedValue)
+            ? this.private
+            : private as SdkOptional<bool>,
+      );
 
-  factory ReposCreateUsingTemplateRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateUsingTemplateRequestBody(
-    owner: json['owner'] != null ? SdkPresent((json['owner'] as String?)!) : const SdkOmitted(),
-    name: (json['name'] as String?)!,
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    includeAllBranches: json['include_all_branches'] != null ? SdkPresent((json['include_all_branches'] as bool?)!) : const SdkOmitted(),
-    private: json['private'] != null ? SdkPresent((json['private'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ReposCreateUsingTemplateRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateUsingTemplateRequestBody(
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] as String?)!)
+            : const SdkOmitted(),
+        name: (json['name'] as String?)!,
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        includeAllBranches: json['include_all_branches'] != null
+            ? SdkPresent((json['include_all_branches'] as bool?)!)
+            : const SdkOmitted(),
+        private: json['private'] != null
+            ? SdkPresent((json['private'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (owner) {
-      SdkPresent<String>(value: final value) => {'owner': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name,
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (includeAllBranches) {
-      SdkPresent<bool>(value: final value) => {'include_all_branches': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (private) {
-      SdkPresent<bool>(value: final value) => {'private': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (owner) {
+          SdkPresent<String>(value: final value) => {
+              'owner': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name,
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (includeAllBranches) {
+          SdkPresent<bool>(value: final value) => {
+              'include_all_branches': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (private) {
+          SdkPresent<bool>(value: final value) => {
+              'private': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

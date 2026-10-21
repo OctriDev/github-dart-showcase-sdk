@@ -8,32 +8,44 @@ part of 'repos.dart';
 class Traffic {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `date-time`-formatted value serialized in the `timestamp` wire field.
   final String timestamp;
+
   /// Required `integer` value serialized in the `uniques` wire field.
   final int uniques;
+
   /// Required `integer` value serialized in the `count` wire field.
   final int count;
 
-  const Traffic({required this.timestamp, required this.uniques, required this.count});
+  const Traffic(
+      {required this.timestamp, required this.uniques, required this.count});
 
-  Traffic Function({String timestamp, int uniques, int count}) get copyWith => _copyWith;
+  Traffic Function({String timestamp, int uniques, int count}) get copyWith =>
+      _copyWith;
 
-  Traffic _copyWith({Object? timestamp = sdkOmittedValue, Object? uniques = sdkOmittedValue, Object? count = sdkOmittedValue}) => Traffic(
-    timestamp: identical(timestamp, sdkOmittedValue) ? this.timestamp : timestamp as String,
-    uniques: identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
-    count: identical(count, sdkOmittedValue) ? this.count : count as int,
-  );
+  Traffic _copyWith(
+          {Object? timestamp = sdkOmittedValue,
+          Object? uniques = sdkOmittedValue,
+          Object? count = sdkOmittedValue}) =>
+      Traffic(
+        timestamp: identical(timestamp, sdkOmittedValue)
+            ? this.timestamp
+            : timestamp as String,
+        uniques:
+            identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
+        count: identical(count, sdkOmittedValue) ? this.count : count as int,
+      );
 
   factory Traffic.fromJson(Map<String, dynamic> json) => Traffic(
-    timestamp: (json['timestamp'] as String?)!,
-    uniques: ((json['uniques'] as num?)?.toInt())!,
-    count: ((json['count'] as num?)?.toInt())!,
-  );
+        timestamp: (json['timestamp'] as String?)!,
+        uniques: ((json['uniques'] as num?)?.toInt())!,
+        count: ((json['count'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'timestamp': timestamp,
-    'uniques': uniques,
-    'count': count,
-  };
+        'timestamp': timestamp,
+        'uniques': uniques,
+        'count': count,
+      };
 }

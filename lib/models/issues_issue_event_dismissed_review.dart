@@ -8,40 +8,71 @@ part of 'issues_issue.dart';
 class IssueEventDismissedReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `state` wire field.
   final String state;
+
   /// Required `integer` value serialized in the `review_id` wire field.
   final int reviewId;
+
   /// Required `string` value serialized in the `dismissal_message` wire field.
   final String? dismissalMessage;
+
   /// Optional `string` value serialized in the `dismissal_commit_id` wire field.
   final SdkOptional<String?> dismissalCommitId;
 
-  const IssueEventDismissedReview({required this.state, required this.reviewId, required this.dismissalMessage, this.dismissalCommitId = const SdkOmitted()});
+  const IssueEventDismissedReview(
+      {required this.state,
+      required this.reviewId,
+      required this.dismissalMessage,
+      this.dismissalCommitId = const SdkOmitted()});
 
-  IssueEventDismissedReview Function({String state, int reviewId, String? dismissalMessage, SdkOptional<String?> dismissalCommitId}) get copyWith => _copyWith;
+  IssueEventDismissedReview Function(
+      {String state,
+      int reviewId,
+      String? dismissalMessage,
+      SdkOptional<String?> dismissalCommitId}) get copyWith => _copyWith;
 
-  IssueEventDismissedReview _copyWith({Object? state = sdkOmittedValue, Object? reviewId = sdkOmittedValue, Object? dismissalMessage = sdkOmittedValue, Object? dismissalCommitId = sdkOmittedValue}) => IssueEventDismissedReview(
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    reviewId: identical(reviewId, sdkOmittedValue) ? this.reviewId : reviewId as int,
-    dismissalMessage: identical(dismissalMessage, sdkOmittedValue) ? this.dismissalMessage : dismissalMessage as String?,
-    dismissalCommitId: identical(dismissalCommitId, sdkOmittedValue) ? this.dismissalCommitId : dismissalCommitId as SdkOptional<String?>,
-  );
+  IssueEventDismissedReview _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? reviewId = sdkOmittedValue,
+          Object? dismissalMessage = sdkOmittedValue,
+          Object? dismissalCommitId = sdkOmittedValue}) =>
+      IssueEventDismissedReview(
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        reviewId: identical(reviewId, sdkOmittedValue)
+            ? this.reviewId
+            : reviewId as int,
+        dismissalMessage: identical(dismissalMessage, sdkOmittedValue)
+            ? this.dismissalMessage
+            : dismissalMessage as String?,
+        dismissalCommitId: identical(dismissalCommitId, sdkOmittedValue)
+            ? this.dismissalCommitId
+            : dismissalCommitId as SdkOptional<String?>,
+      );
 
-  factory IssueEventDismissedReview.fromJson(Map<String, dynamic> json) => IssueEventDismissedReview(
-    state: (json['state'] as String?)!,
-    reviewId: ((json['review_id'] as num?)?.toInt())!,
-    dismissalMessage: json.containsKey('dismissal_message') ? json['dismissal_message'] as String? : throw ArgumentError.value(null, 'dismissal_message', 'Required property is missing'),
-    dismissalCommitId: json.containsKey('dismissal_commit_id') ? SdkPresent(json['dismissal_commit_id'] as String?) : const SdkOmitted(),
-  );
+  factory IssueEventDismissedReview.fromJson(Map<String, dynamic> json) =>
+      IssueEventDismissedReview(
+        state: (json['state'] as String?)!,
+        reviewId: ((json['review_id'] as num?)?.toInt())!,
+        dismissalMessage: json.containsKey('dismissal_message')
+            ? json['dismissal_message'] as String?
+            : throw ArgumentError.value(
+                null, 'dismissal_message', 'Required property is missing'),
+        dismissalCommitId: json.containsKey('dismissal_commit_id')
+            ? SdkPresent(json['dismissal_commit_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'state': state,
-    'review_id': reviewId,
-    'dismissal_message': dismissalMessage,
-    ...switch (dismissalCommitId) {
-      SdkPresent<String?>(value: final value) => {'dismissal_commit_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'state': state,
+        'review_id': reviewId,
+        'dismissal_message': dismissalMessage,
+        ...switch (dismissalCommitId) {
+          SdkPresent<String?>(value: final value) => {
+              'dismissal_commit_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

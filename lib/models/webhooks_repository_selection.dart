@@ -6,22 +6,25 @@ part of 'webhooks.dart';
 // webhooks domain models
 /// Describe whether all repositories have been selected or there's a selection involved
 final class WebhooksRepositorySelection {
-
   final String value;
 
   const WebhooksRepositorySelection._(this.value);
 
-  factory WebhooksRepositorySelection.fromJson(String value) => WebhooksRepositorySelection._(value);
+  factory WebhooksRepositorySelection.fromJson(String value) =>
+      WebhooksRepositorySelection._(value);
 
   static const all = WebhooksRepositorySelection._('all');
   static const selected = WebhooksRepositorySelection._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksRepositorySelection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksRepositorySelection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

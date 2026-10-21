@@ -10,77 +10,360 @@ sealed class TimelineIssueEvents {
   const TimelineIssueEvents();
   factory TimelineIssueEvents.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = LabeledIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsLabeledIssueEvent(value); } } catch (_) {}
-      try { final value = UnlabeledIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsUnlabeledIssueEvent(value); } } catch (_) {}
-      try { final value = MilestonedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsMilestonedIssueEvent(value); } } catch (_) {}
-      try { final value = DemilestonedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsDemilestonedIssueEvent(value); } } catch (_) {}
-      try { final value = RenamedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsRenamedIssueEvent(value); } } catch (_) {}
-      try { final value = ReviewRequestedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsReviewRequestedIssueEvent(value); } } catch (_) {}
-      try { final value = ReviewRequestRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsReviewRequestRemovedIssueEvent(value); } } catch (_) {}
-      try { final value = ReviewDismissedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsReviewDismissedIssueEvent(value); } } catch (_) {}
-      try { final value = LockedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsLockedIssueEvent(value); } } catch (_) {}
-      try { final value = AddedToProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsAddedToProjectIssueEvent(value); } } catch (_) {}
-      try { final value = MovedColumnInProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsMovedColumnInProjectIssueEvent(value); } } catch (_) {}
-      try { final value = RemovedFromProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsRemovedFromProjectIssueEvent(value); } } catch (_) {}
-      try { final value = ConvertedNoteToIssueIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsConvertedNoteToIssueIssueEvent(value); } } catch (_) {}
-      try { final value = TimelineCommentEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineCommentEvent(value); } } catch (_) {}
-      try { final value = TimelineCrossReferencedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineCrossReferencedEvent(value); } } catch (_) {}
-      try { final value = TimelineCommittedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineCommittedEvent(value); } } catch (_) {}
-      try { final value = TimelineReviewedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineReviewedEvent(value); } } catch (_) {}
-      try { final value = TimelineLineCommentedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineLineCommentedEvent(value); } } catch (_) {}
-      try { final value = TimelineCommitCommentedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineCommitCommentedEvent(value); } } catch (_) {}
-      try { final value = TimelineAssignedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineAssignedIssueEvent(value); } } catch (_) {}
-      try { final value = TimelineUnassignedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineUnassignedIssueEvent(value); } } catch (_) {}
-      try { final value = StateChangeIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsStateChangeIssueEvent(value); } } catch (_) {}
-      try { final value = IssueTypeAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsIssueTypeAddedIssueEvent(value); } } catch (_) {}
-      try { final value = IssueTypeRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsIssueTypeRemovedIssueEvent(value); } } catch (_) {}
-      try { final value = IssueTypeChangedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsIssueTypeChangedIssueEvent(value); } } catch (_) {}
-      try { final value = SubIssueAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsSubIssueAddedIssueEvent(value); } } catch (_) {}
-      try { final value = SubIssueRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsSubIssueRemovedIssueEvent(value); } } catch (_) {}
-      try { final value = ParentIssueAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsParentIssueAddedIssueEvent(value); } } catch (_) {}
-      try { final value = ParentIssueRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsParentIssueRemovedIssueEvent(value); } } catch (_) {}
-      try { final value = BlockedByAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsBlockedByAddedIssueEvent(value); } } catch (_) {}
-      try { final value = BlockedByRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsBlockedByRemovedIssueEvent(value); } } catch (_) {}
-      try { final value = BlockingAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsBlockingAddedIssueEvent(value); } } catch (_) {}
-      try { final value = BlockingRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsBlockingRemovedIssueEvent(value); } } catch (_) {}
-      try { final value = TimelineConnectedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineConnectedEvent(value); } } catch (_) {}
-      try { final value = TimelineDisconnectedEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return TimelineIssueEventsTimelineDisconnectedEvent(value); } } catch (_) {}
+      try {
+        final value = LabeledIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsLabeledIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = UnlabeledIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsUnlabeledIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = MilestonedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsMilestonedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = DemilestonedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsDemilestonedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RenamedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsRenamedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ReviewRequestedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsReviewRequestedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ReviewRequestRemovedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsReviewRequestRemovedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ReviewDismissedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsReviewDismissedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = LockedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsLockedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = AddedToProjectIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsAddedToProjectIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = MovedColumnInProjectIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsMovedColumnInProjectIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RemovedFromProjectIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsRemovedFromProjectIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ConvertedNoteToIssueIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsConvertedNoteToIssueIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineCommentEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineCommentEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineCrossReferencedEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineCrossReferencedEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineCommittedEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineCommittedEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineReviewedEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineReviewedEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineLineCommentedEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineLineCommentedEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineCommitCommentedEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineCommitCommentedEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineAssignedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineAssignedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineUnassignedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineUnassignedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = StateChangeIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsStateChangeIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = IssueTypeAddedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsIssueTypeAddedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = IssueTypeRemovedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsIssueTypeRemovedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = IssueTypeChangedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsIssueTypeChangedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = SubIssueAddedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsSubIssueAddedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = SubIssueRemovedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsSubIssueRemovedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ParentIssueAddedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsParentIssueAddedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ParentIssueRemovedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsParentIssueRemovedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BlockedByAddedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsBlockedByAddedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BlockedByRemovedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsBlockedByRemovedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BlockingAddedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsBlockingAddedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = BlockingRemovedIssueEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsBlockingRemovedIssueEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineConnectedEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineConnectedEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = TimelineDisconnectedEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return TimelineIssueEventsTimelineDisconnectedEvent(value);
+        }
+      } catch (_) {}
     }
-    try { return TimelineIssueEventsLabeledIssueEvent(LabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsUnlabeledIssueEvent(UnlabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsMilestonedIssueEvent(MilestonedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsDemilestonedIssueEvent(DemilestonedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsRenamedIssueEvent(RenamedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsReviewRequestedIssueEvent(ReviewRequestedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsReviewRequestRemovedIssueEvent(ReviewRequestRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsReviewDismissedIssueEvent(ReviewDismissedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsLockedIssueEvent(LockedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsAddedToProjectIssueEvent(AddedToProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsMovedColumnInProjectIssueEvent(MovedColumnInProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsRemovedFromProjectIssueEvent(RemovedFromProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsConvertedNoteToIssueIssueEvent(ConvertedNoteToIssueIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineCommentEvent(TimelineCommentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineCrossReferencedEvent(TimelineCrossReferencedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineCommittedEvent(TimelineCommittedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineReviewedEvent(TimelineReviewedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineLineCommentedEvent(TimelineLineCommentedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineCommitCommentedEvent(TimelineCommitCommentedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineAssignedIssueEvent(TimelineAssignedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineUnassignedIssueEvent(TimelineUnassignedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsStateChangeIssueEvent(StateChangeIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsIssueTypeAddedIssueEvent(IssueTypeAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsIssueTypeRemovedIssueEvent(IssueTypeRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsIssueTypeChangedIssueEvent(IssueTypeChangedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsSubIssueAddedIssueEvent(SubIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsSubIssueRemovedIssueEvent(SubIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsParentIssueAddedIssueEvent(ParentIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsParentIssueRemovedIssueEvent(ParentIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsBlockedByAddedIssueEvent(BlockedByAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsBlockedByRemovedIssueEvent(BlockedByRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsBlockingAddedIssueEvent(BlockingAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsBlockingRemovedIssueEvent(BlockingRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineConnectedEvent(TimelineConnectedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TimelineIssueEventsTimelineDisconnectedEvent(TimelineDisconnectedEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return TimelineIssueEventsLabeledIssueEvent(
+          LabeledIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsUnlabeledIssueEvent(
+          UnlabeledIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsMilestonedIssueEvent(
+          MilestonedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsDemilestonedIssueEvent(
+          DemilestonedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsRenamedIssueEvent(
+          RenamedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsReviewRequestedIssueEvent(
+          ReviewRequestedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsReviewRequestRemovedIssueEvent(
+          ReviewRequestRemovedIssueEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsReviewDismissedIssueEvent(
+          ReviewDismissedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsLockedIssueEvent(
+          LockedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsAddedToProjectIssueEvent(
+          AddedToProjectIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsMovedColumnInProjectIssueEvent(
+          MovedColumnInProjectIssueEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsRemovedFromProjectIssueEvent(
+          RemovedFromProjectIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsConvertedNoteToIssueIssueEvent(
+          ConvertedNoteToIssueIssueEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineCommentEvent(
+          TimelineCommentEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineCrossReferencedEvent(
+          TimelineCrossReferencedEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineCommittedEvent(
+          TimelineCommittedEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineReviewedEvent(
+          TimelineReviewedEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineLineCommentedEvent(
+          TimelineLineCommentedEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineCommitCommentedEvent(
+          TimelineCommitCommentedEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineAssignedIssueEvent(
+          TimelineAssignedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineUnassignedIssueEvent(
+          TimelineUnassignedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsStateChangeIssueEvent(
+          StateChangeIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsIssueTypeAddedIssueEvent(
+          IssueTypeAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsIssueTypeRemovedIssueEvent(
+          IssueTypeRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsIssueTypeChangedIssueEvent(
+          IssueTypeChangedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsSubIssueAddedIssueEvent(
+          SubIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsSubIssueRemovedIssueEvent(
+          SubIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsParentIssueAddedIssueEvent(
+          ParentIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsParentIssueRemovedIssueEvent(
+          ParentIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsBlockedByAddedIssueEvent(
+          BlockedByAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsBlockedByRemovedIssueEvent(
+          BlockedByRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsBlockingAddedIssueEvent(
+          BlockingAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsBlockingRemovedIssueEvent(
+          BlockingRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineConnectedEvent(
+          TimelineConnectedEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TimelineIssueEventsTimelineDisconnectedEvent(
+          TimelineDisconnectedEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for TimelineIssueEvents");
   }
   Object? toJson();
@@ -89,185 +372,243 @@ sealed class TimelineIssueEvents {
 final class TimelineIssueEventsLabeledIssueEvent extends TimelineIssueEvents {
   final LabeledIssueEvent value;
   const TimelineIssueEventsLabeledIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class TimelineIssueEventsUnlabeledIssueEvent extends TimelineIssueEvents {
   final UnlabeledIssueEvent value;
   const TimelineIssueEventsUnlabeledIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsMilestonedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsMilestonedIssueEvent
+    extends TimelineIssueEvents {
   final MilestonedIssueEvent value;
   const TimelineIssueEventsMilestonedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsDemilestonedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsDemilestonedIssueEvent
+    extends TimelineIssueEvents {
   final DemilestonedIssueEvent value;
   const TimelineIssueEventsDemilestonedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class TimelineIssueEventsRenamedIssueEvent extends TimelineIssueEvents {
   final RenamedIssueEvent value;
   const TimelineIssueEventsRenamedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsReviewRequestedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsReviewRequestedIssueEvent
+    extends TimelineIssueEvents {
   final ReviewRequestedIssueEvent value;
   const TimelineIssueEventsReviewRequestedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsReviewRequestRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsReviewRequestRemovedIssueEvent
+    extends TimelineIssueEvents {
   final ReviewRequestRemovedIssueEvent value;
   const TimelineIssueEventsReviewRequestRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsReviewDismissedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsReviewDismissedIssueEvent
+    extends TimelineIssueEvents {
   final ReviewDismissedIssueEvent value;
   const TimelineIssueEventsReviewDismissedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class TimelineIssueEventsLockedIssueEvent extends TimelineIssueEvents {
   final LockedIssueEvent value;
   const TimelineIssueEventsLockedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsAddedToProjectIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsAddedToProjectIssueEvent
+    extends TimelineIssueEvents {
   final AddedToProjectIssueEvent value;
   const TimelineIssueEventsAddedToProjectIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsMovedColumnInProjectIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsMovedColumnInProjectIssueEvent
+    extends TimelineIssueEvents {
   final MovedColumnInProjectIssueEvent value;
   const TimelineIssueEventsMovedColumnInProjectIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsRemovedFromProjectIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsRemovedFromProjectIssueEvent
+    extends TimelineIssueEvents {
   final RemovedFromProjectIssueEvent value;
   const TimelineIssueEventsRemovedFromProjectIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsConvertedNoteToIssueIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsConvertedNoteToIssueIssueEvent
+    extends TimelineIssueEvents {
   final ConvertedNoteToIssueIssueEvent value;
   const TimelineIssueEventsConvertedNoteToIssueIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineCommentEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineCommentEvent
+    extends TimelineIssueEvents {
   final TimelineCommentEvent value;
   const TimelineIssueEventsTimelineCommentEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineCrossReferencedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineCrossReferencedEvent
+    extends TimelineIssueEvents {
   final TimelineCrossReferencedEvent value;
   const TimelineIssueEventsTimelineCrossReferencedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineCommittedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineCommittedEvent
+    extends TimelineIssueEvents {
   final TimelineCommittedEvent value;
   const TimelineIssueEventsTimelineCommittedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineReviewedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineReviewedEvent
+    extends TimelineIssueEvents {
   final TimelineReviewedEvent value;
   const TimelineIssueEventsTimelineReviewedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineLineCommentedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineLineCommentedEvent
+    extends TimelineIssueEvents {
   final TimelineLineCommentedEvent value;
   const TimelineIssueEventsTimelineLineCommentedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineCommitCommentedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineCommitCommentedEvent
+    extends TimelineIssueEvents {
   final TimelineCommitCommentedEvent value;
   const TimelineIssueEventsTimelineCommitCommentedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineAssignedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineAssignedIssueEvent
+    extends TimelineIssueEvents {
   final TimelineAssignedIssueEvent value;
   const TimelineIssueEventsTimelineAssignedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineUnassignedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineUnassignedIssueEvent
+    extends TimelineIssueEvents {
   final TimelineUnassignedIssueEvent value;
   const TimelineIssueEventsTimelineUnassignedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsStateChangeIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsStateChangeIssueEvent
+    extends TimelineIssueEvents {
   final StateChangeIssueEvent value;
   const TimelineIssueEventsStateChangeIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsIssueTypeAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsIssueTypeAddedIssueEvent
+    extends TimelineIssueEvents {
   final IssueTypeAddedIssueEvent value;
   const TimelineIssueEventsIssueTypeAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsIssueTypeRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsIssueTypeRemovedIssueEvent
+    extends TimelineIssueEvents {
   final IssueTypeRemovedIssueEvent value;
   const TimelineIssueEventsIssueTypeRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsIssueTypeChangedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsIssueTypeChangedIssueEvent
+    extends TimelineIssueEvents {
   final IssueTypeChangedIssueEvent value;
   const TimelineIssueEventsIssueTypeChangedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsSubIssueAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsSubIssueAddedIssueEvent
+    extends TimelineIssueEvents {
   final SubIssueAddedIssueEvent value;
   const TimelineIssueEventsSubIssueAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsSubIssueRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsSubIssueRemovedIssueEvent
+    extends TimelineIssueEvents {
   final SubIssueRemovedIssueEvent value;
   const TimelineIssueEventsSubIssueRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsParentIssueAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsParentIssueAddedIssueEvent
+    extends TimelineIssueEvents {
   final ParentIssueAddedIssueEvent value;
   const TimelineIssueEventsParentIssueAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsParentIssueRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsParentIssueRemovedIssueEvent
+    extends TimelineIssueEvents {
   final ParentIssueRemovedIssueEvent value;
   const TimelineIssueEventsParentIssueRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsBlockedByAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsBlockedByAddedIssueEvent
+    extends TimelineIssueEvents {
   final BlockedByAddedIssueEvent value;
   const TimelineIssueEventsBlockedByAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsBlockedByRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsBlockedByRemovedIssueEvent
+    extends TimelineIssueEvents {
   final BlockedByRemovedIssueEvent value;
   const TimelineIssueEventsBlockedByRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

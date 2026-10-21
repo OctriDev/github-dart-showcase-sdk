@@ -8,194 +8,380 @@ part of 'repos.dart';
 class CollaboratorPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
+
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
+
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
+
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
+
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
 
-  const CollaboratorPermissions({required this.pull, this.triage = const SdkOmitted(), required this.push, this.maintain = const SdkOmitted(), required this.admin});
+  const CollaboratorPermissions(
+      {required this.pull,
+      this.triage = const SdkOmitted(),
+      required this.push,
+      this.maintain = const SdkOmitted(),
+      required this.admin});
 
-  CollaboratorPermissions Function({bool pull, SdkOptional<bool> triage, bool push, SdkOptional<bool> maintain, bool admin}) get copyWith => _copyWith;
+  CollaboratorPermissions Function(
+      {bool pull,
+      SdkOptional<bool> triage,
+      bool push,
+      SdkOptional<bool> maintain,
+      bool admin}) get copyWith => _copyWith;
 
-  CollaboratorPermissions _copyWith({Object? pull = sdkOmittedValue, Object? triage = sdkOmittedValue, Object? push = sdkOmittedValue, Object? maintain = sdkOmittedValue, Object? admin = sdkOmittedValue}) => CollaboratorPermissions(
-    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
-    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
-    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-  );
+  CollaboratorPermissions _copyWith(
+          {Object? pull = sdkOmittedValue,
+          Object? triage = sdkOmittedValue,
+          Object? push = sdkOmittedValue,
+          Object? maintain = sdkOmittedValue,
+          Object? admin = sdkOmittedValue}) =>
+      CollaboratorPermissions(
+        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+        triage: identical(triage, sdkOmittedValue)
+            ? this.triage
+            : triage as SdkOptional<bool>,
+        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+        maintain: identical(maintain, sdkOmittedValue)
+            ? this.maintain
+            : maintain as SdkOptional<bool>,
+        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+      );
 
-  factory CollaboratorPermissions.fromJson(Map<String, dynamic> json) => CollaboratorPermissions(
-    pull: (json['pull'] as bool?)!,
-    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
-    push: (json['push'] as bool?)!,
-    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
-    admin: (json['admin'] as bool?)!,
-  );
+  factory CollaboratorPermissions.fromJson(Map<String, dynamic> json) =>
+      CollaboratorPermissions(
+        pull: (json['pull'] as bool?)!,
+        triage: json['triage'] != null
+            ? SdkPresent((json['triage'] as bool?)!)
+            : const SdkOmitted(),
+        push: (json['push'] as bool?)!,
+        maintain: json['maintain'] != null
+            ? SdkPresent((json['maintain'] as bool?)!)
+            : const SdkOmitted(),
+        admin: (json['admin'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull': pull,
-    ...switch (triage) {
-      SdkPresent<bool>(value: final value) => {'triage': value,},
-      _ => const <String, dynamic>{},
-    },
-    'push': push,
-    ...switch (maintain) {
-      SdkPresent<bool>(value: final value) => {'maintain': value,},
-      _ => const <String, dynamic>{},
-    },
-    'admin': admin,
-  };
+        'pull': pull,
+        ...switch (triage) {
+          SdkPresent<bool>(value: final value) => {
+              'triage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'push': push,
+        ...switch (maintain) {
+          SdkPresent<bool>(value: final value) => {
+              'maintain': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'admin': admin,
+      };
 }
 
 /// Collaborator
 class Collaborator {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String?> name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
   final String avatarUrl;
+
   /// Required `string` value serialized in the `gravatar_id` wire field.
   final String? gravatarId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `followers_url` wire field.
   final String followersUrl;
+
   /// Required `string` value serialized in the `following_url` wire field.
   final String followingUrl;
+
   /// Required `string` value serialized in the `gists_url` wire field.
   final String gistsUrl;
+
   /// Required `string` value serialized in the `starred_url` wire field.
   final String starredUrl;
+
   /// Required `uri`-formatted value serialized in the `subscriptions_url` wire field.
   final String subscriptionsUrl;
+
   /// Required `uri`-formatted value serialized in the `organizations_url` wire field.
   final String organizationsUrl;
+
   /// Required `uri`-formatted value serialized in the `repos_url` wire field.
   final String reposUrl;
+
   /// Required `string` value serialized in the `events_url` wire field.
   final String eventsUrl;
+
   /// Required `uri`-formatted value serialized in the `received_events_url` wire field.
   final String receivedEventsUrl;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `boolean` value serialized in the `site_admin` wire field.
   final bool siteAdmin;
+
   /// Optional object value serialized in the `permissions` wire field.
   final SdkOptional<CollaboratorPermissions> permissions;
+
   /// Required `string` value serialized in the `role_name` wire field.
   final String roleName;
+
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const Collaborator({required this.login, required this.id, this.email = const SdkOmitted(), this.name = const SdkOmitted(), required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type_, required this.siteAdmin, this.permissions = const SdkOmitted(), required this.roleName, this.userViewType = const SdkOmitted()});
+  const Collaborator(
+      {required this.login,
+      required this.id,
+      this.email = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      required this.nodeId,
+      required this.avatarUrl,
+      required this.gravatarId,
+      required this.url,
+      required this.htmlUrl,
+      required this.followersUrl,
+      required this.followingUrl,
+      required this.gistsUrl,
+      required this.starredUrl,
+      required this.subscriptionsUrl,
+      required this.organizationsUrl,
+      required this.reposUrl,
+      required this.eventsUrl,
+      required this.receivedEventsUrl,
+      required this.type_,
+      required this.siteAdmin,
+      this.permissions = const SdkOmitted(),
+      required this.roleName,
+      this.userViewType = const SdkOmitted()});
 
-  Collaborator Function({String login, int id, SdkOptional<String?> email, SdkOptional<String?> name, String nodeId, String avatarUrl, String? gravatarId, String url, String htmlUrl, String followersUrl, String followingUrl, String gistsUrl, String starredUrl, String subscriptionsUrl, String organizationsUrl, String reposUrl, String eventsUrl, String receivedEventsUrl, String type_, bool siteAdmin, SdkOptional<CollaboratorPermissions> permissions, String roleName, SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  Collaborator Function(
+      {String login,
+      int id,
+      SdkOptional<String?> email,
+      SdkOptional<String?> name,
+      String nodeId,
+      String avatarUrl,
+      String? gravatarId,
+      String url,
+      String htmlUrl,
+      String followersUrl,
+      String followingUrl,
+      String gistsUrl,
+      String starredUrl,
+      String subscriptionsUrl,
+      String organizationsUrl,
+      String reposUrl,
+      String eventsUrl,
+      String receivedEventsUrl,
+      String type_,
+      bool siteAdmin,
+      SdkOptional<CollaboratorPermissions> permissions,
+      String roleName,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  Collaborator _copyWith({Object? login = sdkOmittedValue, Object? id = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? roleName = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => Collaborator(
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as String,
-    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as String,
-    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as String,
-    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as String,
-    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as String,
-    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as String,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as String,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
-    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as bool,
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<CollaboratorPermissions>,
-    roleName: identical(roleName, sdkOmittedValue) ? this.roleName : roleName as String,
-    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
-  );
+  Collaborator _copyWith(
+          {Object? login = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue,
+          Object? roleName = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      Collaborator(
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as String,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as String,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as String,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as String,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as String,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as String,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as String,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as String,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as bool,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as SdkOptional<CollaboratorPermissions>,
+        roleName: identical(roleName, sdkOmittedValue)
+            ? this.roleName
+            : roleName as String,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
+      );
 
   factory Collaborator.fromJson(Map<String, dynamic> json) => Collaborator(
-    login: (json['login'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-    nodeId: (json['node_id'] as String?)!,
-    avatarUrl: (json['avatar_url'] as String?)!,
-    gravatarId: json.containsKey('gravatar_id') ? json['gravatar_id'] as String? : throw ArgumentError.value(null, 'gravatar_id', 'Required property is missing'),
-    url: (json['url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    followersUrl: (json['followers_url'] as String?)!,
-    followingUrl: (json['following_url'] as String?)!,
-    gistsUrl: (json['gists_url'] as String?)!,
-    starredUrl: (json['starred_url'] as String?)!,
-    subscriptionsUrl: (json['subscriptions_url'] as String?)!,
-    organizationsUrl: (json['organizations_url'] as String?)!,
-    reposUrl: (json['repos_url'] as String?)!,
-    eventsUrl: (json['events_url'] as String?)!,
-    receivedEventsUrl: (json['received_events_url'] as String?)!,
-    type_: (json['type'] as String?)!,
-    siteAdmin: (json['site_admin'] as bool?)!,
-    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    roleName: (json['role_name'] as String?)!,
-    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
-  );
+        login: (json['login'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+        nodeId: (json['node_id'] as String?)!,
+        avatarUrl: (json['avatar_url'] as String?)!,
+        gravatarId: json.containsKey('gravatar_id')
+            ? json['gravatar_id'] as String?
+            : throw ArgumentError.value(
+                null, 'gravatar_id', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        followersUrl: (json['followers_url'] as String?)!,
+        followingUrl: (json['following_url'] as String?)!,
+        gistsUrl: (json['gists_url'] as String?)!,
+        starredUrl: (json['starred_url'] as String?)!,
+        subscriptionsUrl: (json['subscriptions_url'] as String?)!,
+        organizationsUrl: (json['organizations_url'] as String?)!,
+        reposUrl: (json['repos_url'] as String?)!,
+        eventsUrl: (json['events_url'] as String?)!,
+        receivedEventsUrl: (json['received_events_url'] as String?)!,
+        type_: (json['type'] as String?)!,
+        siteAdmin: (json['site_admin'] as bool?)!,
+        permissions: json['permissions'] != null
+            ? SdkPresent((json['permissions'] != null
+                ? CollaboratorPermissions.fromJson(
+                    json['permissions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        roleName: (json['role_name'] as String?)!,
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'login': login,
-    'id': id,
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'node_id': nodeId,
-    'avatar_url': avatarUrl,
-    'gravatar_id': gravatarId,
-    'url': url,
-    'html_url': htmlUrl,
-    'followers_url': followersUrl,
-    'following_url': followingUrl,
-    'gists_url': gistsUrl,
-    'starred_url': starredUrl,
-    'subscriptions_url': subscriptionsUrl,
-    'organizations_url': organizationsUrl,
-    'repos_url': reposUrl,
-    'events_url': eventsUrl,
-    'received_events_url': receivedEventsUrl,
-    'type': type_,
-    'site_admin': siteAdmin,
-    ...switch (permissions) {
-      SdkPresent<CollaboratorPermissions>(value: final value) => {'permissions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'role_name': roleName,
-    ...switch (userViewType) {
-      SdkPresent<String>(value: final value) => {'user_view_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'login': login,
+        'id': id,
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'node_id': nodeId,
+        'avatar_url': avatarUrl,
+        'gravatar_id': gravatarId,
+        'url': url,
+        'html_url': htmlUrl,
+        'followers_url': followersUrl,
+        'following_url': followingUrl,
+        'gists_url': gistsUrl,
+        'starred_url': starredUrl,
+        'subscriptions_url': subscriptionsUrl,
+        'organizations_url': organizationsUrl,
+        'repos_url': reposUrl,
+        'events_url': eventsUrl,
+        'received_events_url': receivedEventsUrl,
+        'type': type_,
+        'site_admin': siteAdmin,
+        ...switch (permissions) {
+          SdkPresent<CollaboratorPermissions>(value: final value) => {
+              'permissions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'role_name': roleName,
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

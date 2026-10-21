@@ -8,6 +8,7 @@ part of 'orgs.dart';
 class ExternalProperty {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the external property
   final String propertyName;
 
@@ -15,15 +16,19 @@ class ExternalProperty {
 
   ExternalProperty Function({String propertyName}) get copyWith => _copyWith;
 
-  ExternalProperty _copyWith({Object? propertyName = sdkOmittedValue}) => ExternalProperty(
-    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
-  );
+  ExternalProperty _copyWith({Object? propertyName = sdkOmittedValue}) =>
+      ExternalProperty(
+        propertyName: identical(propertyName, sdkOmittedValue)
+            ? this.propertyName
+            : propertyName as String,
+      );
 
-  factory ExternalProperty.fromJson(Map<String, dynamic> json) => ExternalProperty(
-    propertyName: (json['property_name'] as String?)!,
-  );
+  factory ExternalProperty.fromJson(Map<String, dynamic> json) =>
+      ExternalProperty(
+        propertyName: (json['property_name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'property_name': propertyName,
-  };
+        'property_name': propertyName,
+      };
 }

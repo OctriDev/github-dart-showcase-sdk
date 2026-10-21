@@ -8,54 +8,94 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleFilePathRestrictionParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The file paths that are restricted from being pushed to the commit graph.
   final List<String> restrictedFilePaths;
 
-  const RepositoryRuleFilePathRestrictionParameters({required this.restrictedFilePaths});
+  const RepositoryRuleFilePathRestrictionParameters(
+      {required this.restrictedFilePaths});
 
-  RepositoryRuleFilePathRestrictionParameters Function({List<String> restrictedFilePaths}) get copyWith => _copyWith;
+  RepositoryRuleFilePathRestrictionParameters Function(
+      {List<String> restrictedFilePaths}) get copyWith => _copyWith;
 
-  RepositoryRuleFilePathRestrictionParameters _copyWith({Object? restrictedFilePaths = sdkOmittedValue}) => RepositoryRuleFilePathRestrictionParameters(
-    restrictedFilePaths: identical(restrictedFilePaths, sdkOmittedValue) ? this.restrictedFilePaths : restrictedFilePaths as List<String>,
-  );
+  RepositoryRuleFilePathRestrictionParameters _copyWith(
+          {Object? restrictedFilePaths = sdkOmittedValue}) =>
+      RepositoryRuleFilePathRestrictionParameters(
+        restrictedFilePaths: identical(restrictedFilePaths, sdkOmittedValue)
+            ? this.restrictedFilePaths
+            : restrictedFilePaths as List<String>,
+      );
 
-  factory RepositoryRuleFilePathRestrictionParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleFilePathRestrictionParameters(
-    restrictedFilePaths: ((json['restricted_file_paths'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory RepositoryRuleFilePathRestrictionParameters.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleFilePathRestrictionParameters(
+        restrictedFilePaths: ((json['restricted_file_paths'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'restricted_file_paths': restrictedFilePaths,
-  };
+        'restricted_file_paths': restrictedFilePaths,
+      };
 }
 
 /// Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names.
 class RepositoryRuleFilePathRestriction {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleFilePathRestrictionType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleFilePathRestrictionParameters> parameters;
 
-  const RepositoryRuleFilePathRestriction({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleFilePathRestriction(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleFilePathRestriction Function({RepositoryRuleFilePathRestrictionType type_, SdkOptional<RepositoryRuleFilePathRestrictionParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleFilePathRestriction Function(
+          {RepositoryRuleFilePathRestrictionType type_,
+          SdkOptional<RepositoryRuleFilePathRestrictionParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleFilePathRestriction _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleFilePathRestriction(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleFilePathRestrictionType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleFilePathRestrictionParameters>,
-  );
+  RepositoryRuleFilePathRestriction _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleFilePathRestriction(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleFilePathRestrictionType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters
+                as SdkOptional<RepositoryRuleFilePathRestrictionParameters>,
+      );
 
-  factory RepositoryRuleFilePathRestriction.fromJson(Map<String, dynamic> json) => RepositoryRuleFilePathRestriction(
-    type_: (json['type'] != null ? RepositoryRuleFilePathRestrictionType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleFilePathRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleFilePathRestriction.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleFilePathRestriction(
+        type_: (json['type'] != null
+            ? RepositoryRuleFilePathRestrictionType.fromJson(
+                json['type'] as String)
+            : null)!,
+        parameters: json['parameters'] != null
+            ? SdkPresent((json['parameters'] != null
+                ? RepositoryRuleFilePathRestrictionParameters.fromJson(
+                    json['parameters'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleFilePathRestrictionParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleFilePathRestrictionParameters>(
+            value: final value
+          ) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

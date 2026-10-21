@@ -8,271 +8,454 @@ part of 'actions_workflow.dart';
 class WorkflowRunUsageBillableUBUNTUJobRunsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `job_id` wire field.
   final int jobId;
+
   /// Required `integer` value serialized in the `duration_ms` wire field.
   final int durationMs;
 
-  const WorkflowRunUsageBillableUBUNTUJobRunsItem({required this.jobId, required this.durationMs});
+  const WorkflowRunUsageBillableUBUNTUJobRunsItem(
+      {required this.jobId, required this.durationMs});
 
-  WorkflowRunUsageBillableUBUNTUJobRunsItem Function({int jobId, int durationMs}) get copyWith => _copyWith;
+  WorkflowRunUsageBillableUBUNTUJobRunsItem Function(
+      {int jobId, int durationMs}) get copyWith => _copyWith;
 
-  WorkflowRunUsageBillableUBUNTUJobRunsItem _copyWith({Object? jobId = sdkOmittedValue, Object? durationMs = sdkOmittedValue}) => WorkflowRunUsageBillableUBUNTUJobRunsItem(
-    jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
-    durationMs: identical(durationMs, sdkOmittedValue) ? this.durationMs : durationMs as int,
-  );
+  WorkflowRunUsageBillableUBUNTUJobRunsItem _copyWith(
+          {Object? jobId = sdkOmittedValue,
+          Object? durationMs = sdkOmittedValue}) =>
+      WorkflowRunUsageBillableUBUNTUJobRunsItem(
+        jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
+        durationMs: identical(durationMs, sdkOmittedValue)
+            ? this.durationMs
+            : durationMs as int,
+      );
 
-  factory WorkflowRunUsageBillableUBUNTUJobRunsItem.fromJson(Map<String, dynamic> json) => WorkflowRunUsageBillableUBUNTUJobRunsItem(
-    jobId: ((json['job_id'] as num?)?.toInt())!,
-    durationMs: ((json['duration_ms'] as num?)?.toInt())!,
-  );
+  factory WorkflowRunUsageBillableUBUNTUJobRunsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WorkflowRunUsageBillableUBUNTUJobRunsItem(
+        jobId: ((json['job_id'] as num?)?.toInt())!,
+        durationMs: ((json['duration_ms'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'job_id': jobId,
-    'duration_ms': durationMs,
-  };
+        'job_id': jobId,
+        'duration_ms': durationMs,
+      };
 }
 
 /// Optional object value serialized in the `UBUNTU` wire field.
 class WorkflowRunUsageBillableUBUNTU {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total_ms` wire field.
   final int totalMs;
+
   /// Required `integer` value serialized in the `jobs` wire field.
   final int jobs;
+
   /// Optional array value serialized in the `job_runs` wire field.
   final SdkOptional<List<WorkflowRunUsageBillableUBUNTUJobRunsItem>> jobRuns;
 
-  const WorkflowRunUsageBillableUBUNTU({required this.totalMs, required this.jobs, this.jobRuns = const SdkOmitted()});
+  const WorkflowRunUsageBillableUBUNTU(
+      {required this.totalMs,
+      required this.jobs,
+      this.jobRuns = const SdkOmitted()});
 
-  WorkflowRunUsageBillableUBUNTU Function({int totalMs, int jobs, SdkOptional<List<WorkflowRunUsageBillableUBUNTUJobRunsItem>> jobRuns}) get copyWith => _copyWith;
+  WorkflowRunUsageBillableUBUNTU Function(
+          {int totalMs,
+          int jobs,
+          SdkOptional<List<WorkflowRunUsageBillableUBUNTUJobRunsItem>> jobRuns})
+      get copyWith => _copyWith;
 
-  WorkflowRunUsageBillableUBUNTU _copyWith({Object? totalMs = sdkOmittedValue, Object? jobs = sdkOmittedValue, Object? jobRuns = sdkOmittedValue}) => WorkflowRunUsageBillableUBUNTU(
-    totalMs: identical(totalMs, sdkOmittedValue) ? this.totalMs : totalMs as int,
-    jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as int,
-    jobRuns: identical(jobRuns, sdkOmittedValue) ? this.jobRuns : jobRuns as SdkOptional<List<WorkflowRunUsageBillableUBUNTUJobRunsItem>>,
-  );
+  WorkflowRunUsageBillableUBUNTU _copyWith(
+          {Object? totalMs = sdkOmittedValue,
+          Object? jobs = sdkOmittedValue,
+          Object? jobRuns = sdkOmittedValue}) =>
+      WorkflowRunUsageBillableUBUNTU(
+        totalMs:
+            identical(totalMs, sdkOmittedValue) ? this.totalMs : totalMs as int,
+        jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as int,
+        jobRuns: identical(jobRuns, sdkOmittedValue)
+            ? this.jobRuns
+            : jobRuns
+                as SdkOptional<List<WorkflowRunUsageBillableUBUNTUJobRunsItem>>,
+      );
 
-  factory WorkflowRunUsageBillableUBUNTU.fromJson(Map<String, dynamic> json) => WorkflowRunUsageBillableUBUNTU(
-    totalMs: ((json['total_ms'] as num?)?.toInt())!,
-    jobs: ((json['jobs'] as num?)?.toInt())!,
-    jobRuns: json['job_runs'] != null ? SdkPresent(((json['job_runs'] as List?)?.map((e) => WorkflowRunUsageBillableUBUNTUJobRunsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory WorkflowRunUsageBillableUBUNTU.fromJson(Map<String, dynamic> json) =>
+      WorkflowRunUsageBillableUBUNTU(
+        totalMs: ((json['total_ms'] as num?)?.toInt())!,
+        jobs: ((json['jobs'] as num?)?.toInt())!,
+        jobRuns: json['job_runs'] != null
+            ? SdkPresent(((json['job_runs'] as List?)
+                ?.map((e) => WorkflowRunUsageBillableUBUNTUJobRunsItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_ms': totalMs,
-    'jobs': jobs,
-    ...switch (jobRuns) {
-      SdkPresent<List<WorkflowRunUsageBillableUBUNTUJobRunsItem>>(value: final value) => {'job_runs': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'total_ms': totalMs,
+        'jobs': jobs,
+        ...switch (jobRuns) {
+          SdkPresent<List<WorkflowRunUsageBillableUBUNTUJobRunsItem>>(
+            value: final value
+          ) =>
+            {
+              'job_runs': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `job_runs[]` wire field.
 class WorkflowRunUsageBillableMACOSJobRunsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `job_id` wire field.
   final int jobId;
+
   /// Required `integer` value serialized in the `duration_ms` wire field.
   final int durationMs;
 
-  const WorkflowRunUsageBillableMACOSJobRunsItem({required this.jobId, required this.durationMs});
+  const WorkflowRunUsageBillableMACOSJobRunsItem(
+      {required this.jobId, required this.durationMs});
 
-  WorkflowRunUsageBillableMACOSJobRunsItem Function({int jobId, int durationMs}) get copyWith => _copyWith;
+  WorkflowRunUsageBillableMACOSJobRunsItem Function({int jobId, int durationMs})
+      get copyWith => _copyWith;
 
-  WorkflowRunUsageBillableMACOSJobRunsItem _copyWith({Object? jobId = sdkOmittedValue, Object? durationMs = sdkOmittedValue}) => WorkflowRunUsageBillableMACOSJobRunsItem(
-    jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
-    durationMs: identical(durationMs, sdkOmittedValue) ? this.durationMs : durationMs as int,
-  );
+  WorkflowRunUsageBillableMACOSJobRunsItem _copyWith(
+          {Object? jobId = sdkOmittedValue,
+          Object? durationMs = sdkOmittedValue}) =>
+      WorkflowRunUsageBillableMACOSJobRunsItem(
+        jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
+        durationMs: identical(durationMs, sdkOmittedValue)
+            ? this.durationMs
+            : durationMs as int,
+      );
 
-  factory WorkflowRunUsageBillableMACOSJobRunsItem.fromJson(Map<String, dynamic> json) => WorkflowRunUsageBillableMACOSJobRunsItem(
-    jobId: ((json['job_id'] as num?)?.toInt())!,
-    durationMs: ((json['duration_ms'] as num?)?.toInt())!,
-  );
+  factory WorkflowRunUsageBillableMACOSJobRunsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WorkflowRunUsageBillableMACOSJobRunsItem(
+        jobId: ((json['job_id'] as num?)?.toInt())!,
+        durationMs: ((json['duration_ms'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'job_id': jobId,
-    'duration_ms': durationMs,
-  };
+        'job_id': jobId,
+        'duration_ms': durationMs,
+      };
 }
 
 /// Optional object value serialized in the `MACOS` wire field.
 class WorkflowRunUsageBillableMACOS {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total_ms` wire field.
   final int totalMs;
+
   /// Required `integer` value serialized in the `jobs` wire field.
   final int jobs;
+
   /// Optional array value serialized in the `job_runs` wire field.
   final SdkOptional<List<WorkflowRunUsageBillableMACOSJobRunsItem>> jobRuns;
 
-  const WorkflowRunUsageBillableMACOS({required this.totalMs, required this.jobs, this.jobRuns = const SdkOmitted()});
+  const WorkflowRunUsageBillableMACOS(
+      {required this.totalMs,
+      required this.jobs,
+      this.jobRuns = const SdkOmitted()});
 
-  WorkflowRunUsageBillableMACOS Function({int totalMs, int jobs, SdkOptional<List<WorkflowRunUsageBillableMACOSJobRunsItem>> jobRuns}) get copyWith => _copyWith;
+  WorkflowRunUsageBillableMACOS Function(
+          {int totalMs,
+          int jobs,
+          SdkOptional<List<WorkflowRunUsageBillableMACOSJobRunsItem>> jobRuns})
+      get copyWith => _copyWith;
 
-  WorkflowRunUsageBillableMACOS _copyWith({Object? totalMs = sdkOmittedValue, Object? jobs = sdkOmittedValue, Object? jobRuns = sdkOmittedValue}) => WorkflowRunUsageBillableMACOS(
-    totalMs: identical(totalMs, sdkOmittedValue) ? this.totalMs : totalMs as int,
-    jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as int,
-    jobRuns: identical(jobRuns, sdkOmittedValue) ? this.jobRuns : jobRuns as SdkOptional<List<WorkflowRunUsageBillableMACOSJobRunsItem>>,
-  );
+  WorkflowRunUsageBillableMACOS _copyWith(
+          {Object? totalMs = sdkOmittedValue,
+          Object? jobs = sdkOmittedValue,
+          Object? jobRuns = sdkOmittedValue}) =>
+      WorkflowRunUsageBillableMACOS(
+        totalMs:
+            identical(totalMs, sdkOmittedValue) ? this.totalMs : totalMs as int,
+        jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as int,
+        jobRuns: identical(jobRuns, sdkOmittedValue)
+            ? this.jobRuns
+            : jobRuns
+                as SdkOptional<List<WorkflowRunUsageBillableMACOSJobRunsItem>>,
+      );
 
-  factory WorkflowRunUsageBillableMACOS.fromJson(Map<String, dynamic> json) => WorkflowRunUsageBillableMACOS(
-    totalMs: ((json['total_ms'] as num?)?.toInt())!,
-    jobs: ((json['jobs'] as num?)?.toInt())!,
-    jobRuns: json['job_runs'] != null ? SdkPresent(((json['job_runs'] as List?)?.map((e) => WorkflowRunUsageBillableMACOSJobRunsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory WorkflowRunUsageBillableMACOS.fromJson(Map<String, dynamic> json) =>
+      WorkflowRunUsageBillableMACOS(
+        totalMs: ((json['total_ms'] as num?)?.toInt())!,
+        jobs: ((json['jobs'] as num?)?.toInt())!,
+        jobRuns: json['job_runs'] != null
+            ? SdkPresent(((json['job_runs'] as List?)
+                ?.map((e) => WorkflowRunUsageBillableMACOSJobRunsItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_ms': totalMs,
-    'jobs': jobs,
-    ...switch (jobRuns) {
-      SdkPresent<List<WorkflowRunUsageBillableMACOSJobRunsItem>>(value: final value) => {'job_runs': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'total_ms': totalMs,
+        'jobs': jobs,
+        ...switch (jobRuns) {
+          SdkPresent<List<WorkflowRunUsageBillableMACOSJobRunsItem>>(
+            value: final value
+          ) =>
+            {
+              'job_runs': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `job_runs[]` wire field.
 class WorkflowRunUsageBillableWINDOWSJobRunsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `job_id` wire field.
   final int jobId;
+
   /// Required `integer` value serialized in the `duration_ms` wire field.
   final int durationMs;
 
-  const WorkflowRunUsageBillableWINDOWSJobRunsItem({required this.jobId, required this.durationMs});
+  const WorkflowRunUsageBillableWINDOWSJobRunsItem(
+      {required this.jobId, required this.durationMs});
 
-  WorkflowRunUsageBillableWINDOWSJobRunsItem Function({int jobId, int durationMs}) get copyWith => _copyWith;
+  WorkflowRunUsageBillableWINDOWSJobRunsItem Function(
+      {int jobId, int durationMs}) get copyWith => _copyWith;
 
-  WorkflowRunUsageBillableWINDOWSJobRunsItem _copyWith({Object? jobId = sdkOmittedValue, Object? durationMs = sdkOmittedValue}) => WorkflowRunUsageBillableWINDOWSJobRunsItem(
-    jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
-    durationMs: identical(durationMs, sdkOmittedValue) ? this.durationMs : durationMs as int,
-  );
+  WorkflowRunUsageBillableWINDOWSJobRunsItem _copyWith(
+          {Object? jobId = sdkOmittedValue,
+          Object? durationMs = sdkOmittedValue}) =>
+      WorkflowRunUsageBillableWINDOWSJobRunsItem(
+        jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
+        durationMs: identical(durationMs, sdkOmittedValue)
+            ? this.durationMs
+            : durationMs as int,
+      );
 
-  factory WorkflowRunUsageBillableWINDOWSJobRunsItem.fromJson(Map<String, dynamic> json) => WorkflowRunUsageBillableWINDOWSJobRunsItem(
-    jobId: ((json['job_id'] as num?)?.toInt())!,
-    durationMs: ((json['duration_ms'] as num?)?.toInt())!,
-  );
+  factory WorkflowRunUsageBillableWINDOWSJobRunsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WorkflowRunUsageBillableWINDOWSJobRunsItem(
+        jobId: ((json['job_id'] as num?)?.toInt())!,
+        durationMs: ((json['duration_ms'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'job_id': jobId,
-    'duration_ms': durationMs,
-  };
+        'job_id': jobId,
+        'duration_ms': durationMs,
+      };
 }
 
 /// Optional object value serialized in the `WINDOWS` wire field.
 class WorkflowRunUsageBillableWINDOWS {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total_ms` wire field.
   final int totalMs;
+
   /// Required `integer` value serialized in the `jobs` wire field.
   final int jobs;
+
   /// Optional array value serialized in the `job_runs` wire field.
   final SdkOptional<List<WorkflowRunUsageBillableWINDOWSJobRunsItem>> jobRuns;
 
-  const WorkflowRunUsageBillableWINDOWS({required this.totalMs, required this.jobs, this.jobRuns = const SdkOmitted()});
+  const WorkflowRunUsageBillableWINDOWS(
+      {required this.totalMs,
+      required this.jobs,
+      this.jobRuns = const SdkOmitted()});
 
-  WorkflowRunUsageBillableWINDOWS Function({int totalMs, int jobs, SdkOptional<List<WorkflowRunUsageBillableWINDOWSJobRunsItem>> jobRuns}) get copyWith => _copyWith;
+  WorkflowRunUsageBillableWINDOWS Function(
+      {int totalMs,
+      int jobs,
+      SdkOptional<List<WorkflowRunUsageBillableWINDOWSJobRunsItem>>
+          jobRuns}) get copyWith => _copyWith;
 
-  WorkflowRunUsageBillableWINDOWS _copyWith({Object? totalMs = sdkOmittedValue, Object? jobs = sdkOmittedValue, Object? jobRuns = sdkOmittedValue}) => WorkflowRunUsageBillableWINDOWS(
-    totalMs: identical(totalMs, sdkOmittedValue) ? this.totalMs : totalMs as int,
-    jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as int,
-    jobRuns: identical(jobRuns, sdkOmittedValue) ? this.jobRuns : jobRuns as SdkOptional<List<WorkflowRunUsageBillableWINDOWSJobRunsItem>>,
-  );
+  WorkflowRunUsageBillableWINDOWS _copyWith(
+          {Object? totalMs = sdkOmittedValue,
+          Object? jobs = sdkOmittedValue,
+          Object? jobRuns = sdkOmittedValue}) =>
+      WorkflowRunUsageBillableWINDOWS(
+        totalMs:
+            identical(totalMs, sdkOmittedValue) ? this.totalMs : totalMs as int,
+        jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as int,
+        jobRuns: identical(jobRuns, sdkOmittedValue)
+            ? this.jobRuns
+            : jobRuns as SdkOptional<
+                List<WorkflowRunUsageBillableWINDOWSJobRunsItem>>,
+      );
 
-  factory WorkflowRunUsageBillableWINDOWS.fromJson(Map<String, dynamic> json) => WorkflowRunUsageBillableWINDOWS(
-    totalMs: ((json['total_ms'] as num?)?.toInt())!,
-    jobs: ((json['jobs'] as num?)?.toInt())!,
-    jobRuns: json['job_runs'] != null ? SdkPresent(((json['job_runs'] as List?)?.map((e) => WorkflowRunUsageBillableWINDOWSJobRunsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory WorkflowRunUsageBillableWINDOWS.fromJson(Map<String, dynamic> json) =>
+      WorkflowRunUsageBillableWINDOWS(
+        totalMs: ((json['total_ms'] as num?)?.toInt())!,
+        jobs: ((json['jobs'] as num?)?.toInt())!,
+        jobRuns: json['job_runs'] != null
+            ? SdkPresent(((json['job_runs'] as List?)
+                ?.map((e) =>
+                    WorkflowRunUsageBillableWINDOWSJobRunsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_ms': totalMs,
-    'jobs': jobs,
-    ...switch (jobRuns) {
-      SdkPresent<List<WorkflowRunUsageBillableWINDOWSJobRunsItem>>(value: final value) => {'job_runs': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'total_ms': totalMs,
+        'jobs': jobs,
+        ...switch (jobRuns) {
+          SdkPresent<List<WorkflowRunUsageBillableWINDOWSJobRunsItem>>(
+            value: final value
+          ) =>
+            {
+              'job_runs': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `billable` wire field.
 class WorkflowRunUsageBillable {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `UBUNTU` wire field.
   final SdkOptional<WorkflowRunUsageBillableUBUNTU> ubuntu;
+
   /// Optional object value serialized in the `MACOS` wire field.
   final SdkOptional<WorkflowRunUsageBillableMACOS> macos;
+
   /// Optional object value serialized in the `WINDOWS` wire field.
   final SdkOptional<WorkflowRunUsageBillableWINDOWS> windows;
 
-  const WorkflowRunUsageBillable({this.ubuntu = const SdkOmitted(), this.macos = const SdkOmitted(), this.windows = const SdkOmitted()});
+  const WorkflowRunUsageBillable(
+      {this.ubuntu = const SdkOmitted(),
+      this.macos = const SdkOmitted(),
+      this.windows = const SdkOmitted()});
 
-  WorkflowRunUsageBillable Function({SdkOptional<WorkflowRunUsageBillableUBUNTU> ubuntu, SdkOptional<WorkflowRunUsageBillableMACOS> macos, SdkOptional<WorkflowRunUsageBillableWINDOWS> windows}) get copyWith => _copyWith;
+  WorkflowRunUsageBillable Function(
+          {SdkOptional<WorkflowRunUsageBillableUBUNTU> ubuntu,
+          SdkOptional<WorkflowRunUsageBillableMACOS> macos,
+          SdkOptional<WorkflowRunUsageBillableWINDOWS> windows})
+      get copyWith => _copyWith;
 
-  WorkflowRunUsageBillable _copyWith({Object? ubuntu = sdkOmittedValue, Object? macos = sdkOmittedValue, Object? windows = sdkOmittedValue}) => WorkflowRunUsageBillable(
-    ubuntu: identical(ubuntu, sdkOmittedValue) ? this.ubuntu : ubuntu as SdkOptional<WorkflowRunUsageBillableUBUNTU>,
-    macos: identical(macos, sdkOmittedValue) ? this.macos : macos as SdkOptional<WorkflowRunUsageBillableMACOS>,
-    windows: identical(windows, sdkOmittedValue) ? this.windows : windows as SdkOptional<WorkflowRunUsageBillableWINDOWS>,
-  );
+  WorkflowRunUsageBillable _copyWith(
+          {Object? ubuntu = sdkOmittedValue,
+          Object? macos = sdkOmittedValue,
+          Object? windows = sdkOmittedValue}) =>
+      WorkflowRunUsageBillable(
+        ubuntu: identical(ubuntu, sdkOmittedValue)
+            ? this.ubuntu
+            : ubuntu as SdkOptional<WorkflowRunUsageBillableUBUNTU>,
+        macos: identical(macos, sdkOmittedValue)
+            ? this.macos
+            : macos as SdkOptional<WorkflowRunUsageBillableMACOS>,
+        windows: identical(windows, sdkOmittedValue)
+            ? this.windows
+            : windows as SdkOptional<WorkflowRunUsageBillableWINDOWS>,
+      );
 
-  factory WorkflowRunUsageBillable.fromJson(Map<String, dynamic> json) => WorkflowRunUsageBillable(
-    ubuntu: json['UBUNTU'] != null ? SdkPresent((json['UBUNTU'] != null ? WorkflowRunUsageBillableUBUNTU.fromJson(json['UBUNTU'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    macos: json['MACOS'] != null ? SdkPresent((json['MACOS'] != null ? WorkflowRunUsageBillableMACOS.fromJson(json['MACOS'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    windows: json['WINDOWS'] != null ? SdkPresent((json['WINDOWS'] != null ? WorkflowRunUsageBillableWINDOWS.fromJson(json['WINDOWS'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory WorkflowRunUsageBillable.fromJson(Map<String, dynamic> json) =>
+      WorkflowRunUsageBillable(
+        ubuntu: json['UBUNTU'] != null
+            ? SdkPresent((json['UBUNTU'] != null
+                ? WorkflowRunUsageBillableUBUNTU.fromJson(
+                    json['UBUNTU'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        macos: json['MACOS'] != null
+            ? SdkPresent((json['MACOS'] != null
+                ? WorkflowRunUsageBillableMACOS.fromJson(
+                    json['MACOS'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        windows: json['WINDOWS'] != null
+            ? SdkPresent((json['WINDOWS'] != null
+                ? WorkflowRunUsageBillableWINDOWS.fromJson(
+                    json['WINDOWS'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (ubuntu) {
-      SdkPresent<WorkflowRunUsageBillableUBUNTU>(value: final value) => {'UBUNTU': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (macos) {
-      SdkPresent<WorkflowRunUsageBillableMACOS>(value: final value) => {'MACOS': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (windows) {
-      SdkPresent<WorkflowRunUsageBillableWINDOWS>(value: final value) => {'WINDOWS': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (ubuntu) {
+          SdkPresent<WorkflowRunUsageBillableUBUNTU>(value: final value) => {
+              'UBUNTU': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (macos) {
+          SdkPresent<WorkflowRunUsageBillableMACOS>(value: final value) => {
+              'MACOS': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (windows) {
+          SdkPresent<WorkflowRunUsageBillableWINDOWS>(value: final value) => {
+              'WINDOWS': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Workflow Run Usage
 class WorkflowRunUsage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `billable` wire field.
   final WorkflowRunUsageBillable billable;
+
   /// Optional `integer` value serialized in the `run_duration_ms` wire field.
   final SdkOptional<int> runDurationMs;
 
-  const WorkflowRunUsage({required this.billable, this.runDurationMs = const SdkOmitted()});
+  const WorkflowRunUsage(
+      {required this.billable, this.runDurationMs = const SdkOmitted()});
 
-  WorkflowRunUsage Function({WorkflowRunUsageBillable billable, SdkOptional<int> runDurationMs}) get copyWith => _copyWith;
+  WorkflowRunUsage Function(
+      {WorkflowRunUsageBillable billable,
+      SdkOptional<int> runDurationMs}) get copyWith => _copyWith;
 
-  WorkflowRunUsage _copyWith({Object? billable = sdkOmittedValue, Object? runDurationMs = sdkOmittedValue}) => WorkflowRunUsage(
-    billable: identical(billable, sdkOmittedValue) ? this.billable : billable as WorkflowRunUsageBillable,
-    runDurationMs: identical(runDurationMs, sdkOmittedValue) ? this.runDurationMs : runDurationMs as SdkOptional<int>,
-  );
+  WorkflowRunUsage _copyWith(
+          {Object? billable = sdkOmittedValue,
+          Object? runDurationMs = sdkOmittedValue}) =>
+      WorkflowRunUsage(
+        billable: identical(billable, sdkOmittedValue)
+            ? this.billable
+            : billable as WorkflowRunUsageBillable,
+        runDurationMs: identical(runDurationMs, sdkOmittedValue)
+            ? this.runDurationMs
+            : runDurationMs as SdkOptional<int>,
+      );
 
-  factory WorkflowRunUsage.fromJson(Map<String, dynamic> json) => WorkflowRunUsage(
-    billable: (json['billable'] != null ? WorkflowRunUsageBillable.fromJson(json['billable'] as Map<String, dynamic>) : null)!,
-    runDurationMs: json['run_duration_ms'] != null ? SdkPresent(((json['run_duration_ms'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory WorkflowRunUsage.fromJson(Map<String, dynamic> json) =>
+      WorkflowRunUsage(
+        billable: (json['billable'] != null
+            ? WorkflowRunUsageBillable.fromJson(
+                json['billable'] as Map<String, dynamic>)
+            : null)!,
+        runDurationMs: json['run_duration_ms'] != null
+            ? SdkPresent(((json['run_duration_ms'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'billable': billable.toJson(),
-    ...switch (runDurationMs) {
-      SdkPresent<int>(value: final value) => {'run_duration_ms': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'billable': billable.toJson(),
+        ...switch (runDurationMs) {
+          SdkPresent<int>(value: final value) => {
+              'run_duration_ms': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -7,281 +7,578 @@ part of 'inline.dart';
 class SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the pattern to configure.
   final SdkOptional<String> tokenType;
+
   /// Push protection setting to set for the pattern.
-  final SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting> pushProtectionSetting;
+  final SdkOptional<
+          SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>
+      pushProtectionSetting;
 
-  const SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem({this.tokenType = const SdkOmitted(), this.pushProtectionSetting = const SdkOmitted()});
+  const SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem(
+      {this.tokenType = const SdkOmitted(),
+      this.pushProtectionSetting = const SdkOmitted()});
 
-  SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem Function({SdkOptional<String> tokenType, SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting> pushProtectionSetting}) get copyWith => _copyWith;
+  SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem Function(
+      {SdkOptional<String> tokenType,
+      SdkOptional<
+              SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>
+          pushProtectionSetting}) get copyWith => _copyWith;
 
-  SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem _copyWith({Object? tokenType = sdkOmittedValue, Object? pushProtectionSetting = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem(
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
-    pushProtectionSetting: identical(pushProtectionSetting, sdkOmittedValue) ? this.pushProtectionSetting : pushProtectionSetting as SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>,
-  );
+  SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem
+      _copyWith(
+              {Object? tokenType = sdkOmittedValue,
+              Object? pushProtectionSetting = sdkOmittedValue}) =>
+          SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem(
+            tokenType: identical(tokenType, sdkOmittedValue)
+                ? this.tokenType
+                : tokenType as SdkOptional<String>,
+            pushProtectionSetting: identical(
+                    pushProtectionSetting, sdkOmittedValue)
+                ? this.pushProtectionSetting
+                : pushProtectionSetting as SdkOptional<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>,
+          );
 
-  factory SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem(
-    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
-    pushProtectionSetting: json['push_protection_setting'] != null ? SdkPresent((json['push_protection_setting'] != null ? SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting.fromJson(json['push_protection_setting'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem(
+        tokenType: json['token_type'] != null
+            ? SdkPresent((json['token_type'] as String?)!)
+            : const SdkOmitted(),
+        pushProtectionSetting: json['push_protection_setting'] != null
+            ? SdkPresent((json['push_protection_setting'] != null
+                ? SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting
+                    .fromJson(json['push_protection_setting'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (tokenType) {
-      SdkPresent<String>(value: final value) => {'token_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pushProtectionSetting) {
-      SdkPresent<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>(value: final value) => {'push_protection_setting': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (tokenType) {
+          SdkPresent<String>(value: final value) => {
+              'token_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pushProtectionSetting) {
+          SdkPresent<
+                SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>(
+            value: final value
+          ) =>
+            {
+              'push_protection_setting': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the pattern to configure.
   final SdkOptional<String> tokenType;
+
   /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
   final SdkOptional<String?> customPatternVersion;
+
   /// Push protection setting to set for the pattern.
-  final SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting> pushProtectionSetting;
+  final SdkOptional<
+          SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>
+      pushProtectionSetting;
 
-  const SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem({this.tokenType = const SdkOmitted(), this.customPatternVersion = const SdkOmitted(), this.pushProtectionSetting = const SdkOmitted()});
+  const SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem(
+      {this.tokenType = const SdkOmitted(),
+      this.customPatternVersion = const SdkOmitted(),
+      this.pushProtectionSetting = const SdkOmitted()});
 
-  SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem Function({SdkOptional<String> tokenType, SdkOptional<String?> customPatternVersion, SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting> pushProtectionSetting}) get copyWith => _copyWith;
+  SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem Function(
+      {SdkOptional<String> tokenType,
+      SdkOptional<String?> customPatternVersion,
+      SdkOptional<
+              SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>
+          pushProtectionSetting}) get copyWith => _copyWith;
 
-  SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem _copyWith({Object? tokenType = sdkOmittedValue, Object? customPatternVersion = sdkOmittedValue, Object? pushProtectionSetting = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem(
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
-    customPatternVersion: identical(customPatternVersion, sdkOmittedValue) ? this.customPatternVersion : customPatternVersion as SdkOptional<String?>,
-    pushProtectionSetting: identical(pushProtectionSetting, sdkOmittedValue) ? this.pushProtectionSetting : pushProtectionSetting as SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>,
-  );
+  SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem
+      _copyWith(
+              {Object? tokenType = sdkOmittedValue,
+              Object? customPatternVersion = sdkOmittedValue,
+              Object? pushProtectionSetting = sdkOmittedValue}) =>
+          SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem(
+            tokenType: identical(tokenType, sdkOmittedValue)
+                ? this.tokenType
+                : tokenType as SdkOptional<String>,
+            customPatternVersion:
+                identical(customPatternVersion, sdkOmittedValue)
+                    ? this.customPatternVersion
+                    : customPatternVersion as SdkOptional<String?>,
+            pushProtectionSetting: identical(
+                    pushProtectionSetting, sdkOmittedValue)
+                ? this.pushProtectionSetting
+                : pushProtectionSetting as SdkOptional<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>,
+          );
 
-  factory SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem(
-    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
-    customPatternVersion: json.containsKey('custom_pattern_version') ? SdkPresent(json['custom_pattern_version'] as String?) : const SdkOmitted(),
-    pushProtectionSetting: json['push_protection_setting'] != null ? SdkPresent((json['push_protection_setting'] != null ? SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting.fromJson(json['push_protection_setting'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem(
+        tokenType: json['token_type'] != null
+            ? SdkPresent((json['token_type'] as String?)!)
+            : const SdkOmitted(),
+        customPatternVersion: json.containsKey('custom_pattern_version')
+            ? SdkPresent(json['custom_pattern_version'] as String?)
+            : const SdkOmitted(),
+        pushProtectionSetting: json['push_protection_setting'] != null
+            ? SdkPresent((json['push_protection_setting'] != null
+                ? SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting
+                    .fromJson(json['push_protection_setting'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (tokenType) {
-      SdkPresent<String>(value: final value) => {'token_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (customPatternVersion) {
-      SdkPresent<String?>(value: final value) => {'custom_pattern_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pushProtectionSetting) {
-      SdkPresent<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>(value: final value) => {'push_protection_setting': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (tokenType) {
+          SdkPresent<String>(value: final value) => {
+              'token_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (customPatternVersion) {
+          SdkPresent<String?>(value: final value) => {
+              'custom_pattern_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pushProtectionSetting) {
+          SdkPresent<
+                SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>(
+            value: final value
+          ) =>
+            {
+              'push_protection_setting': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SecretScanningUpdateOrgPatternConfigsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
   final SdkOptional<String?> patternConfigVersion;
+
   /// Pattern settings for provider patterns.
-  final SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>> providerPatternSettings;
+  final SdkOptional<
+          List<
+              SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>
+      providerPatternSettings;
+
   /// Pattern settings for custom patterns.
-  final SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>> customPatternSettings;
+  final SdkOptional<
+          List<
+              SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>
+      customPatternSettings;
 
-  const SecretScanningUpdateOrgPatternConfigsRequestBody({this.patternConfigVersion = const SdkOmitted(), this.providerPatternSettings = const SdkOmitted(), this.customPatternSettings = const SdkOmitted()});
+  const SecretScanningUpdateOrgPatternConfigsRequestBody(
+      {this.patternConfigVersion = const SdkOmitted(),
+      this.providerPatternSettings = const SdkOmitted(),
+      this.customPatternSettings = const SdkOmitted()});
 
-  SecretScanningUpdateOrgPatternConfigsRequestBody Function({SdkOptional<String?> patternConfigVersion, SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>> providerPatternSettings, SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>> customPatternSettings}) get copyWith => _copyWith;
+  SecretScanningUpdateOrgPatternConfigsRequestBody Function(
+      {SdkOptional<String?> patternConfigVersion,
+      SdkOptional<
+              List<
+                  SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>
+          providerPatternSettings,
+      SdkOptional<
+              List<
+                  SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>
+          customPatternSettings}) get copyWith => _copyWith;
 
-  SecretScanningUpdateOrgPatternConfigsRequestBody _copyWith({Object? patternConfigVersion = sdkOmittedValue, Object? providerPatternSettings = sdkOmittedValue, Object? customPatternSettings = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsRequestBody(
-    patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue) ? this.patternConfigVersion : patternConfigVersion as SdkOptional<String?>,
-    providerPatternSettings: identical(providerPatternSettings, sdkOmittedValue) ? this.providerPatternSettings : providerPatternSettings as SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>,
-    customPatternSettings: identical(customPatternSettings, sdkOmittedValue) ? this.customPatternSettings : customPatternSettings as SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>,
-  );
+  SecretScanningUpdateOrgPatternConfigsRequestBody _copyWith(
+          {Object? patternConfigVersion = sdkOmittedValue,
+          Object? providerPatternSettings = sdkOmittedValue,
+          Object? customPatternSettings = sdkOmittedValue}) =>
+      SecretScanningUpdateOrgPatternConfigsRequestBody(
+        patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue)
+            ? this.patternConfigVersion
+            : patternConfigVersion as SdkOptional<String?>,
+        providerPatternSettings: identical(
+                providerPatternSettings, sdkOmittedValue)
+            ? this.providerPatternSettings
+            : providerPatternSettings as SdkOptional<
+                List<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>,
+        customPatternSettings: identical(customPatternSettings, sdkOmittedValue)
+            ? this.customPatternSettings
+            : customPatternSettings as SdkOptional<
+                List<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>,
+      );
 
-  factory SecretScanningUpdateOrgPatternConfigsRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsRequestBody(
-    patternConfigVersion: json.containsKey('pattern_config_version') ? SdkPresent(json['pattern_config_version'] as String?) : const SdkOmitted(),
-    providerPatternSettings: json['provider_pattern_settings'] != null ? SdkPresent(((json['provider_pattern_settings'] as List?)?.map((e) => SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    customPatternSettings: json['custom_pattern_settings'] != null ? SdkPresent(((json['custom_pattern_settings'] as List?)?.map((e) => SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory SecretScanningUpdateOrgPatternConfigsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningUpdateOrgPatternConfigsRequestBody(
+        patternConfigVersion: json.containsKey('pattern_config_version')
+            ? SdkPresent(json['pattern_config_version'] as String?)
+            : const SdkOmitted(),
+        providerPatternSettings: json['provider_pattern_settings'] != null
+            ? SdkPresent(((json['provider_pattern_settings'] as List?)
+                ?.map((e) =>
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        customPatternSettings: json['custom_pattern_settings'] != null
+            ? SdkPresent(((json['custom_pattern_settings'] as List?)
+                ?.map((e) =>
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (patternConfigVersion) {
-      SdkPresent<String?>(value: final value) => {'pattern_config_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (providerPatternSettings) {
-      SdkPresent<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>(value: final value) => {'provider_pattern_settings': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (customPatternSettings) {
-      SdkPresent<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>(value: final value) => {'custom_pattern_settings': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (patternConfigVersion) {
+          SdkPresent<String?>(value: final value) => {
+              'pattern_config_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (providerPatternSettings) {
+          SdkPresent<
+                List<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>(
+            value: final value
+          ) =>
+            {
+              'provider_pattern_settings':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (customPatternSettings) {
+          SdkPresent<
+                List<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>(
+            value: final value
+          ) =>
+            {
+              'custom_pattern_settings':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SecretScanningUpdateOrgPatternConfigsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The updated pattern configuration version.
   final SdkOptional<String> patternConfigVersion;
 
-  const SecretScanningUpdateOrgPatternConfigsResponse({this.patternConfigVersion = const SdkOmitted()});
+  const SecretScanningUpdateOrgPatternConfigsResponse(
+      {this.patternConfigVersion = const SdkOmitted()});
 
-  SecretScanningUpdateOrgPatternConfigsResponse Function({SdkOptional<String> patternConfigVersion}) get copyWith => _copyWith;
+  SecretScanningUpdateOrgPatternConfigsResponse Function(
+      {SdkOptional<String> patternConfigVersion}) get copyWith => _copyWith;
 
-  SecretScanningUpdateOrgPatternConfigsResponse _copyWith({Object? patternConfigVersion = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsResponse(
-    patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue) ? this.patternConfigVersion : patternConfigVersion as SdkOptional<String>,
-  );
+  SecretScanningUpdateOrgPatternConfigsResponse _copyWith(
+          {Object? patternConfigVersion = sdkOmittedValue}) =>
+      SecretScanningUpdateOrgPatternConfigsResponse(
+        patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue)
+            ? this.patternConfigVersion
+            : patternConfigVersion as SdkOptional<String>,
+      );
 
-  factory SecretScanningUpdateOrgPatternConfigsResponse.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsResponse(
-    patternConfigVersion: json['pattern_config_version'] != null ? SdkPresent((json['pattern_config_version'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningUpdateOrgPatternConfigsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningUpdateOrgPatternConfigsResponse(
+        patternConfigVersion: json['pattern_config_version'] != null
+            ? SdkPresent((json['pattern_config_version'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (patternConfigVersion) {
-      SdkPresent<String>(value: final value) => {'pattern_config_version': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (patternConfigVersion) {
+          SdkPresent<String>(value: final value) => {
+              'pattern_config_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SecretScanningUpdateAlertRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
   final SdkOptional<SecretScanningAlertState> state;
+
   /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
   final SdkOptional<SecretScanningAlertResolution?> resolution;
+
   /// An optional comment when closing or reopening an alert. Cannot be updated or deleted.
   final SdkOptional<String?> resolutionComment;
+
   /// The username of the user to assign to the alert. Set to `null` to unassign the alert.
   final SdkOptional<String?> assignee;
+
   /// Sets the validity of the secret scanning alert. Can be `active`, `inactive`, or `null` to clear the override.
   final SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?> validity;
 
-  const SecretScanningUpdateAlertRequestBody({this.state = const SdkOmitted(), this.resolution = const SdkOmitted(), this.resolutionComment = const SdkOmitted(), this.assignee = const SdkOmitted(), this.validity = const SdkOmitted()});
+  const SecretScanningUpdateAlertRequestBody(
+      {this.state = const SdkOmitted(),
+      this.resolution = const SdkOmitted(),
+      this.resolutionComment = const SdkOmitted(),
+      this.assignee = const SdkOmitted(),
+      this.validity = const SdkOmitted()});
 
-  SecretScanningUpdateAlertRequestBody Function({SdkOptional<SecretScanningAlertState> state, SdkOptional<SecretScanningAlertResolution?> resolution, SdkOptional<String?> resolutionComment, SdkOptional<String?> assignee, SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?> validity}) get copyWith => _copyWith;
+  SecretScanningUpdateAlertRequestBody Function(
+          {SdkOptional<SecretScanningAlertState> state,
+          SdkOptional<SecretScanningAlertResolution?> resolution,
+          SdkOptional<String?> resolutionComment,
+          SdkOptional<String?> assignee,
+          SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?> validity})
+      get copyWith => _copyWith;
 
-  SecretScanningUpdateAlertRequestBody _copyWith({Object? state = sdkOmittedValue, Object? resolution = sdkOmittedValue, Object? resolutionComment = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? validity = sdkOmittedValue}) => SecretScanningUpdateAlertRequestBody(
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<SecretScanningAlertState>,
-    resolution: identical(resolution, sdkOmittedValue) ? this.resolution : resolution as SdkOptional<SecretScanningAlertResolution?>,
-    resolutionComment: identical(resolutionComment, sdkOmittedValue) ? this.resolutionComment : resolutionComment as SdkOptional<String?>,
-    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<String?>,
-    validity: identical(validity, sdkOmittedValue) ? this.validity : validity as SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?>,
-  );
+  SecretScanningUpdateAlertRequestBody _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? resolution = sdkOmittedValue,
+          Object? resolutionComment = sdkOmittedValue,
+          Object? assignee = sdkOmittedValue,
+          Object? validity = sdkOmittedValue}) =>
+      SecretScanningUpdateAlertRequestBody(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<SecretScanningAlertState>,
+        resolution: identical(resolution, sdkOmittedValue)
+            ? this.resolution
+            : resolution as SdkOptional<SecretScanningAlertResolution?>,
+        resolutionComment: identical(resolutionComment, sdkOmittedValue)
+            ? this.resolutionComment
+            : resolutionComment as SdkOptional<String?>,
+        assignee: identical(assignee, sdkOmittedValue)
+            ? this.assignee
+            : assignee as SdkOptional<String?>,
+        validity: identical(validity, sdkOmittedValue)
+            ? this.validity
+            : validity
+                as SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?>,
+      );
 
-  factory SecretScanningUpdateAlertRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningUpdateAlertRequestBody(
-    state: json['state'] != null ? SdkPresent((json['state'] != null ? SecretScanningAlertState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
-    resolution: json.containsKey('resolution') ? SdkPresent(json['resolution'] != null ? SecretScanningAlertResolution.fromJson(json['resolution'] as String) : null) : const SdkOmitted(),
-    resolutionComment: json.containsKey('resolution_comment') ? SdkPresent(json['resolution_comment'] as String?) : const SdkOmitted(),
-    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] as String?) : const SdkOmitted(),
-    validity: json.containsKey('validity') ? SdkPresent(json['validity'] != null ? SecretScanningUpdateAlertRequestBodyValidity.fromJson(json['validity'] as String) : null) : const SdkOmitted(),
-  );
+  factory SecretScanningUpdateAlertRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningUpdateAlertRequestBody(
+        state: json['state'] != null
+            ? SdkPresent((json['state'] != null
+                ? SecretScanningAlertState.fromJson(json['state'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        resolution: json.containsKey('resolution')
+            ? SdkPresent(json['resolution'] != null
+                ? SecretScanningAlertResolution.fromJson(
+                    json['resolution'] as String)
+                : null)
+            : const SdkOmitted(),
+        resolutionComment: json.containsKey('resolution_comment')
+            ? SdkPresent(json['resolution_comment'] as String?)
+            : const SdkOmitted(),
+        assignee: json.containsKey('assignee')
+            ? SdkPresent(json['assignee'] as String?)
+            : const SdkOmitted(),
+        validity: json.containsKey('validity')
+            ? SdkPresent(json['validity'] != null
+                ? SecretScanningUpdateAlertRequestBodyValidity.fromJson(
+                    json['validity'] as String)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (state) {
-      SdkPresent<SecretScanningAlertState>(value: final value) => {'state': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resolution) {
-      SdkPresent<SecretScanningAlertResolution?>(value: final value) => {'resolution': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resolutionComment) {
-      SdkPresent<String?>(value: final value) => {'resolution_comment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (assignee) {
-      SdkPresent<String?>(value: final value) => {'assignee': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (validity) {
-      SdkPresent<SecretScanningUpdateAlertRequestBodyValidity?>(value: final value) => {'validity': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (state) {
+          SdkPresent<SecretScanningAlertState>(value: final value) => {
+              'state': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resolution) {
+          SdkPresent<SecretScanningAlertResolution?>(value: final value) => {
+              'resolution': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resolutionComment) {
+          SdkPresent<String?>(value: final value) => {
+              'resolution_comment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (assignee) {
+          SdkPresent<String?>(value: final value) => {
+              'assignee': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (validity) {
+          SdkPresent<SecretScanningUpdateAlertRequestBodyValidity?>(
+            value: final value
+          ) =>
+            {
+              'validity': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SecretScanningBulkCreateRepoCustomPatternsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The list of custom patterns to create (maximum 100).
   final List<SecretScanningCustomPatternToCreate> patterns;
 
-  const SecretScanningBulkCreateRepoCustomPatternsRequestBody({required this.patterns});
+  const SecretScanningBulkCreateRepoCustomPatternsRequestBody(
+      {required this.patterns});
 
-  SecretScanningBulkCreateRepoCustomPatternsRequestBody Function({List<SecretScanningCustomPatternToCreate> patterns}) get copyWith => _copyWith;
+  SecretScanningBulkCreateRepoCustomPatternsRequestBody Function(
+          {List<SecretScanningCustomPatternToCreate> patterns})
+      get copyWith => _copyWith;
 
-  SecretScanningBulkCreateRepoCustomPatternsRequestBody _copyWith({Object? patterns = sdkOmittedValue}) => SecretScanningBulkCreateRepoCustomPatternsRequestBody(
-    patterns: identical(patterns, sdkOmittedValue) ? this.patterns : patterns as List<SecretScanningCustomPatternToCreate>,
-  );
+  SecretScanningBulkCreateRepoCustomPatternsRequestBody _copyWith(
+          {Object? patterns = sdkOmittedValue}) =>
+      SecretScanningBulkCreateRepoCustomPatternsRequestBody(
+        patterns: identical(patterns, sdkOmittedValue)
+            ? this.patterns
+            : patterns as List<SecretScanningCustomPatternToCreate>,
+      );
 
-  factory SecretScanningBulkCreateRepoCustomPatternsRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningBulkCreateRepoCustomPatternsRequestBody(
-    patterns: ((json['patterns'] as List?)?.map((e) => SecretScanningCustomPatternToCreate.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SecretScanningBulkCreateRepoCustomPatternsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningBulkCreateRepoCustomPatternsRequestBody(
+        patterns: ((json['patterns'] as List?)
+            ?.map((e) => SecretScanningCustomPatternToCreate.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'patterns': patterns.map((item) => item.toJson()).toList(),
-  };
+        'patterns': patterns.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SecretScanningBulkCreateRepoCustomPatternsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The list of successfully created custom patterns.
   final SdkOptional<List<SecretScanningCustomPattern>> createdPatterns;
 
-  const SecretScanningBulkCreateRepoCustomPatternsResponse({this.createdPatterns = const SdkOmitted()});
+  const SecretScanningBulkCreateRepoCustomPatternsResponse(
+      {this.createdPatterns = const SdkOmitted()});
 
-  SecretScanningBulkCreateRepoCustomPatternsResponse Function({SdkOptional<List<SecretScanningCustomPattern>> createdPatterns}) get copyWith => _copyWith;
+  SecretScanningBulkCreateRepoCustomPatternsResponse Function(
+          {SdkOptional<List<SecretScanningCustomPattern>> createdPatterns})
+      get copyWith => _copyWith;
 
-  SecretScanningBulkCreateRepoCustomPatternsResponse _copyWith({Object? createdPatterns = sdkOmittedValue}) => SecretScanningBulkCreateRepoCustomPatternsResponse(
-    createdPatterns: identical(createdPatterns, sdkOmittedValue) ? this.createdPatterns : createdPatterns as SdkOptional<List<SecretScanningCustomPattern>>,
-  );
+  SecretScanningBulkCreateRepoCustomPatternsResponse _copyWith(
+          {Object? createdPatterns = sdkOmittedValue}) =>
+      SecretScanningBulkCreateRepoCustomPatternsResponse(
+        createdPatterns: identical(createdPatterns, sdkOmittedValue)
+            ? this.createdPatterns
+            : createdPatterns as SdkOptional<List<SecretScanningCustomPattern>>,
+      );
 
-  factory SecretScanningBulkCreateRepoCustomPatternsResponse.fromJson(Map<String, dynamic> json) => SecretScanningBulkCreateRepoCustomPatternsResponse(
-    createdPatterns: json['created_patterns'] != null ? SdkPresent(((json['created_patterns'] as List?)?.map((e) => SecretScanningCustomPattern.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory SecretScanningBulkCreateRepoCustomPatternsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningBulkCreateRepoCustomPatternsResponse(
+        createdPatterns: json['created_patterns'] != null
+            ? SdkPresent(((json['created_patterns'] as List?)
+                ?.map((e) => SecretScanningCustomPattern.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (createdPatterns) {
-      SdkPresent<List<SecretScanningCustomPattern>>(value: final value) => {'created_patterns': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (createdPatterns) {
+          SdkPresent<List<SecretScanningCustomPattern>>(value: final value) => {
+              'created_patterns': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SecretScanningBulkDeleteRepoCustomPatternsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The list of custom patterns to delete.
   final List<SecretScanningCustomPatternToDelete> patterns;
+
   /// What to do with alerts associated with the deleted patterns. `delete_alerts` permanently removes the alerts. `resolve_alerts` resolves the alerts as "pattern deleted". Defaults to `delete_alerts` when not specified.
-  final SdkOptional<SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction> postDeleteAction;
+  final SdkOptional<
+          SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction>
+      postDeleteAction;
 
-  const SecretScanningBulkDeleteRepoCustomPatternsRequestBody({required this.patterns, this.postDeleteAction = const SdkOmitted()});
+  const SecretScanningBulkDeleteRepoCustomPatternsRequestBody(
+      {required this.patterns, this.postDeleteAction = const SdkOmitted()});
 
-  SecretScanningBulkDeleteRepoCustomPatternsRequestBody Function({List<SecretScanningCustomPatternToDelete> patterns, SdkOptional<SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction> postDeleteAction}) get copyWith => _copyWith;
+  SecretScanningBulkDeleteRepoCustomPatternsRequestBody Function(
+      {List<SecretScanningCustomPatternToDelete> patterns,
+      SdkOptional<
+              SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction>
+          postDeleteAction}) get copyWith => _copyWith;
 
-  SecretScanningBulkDeleteRepoCustomPatternsRequestBody _copyWith({Object? patterns = sdkOmittedValue, Object? postDeleteAction = sdkOmittedValue}) => SecretScanningBulkDeleteRepoCustomPatternsRequestBody(
-    patterns: identical(patterns, sdkOmittedValue) ? this.patterns : patterns as List<SecretScanningCustomPatternToDelete>,
-    postDeleteAction: identical(postDeleteAction, sdkOmittedValue) ? this.postDeleteAction : postDeleteAction as SdkOptional<SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction>,
-  );
+  SecretScanningBulkDeleteRepoCustomPatternsRequestBody _copyWith(
+          {Object? patterns = sdkOmittedValue,
+          Object? postDeleteAction = sdkOmittedValue}) =>
+      SecretScanningBulkDeleteRepoCustomPatternsRequestBody(
+        patterns: identical(patterns, sdkOmittedValue)
+            ? this.patterns
+            : patterns as List<SecretScanningCustomPatternToDelete>,
+        postDeleteAction: identical(postDeleteAction, sdkOmittedValue)
+            ? this.postDeleteAction
+            : postDeleteAction as SdkOptional<
+                SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction>,
+      );
 
-  factory SecretScanningBulkDeleteRepoCustomPatternsRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningBulkDeleteRepoCustomPatternsRequestBody(
-    patterns: ((json['patterns'] as List?)?.map((e) => SecretScanningCustomPatternToDelete.fromJson(e as Map<String, dynamic>)).toList())!,
-    postDeleteAction: json['post_delete_action'] != null ? SdkPresent((json['post_delete_action'] != null ? SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction.fromJson(json['post_delete_action'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecretScanningBulkDeleteRepoCustomPatternsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningBulkDeleteRepoCustomPatternsRequestBody(
+        patterns: ((json['patterns'] as List?)
+            ?.map((e) => SecretScanningCustomPatternToDelete.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        postDeleteAction: json['post_delete_action'] != null
+            ? SdkPresent((json['post_delete_action'] != null
+                ? SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction
+                    .fromJson(json['post_delete_action'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'patterns': patterns.map((item) => item.toJson()).toList(),
-    ...switch (postDeleteAction) {
-      SdkPresent<SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction>(value: final value) => {'post_delete_action': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'patterns': patterns.map((item) => item.toJson()).toList(),
+        ...switch (postDeleteAction) {
+          SdkPresent<
+                SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction>(
+            value: final value
+          ) =>
+            {
+              'post_delete_action': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

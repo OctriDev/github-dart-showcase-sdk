@@ -8,46 +8,86 @@ part of 'actions.dart';
 class OidcCustomSubRepo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
   final bool useDefault;
+
   /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
   final SdkOptional<List<String>> includeClaimKeys;
+
   /// Whether the repository has opted in to the immutable OIDC subject claim format. When `true`, OIDC tokens will use a stable, repository-ID-based `sub` claim. If not set at the repository level, falls back to the organization-level setting.
   final SdkOptional<bool> useImmutableSubject;
+
   /// The current `sub` claim prefix for this repository.
   final SdkOptional<String> subClaimPrefix;
 
-  const OidcCustomSubRepo({required this.useDefault, this.includeClaimKeys = const SdkOmitted(), this.useImmutableSubject = const SdkOmitted(), this.subClaimPrefix = const SdkOmitted()});
+  const OidcCustomSubRepo(
+      {required this.useDefault,
+      this.includeClaimKeys = const SdkOmitted(),
+      this.useImmutableSubject = const SdkOmitted(),
+      this.subClaimPrefix = const SdkOmitted()});
 
-  OidcCustomSubRepo Function({bool useDefault, SdkOptional<List<String>> includeClaimKeys, SdkOptional<bool> useImmutableSubject, SdkOptional<String> subClaimPrefix}) get copyWith => _copyWith;
+  OidcCustomSubRepo Function(
+      {bool useDefault,
+      SdkOptional<List<String>> includeClaimKeys,
+      SdkOptional<bool> useImmutableSubject,
+      SdkOptional<String> subClaimPrefix}) get copyWith => _copyWith;
 
-  OidcCustomSubRepo _copyWith({Object? useDefault = sdkOmittedValue, Object? includeClaimKeys = sdkOmittedValue, Object? useImmutableSubject = sdkOmittedValue, Object? subClaimPrefix = sdkOmittedValue}) => OidcCustomSubRepo(
-    useDefault: identical(useDefault, sdkOmittedValue) ? this.useDefault : useDefault as bool,
-    includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue) ? this.includeClaimKeys : includeClaimKeys as SdkOptional<List<String>>,
-    useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue) ? this.useImmutableSubject : useImmutableSubject as SdkOptional<bool>,
-    subClaimPrefix: identical(subClaimPrefix, sdkOmittedValue) ? this.subClaimPrefix : subClaimPrefix as SdkOptional<String>,
-  );
+  OidcCustomSubRepo _copyWith(
+          {Object? useDefault = sdkOmittedValue,
+          Object? includeClaimKeys = sdkOmittedValue,
+          Object? useImmutableSubject = sdkOmittedValue,
+          Object? subClaimPrefix = sdkOmittedValue}) =>
+      OidcCustomSubRepo(
+        useDefault: identical(useDefault, sdkOmittedValue)
+            ? this.useDefault
+            : useDefault as bool,
+        includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue)
+            ? this.includeClaimKeys
+            : includeClaimKeys as SdkOptional<List<String>>,
+        useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue)
+            ? this.useImmutableSubject
+            : useImmutableSubject as SdkOptional<bool>,
+        subClaimPrefix: identical(subClaimPrefix, sdkOmittedValue)
+            ? this.subClaimPrefix
+            : subClaimPrefix as SdkOptional<String>,
+      );
 
-  factory OidcCustomSubRepo.fromJson(Map<String, dynamic> json) => OidcCustomSubRepo(
-    useDefault: (json['use_default'] as bool?)!,
-    includeClaimKeys: json['include_claim_keys'] != null ? SdkPresent(((json['include_claim_keys'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    useImmutableSubject: json['use_immutable_subject'] != null ? SdkPresent((json['use_immutable_subject'] as bool?)!) : const SdkOmitted(),
-    subClaimPrefix: json['sub_claim_prefix'] != null ? SdkPresent((json['sub_claim_prefix'] as String?)!) : const SdkOmitted(),
-  );
+  factory OidcCustomSubRepo.fromJson(Map<String, dynamic> json) =>
+      OidcCustomSubRepo(
+        useDefault: (json['use_default'] as bool?)!,
+        includeClaimKeys: json['include_claim_keys'] != null
+            ? SdkPresent(((json['include_claim_keys'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        useImmutableSubject: json['use_immutable_subject'] != null
+            ? SdkPresent((json['use_immutable_subject'] as bool?)!)
+            : const SdkOmitted(),
+        subClaimPrefix: json['sub_claim_prefix'] != null
+            ? SdkPresent((json['sub_claim_prefix'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'use_default': useDefault,
-    ...switch (includeClaimKeys) {
-      SdkPresent<List<String>>(value: final value) => {'include_claim_keys': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (useImmutableSubject) {
-      SdkPresent<bool>(value: final value) => {'use_immutable_subject': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subClaimPrefix) {
-      SdkPresent<String>(value: final value) => {'sub_claim_prefix': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'use_default': useDefault,
+        ...switch (includeClaimKeys) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include_claim_keys': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (useImmutableSubject) {
+          SdkPresent<bool>(value: final value) => {
+              'use_immutable_subject': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subClaimPrefix) {
+          SdkPresent<String>(value: final value) => {
+              'sub_claim_prefix': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
