@@ -6,12 +6,12 @@ part of 'code_scanning_code_scanning_alert.dart';
 // code_scanning_code_scanning_alert domain models
 /// Severity of a code scanning alert.
 final class CodeScanningAlertSeverity {
-
   final String value;
 
   const CodeScanningAlertSeverity._(this.value);
 
-  factory CodeScanningAlertSeverity.fromJson(String value) => CodeScanningAlertSeverity._(value);
+  factory CodeScanningAlertSeverity.fromJson(String value) =>
+      CodeScanningAlertSeverity._(value);
 
   static const critical = CodeScanningAlertSeverity._('critical');
   static const high = CodeScanningAlertSeverity._('high');
@@ -23,10 +23,13 @@ final class CodeScanningAlertSeverity {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertSeverity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertSeverity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

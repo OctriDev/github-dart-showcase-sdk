@@ -54,10 +54,12 @@ Future<CheckRun> checksCreate(ClientConfig config,
     SdkOptional<String> externalId = const SdkOmitted(),
     SdkOptional<ChecksCreateRequestBodyStatus> status = const SdkOmitted(),
     SdkOptional<String> startedAt = const SdkOmitted(),
-    SdkOptional<ChecksCreateRequestBodyConclusion> conclusion = const SdkOmitted(),
+    SdkOptional<ChecksCreateRequestBodyConclusion> conclusion =
+        const SdkOmitted(),
     SdkOptional<String> completedAt = const SdkOmitted(),
     SdkOptional<ChecksCreateRequestBodyOutput> output = const SdkOmitted(),
-    SdkOptional<List<ChecksCreateRequestBodyActionsItem>> actions = const SdkOmitted(),
+    SdkOptional<List<ChecksCreateRequestBodyActionsItem>> actions =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   if (startedAt is SdkPresent<String>) {
     sdkValidateDateTime('started_at', startedAt.value);
@@ -86,11 +88,11 @@ Future<CheckRun> checksCreate(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'checksCreate',
-          fromJsonRaw: (value) => CheckRun.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CheckRun.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single check run using its `id`. &gt; [!NOTE] &gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
@@ -108,11 +110,11 @@ Future<CheckRun> checksGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'checksGet',
-          fromJsonRaw: (value) => CheckRun.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CheckRun.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates a check run for a specific commit in a repository. &gt; [!NOTE] &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array. OAuth apps and personal access tokens (classic) cannot use this endpoint.
 ///
@@ -132,11 +134,11 @@ Future<CheckRun> checksUpdate(ClientConfig config,
           body: body,
           decoder: SdkResponseDecoder.json,
           operationId: 'checksUpdate',
-          fromJsonRaw: (value) => CheckRun.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CheckRun.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists annotations for a check run using the annotation `id`. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
@@ -163,16 +165,20 @@ Future<List<CheckAnnotation>> checksListAnnotations(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/check-runs/${Uri.encodeComponent(checkRunId.toString())}/annotations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'checksListAnnotations',
-          fromJsonRaw: (value) => (value as List).map((item) => CheckAnnotation.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  CheckAnnotation.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Triggers GitHub to rerequest an existing check run, without pushing new code to a repository. This endpoint will trigger the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) event with the action `rerequested`. When a check run is `rerequested`, the `status` of the check suite it belongs to is reset to `queued` and the `conclusion` is cleared. The check run itself is not updated. GitHub apps recieving the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) with the `rerequested` action should then decide if the check run should be reset or updated and call the [update `check_run` endpoint](https://docs.github.com/rest/checks/runs#update-a-check-run) to update the check_run if desired. For more information about how to re-run GitHub Actions jobs, see "[Re-run a job from a workflow run](https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run)".
 ///
@@ -192,10 +198,13 @@ Future<Map<String, dynamic>> checksRerequestRun(ClientConfig config,
           operationId: 'checksRerequestRun',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Creates a check suite manually. By default, check suites are automatically created when you create a [check run](https://docs.github.com/rest/checks/runs). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using "[Update repository preferences for check suites](https://docs.github.com/rest/checks/suites#update-repository-preferences-for-check-suites)". &gt; [!NOTE] &gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`. OAuth apps and personal access tokens (classic) cannot use this endpoint.
 ///
@@ -214,11 +223,11 @@ Future<CheckSuite> checksCreateSuite(ClientConfig config,
           body: {'head_sha': headSha},
           decoder: SdkResponseDecoder.json,
           operationId: 'checksCreateSuite',
-          fromJsonRaw: (value) => CheckSuite.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CheckSuite.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.
 ///
@@ -230,7 +239,9 @@ Future<CheckSuite> checksCreateSuite(ClientConfig config,
 Future<CheckSuitePreference> checksSetSuitesPreferences(ClientConfig config,
     {required String owner,
     required String repo,
-    SdkOptional<List<ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem>> autoTriggerChecks = const SdkOmitted(),
+    SdkOptional<
+            List<ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem>>
+        autoTriggerChecks = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<CheckSuitePreference>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/check-suites/preferences',
@@ -240,11 +251,11 @@ Future<CheckSuitePreference> checksSetSuitesPreferences(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'checksSetSuitesPreferences',
-          fromJsonRaw: (value) => CheckSuitePreference.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CheckSuitePreference.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single check suite using its `id`. &gt; [!NOTE] &gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
@@ -262,11 +273,11 @@ Future<CheckSuite> checksGetSuite(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'checksGetSuite',
-          fromJsonRaw: (value) => CheckSuite.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CheckSuite.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists check runs for a check suite using its `id`. &gt; [!NOTE] &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
@@ -300,19 +311,24 @@ Future<ChecksListForSuiteResponse> checksListForSuite(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/check-suites/${Uri.encodeComponent(checkSuiteId.toString())}/check-runs',
           config: config,
           query: {
-            'check_name': SdkQueryValue(SdkUtils.unwrapOptional(checkName), style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
-            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'check_name': SdkQueryValue(SdkUtils.unwrapOptional(checkName),
+                style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true),
+            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'checksListForSuite',
-          fromJsonRaw: (value) => ChecksListForSuiteResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ChecksListForSuiteResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://docs.github.com/webhooks/event-payloads/#check_suite) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.
 ///
@@ -334,7 +350,6 @@ Future<Map<String, dynamic>> checksRerequestSuite(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists check runs for a Git reference in a repository. Set `ref` to a commit SHA, branch name, or tag name, and use `check_name`, `status`, `filter`, or `app_id` to narrow the results; use `page` and `per_page` to paginate the results. If the reference has more than 1,000 check suites, results are limited to the 1,000 most recent suites; use the check-suite endpoints to retrieve additional runs.
 ///
@@ -375,20 +390,26 @@ Future<ChecksListForRefResponse> checksListForRef(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits/${Uri.encodeComponent(ref.toString())}/check-runs',
           config: config,
           query: {
-            'check_name': SdkQueryValue(SdkUtils.unwrapOptional(checkName), style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
-            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'app_id': SdkQueryValue(SdkUtils.unwrapOptional(appId), style: 'form', explode: true)
+            'check_name': SdkQueryValue(SdkUtils.unwrapOptional(checkName),
+                style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true),
+            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'app_id': SdkQueryValue(SdkUtils.unwrapOptional(appId),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'checksListForRef',
-          fromJsonRaw: (value) => ChecksListForRefResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ChecksListForRefResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name. &gt; [!NOTE] &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
@@ -410,28 +431,33 @@ Future<ChecksListForRefResponse> checksListForRef(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ChecksListSuitesForRefResponse>
-    checksListSuitesForRef(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String ref,
-        SdkOptional<int> appId = const SdkOmitted(),
-        SdkOptional<String> checkName = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ChecksListSuitesForRefResponse> checksListSuitesForRef(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String ref,
+    SdkOptional<int> appId = const SdkOmitted(),
+    SdkOptional<String> checkName = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ChecksListSuitesForRefResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/commits/${Uri.encodeComponent(ref.toString())}/check-suites',
           config: config,
           query: {
-            'app_id': SdkQueryValue(SdkUtils.unwrapOptional(appId), style: 'form', explode: true),
-            'check_name': SdkQueryValue(SdkUtils.unwrapOptional(checkName), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'app_id': SdkQueryValue(SdkUtils.unwrapOptional(appId),
+                style: 'form', explode: true),
+            'check_name': SdkQueryValue(SdkUtils.unwrapOptional(checkName),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'checksListSuitesForRef',
-          fromJsonRaw: (value) => ChecksListSuitesForRefResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ChecksListSuitesForRefResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

@@ -6,24 +6,29 @@ part of 'code_scanning_code_scanning_alert.dart';
 // code_scanning_code_scanning_alert domain models
 /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
 final class CodeScanningAlertDismissedReason {
-
   final String value;
 
   const CodeScanningAlertDismissedReason._(this.value);
 
-  factory CodeScanningAlertDismissedReason.fromJson(String value) => CodeScanningAlertDismissedReason._(value);
+  factory CodeScanningAlertDismissedReason.fromJson(String value) =>
+      CodeScanningAlertDismissedReason._(value);
 
-  static const falsePositive = CodeScanningAlertDismissedReason._('false positive');
+  static const falsePositive =
+      CodeScanningAlertDismissedReason._('false positive');
   static const wonTFix = CodeScanningAlertDismissedReason._('won\'t fix');
-  static const usedInTests = CodeScanningAlertDismissedReason._('used in tests');
+  static const usedInTests =
+      CodeScanningAlertDismissedReason._('used in tests');
   static const mitigated = CodeScanningAlertDismissedReason._('mitigated');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertDismissedReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertDismissedReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

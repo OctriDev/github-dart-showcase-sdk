@@ -8,26 +8,38 @@ part of 'code_security.dart';
 class CodeScanningOptions implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to allow repos which use advanced setup
   final SdkOptional<bool?> allowAdvanced;
 
   const CodeScanningOptions({this.allowAdvanced = const SdkOmitted()});
 
-  CodeScanningOptions Function({SdkOptional<bool?> allowAdvanced}) get copyWith => _copyWith;
+  CodeScanningOptions Function({SdkOptional<bool?> allowAdvanced})
+      get copyWith => _copyWith;
 
-  CodeScanningOptions _copyWith({Object? allowAdvanced = sdkOmittedValue}) => CodeScanningOptions(
-    allowAdvanced: identical(allowAdvanced, sdkOmittedValue) ? this.allowAdvanced : allowAdvanced as SdkOptional<bool?>,
-  );
+  CodeScanningOptions _copyWith({Object? allowAdvanced = sdkOmittedValue}) =>
+      CodeScanningOptions(
+        allowAdvanced: identical(allowAdvanced, sdkOmittedValue)
+            ? this.allowAdvanced
+            : allowAdvanced as SdkOptional<bool?>,
+      );
 
-  factory CodeScanningOptions.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(CodeScanningOptions(
-    allowAdvanced: json.containsKey('allow_advanced') ? SdkPresent(json['allow_advanced'] as bool?) : const SdkOmitted(),
-  ), json);
+  factory CodeScanningOptions.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          CodeScanningOptions(
+            allowAdvanced: json.containsKey('allow_advanced')
+                ? SdkPresent(json['allow_advanced'] as bool?)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (allowAdvanced) {
-      SdkPresent<bool?>(value: final value) => {'allow_advanced': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (allowAdvanced) {
+          SdkPresent<bool?>(value: final value) => {
+              'allow_advanced': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

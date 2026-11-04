@@ -4,14 +4,18 @@
 part of 'webhook_pull_request_stacked.dart';
 
 // webhook_pull_request_stacked domain models
-final class WebhookPullRequestStackedPullRequestBaseRepoPushedAtInt extends WebhookPullRequestStackedPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestStackedPullRequestBaseRepoPushedAtInt
+    extends WebhookPullRequestStackedPullRequestBaseRepoPushedAt {
   final int value;
   const WebhookPullRequestStackedPullRequestBaseRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestStackedPullRequestBaseRepoPushedAtString extends WebhookPullRequestStackedPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestStackedPullRequestBaseRepoPushedAtString
+    extends WebhookPullRequestStackedPullRequestBaseRepoPushedAt {
   final String value;
   const WebhookPullRequestStackedPullRequestBaseRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

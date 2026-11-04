@@ -8,22 +8,36 @@ sealed class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMeta
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist();
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist.fromJson(Object? json) {
-    if (json is String) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistString(json); }
-    if (json is Map) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistMap(Map<String, dynamic>.from(json)); }
-    throw FormatException("No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist");
+  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistString(
+          json);
+    }
+    if (json is Map) {
+      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistMap(
+          Map<String, dynamic>.from(json));
+    }
+    throw FormatException(
+        "No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist");
   }
   Object? toJson();
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistString extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistString
+    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist {
   final String value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistString(this.value);
-  @override Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistMap extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistMap
+    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist {
   final Map<String, dynamic> value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistMap(this.value);
-  @override Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDistMap(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

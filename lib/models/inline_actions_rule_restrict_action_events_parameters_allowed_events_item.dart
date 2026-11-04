@@ -6,58 +6,121 @@ part of 'inline.dart';
 // Inline operation models
 /// Required enumerated value serialized in the `allowed_events[]` wire field.
 final class ActionsRuleRestrictActionEventsParametersAllowedEventsItem {
-
   final String value;
 
-  const ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(this.value);
+  const ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+      this.value);
 
-  factory ActionsRuleRestrictActionEventsParametersAllowedEventsItem.fromJson(String value) => ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(value);
+  factory ActionsRuleRestrictActionEventsParametersAllowedEventsItem.fromJson(
+          String value) =>
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(value);
 
-  static const branchProtectionRule = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('branch_protection_rule');
-  static const checkRun = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('check_run');
-  static const checkSuite = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('check_suite');
-  static const create = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('create');
-  static const delete = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('delete');
-  static const deployment = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('deployment');
-  static const deploymentStatus = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('deployment_status');
-  static const discussion = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('discussion');
-  static const discussionComment = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('discussion_comment');
-  static const fork = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('fork');
-  static const gollum = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('gollum');
-  static const imageVersion = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('image_version');
-  static const issueComment = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('issue_comment');
-  static const issues = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('issues');
-  static const label = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('label');
-  static const mergeGroup = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('merge_group');
-  static const milestone = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('milestone');
-  static const pageBuild = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('page_build');
-  static const project = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('project');
-  static const projectCard = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('project_card');
-  static const projectColumn = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('project_column');
-  static const public = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('public');
-  static const pullRequest = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('pull_request');
-  static const pullRequestReview = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('pull_request_review');
-  static const pullRequestReviewComment = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('pull_request_review_comment');
-  static const pullRequestTarget = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('pull_request_target');
-  static const push = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('push');
-  static const registryPackage = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('registry_package');
-  static const release = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('release');
-  static const repositoryDispatch = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('repository_dispatch');
-  static const schedule = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('schedule');
-  static const status = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('status');
-  static const watch = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('watch');
-  static const workflowCall = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('workflow_call');
-  static const workflowDispatch = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('workflow_dispatch');
-  static const workflowRun = ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('workflow_run');
+  static const branchProtectionRule =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'branch_protection_rule');
+  static const checkRun =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('check_run');
+  static const checkSuite =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'check_suite');
+  static const create =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('create');
+  static const delete =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('delete');
+  static const deployment =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'deployment');
+  static const deploymentStatus =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'deployment_status');
+  static const discussion =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'discussion');
+  static const discussionComment =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'discussion_comment');
+  static const fork =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('fork');
+  static const gollum =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('gollum');
+  static const imageVersion =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'image_version');
+  static const issueComment =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'issue_comment');
+  static const issues =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('issues');
+  static const label =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('label');
+  static const mergeGroup =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'merge_group');
+  static const milestone =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('milestone');
+  static const pageBuild =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'page_build');
+  static const project =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('project');
+  static const projectCard =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'project_card');
+  static const projectColumn =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'project_column');
+  static const public =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('public');
+  static const pullRequest =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'pull_request');
+  static const pullRequestReview =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'pull_request_review');
+  static const pullRequestReviewComment =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'pull_request_review_comment');
+  static const pullRequestTarget =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'pull_request_target');
+  static const push =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('push');
+  static const registryPackage =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'registry_package');
+  static const release =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('release');
+  static const repositoryDispatch =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'repository_dispatch');
+  static const schedule =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('schedule');
+  static const status =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('status');
+  static const watch =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._('watch');
+  static const workflowCall =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'workflow_call');
+  static const workflowDispatch =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'workflow_dispatch');
+  static const workflowRun =
+      ActionsRuleRestrictActionEventsParametersAllowedEventsItem._(
+          'workflow_run');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsRuleRestrictActionEventsParametersAllowedEventsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsRuleRestrictActionEventsParametersAllowedEventsItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -66,14 +129,18 @@ enum ActionsRuleRestrictActionEventsType {
 
   static ActionsRuleRestrictActionEventsType fromJson(String value) {
     switch (value) {
-      case 'restrict_action_events': return ActionsRuleRestrictActionEventsType.restrictActionEvents;
-      default: throw ArgumentError('Unknown ActionsRuleRestrictActionEventsType: $value');
+      case 'restrict_action_events':
+        return ActionsRuleRestrictActionEventsType.restrictActionEvents;
+      default:
+        throw ArgumentError(
+            'Unknown ActionsRuleRestrictActionEventsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ActionsRuleRestrictActionEventsType.restrictActionEvents: return 'restrict_action_events';
+      case ActionsRuleRestrictActionEventsType.restrictActionEvents:
+        return 'restrict_action_events';
     }
   }
 
@@ -87,14 +154,18 @@ enum ActionsRuleRestrictActionsActorsType {
 
   static ActionsRuleRestrictActionsActorsType fromJson(String value) {
     switch (value) {
-      case 'restrict_actions_actors': return ActionsRuleRestrictActionsActorsType.restrictActionsActors;
-      default: throw ArgumentError('Unknown ActionsRuleRestrictActionsActorsType: $value');
+      case 'restrict_actions_actors':
+        return ActionsRuleRestrictActionsActorsType.restrictActionsActors;
+      default:
+        throw ArgumentError(
+            'Unknown ActionsRuleRestrictActionsActorsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ActionsRuleRestrictActionsActorsType.restrictActionsActors: return 'restrict_actions_actors';
+      case ActionsRuleRestrictActionsActorsType.restrictActionsActors:
+        return 'restrict_actions_actors';
     }
   }
 
@@ -104,35 +175,40 @@ enum ActionsRuleRestrictActionsActorsType {
 
 /// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the repository. `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
 final class ActionsWorkflowAccessToRepositoryAccessLevel {
-
   final String value;
 
   const ActionsWorkflowAccessToRepositoryAccessLevel._(this.value);
 
-  factory ActionsWorkflowAccessToRepositoryAccessLevel.fromJson(String value) => ActionsWorkflowAccessToRepositoryAccessLevel._(value);
+  factory ActionsWorkflowAccessToRepositoryAccessLevel.fromJson(String value) =>
+      ActionsWorkflowAccessToRepositoryAccessLevel._(value);
 
   static const none = ActionsWorkflowAccessToRepositoryAccessLevel._('none');
   static const user = ActionsWorkflowAccessToRepositoryAccessLevel._('user');
-  static const organization = ActionsWorkflowAccessToRepositoryAccessLevel._('organization');
+  static const organization =
+      ActionsWorkflowAccessToRepositoryAccessLevel._('organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsWorkflowAccessToRepositoryAccessLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsWorkflowAccessToRepositoryAccessLevel &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the activity that was performed.
 final class ActivityActivityType {
-
   final String value;
 
   const ActivityActivityType._(this.value);
 
-  factory ActivityActivityType.fromJson(String value) => ActivityActivityType._(value);
+  factory ActivityActivityType.fromJson(String value) =>
+      ActivityActivityType._(value);
 
   static const push = ActivityActivityType._('push');
   static const forcePush = ActivityActivityType._('force_push');
@@ -143,27 +219,37 @@ final class ActivityActivityType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActivityActivityType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActivityActivityType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type {
   string;
 
-  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type fromJson(String value) {
+  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type
+      fromJson(String value) {
     switch (value) {
-      case 'string': return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type.string;
-      default: throw ArgumentError('Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type: $value');
+      case 'string':
+        return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type
+            .string;
+      default:
+        throw ArgumentError(
+            'Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type.string: return 'string';
+      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type
+            .string:
+        return 'string';
     }
   }
 
@@ -172,38 +258,55 @@ enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema
 }
 
 final class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType {
-
   final String value;
 
-  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType._(this.value);
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType._(
+      this.value);
 
-  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType.fromJson(String value) => AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType._(value);
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType.fromJson(
+          String value) =>
+      AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType
+          ._(value);
 
-  static const string = AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType._('string');
+  static const string =
+      AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType
+          ._('string');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type {
   array;
 
-  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type fromJson(String value) {
+  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type
+      fromJson(String value) {
     switch (value) {
-      case 'array': return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type.array;
-      default: throw ArgumentError('Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type: $value');
+      case 'array':
+        return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type
+            .array;
+      default:
+        throw ArgumentError(
+            'Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type.array: return 'array';
+      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type
+            .array:
+        return 'array';
     }
   }
 
@@ -214,16 +317,23 @@ enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema
 enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type {
   integer;
 
-  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type fromJson(String value) {
+  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type
+      fromJson(String value) {
     switch (value) {
-      case 'integer': return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type.integer;
-      default: throw ArgumentError('Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type: $value');
+      case 'integer':
+        return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type
+            .integer;
+      default:
+        throw ArgumentError(
+            'Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type.integer: return 'integer';
+      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type
+            .integer:
+        return 'integer';
     }
   }
 
@@ -233,44 +343,50 @@ enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema
 
 /// The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
 final class AppPermissionsActions {
-
   final String value;
 
   const AppPermissionsActions._(this.value);
 
-  factory AppPermissionsActions.fromJson(String value) => AppPermissionsActions._(value);
+  factory AppPermissionsActions.fromJson(String value) =>
+      AppPermissionsActions._(value);
 
   static const read = AppPermissionsActions._('read');
   static const write = AppPermissionsActions._('write');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppPermissionsActions && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsActions && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
 final class AppPermissionsAdministration {
-
   final String value;
 
   const AppPermissionsAdministration._(this.value);
 
-  factory AppPermissionsAdministration.fromJson(String value) => AppPermissionsAdministration._(value);
+  factory AppPermissionsAdministration.fromJson(String value) =>
+      AppPermissionsAdministration._(value);
 
   static const read = AppPermissionsAdministration._('read');
   static const write = AppPermissionsAdministration._('write');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppPermissionsAdministration && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsAdministration && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

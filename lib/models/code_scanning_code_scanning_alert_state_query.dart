@@ -6,12 +6,12 @@ part of 'code_scanning_code_scanning_alert.dart';
 // code_scanning_code_scanning_alert domain models
 /// State of a code scanning alert.
 final class CodeScanningAlertStateQuery {
-
   final String value;
 
   const CodeScanningAlertStateQuery._(this.value);
 
-  factory CodeScanningAlertStateQuery.fromJson(String value) => CodeScanningAlertStateQuery._(value);
+  factory CodeScanningAlertStateQuery.fromJson(String value) =>
+      CodeScanningAlertStateQuery._(value);
 
   static const open = CodeScanningAlertStateQuery._('open');
   static const closed = CodeScanningAlertStateQuery._('closed');
@@ -20,10 +20,13 @@ final class CodeScanningAlertStateQuery {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertStateQuery && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertStateQuery && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

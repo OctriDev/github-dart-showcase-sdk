@@ -5,269 +5,427 @@ part of 'inline.dart';
 
 // Inline operation models
 final class AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1 {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+          value);
 
-  static const none = AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._('none');
-  static const low = AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._('low');
-  static const medium = AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._('medium');
-  static const high = AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._('high');
-  static const xhigh = AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._('xhigh');
-  static const max = AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._('max');
+  static const none =
+      AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+          'none');
+  static const low =
+      AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+          'low');
+  static const medium =
+      AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+          'medium');
+  static const high =
+      AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+          'high');
+  static const xhigh =
+      AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+          'xhigh');
+  static const max =
+      AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1._(
+          'max');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyReasoningEffortVariant1 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem
+          ._(value);
 
-  static const comment = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem._('comment');
-  static const reply = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem._('reply');
+  static const comment =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem
+          ._('comment');
+  static const reply =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem
+          ._('reply');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
+          ._(value);
 
-  static const hourly = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem._('hourly');
-  static const daily = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem._('daily');
-  static const weekly = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem._('weekly');
+  static const hourly =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
+          ._('hourly');
+  static const daily =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
+          ._('daily');
+  static const weekly =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
+          ._('weekly');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc {
-
   final int value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc.fromJson(int value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc.fromJson(
+          int value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
+          value);
 
-  static const v0 = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(0);
-  static const v15 = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(15);
-  static const v30 = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(30);
-  static const v45 = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(45);
+  static const v0 =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
+          0);
+  static const v15 =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
+          15);
+  static const v30 =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
+          30);
+  static const v45 =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
+          45);
 
   int toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
+          value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
+          'trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
+          'repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope {
-
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope._(
+      this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

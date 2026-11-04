@@ -4,14 +4,19 @@
 part of 'webhook_pull_request_synchronize.dart';
 
 // webhook_pull_request_synchronize domain models
-final class WebhookPullRequestSynchronizePullRequestBaseRepoPushedAtInt extends WebhookPullRequestSynchronizePullRequestBaseRepoPushedAt {
+final class WebhookPullRequestSynchronizePullRequestBaseRepoPushedAtInt
+    extends WebhookPullRequestSynchronizePullRequestBaseRepoPushedAt {
   final int value;
   const WebhookPullRequestSynchronizePullRequestBaseRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestSynchronizePullRequestBaseRepoPushedAtString extends WebhookPullRequestSynchronizePullRequestBaseRepoPushedAt {
+final class WebhookPullRequestSynchronizePullRequestBaseRepoPushedAtString
+    extends WebhookPullRequestSynchronizePullRequestBaseRepoPushedAt {
   final String value;
-  const WebhookPullRequestSynchronizePullRequestBaseRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestSynchronizePullRequestBaseRepoPushedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

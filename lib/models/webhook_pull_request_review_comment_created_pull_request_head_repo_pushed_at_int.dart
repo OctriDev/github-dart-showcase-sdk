@@ -4,14 +4,20 @@
 part of 'webhook_pull_request_review_comment_created.dart';
 
 // webhook_pull_request_review_comment_created domain models
-final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtInt extends WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtInt
+    extends WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAt {
   final int value;
-  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtString extends WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtString
+    extends WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAt {
   final String value;
-  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPushedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

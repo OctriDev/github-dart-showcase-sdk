@@ -10,54 +10,81 @@ class ActionsListRepoSecretsResponse implements SdkJsonModel {
   final int totalCount;
   final List<ActionsSecret> secrets;
 
-  const ActionsListRepoSecretsResponse({required this.totalCount, required this.secrets});
+  const ActionsListRepoSecretsResponse(
+      {required this.totalCount, required this.secrets});
 
-  ActionsListRepoSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
+  ActionsListRepoSecretsResponse Function(
+      {int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
 
-  ActionsListRepoSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => ActionsListRepoSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
-  );
+  ActionsListRepoSecretsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      ActionsListRepoSecretsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<ActionsSecret>,
+      );
 
-  factory ActionsListRepoSecretsResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListRepoSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsListRepoSecretsResponse.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListRepoSecretsResponse(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            secrets: ((json['secrets'] as List?)
+                ?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsCreateOrUpdateRepoSecretRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/actions/secrets#get-a-repository-public-key) endpoint.
   final String encryptedValue;
+
   /// ID of the key you used to encrypt the secret.
   final String keyId;
 
-  const ActionsCreateOrUpdateRepoSecretRequestBody({required this.encryptedValue, required this.keyId});
+  const ActionsCreateOrUpdateRepoSecretRequestBody(
+      {required this.encryptedValue, required this.keyId});
 
-  ActionsCreateOrUpdateRepoSecretRequestBody Function({String encryptedValue, String keyId}) get copyWith => _copyWith;
+  ActionsCreateOrUpdateRepoSecretRequestBody Function(
+      {String encryptedValue, String keyId}) get copyWith => _copyWith;
 
-  ActionsCreateOrUpdateRepoSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue}) => ActionsCreateOrUpdateRepoSecretRequestBody(
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as String,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-  );
+  ActionsCreateOrUpdateRepoSecretRequestBody _copyWith(
+          {Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue}) =>
+      ActionsCreateOrUpdateRepoSecretRequestBody(
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as String,
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+      );
 
-  factory ActionsCreateOrUpdateRepoSecretRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsCreateOrUpdateRepoSecretRequestBody(
-    encryptedValue: (json['encrypted_value'] as String?)!,
-    keyId: (json['key_id'] as String?)!,
-  ), json);
+  factory ActionsCreateOrUpdateRepoSecretRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsCreateOrUpdateRepoSecretRequestBody(
+            encryptedValue: (json['encrypted_value'] as String?)!,
+            keyId: (json['key_id'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'encrypted_value': encryptedValue,
-    'key_id': keyId,
-  };
+        'encrypted_value': encryptedValue,
+        'key_id': keyId,
+      };
 }
 
 class ActionsListRepoVariablesResponse implements SdkJsonModel {
@@ -66,89 +93,139 @@ class ActionsListRepoVariablesResponse implements SdkJsonModel {
   final int totalCount;
   final List<ActionsVariable> variables;
 
-  const ActionsListRepoVariablesResponse({required this.totalCount, required this.variables});
+  const ActionsListRepoVariablesResponse(
+      {required this.totalCount, required this.variables});
 
-  ActionsListRepoVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
+  ActionsListRepoVariablesResponse Function(
+      {int totalCount,
+      List<ActionsVariable> variables}) get copyWith => _copyWith;
 
-  ActionsListRepoVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => ActionsListRepoVariablesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
-  );
+  ActionsListRepoVariablesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? variables = sdkOmittedValue}) =>
+      ActionsListRepoVariablesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        variables: identical(variables, sdkOmittedValue)
+            ? this.variables
+            : variables as List<ActionsVariable>,
+      );
 
-  factory ActionsListRepoVariablesResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListRepoVariablesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsListRepoVariablesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListRepoVariablesResponse(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            variables: ((json['variables'] as List?)
+                ?.map(
+                    (e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'variables': variables.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'variables': variables.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsCreateRepoVariableRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the variable.
   final String name;
+
   /// The value of the variable.
   final String value;
 
-  const ActionsCreateRepoVariableRequestBody({required this.name, required this.value});
+  const ActionsCreateRepoVariableRequestBody(
+      {required this.name, required this.value});
 
-  ActionsCreateRepoVariableRequestBody Function({String name, String value}) get copyWith => _copyWith;
+  ActionsCreateRepoVariableRequestBody Function({String name, String value})
+      get copyWith => _copyWith;
 
-  ActionsCreateRepoVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsCreateRepoVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-  );
+  ActionsCreateRepoVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      ActionsCreateRepoVariableRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+      );
 
-  factory ActionsCreateRepoVariableRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsCreateRepoVariableRequestBody(
-    name: (json['name'] as String?)!,
-    value: (json['value'] as String?)!,
-  ), json);
+  factory ActionsCreateRepoVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsCreateRepoVariableRequestBody(
+            name: (json['name'] as String?)!,
+            value: (json['value'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'value': value,
-  };
+        'name': name,
+        'value': value,
+      };
 }
 
 class ActionsUpdateRepoVariableRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the variable.
   final SdkOptional<String> name;
+
   /// The value of the variable.
   final SdkOptional<String> value;
 
-  const ActionsUpdateRepoVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted()});
+  const ActionsUpdateRepoVariableRequestBody(
+      {this.name = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  ActionsUpdateRepoVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value}) get copyWith => _copyWith;
+  ActionsUpdateRepoVariableRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> value}) get copyWith => _copyWith;
 
-  ActionsUpdateRepoVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsUpdateRepoVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
-  );
+  ActionsUpdateRepoVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      ActionsUpdateRepoVariableRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String>,
+      );
 
-  factory ActionsUpdateRepoVariableRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsUpdateRepoVariableRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
-  ), json);
+  factory ActionsUpdateRepoVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsUpdateRepoVariableRequestBody(
+            name: json['name'] != null
+                ? SdkPresent((json['name'] as String?)!)
+                : const SdkOmitted(),
+            value: json['value'] != null
+                ? SdkPresent((json['value'] as String?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (value) {
-      SdkPresent<String>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (value) {
+          SdkPresent<String>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsListRepoWorkflowsResponse implements SdkJsonModel {
@@ -157,65 +234,112 @@ class ActionsListRepoWorkflowsResponse implements SdkJsonModel {
   final int totalCount;
   final List<Workflow> workflows;
 
-  const ActionsListRepoWorkflowsResponse({required this.totalCount, required this.workflows});
+  const ActionsListRepoWorkflowsResponse(
+      {required this.totalCount, required this.workflows});
 
-  ActionsListRepoWorkflowsResponse Function({int totalCount, List<Workflow> workflows}) get copyWith => _copyWith;
+  ActionsListRepoWorkflowsResponse Function(
+      {int totalCount, List<Workflow> workflows}) get copyWith => _copyWith;
 
-  ActionsListRepoWorkflowsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? workflows = sdkOmittedValue}) => ActionsListRepoWorkflowsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    workflows: identical(workflows, sdkOmittedValue) ? this.workflows : workflows as List<Workflow>,
-  );
+  ActionsListRepoWorkflowsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? workflows = sdkOmittedValue}) =>
+      ActionsListRepoWorkflowsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        workflows: identical(workflows, sdkOmittedValue)
+            ? this.workflows
+            : workflows as List<Workflow>,
+      );
 
-  factory ActionsListRepoWorkflowsResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListRepoWorkflowsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    workflows: ((json['workflows'] as List?)?.map((e) => Workflow.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsListRepoWorkflowsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListRepoWorkflowsResponse(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            workflows: ((json['workflows'] as List?)
+                ?.map((e) => Workflow.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'workflows': workflows.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'workflows': workflows.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsCreateWorkflowDispatchRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The git reference for the workflow. The reference can be a branch or tag name.
   final String ref;
+
   /// Input keys and values configured in the workflow file. The maximum number of properties is 25. Any default properties configured in the workflow file will be used when `inputs` are omitted.
   final SdkOptional<Map<String, Object?>> inputs;
+
   /// Whether the response should include the workflow run ID and URLs.
   final SdkOptional<bool> returnRunDetails;
 
-  const ActionsCreateWorkflowDispatchRequestBody({required this.ref, this.inputs = const SdkOmitted(), this.returnRunDetails = const SdkOmitted()});
+  const ActionsCreateWorkflowDispatchRequestBody(
+      {required this.ref,
+      this.inputs = const SdkOmitted(),
+      this.returnRunDetails = const SdkOmitted()});
 
-  ActionsCreateWorkflowDispatchRequestBody Function({String ref, SdkOptional<Map<String, Object?>> inputs, SdkOptional<bool> returnRunDetails}) get copyWith => _copyWith;
+  ActionsCreateWorkflowDispatchRequestBody Function(
+      {String ref,
+      SdkOptional<Map<String, Object?>> inputs,
+      SdkOptional<bool> returnRunDetails}) get copyWith => _copyWith;
 
-  ActionsCreateWorkflowDispatchRequestBody _copyWith({Object? ref = sdkOmittedValue, Object? inputs = sdkOmittedValue, Object? returnRunDetails = sdkOmittedValue}) => ActionsCreateWorkflowDispatchRequestBody(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    inputs: identical(inputs, sdkOmittedValue) ? this.inputs : inputs as SdkOptional<Map<String, Object?>>,
-    returnRunDetails: identical(returnRunDetails, sdkOmittedValue) ? this.returnRunDetails : returnRunDetails as SdkOptional<bool>,
-  );
+  ActionsCreateWorkflowDispatchRequestBody _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? inputs = sdkOmittedValue,
+          Object? returnRunDetails = sdkOmittedValue}) =>
+      ActionsCreateWorkflowDispatchRequestBody(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        inputs: identical(inputs, sdkOmittedValue)
+            ? this.inputs
+            : inputs as SdkOptional<Map<String, Object?>>,
+        returnRunDetails: identical(returnRunDetails, sdkOmittedValue)
+            ? this.returnRunDetails
+            : returnRunDetails as SdkOptional<bool>,
+      );
 
-  factory ActionsCreateWorkflowDispatchRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsCreateWorkflowDispatchRequestBody(
-    ref: (json['ref'] as String?)!,
-    inputs: json['inputs'] != null ? SdkPresent((json['inputs'] == null ? null : Map<String, dynamic>.from(json['inputs'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-    returnRunDetails: json['return_run_details'] != null ? SdkPresent((json['return_run_details'] as bool?)!) : const SdkOmitted(),
-  ), json);
+  factory ActionsCreateWorkflowDispatchRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsCreateWorkflowDispatchRequestBody(
+            ref: (json['ref'] as String?)!,
+            inputs: json['inputs'] != null
+                ? SdkPresent((json['inputs'] == null
+                    ? null
+                    : Map<String, dynamic>.from(json['inputs'] as Map)
+                        .map((key, value) => MapEntry(key, value)))!)
+                : const SdkOmitted(),
+            returnRunDetails: json['return_run_details'] != null
+                ? SdkPresent((json['return_run_details'] as bool?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    ...switch (inputs) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'inputs': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (returnRunDetails) {
-      SdkPresent<bool>(value: final value) => {'return_run_details': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'ref': ref,
+        ...switch (inputs) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'inputs': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (returnRunDetails) {
+          SdkPresent<bool>(value: final value) => {
+              'return_run_details': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsListWorkflowRunsResponse implements SdkJsonModel {
@@ -224,25 +348,40 @@ class ActionsListWorkflowRunsResponse implements SdkJsonModel {
   final int totalCount;
   final List<WorkflowRun> workflowRuns;
 
-  const ActionsListWorkflowRunsResponse({required this.totalCount, required this.workflowRuns});
+  const ActionsListWorkflowRunsResponse(
+      {required this.totalCount, required this.workflowRuns});
 
-  ActionsListWorkflowRunsResponse Function({int totalCount, List<WorkflowRun> workflowRuns}) get copyWith => _copyWith;
+  ActionsListWorkflowRunsResponse Function(
+      {int totalCount,
+      List<WorkflowRun> workflowRuns}) get copyWith => _copyWith;
 
-  ActionsListWorkflowRunsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? workflowRuns = sdkOmittedValue}) => ActionsListWorkflowRunsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    workflowRuns: identical(workflowRuns, sdkOmittedValue) ? this.workflowRuns : workflowRuns as List<WorkflowRun>,
-  );
+  ActionsListWorkflowRunsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? workflowRuns = sdkOmittedValue}) =>
+      ActionsListWorkflowRunsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        workflowRuns: identical(workflowRuns, sdkOmittedValue)
+            ? this.workflowRuns
+            : workflowRuns as List<WorkflowRun>,
+      );
 
-  factory ActionsListWorkflowRunsResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListWorkflowRunsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    workflowRuns: ((json['workflow_runs'] as List?)?.map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsListWorkflowRunsResponse.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListWorkflowRunsResponse(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            workflowRuns: ((json['workflow_runs'] as List?)
+                ?.map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'workflow_runs': workflowRuns.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'workflow_runs': workflowRuns.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsListEnvironmentSecretsResponse implements SdkJsonModel {
@@ -251,23 +390,38 @@ class ActionsListEnvironmentSecretsResponse implements SdkJsonModel {
   final int totalCount;
   final List<ActionsSecret> secrets;
 
-  const ActionsListEnvironmentSecretsResponse({required this.totalCount, required this.secrets});
+  const ActionsListEnvironmentSecretsResponse(
+      {required this.totalCount, required this.secrets});
 
-  ActionsListEnvironmentSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
+  ActionsListEnvironmentSecretsResponse Function(
+      {int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
 
-  ActionsListEnvironmentSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => ActionsListEnvironmentSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
-  );
+  ActionsListEnvironmentSecretsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      ActionsListEnvironmentSecretsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<ActionsSecret>,
+      );
 
-  factory ActionsListEnvironmentSecretsResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListEnvironmentSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsListEnvironmentSecretsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListEnvironmentSecretsResponse(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            secrets: ((json['secrets'] as List?)
+                ?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
+      };
 }

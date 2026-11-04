@@ -8,22 +8,36 @@ sealed class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMeta
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor();
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor.fromJson(Object? json) {
-    if (json is String) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorString(json); }
-    if (json is Map) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorMap(Map<String, dynamic>.from(json)); }
-    throw FormatException("No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor");
+  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorString(
+          json);
+    }
+    if (json is Map) {
+      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorMap(
+          Map<String, dynamic>.from(json));
+    }
+    throw FormatException(
+        "No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor");
   }
   Object? toJson();
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorString extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorString
+    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor {
   final String value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorString(this.value);
-  @override Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorMap extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorMap
+    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor {
   final Map<String, dynamic> value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorMap(this.value);
-  @override Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthorMap(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

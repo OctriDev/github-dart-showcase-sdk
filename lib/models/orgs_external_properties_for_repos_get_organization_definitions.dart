@@ -8,6 +8,7 @@ part of 'orgs.dart';
 class ExternalProperty implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the external property
   final String propertyName;
 
@@ -15,16 +16,22 @@ class ExternalProperty implements SdkJsonModel {
 
   ExternalProperty Function({String propertyName}) get copyWith => _copyWith;
 
-  ExternalProperty _copyWith({Object? propertyName = sdkOmittedValue}) => ExternalProperty(
-    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
-  );
+  ExternalProperty _copyWith({Object? propertyName = sdkOmittedValue}) =>
+      ExternalProperty(
+        propertyName: identical(propertyName, sdkOmittedValue)
+            ? this.propertyName
+            : propertyName as String,
+      );
 
-  factory ExternalProperty.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ExternalProperty(
-    propertyName: (json['property_name'] as String?)!,
-  ), json);
+  factory ExternalProperty.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ExternalProperty(
+            propertyName: (json['property_name'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'property_name': propertyName,
-  };
+        'property_name': propertyName,
+      };
 }

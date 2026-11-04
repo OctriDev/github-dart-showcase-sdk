@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksIssue2AssigneeType {
-
   final String value;
 
   const WebhooksIssue2AssigneeType._(this.value);
 
-  factory WebhooksIssue2AssigneeType.fromJson(String value) => WebhooksIssue2AssigneeType._(value);
+  factory WebhooksIssue2AssigneeType.fromJson(String value) =>
+      WebhooksIssue2AssigneeType._(value);
 
   static const bot = WebhooksIssue2AssigneeType._('Bot');
   static const user = WebhooksIssue2AssigneeType._('User');
@@ -19,22 +19,25 @@ final class WebhooksIssue2AssigneeType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2AssigneeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2AssigneeType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksIssue2AssigneesItemType {
-
   final String value;
 
   const WebhooksIssue2AssigneesItemType._(this.value);
 
-  factory WebhooksIssue2AssigneesItemType.fromJson(String value) => WebhooksIssue2AssigneesItemType._(value);
+  factory WebhooksIssue2AssigneesItemType.fromJson(String value) =>
+      WebhooksIssue2AssigneesItemType._(value);
 
   static const bot = WebhooksIssue2AssigneesItemType._('Bot');
   static const user = WebhooksIssue2AssigneesItemType._('User');
@@ -42,27 +45,31 @@ final class WebhooksIssue2AssigneesItemType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2AssigneesItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2AssigneesItemType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// How the author is associated with the repository.
 final class WebhooksIssue2AuthorAssociation {
-
   final String value;
 
   const WebhooksIssue2AuthorAssociation._(this.value);
 
-  factory WebhooksIssue2AuthorAssociation.fromJson(String value) => WebhooksIssue2AuthorAssociation._(value);
+  factory WebhooksIssue2AuthorAssociation.fromJson(String value) =>
+      WebhooksIssue2AuthorAssociation._(value);
 
   static const collaborator = WebhooksIssue2AuthorAssociation._('COLLABORATOR');
   static const contributor = WebhooksIssue2AuthorAssociation._('CONTRIBUTOR');
   static const firstTimer = WebhooksIssue2AuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhooksIssue2AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+  static const firstTimeContributor =
+      WebhooksIssue2AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
   static const mannequin = WebhooksIssue2AuthorAssociation._('MANNEQUIN');
   static const member = WebhooksIssue2AuthorAssociation._('MEMBER');
   static const none = WebhooksIssue2AuthorAssociation._('NONE');
@@ -70,209 +77,291 @@ final class WebhooksIssue2AuthorAssociation {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2AuthorAssociation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2AuthorAssociation && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksIssue2MilestoneCreatorType {
-
   final String value;
 
   const WebhooksIssue2MilestoneCreatorType._(this.value);
 
-  factory WebhooksIssue2MilestoneCreatorType.fromJson(String value) => WebhooksIssue2MilestoneCreatorType._(value);
+  factory WebhooksIssue2MilestoneCreatorType.fromJson(String value) =>
+      WebhooksIssue2MilestoneCreatorType._(value);
 
   static const bot = WebhooksIssue2MilestoneCreatorType._('Bot');
   static const user = WebhooksIssue2MilestoneCreatorType._('User');
-  static const organization = WebhooksIssue2MilestoneCreatorType._('Organization');
+  static const organization =
+      WebhooksIssue2MilestoneCreatorType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2MilestoneCreatorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2MilestoneCreatorType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone.
 final class WebhooksIssue2MilestoneState {
-
   final String value;
 
   const WebhooksIssue2MilestoneState._(this.value);
 
-  factory WebhooksIssue2MilestoneState.fromJson(String value) => WebhooksIssue2MilestoneState._(value);
+  factory WebhooksIssue2MilestoneState.fromJson(String value) =>
+      WebhooksIssue2MilestoneState._(value);
 
   static const open = WebhooksIssue2MilestoneState._('open');
   static const closed = WebhooksIssue2MilestoneState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2MilestoneState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2MilestoneState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `events[]` wire field.
 final class WebhooksIssue2PerformedViaGithubAppEventsItem {
-
   final String value;
 
   const WebhooksIssue2PerformedViaGithubAppEventsItem._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppEventsItem.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppEventsItem._(value);
+  factory WebhooksIssue2PerformedViaGithubAppEventsItem.fromJson(
+          String value) =>
+      WebhooksIssue2PerformedViaGithubAppEventsItem._(value);
 
-  static const branchProtectionRule = WebhooksIssue2PerformedViaGithubAppEventsItem._('branch_protection_rule');
-  static const checkRun = WebhooksIssue2PerformedViaGithubAppEventsItem._('check_run');
-  static const checkSuite = WebhooksIssue2PerformedViaGithubAppEventsItem._('check_suite');
-  static const codeScanningAlert = WebhooksIssue2PerformedViaGithubAppEventsItem._('code_scanning_alert');
-  static const commitComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('commit_comment');
-  static const contentReference = WebhooksIssue2PerformedViaGithubAppEventsItem._('content_reference');
-  static const create = WebhooksIssue2PerformedViaGithubAppEventsItem._('create');
-  static const delete = WebhooksIssue2PerformedViaGithubAppEventsItem._('delete');
-  static const deployment = WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment');
-  static const deploymentReview = WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment_review');
-  static const deploymentStatus = WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment_status');
-  static const deployKey = WebhooksIssue2PerformedViaGithubAppEventsItem._('deploy_key');
-  static const discussion = WebhooksIssue2PerformedViaGithubAppEventsItem._('discussion');
-  static const discussionComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('discussion_comment');
+  static const branchProtectionRule =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('branch_protection_rule');
+  static const checkRun =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('check_run');
+  static const checkSuite =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('check_suite');
+  static const codeScanningAlert =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('code_scanning_alert');
+  static const commitComment =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('commit_comment');
+  static const contentReference =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('content_reference');
+  static const create =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('create');
+  static const delete =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('delete');
+  static const deployment =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment');
+  static const deploymentReview =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment_review');
+  static const deploymentStatus =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment_status');
+  static const deployKey =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('deploy_key');
+  static const discussion =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('discussion');
+  static const discussionComment =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('discussion_comment');
   static const fork = WebhooksIssue2PerformedViaGithubAppEventsItem._('fork');
-  static const gollum = WebhooksIssue2PerformedViaGithubAppEventsItem._('gollum');
-  static const issues = WebhooksIssue2PerformedViaGithubAppEventsItem._('issues');
-  static const issueComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('issue_comment');
+  static const gollum =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('gollum');
+  static const issues =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('issues');
+  static const issueComment =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('issue_comment');
   static const label = WebhooksIssue2PerformedViaGithubAppEventsItem._('label');
-  static const member = WebhooksIssue2PerformedViaGithubAppEventsItem._('member');
-  static const membership = WebhooksIssue2PerformedViaGithubAppEventsItem._('membership');
-  static const milestone = WebhooksIssue2PerformedViaGithubAppEventsItem._('milestone');
-  static const organization = WebhooksIssue2PerformedViaGithubAppEventsItem._('organization');
-  static const orgBlock = WebhooksIssue2PerformedViaGithubAppEventsItem._('org_block');
-  static const pageBuild = WebhooksIssue2PerformedViaGithubAppEventsItem._('page_build');
-  static const project = WebhooksIssue2PerformedViaGithubAppEventsItem._('project');
-  static const projectCard = WebhooksIssue2PerformedViaGithubAppEventsItem._('project_card');
-  static const projectColumn = WebhooksIssue2PerformedViaGithubAppEventsItem._('project_column');
-  static const public = WebhooksIssue2PerformedViaGithubAppEventsItem._('public');
-  static const pullRequest = WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request');
-  static const pullRequestReview = WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request_review');
-  static const pullRequestReviewComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request_review_comment');
+  static const member =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('member');
+  static const membership =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('membership');
+  static const milestone =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('milestone');
+  static const organization =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('organization');
+  static const orgBlock =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('org_block');
+  static const pageBuild =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('page_build');
+  static const project =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('project');
+  static const projectCard =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('project_card');
+  static const projectColumn =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('project_column');
+  static const public =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('public');
+  static const pullRequest =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request');
+  static const pullRequestReview =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request_review');
+  static const pullRequestReviewComment =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._(
+          'pull_request_review_comment');
   static const push = WebhooksIssue2PerformedViaGithubAppEventsItem._('push');
-  static const registryPackage = WebhooksIssue2PerformedViaGithubAppEventsItem._('registry_package');
-  static const release = WebhooksIssue2PerformedViaGithubAppEventsItem._('release');
-  static const repository = WebhooksIssue2PerformedViaGithubAppEventsItem._('repository');
-  static const repositoryDispatch = WebhooksIssue2PerformedViaGithubAppEventsItem._('repository_dispatch');
-  static const secretScanningAlert = WebhooksIssue2PerformedViaGithubAppEventsItem._('secret_scanning_alert');
+  static const registryPackage =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('registry_package');
+  static const release =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('release');
+  static const repository =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('repository');
+  static const repositoryDispatch =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('repository_dispatch');
+  static const secretScanningAlert =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('secret_scanning_alert');
   static const star = WebhooksIssue2PerformedViaGithubAppEventsItem._('star');
-  static const status = WebhooksIssue2PerformedViaGithubAppEventsItem._('status');
+  static const status =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('status');
   static const team = WebhooksIssue2PerformedViaGithubAppEventsItem._('team');
-  static const teamAdd = WebhooksIssue2PerformedViaGithubAppEventsItem._('team_add');
+  static const teamAdd =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('team_add');
   static const watch = WebhooksIssue2PerformedViaGithubAppEventsItem._('watch');
-  static const workflowDispatch = WebhooksIssue2PerformedViaGithubAppEventsItem._('workflow_dispatch');
-  static const workflowRun = WebhooksIssue2PerformedViaGithubAppEventsItem._('workflow_run');
+  static const workflowDispatch =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('workflow_dispatch');
+  static const workflowRun =
+      WebhooksIssue2PerformedViaGithubAppEventsItem._('workflow_run');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppEventsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2PerformedViaGithubAppEventsItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksIssue2PerformedViaGithubAppOwnerType {
-
   final String value;
 
   const WebhooksIssue2PerformedViaGithubAppOwnerType._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppOwnerType.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppOwnerType._(value);
+  factory WebhooksIssue2PerformedViaGithubAppOwnerType.fromJson(String value) =>
+      WebhooksIssue2PerformedViaGithubAppOwnerType._(value);
 
   static const bot = WebhooksIssue2PerformedViaGithubAppOwnerType._('Bot');
   static const user = WebhooksIssue2PerformedViaGithubAppOwnerType._('User');
-  static const organization = WebhooksIssue2PerformedViaGithubAppOwnerType._('Organization');
+  static const organization =
+      WebhooksIssue2PerformedViaGithubAppOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppOwnerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2PerformedViaGithubAppOwnerType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `actions` wire field.
 final class WebhooksIssue2PerformedViaGithubAppPermissionsActions {
-
   final String value;
 
   const WebhooksIssue2PerformedViaGithubAppPermissionsActions._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsActions.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsActions._(value);
+  factory WebhooksIssue2PerformedViaGithubAppPermissionsActions.fromJson(
+          String value) =>
+      WebhooksIssue2PerformedViaGithubAppPermissionsActions._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsActions._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsActions._('write');
+  static const read =
+      WebhooksIssue2PerformedViaGithubAppPermissionsActions._('read');
+  static const write =
+      WebhooksIssue2PerformedViaGithubAppPermissionsActions._('write');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsActions && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2PerformedViaGithubAppPermissionsActions &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `administration` wire field.
 final class WebhooksIssue2PerformedViaGithubAppPermissionsAdministration {
-
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._(this.value);
+  const WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._(
+      this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsAdministration.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._(value);
+  factory WebhooksIssue2PerformedViaGithubAppPermissionsAdministration.fromJson(
+          String value) =>
+      WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._('write');
+  static const read =
+      WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._('read');
+  static const write =
+      WebhooksIssue2PerformedViaGithubAppPermissionsAdministration._('write');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsAdministration && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2PerformedViaGithubAppPermissionsAdministration &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `checks` wire field.
 final class WebhooksIssue2PerformedViaGithubAppPermissionsChecks {
-
   final String value;
 
   const WebhooksIssue2PerformedViaGithubAppPermissionsChecks._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsChecks.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsChecks._(value);
+  factory WebhooksIssue2PerformedViaGithubAppPermissionsChecks.fromJson(
+          String value) =>
+      WebhooksIssue2PerformedViaGithubAppPermissionsChecks._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsChecks._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsChecks._('write');
+  static const read =
+      WebhooksIssue2PerformedViaGithubAppPermissionsChecks._('read');
+  static const write =
+      WebhooksIssue2PerformedViaGithubAppPermissionsChecks._('write');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsChecks && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksIssue2PerformedViaGithubAppPermissionsChecks &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

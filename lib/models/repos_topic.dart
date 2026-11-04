@@ -8,6 +8,7 @@ part of 'repos.dart';
 class Topic implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `names` wire field.
   final List<String> names;
 
@@ -16,15 +17,19 @@ class Topic implements SdkJsonModel {
   Topic Function({List<String> names}) get copyWith => _copyWith;
 
   Topic _copyWith({Object? names = sdkOmittedValue}) => Topic(
-    names: identical(names, sdkOmittedValue) ? this.names : names as List<String>,
-  );
+        names: identical(names, sdkOmittedValue)
+            ? this.names
+            : names as List<String>,
+      );
 
-  factory Topic.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(Topic(
-    names: ((json['names'] as List?)?.map((e) => e as String).toList())!,
-  ), json);
+  factory Topic.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      Topic(
+        names: ((json['names'] as List?)?.map((e) => e as String).toList())!,
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'names': names,
-  };
+        'names': names,
+      };
 }

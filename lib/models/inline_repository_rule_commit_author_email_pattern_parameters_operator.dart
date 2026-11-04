@@ -6,26 +6,35 @@ part of 'inline.dart';
 // Inline operation models
 /// The operator to use for matching.
 final class RepositoryRuleCommitAuthorEmailPatternParametersOperator {
-
   final String value;
 
   const RepositoryRuleCommitAuthorEmailPatternParametersOperator._(this.value);
 
-  factory RepositoryRuleCommitAuthorEmailPatternParametersOperator.fromJson(String value) => RepositoryRuleCommitAuthorEmailPatternParametersOperator._(value);
+  factory RepositoryRuleCommitAuthorEmailPatternParametersOperator.fromJson(
+          String value) =>
+      RepositoryRuleCommitAuthorEmailPatternParametersOperator._(value);
 
-  static const startsWith = RepositoryRuleCommitAuthorEmailPatternParametersOperator._('starts_with');
-  static const endsWith = RepositoryRuleCommitAuthorEmailPatternParametersOperator._('ends_with');
-  static const contains = RepositoryRuleCommitAuthorEmailPatternParametersOperator._('contains');
-  static const regex = RepositoryRuleCommitAuthorEmailPatternParametersOperator._('regex');
+  static const startsWith =
+      RepositoryRuleCommitAuthorEmailPatternParametersOperator._('starts_with');
+  static const endsWith =
+      RepositoryRuleCommitAuthorEmailPatternParametersOperator._('ends_with');
+  static const contains =
+      RepositoryRuleCommitAuthorEmailPatternParametersOperator._('contains');
+  static const regex =
+      RepositoryRuleCommitAuthorEmailPatternParametersOperator._('regex');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleCommitAuthorEmailPatternParametersOperator && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleCommitAuthorEmailPatternParametersOperator &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -34,14 +43,19 @@ enum RepositoryRuleCommitAuthorEmailPatternType {
 
   static RepositoryRuleCommitAuthorEmailPatternType fromJson(String value) {
     switch (value) {
-      case 'commit_author_email_pattern': return RepositoryRuleCommitAuthorEmailPatternType.commitAuthorEmailPattern;
-      default: throw ArgumentError('Unknown RepositoryRuleCommitAuthorEmailPatternType: $value');
+      case 'commit_author_email_pattern':
+        return RepositoryRuleCommitAuthorEmailPatternType
+            .commitAuthorEmailPattern;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleCommitAuthorEmailPatternType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCommitAuthorEmailPatternType.commitAuthorEmailPattern: return 'commit_author_email_pattern';
+      case RepositoryRuleCommitAuthorEmailPatternType.commitAuthorEmailPattern:
+        return 'commit_author_email_pattern';
     }
   }
 
@@ -51,26 +65,35 @@ enum RepositoryRuleCommitAuthorEmailPatternType {
 
 /// The operator to use for matching.
 final class RepositoryRuleCommitMessagePatternParametersOperator {
-
   final String value;
 
   const RepositoryRuleCommitMessagePatternParametersOperator._(this.value);
 
-  factory RepositoryRuleCommitMessagePatternParametersOperator.fromJson(String value) => RepositoryRuleCommitMessagePatternParametersOperator._(value);
+  factory RepositoryRuleCommitMessagePatternParametersOperator.fromJson(
+          String value) =>
+      RepositoryRuleCommitMessagePatternParametersOperator._(value);
 
-  static const startsWith = RepositoryRuleCommitMessagePatternParametersOperator._('starts_with');
-  static const endsWith = RepositoryRuleCommitMessagePatternParametersOperator._('ends_with');
-  static const contains = RepositoryRuleCommitMessagePatternParametersOperator._('contains');
-  static const regex = RepositoryRuleCommitMessagePatternParametersOperator._('regex');
+  static const startsWith =
+      RepositoryRuleCommitMessagePatternParametersOperator._('starts_with');
+  static const endsWith =
+      RepositoryRuleCommitMessagePatternParametersOperator._('ends_with');
+  static const contains =
+      RepositoryRuleCommitMessagePatternParametersOperator._('contains');
+  static const regex =
+      RepositoryRuleCommitMessagePatternParametersOperator._('regex');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleCommitMessagePatternParametersOperator && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleCommitMessagePatternParametersOperator &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -79,14 +102,18 @@ enum RepositoryRuleCommitMessagePatternType {
 
   static RepositoryRuleCommitMessagePatternType fromJson(String value) {
     switch (value) {
-      case 'commit_message_pattern': return RepositoryRuleCommitMessagePatternType.commitMessagePattern;
-      default: throw ArgumentError('Unknown RepositoryRuleCommitMessagePatternType: $value');
+      case 'commit_message_pattern':
+        return RepositoryRuleCommitMessagePatternType.commitMessagePattern;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleCommitMessagePatternType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCommitMessagePatternType.commitMessagePattern: return 'commit_message_pattern';
+      case RepositoryRuleCommitMessagePatternType.commitMessagePattern:
+        return 'commit_message_pattern';
     }
   }
 
@@ -96,26 +123,35 @@ enum RepositoryRuleCommitMessagePatternType {
 
 /// The operator to use for matching.
 final class RepositoryRuleCommitterEmailPatternParametersOperator {
-
   final String value;
 
   const RepositoryRuleCommitterEmailPatternParametersOperator._(this.value);
 
-  factory RepositoryRuleCommitterEmailPatternParametersOperator.fromJson(String value) => RepositoryRuleCommitterEmailPatternParametersOperator._(value);
+  factory RepositoryRuleCommitterEmailPatternParametersOperator.fromJson(
+          String value) =>
+      RepositoryRuleCommitterEmailPatternParametersOperator._(value);
 
-  static const startsWith = RepositoryRuleCommitterEmailPatternParametersOperator._('starts_with');
-  static const endsWith = RepositoryRuleCommitterEmailPatternParametersOperator._('ends_with');
-  static const contains = RepositoryRuleCommitterEmailPatternParametersOperator._('contains');
-  static const regex = RepositoryRuleCommitterEmailPatternParametersOperator._('regex');
+  static const startsWith =
+      RepositoryRuleCommitterEmailPatternParametersOperator._('starts_with');
+  static const endsWith =
+      RepositoryRuleCommitterEmailPatternParametersOperator._('ends_with');
+  static const contains =
+      RepositoryRuleCommitterEmailPatternParametersOperator._('contains');
+  static const regex =
+      RepositoryRuleCommitterEmailPatternParametersOperator._('regex');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleCommitterEmailPatternParametersOperator && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleCommitterEmailPatternParametersOperator &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -124,14 +160,18 @@ enum RepositoryRuleCommitterEmailPatternType {
 
   static RepositoryRuleCommitterEmailPatternType fromJson(String value) {
     switch (value) {
-      case 'committer_email_pattern': return RepositoryRuleCommitterEmailPatternType.committerEmailPattern;
-      default: throw ArgumentError('Unknown RepositoryRuleCommitterEmailPatternType: $value');
+      case 'committer_email_pattern':
+        return RepositoryRuleCommitterEmailPatternType.committerEmailPattern;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleCommitterEmailPatternType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCommitterEmailPatternType.committerEmailPattern: return 'committer_email_pattern';
+      case RepositoryRuleCommitterEmailPatternType.committerEmailPattern:
+        return 'committer_email_pattern';
     }
   }
 
@@ -145,14 +185,18 @@ enum RepositoryRuleCopilotCodeReviewType {
 
   static RepositoryRuleCopilotCodeReviewType fromJson(String value) {
     switch (value) {
-      case 'copilot_code_review': return RepositoryRuleCopilotCodeReviewType.copilotCodeReview;
-      default: throw ArgumentError('Unknown RepositoryRuleCopilotCodeReviewType: $value');
+      case 'copilot_code_review':
+        return RepositoryRuleCopilotCodeReviewType.copilotCodeReview;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleCopilotCodeReviewType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCopilotCodeReviewType.copilotCodeReview: return 'copilot_code_review';
+      case RepositoryRuleCopilotCodeReviewType.copilotCodeReview:
+        return 'copilot_code_review';
     }
   }
 
@@ -166,14 +210,17 @@ enum RepositoryRuleCreationType {
 
   static RepositoryRuleCreationType fromJson(String value) {
     switch (value) {
-      case 'creation': return RepositoryRuleCreationType.creation;
-      default: throw ArgumentError('Unknown RepositoryRuleCreationType: $value');
+      case 'creation':
+        return RepositoryRuleCreationType.creation;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleCreationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCreationType.creation: return 'creation';
+      case RepositoryRuleCreationType.creation:
+        return 'creation';
     }
   }
 
@@ -187,14 +234,17 @@ enum RepositoryRuleDeletionType {
 
   static RepositoryRuleDeletionType fromJson(String value) {
     switch (value) {
-      case 'deletion': return RepositoryRuleDeletionType.deletion;
-      default: throw ArgumentError('Unknown RepositoryRuleDeletionType: $value');
+      case 'deletion':
+        return RepositoryRuleDeletionType.deletion;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleDeletionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleDeletionType.deletion: return 'deletion';
+      case RepositoryRuleDeletionType.deletion:
+        return 'deletion';
     }
   }
 
@@ -208,14 +258,19 @@ enum RepositoryRuleFileExtensionRestrictionType {
 
   static RepositoryRuleFileExtensionRestrictionType fromJson(String value) {
     switch (value) {
-      case 'file_extension_restriction': return RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction;
-      default: throw ArgumentError('Unknown RepositoryRuleFileExtensionRestrictionType: $value');
+      case 'file_extension_restriction':
+        return RepositoryRuleFileExtensionRestrictionType
+            .fileExtensionRestriction;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleFileExtensionRestrictionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction: return 'file_extension_restriction';
+      case RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction:
+        return 'file_extension_restriction';
     }
   }
 
@@ -229,14 +284,18 @@ enum RepositoryRuleFilePathRestrictionType {
 
   static RepositoryRuleFilePathRestrictionType fromJson(String value) {
     switch (value) {
-      case 'file_path_restriction': return RepositoryRuleFilePathRestrictionType.filePathRestriction;
-      default: throw ArgumentError('Unknown RepositoryRuleFilePathRestrictionType: $value');
+      case 'file_path_restriction':
+        return RepositoryRuleFilePathRestrictionType.filePathRestriction;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleFilePathRestrictionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleFilePathRestrictionType.filePathRestriction: return 'file_path_restriction';
+      case RepositoryRuleFilePathRestrictionType.filePathRestriction:
+        return 'file_path_restriction';
     }
   }
 
@@ -250,14 +309,20 @@ enum RepositoryRuleLicenseComplianceScanningType {
 
   static RepositoryRuleLicenseComplianceScanningType fromJson(String value) {
     switch (value) {
-      case 'license_compliance_scanning': return RepositoryRuleLicenseComplianceScanningType.licenseComplianceScanning;
-      default: throw ArgumentError('Unknown RepositoryRuleLicenseComplianceScanningType: $value');
+      case 'license_compliance_scanning':
+        return RepositoryRuleLicenseComplianceScanningType
+            .licenseComplianceScanning;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleLicenseComplianceScanningType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleLicenseComplianceScanningType.licenseComplianceScanning: return 'license_compliance_scanning';
+      case RepositoryRuleLicenseComplianceScanningType
+            .licenseComplianceScanning:
+        return 'license_compliance_scanning';
     }
   }
 
@@ -271,14 +336,18 @@ enum RepositoryRuleMaxFilePathLengthType {
 
   static RepositoryRuleMaxFilePathLengthType fromJson(String value) {
     switch (value) {
-      case 'max_file_path_length': return RepositoryRuleMaxFilePathLengthType.maxFilePathLength;
-      default: throw ArgumentError('Unknown RepositoryRuleMaxFilePathLengthType: $value');
+      case 'max_file_path_length':
+        return RepositoryRuleMaxFilePathLengthType.maxFilePathLength;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleMaxFilePathLengthType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleMaxFilePathLengthType.maxFilePathLength: return 'max_file_path_length';
+      case RepositoryRuleMaxFilePathLengthType.maxFilePathLength:
+        return 'max_file_path_length';
     }
   }
 

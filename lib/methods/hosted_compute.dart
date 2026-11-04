@@ -24,20 +24,24 @@ Future<HostedComputeListNetworkConfigurationsForOrgResponse>
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<HostedComputeListNetworkConfigurationsForOrgResponse>('GET',
+  return (await sdkRequest<
+              HostedComputeListNetworkConfigurationsForOrgResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/settings/network-configurations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'hostedComputeListNetworkConfigurationsForOrg',
-          fromJsonRaw: (value) => HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a hosted compute network configuration for an organization. OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
@@ -55,18 +59,22 @@ Future<HostedComputeListNetworkConfigurationsForOrgResponse>
 ///   resource identifier must be specified in the list.
 /// [failoverNetworkEnabled] Indicates whether the failover network resource is
 ///   enabled.
-Future<NetworkConfiguration>
-    hostedComputeCreateNetworkConfigurationForOrg(ClientConfig config,
-        {required String org,
-        required String name,
-        required List<String> networkSettingsIds,
-        SdkOptional<HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService> computeService = const SdkOmitted(),
-        SdkOptional<List<String>> failoverNetworkSettingsIds = const SdkOmitted(),
-        SdkOptional<bool> failoverNetworkEnabled = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<NetworkConfiguration> hostedComputeCreateNetworkConfigurationForOrg(
+    ClientConfig config,
+    {required String org,
+    required String name,
+    required List<String> networkSettingsIds,
+    SdkOptional<
+            HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService>
+        computeService = const SdkOmitted(),
+    SdkOptional<List<String>> failoverNetworkSettingsIds = const SdkOmitted(),
+    SdkOptional<bool> failoverNetworkEnabled = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateItems('network_settings_ids', networkSettingsIds, min: 1, max: 1);
   if (failoverNetworkSettingsIds is SdkPresent<List<String>>) {
-    validateItems('failover_network_settings_ids', failoverNetworkSettingsIds.value, min: 0, max: 1);
+    validateItems(
+        'failover_network_settings_ids', failoverNetworkSettingsIds.value,
+        min: 0, max: 1);
   }
 
   return (await sdkRequest<NetworkConfiguration>('POST',
@@ -76,37 +84,39 @@ Future<NetworkConfiguration>
             'name': name,
             'network_settings_ids': networkSettingsIds,
             'compute_service': SdkUtils.unwrapOptional(computeService),
-            'failover_network_settings_ids': SdkUtils.unwrapOptional(failoverNetworkSettingsIds),
-            'failover_network_enabled': SdkUtils.unwrapOptional(failoverNetworkEnabled)
+            'failover_network_settings_ids':
+                SdkUtils.unwrapOptional(failoverNetworkSettingsIds),
+            'failover_network_enabled':
+                SdkUtils.unwrapOptional(failoverNetworkEnabled)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'hostedComputeCreateNetworkConfigurationForOrg',
-          fromJsonRaw: (value) => NetworkConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              NetworkConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a hosted compute network configuration configured in an organization. OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [networkConfigurationId] Unique identifier of the hosted compute network
 ///   configuration.
-Future<NetworkConfiguration>
-    hostedComputeGetNetworkConfigurationForOrg(ClientConfig config,
-        {required String org,
-        required String networkConfigurationId,
-        RequestOptions? requestOptions}) async {
+Future<NetworkConfiguration> hostedComputeGetNetworkConfigurationForOrg(
+    ClientConfig config,
+    {required String org,
+    required String networkConfigurationId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<NetworkConfiguration>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/settings/network-configurations/${Uri.encodeComponent(networkConfigurationId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'hostedComputeGetNetworkConfigurationForOrg',
-          fromJsonRaw: (value) => NetworkConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              NetworkConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates a hosted compute network configuration for an organization. OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
@@ -126,21 +136,26 @@ Future<NetworkConfiguration>
 ///   resource identifier must be specified in the list.
 /// [failoverNetworkEnabled] Indicates whether the failover network resource is
 ///   enabled.
-Future<NetworkConfiguration>
-    hostedComputeUpdateNetworkConfigurationForOrg(ClientConfig config,
-        {required String org,
-        required String networkConfigurationId,
-        SdkOptional<String> name = const SdkOmitted(),
-        SdkOptional<HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService> computeService = const SdkOmitted(),
-        SdkOptional<List<String>> networkSettingsIds = const SdkOmitted(),
-        SdkOptional<List<String>> failoverNetworkSettingsIds = const SdkOmitted(),
-        SdkOptional<bool> failoverNetworkEnabled = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<NetworkConfiguration> hostedComputeUpdateNetworkConfigurationForOrg(
+    ClientConfig config,
+    {required String org,
+    required String networkConfigurationId,
+    SdkOptional<String> name = const SdkOmitted(),
+    SdkOptional<
+            HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService>
+        computeService = const SdkOmitted(),
+    SdkOptional<List<String>> networkSettingsIds = const SdkOmitted(),
+    SdkOptional<List<String>> failoverNetworkSettingsIds = const SdkOmitted(),
+    SdkOptional<bool> failoverNetworkEnabled = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (networkSettingsIds is SdkPresent<List<String>>) {
-    validateItems('network_settings_ids', networkSettingsIds.value, min: 0, max: 1);
+    validateItems('network_settings_ids', networkSettingsIds.value,
+        min: 0, max: 1);
   }
   if (failoverNetworkSettingsIds is SdkPresent<List<String>>) {
-    validateItems('failover_network_settings_ids', failoverNetworkSettingsIds.value, min: 0, max: 1);
+    validateItems(
+        'failover_network_settings_ids', failoverNetworkSettingsIds.value,
+        min: 0, max: 1);
   }
 
   return (await sdkRequest<NetworkConfiguration>('PATCH',
@@ -150,16 +165,18 @@ Future<NetworkConfiguration>
             'name': SdkUtils.unwrapOptional(name),
             'compute_service': SdkUtils.unwrapOptional(computeService),
             'network_settings_ids': SdkUtils.unwrapOptional(networkSettingsIds),
-            'failover_network_settings_ids': SdkUtils.unwrapOptional(failoverNetworkSettingsIds),
-            'failover_network_enabled': SdkUtils.unwrapOptional(failoverNetworkEnabled)
+            'failover_network_settings_ids':
+                SdkUtils.unwrapOptional(failoverNetworkSettingsIds),
+            'failover_network_enabled':
+                SdkUtils.unwrapOptional(failoverNetworkEnabled)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'hostedComputeUpdateNetworkConfigurationForOrg',
-          fromJsonRaw: (value) => NetworkConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              NetworkConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a hosted compute network configuration from an organization. OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
 ///
@@ -179,23 +196,23 @@ Future<void> hostedComputeDeleteNetworkConfigurationFromOrg(ClientConfig config,
       .data;
 }
 
-
 /// Gets a hosted compute network settings resource configured for an organization. OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [networkSettingsId] Unique identifier of the hosted compute network
 ///   settings.
-Future<NetworkSettings>
-    hostedComputeGetNetworkSettingsForOrg(ClientConfig config,
-        {required String org,
-        required String networkSettingsId,
-        RequestOptions? requestOptions}) async {
+Future<NetworkSettings> hostedComputeGetNetworkSettingsForOrg(
+    ClientConfig config,
+    {required String org,
+    required String networkSettingsId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<NetworkSettings>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/settings/network-settings/${Uri.encodeComponent(networkSettingsId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'hostedComputeGetNetworkSettingsForOrg',
-          fromJsonRaw: (value) => NetworkSettings.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              NetworkSettings.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

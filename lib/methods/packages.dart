@@ -9,19 +9,27 @@ import '../types.dart';
 /// Lists all packages that are in a specific organization, are readable by the requesting user, and that encountered a conflict during a Docker migration. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<List<Package>> packagesListDockerMigrationConflictingPackagesForOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<List<Package>>
+    packagesListDockerMigrationConflictingPackagesForOrganization(
+        ClientConfig config,
+        {required String org,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Package>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/docker/conflicts',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'packagesListDockerMigrationConflictingPackagesForOrganization',
-          fromJsonRaw: (value) => (value as List).map((item) => Package.fromJson(item as Map<String, dynamic>)).toList(),
+          operationId:
+              'packagesListDockerMigrationConflictingPackagesForOrganization',
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Package.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists packages in an organization readable by the user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -60,19 +68,28 @@ Future<List<Package>> packagesListPackagesForOrganization(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/packages',
           config: config,
           query: {
-            'package_type': SdkQueryValue(packageType, style: 'form', explode: true),
-            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'package_type':
+                SdkQueryValue(packageType, style: 'form', explode: true),
+            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesListPackagesForOrganization',
-          fromJsonRaw: (value) => (value as List).map((item) => Package.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Package.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a specific package in an organization. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -94,11 +111,11 @@ Future<Package> packagesGetPackageForOrganization(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetPackageForOrganization',
-          fromJsonRaw: (value) => Package.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Package.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an entire package in an organization. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance. The authenticated user must have admin permissions in the organization to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must also have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -121,10 +138,13 @@ Future<void> packagesDeletePackageForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesDeletePackageForOrg',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Restores an entire package in an organization. You can restore a deleted package under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. The authenticated user must have admin permissions in the organization to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must also have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -147,15 +167,21 @@ Future<void> packagesRestorePackageForOrg(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/restore',
           config: config,
           query: {
-            'token': SdkQueryValue(SdkUtils.unwrapOptional(token), style: 'form', explode: true)
+            'token': SdkQueryValue(SdkUtils.unwrapOptional(token),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesRestorePackageForOrg',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists package versions for a package owned by an organization. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -176,31 +202,43 @@ Future<void> packagesRestorePackageForOrg(ClientConfig config,
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
 /// [state] The state of the package, either active or deleted.
-Future<List<PackageVersion>>
-    packagesGetAllPackageVersionsForPackageOwnedByOrg(ClientConfig config,
-        {required SchemaSchema5f6fac39 packageType,
-        required String packageName,
-        required String org,
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<PackagesGetAllPackageVersionsForPackageOwnedByOrgState> state = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<PackageVersion>> packagesGetAllPackageVersionsForPackageOwnedByOrg(
+    ClientConfig config,
+    {required SchemaSchema5f6fac39 packageType,
+    required String packageName,
+    required String org,
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<PackagesGetAllPackageVersionsForPackageOwnedByOrgState> state =
+        const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<PackageVersion>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/versions',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetAllPackageVersionsForPackageOwnedByOrg',
-          fromJsonRaw: (value) => (value as List).map((item) => PackageVersion.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  PackageVersion.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a specific package version in an organization. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -213,23 +251,23 @@ Future<List<PackageVersion>>
 /// [packageName] The name of the package.
 /// [org] The organization name. The name is not case sensitive.
 /// [packageVersionId] Unique identifier of the package version.
-Future<PackageVersion>
-    packagesGetPackageVersionForOrganization(ClientConfig config,
-        {required SchemaSchema5f6fac39 packageType,
-        required String packageName,
-        required String org,
-        required int packageVersionId,
-        RequestOptions? requestOptions}) async {
+Future<PackageVersion> packagesGetPackageVersionForOrganization(
+    ClientConfig config,
+    {required SchemaSchema5f6fac39 packageType,
+    required String packageName,
+    required String org,
+    required int packageVersionId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<PackageVersion>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetPackageVersionForOrganization',
-          fromJsonRaw: (value) => PackageVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              PackageVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a specific package version in an organization. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance. The authenticated user must have admin permissions in the organization to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must also have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -254,10 +292,13 @@ Future<void> packagesDeletePackageVersionForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesDeletePackageVersionForOrg',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Restores a specific package version in an organization. You can restore a deleted package under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. The authenticated user must have admin permissions in the organization to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must also have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -282,23 +323,30 @@ Future<void> packagesRestorePackageVersionForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesRestorePackageVersionForOrg',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
 
-
 /// Lists all packages that are owned by the authenticated user within the user's namespace, and that encountered a conflict during a Docker migration. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
-Future<List<Package>> packagesListDockerMigrationConflictingPackagesForAuthenticatedUser(ClientConfig config,
-    {RequestOptions? requestOptions}) async {
+Future<List<Package>>
+    packagesListDockerMigrationConflictingPackagesForAuthenticatedUser(
+        ClientConfig config,
+        {RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Package>>('GET', '/user/docker/conflicts',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'packagesListDockerMigrationConflictingPackagesForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List).map((item) => Package.fromJson(item as Map<String, dynamic>)).toList(),
+          operationId:
+              'packagesListDockerMigrationConflictingPackagesForAuthenticatedUser',
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Package.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists packages owned by the authenticated user within the user's namespace. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -325,28 +373,33 @@ Future<List<Package>> packagesListDockerMigrationConflictingPackagesForAuthentic
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Package>>
-    packagesListPackagesForAuthenticatedUser(ClientConfig config,
-        {required PackagesListPackagesForAuthenticatedUserPackageType packageType,
-        SdkOptional<SchemaSchemaf67de18d> visibility = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<Package>> packagesListPackagesForAuthenticatedUser(
+    ClientConfig config,
+    {required PackagesListPackagesForAuthenticatedUserPackageType packageType,
+    SdkOptional<SchemaSchemaf67de18d> visibility = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Package>>('GET', '/user/packages',
           config: config,
           query: {
-            'package_type': SdkQueryValue(packageType, style: 'form', explode: true),
-            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'package_type':
+                SdkQueryValue(packageType, style: 'form', explode: true),
+            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesListPackagesForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List).map((item) => Package.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Package.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific package for a package owned by the authenticated user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -366,11 +419,11 @@ Future<Package> packagesGetPackageForAuthenticatedUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetPackageForAuthenticatedUser',
-          fromJsonRaw: (value) => Package.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Package.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a package owned by the authenticated user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance. OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -391,10 +444,13 @@ Future<void> packagesDeletePackageForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesDeletePackageForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Restores a package owned by the authenticated user. You can restore a deleted package under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -415,15 +471,21 @@ Future<void> packagesRestorePackageForAuthenticatedUser(ClientConfig config,
           '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/restore',
           config: config,
           query: {
-            'token': SdkQueryValue(SdkUtils.unwrapOptional(token), style: 'form', explode: true)
+            'token': SdkQueryValue(SdkUtils.unwrapOptional(token),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesRestorePackageForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists package versions for a package owned by the authenticated user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -444,29 +506,44 @@ Future<void> packagesRestorePackageForAuthenticatedUser(ClientConfig config,
 ///   -rest-api)."
 /// [state] The state of the package, either active or deleted.
 Future<List<PackageVersion>>
-    packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser(ClientConfig config,
+    packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser(
+        ClientConfig config,
         {required SchemaSchema5f6fac39 packageType,
         required String packageName,
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState> state = const SdkOmitted(),
+        SdkOptional<
+                PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState>
+            state = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<PackageVersion>>('GET',
           '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/versions',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          operationId: 'packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List).map((item) => PackageVersion.fromJson(item as Map<String, dynamic>)).toList(),
+          operationId:
+              'packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser',
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  PackageVersion.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a specific package version for a package owned by the authenticated user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -478,22 +555,22 @@ Future<List<PackageVersion>>
 ///   Container registry.
 /// [packageName] The name of the package.
 /// [packageVersionId] Unique identifier of the package version.
-Future<PackageVersion>
-    packagesGetPackageVersionForAuthenticatedUser(ClientConfig config,
-        {required SchemaSchema5f6fac39 packageType,
-        required String packageName,
-        required int packageVersionId,
-        RequestOptions? requestOptions}) async {
+Future<PackageVersion> packagesGetPackageVersionForAuthenticatedUser(
+    ClientConfig config,
+    {required SchemaSchema5f6fac39 packageType,
+    required String packageName,
+    required int packageVersionId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<PackageVersion>('GET',
           '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetPackageVersionForAuthenticatedUser',
-          fromJsonRaw: (value) => PackageVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              PackageVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a specific package version for a package owned by the authenticated user. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance. The authenticated user must have admin permissions in the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -505,22 +582,25 @@ Future<PackageVersion>
 ///   Container registry.
 /// [packageName] The name of the package.
 /// [packageVersionId] Unique identifier of the package version.
-Future<void>
-    packagesDeletePackageVersionForAuthenticatedUser(ClientConfig config,
-        {required SchemaSchema5f6fac39 packageType,
-        required String packageName,
-        required int packageVersionId,
-        RequestOptions? requestOptions}) async {
+Future<void> packagesDeletePackageVersionForAuthenticatedUser(
+    ClientConfig config,
+    {required SchemaSchema5f6fac39 packageType,
+    required String packageName,
+    required int packageVersionId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesDeletePackageVersionForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Restores a package version owned by the authenticated user. You can restore a deleted package version under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -532,39 +612,48 @@ Future<void>
 ///   Container registry.
 /// [packageName] The name of the package.
 /// [packageVersionId] Unique identifier of the package version.
-Future<void>
-    packagesRestorePackageVersionForAuthenticatedUser(ClientConfig config,
-        {required SchemaSchema5f6fac39 packageType,
-        required String packageName,
-        required int packageVersionId,
-        RequestOptions? requestOptions}) async {
+Future<void> packagesRestorePackageVersionForAuthenticatedUser(
+    ClientConfig config,
+    {required SchemaSchema5f6fac39 packageType,
+    required String packageName,
+    required int packageVersionId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('POST',
           '/user/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
           config: config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesRestorePackageVersionForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 ///
 /// [username] The handle for the GitHub user account.
-Future<List<Package>> packagesListDockerMigrationConflictingPackagesForUser(ClientConfig config,
-    {required String username, RequestOptions? requestOptions}) async {
+Future<List<Package>> packagesListDockerMigrationConflictingPackagesForUser(
+    ClientConfig config,
+    {required String username,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Package>>('GET',
           '/users/${Uri.encodeComponent(username.toString())}/docker/conflicts',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesListDockerMigrationConflictingPackagesForUser',
-          fromJsonRaw: (value) => (value as List).map((item) => Package.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Package.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all packages in a user's namespace for which the requesting user has access. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -603,19 +692,28 @@ Future<List<Package>> packagesListPackagesForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/packages',
           config: config,
           query: {
-            'package_type': SdkQueryValue(packageType, style: 'form', explode: true),
-            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'package_type':
+                SdkQueryValue(packageType, style: 'form', explode: true),
+            'visibility': SdkQueryValue(SdkUtils.unwrapOptional(visibility),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesListPackagesForUser',
-          fromJsonRaw: (value) => (value as List).map((item) => Package.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Package.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a specific package metadata for a public package owned by a user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -637,11 +735,11 @@ Future<Package> packagesGetPackageForUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetPackageForUser',
-          fromJsonRaw: (value) => Package.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Package.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an entire package for a user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -664,10 +762,13 @@ Future<void> packagesDeletePackageForUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesDeletePackageForUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Restores an entire package for a user. You can restore a deleted package under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -690,15 +791,21 @@ Future<void> packagesRestorePackageForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/restore',
           config: config,
           query: {
-            'token': SdkQueryValue(SdkUtils.unwrapOptional(token), style: 'form', explode: true)
+            'token': SdkQueryValue(SdkUtils.unwrapOptional(token),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesRestorePackageForUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists package versions for a public package owned by a specified user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -710,23 +817,29 @@ Future<void> packagesRestorePackageForUser(ClientConfig config,
 ///   Container registry.
 /// [packageName] The name of the package.
 /// [username] The handle for the GitHub user account.
-Future<List<PackageVersion>>
-    packagesGetAllPackageVersionsForPackageOwnedByUser(ClientConfig config,
-        {required SchemaSchema5f6fac39 packageType,
-        required String packageName,
-        required String username,
-        RequestOptions? requestOptions}) async {
+Future<List<PackageVersion>> packagesGetAllPackageVersionsForPackageOwnedByUser(
+    ClientConfig config,
+    {required SchemaSchema5f6fac39 packageType,
+    required String packageName,
+    required String username,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<PackageVersion>>('GET',
           '/users/${Uri.encodeComponent(username.toString())}/packages/${Uri.encodeComponent(packageType.toString())}/${Uri.encodeComponent(packageName.toString())}/versions',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetAllPackageVersionsForPackageOwnedByUser',
-          fromJsonRaw: (value) => (value as List).map((item) => PackageVersion.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  PackageVersion.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Gets a specific package version for a public package owned by a specified user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -750,11 +863,11 @@ Future<PackageVersion> packagesGetPackageVersionForUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'packagesGetPackageVersionForUser',
-          fromJsonRaw: (value) => PackageVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              PackageVersion.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a specific package version for a user. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -779,10 +892,13 @@ Future<void> packagesDeletePackageVersionForUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesDeletePackageVersionForUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Restores a specific package version for a user. You can restore a deleted package under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)." OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
@@ -807,6 +923,10 @@ Future<void> packagesRestorePackageVersionForUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'packagesRestorePackageVersionForUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

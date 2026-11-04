@@ -5,288 +5,408 @@ part of 'inline.dart';
 
 // Inline operation models
 final class AgentTasksListTasksForRepoDirection {
-
   final String value;
 
   const AgentTasksListTasksForRepoDirection._(this.value);
 
-  factory AgentTasksListTasksForRepoDirection.fromJson(String value) => AgentTasksListTasksForRepoDirection._(value);
+  factory AgentTasksListTasksForRepoDirection.fromJson(String value) =>
+      AgentTasksListTasksForRepoDirection._(value);
 
   static const asc = AgentTasksListTasksForRepoDirection._('asc');
   static const desc = AgentTasksListTasksForRepoDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Provider namespace
 final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider {
-
   final String value;
 
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(this.value);
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(
+      this.value);
 
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(value);
+  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(value);
 
-  static const github = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._('github');
+  static const github =
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(
+          'github');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Type of artifact. Available Values: `pull`, `branch`.
 final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType {
-
   final String value;
 
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(this.value);
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(
+      this.value);
 
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(value);
+  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(value);
 
-  static const pull = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('pull');
-  static const branch = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('branch');
+  static const pull =
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('pull');
+  static const branch =
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('branch');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Type of the task creator
 final class AgentTasksListTasksForRepoResponseTasksItemCreatorType {
-
   final String value;
 
   const AgentTasksListTasksForRepoResponseTasksItemCreatorType._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseTasksItemCreatorType.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemCreatorType._(value);
+  factory AgentTasksListTasksForRepoResponseTasksItemCreatorType.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseTasksItemCreatorType._(value);
 
-  static const user = AgentTasksListTasksForRepoResponseTasksItemCreatorType._('user');
-  static const organization = AgentTasksListTasksForRepoResponseTasksItemCreatorType._('organization');
+  static const user =
+      AgentTasksListTasksForRepoResponseTasksItemCreatorType._('user');
+  static const organization =
+      AgentTasksListTasksForRepoResponseTasksItemCreatorType._('organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemCreatorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseTasksItemCreatorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Current state of the task, derived from its most recent session
 final class AgentTasksListTasksForRepoResponseTasksItemState {
-
   final String value;
 
   const AgentTasksListTasksForRepoResponseTasksItemState._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseTasksItemState.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemState._(value);
+  factory AgentTasksListTasksForRepoResponseTasksItemState.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseTasksItemState._(value);
 
-  static const queued = AgentTasksListTasksForRepoResponseTasksItemState._('queued');
-  static const inProgress = AgentTasksListTasksForRepoResponseTasksItemState._('in_progress');
-  static const completed = AgentTasksListTasksForRepoResponseTasksItemState._('completed');
-  static const failed = AgentTasksListTasksForRepoResponseTasksItemState._('failed');
-  static const idle = AgentTasksListTasksForRepoResponseTasksItemState._('idle');
-  static const waitingForUser = AgentTasksListTasksForRepoResponseTasksItemState._('waiting_for_user');
-  static const timedOut = AgentTasksListTasksForRepoResponseTasksItemState._('timed_out');
-  static const cancelled = AgentTasksListTasksForRepoResponseTasksItemState._('cancelled');
+  static const queued =
+      AgentTasksListTasksForRepoResponseTasksItemState._('queued');
+  static const inProgress =
+      AgentTasksListTasksForRepoResponseTasksItemState._('in_progress');
+  static const completed =
+      AgentTasksListTasksForRepoResponseTasksItemState._('completed');
+  static const failed =
+      AgentTasksListTasksForRepoResponseTasksItemState._('failed');
+  static const idle =
+      AgentTasksListTasksForRepoResponseTasksItemState._('idle');
+  static const waitingForUser =
+      AgentTasksListTasksForRepoResponseTasksItemState._('waiting_for_user');
+  static const timedOut =
+      AgentTasksListTasksForRepoResponseTasksItemState._('timed_out');
+  static const cancelled =
+      AgentTasksListTasksForRepoResponseTasksItemState._('cancelled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseTasksItemState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentTasksListTasksForRepoResponseErrorsItemCode {
-
   final String value;
 
   const AgentTasksListTasksForRepoResponseErrorsItemCode._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseErrorsItemCode.fromJson(String value) => AgentTasksListTasksForRepoResponseErrorsItemCode._(value);
+  factory AgentTasksListTasksForRepoResponseErrorsItemCode.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseErrorsItemCode._(value);
 
-  static const missing = AgentTasksListTasksForRepoResponseErrorsItemCode._('missing');
-  static const missingField = AgentTasksListTasksForRepoResponseErrorsItemCode._('missing_field');
-  static const invalid = AgentTasksListTasksForRepoResponseErrorsItemCode._('invalid');
-  static const alreadyExists = AgentTasksListTasksForRepoResponseErrorsItemCode._('already_exists');
-  static const unprocessable = AgentTasksListTasksForRepoResponseErrorsItemCode._('unprocessable');
-  static const custom = AgentTasksListTasksForRepoResponseErrorsItemCode._('custom');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseErrorsItemCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseErrorsItemCode &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9 {
-
   final String value;
 
   const AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9.fromJson(String value) => AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(value);
+  factory AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(value);
 
-  static const missing = AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('missing');
-  static const missingField = AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('missing_field');
-  static const invalid = AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('invalid');
-  static const alreadyExists = AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('already_exists');
-  static const unprocessable = AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('unprocessable');
-  static const custom = AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('custom');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b {
-
   final String value;
 
   const AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b.fromJson(String value) => AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(value);
+  factory AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(value);
 
-  static const missing = AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('missing');
-  static const missingField = AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('missing_field');
-  static const invalid = AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('invalid');
-  static const alreadyExists = AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('already_exists');
-  static const unprocessable = AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('unprocessable');
-  static const custom = AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('custom');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73 {
-
   final String value;
 
   const AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73.fromJson(String value) => AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(value);
+  factory AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(value);
 
-  static const missing = AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('missing');
-  static const missingField = AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('missing_field');
-  static const invalid = AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('invalid');
-  static const alreadyExists = AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('already_exists');
-  static const unprocessable = AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('unprocessable');
-  static const custom = AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('custom');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe {
-
   final String value;
 
   const AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe.fromJson(String value) => AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(value);
+  factory AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(value);
 
-  static const missing = AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('missing');
-  static const missingField = AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('missing_field');
-  static const invalid = AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('invalid');
-  static const alreadyExists = AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('already_exists');
-  static const unprocessable = AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('unprocessable');
-  static const custom = AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('custom');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Provider namespace
 final class AgentTasksCreateTaskInRepoResponseArtifactsItemProvider {
-
   final String value;
 
   const AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._(this.value);
 
-  factory AgentTasksCreateTaskInRepoResponseArtifactsItemProvider.fromJson(String value) => AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._(value);
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItemProvider.fromJson(
+          String value) =>
+      AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._(value);
 
-  static const github = AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._('github');
+  static const github =
+      AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._('github');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksCreateTaskInRepoResponseArtifactsItemProvider && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksCreateTaskInRepoResponseArtifactsItemProvider &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Type of artifact. Available Values: `pull`, `branch`.
 final class AgentTasksCreateTaskInRepoResponseArtifactsItemType {
-
   final String value;
 
   const AgentTasksCreateTaskInRepoResponseArtifactsItemType._(this.value);
 
-  factory AgentTasksCreateTaskInRepoResponseArtifactsItemType.fromJson(String value) => AgentTasksCreateTaskInRepoResponseArtifactsItemType._(value);
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItemType.fromJson(
+          String value) =>
+      AgentTasksCreateTaskInRepoResponseArtifactsItemType._(value);
 
-  static const pull = AgentTasksCreateTaskInRepoResponseArtifactsItemType._('pull');
-  static const branch = AgentTasksCreateTaskInRepoResponseArtifactsItemType._('branch');
+  static const pull =
+      AgentTasksCreateTaskInRepoResponseArtifactsItemType._('pull');
+  static const branch =
+      AgentTasksCreateTaskInRepoResponseArtifactsItemType._('branch');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksCreateTaskInRepoResponseArtifactsItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksCreateTaskInRepoResponseArtifactsItemType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

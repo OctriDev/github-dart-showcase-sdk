@@ -4,14 +4,20 @@
 part of 'webhook_pull_request_auto_merge_disabled.dart';
 
 // webhook_pull_request_auto_merge_disabled domain models
-final class WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtInt extends WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtInt
+    extends WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAt {
   final int value;
-  const WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtString extends WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtString
+    extends WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAt {
   final String value;
-  const WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPushedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

@@ -8,108 +8,162 @@ part of 'shared_pull.dart';
 class PullRequestReviewCommentLinksSelf implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `href` wire field.
   final String href;
 
   const PullRequestReviewCommentLinksSelf({required this.href});
 
-  PullRequestReviewCommentLinksSelf Function({String href}) get copyWith => _copyWith;
+  PullRequestReviewCommentLinksSelf Function({String href}) get copyWith =>
+      _copyWith;
 
-  PullRequestReviewCommentLinksSelf _copyWith({Object? href = sdkOmittedValue}) => PullRequestReviewCommentLinksSelf(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  PullRequestReviewCommentLinksSelf _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      PullRequestReviewCommentLinksSelf(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory PullRequestReviewCommentLinksSelf.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestReviewCommentLinksSelf(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory PullRequestReviewCommentLinksSelf.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestReviewCommentLinksSelf(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `html` wire field.
 class PullRequestReviewCommentLinksHtml implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `href` wire field.
   final String href;
 
   const PullRequestReviewCommentLinksHtml({required this.href});
 
-  PullRequestReviewCommentLinksHtml Function({String href}) get copyWith => _copyWith;
+  PullRequestReviewCommentLinksHtml Function({String href}) get copyWith =>
+      _copyWith;
 
-  PullRequestReviewCommentLinksHtml _copyWith({Object? href = sdkOmittedValue}) => PullRequestReviewCommentLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  PullRequestReviewCommentLinksHtml _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      PullRequestReviewCommentLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory PullRequestReviewCommentLinksHtml.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestReviewCommentLinksHtml(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory PullRequestReviewCommentLinksHtml.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestReviewCommentLinksHtml(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `pull_request` wire field.
 class PullRequestReviewCommentLinksPullRequest implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `href` wire field.
   final String href;
 
   const PullRequestReviewCommentLinksPullRequest({required this.href});
 
-  PullRequestReviewCommentLinksPullRequest Function({String href}) get copyWith => _copyWith;
+  PullRequestReviewCommentLinksPullRequest Function({String href})
+      get copyWith => _copyWith;
 
-  PullRequestReviewCommentLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) => PullRequestReviewCommentLinksPullRequest(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  PullRequestReviewCommentLinksPullRequest _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      PullRequestReviewCommentLinksPullRequest(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory PullRequestReviewCommentLinksPullRequest.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestReviewCommentLinksPullRequest(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory PullRequestReviewCommentLinksPullRequest.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestReviewCommentLinksPullRequest(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class PullRequestReviewCommentLinks implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `self` wire field.
   final PullRequestReviewCommentLinksSelf self;
+
   /// Required object value serialized in the `html` wire field.
   final PullRequestReviewCommentLinksHtml html;
+
   /// Required object value serialized in the `pull_request` wire field.
   final PullRequestReviewCommentLinksPullRequest pullRequest;
 
-  const PullRequestReviewCommentLinks({required this.self, required this.html, required this.pullRequest});
+  const PullRequestReviewCommentLinks(
+      {required this.self, required this.html, required this.pullRequest});
 
-  PullRequestReviewCommentLinks Function({PullRequestReviewCommentLinksSelf self, PullRequestReviewCommentLinksHtml html, PullRequestReviewCommentLinksPullRequest pullRequest}) get copyWith => _copyWith;
+  PullRequestReviewCommentLinks Function(
+          {PullRequestReviewCommentLinksSelf self,
+          PullRequestReviewCommentLinksHtml html,
+          PullRequestReviewCommentLinksPullRequest pullRequest})
+      get copyWith => _copyWith;
 
-  PullRequestReviewCommentLinks _copyWith({Object? self = sdkOmittedValue, Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => PullRequestReviewCommentLinks(
-    self: identical(self, sdkOmittedValue) ? this.self : self as PullRequestReviewCommentLinksSelf,
-    html: identical(html, sdkOmittedValue) ? this.html : html as PullRequestReviewCommentLinksHtml,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as PullRequestReviewCommentLinksPullRequest,
-  );
+  PullRequestReviewCommentLinks _copyWith(
+          {Object? self = sdkOmittedValue,
+          Object? html = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue}) =>
+      PullRequestReviewCommentLinks(
+        self: identical(self, sdkOmittedValue)
+            ? this.self
+            : self as PullRequestReviewCommentLinksSelf,
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as PullRequestReviewCommentLinksHtml,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as PullRequestReviewCommentLinksPullRequest,
+      );
 
-  factory PullRequestReviewCommentLinks.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestReviewCommentLinks(
-    self: (json['self'] != null ? PullRequestReviewCommentLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!,
-    html: (json['html'] != null ? PullRequestReviewCommentLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    pullRequest: (json['pull_request'] != null ? PullRequestReviewCommentLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-  ), json);
+  factory PullRequestReviewCommentLinks.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestReviewCommentLinks(
+            self: (json['self'] != null
+                ? PullRequestReviewCommentLinksSelf.fromJson(
+                    json['self'] as Map<String, dynamic>)
+                : null)!,
+            html: (json['html'] != null
+                ? PullRequestReviewCommentLinksHtml.fromJson(
+                    json['html'] as Map<String, dynamic>)
+                : null)!,
+            pullRequest: (json['pull_request'] != null
+                ? PullRequestReviewCommentLinksPullRequest.fromJson(
+                    json['pull_request'] as Map<String, dynamic>)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'self': self.toJson(),
-    'html': html.toJson(),
-    'pull_request': pullRequest.toJson(),
-  };
+        'self': self.toJson(),
+        'html': html.toJson(),
+        'pull_request': pullRequest.toJson(),
+      };
 }

@@ -5,116 +5,228 @@ part of 'inline.dart';
 
 // Inline operation models
 /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-class UsersListAttestationsResponseAttestationsItemBundle implements SdkJsonModel {
+class UsersListAttestationsResponseAttestationsItemBundle
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<String> mediaType;
   final SdkOptional<Map<String, Object?>> verificationMaterial;
   final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  const UsersListAttestationsResponseAttestationsItemBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
+  const UsersListAttestationsResponseAttestationsItemBundle(
+      {this.mediaType = const SdkOmitted(),
+      this.verificationMaterial = const SdkOmitted(),
+      this.dsseEnvelope = const SdkOmitted()});
 
-  UsersListAttestationsResponseAttestationsItemBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
+  UsersListAttestationsResponseAttestationsItemBundle Function(
+          {SdkOptional<String> mediaType,
+          SdkOptional<Map<String, Object?>> verificationMaterial,
+          SdkOptional<Map<String, Object?>> dsseEnvelope})
+      get copyWith => _copyWith;
 
-  UsersListAttestationsResponseAttestationsItemBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => UsersListAttestationsResponseAttestationsItemBundle(
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
-    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
-    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
-  );
+  UsersListAttestationsResponseAttestationsItemBundle _copyWith(
+          {Object? mediaType = sdkOmittedValue,
+          Object? verificationMaterial = sdkOmittedValue,
+          Object? dsseEnvelope = sdkOmittedValue}) =>
+      UsersListAttestationsResponseAttestationsItemBundle(
+        mediaType: identical(mediaType, sdkOmittedValue)
+            ? this.mediaType
+            : mediaType as SdkOptional<String>,
+        verificationMaterial: identical(verificationMaterial, sdkOmittedValue)
+            ? this.verificationMaterial
+            : verificationMaterial as SdkOptional<Map<String, Object?>>,
+        dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue)
+            ? this.dsseEnvelope
+            : dsseEnvelope as SdkOptional<Map<String, Object?>>,
+      );
 
-  factory UsersListAttestationsResponseAttestationsItemBundle.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(UsersListAttestationsResponseAttestationsItemBundle(
-    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
-    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-  ), json);
+  factory UsersListAttestationsResponseAttestationsItemBundle.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          UsersListAttestationsResponseAttestationsItemBundle(
+            mediaType: json['mediaType'] != null
+                ? SdkPresent((json['mediaType'] as String?)!)
+                : const SdkOmitted(),
+            verificationMaterial: json['verificationMaterial'] != null
+                ? SdkPresent((json['verificationMaterial'] == null
+                    ? null
+                    : Map<String, dynamic>.from(
+                            json['verificationMaterial'] as Map)
+                        .map((key, value) => MapEntry(key, value)))!)
+                : const SdkOmitted(),
+            dsseEnvelope: json['dsseEnvelope'] != null
+                ? SdkPresent((json['dsseEnvelope'] == null
+                    ? null
+                    : Map<String, dynamic>.from(json['dsseEnvelope'] as Map)
+                        .map((key, value) => MapEntry(key, value)))!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (mediaType) {
-      SdkPresent<String>(value: final value) => {'mediaType': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verificationMaterial) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dsseEnvelope) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (mediaType) {
+          SdkPresent<String>(value: final value) => {
+              'mediaType': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verificationMaterial) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'verificationMaterial': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dsseEnvelope) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'dsseEnvelope': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UsersListAttestationsResponseAttestationsItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
   final SdkOptional<UsersListAttestationsResponseAttestationsItemBundle> bundle;
   final SdkOptional<int> repositoryId;
   final SdkOptional<String> bundleUrl;
   final SdkOptional<String> initiator;
 
-  const UsersListAttestationsResponseAttestationsItem({this.bundle = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.bundleUrl = const SdkOmitted(), this.initiator = const SdkOmitted()});
+  const UsersListAttestationsResponseAttestationsItem(
+      {this.bundle = const SdkOmitted(),
+      this.repositoryId = const SdkOmitted(),
+      this.bundleUrl = const SdkOmitted(),
+      this.initiator = const SdkOmitted()});
 
-  UsersListAttestationsResponseAttestationsItem Function({SdkOptional<UsersListAttestationsResponseAttestationsItemBundle> bundle, SdkOptional<int> repositoryId, SdkOptional<String> bundleUrl, SdkOptional<String> initiator}) get copyWith => _copyWith;
+  UsersListAttestationsResponseAttestationsItem Function(
+      {SdkOptional<UsersListAttestationsResponseAttestationsItemBundle> bundle,
+      SdkOptional<int> repositoryId,
+      SdkOptional<String> bundleUrl,
+      SdkOptional<String> initiator}) get copyWith => _copyWith;
 
-  UsersListAttestationsResponseAttestationsItem _copyWith({Object? bundle = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? bundleUrl = sdkOmittedValue, Object? initiator = sdkOmittedValue}) => UsersListAttestationsResponseAttestationsItem(
-    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as SdkOptional<UsersListAttestationsResponseAttestationsItemBundle>,
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
-    bundleUrl: identical(bundleUrl, sdkOmittedValue) ? this.bundleUrl : bundleUrl as SdkOptional<String>,
-    initiator: identical(initiator, sdkOmittedValue) ? this.initiator : initiator as SdkOptional<String>,
-  );
+  UsersListAttestationsResponseAttestationsItem _copyWith(
+          {Object? bundle = sdkOmittedValue,
+          Object? repositoryId = sdkOmittedValue,
+          Object? bundleUrl = sdkOmittedValue,
+          Object? initiator = sdkOmittedValue}) =>
+      UsersListAttestationsResponseAttestationsItem(
+        bundle: identical(bundle, sdkOmittedValue)
+            ? this.bundle
+            : bundle as SdkOptional<
+                UsersListAttestationsResponseAttestationsItemBundle>,
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        bundleUrl: identical(bundleUrl, sdkOmittedValue)
+            ? this.bundleUrl
+            : bundleUrl as SdkOptional<String>,
+        initiator: identical(initiator, sdkOmittedValue)
+            ? this.initiator
+            : initiator as SdkOptional<String>,
+      );
 
-  factory UsersListAttestationsResponseAttestationsItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(UsersListAttestationsResponseAttestationsItem(
-    bundle: json['bundle'] != null ? SdkPresent((json['bundle'] != null ? UsersListAttestationsResponseAttestationsItemBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    bundleUrl: json['bundle_url'] != null ? SdkPresent((json['bundle_url'] as String?)!) : const SdkOmitted(),
-    initiator: json['initiator'] != null ? SdkPresent((json['initiator'] as String?)!) : const SdkOmitted(),
-  ), json);
+  factory UsersListAttestationsResponseAttestationsItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          UsersListAttestationsResponseAttestationsItem(
+            bundle: json['bundle'] != null
+                ? SdkPresent((json['bundle'] != null
+                    ? UsersListAttestationsResponseAttestationsItemBundle
+                        .fromJson(json['bundle'] as Map<String, dynamic>)
+                    : null)!)
+                : const SdkOmitted(),
+            repositoryId: json['repository_id'] != null
+                ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
+                : const SdkOmitted(),
+            bundleUrl: json['bundle_url'] != null
+                ? SdkPresent((json['bundle_url'] as String?)!)
+                : const SdkOmitted(),
+            initiator: json['initiator'] != null
+                ? SdkPresent((json['initiator'] as String?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (bundle) {
-      SdkPresent<UsersListAttestationsResponseAttestationsItemBundle>(value: final value) => {'bundle': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryId) {
-      SdkPresent<int>(value: final value) => {'repository_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bundleUrl) {
-      SdkPresent<String>(value: final value) => {'bundle_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (initiator) {
-      SdkPresent<String>(value: final value) => {'initiator': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (bundle) {
+          SdkPresent<UsersListAttestationsResponseAttestationsItemBundle>(
+            value: final value
+          ) =>
+            {
+              'bundle': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bundleUrl) {
+          SdkPresent<String>(value: final value) => {
+              'bundle_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (initiator) {
+          SdkPresent<String>(value: final value) => {
+              'initiator': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UsersListAttestationsResponse implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<List<UsersListAttestationsResponseAttestationsItem>> attestations;
+  final SdkOptional<List<UsersListAttestationsResponseAttestationsItem>>
+      attestations;
 
   const UsersListAttestationsResponse({this.attestations = const SdkOmitted()});
 
-  UsersListAttestationsResponse Function({SdkOptional<List<UsersListAttestationsResponseAttestationsItem>> attestations}) get copyWith => _copyWith;
+  UsersListAttestationsResponse Function(
+      {SdkOptional<List<UsersListAttestationsResponseAttestationsItem>>
+          attestations}) get copyWith => _copyWith;
 
-  UsersListAttestationsResponse _copyWith({Object? attestations = sdkOmittedValue}) => UsersListAttestationsResponse(
-    attestations: identical(attestations, sdkOmittedValue) ? this.attestations : attestations as SdkOptional<List<UsersListAttestationsResponseAttestationsItem>>,
-  );
+  UsersListAttestationsResponse _copyWith(
+          {Object? attestations = sdkOmittedValue}) =>
+      UsersListAttestationsResponse(
+        attestations: identical(attestations, sdkOmittedValue)
+            ? this.attestations
+            : attestations as SdkOptional<
+                List<UsersListAttestationsResponseAttestationsItem>>,
+      );
 
-  factory UsersListAttestationsResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(UsersListAttestationsResponse(
-    attestations: json['attestations'] != null ? SdkPresent(((json['attestations'] as List?)?.map((e) => UsersListAttestationsResponseAttestationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  ), json);
+  factory UsersListAttestationsResponse.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          UsersListAttestationsResponse(
+            attestations: json['attestations'] != null
+                ? SdkPresent(((json['attestations'] as List?)
+                    ?.map((e) =>
+                        UsersListAttestationsResponseAttestationsItem.fromJson(
+                            e as Map<String, dynamic>))
+                    .toList())!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (attestations) {
-      SdkPresent<List<UsersListAttestationsResponseAttestationsItem>>(value: final value) => {'attestations': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (attestations) {
+          SdkPresent<List<UsersListAttestationsResponseAttestationsItem>>(
+            value: final value
+          ) =>
+            {
+              'attestations': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

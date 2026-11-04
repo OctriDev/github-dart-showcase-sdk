@@ -8,23 +8,37 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleLicenseComplianceScanning implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleLicenseComplianceScanningType type_;
 
   const RepositoryRuleLicenseComplianceScanning({required this.type_});
 
-  RepositoryRuleLicenseComplianceScanning Function({RepositoryRuleLicenseComplianceScanningType type_}) get copyWith => _copyWith;
+  RepositoryRuleLicenseComplianceScanning Function(
+          {RepositoryRuleLicenseComplianceScanningType type_})
+      get copyWith => _copyWith;
 
-  RepositoryRuleLicenseComplianceScanning _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleLicenseComplianceScanning(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleLicenseComplianceScanningType,
-  );
+  RepositoryRuleLicenseComplianceScanning _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      RepositoryRuleLicenseComplianceScanning(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleLicenseComplianceScanningType,
+      );
 
-  factory RepositoryRuleLicenseComplianceScanning.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(RepositoryRuleLicenseComplianceScanning(
-    type_: (json['type'] != null ? RepositoryRuleLicenseComplianceScanningType.fromJson(json['type'] as String) : null)!,
-  ), json);
+  factory RepositoryRuleLicenseComplianceScanning.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          RepositoryRuleLicenseComplianceScanning(
+            type_: (json['type'] != null
+                ? RepositoryRuleLicenseComplianceScanningType.fromJson(
+                    json['type'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

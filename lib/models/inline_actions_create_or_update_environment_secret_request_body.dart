@@ -4,33 +4,47 @@
 part of 'inline.dart';
 
 // Inline operation models
-class ActionsCreateOrUpdateEnvironmentSecretRequestBody implements SdkJsonModel {
+class ActionsCreateOrUpdateEnvironmentSecretRequestBody
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an environment public key](https://docs.github.com/rest/actions/secrets#get-an-environment-public-key) endpoint.
   final String encryptedValue;
+
   /// ID of the key you used to encrypt the secret.
   final String keyId;
 
-  const ActionsCreateOrUpdateEnvironmentSecretRequestBody({required this.encryptedValue, required this.keyId});
+  const ActionsCreateOrUpdateEnvironmentSecretRequestBody(
+      {required this.encryptedValue, required this.keyId});
 
-  ActionsCreateOrUpdateEnvironmentSecretRequestBody Function({String encryptedValue, String keyId}) get copyWith => _copyWith;
+  ActionsCreateOrUpdateEnvironmentSecretRequestBody Function(
+      {String encryptedValue, String keyId}) get copyWith => _copyWith;
 
-  ActionsCreateOrUpdateEnvironmentSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue}) => ActionsCreateOrUpdateEnvironmentSecretRequestBody(
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as String,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-  );
+  ActionsCreateOrUpdateEnvironmentSecretRequestBody _copyWith(
+          {Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue}) =>
+      ActionsCreateOrUpdateEnvironmentSecretRequestBody(
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as String,
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+      );
 
-  factory ActionsCreateOrUpdateEnvironmentSecretRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsCreateOrUpdateEnvironmentSecretRequestBody(
-    encryptedValue: (json['encrypted_value'] as String?)!,
-    keyId: (json['key_id'] as String?)!,
-  ), json);
+  factory ActionsCreateOrUpdateEnvironmentSecretRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsCreateOrUpdateEnvironmentSecretRequestBody(
+            encryptedValue: (json['encrypted_value'] as String?)!,
+            keyId: (json['key_id'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'encrypted_value': encryptedValue,
-    'key_id': keyId,
-  };
+        'encrypted_value': encryptedValue,
+        'key_id': keyId,
+      };
 }
 
 class ActionsListEnvironmentVariablesResponse implements SdkJsonModel {
@@ -39,151 +53,244 @@ class ActionsListEnvironmentVariablesResponse implements SdkJsonModel {
   final int totalCount;
   final List<ActionsVariable> variables;
 
-  const ActionsListEnvironmentVariablesResponse({required this.totalCount, required this.variables});
+  const ActionsListEnvironmentVariablesResponse(
+      {required this.totalCount, required this.variables});
 
-  ActionsListEnvironmentVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
+  ActionsListEnvironmentVariablesResponse Function(
+      {int totalCount,
+      List<ActionsVariable> variables}) get copyWith => _copyWith;
 
-  ActionsListEnvironmentVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => ActionsListEnvironmentVariablesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
-  );
+  ActionsListEnvironmentVariablesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? variables = sdkOmittedValue}) =>
+      ActionsListEnvironmentVariablesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        variables: identical(variables, sdkOmittedValue)
+            ? this.variables
+            : variables as List<ActionsVariable>,
+      );
 
-  factory ActionsListEnvironmentVariablesResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListEnvironmentVariablesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsListEnvironmentVariablesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListEnvironmentVariablesResponse(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            variables: ((json['variables'] as List?)
+                ?.map(
+                    (e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'variables': variables.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'variables': variables.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsCreateEnvironmentVariableRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the variable.
   final String name;
+
   /// The value of the variable.
   final String value;
 
-  const ActionsCreateEnvironmentVariableRequestBody({required this.name, required this.value});
+  const ActionsCreateEnvironmentVariableRequestBody(
+      {required this.name, required this.value});
 
-  ActionsCreateEnvironmentVariableRequestBody Function({String name, String value}) get copyWith => _copyWith;
+  ActionsCreateEnvironmentVariableRequestBody Function(
+      {String name, String value}) get copyWith => _copyWith;
 
-  ActionsCreateEnvironmentVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsCreateEnvironmentVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-  );
+  ActionsCreateEnvironmentVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      ActionsCreateEnvironmentVariableRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+      );
 
-  factory ActionsCreateEnvironmentVariableRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsCreateEnvironmentVariableRequestBody(
-    name: (json['name'] as String?)!,
-    value: (json['value'] as String?)!,
-  ), json);
+  factory ActionsCreateEnvironmentVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsCreateEnvironmentVariableRequestBody(
+            name: (json['name'] as String?)!,
+            value: (json['value'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'value': value,
-  };
+        'name': name,
+        'value': value,
+      };
 }
 
 class ActionsUpdateEnvironmentVariableRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the variable.
   final SdkOptional<String> name;
+
   /// The value of the variable.
   final SdkOptional<String> value;
 
-  const ActionsUpdateEnvironmentVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted()});
+  const ActionsUpdateEnvironmentVariableRequestBody(
+      {this.name = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  ActionsUpdateEnvironmentVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value}) get copyWith => _copyWith;
+  ActionsUpdateEnvironmentVariableRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> value}) get copyWith => _copyWith;
 
-  ActionsUpdateEnvironmentVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsUpdateEnvironmentVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
-  );
+  ActionsUpdateEnvironmentVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      ActionsUpdateEnvironmentVariableRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String>,
+      );
 
-  factory ActionsUpdateEnvironmentVariableRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsUpdateEnvironmentVariableRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
-  ), json);
+  factory ActionsUpdateEnvironmentVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsUpdateEnvironmentVariableRequestBody(
+            name: json['name'] != null
+                ? SdkPresent((json['name'] as String?)!)
+                : const SdkOmitted(),
+            value: json['value'] != null
+                ? SdkPresent((json['value'] as String?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (value) {
-      SdkPresent<String>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (value) {
+          SdkPresent<String>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Actions OIDC Subject customization
 class OidcUpdateOidcCustomSubTemplateForOrgRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
   final SdkOptional<List<String>> includeClaimKeys;
+
   /// Whether to opt in to the immutable OIDC subject claim format for the organization. When `true`, new OIDC tokens will use a stable, repository-ID-based `sub` claim instead of the name-based format.
   final SdkOptional<bool> useImmutableSubject;
 
-  const OidcUpdateOidcCustomSubTemplateForOrgRequestBody({this.includeClaimKeys = const SdkOmitted(), this.useImmutableSubject = const SdkOmitted()});
+  const OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+      {this.includeClaimKeys = const SdkOmitted(),
+      this.useImmutableSubject = const SdkOmitted()});
 
-  OidcUpdateOidcCustomSubTemplateForOrgRequestBody Function({SdkOptional<List<String>> includeClaimKeys, SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
+  OidcUpdateOidcCustomSubTemplateForOrgRequestBody Function(
+      {SdkOptional<List<String>> includeClaimKeys,
+      SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
 
-  OidcUpdateOidcCustomSubTemplateForOrgRequestBody _copyWith({Object? includeClaimKeys = sdkOmittedValue, Object? useImmutableSubject = sdkOmittedValue}) => OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
-    includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue) ? this.includeClaimKeys : includeClaimKeys as SdkOptional<List<String>>,
-    useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue) ? this.useImmutableSubject : useImmutableSubject as SdkOptional<bool>,
-  );
+  OidcUpdateOidcCustomSubTemplateForOrgRequestBody _copyWith(
+          {Object? includeClaimKeys = sdkOmittedValue,
+          Object? useImmutableSubject = sdkOmittedValue}) =>
+      OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+        includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue)
+            ? this.includeClaimKeys
+            : includeClaimKeys as SdkOptional<List<String>>,
+        useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue)
+            ? this.useImmutableSubject
+            : useImmutableSubject as SdkOptional<bool>,
+      );
 
-  factory OidcUpdateOidcCustomSubTemplateForOrgRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
-    includeClaimKeys: json['include_claim_keys'] != null ? SdkPresent(((json['include_claim_keys'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    useImmutableSubject: json['use_immutable_subject'] != null ? SdkPresent((json['use_immutable_subject'] as bool?)!) : const SdkOmitted(),
-  ), json);
+  factory OidcUpdateOidcCustomSubTemplateForOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+            includeClaimKeys: json['include_claim_keys'] != null
+                ? SdkPresent(((json['include_claim_keys'] as List?)
+                    ?.map((e) => e as String)
+                    .toList())!)
+                : const SdkOmitted(),
+            useImmutableSubject: json['use_immutable_subject'] != null
+                ? SdkPresent((json['use_immutable_subject'] as bool?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (includeClaimKeys) {
-      SdkPresent<List<String>>(value: final value) => {'include_claim_keys': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (useImmutableSubject) {
-      SdkPresent<bool>(value: final value) => {'use_immutable_subject': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (includeClaimKeys) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include_claim_keys': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (useImmutableSubject) {
+          SdkPresent<bool>(value: final value) => {
+              'use_immutable_subject': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Feature options for Automatic dependency submission
-class CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions implements SdkJsonModel {
+class CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
   final SdkOptional<bool> labeledRunners;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions({this.labeledRunners = const SdkOmitted()});
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+      {this.labeledRunners = const SdkOmitted()});
 
-  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
+  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions
+      Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
 
-  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions _copyWith({Object? labeledRunners = sdkOmittedValue}) => CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
-    labeledRunners: identical(labeledRunners, sdkOmittedValue) ? this.labeledRunners : labeledRunners as SdkOptional<bool>,
-  );
+  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions
+      _copyWith({Object? labeledRunners = sdkOmittedValue}) =>
+          CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+            labeledRunners: identical(labeledRunners, sdkOmittedValue)
+                ? this.labeledRunners
+                : labeledRunners as SdkOptional<bool>,
+          );
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
-    labeledRunners: json['labeled_runners'] != null ? SdkPresent((json['labeled_runners'] as bool?)!) : const SdkOmitted(),
-  ), json);
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+            labeledRunners: json['labeled_runners'] != null
+                ? SdkPresent((json['labeled_runners'] as bool?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (labeledRunners) {
-      SdkPresent<bool>(value: final value) => {'labeled_runners': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (labeledRunners) {
+          SdkPresent<bool>(value: final value) => {
+              'labeled_runners': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

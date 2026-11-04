@@ -8,22 +8,33 @@ sealed class WebhookDeploymentStatusCreatedDeploymentPayload {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookDeploymentStatusCreatedDeploymentPayload();
-  factory WebhookDeploymentStatusCreatedDeploymentPayload.fromJson(Object? json) {
-    if (json is String) { return WebhookDeploymentStatusCreatedDeploymentPayloadString(json); }
-    if (json is Map) { return WebhookDeploymentStatusCreatedDeploymentPayloadMap(Map<String, dynamic>.from(json)); }
-    throw FormatException("No variant matched for WebhookDeploymentStatusCreatedDeploymentPayload");
+  factory WebhookDeploymentStatusCreatedDeploymentPayload.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookDeploymentStatusCreatedDeploymentPayloadString(json);
+    }
+    if (json is Map) {
+      return WebhookDeploymentStatusCreatedDeploymentPayloadMap(
+          Map<String, dynamic>.from(json));
+    }
+    throw FormatException(
+        "No variant matched for WebhookDeploymentStatusCreatedDeploymentPayload");
   }
   Object? toJson();
 }
 
-final class WebhookDeploymentStatusCreatedDeploymentPayloadString extends WebhookDeploymentStatusCreatedDeploymentPayload {
+final class WebhookDeploymentStatusCreatedDeploymentPayloadString
+    extends WebhookDeploymentStatusCreatedDeploymentPayload {
   final String value;
   const WebhookDeploymentStatusCreatedDeploymentPayloadString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookDeploymentStatusCreatedDeploymentPayloadMap extends WebhookDeploymentStatusCreatedDeploymentPayload {
+final class WebhookDeploymentStatusCreatedDeploymentPayloadMap
+    extends WebhookDeploymentStatusCreatedDeploymentPayload {
   final Map<String, dynamic> value;
   const WebhookDeploymentStatusCreatedDeploymentPayloadMap(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

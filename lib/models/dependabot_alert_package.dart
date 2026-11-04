@@ -8,28 +8,39 @@ part of 'dependabot.dart';
 class DependabotAlertPackage implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The package's language or package management ecosystem.
   final String ecosystem;
+
   /// The unique package name within its ecosystem.
   final String name;
 
   const DependabotAlertPackage({required this.ecosystem, required this.name});
 
-  DependabotAlertPackage Function({String ecosystem, String name}) get copyWith => _copyWith;
+  DependabotAlertPackage Function({String ecosystem, String name})
+      get copyWith => _copyWith;
 
-  DependabotAlertPackage _copyWith({Object? ecosystem = sdkOmittedValue, Object? name = sdkOmittedValue}) => DependabotAlertPackage(
-    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  DependabotAlertPackage _copyWith(
+          {Object? ecosystem = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      DependabotAlertPackage(
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
-  factory DependabotAlertPackage.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(DependabotAlertPackage(
-    ecosystem: (json['ecosystem'] as String?)!,
-    name: (json['name'] as String?)!,
-  ), json);
+  factory DependabotAlertPackage.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          DependabotAlertPackage(
+            ecosystem: (json['ecosystem'] as String?)!,
+            name: (json['name'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ecosystem': ecosystem,
-    'name': name,
-  };
+        'ecosystem': ecosystem,
+        'name': name,
+      };
 }

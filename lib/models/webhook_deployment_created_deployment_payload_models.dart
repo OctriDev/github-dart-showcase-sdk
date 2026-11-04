@@ -9,21 +9,31 @@ sealed class WebhookDeploymentCreatedDeploymentPayload {
   static const String constructionSurface = 'named';
   const WebhookDeploymentCreatedDeploymentPayload();
   factory WebhookDeploymentCreatedDeploymentPayload.fromJson(Object? json) {
-    if (json is String) { return WebhookDeploymentCreatedDeploymentPayloadString(json); }
-    if (json is Map) { return WebhookDeploymentCreatedDeploymentPayloadMap(Map<String, dynamic>.from(json)); }
-    throw FormatException("No variant matched for WebhookDeploymentCreatedDeploymentPayload");
+    if (json is String) {
+      return WebhookDeploymentCreatedDeploymentPayloadString(json);
+    }
+    if (json is Map) {
+      return WebhookDeploymentCreatedDeploymentPayloadMap(
+          Map<String, dynamic>.from(json));
+    }
+    throw FormatException(
+        "No variant matched for WebhookDeploymentCreatedDeploymentPayload");
   }
   Object? toJson();
 }
 
-final class WebhookDeploymentCreatedDeploymentPayloadMap extends WebhookDeploymentCreatedDeploymentPayload {
+final class WebhookDeploymentCreatedDeploymentPayloadMap
+    extends WebhookDeploymentCreatedDeploymentPayload {
   final Map<String, dynamic> value;
   const WebhookDeploymentCreatedDeploymentPayloadMap(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookDeploymentCreatedDeploymentPayloadString extends WebhookDeploymentCreatedDeploymentPayload {
+final class WebhookDeploymentCreatedDeploymentPayloadString
+    extends WebhookDeploymentCreatedDeploymentPayload {
   final String value;
   const WebhookDeploymentCreatedDeploymentPayloadString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

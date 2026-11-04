@@ -11,10 +11,9 @@ class EmptyObject implements SdkJsonModel {
 
   const EmptyObject();
 
-  factory EmptyObject.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(EmptyObject(
-  ), json);
+  factory EmptyObject.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(EmptyObject(), json);
 
   @override
-  Map<String, dynamic> toJson() => {
-  };
+  Map<String, dynamic> toJson() => {};
 }

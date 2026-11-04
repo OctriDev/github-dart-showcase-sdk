@@ -8,56 +8,96 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleCodeQualityParameters implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The lowest severity level at which code quality reviews need to be resolved before commits can be merged.
   final RepositoryRuleCodeQualityParametersSeverity severity;
 
   const RepositoryRuleCodeQualityParameters({required this.severity});
 
-  RepositoryRuleCodeQualityParameters Function({RepositoryRuleCodeQualityParametersSeverity severity}) get copyWith => _copyWith;
+  RepositoryRuleCodeQualityParameters Function(
+          {RepositoryRuleCodeQualityParametersSeverity severity})
+      get copyWith => _copyWith;
 
-  RepositoryRuleCodeQualityParameters _copyWith({Object? severity = sdkOmittedValue}) => RepositoryRuleCodeQualityParameters(
-    severity: identical(severity, sdkOmittedValue) ? this.severity : severity as RepositoryRuleCodeQualityParametersSeverity,
-  );
+  RepositoryRuleCodeQualityParameters _copyWith(
+          {Object? severity = sdkOmittedValue}) =>
+      RepositoryRuleCodeQualityParameters(
+        severity: identical(severity, sdkOmittedValue)
+            ? this.severity
+            : severity as RepositoryRuleCodeQualityParametersSeverity,
+      );
 
-  factory RepositoryRuleCodeQualityParameters.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(RepositoryRuleCodeQualityParameters(
-    severity: (json['severity'] != null ? RepositoryRuleCodeQualityParametersSeverity.fromJson(json['severity'] as String) : null)!,
-  ), json);
+  factory RepositoryRuleCodeQualityParameters.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          RepositoryRuleCodeQualityParameters(
+            severity: (json['severity'] != null
+                ? RepositoryRuleCodeQualityParametersSeverity.fromJson(
+                    json['severity'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'severity': severity.toJson(),
-  };
+        'severity': severity.toJson(),
+      };
 }
 
 /// Choose which severity levels of code quality results should block pull request merges. When configured, a code quality analysis must be done on the pull request before the changes can be merged.
 class RepositoryRuleCodeQuality implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleCodeQualityType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleCodeQualityParameters> parameters;
 
-  const RepositoryRuleCodeQuality({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleCodeQuality(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleCodeQuality Function({RepositoryRuleCodeQualityType type_, SdkOptional<RepositoryRuleCodeQualityParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleCodeQuality Function(
+          {RepositoryRuleCodeQualityType type_,
+          SdkOptional<RepositoryRuleCodeQualityParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleCodeQuality _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleCodeQuality(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleCodeQualityType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleCodeQualityParameters>,
-  );
+  RepositoryRuleCodeQuality _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleCodeQuality(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleCodeQualityType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters as SdkOptional<RepositoryRuleCodeQualityParameters>,
+      );
 
-  factory RepositoryRuleCodeQuality.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(RepositoryRuleCodeQuality(
-    type_: (json['type'] != null ? RepositoryRuleCodeQualityType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleCodeQualityParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  ), json);
+  factory RepositoryRuleCodeQuality.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          RepositoryRuleCodeQuality(
+            type_: (json['type'] != null
+                ? RepositoryRuleCodeQualityType.fromJson(json['type'] as String)
+                : null)!,
+            parameters: json['parameters'] != null
+                ? SdkPresent((json['parameters'] != null
+                    ? RepositoryRuleCodeQualityParameters.fromJson(
+                        json['parameters'] as Map<String, dynamic>)
+                    : null)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleCodeQualityParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleCodeQualityParameters>(value: final value) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

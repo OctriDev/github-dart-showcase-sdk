@@ -9,8 +9,13 @@ sealed class CommitCommitter {
   static const String constructionSurface = 'named';
   const CommitCommitter();
   factory CommitCommitter.fromJson(Object? json) {
-    if (json is Map) { return CommitCommitterMap(Map<String, dynamic>.from(json)); }
-    try { return CommitCommitterSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map) {
+      return CommitCommitterMap(Map<String, dynamic>.from(json));
+    }
+    try {
+      return CommitCommitterSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for CommitCommitter");
   }
   Object? toJson();
@@ -19,11 +24,13 @@ sealed class CommitCommitter {
 final class CommitCommitterSimpleUser extends CommitCommitter {
   final SimpleUser value;
   const CommitCommitterSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class CommitCommitterMap extends CommitCommitter {
   final Map<String, dynamic> value;
   const CommitCommitterMap(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

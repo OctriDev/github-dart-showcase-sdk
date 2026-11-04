@@ -8,6 +8,7 @@ part of 'shared.dart';
 class Link implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
@@ -16,15 +17,17 @@ class Link implements SdkJsonModel {
   Link Function({String href}) get copyWith => _copyWith;
 
   Link _copyWith({Object? href = sdkOmittedValue}) => Link(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory Link.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(Link(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory Link.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      Link(
+        href: (json['href'] as String?)!,
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }

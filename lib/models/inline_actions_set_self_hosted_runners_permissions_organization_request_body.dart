@@ -4,210 +4,381 @@
 part of 'inline.dart';
 
 // Inline operation models
-class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody implements SdkJsonModel {
+class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The policy that controls whether self-hosted runners can be used in the organization
-  final ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories enabledRepositories;
+  final ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+      enabledRepositories;
 
-  const ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody({required this.enabledRepositories});
+  const ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
+      {required this.enabledRepositories});
 
-  ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody Function({ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories enabledRepositories}) get copyWith => _copyWith;
+  ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody Function(
+      {ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+          enabledRepositories}) get copyWith => _copyWith;
 
-  ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody _copyWith({Object? enabledRepositories = sdkOmittedValue}) => ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
-    enabledRepositories: identical(enabledRepositories, sdkOmittedValue) ? this.enabledRepositories : enabledRepositories as ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories,
-  );
+  ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody _copyWith(
+          {Object? enabledRepositories = sdkOmittedValue}) =>
+      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
+        enabledRepositories: identical(enabledRepositories, sdkOmittedValue)
+            ? this.enabledRepositories
+            : enabledRepositories
+                as ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories,
+      );
 
-  factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
-    enabledRepositories: (json['enabled_repositories'] != null ? ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories.fromJson(json['enabled_repositories'] as String) : null)!,
-  ), json);
+  factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
+            enabledRepositories: (json['enabled_repositories'] != null
+                ? ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+                    .fromJson(json['enabled_repositories'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'enabled_repositories': enabledRepositories.toJson(),
-  };
+        'enabled_repositories': enabledRepositories.toJson(),
+      };
 }
 
-class ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse implements SdkJsonModel {
+class ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<int> totalCount;
   final SdkOptional<List<Repository>> repositories;
 
-  const ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse({this.totalCount = const SdkOmitted(), this.repositories = const SdkOmitted()});
+  const ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
+      {this.totalCount = const SdkOmitted(),
+      this.repositories = const SdkOmitted()});
 
-  ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse Function({SdkOptional<int> totalCount, SdkOptional<List<Repository>> repositories}) get copyWith => _copyWith;
+  ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse Function(
+      {SdkOptional<int> totalCount,
+      SdkOptional<List<Repository>> repositories}) get copyWith => _copyWith;
 
-  ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as SdkOptional<int>,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as SdkOptional<List<Repository>>,
-  );
+  ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse
+      _copyWith(
+              {Object? totalCount = sdkOmittedValue,
+              Object? repositories = sdkOmittedValue}) =>
+          ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
+            totalCount: identical(totalCount, sdkOmittedValue)
+                ? this.totalCount
+                : totalCount as SdkOptional<int>,
+            repositories: identical(repositories, sdkOmittedValue)
+                ? this.repositories
+                : repositories as SdkOptional<List<Repository>>,
+          );
 
-  factory ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
-    totalCount: json['total_count'] != null ? SdkPresent(((json['total_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    repositories: json['repositories'] != null ? SdkPresent(((json['repositories'] as List?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  ), json);
+  factory ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
+            totalCount: json['total_count'] != null
+                ? SdkPresent(((json['total_count'] as num?)?.toInt())!)
+                : const SdkOmitted(),
+            repositories: json['repositories'] != null
+                ? SdkPresent(((json['repositories'] as List?)
+                    ?.map((e) => Repository.fromJson(e as Map<String, dynamic>))
+                    .toList())!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (totalCount) {
-      SdkPresent<int>(value: final value) => {'total_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositories) {
-      SdkPresent<List<Repository>>(value: final value) => {'repositories': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (totalCount) {
+          SdkPresent<int>(value: final value) => {
+              'total_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositories) {
+          SdkPresent<List<Repository>>(value: final value) => {
+              'repositories': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody implements SdkJsonModel {
+class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// IDs of repositories that can use repository-level self-hosted runners
   final List<int> selectedRepositoryIds;
 
-  const ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody({required this.selectedRepositoryIds});
+  const ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody(
+      {required this.selectedRepositoryIds});
 
-  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody
+      Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
+  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody
+      _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) =>
+          ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody(
+            selectedRepositoryIds:
+                identical(selectedRepositoryIds, sdkOmittedValue)
+                    ? this.selectedRepositoryIds
+                    : selectedRepositoryIds as List<int>,
+          );
 
-  factory ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  ), json);
+  factory ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody(
+            selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
+        'selected_repository_ids': selectedRepositoryIds,
+      };
 }
 
 class ActionsGetOrgActionsPoliciesResponse implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The total number of Actions policies.
   final int totalCount;
+
   /// An array of Actions policies.
   final List<ActionsPolicy> policies;
 
-  const ActionsGetOrgActionsPoliciesResponse({required this.totalCount, required this.policies});
+  const ActionsGetOrgActionsPoliciesResponse(
+      {required this.totalCount, required this.policies});
 
-  ActionsGetOrgActionsPoliciesResponse Function({int totalCount, List<ActionsPolicy> policies}) get copyWith => _copyWith;
+  ActionsGetOrgActionsPoliciesResponse Function(
+      {int totalCount, List<ActionsPolicy> policies}) get copyWith => _copyWith;
 
-  ActionsGetOrgActionsPoliciesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? policies = sdkOmittedValue}) => ActionsGetOrgActionsPoliciesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    policies: identical(policies, sdkOmittedValue) ? this.policies : policies as List<ActionsPolicy>,
-  );
+  ActionsGetOrgActionsPoliciesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? policies = sdkOmittedValue}) =>
+      ActionsGetOrgActionsPoliciesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        policies: identical(policies, sdkOmittedValue)
+            ? this.policies
+            : policies as List<ActionsPolicy>,
+      );
 
-  factory ActionsGetOrgActionsPoliciesResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsGetOrgActionsPoliciesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    policies: ((json['policies'] as List?)?.map((e) => ActionsPolicy.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsGetOrgActionsPoliciesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsGetOrgActionsPoliciesResponse(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            policies: ((json['policies'] as List?)
+                ?.map((e) => ActionsPolicy.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'policies': policies.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'policies': policies.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsCreateOrgActionsPolicyRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the policy.
   final String name;
+
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final RepositoryRuleEnforcement enforcement;
+
   /// Conditions for an organization Actions policy. The conditions object should contain one of `repository_name`, `repository_id`, or `repository_property`, and may also contain `workflow_path`.
   final SdkOptional<ActionsPolicyOrgConditions> conditions;
+
   /// An array of rules within the policy.
   final SdkOptional<List<ActionsRule>> rules;
 
-  const ActionsCreateOrgActionsPolicyRequestBody({required this.name, required this.enforcement, this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const ActionsCreateOrgActionsPolicyRequestBody(
+      {required this.name,
+      required this.enforcement,
+      this.conditions = const SdkOmitted(),
+      this.rules = const SdkOmitted()});
 
-  ActionsCreateOrgActionsPolicyRequestBody Function({String name, RepositoryRuleEnforcement enforcement, SdkOptional<ActionsPolicyOrgConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
+  ActionsCreateOrgActionsPolicyRequestBody Function(
+      {String name,
+      RepositoryRuleEnforcement enforcement,
+      SdkOptional<ActionsPolicyOrgConditions> conditions,
+      SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
 
-  ActionsCreateOrgActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsCreateOrgActionsPolicyRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyOrgConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
-  );
+  ActionsCreateOrgActionsPolicyRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? enforcement = sdkOmittedValue,
+          Object? conditions = sdkOmittedValue,
+          Object? rules = sdkOmittedValue}) =>
+      ActionsCreateOrgActionsPolicyRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        enforcement: identical(enforcement, sdkOmittedValue)
+            ? this.enforcement
+            : enforcement as RepositoryRuleEnforcement,
+        conditions: identical(conditions, sdkOmittedValue)
+            ? this.conditions
+            : conditions as SdkOptional<ActionsPolicyOrgConditions>,
+        rules: identical(rules, sdkOmittedValue)
+            ? this.rules
+            : rules as SdkOptional<List<ActionsRule>>,
+      );
 
-  factory ActionsCreateOrgActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsCreateOrgActionsPolicyRequestBody(
-    name: (json['name'] as String?)!,
-    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyOrgConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  ), json);
+  factory ActionsCreateOrgActionsPolicyRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsCreateOrgActionsPolicyRequestBody(
+            name: (json['name'] as String?)!,
+            enforcement: (json['enforcement'] != null
+                ? RepositoryRuleEnforcement.fromJson(
+                    json['enforcement'] as String)
+                : null)!,
+            conditions: json['conditions'] != null
+                ? SdkPresent((json['conditions'] != null
+                    ? ActionsPolicyOrgConditions.fromJson(json['conditions'])
+                    : null)!)
+                : const SdkOmitted(),
+            rules: json['rules'] != null
+                ? SdkPresent(((json['rules'] as List?)
+                    ?.map((e) => ActionsRule.fromJson(e))
+                    .toList())!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'enforcement': enforcement.toJson(),
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyOrgConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'enforcement': enforcement.toJson(),
+        ...switch (conditions) {
+          SdkPresent<ActionsPolicyOrgConditions>(value: final value) => {
+              'conditions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rules) {
+          SdkPresent<List<ActionsRule>>(value: final value) => {
+              'rules': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsUpdateOrgActionsPolicyRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the policy.
   final SdkOptional<String> name;
+
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final SdkOptional<RepositoryRuleEnforcement> enforcement;
+
   /// Conditions for an organization Actions policy. The conditions object should contain one of `repository_name`, `repository_id`, or `repository_property`, and may also contain `workflow_path`.
   final SdkOptional<ActionsPolicyOrgConditions> conditions;
+
   /// An array of rules within the policy.
   final SdkOptional<List<ActionsRule>> rules;
 
-  const ActionsUpdateOrgActionsPolicyRequestBody({this.name = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const ActionsUpdateOrgActionsPolicyRequestBody(
+      {this.name = const SdkOmitted(),
+      this.enforcement = const SdkOmitted(),
+      this.conditions = const SdkOmitted(),
+      this.rules = const SdkOmitted()});
 
-  ActionsUpdateOrgActionsPolicyRequestBody Function({SdkOptional<String> name, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<ActionsPolicyOrgConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
+  ActionsUpdateOrgActionsPolicyRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<RepositoryRuleEnforcement> enforcement,
+      SdkOptional<ActionsPolicyOrgConditions> conditions,
+      SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
 
-  ActionsUpdateOrgActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsUpdateOrgActionsPolicyRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyOrgConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
-  );
+  ActionsUpdateOrgActionsPolicyRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? enforcement = sdkOmittedValue,
+          Object? conditions = sdkOmittedValue,
+          Object? rules = sdkOmittedValue}) =>
+      ActionsUpdateOrgActionsPolicyRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        enforcement: identical(enforcement, sdkOmittedValue)
+            ? this.enforcement
+            : enforcement as SdkOptional<RepositoryRuleEnforcement>,
+        conditions: identical(conditions, sdkOmittedValue)
+            ? this.conditions
+            : conditions as SdkOptional<ActionsPolicyOrgConditions>,
+        rules: identical(rules, sdkOmittedValue)
+            ? this.rules
+            : rules as SdkOptional<List<ActionsRule>>,
+      );
 
-  factory ActionsUpdateOrgActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsUpdateOrgActionsPolicyRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyOrgConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  ), json);
+  factory ActionsUpdateOrgActionsPolicyRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsUpdateOrgActionsPolicyRequestBody(
+            name: json['name'] != null
+                ? SdkPresent((json['name'] as String?)!)
+                : const SdkOmitted(),
+            enforcement: json['enforcement'] != null
+                ? SdkPresent((json['enforcement'] != null
+                    ? RepositoryRuleEnforcement.fromJson(
+                        json['enforcement'] as String)
+                    : null)!)
+                : const SdkOmitted(),
+            conditions: json['conditions'] != null
+                ? SdkPresent((json['conditions'] != null
+                    ? ActionsPolicyOrgConditions.fromJson(json['conditions'])
+                    : null)!)
+                : const SdkOmitted(),
+            rules: json['rules'] != null
+                ? SdkPresent(((json['rules'] as List?)
+                    ?.map((e) => ActionsRule.fromJson(e))
+                    .toList())!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enforcement) {
-      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyOrgConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enforcement) {
+          SdkPresent<RepositoryRuleEnforcement>(value: final value) => {
+              'enforcement': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (conditions) {
+          SdkPresent<ActionsPolicyOrgConditions>(value: final value) => {
+              'conditions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rules) {
+          SdkPresent<List<ActionsRule>>(value: final value) => {
+              'rules': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsListSelfHostedRunnerGroupsForOrgResponse implements SdkJsonModel {
@@ -216,23 +387,40 @@ class ActionsListSelfHostedRunnerGroupsForOrgResponse implements SdkJsonModel {
   final double totalCount;
   final List<RunnerGroupsOrg> runnerGroups;
 
-  const ActionsListSelfHostedRunnerGroupsForOrgResponse({required this.totalCount, required this.runnerGroups});
+  const ActionsListSelfHostedRunnerGroupsForOrgResponse(
+      {required this.totalCount, required this.runnerGroups});
 
-  ActionsListSelfHostedRunnerGroupsForOrgResponse Function({double totalCount, List<RunnerGroupsOrg> runnerGroups}) get copyWith => _copyWith;
+  ActionsListSelfHostedRunnerGroupsForOrgResponse Function(
+      {double totalCount,
+      List<RunnerGroupsOrg> runnerGroups}) get copyWith => _copyWith;
 
-  ActionsListSelfHostedRunnerGroupsForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runnerGroups = sdkOmittedValue}) => ActionsListSelfHostedRunnerGroupsForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
-    runnerGroups: identical(runnerGroups, sdkOmittedValue) ? this.runnerGroups : runnerGroups as List<RunnerGroupsOrg>,
-  );
+  ActionsListSelfHostedRunnerGroupsForOrgResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? runnerGroups = sdkOmittedValue}) =>
+      ActionsListSelfHostedRunnerGroupsForOrgResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as double,
+        runnerGroups: identical(runnerGroups, sdkOmittedValue)
+            ? this.runnerGroups
+            : runnerGroups as List<RunnerGroupsOrg>,
+      );
 
-  factory ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsListSelfHostedRunnerGroupsForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toDouble())!,
-    runnerGroups: ((json['runner_groups'] as List?)?.map((e) => RunnerGroupsOrg.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsListSelfHostedRunnerGroupsForOrgResponse(
+            totalCount: ((json['total_count'] as num?)?.toDouble())!,
+            runnerGroups: ((json['runner_groups'] as List?)
+                ?.map(
+                    (e) => RunnerGroupsOrg.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runner_groups': runnerGroups.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'runner_groups': runnerGroups.map((item) => item.toJson()).toList(),
+      };
 }

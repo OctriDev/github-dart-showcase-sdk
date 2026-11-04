@@ -4,14 +4,18 @@
 part of 'webhook_pull_request_labeled.dart';
 
 // webhook_pull_request_labeled domain models
-final class WebhookPullRequestLabeledPullRequestBaseRepoPushedAtInt extends WebhookPullRequestLabeledPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestLabeledPullRequestBaseRepoPushedAtInt
+    extends WebhookPullRequestLabeledPullRequestBaseRepoPushedAt {
   final int value;
   const WebhookPullRequestLabeledPullRequestBaseRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestLabeledPullRequestBaseRepoPushedAtString extends WebhookPullRequestLabeledPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestLabeledPullRequestBaseRepoPushedAtString
+    extends WebhookPullRequestLabeledPullRequestBaseRepoPushedAt {
   final String value;
   const WebhookPullRequestLabeledPullRequestBaseRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

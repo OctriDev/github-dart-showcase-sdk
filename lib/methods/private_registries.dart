@@ -24,21 +24,29 @@ Future<PrivateRegistriesListOrgPrivateRegistriesResponse>
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<PrivateRegistriesListOrgPrivateRegistriesResponse>('GET',
+  return (await sdkRequest<PrivateRegistriesListOrgPrivateRegistriesResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/private-registries',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'privateRegistriesListOrgPrivateRegistries',
-          fromJsonRaw: (value) => PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Creates a private registry configuration with an encrypted value for an organization. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." For OIDC-based registries (`oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp`), the `encrypted_value` and `key_id` fields should be omitted. For anonymous registries (`anonymous`), the `username`, `encrypted_value`, and `key_id` fields must be omitted. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -112,15 +120,19 @@ Future<PrivateRegistriesListOrgPrivateRegistriesResponse>
 Future<OrgPrivateRegistryConfigurationWithSelectedRepositories>
     privateRegistriesCreateOrgPrivateRegistry(ClientConfig config,
         {required String org,
-        required PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType registryType,
+        required PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType
+            registryType,
         required String url,
-        required PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility visibility,
+        required PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility
+            visibility,
         SdkOptional<String?> username = const SdkOmitted(),
         SdkOptional<bool> replacesBase = const SdkOmitted(),
         SdkOptional<String> encryptedValue = const SdkOmitted(),
         SdkOptional<String> keyId = const SdkOmitted(),
         SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
-        SdkOptional<PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType> authType = const SdkOmitted(),
+        SdkOptional<
+                PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType>
+            authType = const SdkOmitted(),
         SdkOptional<String> tenantId = const SdkOmitted(),
         SdkOptional<String> clientId = const SdkOmitted(),
         SdkOptional<String> awsRegion = const SdkOmitted(),
@@ -139,10 +151,12 @@ Future<OrgPrivateRegistryConfigurationWithSelectedRepositories>
         RequestOptions? requestOptions}) async {
   sdkValidateUri('url', url);
   if (encryptedValue is SdkPresent<String>) {
-    sdkValidatePattern('encrypted_value', encryptedValue.value, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+    sdkValidatePattern('encrypted_value', encryptedValue.value,
+        '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
   }
 
-  return (await sdkRequest<OrgPrivateRegistryConfigurationWithSelectedRepositories>('POST',
+  return (await sdkRequest<
+              OrgPrivateRegistryConfigurationWithSelectedRepositories>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/private-registries',
           config: config,
           body: {
@@ -153,7 +167,8 @@ Future<OrgPrivateRegistryConfigurationWithSelectedRepositories>
             'replaces_base': SdkUtils.unwrapOptional(replacesBase),
             'encrypted_value': SdkUtils.unwrapOptional(encryptedValue),
             'key_id': SdkUtils.unwrapOptional(keyId),
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds),
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds),
             'auth_type': SdkUtils.unwrapOptional(authType),
             'tenant_id': SdkUtils.unwrapOptional(tenantId),
             'client_id': SdkUtils.unwrapOptional(clientId),
@@ -162,29 +177,39 @@ Future<OrgPrivateRegistryConfigurationWithSelectedRepositories>
             'role_name': SdkUtils.unwrapOptional(roleName),
             'domain': SdkUtils.unwrapOptional(domain),
             'domain_owner': SdkUtils.unwrapOptional(domainOwner),
-            'jfrog_oidc_provider_name': SdkUtils.unwrapOptional(jfrogOidcProviderName),
+            'jfrog_oidc_provider_name':
+                SdkUtils.unwrapOptional(jfrogOidcProviderName),
             'audience': SdkUtils.unwrapOptional(audience),
-            'identity_mapping_name': SdkUtils.unwrapOptional(identityMappingName),
+            'identity_mapping_name':
+                SdkUtils.unwrapOptional(identityMappingName),
             'namespace': SdkUtils.unwrapOptional(namespace),
             'service_slug': SdkUtils.unwrapOptional(serviceSlug),
             'api_host': SdkUtils.unwrapOptional(apiHost),
-            'workload_identity_provider': SdkUtils.unwrapOptional(workloadIdentityProvider),
+            'workload_identity_provider':
+                SdkUtils.unwrapOptional(workloadIdentityProvider),
             'service_account': SdkUtils.unwrapOptional(serviceAccount)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'privateRegistriesCreateOrgPrivateRegistry',
-          fromJsonRaw: (value) => OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the org public key, which is needed to encrypt private registry secrets. You need to encrypt a secret before you can create or update secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<PrivateRegistriesGetOrgPublicKeyResponse> privateRegistriesGetOrgPublicKey(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<PrivateRegistriesGetOrgPublicKeyResponse>
+    privateRegistriesGetOrgPublicKey(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<PrivateRegistriesGetOrgPublicKeyResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/private-registries/public-key',
           config: config,
@@ -192,20 +217,21 @@ Future<PrivateRegistriesGetOrgPublicKeyResponse> privateRegistriesGetOrgPublicKe
           operationId: 'privateRegistriesGetOrgPublicKey',
           fromJsonRaw: (value) => PrivateRegistriesGetOrgPublicKeyResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Get the configuration of a single private registry defined for an organization, omitting its encrypted value. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [secretName] The name of the secret.
-Future<OrgPrivateRegistryConfiguration>
-    privateRegistriesGetOrgPrivateRegistry(ClientConfig config,
-        {required String org,
-        required String secretName,
-        RequestOptions? requestOptions}) async {
+Future<OrgPrivateRegistryConfiguration> privateRegistriesGetOrgPrivateRegistry(
+    ClientConfig config,
+    {required String org,
+    required String secretName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<OrgPrivateRegistryConfiguration>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/private-registries/${Uri.encodeComponent(secretName.toString())}',
           config: config,
@@ -213,10 +239,11 @@ Future<OrgPrivateRegistryConfiguration>
           operationId: 'privateRegistriesGetOrgPrivateRegistry',
           fromJsonRaw: (value) => OrgPrivateRegistryConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates a private registry configuration with an encrypted value for an organization. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." For OIDC-based registries (`oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp`), the `encrypted_value` and `key_id` fields should be omitted. For anonymous registries (`anonymous`), the `username`, `encrypted_value`, and `key_id` fields must be omitted, and `auth_type` cannot be changed to or from `anonymous`. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -284,15 +311,19 @@ Future<OrgPrivateRegistryConfiguration>
 Future<void> privateRegistriesUpdateOrgPrivateRegistry(ClientConfig config,
     {required String org,
     required String secretName,
-    SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType> registryType = const SdkOmitted(),
+    SdkOptional<
+            PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType>
+        registryType = const SdkOmitted(),
     SdkOptional<String> url = const SdkOmitted(),
     SdkOptional<String?> username = const SdkOmitted(),
     SdkOptional<bool> replacesBase = const SdkOmitted(),
     SdkOptional<String> encryptedValue = const SdkOmitted(),
     SdkOptional<String> keyId = const SdkOmitted(),
-    SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility> visibility = const SdkOmitted(),
+    SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility>
+        visibility = const SdkOmitted(),
     SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
-    SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType> authType = const SdkOmitted(),
+    SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType>
+        authType = const SdkOmitted(),
     SdkOptional<String> tenantId = const SdkOmitted(),
     SdkOptional<String> clientId = const SdkOmitted(),
     SdkOptional<String> awsRegion = const SdkOmitted(),
@@ -313,7 +344,8 @@ Future<void> privateRegistriesUpdateOrgPrivateRegistry(ClientConfig config,
     sdkValidateUri('url', url.value);
   }
   if (encryptedValue is SdkPresent<String>) {
-    sdkValidatePattern('encrypted_value', encryptedValue.value, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+    sdkValidatePattern('encrypted_value', encryptedValue.value,
+        '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
   }
 
   return (await sdkRequest<void>('PATCH',
@@ -327,7 +359,8 @@ Future<void> privateRegistriesUpdateOrgPrivateRegistry(ClientConfig config,
             'encrypted_value': SdkUtils.unwrapOptional(encryptedValue),
             'key_id': SdkUtils.unwrapOptional(keyId),
             'visibility': SdkUtils.unwrapOptional(visibility),
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds),
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds),
             'auth_type': SdkUtils.unwrapOptional(authType),
             'tenant_id': SdkUtils.unwrapOptional(tenantId),
             'client_id': SdkUtils.unwrapOptional(clientId),
@@ -336,22 +369,29 @@ Future<void> privateRegistriesUpdateOrgPrivateRegistry(ClientConfig config,
             'role_name': SdkUtils.unwrapOptional(roleName),
             'domain': SdkUtils.unwrapOptional(domain),
             'domain_owner': SdkUtils.unwrapOptional(domainOwner),
-            'jfrog_oidc_provider_name': SdkUtils.unwrapOptional(jfrogOidcProviderName),
+            'jfrog_oidc_provider_name':
+                SdkUtils.unwrapOptional(jfrogOidcProviderName),
             'audience': SdkUtils.unwrapOptional(audience),
-            'identity_mapping_name': SdkUtils.unwrapOptional(identityMappingName),
+            'identity_mapping_name':
+                SdkUtils.unwrapOptional(identityMappingName),
             'namespace': SdkUtils.unwrapOptional(namespace),
             'service_slug': SdkUtils.unwrapOptional(serviceSlug),
             'api_host': SdkUtils.unwrapOptional(apiHost),
-            'workload_identity_provider': SdkUtils.unwrapOptional(workloadIdentityProvider),
+            'workload_identity_provider':
+                SdkUtils.unwrapOptional(workloadIdentityProvider),
             'service_account': SdkUtils.unwrapOptional(serviceAccount)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'privateRegistriesUpdateOrgPrivateRegistry',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Delete a private registry configuration at the organization-level. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -367,6 +407,9 @@ Future<void> privateRegistriesDeleteOrgPrivateRegistry(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'privateRegistriesDeleteOrgPrivateRegistry',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

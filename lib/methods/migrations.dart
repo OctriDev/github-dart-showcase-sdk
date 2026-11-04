@@ -22,23 +22,28 @@ Future<List<Migration>> migrationsListForOrg(ClientConfig config,
     {required String org,
     SdkOptional<int> perPage = const SdkOmitted(),
     SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<List<MigrationsListForOrgExcludeItem>> exclude = const SdkOmitted(),
+    SdkOptional<List<MigrationsListForOrgExcludeItem>> exclude =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Migration>>(
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/migrations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'exclude': SdkQueryValue(SdkUtils.unwrapOptional(exclude), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'exclude': SdkQueryValue(SdkUtils.unwrapOptional(exclude),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsListForOrg',
-          fromJsonRaw: (value) => (value as List).map((item) => Migration.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Migration.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Starts an organization migration to generate a migration archive. Supply `repositories` to select the repositories to include; the other boolean options default to false when omitted. Set `org_metadata_only` to true and provide an empty `repositories` list to include only organization metadata; a 201 response returns the migration record.
 ///
@@ -73,7 +78,8 @@ Future<Migration> migrationsStartForOrg(ClientConfig config,
     SdkOptional<bool> excludeReleases = const SdkOmitted(),
     SdkOptional<bool> excludeOwnerProjects = const SdkOmitted(),
     SdkOptional<bool> orgMetadataOnly = const SdkOmitted(),
-    SdkOptional<List<MigrationsStartForOrgRequestBodyExcludeItem>> exclude = const SdkOmitted(),
+    SdkOptional<List<MigrationsStartForOrgRequestBodyExcludeItem>> exclude =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Migration>(
           'POST', '/orgs/${Uri.encodeComponent(org.toString())}/migrations',
@@ -85,18 +91,24 @@ Future<Migration> migrationsStartForOrg(ClientConfig config,
             'exclude_git_data': SdkUtils.unwrapOptional(excludeGitData),
             'exclude_attachments': SdkUtils.unwrapOptional(excludeAttachments),
             'exclude_releases': SdkUtils.unwrapOptional(excludeReleases),
-            'exclude_owner_projects': SdkUtils.unwrapOptional(excludeOwnerProjects),
+            'exclude_owner_projects':
+                SdkUtils.unwrapOptional(excludeOwnerProjects),
             'org_metadata_only': SdkUtils.unwrapOptional(orgMetadataOnly),
             'exclude': SdkUtils.unwrapOptional(exclude)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsStartForOrg',
-          fromJsonRaw: (value) => Migration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Migration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Fetches the status of a migration. The `state` of a migration can be one of the following values: * `pending`, which means the migration hasn't started yet. * `exporting`, which means the migration is in progress. * `exported`, which means the migration finished successfully. * `failed`, which means the migration failed.
 ///
@@ -106,22 +118,26 @@ Future<Migration> migrationsStartForOrg(ClientConfig config,
 Future<Migration> migrationsGetStatusForOrg(ClientConfig config,
     {required String org,
     required int migrationId,
-    SdkOptional<List<MigrationsGetStatusForOrgExcludeItem>> exclude = const SdkOmitted(),
+    SdkOptional<List<MigrationsGetStatusForOrgExcludeItem>> exclude =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Migration>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/migrations/${Uri.encodeComponent(migrationId.toString())}',
           config: config,
           query: {
-            'exclude': SdkQueryValue(SdkUtils.unwrapOptional(exclude), style: 'form', explode: true)
+            'exclude': SdkQueryValue(SdkUtils.unwrapOptional(exclude),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsGetStatusForOrg',
-          fromJsonRaw: (value) => Migration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Migration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Retrieves the download URL for an organization's migration archive. Identify the migration with `org` and `migration_id`; the response redirects to the archive URL.
 ///
@@ -139,10 +155,11 @@ Future<void> migrationsDownloadArchiveForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'migrationsDownloadArchiveForOrg',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
 ///
@@ -158,10 +175,11 @@ Future<void> migrationsDeleteArchiveForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'migrationsDeleteArchiveForOrg',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
 ///
@@ -179,10 +197,11 @@ Future<void> migrationsUnlockRepoForOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'migrationsUnlockRepoForOrg',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// List all the repositories for this organization migration.
 ///
@@ -206,17 +225,23 @@ Future<List<MinimalRepository>> migrationsListReposForOrg(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/migrations/${Uri.encodeComponent(migrationId.toString())}/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsListReposForOrg',
-          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  MinimalRepository.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// View the progress of an import. &gt; [!WARNING] &gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation). **Import status** This section includes details about the possible values of the `status` field of the Import Progress response. An import that does not have errors will progress through these steps: * `detecting` - the "detection" step of the import is in progress because the request did not include a `vcs` parameter. The import is identifying the type of source control present at the URL. * `importing` - the "raw" step of the import is in progress. This is where commit data is fetched from the original repository. The import progress response will include `commit_count` (the total number of raw commits that will be imported) and `percent` (0 - 100, the current progress through the import). * `mapping` - the "rewrite" step of the import is in progress. This is where SVN branches are converted to Git branches, and where author updates are applied. The import progress response does not include progress information. * `pushing` - the "push" step of the import is in progress. This is where the importer updates the repository on GitHub. The import progress response will include `push_percent`, which is the percent value reported by `git push` when it is "Writing objects". * `complete` - the import is complete, and the repository is ready on GitHub. If there are problems, you will see one of these in the `status` field: * `auth_failed` - the import requires authentication in order to connect to the original repository. To update authentication for the import, please see the [Update an import](https://docs.github.com/rest/migrations/source-imports#update-an-import) section. * `error` - the import encountered an error. The import progress…
 ///
@@ -234,12 +259,15 @@ Future<Import> migrationsGetImportStatus(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsGetImportStatus',
-          fromJsonRaw: (value) => Import.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Import.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Start a source import to a GitHub repository using GitHub Importer. Importing into a GitHub repository with GitHub Actions enabled is not supported and will return a status `422 Unprocessable Entity` response. &gt; [!WARNING] &gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 ///
@@ -279,12 +307,18 @@ Future<Import> migrationsStartImport(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsStartImport',
-          fromJsonRaw: (value) => Import.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Import.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// An import can be updated with credentials or a project choice by passing in the appropriate parameters in this API request. If no parameters are provided, the import will be restarted. Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array. You can select the project to import by providing one of the objects in the `project_choices` array in the update request. &gt; [!WARNING] &gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 ///
@@ -317,12 +351,14 @@ Future<Import> migrationsUpdateImport(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsUpdateImport',
-          fromJsonRaw: (value) => Import.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Import.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Stop an import for a repository. &gt; [!WARNING] &gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 ///
@@ -341,10 +377,11 @@ Future<void> migrationsCancelImport(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'migrationsCancelImport',
           options: requestOptions,
-          errors: {'503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot &lt;hubot@12341234-abab-fefe-8787-fedcba987654&gt;`. This endpoint and the [Map a commit author](https://docs.github.com/rest/migrations/source-imports#map-a-commit-author) endpoint allow you to provide correct Git author information. &gt; [!WARNING] &gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 ///
@@ -363,16 +400,23 @@ Future<List<PorterAuthor>> migrationsGetCommitAuthors(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/import/authors',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsGetCommitAuthors',
-          fromJsonRaw: (value) => (value as List).map((item) => PorterAuthor.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map(
+                  (item) => PorterAuthor.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates the Git identity mapped to a commit author in an imported repository. Use `email` and `name` to change the author's identity before pushing new commits. This operation is closing down and will be removed on April 12, 2024.
 ///
@@ -401,12 +445,18 @@ Future<PorterAuthor> migrationsMapCommitAuthor(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsMapCommitAuthor',
-          fromJsonRaw: (value) => PorterAuthor.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              PorterAuthor.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// List files larger than 100MB found during the import &gt; [!WARNING] &gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 ///
@@ -426,10 +476,11 @@ Future<List<PorterLargeFile>> migrationsGetLargeFiles(ClientConfig config,
           operationId: 'migrationsGetLargeFiles',
           fromJsonRaw: (value) => (value as List).map((item) => PorterLargeFile.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This ability is powered by [Git LFS](https://git-lfs.com). You can learn more about our LFS feature and working with large files [on our help site](https://docs.github.com/repositories/working-with-files/managing-large-files). &gt; [!WARNING] &gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 ///
@@ -452,12 +503,16 @@ Future<Import> migrationsSetLfsPreference(ClientConfig config,
           body: {'use_lfs': useLfs},
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsSetLfsPreference',
-          fromJsonRaw: (value) => Import.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Import.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists migrations started by the authenticated user, including their state and repository details when available. Use `page` and `per_page` to paginate the results; `per_page` defaults to 30 and is capped at 100.
 ///
@@ -478,17 +533,24 @@ Future<List<Migration>> migrationsListForAuthenticatedUser(ClientConfig config,
   return (await sdkRequest<List<Migration>>('GET', '/user/migrations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsListForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List).map((item) => Migration.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Migration.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Starts a migration for the authenticated user using the specified repositories. Set `org_metadata_only` to true to include only organization metadata; in this mode, `repositories` must be empty and other flags are ignored. A 201 response returns the created migration record.
 ///
@@ -516,7 +578,8 @@ Future<Migration> migrationsStartForAuthenticatedUser(ClientConfig config,
     SdkOptional<bool> excludeReleases = const SdkOmitted(),
     SdkOptional<bool> excludeOwnerProjects = const SdkOmitted(),
     SdkOptional<bool> orgMetadataOnly = const SdkOmitted(),
-    SdkOptional<List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>> exclude = const SdkOmitted(),
+    SdkOptional<List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>>
+        exclude = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Migration>('POST', '/user/migrations',
           config: config,
@@ -527,18 +590,26 @@ Future<Migration> migrationsStartForAuthenticatedUser(ClientConfig config,
             'exclude_git_data': SdkUtils.unwrapOptional(excludeGitData),
             'exclude_attachments': SdkUtils.unwrapOptional(excludeAttachments),
             'exclude_releases': SdkUtils.unwrapOptional(excludeReleases),
-            'exclude_owner_projects': SdkUtils.unwrapOptional(excludeOwnerProjects),
+            'exclude_owner_projects':
+                SdkUtils.unwrapOptional(excludeOwnerProjects),
             'org_metadata_only': SdkUtils.unwrapOptional(orgMetadataOnly),
             'exclude': SdkUtils.unwrapOptional(exclude)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsStartForAuthenticatedUser',
-          fromJsonRaw: (value) => Migration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Migration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Retrieves the status and details of a user migration. Use `migration_id` to identify the migration, and check `state` to see whether it is pending, exporting, exported, or failed. Once the migration is exported, download its archive using the user migration archive endpoint.
 ///
@@ -553,16 +624,23 @@ Future<Migration> migrationsGetStatusForAuthenticatedUser(ClientConfig config,
           '/user/migrations/${Uri.encodeComponent(migrationId.toString())}',
           config: config,
           query: {
-            'exclude': SdkQueryValue(SdkUtils.unwrapOptional(exclude), style: 'form', explode: true)
+            'exclude': SdkQueryValue(SdkUtils.unwrapOptional(exclude),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsGetStatusForAuthenticatedUser',
-          fromJsonRaw: (value) => Migration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Migration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects: * attachments * bases * commit\_comments * issue\_comments * issue\_events * issues * milestones * organizations * projects * protected\_branches * pull\_request\_reviews * pull\_requests * releases * repositories * review\_comments * schema * users The archive will also contain an `attachments` directory that includes all attachment files uploaded to GitHub.com and a `repositories` directory that contains the repository's Git data.
 ///
@@ -575,10 +653,12 @@ Future<void> migrationsGetArchiveForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'migrationsGetArchiveForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/migrations/users#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/migrations/users#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
 ///
@@ -591,10 +671,13 @@ Future<void> migrationsDeleteArchiveForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'migrationsDeleteArchiveForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
 ///
@@ -610,10 +693,13 @@ Future<void> migrationsUnlockRepoForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'migrationsUnlockRepoForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all the repositories for this user migration.
 ///
@@ -626,23 +712,30 @@ Future<void> migrationsUnlockRepoForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<MinimalRepository>>
-    migrationsListReposForAuthenticatedUser(ClientConfig config,
-        {required int migrationId,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<MinimalRepository>> migrationsListReposForAuthenticatedUser(
+    ClientConfig config,
+    {required int migrationId,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<MinimalRepository>>('GET',
           '/user/migrations/${Uri.encodeComponent(migrationId.toString())}/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'migrationsListReposForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  MinimalRepository.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }

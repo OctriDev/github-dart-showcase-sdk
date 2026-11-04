@@ -5,261 +5,414 @@ part of 'webhook_pull_request_dequeued.dart';
 
 // webhook_pull_request_dequeued domain models
 /// Required object value serialized in the `comments` wire field.
-class WebhookPullRequestDequeuedPullRequestLinksComments implements SdkJsonModel {
+class WebhookPullRequestDequeuedPullRequestLinksComments
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestDequeuedPullRequestLinksComments({required this.href});
+  const WebhookPullRequestDequeuedPullRequestLinksComments(
+      {required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksComments Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksComments _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksComments(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksComments.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksComments(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksComments.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksComments(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `commits` wire field.
-class WebhookPullRequestDequeuedPullRequestLinksCommits implements SdkJsonModel {
+class WebhookPullRequestDequeuedPullRequestLinksCommits
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhookPullRequestDequeuedPullRequestLinksCommits({required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksCommits Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksCommits Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksCommits _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksCommits(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksCommits _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksCommits(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksCommits.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksCommits(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksCommits.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksCommits(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `html` wire field.
 class WebhookPullRequestDequeuedPullRequestLinksHtml implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhookPullRequestDequeuedPullRequestLinksHtml({required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksHtml Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksHtml Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksHtml _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksHtml _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksHtml.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksHtml(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksHtml.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksHtml(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `issue` wire field.
 class WebhookPullRequestDequeuedPullRequestLinksIssue implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhookPullRequestDequeuedPullRequestLinksIssue({required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksIssue Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksIssue Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksIssue _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksIssue(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksIssue _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksIssue(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksIssue.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksIssue(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksIssue.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksIssue(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `review_comment` wire field.
-class WebhookPullRequestDequeuedPullRequestLinksReviewComment implements SdkJsonModel {
+class WebhookPullRequestDequeuedPullRequestLinksReviewComment
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestDequeuedPullRequestLinksReviewComment({required this.href});
+  const WebhookPullRequestDequeuedPullRequestLinksReviewComment(
+      {required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksReviewComment Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksReviewComment Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksReviewComment _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksReviewComment(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksReviewComment _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksReviewComment(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksReviewComment.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksReviewComment(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksReviewComment.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksReviewComment(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `review_comments` wire field.
-class WebhookPullRequestDequeuedPullRequestLinksReviewComments implements SdkJsonModel {
+class WebhookPullRequestDequeuedPullRequestLinksReviewComments
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestDequeuedPullRequestLinksReviewComments({required this.href});
+  const WebhookPullRequestDequeuedPullRequestLinksReviewComments(
+      {required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksReviewComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksReviewComments Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksReviewComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksReviewComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksReviewComments _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksReviewComments(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksReviewComments(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksReviewComments.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksReviewComments(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `self` wire field.
 class WebhookPullRequestDequeuedPullRequestLinksSelf implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhookPullRequestDequeuedPullRequestLinksSelf({required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksSelf Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksSelf Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksSelf _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksSelf(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksSelf _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksSelf(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksSelf.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksSelf(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksSelf.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksSelf(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `statuses` wire field.
-class WebhookPullRequestDequeuedPullRequestLinksStatuses implements SdkJsonModel {
+class WebhookPullRequestDequeuedPullRequestLinksStatuses
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestDequeuedPullRequestLinksStatuses({required this.href});
+  const WebhookPullRequestDequeuedPullRequestLinksStatuses(
+      {required this.href});
 
-  WebhookPullRequestDequeuedPullRequestLinksStatuses Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinksStatuses Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinksStatuses _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinksStatuses(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestDequeuedPullRequestLinksStatuses _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinksStatuses(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinksStatuses.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinksStatuses(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinksStatuses.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinksStatuses(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class WebhookPullRequestDequeuedPullRequestLinks implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `comments` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksComments comments;
+
   /// Required object value serialized in the `commits` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksCommits commits;
+
   /// Required object value serialized in the `html` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksHtml html;
+
   /// Required object value serialized in the `issue` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksIssue issue;
+
   /// Required object value serialized in the `review_comment` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksReviewComment reviewComment;
+
   /// Required object value serialized in the `review_comments` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksReviewComments reviewComments;
+
   /// Required object value serialized in the `self` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksSelf self;
+
   /// Required object value serialized in the `statuses` wire field.
   final WebhookPullRequestDequeuedPullRequestLinksStatuses statuses;
 
-  const WebhookPullRequestDequeuedPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses});
+  const WebhookPullRequestDequeuedPullRequestLinks(
+      {required this.comments,
+      required this.commits,
+      required this.html,
+      required this.issue,
+      required this.reviewComment,
+      required this.reviewComments,
+      required this.self,
+      required this.statuses});
 
-  WebhookPullRequestDequeuedPullRequestLinks Function({WebhookPullRequestDequeuedPullRequestLinksComments comments, WebhookPullRequestDequeuedPullRequestLinksCommits commits, WebhookPullRequestDequeuedPullRequestLinksHtml html, WebhookPullRequestDequeuedPullRequestLinksIssue issue, WebhookPullRequestDequeuedPullRequestLinksReviewComment reviewComment, WebhookPullRequestDequeuedPullRequestLinksReviewComments reviewComments, WebhookPullRequestDequeuedPullRequestLinksSelf self, WebhookPullRequestDequeuedPullRequestLinksStatuses statuses}) get copyWith => _copyWith;
+  WebhookPullRequestDequeuedPullRequestLinks Function(
+      {WebhookPullRequestDequeuedPullRequestLinksComments comments,
+      WebhookPullRequestDequeuedPullRequestLinksCommits commits,
+      WebhookPullRequestDequeuedPullRequestLinksHtml html,
+      WebhookPullRequestDequeuedPullRequestLinksIssue issue,
+      WebhookPullRequestDequeuedPullRequestLinksReviewComment reviewComment,
+      WebhookPullRequestDequeuedPullRequestLinksReviewComments reviewComments,
+      WebhookPullRequestDequeuedPullRequestLinksSelf self,
+      WebhookPullRequestDequeuedPullRequestLinksStatuses
+          statuses}) get copyWith => _copyWith;
 
-  WebhookPullRequestDequeuedPullRequestLinks _copyWith({Object? comments = sdkOmittedValue, Object? commits = sdkOmittedValue, Object? html = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? reviewComment = sdkOmittedValue, Object? reviewComments = sdkOmittedValue, Object? self = sdkOmittedValue, Object? statuses = sdkOmittedValue}) => WebhookPullRequestDequeuedPullRequestLinks(
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as WebhookPullRequestDequeuedPullRequestLinksComments,
-    commits: identical(commits, sdkOmittedValue) ? this.commits : commits as WebhookPullRequestDequeuedPullRequestLinksCommits,
-    html: identical(html, sdkOmittedValue) ? this.html : html as WebhookPullRequestDequeuedPullRequestLinksHtml,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as WebhookPullRequestDequeuedPullRequestLinksIssue,
-    reviewComment: identical(reviewComment, sdkOmittedValue) ? this.reviewComment : reviewComment as WebhookPullRequestDequeuedPullRequestLinksReviewComment,
-    reviewComments: identical(reviewComments, sdkOmittedValue) ? this.reviewComments : reviewComments as WebhookPullRequestDequeuedPullRequestLinksReviewComments,
-    self: identical(self, sdkOmittedValue) ? this.self : self as WebhookPullRequestDequeuedPullRequestLinksSelf,
-    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as WebhookPullRequestDequeuedPullRequestLinksStatuses,
-  );
+  WebhookPullRequestDequeuedPullRequestLinks _copyWith(
+          {Object? comments = sdkOmittedValue,
+          Object? commits = sdkOmittedValue,
+          Object? html = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? reviewComment = sdkOmittedValue,
+          Object? reviewComments = sdkOmittedValue,
+          Object? self = sdkOmittedValue,
+          Object? statuses = sdkOmittedValue}) =>
+      WebhookPullRequestDequeuedPullRequestLinks(
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments as WebhookPullRequestDequeuedPullRequestLinksComments,
+        commits: identical(commits, sdkOmittedValue)
+            ? this.commits
+            : commits as WebhookPullRequestDequeuedPullRequestLinksCommits,
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as WebhookPullRequestDequeuedPullRequestLinksHtml,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue as WebhookPullRequestDequeuedPullRequestLinksIssue,
+        reviewComment: identical(reviewComment, sdkOmittedValue)
+            ? this.reviewComment
+            : reviewComment
+                as WebhookPullRequestDequeuedPullRequestLinksReviewComment,
+        reviewComments: identical(reviewComments, sdkOmittedValue)
+            ? this.reviewComments
+            : reviewComments
+                as WebhookPullRequestDequeuedPullRequestLinksReviewComments,
+        self: identical(self, sdkOmittedValue)
+            ? this.self
+            : self as WebhookPullRequestDequeuedPullRequestLinksSelf,
+        statuses: identical(statuses, sdkOmittedValue)
+            ? this.statuses
+            : statuses as WebhookPullRequestDequeuedPullRequestLinksStatuses,
+      );
 
-  factory WebhookPullRequestDequeuedPullRequestLinks.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestDequeuedPullRequestLinks(
-    comments: (json['comments'] != null ? WebhookPullRequestDequeuedPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>) : null)!,
-    commits: (json['commits'] != null ? WebhookPullRequestDequeuedPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>) : null)!,
-    html: (json['html'] != null ? WebhookPullRequestDequeuedPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    issue: (json['issue'] != null ? WebhookPullRequestDequeuedPullRequestLinksIssue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
-    reviewComment: (json['review_comment'] != null ? WebhookPullRequestDequeuedPullRequestLinksReviewComment.fromJson(json['review_comment'] as Map<String, dynamic>) : null)!,
-    reviewComments: (json['review_comments'] != null ? WebhookPullRequestDequeuedPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>) : null)!,
-    self: (json['self'] != null ? WebhookPullRequestDequeuedPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!,
-    statuses: (json['statuses'] != null ? WebhookPullRequestDequeuedPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>) : null)!,
-  ), json);
+  factory WebhookPullRequestDequeuedPullRequestLinks.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestDequeuedPullRequestLinks(
+            comments: (json['comments'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksComments.fromJson(
+                    json['comments'] as Map<String, dynamic>)
+                : null)!,
+            commits: (json['commits'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksCommits.fromJson(
+                    json['commits'] as Map<String, dynamic>)
+                : null)!,
+            html: (json['html'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksHtml.fromJson(
+                    json['html'] as Map<String, dynamic>)
+                : null)!,
+            issue: (json['issue'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksIssue.fromJson(
+                    json['issue'] as Map<String, dynamic>)
+                : null)!,
+            reviewComment: (json['review_comment'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksReviewComment
+                    .fromJson(json['review_comment'] as Map<String, dynamic>)
+                : null)!,
+            reviewComments: (json['review_comments'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksReviewComments
+                    .fromJson(json['review_comments'] as Map<String, dynamic>)
+                : null)!,
+            self: (json['self'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksSelf.fromJson(
+                    json['self'] as Map<String, dynamic>)
+                : null)!,
+            statuses: (json['statuses'] != null
+                ? WebhookPullRequestDequeuedPullRequestLinksStatuses.fromJson(
+                    json['statuses'] as Map<String, dynamic>)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'comments': comments.toJson(),
-    'commits': commits.toJson(),
-    'html': html.toJson(),
-    'issue': issue.toJson(),
-    'review_comment': reviewComment.toJson(),
-    'review_comments': reviewComments.toJson(),
-    'self': self.toJson(),
-    'statuses': statuses.toJson(),
-  };
+        'comments': comments.toJson(),
+        'commits': commits.toJson(),
+        'html': html.toJson(),
+        'issue': issue.toJson(),
+        'review_comment': reviewComment.toJson(),
+        'review_comments': reviewComments.toJson(),
+        'self': self.toJson(),
+        'statuses': statuses.toJson(),
+      };
 }

@@ -8,6 +8,7 @@ part of 'issues_issue.dart';
 class IssueEventMilestone implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
 
@@ -15,16 +16,20 @@ class IssueEventMilestone implements SdkJsonModel {
 
   IssueEventMilestone Function({String title}) get copyWith => _copyWith;
 
-  IssueEventMilestone _copyWith({Object? title = sdkOmittedValue}) => IssueEventMilestone(
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-  );
+  IssueEventMilestone _copyWith({Object? title = sdkOmittedValue}) =>
+      IssueEventMilestone(
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+      );
 
-  factory IssueEventMilestone.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(IssueEventMilestone(
-    title: (json['title'] as String?)!,
-  ), json);
+  factory IssueEventMilestone.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          IssueEventMilestone(
+            title: (json['title'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'title': title,
-  };
+        'title': title,
+      };
 }

@@ -8,26 +8,41 @@ part of 'actions_actions_cache.dart';
 class ActionsCacheStorageLimitForOrganization implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// For repositories in the organization, the maximum size limit for the sum of all caches in a repository, in gigabytes.
   final SdkOptional<int> maxCacheSizeGb;
 
-  const ActionsCacheStorageLimitForOrganization({this.maxCacheSizeGb = const SdkOmitted()});
+  const ActionsCacheStorageLimitForOrganization(
+      {this.maxCacheSizeGb = const SdkOmitted()});
 
-  ActionsCacheStorageLimitForOrganization Function({SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
+  ActionsCacheStorageLimitForOrganization Function(
+      {SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
 
-  ActionsCacheStorageLimitForOrganization _copyWith({Object? maxCacheSizeGb = sdkOmittedValue}) => ActionsCacheStorageLimitForOrganization(
-    maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue) ? this.maxCacheSizeGb : maxCacheSizeGb as SdkOptional<int>,
-  );
+  ActionsCacheStorageLimitForOrganization _copyWith(
+          {Object? maxCacheSizeGb = sdkOmittedValue}) =>
+      ActionsCacheStorageLimitForOrganization(
+        maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue)
+            ? this.maxCacheSizeGb
+            : maxCacheSizeGb as SdkOptional<int>,
+      );
 
-  factory ActionsCacheStorageLimitForOrganization.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsCacheStorageLimitForOrganization(
-    maxCacheSizeGb: json['max_cache_size_gb'] != null ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!) : const SdkOmitted(),
-  ), json);
+  factory ActionsCacheStorageLimitForOrganization.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsCacheStorageLimitForOrganization(
+            maxCacheSizeGb: json['max_cache_size_gb'] != null
+                ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (maxCacheSizeGb) {
-      SdkPresent<int>(value: final value) => {'max_cache_size_gb': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (maxCacheSizeGb) {
+          SdkPresent<int>(value: final value) => {
+              'max_cache_size_gb': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

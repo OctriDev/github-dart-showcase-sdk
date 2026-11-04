@@ -4,14 +4,20 @@
 part of 'webhook_pull_request_review_thread_unresolved.dart';
 
 // webhook_pull_request_review_thread_unresolved domain models
-final class WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtInt extends WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtInt
+    extends WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAt {
   final int value;
-  const WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtString extends WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtString
+    extends WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAt {
   final String value;
-  const WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoPushedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

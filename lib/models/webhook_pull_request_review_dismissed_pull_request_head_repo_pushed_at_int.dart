@@ -4,14 +4,20 @@
 part of 'webhook_pull_request_review_dismissed.dart';
 
 // webhook_pull_request_review_dismissed domain models
-final class WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtInt extends WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtInt
+    extends WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAt {
   final int value;
-  const WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtString extends WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAt {
+final class WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtString
+    extends WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAt {
   final String value;
-  const WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewDismissedPullRequestHeadRepoPushedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

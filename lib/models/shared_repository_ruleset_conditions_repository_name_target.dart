@@ -5,70 +5,127 @@ part of 'shared_repository.dart';
 
 // shared_repository domain models
 /// Required object value serialized in the `repository_name` wire field.
-class RepositoryRulesetConditionsRepositoryNameTargetRepositoryName implements SdkJsonModel {
+class RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Array of repository names or patterns to include. One of these patterns must match for the condition to pass. Also accepts `~ALL` to include all repositories.
   final SdkOptional<List<String>> include;
+
   /// Array of repository names or patterns to exclude. The condition will not pass if any of these patterns match.
   final SdkOptional<List<String>> exclude;
+
   /// Whether renaming of target repositories is prevented.
   final SdkOptional<bool> protected;
 
-  const RepositoryRulesetConditionsRepositoryNameTargetRepositoryName({this.include = const SdkOmitted(), this.exclude = const SdkOmitted(), this.protected = const SdkOmitted()});
+  const RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
+      {this.include = const SdkOmitted(),
+      this.exclude = const SdkOmitted(),
+      this.protected = const SdkOmitted()});
 
-  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName Function({SdkOptional<List<String>> include, SdkOptional<List<String>> exclude, SdkOptional<bool> protected}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName Function(
+      {SdkOptional<List<String>> include,
+      SdkOptional<List<String>> exclude,
+      SdkOptional<bool> protected}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName _copyWith({Object? include = sdkOmittedValue, Object? exclude = sdkOmittedValue, Object? protected = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
-    include: identical(include, sdkOmittedValue) ? this.include : include as SdkOptional<List<String>>,
-    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<String>>,
-    protected: identical(protected, sdkOmittedValue) ? this.protected : protected as SdkOptional<bool>,
-  );
+  RepositoryRulesetConditionsRepositoryNameTargetRepositoryName _copyWith(
+          {Object? include = sdkOmittedValue,
+          Object? exclude = sdkOmittedValue,
+          Object? protected = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
+        include: identical(include, sdkOmittedValue)
+            ? this.include
+            : include as SdkOptional<List<String>>,
+        exclude: identical(exclude, sdkOmittedValue)
+            ? this.exclude
+            : exclude as SdkOptional<List<String>>,
+        protected: identical(protected, sdkOmittedValue)
+            ? this.protected
+            : protected as SdkOptional<bool>,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
-    include: json['include'] != null ? SdkPresent(((json['include'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    protected: json['protected'] != null ? SdkPresent((json['protected'] as bool?)!) : const SdkOmitted(),
-  ), json);
+  factory RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
+            include: json['include'] != null
+                ? SdkPresent(((json['include'] as List?)
+                    ?.map((e) => e as String)
+                    .toList())!)
+                : const SdkOmitted(),
+            exclude: json['exclude'] != null
+                ? SdkPresent(((json['exclude'] as List?)
+                    ?.map((e) => e as String)
+                    .toList())!)
+                : const SdkOmitted(),
+            protected: json['protected'] != null
+                ? SdkPresent((json['protected'] as bool?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (include) {
-      SdkPresent<List<String>>(value: final value) => {'include': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (exclude) {
-      SdkPresent<List<String>>(value: final value) => {'exclude': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (protected) {
-      SdkPresent<bool>(value: final value) => {'protected': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (include) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (exclude) {
+          SdkPresent<List<String>>(value: final value) => {
+              'exclude': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (protected) {
+          SdkPresent<bool>(value: final value) => {
+              'protected': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Parameters for a repository name condition
 class RepositoryRulesetConditionsRepositoryNameTarget implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `repository_name` wire field.
-  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName;
+  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
+      repositoryName;
 
-  const RepositoryRulesetConditionsRepositoryNameTarget({required this.repositoryName});
+  const RepositoryRulesetConditionsRepositoryNameTarget(
+      {required this.repositoryName});
 
-  RepositoryRulesetConditionsRepositoryNameTarget Function({RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName}) get copyWith => _copyWith;
+  RepositoryRulesetConditionsRepositoryNameTarget Function(
+      {RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
+          repositoryName}) get copyWith => _copyWith;
 
-  RepositoryRulesetConditionsRepositoryNameTarget _copyWith({Object? repositoryName = sdkOmittedValue}) => RepositoryRulesetConditionsRepositoryNameTarget(
-    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
-  );
+  RepositoryRulesetConditionsRepositoryNameTarget _copyWith(
+          {Object? repositoryName = sdkOmittedValue}) =>
+      RepositoryRulesetConditionsRepositoryNameTarget(
+        repositoryName: identical(repositoryName, sdkOmittedValue)
+            ? this.repositoryName
+            : repositoryName
+                as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
+      );
 
-  factory RepositoryRulesetConditionsRepositoryNameTarget.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(RepositoryRulesetConditionsRepositoryNameTarget(
-    repositoryName: (json['repository_name'] != null ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(json['repository_name'] as Map<String, dynamic>) : null)!,
-  ), json);
+  factory RepositoryRulesetConditionsRepositoryNameTarget.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          RepositoryRulesetConditionsRepositoryNameTarget(
+            repositoryName: (json['repository_name'] != null
+                ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
+                    .fromJson(json['repository_name'] as Map<String, dynamic>)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'repository_name': repositoryName.toJson(),
-  };
+        'repository_name': repositoryName.toJson(),
+      };
 }

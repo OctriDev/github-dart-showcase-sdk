@@ -12,12 +12,15 @@ class PublicEvent implements SdkJsonModel {
 
   const PublicEvent({this.additionalProperties = const <String, dynamic>{}});
 
-  factory PublicEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PublicEvent(
-    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{}.contains(key)),
-  ), json);
+  factory PublicEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      PublicEvent(
+        additionalProperties: Map.of(json)
+          ..removeWhere((key, _) => const <String>{}.contains(key)),
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...additionalProperties,
-  };
+        ...additionalProperties,
+      };
 }

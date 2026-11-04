@@ -20,6 +20,10 @@ Future<Map<String, dynamic>> credentialsRevoke(ClientConfig config,
           operationId: 'credentialsRevoke',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }

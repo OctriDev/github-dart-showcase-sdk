@@ -8,6 +8,7 @@ part of 'webhook_ping_form_encoded.dart';
 class WebhookPingFormEncoded implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A URL-encoded string of the ping JSON payload. The decoded payload is a JSON object.
   final String payload;
 
@@ -15,16 +16,22 @@ class WebhookPingFormEncoded implements SdkJsonModel {
 
   WebhookPingFormEncoded Function({String payload}) get copyWith => _copyWith;
 
-  WebhookPingFormEncoded _copyWith({Object? payload = sdkOmittedValue}) => WebhookPingFormEncoded(
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String,
-  );
+  WebhookPingFormEncoded _copyWith({Object? payload = sdkOmittedValue}) =>
+      WebhookPingFormEncoded(
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as String,
+      );
 
-  factory WebhookPingFormEncoded.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPingFormEncoded(
-    payload: (json['payload'] as String?)!,
-  ), json);
+  factory WebhookPingFormEncoded.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPingFormEncoded(
+            payload: (json['payload'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'payload': payload,
-  };
+        'payload': payload,
+      };
 }

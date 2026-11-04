@@ -8,6 +8,7 @@ part of 'webhooks.dart';
 class WebhooksChangesBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The previous version of the body.
   final String from;
 
@@ -15,44 +16,62 @@ class WebhooksChangesBody implements SdkJsonModel {
 
   WebhooksChangesBody Function({String from}) get copyWith => _copyWith;
 
-  WebhooksChangesBody _copyWith({Object? from = sdkOmittedValue}) => WebhooksChangesBody(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-  );
+  WebhooksChangesBody _copyWith({Object? from = sdkOmittedValue}) =>
+      WebhooksChangesBody(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+      );
 
-  factory WebhooksChangesBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksChangesBody(
-    from: (json['from'] as String?)!,
-  ), json);
+  factory WebhooksChangesBody.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksChangesBody(
+            from: (json['from'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'from': from,
-  };
+        'from': from,
+      };
 }
 
 /// The changes to the comment.
 class WebhooksChanges implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `body` wire field.
   final SdkOptional<WebhooksChangesBody> body;
 
   const WebhooksChanges({this.body = const SdkOmitted()});
 
-  WebhooksChanges Function({SdkOptional<WebhooksChangesBody> body}) get copyWith => _copyWith;
+  WebhooksChanges Function({SdkOptional<WebhooksChangesBody> body})
+      get copyWith => _copyWith;
 
-  WebhooksChanges _copyWith({Object? body = sdkOmittedValue}) => WebhooksChanges(
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<WebhooksChangesBody>,
-  );
+  WebhooksChanges _copyWith({Object? body = sdkOmittedValue}) =>
+      WebhooksChanges(
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<WebhooksChangesBody>,
+      );
 
-  factory WebhooksChanges.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksChanges(
-    body: json['body'] != null ? SdkPresent((json['body'] != null ? WebhooksChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  ), json);
+  factory WebhooksChanges.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      WebhooksChanges(
+        body: json['body'] != null
+            ? SdkPresent((json['body'] != null
+                ? WebhooksChangesBody.fromJson(
+                    json['body'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (body) {
-      SdkPresent<WebhooksChangesBody>(value: final value) => {'body': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (body) {
+          SdkPresent<WebhooksChangesBody>(value: final value) => {
+              'body': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

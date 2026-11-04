@@ -5,56 +5,62 @@ part of 'inline.dart';
 
 // Inline operation models
 final class PullsListReviewCommentsDirection {
-
   final String value;
 
   const PullsListReviewCommentsDirection._(this.value);
 
-  factory PullsListReviewCommentsDirection.fromJson(String value) => PullsListReviewCommentsDirection._(value);
+  factory PullsListReviewCommentsDirection.fromJson(String value) =>
+      PullsListReviewCommentsDirection._(value);
 
   static const asc = PullsListReviewCommentsDirection._('asc');
   static const desc = PullsListReviewCommentsDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListReviewCommentsDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListReviewCommentsDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
 final class PullsCreateReviewCommentRequestBodySide {
-
   final String value;
 
   const PullsCreateReviewCommentRequestBodySide._(this.value);
 
-  factory PullsCreateReviewCommentRequestBodySide.fromJson(String value) => PullsCreateReviewCommentRequestBodySide._(value);
+  factory PullsCreateReviewCommentRequestBodySide.fromJson(String value) =>
+      PullsCreateReviewCommentRequestBodySide._(value);
 
   static const left = PullsCreateReviewCommentRequestBodySide._('LEFT');
   static const right = PullsCreateReviewCommentRequestBodySide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsCreateReviewCommentRequestBodySide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewCommentRequestBodySide && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
 final class PullsCreateReviewCommentRequestBodyStartSide {
-
   final String value;
 
   const PullsCreateReviewCommentRequestBodyStartSide._(this.value);
 
-  factory PullsCreateReviewCommentRequestBodyStartSide.fromJson(String value) => PullsCreateReviewCommentRequestBodyStartSide._(value);
+  factory PullsCreateReviewCommentRequestBodyStartSide.fromJson(String value) =>
+      PullsCreateReviewCommentRequestBodyStartSide._(value);
 
   static const left = PullsCreateReviewCommentRequestBodyStartSide._('LEFT');
   static const right = PullsCreateReviewCommentRequestBodyStartSide._('RIGHT');
@@ -62,67 +68,81 @@ final class PullsCreateReviewCommentRequestBodyStartSide {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsCreateReviewCommentRequestBodyStartSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewCommentRequestBodyStartSide &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level at which the comment is targeted.
 final class PullsCreateReviewCommentRequestBodySubjectType {
-
   final String value;
 
   const PullsCreateReviewCommentRequestBodySubjectType._(this.value);
 
-  factory PullsCreateReviewCommentRequestBodySubjectType.fromJson(String value) => PullsCreateReviewCommentRequestBodySubjectType._(value);
+  factory PullsCreateReviewCommentRequestBodySubjectType.fromJson(
+          String value) =>
+      PullsCreateReviewCommentRequestBodySubjectType._(value);
 
   static const line = PullsCreateReviewCommentRequestBodySubjectType._('line');
   static const file = PullsCreateReviewCommentRequestBodySubjectType._('file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsCreateReviewCommentRequestBodySubjectType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewCommentRequestBodySubjectType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The action that will be taken to merge the pull request. `direct_merge` merges the pull request directly without using a merge queue; `merge_queue` adds the pull request to a merge queue; `default` uses a merge queue if one is configured for the target branch, or merges directly otherwise. If omitted, defaults to `default`.
 final class PullsMergeAsyncRequestBodyMergeAction {
-
   final String value;
 
   const PullsMergeAsyncRequestBodyMergeAction._(this.value);
 
-  factory PullsMergeAsyncRequestBodyMergeAction.fromJson(String value) => PullsMergeAsyncRequestBodyMergeAction._(value);
+  factory PullsMergeAsyncRequestBodyMergeAction.fromJson(String value) =>
+      PullsMergeAsyncRequestBodyMergeAction._(value);
 
   static const default_ = PullsMergeAsyncRequestBodyMergeAction._('default');
-  static const directMerge = PullsMergeAsyncRequestBodyMergeAction._('direct_merge');
-  static const mergeQueue = PullsMergeAsyncRequestBodyMergeAction._('merge_queue');
+  static const directMerge =
+      PullsMergeAsyncRequestBodyMergeAction._('direct_merge');
+  static const mergeQueue =
+      PullsMergeAsyncRequestBodyMergeAction._('merge_queue');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsMergeAsyncRequestBodyMergeAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsMergeAsyncRequestBodyMergeAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The merge method to use for a direct merge. Only supported for direct merges.
 final class PullsMergeAsyncRequestBodyMergeMethod {
-
   final String value;
 
   const PullsMergeAsyncRequestBodyMergeMethod._(this.value);
 
-  factory PullsMergeAsyncRequestBodyMergeMethod.fromJson(String value) => PullsMergeAsyncRequestBodyMergeMethod._(value);
+  factory PullsMergeAsyncRequestBodyMergeMethod.fromJson(String value) =>
+      PullsMergeAsyncRequestBodyMergeMethod._(value);
 
   static const merge = PullsMergeAsyncRequestBodyMergeMethod._('merge');
   static const squash = PullsMergeAsyncRequestBodyMergeMethod._('squash');
@@ -130,22 +150,25 @@ final class PullsMergeAsyncRequestBodyMergeMethod {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsMergeAsyncRequestBodyMergeMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsMergeAsyncRequestBodyMergeMethod && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The merge method to use.
 final class PullsMergeRequestBodyMergeMethod {
-
   final String value;
 
   const PullsMergeRequestBodyMergeMethod._(this.value);
 
-  factory PullsMergeRequestBodyMergeMethod.fromJson(String value) => PullsMergeRequestBodyMergeMethod._(value);
+  factory PullsMergeRequestBodyMergeMethod.fromJson(String value) =>
+      PullsMergeRequestBodyMergeMethod._(value);
 
   static const merge = PullsMergeRequestBodyMergeMethod._('merge');
   static const squash = PullsMergeRequestBodyMergeMethod._('squash');
@@ -153,87 +176,101 @@ final class PullsMergeRequestBodyMergeMethod {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsMergeRequestBodyMergeMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsMergeRequestBodyMergeMethod && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
 final class PullsCreateReviewRequestBodyEvent {
-
   final String value;
 
   const PullsCreateReviewRequestBodyEvent._(this.value);
 
-  factory PullsCreateReviewRequestBodyEvent.fromJson(String value) => PullsCreateReviewRequestBodyEvent._(value);
+  factory PullsCreateReviewRequestBodyEvent.fromJson(String value) =>
+      PullsCreateReviewRequestBodyEvent._(value);
 
   static const approve = PullsCreateReviewRequestBodyEvent._('APPROVE');
-  static const requestChanges = PullsCreateReviewRequestBodyEvent._('REQUEST_CHANGES');
+  static const requestChanges =
+      PullsCreateReviewRequestBodyEvent._('REQUEST_CHANGES');
   static const comment = PullsCreateReviewRequestBodyEvent._('COMMENT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsCreateReviewRequestBodyEvent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewRequestBodyEvent && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsDismissReviewRequestBodyEvent {
-
   final String value;
 
   const PullsDismissReviewRequestBodyEvent._(this.value);
 
-  factory PullsDismissReviewRequestBodyEvent.fromJson(String value) => PullsDismissReviewRequestBodyEvent._(value);
+  factory PullsDismissReviewRequestBodyEvent.fromJson(String value) =>
+      PullsDismissReviewRequestBodyEvent._(value);
 
   static const dismiss = PullsDismissReviewRequestBodyEvent._('DISMISS');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsDismissReviewRequestBodyEvent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsDismissReviewRequestBodyEvent && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
 final class PullsSubmitReviewRequestBodyEvent {
-
   final String value;
 
   const PullsSubmitReviewRequestBodyEvent._(this.value);
 
-  factory PullsSubmitReviewRequestBodyEvent.fromJson(String value) => PullsSubmitReviewRequestBodyEvent._(value);
+  factory PullsSubmitReviewRequestBodyEvent.fromJson(String value) =>
+      PullsSubmitReviewRequestBodyEvent._(value);
 
   static const approve = PullsSubmitReviewRequestBodyEvent._('APPROVE');
-  static const requestChanges = PullsSubmitReviewRequestBodyEvent._('REQUEST_CHANGES');
+  static const requestChanges =
+      PullsSubmitReviewRequestBodyEvent._('REQUEST_CHANGES');
   static const comment = PullsSubmitReviewRequestBodyEvent._('COMMENT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsSubmitReviewRequestBodyEvent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsSubmitReviewRequestBodyEvent && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListReviewCommentsForRepoSort {
-
   final String value;
 
   const PullsListReviewCommentsForRepoSort._(this.value);
 
-  factory PullsListReviewCommentsForRepoSort.fromJson(String value) => PullsListReviewCommentsForRepoSort._(value);
+  factory PullsListReviewCommentsForRepoSort.fromJson(String value) =>
+      PullsListReviewCommentsForRepoSort._(value);
 
   static const created = PullsListReviewCommentsForRepoSort._('created');
   static const updated = PullsListReviewCommentsForRepoSort._('updated');
@@ -241,31 +278,37 @@ final class PullsListReviewCommentsForRepoSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListReviewCommentsForRepoSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListReviewCommentsForRepoSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListReviewCommentsForRepoDirection {
-
   final String value;
 
   const PullsListReviewCommentsForRepoDirection._(this.value);
 
-  factory PullsListReviewCommentsForRepoDirection.fromJson(String value) => PullsListReviewCommentsForRepoDirection._(value);
+  factory PullsListReviewCommentsForRepoDirection.fromJson(String value) =>
+      PullsListReviewCommentsForRepoDirection._(value);
 
   static const asc = PullsListReviewCommentsForRepoDirection._('asc');
   static const desc = PullsListReviewCommentsForRepoDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListReviewCommentsForRepoDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListReviewCommentsForRepoDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

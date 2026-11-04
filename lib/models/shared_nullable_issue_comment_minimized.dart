@@ -8,23 +8,34 @@ part of 'shared_nullable.dart';
 class NullableIssueCommentMinimized implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The reason the comment was minimized.
   final String? reason;
 
   const NullableIssueCommentMinimized({required this.reason});
 
-  NullableIssueCommentMinimized Function({String? reason}) get copyWith => _copyWith;
+  NullableIssueCommentMinimized Function({String? reason}) get copyWith =>
+      _copyWith;
 
-  NullableIssueCommentMinimized _copyWith({Object? reason = sdkOmittedValue}) => NullableIssueCommentMinimized(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as String?,
-  );
+  NullableIssueCommentMinimized _copyWith({Object? reason = sdkOmittedValue}) =>
+      NullableIssueCommentMinimized(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as String?,
+      );
 
-  factory NullableIssueCommentMinimized.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(NullableIssueCommentMinimized(
-    reason: json.containsKey('reason') ? json['reason'] as String? : throw ArgumentError.value(null, 'reason', 'Required property is missing'),
-  ), json);
+  factory NullableIssueCommentMinimized.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          NullableIssueCommentMinimized(
+            reason: json.containsKey('reason')
+                ? json['reason'] as String?
+                : throw ArgumentError.value(
+                    null, 'reason', 'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'reason': reason,
-  };
+        'reason': reason,
+      };
 }

@@ -8,58 +8,120 @@ part of 'dependency_graph.dart';
 class Dependency implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.
   final SdkOptional<String> packageUrl;
+
   /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
   final SdkOptional<Map<String, dynamic>> metadata;
+
   /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
   final SdkOptional<DependencyRelationship> relationship;
+
   /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
   final SdkOptional<DependencyScope> scope;
+
   /// Array of package-url (PURLs) of direct child dependencies.
   final SdkOptional<List<String>> dependencies;
 
-  const Dependency({this.packageUrl = const SdkOmitted(), this.metadata = const SdkOmitted(), this.relationship = const SdkOmitted(), this.scope = const SdkOmitted(), this.dependencies = const SdkOmitted()});
+  const Dependency(
+      {this.packageUrl = const SdkOmitted(),
+      this.metadata = const SdkOmitted(),
+      this.relationship = const SdkOmitted(),
+      this.scope = const SdkOmitted(),
+      this.dependencies = const SdkOmitted()});
 
-  Dependency Function({SdkOptional<String> packageUrl, SdkOptional<Map<String, dynamic>> metadata, SdkOptional<DependencyRelationship> relationship, SdkOptional<DependencyScope> scope, SdkOptional<List<String>> dependencies}) get copyWith => _copyWith;
+  Dependency Function(
+      {SdkOptional<String> packageUrl,
+      SdkOptional<Map<String, dynamic>> metadata,
+      SdkOptional<DependencyRelationship> relationship,
+      SdkOptional<DependencyScope> scope,
+      SdkOptional<List<String>> dependencies}) get copyWith => _copyWith;
 
-  Dependency _copyWith({Object? packageUrl = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? relationship = sdkOmittedValue, Object? scope = sdkOmittedValue, Object? dependencies = sdkOmittedValue}) => Dependency(
-    packageUrl: identical(packageUrl, sdkOmittedValue) ? this.packageUrl : packageUrl as SdkOptional<String>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, dynamic>>,
-    relationship: identical(relationship, sdkOmittedValue) ? this.relationship : relationship as SdkOptional<DependencyRelationship>,
-    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<DependencyScope>,
-    dependencies: identical(dependencies, sdkOmittedValue) ? this.dependencies : dependencies as SdkOptional<List<String>>,
-  );
+  Dependency _copyWith(
+          {Object? packageUrl = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? relationship = sdkOmittedValue,
+          Object? scope = sdkOmittedValue,
+          Object? dependencies = sdkOmittedValue}) =>
+      Dependency(
+        packageUrl: identical(packageUrl, sdkOmittedValue)
+            ? this.packageUrl
+            : packageUrl as SdkOptional<String>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, dynamic>>,
+        relationship: identical(relationship, sdkOmittedValue)
+            ? this.relationship
+            : relationship as SdkOptional<DependencyRelationship>,
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope as SdkOptional<DependencyScope>,
+        dependencies: identical(dependencies, sdkOmittedValue)
+            ? this.dependencies
+            : dependencies as SdkOptional<List<String>>,
+      );
 
-  factory Dependency.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(Dependency(
-    packageUrl: json['package_url'] != null ? SdkPresent((json['package_url'] as String?)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : json['metadata'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    relationship: json['relationship'] != null ? SdkPresent((json['relationship'] != null ? DependencyRelationship.fromJson(json['relationship'] as String) : null)!) : const SdkOmitted(),
-    scope: json['scope'] != null ? SdkPresent((json['scope'] != null ? DependencyScope.fromJson(json['scope'] as String) : null)!) : const SdkOmitted(),
-    dependencies: json['dependencies'] != null ? SdkPresent(((json['dependencies'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  ), json);
+  factory Dependency.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      Dependency(
+        packageUrl: json['package_url'] != null
+            ? SdkPresent((json['package_url'] as String?)!)
+            : const SdkOmitted(),
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] == null
+                ? null
+                : json['metadata'] as Map<String, dynamic>)!)
+            : const SdkOmitted(),
+        relationship: json['relationship'] != null
+            ? SdkPresent((json['relationship'] != null
+                ? DependencyRelationship.fromJson(
+                    json['relationship'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        scope: json['scope'] != null
+            ? SdkPresent((json['scope'] != null
+                ? DependencyScope.fromJson(json['scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        dependencies: json['dependencies'] != null
+            ? SdkPresent(((json['dependencies'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (packageUrl) {
-      SdkPresent<String>(value: final value) => {'package_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<Map<String, dynamic>>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (relationship) {
-      SdkPresent<DependencyRelationship>(value: final value) => {'relationship': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (scope) {
-      SdkPresent<DependencyScope>(value: final value) => {'scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dependencies) {
-      SdkPresent<List<String>>(value: final value) => {'dependencies': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (packageUrl) {
+          SdkPresent<String>(value: final value) => {
+              'package_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<Map<String, dynamic>>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (relationship) {
+          SdkPresent<DependencyRelationship>(value: final value) => {
+              'relationship': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (scope) {
+          SdkPresent<DependencyScope>(value: final value) => {
+              'scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dependencies) {
+          SdkPresent<List<String>>(value: final value) => {
+              'dependencies': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

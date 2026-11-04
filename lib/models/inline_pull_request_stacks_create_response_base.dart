@@ -11,20 +11,27 @@ class PullRequestStacksCreateResponseBase implements SdkJsonModel {
 
   const PullRequestStacksCreateResponseBase({required this.ref});
 
-  PullRequestStacksCreateResponseBase Function({String ref}) get copyWith => _copyWith;
+  PullRequestStacksCreateResponseBase Function({String ref}) get copyWith =>
+      _copyWith;
 
-  PullRequestStacksCreateResponseBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStacksCreateResponseBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStacksCreateResponseBase _copyWith(
+          {Object? ref = sdkOmittedValue}) =>
+      PullRequestStacksCreateResponseBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStacksCreateResponseBase.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksCreateResponseBase(
-    ref: (json['ref'] as String?)!,
-  ), json);
+  factory PullRequestStacksCreateResponseBase.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksCreateResponseBase(
+            ref: (json['ref'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }
 
 class PullRequestStacksCreateResponse implements SdkJsonModel {
@@ -35,48 +42,92 @@ class PullRequestStacksCreateResponse implements SdkJsonModel {
   final String nodeId;
   final String url;
   final PullRequestStacksCreateResponseBase base_;
+
   /// Whether the stack has any open pull request. False when all pull requests are merged or closed.
   final bool open;
   final String createdAt;
   final List<PullRequestStackPullRequest> pullRequests;
 
-  const PullRequestStacksCreateResponse({required this.id, required this.number, required this.nodeId, required this.url, required this.base_, required this.open, required this.createdAt, required this.pullRequests});
+  const PullRequestStacksCreateResponse(
+      {required this.id,
+      required this.number,
+      required this.nodeId,
+      required this.url,
+      required this.base_,
+      required this.open,
+      required this.createdAt,
+      required this.pullRequests});
 
-  PullRequestStacksCreateResponse Function({int id, int number, String nodeId, String url, PullRequestStacksCreateResponseBase base_, bool open, String createdAt, List<PullRequestStackPullRequest> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksCreateResponse Function(
+          {int id,
+          int number,
+          String nodeId,
+          String url,
+          PullRequestStacksCreateResponseBase base_,
+          bool open,
+          String createdAt,
+          List<PullRequestStackPullRequest> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksCreateResponse _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? open = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? pullRequests = sdkOmittedValue}) => PullRequestStacksCreateResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStacksCreateResponseBase,
-    open: identical(open, sdkOmittedValue) ? this.open : open as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestStackPullRequest>,
-  );
+  PullRequestStacksCreateResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? open = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksCreateResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as PullRequestStacksCreateResponseBase,
+        open: identical(open, sdkOmittedValue) ? this.open : open as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<PullRequestStackPullRequest>,
+      );
 
-  factory PullRequestStacksCreateResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksCreateResponse(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    base_: (json['base'] != null ? PullRequestStacksCreateResponseBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    open: (json['open'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory PullRequestStacksCreateResponse.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksCreateResponse(
+            id: ((json['id'] as num?)?.toInt())!,
+            number: ((json['number'] as num?)?.toInt())!,
+            nodeId: (json['node_id'] as String?)!,
+            url: (json['url'] as String?)!,
+            base_: (json['base'] != null
+                ? PullRequestStacksCreateResponseBase.fromJson(
+                    json['base'] as Map<String, dynamic>)
+                : null)!,
+            open: (json['open'] as bool?)!,
+            createdAt: (json['created_at'] as String?)!,
+            pullRequests: ((json['pull_requests'] as List?)
+                ?.map((e) => PullRequestStackPullRequest.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'node_id': nodeId,
-    'url': url,
-    'base': base_.toJson(),
-    'open': open,
-    'created_at': createdAt,
-    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-  };
+        'id': id,
+        'number': number,
+        'node_id': nodeId,
+        'url': url,
+        'base': base_.toJson(),
+        'open': open,
+        'created_at': createdAt,
+        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+      };
 }
 
 class PullRequestStacksGetResponseBase implements SdkJsonModel {
@@ -86,20 +137,26 @@ class PullRequestStacksGetResponseBase implements SdkJsonModel {
 
   const PullRequestStacksGetResponseBase({required this.ref});
 
-  PullRequestStacksGetResponseBase Function({String ref}) get copyWith => _copyWith;
+  PullRequestStacksGetResponseBase Function({String ref}) get copyWith =>
+      _copyWith;
 
-  PullRequestStacksGetResponseBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStacksGetResponseBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStacksGetResponseBase _copyWith({Object? ref = sdkOmittedValue}) =>
+      PullRequestStacksGetResponseBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStacksGetResponseBase.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksGetResponseBase(
-    ref: (json['ref'] as String?)!,
-  ), json);
+  factory PullRequestStacksGetResponseBase.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksGetResponseBase(
+            ref: (json['ref'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }
 
 class PullRequestStacksGetResponse implements SdkJsonModel {
@@ -110,72 +167,127 @@ class PullRequestStacksGetResponse implements SdkJsonModel {
   final String nodeId;
   final String url;
   final PullRequestStacksGetResponseBase base_;
+
   /// Whether the stack has any open pull request. False when all pull requests are merged or closed.
   final bool open;
   final String createdAt;
   final List<PullRequestStackPullRequest> pullRequests;
 
-  const PullRequestStacksGetResponse({required this.id, required this.number, required this.nodeId, required this.url, required this.base_, required this.open, required this.createdAt, required this.pullRequests});
+  const PullRequestStacksGetResponse(
+      {required this.id,
+      required this.number,
+      required this.nodeId,
+      required this.url,
+      required this.base_,
+      required this.open,
+      required this.createdAt,
+      required this.pullRequests});
 
-  PullRequestStacksGetResponse Function({int id, int number, String nodeId, String url, PullRequestStacksGetResponseBase base_, bool open, String createdAt, List<PullRequestStackPullRequest> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksGetResponse Function(
+          {int id,
+          int number,
+          String nodeId,
+          String url,
+          PullRequestStacksGetResponseBase base_,
+          bool open,
+          String createdAt,
+          List<PullRequestStackPullRequest> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksGetResponse _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? open = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? pullRequests = sdkOmittedValue}) => PullRequestStacksGetResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStacksGetResponseBase,
-    open: identical(open, sdkOmittedValue) ? this.open : open as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestStackPullRequest>,
-  );
+  PullRequestStacksGetResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? open = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksGetResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as PullRequestStacksGetResponseBase,
+        open: identical(open, sdkOmittedValue) ? this.open : open as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<PullRequestStackPullRequest>,
+      );
 
-  factory PullRequestStacksGetResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksGetResponse(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    base_: (json['base'] != null ? PullRequestStacksGetResponseBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    open: (json['open'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory PullRequestStacksGetResponse.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksGetResponse(
+            id: ((json['id'] as num?)?.toInt())!,
+            number: ((json['number'] as num?)?.toInt())!,
+            nodeId: (json['node_id'] as String?)!,
+            url: (json['url'] as String?)!,
+            base_: (json['base'] != null
+                ? PullRequestStacksGetResponseBase.fromJson(
+                    json['base'] as Map<String, dynamic>)
+                : null)!,
+            open: (json['open'] as bool?)!,
+            createdAt: (json['created_at'] as String?)!,
+            pullRequests: ((json['pull_requests'] as List?)
+                ?.map((e) => PullRequestStackPullRequest.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'node_id': nodeId,
-    'url': url,
-    'base': base_.toJson(),
-    'open': open,
-    'created_at': createdAt,
-    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-  };
+        'id': id,
+        'number': number,
+        'node_id': nodeId,
+        'url': url,
+        'base': base_.toJson(),
+        'open': open,
+        'created_at': createdAt,
+        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+      };
 }
 
 class PullRequestStacksAddRequestBody implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An ordered list of pull request numbers to append to the stack, from the current top upward.
   final List<int> pullRequests;
 
   const PullRequestStacksAddRequestBody({required this.pullRequests});
 
-  PullRequestStacksAddRequestBody Function({List<int> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksAddRequestBody Function({List<int> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksAddRequestBody _copyWith({Object? pullRequests = sdkOmittedValue}) => PullRequestStacksAddRequestBody(
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<int>,
-  );
+  PullRequestStacksAddRequestBody _copyWith(
+          {Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksAddRequestBody(
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<int>,
+      );
 
-  factory PullRequestStacksAddRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksAddRequestBody(
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  ), json);
+  factory PullRequestStacksAddRequestBody.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksAddRequestBody(
+            pullRequests: ((json['pull_requests'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'pull_requests': pullRequests,
-  };
+        'pull_requests': pullRequests,
+      };
 }
 
 class PullRequestStacksAddResponseBase implements SdkJsonModel {
@@ -185,20 +297,26 @@ class PullRequestStacksAddResponseBase implements SdkJsonModel {
 
   const PullRequestStacksAddResponseBase({required this.ref});
 
-  PullRequestStacksAddResponseBase Function({String ref}) get copyWith => _copyWith;
+  PullRequestStacksAddResponseBase Function({String ref}) get copyWith =>
+      _copyWith;
 
-  PullRequestStacksAddResponseBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStacksAddResponseBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStacksAddResponseBase _copyWith({Object? ref = sdkOmittedValue}) =>
+      PullRequestStacksAddResponseBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStacksAddResponseBase.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksAddResponseBase(
-    ref: (json['ref'] as String?)!,
-  ), json);
+  factory PullRequestStacksAddResponseBase.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksAddResponseBase(
+            ref: (json['ref'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }
 
 class PullRequestStacksAddResponse implements SdkJsonModel {
@@ -209,48 +327,92 @@ class PullRequestStacksAddResponse implements SdkJsonModel {
   final String nodeId;
   final String url;
   final PullRequestStacksAddResponseBase base_;
+
   /// Whether the stack has any open pull request. False when all pull requests are merged or closed.
   final bool open;
   final String createdAt;
   final List<PullRequestStackPullRequest> pullRequests;
 
-  const PullRequestStacksAddResponse({required this.id, required this.number, required this.nodeId, required this.url, required this.base_, required this.open, required this.createdAt, required this.pullRequests});
+  const PullRequestStacksAddResponse(
+      {required this.id,
+      required this.number,
+      required this.nodeId,
+      required this.url,
+      required this.base_,
+      required this.open,
+      required this.createdAt,
+      required this.pullRequests});
 
-  PullRequestStacksAddResponse Function({int id, int number, String nodeId, String url, PullRequestStacksAddResponseBase base_, bool open, String createdAt, List<PullRequestStackPullRequest> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksAddResponse Function(
+          {int id,
+          int number,
+          String nodeId,
+          String url,
+          PullRequestStacksAddResponseBase base_,
+          bool open,
+          String createdAt,
+          List<PullRequestStackPullRequest> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksAddResponse _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? open = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? pullRequests = sdkOmittedValue}) => PullRequestStacksAddResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStacksAddResponseBase,
-    open: identical(open, sdkOmittedValue) ? this.open : open as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestStackPullRequest>,
-  );
+  PullRequestStacksAddResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? open = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksAddResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as PullRequestStacksAddResponseBase,
+        open: identical(open, sdkOmittedValue) ? this.open : open as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<PullRequestStackPullRequest>,
+      );
 
-  factory PullRequestStacksAddResponse.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksAddResponse(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    base_: (json['base'] != null ? PullRequestStacksAddResponseBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    open: (json['open'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory PullRequestStacksAddResponse.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksAddResponse(
+            id: ((json['id'] as num?)?.toInt())!,
+            number: ((json['number'] as num?)?.toInt())!,
+            nodeId: (json['node_id'] as String?)!,
+            url: (json['url'] as String?)!,
+            base_: (json['base'] != null
+                ? PullRequestStacksAddResponseBase.fromJson(
+                    json['base'] as Map<String, dynamic>)
+                : null)!,
+            open: (json['open'] as bool?)!,
+            createdAt: (json['created_at'] as String?)!,
+            pullRequests: ((json['pull_requests'] as List?)
+                ?.map((e) => PullRequestStackPullRequest.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'node_id': nodeId,
-    'url': url,
-    'base': base_.toJson(),
-    'open': open,
-    'created_at': createdAt,
-    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-  };
+        'id': id,
+        'number': number,
+        'node_id': nodeId,
+        'url': url,
+        'base': base_.toJson(),
+        'open': open,
+        'created_at': createdAt,
+        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+      };
 }
 
 class PullRequestStacksUnstackResponseBase implements SdkJsonModel {
@@ -260,18 +422,25 @@ class PullRequestStacksUnstackResponseBase implements SdkJsonModel {
 
   const PullRequestStacksUnstackResponseBase({required this.ref});
 
-  PullRequestStacksUnstackResponseBase Function({String ref}) get copyWith => _copyWith;
+  PullRequestStacksUnstackResponseBase Function({String ref}) get copyWith =>
+      _copyWith;
 
-  PullRequestStacksUnstackResponseBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStacksUnstackResponseBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStacksUnstackResponseBase _copyWith(
+          {Object? ref = sdkOmittedValue}) =>
+      PullRequestStacksUnstackResponseBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStacksUnstackResponseBase.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(PullRequestStacksUnstackResponseBase(
-    ref: (json['ref'] as String?)!,
-  ), json);
+  factory PullRequestStacksUnstackResponseBase.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          PullRequestStacksUnstackResponseBase(
+            ref: (json['ref'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }

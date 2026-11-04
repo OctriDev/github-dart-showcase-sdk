@@ -8,23 +8,34 @@ part of 'secret_scanning.dart';
 class SecretScanningLocationDiscussionComment implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the discussion comment where the secret was detected.
   final String discussionCommentUrl;
 
-  const SecretScanningLocationDiscussionComment({required this.discussionCommentUrl});
+  const SecretScanningLocationDiscussionComment(
+      {required this.discussionCommentUrl});
 
-  SecretScanningLocationDiscussionComment Function({String discussionCommentUrl}) get copyWith => _copyWith;
+  SecretScanningLocationDiscussionComment Function(
+      {String discussionCommentUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationDiscussionComment _copyWith({Object? discussionCommentUrl = sdkOmittedValue}) => SecretScanningLocationDiscussionComment(
-    discussionCommentUrl: identical(discussionCommentUrl, sdkOmittedValue) ? this.discussionCommentUrl : discussionCommentUrl as String,
-  );
+  SecretScanningLocationDiscussionComment _copyWith(
+          {Object? discussionCommentUrl = sdkOmittedValue}) =>
+      SecretScanningLocationDiscussionComment(
+        discussionCommentUrl: identical(discussionCommentUrl, sdkOmittedValue)
+            ? this.discussionCommentUrl
+            : discussionCommentUrl as String,
+      );
 
-  factory SecretScanningLocationDiscussionComment.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(SecretScanningLocationDiscussionComment(
-    discussionCommentUrl: (json['discussion_comment_url'] as String?)!,
-  ), json);
+  factory SecretScanningLocationDiscussionComment.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          SecretScanningLocationDiscussionComment(
+            discussionCommentUrl: (json['discussion_comment_url'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'discussion_comment_url': discussionCommentUrl,
-  };
+        'discussion_comment_url': discussionCommentUrl,
+      };
 }

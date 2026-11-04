@@ -10,24 +10,44 @@ sealed class NullableIntegrationOwner {
   const NullableIntegrationOwner();
   factory NullableIntegrationOwner.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableIntegrationOwnerSimpleUser(value); } } catch (_) {}
-      try { final value = Enterprise.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableIntegrationOwnerEnterprise(value); } } catch (_) {}
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return NullableIntegrationOwnerSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = Enterprise.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return NullableIntegrationOwnerEnterprise(value);
+        }
+      } catch (_) {}
     }
-    try { return NullableIntegrationOwnerSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableIntegrationOwnerEnterprise(Enterprise.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return NullableIntegrationOwnerSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableIntegrationOwnerEnterprise(
+          Enterprise.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for NullableIntegrationOwner");
   }
   Object? toJson();
 }
 
-final class NullableIntegrationOwnerSimpleUser extends NullableIntegrationOwner {
+final class NullableIntegrationOwnerSimpleUser
+    extends NullableIntegrationOwner {
   final SimpleUser value;
   const NullableIntegrationOwnerSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableIntegrationOwnerEnterprise extends NullableIntegrationOwner {
+final class NullableIntegrationOwnerEnterprise
+    extends NullableIntegrationOwner {
   final Enterprise value;
   const NullableIntegrationOwnerEnterprise(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

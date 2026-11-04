@@ -8,8 +8,10 @@ part of 'git.dart';
 class ShortBlob implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
@@ -17,19 +19,23 @@ class ShortBlob implements SdkJsonModel {
 
   ShortBlob Function({String url, String sha}) get copyWith => _copyWith;
 
-  ShortBlob _copyWith({Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue}) => ShortBlob(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  ShortBlob _copyWith(
+          {Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      ShortBlob(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory ShortBlob.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ShortBlob(
-    url: (json['url'] as String?)!,
-    sha: (json['sha'] as String?)!,
-  ), json);
+  factory ShortBlob.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      ShortBlob(
+        url: (json['url'] as String?)!,
+        sha: (json['sha'] as String?)!,
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'sha': sha,
-  };
+        'url': url,
+        'sha': sha,
+      };
 }

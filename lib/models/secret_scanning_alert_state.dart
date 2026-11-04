@@ -6,22 +6,25 @@ part of 'secret_scanning.dart';
 // secret_scanning domain models
 /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
 final class SecretScanningAlertState {
-
   final String value;
 
   const SecretScanningAlertState._(this.value);
 
-  factory SecretScanningAlertState.fromJson(String value) => SecretScanningAlertState._(value);
+  factory SecretScanningAlertState.fromJson(String value) =>
+      SecretScanningAlertState._(value);
 
   static const open = SecretScanningAlertState._('open');
   static const resolved = SecretScanningAlertState._('resolved');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningAlertState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningAlertState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

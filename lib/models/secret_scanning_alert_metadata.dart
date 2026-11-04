@@ -8,30 +8,39 @@ part of 'secret_scanning.dart';
 class SecretScanningAlertMetadataItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The metadata key.
   final String key;
+
   /// The metadata value.
   final String value;
 
-  const SecretScanningAlertMetadataItem({required this.key, required this.value});
+  const SecretScanningAlertMetadataItem(
+      {required this.key, required this.value});
 
-  SecretScanningAlertMetadataItem Function({String key, String value}) get copyWith => _copyWith;
+  SecretScanningAlertMetadataItem Function({String key, String value})
+      get copyWith => _copyWith;
 
-  SecretScanningAlertMetadataItem _copyWith({Object? key = sdkOmittedValue, Object? value = sdkOmittedValue}) => SecretScanningAlertMetadataItem(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-  );
+  SecretScanningAlertMetadataItem _copyWith(
+          {Object? key = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      SecretScanningAlertMetadataItem(
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+      );
 
-  factory SecretScanningAlertMetadataItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(SecretScanningAlertMetadataItem(
-    key: (json['key'] as String?)!,
-    value: (json['value'] as String?)!,
-  ), json);
+  factory SecretScanningAlertMetadataItem.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          SecretScanningAlertMetadataItem(
+            key: (json['key'] as String?)!,
+            value: (json['value'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'value': value,
-  };
+        'key': key,
+        'value': value,
+      };
 }
 
 // SecretScanningAlertMetadata = List<SecretScanningAlertMetadataItem>

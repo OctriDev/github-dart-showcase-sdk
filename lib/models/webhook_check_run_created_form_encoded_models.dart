@@ -8,23 +8,33 @@ part of 'webhook_check_run_created_form_encoded.dart';
 class WebhookCheckRunCreatedFormEncoded implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A URL-encoded string of the check_run.created JSON payload. The decoded payload is a JSON object.
   final String payload;
 
   const WebhookCheckRunCreatedFormEncoded({required this.payload});
 
-  WebhookCheckRunCreatedFormEncoded Function({String payload}) get copyWith => _copyWith;
+  WebhookCheckRunCreatedFormEncoded Function({String payload}) get copyWith =>
+      _copyWith;
 
-  WebhookCheckRunCreatedFormEncoded _copyWith({Object? payload = sdkOmittedValue}) => WebhookCheckRunCreatedFormEncoded(
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String,
-  );
+  WebhookCheckRunCreatedFormEncoded _copyWith(
+          {Object? payload = sdkOmittedValue}) =>
+      WebhookCheckRunCreatedFormEncoded(
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as String,
+      );
 
-  factory WebhookCheckRunCreatedFormEncoded.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookCheckRunCreatedFormEncoded(
-    payload: (json['payload'] as String?)!,
-  ), json);
+  factory WebhookCheckRunCreatedFormEncoded.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookCheckRunCreatedFormEncoded(
+            payload: (json['payload'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'payload': payload,
-  };
+        'payload': payload,
+      };
 }

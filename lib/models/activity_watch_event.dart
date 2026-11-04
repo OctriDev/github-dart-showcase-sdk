@@ -8,6 +8,7 @@ part of 'activity.dart';
 class WatchEvent implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `action` wire field.
   final String action;
 
@@ -16,15 +17,18 @@ class WatchEvent implements SdkJsonModel {
   WatchEvent Function({String action}) get copyWith => _copyWith;
 
   WatchEvent _copyWith({Object? action = sdkOmittedValue}) => WatchEvent(
-    action: identical(action, sdkOmittedValue) ? this.action : action as String,
-  );
+        action:
+            identical(action, sdkOmittedValue) ? this.action : action as String,
+      );
 
-  factory WatchEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WatchEvent(
-    action: (json['action'] as String?)!,
-  ), json);
+  factory WatchEvent.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(
+      WatchEvent(
+        action: (json['action'] as String?)!,
+      ),
+      json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'action': action,
-  };
+        'action': action,
+      };
 }

@@ -8,208 +8,321 @@ part of 'webhooks.dart';
 class WebhooksSecurityAdvisoryCvss implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `number` value serialized in the `score` wire field.
   final double score;
+
   /// Required `string` value serialized in the `vector_string` wire field.
   final String? vectorString;
 
-  const WebhooksSecurityAdvisoryCvss({required this.score, required this.vectorString});
+  const WebhooksSecurityAdvisoryCvss(
+      {required this.score, required this.vectorString});
 
-  WebhooksSecurityAdvisoryCvss Function({double score, String? vectorString}) get copyWith => _copyWith;
+  WebhooksSecurityAdvisoryCvss Function({double score, String? vectorString})
+      get copyWith => _copyWith;
 
-  WebhooksSecurityAdvisoryCvss _copyWith({Object? score = sdkOmittedValue, Object? vectorString = sdkOmittedValue}) => WebhooksSecurityAdvisoryCvss(
-    score: identical(score, sdkOmittedValue) ? this.score : score as double,
-    vectorString: identical(vectorString, sdkOmittedValue) ? this.vectorString : vectorString as String?,
-  );
+  WebhooksSecurityAdvisoryCvss _copyWith(
+          {Object? score = sdkOmittedValue,
+          Object? vectorString = sdkOmittedValue}) =>
+      WebhooksSecurityAdvisoryCvss(
+        score: identical(score, sdkOmittedValue) ? this.score : score as double,
+        vectorString: identical(vectorString, sdkOmittedValue)
+            ? this.vectorString
+            : vectorString as String?,
+      );
 
-  factory WebhooksSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksSecurityAdvisoryCvss(
-    score: ((json['score'] as num?)?.toDouble())!,
-    vectorString: json.containsKey('vector_string') ? json['vector_string'] as String? : throw ArgumentError.value(null, 'vector_string', 'Required property is missing'),
-  ), json);
+  factory WebhooksSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksSecurityAdvisoryCvss(
+            score: ((json['score'] as num?)?.toDouble())!,
+            vectorString: json.containsKey('vector_string')
+                ? json['vector_string'] as String?
+                : throw ArgumentError.value(
+                    null, 'vector_string', 'Required property is missing'),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'score': score,
-    'vector_string': vectorString,
-  };
+        'score': score,
+        'vector_string': vectorString,
+      };
 }
 
 /// Required object value serialized in the `cwes[]` wire field.
 class WebhooksSecurityAdvisoryCwesItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `cwe_id` wire field.
   final String cweId;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
 
-  const WebhooksSecurityAdvisoryCwesItem({required this.cweId, required this.name});
+  const WebhooksSecurityAdvisoryCwesItem(
+      {required this.cweId, required this.name});
 
-  WebhooksSecurityAdvisoryCwesItem Function({String cweId, String name}) get copyWith => _copyWith;
+  WebhooksSecurityAdvisoryCwesItem Function({String cweId, String name})
+      get copyWith => _copyWith;
 
-  WebhooksSecurityAdvisoryCwesItem _copyWith({Object? cweId = sdkOmittedValue, Object? name = sdkOmittedValue}) => WebhooksSecurityAdvisoryCwesItem(
-    cweId: identical(cweId, sdkOmittedValue) ? this.cweId : cweId as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  WebhooksSecurityAdvisoryCwesItem _copyWith(
+          {Object? cweId = sdkOmittedValue, Object? name = sdkOmittedValue}) =>
+      WebhooksSecurityAdvisoryCwesItem(
+        cweId: identical(cweId, sdkOmittedValue) ? this.cweId : cweId as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
-  factory WebhooksSecurityAdvisoryCwesItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksSecurityAdvisoryCwesItem(
-    cweId: (json['cwe_id'] as String?)!,
-    name: (json['name'] as String?)!,
-  ), json);
+  factory WebhooksSecurityAdvisoryCwesItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksSecurityAdvisoryCwesItem(
+            cweId: (json['cwe_id'] as String?)!,
+            name: (json['name'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'cwe_id': cweId,
-    'name': name,
-  };
+        'cwe_id': cweId,
+        'name': name,
+      };
 }
 
 /// Required object value serialized in the `identifiers[]` wire field.
 class WebhooksSecurityAdvisoryIdentifiersItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `string` value serialized in the `value` wire field.
   final String value;
 
-  const WebhooksSecurityAdvisoryIdentifiersItem({required this.type_, required this.value});
+  const WebhooksSecurityAdvisoryIdentifiersItem(
+      {required this.type_, required this.value});
 
-  WebhooksSecurityAdvisoryIdentifiersItem Function({String type_, String value}) get copyWith => _copyWith;
+  WebhooksSecurityAdvisoryIdentifiersItem Function({String type_, String value})
+      get copyWith => _copyWith;
 
-  WebhooksSecurityAdvisoryIdentifiersItem _copyWith({Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => WebhooksSecurityAdvisoryIdentifiersItem(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-  );
+  WebhooksSecurityAdvisoryIdentifiersItem _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      WebhooksSecurityAdvisoryIdentifiersItem(
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+      );
 
-  factory WebhooksSecurityAdvisoryIdentifiersItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksSecurityAdvisoryIdentifiersItem(
-    type_: (json['type'] as String?)!,
-    value: (json['value'] as String?)!,
-  ), json);
+  factory WebhooksSecurityAdvisoryIdentifiersItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksSecurityAdvisoryIdentifiersItem(
+            type_: (json['type'] as String?)!,
+            value: (json['value'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': type_,
-    'value': value,
-  };
+        'type': type_,
+        'value': value,
+      };
 }
 
 /// Required object value serialized in the `references[]` wire field.
 class WebhooksSecurityAdvisoryReferencesItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
   const WebhooksSecurityAdvisoryReferencesItem({required this.url});
 
-  WebhooksSecurityAdvisoryReferencesItem Function({String url}) get copyWith => _copyWith;
+  WebhooksSecurityAdvisoryReferencesItem Function({String url}) get copyWith =>
+      _copyWith;
 
-  WebhooksSecurityAdvisoryReferencesItem _copyWith({Object? url = sdkOmittedValue}) => WebhooksSecurityAdvisoryReferencesItem(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhooksSecurityAdvisoryReferencesItem _copyWith(
+          {Object? url = sdkOmittedValue}) =>
+      WebhooksSecurityAdvisoryReferencesItem(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhooksSecurityAdvisoryReferencesItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksSecurityAdvisoryReferencesItem(
-    url: (json['url'] as String?)!,
-  ), json);
+  factory WebhooksSecurityAdvisoryReferencesItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksSecurityAdvisoryReferencesItem(
+            url: (json['url'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'url': url,
-  };
+        'url': url,
+      };
 }
 
 /// Required object value serialized in the `first_patched_version` wire field.
-class WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion implements SdkJsonModel {
+class WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `identifier` wire field.
   final String identifier;
 
-  const WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion({required this.identifier});
+  const WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion(
+      {required this.identifier});
 
-  WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion Function({String identifier}) get copyWith => _copyWith;
+  WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion Function(
+      {String identifier}) get copyWith => _copyWith;
 
-  WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion _copyWith({Object? identifier = sdkOmittedValue}) => WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion(
-    identifier: identical(identifier, sdkOmittedValue) ? this.identifier : identifier as String,
-  );
+  WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion _copyWith(
+          {Object? identifier = sdkOmittedValue}) =>
+      WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion(
+        identifier: identical(identifier, sdkOmittedValue)
+            ? this.identifier
+            : identifier as String,
+      );
 
-  factory WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion(
-    identifier: (json['identifier'] as String?)!,
-  ), json);
+  factory WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion(
+            identifier: (json['identifier'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'identifier': identifier,
-  };
+        'identifier': identifier,
+      };
 }
 
 /// Required object value serialized in the `package` wire field.
-class WebhooksSecurityAdvisoryVulnerabilitiesItemPackage implements SdkJsonModel {
+class WebhooksSecurityAdvisoryVulnerabilitiesItemPackage
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `ecosystem` wire field.
   final String ecosystem;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
 
-  const WebhooksSecurityAdvisoryVulnerabilitiesItemPackage({required this.ecosystem, required this.name});
+  const WebhooksSecurityAdvisoryVulnerabilitiesItemPackage(
+      {required this.ecosystem, required this.name});
 
-  WebhooksSecurityAdvisoryVulnerabilitiesItemPackage Function({String ecosystem, String name}) get copyWith => _copyWith;
+  WebhooksSecurityAdvisoryVulnerabilitiesItemPackage Function(
+      {String ecosystem, String name}) get copyWith => _copyWith;
 
-  WebhooksSecurityAdvisoryVulnerabilitiesItemPackage _copyWith({Object? ecosystem = sdkOmittedValue, Object? name = sdkOmittedValue}) => WebhooksSecurityAdvisoryVulnerabilitiesItemPackage(
-    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  WebhooksSecurityAdvisoryVulnerabilitiesItemPackage _copyWith(
+          {Object? ecosystem = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      WebhooksSecurityAdvisoryVulnerabilitiesItemPackage(
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
-  factory WebhooksSecurityAdvisoryVulnerabilitiesItemPackage.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksSecurityAdvisoryVulnerabilitiesItemPackage(
-    ecosystem: (json['ecosystem'] as String?)!,
-    name: (json['name'] as String?)!,
-  ), json);
+  factory WebhooksSecurityAdvisoryVulnerabilitiesItemPackage.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksSecurityAdvisoryVulnerabilitiesItemPackage(
+            ecosystem: (json['ecosystem'] as String?)!,
+            name: (json['name'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'ecosystem': ecosystem,
-    'name': name,
-  };
+        'ecosystem': ecosystem,
+        'name': name,
+      };
 }
 
 /// Required object value serialized in the `vulnerabilities[]` wire field.
 class WebhooksSecurityAdvisoryVulnerabilitiesItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `first_patched_version` wire field.
-  final WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion? firstPatchedVersion;
+  final WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion?
+      firstPatchedVersion;
+
   /// Required object value serialized in the `package` wire field.
   final WebhooksSecurityAdvisoryVulnerabilitiesItemPackage package;
+
   /// Required `string` value serialized in the `severity` wire field.
   final String severity;
+
   /// Required `string` value serialized in the `vulnerable_version_range` wire field.
   final String vulnerableVersionRange;
 
-  const WebhooksSecurityAdvisoryVulnerabilitiesItem({required this.firstPatchedVersion, required this.package, required this.severity, required this.vulnerableVersionRange});
+  const WebhooksSecurityAdvisoryVulnerabilitiesItem(
+      {required this.firstPatchedVersion,
+      required this.package,
+      required this.severity,
+      required this.vulnerableVersionRange});
 
-  WebhooksSecurityAdvisoryVulnerabilitiesItem Function({WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion? firstPatchedVersion, WebhooksSecurityAdvisoryVulnerabilitiesItemPackage package, String severity, String vulnerableVersionRange}) get copyWith => _copyWith;
+  WebhooksSecurityAdvisoryVulnerabilitiesItem Function(
+      {WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion?
+          firstPatchedVersion,
+      WebhooksSecurityAdvisoryVulnerabilitiesItemPackage package,
+      String severity,
+      String vulnerableVersionRange}) get copyWith => _copyWith;
 
-  WebhooksSecurityAdvisoryVulnerabilitiesItem _copyWith({Object? firstPatchedVersion = sdkOmittedValue, Object? package = sdkOmittedValue, Object? severity = sdkOmittedValue, Object? vulnerableVersionRange = sdkOmittedValue}) => WebhooksSecurityAdvisoryVulnerabilitiesItem(
-    firstPatchedVersion: identical(firstPatchedVersion, sdkOmittedValue) ? this.firstPatchedVersion : firstPatchedVersion as WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion?,
-    package: identical(package, sdkOmittedValue) ? this.package : package as WebhooksSecurityAdvisoryVulnerabilitiesItemPackage,
-    severity: identical(severity, sdkOmittedValue) ? this.severity : severity as String,
-    vulnerableVersionRange: identical(vulnerableVersionRange, sdkOmittedValue) ? this.vulnerableVersionRange : vulnerableVersionRange as String,
-  );
+  WebhooksSecurityAdvisoryVulnerabilitiesItem _copyWith(
+          {Object? firstPatchedVersion = sdkOmittedValue,
+          Object? package = sdkOmittedValue,
+          Object? severity = sdkOmittedValue,
+          Object? vulnerableVersionRange = sdkOmittedValue}) =>
+      WebhooksSecurityAdvisoryVulnerabilitiesItem(
+        firstPatchedVersion: identical(firstPatchedVersion, sdkOmittedValue)
+            ? this.firstPatchedVersion
+            : firstPatchedVersion
+                as WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion?,
+        package: identical(package, sdkOmittedValue)
+            ? this.package
+            : package as WebhooksSecurityAdvisoryVulnerabilitiesItemPackage,
+        severity: identical(severity, sdkOmittedValue)
+            ? this.severity
+            : severity as String,
+        vulnerableVersionRange:
+            identical(vulnerableVersionRange, sdkOmittedValue)
+                ? this.vulnerableVersionRange
+                : vulnerableVersionRange as String,
+      );
 
-  factory WebhooksSecurityAdvisoryVulnerabilitiesItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhooksSecurityAdvisoryVulnerabilitiesItem(
-    firstPatchedVersion: json.containsKey('first_patched_version') ? json['first_patched_version'] != null ? WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion.fromJson(json['first_patched_version'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'first_patched_version', 'Required property is missing'),
-    package: (json['package'] != null ? WebhooksSecurityAdvisoryVulnerabilitiesItemPackage.fromJson(json['package'] as Map<String, dynamic>) : null)!,
-    severity: (json['severity'] as String?)!,
-    vulnerableVersionRange: (json['vulnerable_version_range'] as String?)!,
-  ), json);
+  factory WebhooksSecurityAdvisoryVulnerabilitiesItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhooksSecurityAdvisoryVulnerabilitiesItem(
+            firstPatchedVersion: json.containsKey('first_patched_version')
+                ? json['first_patched_version'] != null
+                    ? WebhooksSecurityAdvisoryVulnerabilitiesItemFirstPatchedVersion
+                        .fromJson(json['first_patched_version']
+                            as Map<String, dynamic>)
+                    : null
+                : throw ArgumentError.value(null, 'first_patched_version',
+                    'Required property is missing'),
+            package: (json['package'] != null
+                ? WebhooksSecurityAdvisoryVulnerabilitiesItemPackage.fromJson(
+                    json['package'] as Map<String, dynamic>)
+                : null)!,
+            severity: (json['severity'] as String?)!,
+            vulnerableVersionRange:
+                (json['vulnerable_version_range'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'first_patched_version': firstPatchedVersion?.toJson(),
-    'package': package.toJson(),
-    'severity': severity,
-    'vulnerable_version_range': vulnerableVersionRange,
-  };
+        'first_patched_version': firstPatchedVersion?.toJson(),
+        'package': package.toJson(),
+        'severity': severity,
+        'vulnerable_version_range': vulnerableVersionRange,
+      };
 }

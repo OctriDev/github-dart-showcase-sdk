@@ -8,8 +8,10 @@ part of 'issues_issue.dart';
 class IssueEventRename implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `from` wire field.
   final String from;
+
   /// Required `string` value serialized in the `to` wire field.
   final String to;
 
@@ -17,19 +19,24 @@ class IssueEventRename implements SdkJsonModel {
 
   IssueEventRename Function({String from, String to}) get copyWith => _copyWith;
 
-  IssueEventRename _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => IssueEventRename(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-    to: identical(to, sdkOmittedValue) ? this.to : to as String,
-  );
+  IssueEventRename _copyWith(
+          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
+      IssueEventRename(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+        to: identical(to, sdkOmittedValue) ? this.to : to as String,
+      );
 
-  factory IssueEventRename.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(IssueEventRename(
-    from: (json['from'] as String?)!,
-    to: (json['to'] as String?)!,
-  ), json);
+  factory IssueEventRename.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          IssueEventRename(
+            from: (json['from'] as String?)!,
+            to: (json['to'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'from': from,
-    'to': to,
-  };
+        'from': from,
+        'to': to,
+      };
 }

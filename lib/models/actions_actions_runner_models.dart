@@ -8,88 +8,134 @@ part of 'actions_actions_runner.dart';
 class ActionsRunnerJitconfig implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A self hosted runner
   final Runner runner;
+
   /// The base64 encoded runner configuration.
   final String encodedJitConfig;
 
-  const ActionsRunnerJitconfig({required this.runner, required this.encodedJitConfig});
+  const ActionsRunnerJitconfig(
+      {required this.runner, required this.encodedJitConfig});
 
-  ActionsRunnerJitconfig Function({Runner runner, String encodedJitConfig}) get copyWith => _copyWith;
+  ActionsRunnerJitconfig Function({Runner runner, String encodedJitConfig})
+      get copyWith => _copyWith;
 
-  ActionsRunnerJitconfig _copyWith({Object? runner = sdkOmittedValue, Object? encodedJitConfig = sdkOmittedValue}) => ActionsRunnerJitconfig(
-    runner: identical(runner, sdkOmittedValue) ? this.runner : runner as Runner,
-    encodedJitConfig: identical(encodedJitConfig, sdkOmittedValue) ? this.encodedJitConfig : encodedJitConfig as String,
-  );
+  ActionsRunnerJitconfig _copyWith(
+          {Object? runner = sdkOmittedValue,
+          Object? encodedJitConfig = sdkOmittedValue}) =>
+      ActionsRunnerJitconfig(
+        runner:
+            identical(runner, sdkOmittedValue) ? this.runner : runner as Runner,
+        encodedJitConfig: identical(encodedJitConfig, sdkOmittedValue)
+            ? this.encodedJitConfig
+            : encodedJitConfig as String,
+      );
 
-  factory ActionsRunnerJitconfig.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsRunnerJitconfig(
-    runner: (json['runner'] != null ? Runner.fromJson(json['runner'] as Map<String, dynamic>) : null)!,
-    encodedJitConfig: (json['encoded_jit_config'] as String?)!,
-  ), json);
+  factory ActionsRunnerJitconfig.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsRunnerJitconfig(
+            runner: (json['runner'] != null
+                ? Runner.fromJson(json['runner'] as Map<String, dynamic>)
+                : null)!,
+            encodedJitConfig: (json['encoded_jit_config'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'runner': runner.toJson(),
-    'encoded_jit_config': encodedJitConfig,
-  };
+        'runner': runner.toJson(),
+        'encoded_jit_config': encodedJitConfig,
+      };
 }
 
 /// Typed representation of the `ActionsRunnerLabels` API schema.
 class ActionsRunnerLabels implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Required array value serialized in the `labels` wire field.
   final List<RunnerLabel> labels;
 
   const ActionsRunnerLabels({required this.totalCount, required this.labels});
 
-  ActionsRunnerLabels Function({int totalCount, List<RunnerLabel> labels}) get copyWith => _copyWith;
+  ActionsRunnerLabels Function({int totalCount, List<RunnerLabel> labels})
+      get copyWith => _copyWith;
 
-  ActionsRunnerLabels _copyWith({Object? totalCount = sdkOmittedValue, Object? labels = sdkOmittedValue}) => ActionsRunnerLabels(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<RunnerLabel>,
-  );
+  ActionsRunnerLabels _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? labels = sdkOmittedValue}) =>
+      ActionsRunnerLabels(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<RunnerLabel>,
+      );
 
-  factory ActionsRunnerLabels.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsRunnerLabels(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    labels: ((json['labels'] as List?)?.map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsRunnerLabels.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsRunnerLabels(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            labels: ((json['labels'] as List?)
+                ?.map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'labels': labels.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'labels': labels.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Typed representation of the `ActionsRunnerLabelsReadonly` API schema.
 class ActionsRunnerLabelsReadonly implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Required array value serialized in the `labels` wire field.
   final List<RunnerLabel> labels;
 
-  const ActionsRunnerLabelsReadonly({required this.totalCount, required this.labels});
+  const ActionsRunnerLabelsReadonly(
+      {required this.totalCount, required this.labels});
 
-  ActionsRunnerLabelsReadonly Function({int totalCount, List<RunnerLabel> labels}) get copyWith => _copyWith;
+  ActionsRunnerLabelsReadonly Function(
+      {int totalCount, List<RunnerLabel> labels}) get copyWith => _copyWith;
 
-  ActionsRunnerLabelsReadonly _copyWith({Object? totalCount = sdkOmittedValue, Object? labels = sdkOmittedValue}) => ActionsRunnerLabelsReadonly(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<RunnerLabel>,
-  );
+  ActionsRunnerLabelsReadonly _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? labels = sdkOmittedValue}) =>
+      ActionsRunnerLabelsReadonly(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<RunnerLabel>,
+      );
 
-  factory ActionsRunnerLabelsReadonly.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ActionsRunnerLabelsReadonly(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    labels: ((json['labels'] as List?)?.map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>)).toList())!,
-  ), json);
+  factory ActionsRunnerLabelsReadonly.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ActionsRunnerLabelsReadonly(
+            totalCount: ((json['total_count'] as num?)?.toInt())!,
+            labels: ((json['labels'] as List?)
+                ?.map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>))
+                .toList())!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'labels': labels.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'labels': labels.map((item) => item.toJson()).toList(),
+      };
 }

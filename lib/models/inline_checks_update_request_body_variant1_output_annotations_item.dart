@@ -4,206 +4,402 @@
 part of 'inline.dart';
 
 // Inline operation models
-class ChecksUpdateRequestBodyVariant1OutputAnnotationsItem implements SdkJsonModel {
+class ChecksUpdateRequestBodyVariant1OutputAnnotationsItem
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The path of the file to add an annotation to. For example, `assets/css/main.css`.
   final String path;
+
   /// The start line of the annotation. Line numbers start at 1.
   final int startLine;
+
   /// The end line of the annotation.
   final int endLine;
+
   /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
   final SdkOptional<int> startColumn;
+
   /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
   final SdkOptional<int> endColumn;
+
   /// The level of the annotation.
-  final ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel annotationLevel;
+  final ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel
+      annotationLevel;
+
   /// A short description of the feedback for these lines of code. The maximum size is 64 KB.
   final String message;
+
   /// The title that represents the annotation. The maximum size is 255 characters.
   final SdkOptional<String> title;
+
   /// Details about this annotation. The maximum size is 64 KB.
   final SdkOptional<String> rawDetails;
 
-  const ChecksUpdateRequestBodyVariant1OutputAnnotationsItem({required this.path, required this.startLine, required this.endLine, this.startColumn = const SdkOmitted(), this.endColumn = const SdkOmitted(), required this.annotationLevel, required this.message, this.title = const SdkOmitted(), this.rawDetails = const SdkOmitted()});
+  const ChecksUpdateRequestBodyVariant1OutputAnnotationsItem(
+      {required this.path,
+      required this.startLine,
+      required this.endLine,
+      this.startColumn = const SdkOmitted(),
+      this.endColumn = const SdkOmitted(),
+      required this.annotationLevel,
+      required this.message,
+      this.title = const SdkOmitted(),
+      this.rawDetails = const SdkOmitted()});
 
-  ChecksUpdateRequestBodyVariant1OutputAnnotationsItem Function({String path, int startLine, int endLine, SdkOptional<int> startColumn, SdkOptional<int> endColumn, ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel annotationLevel, String message, SdkOptional<String> title, SdkOptional<String> rawDetails}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant1OutputAnnotationsItem Function(
+      {String path,
+      int startLine,
+      int endLine,
+      SdkOptional<int> startColumn,
+      SdkOptional<int> endColumn,
+      ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel
+          annotationLevel,
+      String message,
+      SdkOptional<String> title,
+      SdkOptional<String> rawDetails}) get copyWith => _copyWith;
 
-  ChecksUpdateRequestBodyVariant1OutputAnnotationsItem _copyWith({Object? path = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? endLine = sdkOmittedValue, Object? startColumn = sdkOmittedValue, Object? endColumn = sdkOmittedValue, Object? annotationLevel = sdkOmittedValue, Object? message = sdkOmittedValue, Object? title = sdkOmittedValue, Object? rawDetails = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1OutputAnnotationsItem(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as int,
-    endLine: identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
-    startColumn: identical(startColumn, sdkOmittedValue) ? this.startColumn : startColumn as SdkOptional<int>,
-    endColumn: identical(endColumn, sdkOmittedValue) ? this.endColumn : endColumn as SdkOptional<int>,
-    annotationLevel: identical(annotationLevel, sdkOmittedValue) ? this.annotationLevel : annotationLevel as ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
-    rawDetails: identical(rawDetails, sdkOmittedValue) ? this.rawDetails : rawDetails as SdkOptional<String>,
-  );
+  ChecksUpdateRequestBodyVariant1OutputAnnotationsItem _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? endLine = sdkOmittedValue,
+          Object? startColumn = sdkOmittedValue,
+          Object? endColumn = sdkOmittedValue,
+          Object? annotationLevel = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? rawDetails = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant1OutputAnnotationsItem(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as int,
+        endLine:
+            identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
+        startColumn: identical(startColumn, sdkOmittedValue)
+            ? this.startColumn
+            : startColumn as SdkOptional<int>,
+        endColumn: identical(endColumn, sdkOmittedValue)
+            ? this.endColumn
+            : endColumn as SdkOptional<int>,
+        annotationLevel: identical(annotationLevel, sdkOmittedValue)
+            ? this.annotationLevel
+            : annotationLevel
+                as ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        rawDetails: identical(rawDetails, sdkOmittedValue)
+            ? this.rawDetails
+            : rawDetails as SdkOptional<String>,
+      );
 
-  factory ChecksUpdateRequestBodyVariant1OutputAnnotationsItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ChecksUpdateRequestBodyVariant1OutputAnnotationsItem(
-    path: (json['path'] as String?)!,
-    startLine: ((json['start_line'] as num?)?.toInt())!,
-    endLine: ((json['end_line'] as num?)?.toInt())!,
-    startColumn: json['start_column'] != null ? SdkPresent(((json['start_column'] as num?)?.toInt())!) : const SdkOmitted(),
-    endColumn: json['end_column'] != null ? SdkPresent(((json['end_column'] as num?)?.toInt())!) : const SdkOmitted(),
-    annotationLevel: (json['annotation_level'] != null ? ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel.fromJson(json['annotation_level'] as String) : null)!,
-    message: (json['message'] as String?)!,
-    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
-    rawDetails: json['raw_details'] != null ? SdkPresent((json['raw_details'] as String?)!) : const SdkOmitted(),
-  ), json);
+  factory ChecksUpdateRequestBodyVariant1OutputAnnotationsItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ChecksUpdateRequestBodyVariant1OutputAnnotationsItem(
+            path: (json['path'] as String?)!,
+            startLine: ((json['start_line'] as num?)?.toInt())!,
+            endLine: ((json['end_line'] as num?)?.toInt())!,
+            startColumn: json['start_column'] != null
+                ? SdkPresent(((json['start_column'] as num?)?.toInt())!)
+                : const SdkOmitted(),
+            endColumn: json['end_column'] != null
+                ? SdkPresent(((json['end_column'] as num?)?.toInt())!)
+                : const SdkOmitted(),
+            annotationLevel: (json['annotation_level'] != null
+                ? ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel
+                    .fromJson(json['annotation_level'] as String)
+                : null)!,
+            message: (json['message'] as String?)!,
+            title: json['title'] != null
+                ? SdkPresent((json['title'] as String?)!)
+                : const SdkOmitted(),
+            rawDetails: json['raw_details'] != null
+                ? SdkPresent((json['raw_details'] as String?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'path': path,
-    'start_line': startLine,
-    'end_line': endLine,
-    ...switch (startColumn) {
-      SdkPresent<int>(value: final value) => {'start_column': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (endColumn) {
-      SdkPresent<int>(value: final value) => {'end_column': value,},
-      _ => const <String, dynamic>{},
-    },
-    'annotation_level': annotationLevel.toJson(),
-    'message': message,
-    ...switch (title) {
-      SdkPresent<String>(value: final value) => {'title': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rawDetails) {
-      SdkPresent<String>(value: final value) => {'raw_details': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'path': path,
+        'start_line': startLine,
+        'end_line': endLine,
+        ...switch (startColumn) {
+          SdkPresent<int>(value: final value) => {
+              'start_column': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (endColumn) {
+          SdkPresent<int>(value: final value) => {
+              'end_column': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'annotation_level': annotationLevel.toJson(),
+        'message': message,
+        ...switch (title) {
+          SdkPresent<String>(value: final value) => {
+              'title': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rawDetails) {
+          SdkPresent<String>(value: final value) => {
+              'raw_details': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ChecksUpdateRequestBodyVariant1OutputImagesItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The alternative text for the image.
   final String alt;
+
   /// The full URL of the image.
   final String imageUrl;
+
   /// A short image description.
   final SdkOptional<String> caption;
 
-  const ChecksUpdateRequestBodyVariant1OutputImagesItem({required this.alt, required this.imageUrl, this.caption = const SdkOmitted()});
+  const ChecksUpdateRequestBodyVariant1OutputImagesItem(
+      {required this.alt,
+      required this.imageUrl,
+      this.caption = const SdkOmitted()});
 
-  ChecksUpdateRequestBodyVariant1OutputImagesItem Function({String alt, String imageUrl, SdkOptional<String> caption}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant1OutputImagesItem Function(
+      {String alt,
+      String imageUrl,
+      SdkOptional<String> caption}) get copyWith => _copyWith;
 
-  ChecksUpdateRequestBodyVariant1OutputImagesItem _copyWith({Object? alt = sdkOmittedValue, Object? imageUrl = sdkOmittedValue, Object? caption = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1OutputImagesItem(
-    alt: identical(alt, sdkOmittedValue) ? this.alt : alt as String,
-    imageUrl: identical(imageUrl, sdkOmittedValue) ? this.imageUrl : imageUrl as String,
-    caption: identical(caption, sdkOmittedValue) ? this.caption : caption as SdkOptional<String>,
-  );
+  ChecksUpdateRequestBodyVariant1OutputImagesItem _copyWith(
+          {Object? alt = sdkOmittedValue,
+          Object? imageUrl = sdkOmittedValue,
+          Object? caption = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant1OutputImagesItem(
+        alt: identical(alt, sdkOmittedValue) ? this.alt : alt as String,
+        imageUrl: identical(imageUrl, sdkOmittedValue)
+            ? this.imageUrl
+            : imageUrl as String,
+        caption: identical(caption, sdkOmittedValue)
+            ? this.caption
+            : caption as SdkOptional<String>,
+      );
 
-  factory ChecksUpdateRequestBodyVariant1OutputImagesItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ChecksUpdateRequestBodyVariant1OutputImagesItem(
-    alt: (json['alt'] as String?)!,
-    imageUrl: (json['image_url'] as String?)!,
-    caption: json['caption'] != null ? SdkPresent((json['caption'] as String?)!) : const SdkOmitted(),
-  ), json);
+  factory ChecksUpdateRequestBodyVariant1OutputImagesItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ChecksUpdateRequestBodyVariant1OutputImagesItem(
+            alt: (json['alt'] as String?)!,
+            imageUrl: (json['image_url'] as String?)!,
+            caption: json['caption'] != null
+                ? SdkPresent((json['caption'] as String?)!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'alt': alt,
-    'image_url': imageUrl,
-    ...switch (caption) {
-      SdkPresent<String>(value: final value) => {'caption': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'alt': alt,
+        'image_url': imageUrl,
+        ...switch (caption) {
+          SdkPresent<String>(value: final value) => {
+              'caption': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
 class ChecksUpdateRequestBodyVariant1Output implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// **Required**.
   final SdkOptional<String> title;
+
   /// Can contain Markdown.
   final String summary;
+
   /// Can contain Markdown.
   final SdkOptional<String> text;
+
   /// Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/checks/runs#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. GitHub Actions are limited to 10 warning annotations and 10 error annotations per step. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)".
-  final SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>> annotations;
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>
+      annotations;
+
   /// Adds images to the output displayed in the GitHub pull request UI.
-  final SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>> images;
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>
+      images;
 
-  const ChecksUpdateRequestBodyVariant1Output({this.title = const SdkOmitted(), required this.summary, this.text = const SdkOmitted(), this.annotations = const SdkOmitted(), this.images = const SdkOmitted()});
+  const ChecksUpdateRequestBodyVariant1Output(
+      {this.title = const SdkOmitted(),
+      required this.summary,
+      this.text = const SdkOmitted(),
+      this.annotations = const SdkOmitted(),
+      this.images = const SdkOmitted()});
 
-  ChecksUpdateRequestBodyVariant1Output Function({SdkOptional<String> title, String summary, SdkOptional<String> text, SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>> annotations, SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>> images}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant1Output Function(
+      {SdkOptional<String> title,
+      String summary,
+      SdkOptional<String> text,
+      SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>
+          annotations,
+      SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>
+          images}) get copyWith => _copyWith;
 
-  ChecksUpdateRequestBodyVariant1Output _copyWith({Object? title = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? text = sdkOmittedValue, Object? annotations = sdkOmittedValue, Object? images = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1Output(
-    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
-    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String,
-    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
-    annotations: identical(annotations, sdkOmittedValue) ? this.annotations : annotations as SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>,
-    images: identical(images, sdkOmittedValue) ? this.images : images as SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>,
-  );
+  ChecksUpdateRequestBodyVariant1Output _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? summary = sdkOmittedValue,
+          Object? text = sdkOmittedValue,
+          Object? annotations = sdkOmittedValue,
+          Object? images = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant1Output(
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        summary: identical(summary, sdkOmittedValue)
+            ? this.summary
+            : summary as String,
+        text: identical(text, sdkOmittedValue)
+            ? this.text
+            : text as SdkOptional<String>,
+        annotations: identical(annotations, sdkOmittedValue)
+            ? this.annotations
+            : annotations as SdkOptional<
+                List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>,
+        images: identical(images, sdkOmittedValue)
+            ? this.images
+            : images as SdkOptional<
+                List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>,
+      );
 
-  factory ChecksUpdateRequestBodyVariant1Output.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ChecksUpdateRequestBodyVariant1Output(
-    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
-    summary: (json['summary'] as String?)!,
-    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
-    annotations: json['annotations'] != null ? SdkPresent(((json['annotations'] as List?)?.map((e) => ChecksUpdateRequestBodyVariant1OutputAnnotationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    images: json['images'] != null ? SdkPresent(((json['images'] as List?)?.map((e) => ChecksUpdateRequestBodyVariant1OutputImagesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  ), json);
+  factory ChecksUpdateRequestBodyVariant1Output.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ChecksUpdateRequestBodyVariant1Output(
+            title: json['title'] != null
+                ? SdkPresent((json['title'] as String?)!)
+                : const SdkOmitted(),
+            summary: (json['summary'] as String?)!,
+            text: json['text'] != null
+                ? SdkPresent((json['text'] as String?)!)
+                : const SdkOmitted(),
+            annotations: json['annotations'] != null
+                ? SdkPresent(((json['annotations'] as List?)
+                    ?.map((e) =>
+                        ChecksUpdateRequestBodyVariant1OutputAnnotationsItem
+                            .fromJson(e as Map<String, dynamic>))
+                    .toList())!)
+                : const SdkOmitted(),
+            images: json['images'] != null
+                ? SdkPresent(((json['images'] as List?)
+                    ?.map((e) => ChecksUpdateRequestBodyVariant1OutputImagesItem
+                        .fromJson(e as Map<String, dynamic>))
+                    .toList())!)
+                : const SdkOmitted(),
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    ...switch (title) {
-      SdkPresent<String>(value: final value) => {'title': value,},
-      _ => const <String, dynamic>{},
-    },
-    'summary': summary,
-    ...switch (text) {
-      SdkPresent<String>(value: final value) => {'text': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (annotations) {
-      SdkPresent<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>(value: final value) => {'annotations': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (images) {
-      SdkPresent<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>(value: final value) => {'images': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (title) {
+          SdkPresent<String>(value: final value) => {
+              'title': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'summary': summary,
+        ...switch (text) {
+          SdkPresent<String>(value: final value) => {
+              'text': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (annotations) {
+          SdkPresent<
+                List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>(
+            value: final value
+          ) =>
+            {
+              'annotations': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (images) {
+          SdkPresent<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>(
+            value: final value
+          ) =>
+            {
+              'images': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ChecksUpdateRequestBodyVariant1ActionsItem implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The text to be displayed on a button in the web UI. The maximum size is 20 characters.
   final String label;
+
   /// A short explanation of what this action would do. The maximum size is 40 characters.
   final String description;
+
   /// A reference for the action on the integrator's system. The maximum size is 20 characters.
   final String identifier;
 
-  const ChecksUpdateRequestBodyVariant1ActionsItem({required this.label, required this.description, required this.identifier});
+  const ChecksUpdateRequestBodyVariant1ActionsItem(
+      {required this.label,
+      required this.description,
+      required this.identifier});
 
-  ChecksUpdateRequestBodyVariant1ActionsItem Function({String label, String description, String identifier}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant1ActionsItem Function(
+      {String label,
+      String description,
+      String identifier}) get copyWith => _copyWith;
 
-  ChecksUpdateRequestBodyVariant1ActionsItem _copyWith({Object? label = sdkOmittedValue, Object? description = sdkOmittedValue, Object? identifier = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1ActionsItem(
-    label: identical(label, sdkOmittedValue) ? this.label : label as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    identifier: identical(identifier, sdkOmittedValue) ? this.identifier : identifier as String,
-  );
+  ChecksUpdateRequestBodyVariant1ActionsItem _copyWith(
+          {Object? label = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? identifier = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant1ActionsItem(
+        label: identical(label, sdkOmittedValue) ? this.label : label as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        identifier: identical(identifier, sdkOmittedValue)
+            ? this.identifier
+            : identifier as String,
+      );
 
-  factory ChecksUpdateRequestBodyVariant1ActionsItem.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(ChecksUpdateRequestBodyVariant1ActionsItem(
-    label: (json['label'] as String?)!,
-    description: (json['description'] as String?)!,
-    identifier: (json['identifier'] as String?)!,
-  ), json);
+  factory ChecksUpdateRequestBodyVariant1ActionsItem.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          ChecksUpdateRequestBodyVariant1ActionsItem(
+            label: (json['label'] as String?)!,
+            description: (json['description'] as String?)!,
+            identifier: (json['identifier'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'label': label,
-    'description': description,
-    'identifier': identifier,
-  };
+        'label': label,
+        'description': description,
+        'identifier': identifier,
+      };
 }

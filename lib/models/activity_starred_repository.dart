@@ -8,28 +8,41 @@ part of 'activity.dart';
 class StarredRepository implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `date-time`-formatted value serialized in the `starred_at` wire field.
   final String starredAt;
+
   /// A repository on GitHub.
   final Repository repo;
 
   const StarredRepository({required this.starredAt, required this.repo});
 
-  StarredRepository Function({String starredAt, Repository repo}) get copyWith => _copyWith;
+  StarredRepository Function({String starredAt, Repository repo})
+      get copyWith => _copyWith;
 
-  StarredRepository _copyWith({Object? starredAt = sdkOmittedValue, Object? repo = sdkOmittedValue}) => StarredRepository(
-    starredAt: identical(starredAt, sdkOmittedValue) ? this.starredAt : starredAt as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
-  );
+  StarredRepository _copyWith(
+          {Object? starredAt = sdkOmittedValue,
+          Object? repo = sdkOmittedValue}) =>
+      StarredRepository(
+        starredAt: identical(starredAt, sdkOmittedValue)
+            ? this.starredAt
+            : starredAt as String,
+        repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
+      );
 
-  factory StarredRepository.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(StarredRepository(
-    starredAt: (json['starred_at'] as String?)!,
-    repo: (json['repo'] != null ? Repository.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-  ), json);
+  factory StarredRepository.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          StarredRepository(
+            starredAt: (json['starred_at'] as String?)!,
+            repo: (json['repo'] != null
+                ? Repository.fromJson(json['repo'] as Map<String, dynamic>)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'starred_at': starredAt,
-    'repo': repo.toJson(),
-  };
+        'starred_at': starredAt,
+        'repo': repo.toJson(),
+      };
 }

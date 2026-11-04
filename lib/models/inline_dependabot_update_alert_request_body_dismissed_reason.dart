@@ -6,85 +6,107 @@ part of 'inline.dart';
 // Inline operation models
 /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
 final class DependabotUpdateAlertRequestBodyDismissedReason {
-
   final String value;
 
   const DependabotUpdateAlertRequestBodyDismissedReason._(this.value);
 
-  factory DependabotUpdateAlertRequestBodyDismissedReason.fromJson(String value) => DependabotUpdateAlertRequestBodyDismissedReason._(value);
+  factory DependabotUpdateAlertRequestBodyDismissedReason.fromJson(
+          String value) =>
+      DependabotUpdateAlertRequestBodyDismissedReason._(value);
 
-  static const fixStarted = DependabotUpdateAlertRequestBodyDismissedReason._('fix_started');
-  static const inaccurate = DependabotUpdateAlertRequestBodyDismissedReason._('inaccurate');
-  static const noBandwidth = DependabotUpdateAlertRequestBodyDismissedReason._('no_bandwidth');
-  static const notUsed = DependabotUpdateAlertRequestBodyDismissedReason._('not_used');
-  static const tolerableRisk = DependabotUpdateAlertRequestBodyDismissedReason._('tolerable_risk');
+  static const fixStarted =
+      DependabotUpdateAlertRequestBodyDismissedReason._('fix_started');
+  static const inaccurate =
+      DependabotUpdateAlertRequestBodyDismissedReason._('inaccurate');
+  static const noBandwidth =
+      DependabotUpdateAlertRequestBodyDismissedReason._('no_bandwidth');
+  static const notUsed =
+      DependabotUpdateAlertRequestBodyDismissedReason._('not_used');
+  static const tolerableRisk =
+      DependabotUpdateAlertRequestBodyDismissedReason._('tolerable_risk');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotUpdateAlertRequestBodyDismissedReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotUpdateAlertRequestBodyDismissedReason &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the Dependabot alert. A `dismissed_reason` must be provided when setting the state to `dismissed`.
 final class DependabotUpdateAlertRequestBodyState {
-
   final String value;
 
   const DependabotUpdateAlertRequestBodyState._(this.value);
 
-  factory DependabotUpdateAlertRequestBodyState.fromJson(String value) => DependabotUpdateAlertRequestBodyState._(value);
+  factory DependabotUpdateAlertRequestBodyState.fromJson(String value) =>
+      DependabotUpdateAlertRequestBodyState._(value);
 
   static const dismissed = DependabotUpdateAlertRequestBodyState._('dismissed');
   static const open = DependabotUpdateAlertRequestBodyState._('open');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotUpdateAlertRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotUpdateAlertRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
 final class ReposCreateDeploymentStatusRequestBodyState {
-
   final String value;
 
   const ReposCreateDeploymentStatusRequestBodyState._(this.value);
 
-  factory ReposCreateDeploymentStatusRequestBodyState.fromJson(String value) => ReposCreateDeploymentStatusRequestBodyState._(value);
+  factory ReposCreateDeploymentStatusRequestBodyState.fromJson(String value) =>
+      ReposCreateDeploymentStatusRequestBodyState._(value);
 
   static const error = ReposCreateDeploymentStatusRequestBodyState._('error');
-  static const failure = ReposCreateDeploymentStatusRequestBodyState._('failure');
-  static const inactive = ReposCreateDeploymentStatusRequestBodyState._('inactive');
-  static const inProgress = ReposCreateDeploymentStatusRequestBodyState._('in_progress');
+  static const failure =
+      ReposCreateDeploymentStatusRequestBodyState._('failure');
+  static const inactive =
+      ReposCreateDeploymentStatusRequestBodyState._('inactive');
+  static const inProgress =
+      ReposCreateDeploymentStatusRequestBodyState._('in_progress');
   static const queued = ReposCreateDeploymentStatusRequestBodyState._('queued');
-  static const pending = ReposCreateDeploymentStatusRequestBodyState._('pending');
-  static const success = ReposCreateDeploymentStatusRequestBodyState._('success');
+  static const pending =
+      ReposCreateDeploymentStatusRequestBodyState._('pending');
+  static const success =
+      ReposCreateDeploymentStatusRequestBodyState._('success');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreateDeploymentStatusRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreateDeploymentStatusRequestBodyState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListForksSort {
-
   final String value;
 
   const ReposListForksSort._(this.value);
 
-  factory ReposListForksSort.fromJson(String value) => ReposListForksSort._(value);
+  factory ReposListForksSort.fromJson(String value) =>
+      ReposListForksSort._(value);
 
   static const newest = ReposListForksSort._('newest');
   static const oldest = ReposListForksSort._('oldest');
@@ -93,22 +115,25 @@ final class ReposListForksSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListForksSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListForksSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
 final class GitCreateTagRequestBodyType {
-
   final String value;
 
   const GitCreateTagRequestBodyType._(this.value);
 
-  factory GitCreateTagRequestBodyType.fromJson(String value) => GitCreateTagRequestBodyType._(value);
+  factory GitCreateTagRequestBodyType.fromJson(String value) =>
+      GitCreateTagRequestBodyType._(value);
 
   static const commit = GitCreateTagRequestBodyType._('commit');
   static const tree = GitCreateTagRequestBodyType._('tree');
@@ -116,22 +141,25 @@ final class GitCreateTagRequestBodyType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is GitCreateTagRequestBodyType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTagRequestBodyType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
 final class GitCreateTreeRequestBodyTreeItemMode {
-
   final String value;
 
   const GitCreateTreeRequestBodyTreeItemMode._(this.value);
 
-  factory GitCreateTreeRequestBodyTreeItemMode.fromJson(String value) => GitCreateTreeRequestBodyTreeItemMode._(value);
+  factory GitCreateTreeRequestBodyTreeItemMode.fromJson(String value) =>
+      GitCreateTreeRequestBodyTreeItemMode._(value);
 
   static const v100644 = GitCreateTreeRequestBodyTreeItemMode._('100644');
   static const v100755 = GitCreateTreeRequestBodyTreeItemMode._('100755');
@@ -141,22 +169,25 @@ final class GitCreateTreeRequestBodyTreeItemMode {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is GitCreateTreeRequestBodyTreeItemMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTreeRequestBodyTreeItemMode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Either `blob`, `tree`, or `commit`.
 final class GitCreateTreeRequestBodyTreeItemType {
-
   final String value;
 
   const GitCreateTreeRequestBodyTreeItemType._(this.value);
 
-  factory GitCreateTreeRequestBodyTreeItemType.fromJson(String value) => GitCreateTreeRequestBodyTreeItemType._(value);
+  factory GitCreateTreeRequestBodyTreeItemType.fromJson(String value) =>
+      GitCreateTreeRequestBodyTreeItemType._(value);
 
   static const blob = GitCreateTreeRequestBodyTreeItemType._('blob');
   static const tree = GitCreateTreeRequestBodyTreeItemType._('tree');
@@ -164,46 +195,53 @@ final class GitCreateTreeRequestBodyTreeItemType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is GitCreateTreeRequestBodyTreeItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTreeRequestBodyTreeItemType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of version control system you are migrating from.
 final class MigrationsUpdateImportRequestBodyVcs {
-
   final String value;
 
   const MigrationsUpdateImportRequestBodyVcs._(this.value);
 
-  factory MigrationsUpdateImportRequestBodyVcs.fromJson(String value) => MigrationsUpdateImportRequestBodyVcs._(value);
+  factory MigrationsUpdateImportRequestBodyVcs.fromJson(String value) =>
+      MigrationsUpdateImportRequestBodyVcs._(value);
 
-  static const subversion = MigrationsUpdateImportRequestBodyVcs._('subversion');
+  static const subversion =
+      MigrationsUpdateImportRequestBodyVcs._('subversion');
   static const tfvc = MigrationsUpdateImportRequestBodyVcs._('tfvc');
   static const git = MigrationsUpdateImportRequestBodyVcs._('git');
   static const mercurial = MigrationsUpdateImportRequestBodyVcs._('mercurial');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsUpdateImportRequestBodyVcs && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsUpdateImportRequestBodyVcs && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
 final class MigrationsStartImportRequestBodyVcs {
-
   final String value;
 
   const MigrationsStartImportRequestBodyVcs._(this.value);
 
-  factory MigrationsStartImportRequestBodyVcs.fromJson(String value) => MigrationsStartImportRequestBodyVcs._(value);
+  factory MigrationsStartImportRequestBodyVcs.fromJson(String value) =>
+      MigrationsStartImportRequestBodyVcs._(value);
 
   static const subversion = MigrationsStartImportRequestBodyVcs._('subversion');
   static const git = MigrationsStartImportRequestBodyVcs._('git');
@@ -212,68 +250,81 @@ final class MigrationsStartImportRequestBodyVcs {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsStartImportRequestBodyVcs && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsStartImportRequestBodyVcs && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
 final class MigrationsSetLfsPreferenceRequestBodyUseLfs {
-
   final String value;
 
   const MigrationsSetLfsPreferenceRequestBodyUseLfs._(this.value);
 
-  factory MigrationsSetLfsPreferenceRequestBodyUseLfs.fromJson(String value) => MigrationsSetLfsPreferenceRequestBodyUseLfs._(value);
+  factory MigrationsSetLfsPreferenceRequestBodyUseLfs.fromJson(String value) =>
+      MigrationsSetLfsPreferenceRequestBodyUseLfs._(value);
 
   static const optIn = MigrationsSetLfsPreferenceRequestBodyUseLfs._('opt_in');
-  static const optOut = MigrationsSetLfsPreferenceRequestBodyUseLfs._('opt_out');
+  static const optOut =
+      MigrationsSetLfsPreferenceRequestBodyUseLfs._('opt_out');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsSetLfsPreferenceRequestBodyUseLfs && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsSetLfsPreferenceRequestBodyUseLfs &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
 final class ReposUpdateInvitationRequestBodyPermissions {
-
   final String value;
 
   const ReposUpdateInvitationRequestBodyPermissions._(this.value);
 
-  factory ReposUpdateInvitationRequestBodyPermissions.fromJson(String value) => ReposUpdateInvitationRequestBodyPermissions._(value);
+  factory ReposUpdateInvitationRequestBodyPermissions.fromJson(String value) =>
+      ReposUpdateInvitationRequestBodyPermissions._(value);
 
   static const read = ReposUpdateInvitationRequestBodyPermissions._('read');
   static const write = ReposUpdateInvitationRequestBodyPermissions._('write');
-  static const maintain = ReposUpdateInvitationRequestBodyPermissions._('maintain');
+  static const maintain =
+      ReposUpdateInvitationRequestBodyPermissions._('maintain');
   static const triage = ReposUpdateInvitationRequestBodyPermissions._('triage');
   static const admin = ReposUpdateInvitationRequestBodyPermissions._('admin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateInvitationRequestBodyPermissions && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateInvitationRequestBodyPermissions &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListForRepoSort {
-
   final String value;
 
   const IssuesListForRepoSort._(this.value);
 
-  factory IssuesListForRepoSort.fromJson(String value) => IssuesListForRepoSort._(value);
+  factory IssuesListForRepoSort.fromJson(String value) =>
+      IssuesListForRepoSort._(value);
 
   static const created = IssuesListForRepoSort._('created');
   static const updated = IssuesListForRepoSort._('updated');
@@ -281,10 +332,13 @@ final class IssuesListForRepoSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListForRepoSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForRepoSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

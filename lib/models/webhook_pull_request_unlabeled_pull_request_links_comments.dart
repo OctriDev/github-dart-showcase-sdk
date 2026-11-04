@@ -5,261 +5,416 @@ part of 'webhook_pull_request_unlabeled.dart';
 
 // webhook_pull_request_unlabeled domain models
 /// Required object value serialized in the `comments` wire field.
-class WebhookPullRequestUnlabeledPullRequestLinksComments implements SdkJsonModel {
+class WebhookPullRequestUnlabeledPullRequestLinksComments
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestUnlabeledPullRequestLinksComments({required this.href});
+  const WebhookPullRequestUnlabeledPullRequestLinksComments(
+      {required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksComments Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksComments _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksComments(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksComments.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksComments(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksComments.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksComments(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `commits` wire field.
-class WebhookPullRequestUnlabeledPullRequestLinksCommits implements SdkJsonModel {
+class WebhookPullRequestUnlabeledPullRequestLinksCommits
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestUnlabeledPullRequestLinksCommits({required this.href});
+  const WebhookPullRequestUnlabeledPullRequestLinksCommits(
+      {required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksCommits Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksCommits Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksCommits _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksCommits(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksCommits _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksCommits(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksCommits.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksCommits(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksCommits.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksCommits(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `html` wire field.
 class WebhookPullRequestUnlabeledPullRequestLinksHtml implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhookPullRequestUnlabeledPullRequestLinksHtml({required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksHtml Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksHtml Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksHtml _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksHtml _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksHtml.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksHtml(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksHtml.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksHtml(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `issue` wire field.
 class WebhookPullRequestUnlabeledPullRequestLinksIssue implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhookPullRequestUnlabeledPullRequestLinksIssue({required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksIssue Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksIssue Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksIssue _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksIssue(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksIssue _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksIssue(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksIssue.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksIssue(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksIssue.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksIssue(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `review_comment` wire field.
-class WebhookPullRequestUnlabeledPullRequestLinksReviewComment implements SdkJsonModel {
+class WebhookPullRequestUnlabeledPullRequestLinksReviewComment
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestUnlabeledPullRequestLinksReviewComment({required this.href});
+  const WebhookPullRequestUnlabeledPullRequestLinksReviewComment(
+      {required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksReviewComment Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksReviewComment Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksReviewComment _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksReviewComment(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksReviewComment _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksReviewComment(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksReviewComment.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksReviewComment(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksReviewComment.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksReviewComment(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `review_comments` wire field.
-class WebhookPullRequestUnlabeledPullRequestLinksReviewComments implements SdkJsonModel {
+class WebhookPullRequestUnlabeledPullRequestLinksReviewComments
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestUnlabeledPullRequestLinksReviewComments({required this.href});
+  const WebhookPullRequestUnlabeledPullRequestLinksReviewComments(
+      {required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksReviewComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksReviewComments Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksReviewComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksReviewComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksReviewComments _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksReviewComments(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksReviewComments(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksReviewComments.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksReviewComments(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `self` wire field.
 class WebhookPullRequestUnlabeledPullRequestLinksSelf implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhookPullRequestUnlabeledPullRequestLinksSelf({required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksSelf Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksSelf Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksSelf _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksSelf(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksSelf _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksSelf(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksSelf.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksSelf(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksSelf.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksSelf(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `statuses` wire field.
-class WebhookPullRequestUnlabeledPullRequestLinksStatuses implements SdkJsonModel {
+class WebhookPullRequestUnlabeledPullRequestLinksStatuses
+    implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestUnlabeledPullRequestLinksStatuses({required this.href});
+  const WebhookPullRequestUnlabeledPullRequestLinksStatuses(
+      {required this.href});
 
-  WebhookPullRequestUnlabeledPullRequestLinksStatuses Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinksStatuses Function({String href})
+      get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinksStatuses _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinksStatuses(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinksStatuses _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinksStatuses(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinksStatuses.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinksStatuses(
-    href: (json['href'] as String?)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinksStatuses.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinksStatuses(
+            href: (json['href'] as String?)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class WebhookPullRequestUnlabeledPullRequestLinks implements SdkJsonModel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `comments` wire field.
   final WebhookPullRequestUnlabeledPullRequestLinksComments comments;
+
   /// Required object value serialized in the `commits` wire field.
   final WebhookPullRequestUnlabeledPullRequestLinksCommits commits;
+
   /// Required object value serialized in the `html` wire field.
   final WebhookPullRequestUnlabeledPullRequestLinksHtml html;
+
   /// Required object value serialized in the `issue` wire field.
   final WebhookPullRequestUnlabeledPullRequestLinksIssue issue;
+
   /// Required object value serialized in the `review_comment` wire field.
   final WebhookPullRequestUnlabeledPullRequestLinksReviewComment reviewComment;
+
   /// Required object value serialized in the `review_comments` wire field.
-  final WebhookPullRequestUnlabeledPullRequestLinksReviewComments reviewComments;
+  final WebhookPullRequestUnlabeledPullRequestLinksReviewComments
+      reviewComments;
+
   /// Required object value serialized in the `self` wire field.
   final WebhookPullRequestUnlabeledPullRequestLinksSelf self;
+
   /// Required object value serialized in the `statuses` wire field.
   final WebhookPullRequestUnlabeledPullRequestLinksStatuses statuses;
 
-  const WebhookPullRequestUnlabeledPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses});
+  const WebhookPullRequestUnlabeledPullRequestLinks(
+      {required this.comments,
+      required this.commits,
+      required this.html,
+      required this.issue,
+      required this.reviewComment,
+      required this.reviewComments,
+      required this.self,
+      required this.statuses});
 
-  WebhookPullRequestUnlabeledPullRequestLinks Function({WebhookPullRequestUnlabeledPullRequestLinksComments comments, WebhookPullRequestUnlabeledPullRequestLinksCommits commits, WebhookPullRequestUnlabeledPullRequestLinksHtml html, WebhookPullRequestUnlabeledPullRequestLinksIssue issue, WebhookPullRequestUnlabeledPullRequestLinksReviewComment reviewComment, WebhookPullRequestUnlabeledPullRequestLinksReviewComments reviewComments, WebhookPullRequestUnlabeledPullRequestLinksSelf self, WebhookPullRequestUnlabeledPullRequestLinksStatuses statuses}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestLinks Function(
+      {WebhookPullRequestUnlabeledPullRequestLinksComments comments,
+      WebhookPullRequestUnlabeledPullRequestLinksCommits commits,
+      WebhookPullRequestUnlabeledPullRequestLinksHtml html,
+      WebhookPullRequestUnlabeledPullRequestLinksIssue issue,
+      WebhookPullRequestUnlabeledPullRequestLinksReviewComment reviewComment,
+      WebhookPullRequestUnlabeledPullRequestLinksReviewComments reviewComments,
+      WebhookPullRequestUnlabeledPullRequestLinksSelf self,
+      WebhookPullRequestUnlabeledPullRequestLinksStatuses
+          statuses}) get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestLinks _copyWith({Object? comments = sdkOmittedValue, Object? commits = sdkOmittedValue, Object? html = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? reviewComment = sdkOmittedValue, Object? reviewComments = sdkOmittedValue, Object? self = sdkOmittedValue, Object? statuses = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestLinks(
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as WebhookPullRequestUnlabeledPullRequestLinksComments,
-    commits: identical(commits, sdkOmittedValue) ? this.commits : commits as WebhookPullRequestUnlabeledPullRequestLinksCommits,
-    html: identical(html, sdkOmittedValue) ? this.html : html as WebhookPullRequestUnlabeledPullRequestLinksHtml,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as WebhookPullRequestUnlabeledPullRequestLinksIssue,
-    reviewComment: identical(reviewComment, sdkOmittedValue) ? this.reviewComment : reviewComment as WebhookPullRequestUnlabeledPullRequestLinksReviewComment,
-    reviewComments: identical(reviewComments, sdkOmittedValue) ? this.reviewComments : reviewComments as WebhookPullRequestUnlabeledPullRequestLinksReviewComments,
-    self: identical(self, sdkOmittedValue) ? this.self : self as WebhookPullRequestUnlabeledPullRequestLinksSelf,
-    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as WebhookPullRequestUnlabeledPullRequestLinksStatuses,
-  );
+  WebhookPullRequestUnlabeledPullRequestLinks _copyWith(
+          {Object? comments = sdkOmittedValue,
+          Object? commits = sdkOmittedValue,
+          Object? html = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? reviewComment = sdkOmittedValue,
+          Object? reviewComments = sdkOmittedValue,
+          Object? self = sdkOmittedValue,
+          Object? statuses = sdkOmittedValue}) =>
+      WebhookPullRequestUnlabeledPullRequestLinks(
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments as WebhookPullRequestUnlabeledPullRequestLinksComments,
+        commits: identical(commits, sdkOmittedValue)
+            ? this.commits
+            : commits as WebhookPullRequestUnlabeledPullRequestLinksCommits,
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as WebhookPullRequestUnlabeledPullRequestLinksHtml,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue as WebhookPullRequestUnlabeledPullRequestLinksIssue,
+        reviewComment: identical(reviewComment, sdkOmittedValue)
+            ? this.reviewComment
+            : reviewComment
+                as WebhookPullRequestUnlabeledPullRequestLinksReviewComment,
+        reviewComments: identical(reviewComments, sdkOmittedValue)
+            ? this.reviewComments
+            : reviewComments
+                as WebhookPullRequestUnlabeledPullRequestLinksReviewComments,
+        self: identical(self, sdkOmittedValue)
+            ? this.self
+            : self as WebhookPullRequestUnlabeledPullRequestLinksSelf,
+        statuses: identical(statuses, sdkOmittedValue)
+            ? this.statuses
+            : statuses as WebhookPullRequestUnlabeledPullRequestLinksStatuses,
+      );
 
-  factory WebhookPullRequestUnlabeledPullRequestLinks.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(WebhookPullRequestUnlabeledPullRequestLinks(
-    comments: (json['comments'] != null ? WebhookPullRequestUnlabeledPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>) : null)!,
-    commits: (json['commits'] != null ? WebhookPullRequestUnlabeledPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>) : null)!,
-    html: (json['html'] != null ? WebhookPullRequestUnlabeledPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    issue: (json['issue'] != null ? WebhookPullRequestUnlabeledPullRequestLinksIssue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
-    reviewComment: (json['review_comment'] != null ? WebhookPullRequestUnlabeledPullRequestLinksReviewComment.fromJson(json['review_comment'] as Map<String, dynamic>) : null)!,
-    reviewComments: (json['review_comments'] != null ? WebhookPullRequestUnlabeledPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>) : null)!,
-    self: (json['self'] != null ? WebhookPullRequestUnlabeledPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!,
-    statuses: (json['statuses'] != null ? WebhookPullRequestUnlabeledPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>) : null)!,
-  ), json);
+  factory WebhookPullRequestUnlabeledPullRequestLinks.fromJson(
+          Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          WebhookPullRequestUnlabeledPullRequestLinks(
+            comments: (json['comments'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksComments.fromJson(
+                    json['comments'] as Map<String, dynamic>)
+                : null)!,
+            commits: (json['commits'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksCommits.fromJson(
+                    json['commits'] as Map<String, dynamic>)
+                : null)!,
+            html: (json['html'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksHtml.fromJson(
+                    json['html'] as Map<String, dynamic>)
+                : null)!,
+            issue: (json['issue'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksIssue.fromJson(
+                    json['issue'] as Map<String, dynamic>)
+                : null)!,
+            reviewComment: (json['review_comment'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksReviewComment
+                    .fromJson(json['review_comment'] as Map<String, dynamic>)
+                : null)!,
+            reviewComments: (json['review_comments'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksReviewComments
+                    .fromJson(json['review_comments'] as Map<String, dynamic>)
+                : null)!,
+            self: (json['self'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksSelf.fromJson(
+                    json['self'] as Map<String, dynamic>)
+                : null)!,
+            statuses: (json['statuses'] != null
+                ? WebhookPullRequestUnlabeledPullRequestLinksStatuses.fromJson(
+                    json['statuses'] as Map<String, dynamic>)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'comments': comments.toJson(),
-    'commits': commits.toJson(),
-    'html': html.toJson(),
-    'issue': issue.toJson(),
-    'review_comment': reviewComment.toJson(),
-    'review_comments': reviewComments.toJson(),
-    'self': self.toJson(),
-    'statuses': statuses.toJson(),
-  };
+        'comments': comments.toJson(),
+        'commits': commits.toJson(),
+        'html': html.toJson(),
+        'issue': issue.toJson(),
+        'review_comment': reviewComment.toJson(),
+        'review_comments': reviewComments.toJson(),
+        'self': self.toJson(),
+        'statuses': statuses.toJson(),
+      };
 }
